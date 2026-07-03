@@ -142,6 +142,18 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .modal-bg{position:fixed;inset:0;background:rgba(42,26,16,.6);backdrop-filter:blur(4px);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-bg.show{display:flex}
 .modal{background:white;border-radius:20px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:pop .25s ease}
+.privacy-modal-bg{position:fixed;inset:0;background:rgba(42,26,16,.6);backdrop-filter:blur(4px);z-index:450;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
+.privacy-modal-bg.show{display:flex}
+.privacy-modal{background:white;border-radius:20px;max-width:720px;width:100%;max-height:none;margin:30px auto;position:relative;animation:pop .25s ease}
+.privacy-modal-close{position:sticky;top:0;float:right;margin:14px 14px 0 0;width:34px;height:34px;border-radius:50%;background:var(--o-pale);border:none;font-size:18px;color:var(--ink);cursor:pointer;z-index:2}
+.policy-box{max-width:100%;margin:0 auto;padding:16px 28px 40px;color:var(--ink2);font-size:13.5px;line-height:1.9;clear:both}
+.policy-box h2{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.policy-box .policy-updated{font-size:12px;color:var(--muted);margin-bottom:24px}
+.policy-box h3{font-size:15px;font-weight:700;color:var(--ink);margin:22px 0 8px;padding-left:10px;border-left:4px solid var(--o2)}
+.policy-box p{margin-bottom:10px}
+.policy-box ul{margin:0 0 10px 20px}
+.policy-box li{margin-bottom:6px}
+.policy-box a{color:var(--o1);text-decoration:underline}
 @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
 .modal-img{height:240px;background-size:cover;background-position:center;border-radius:20px 20px 0 0;position:relative}
 .modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
@@ -378,12 +390,60 @@ footer a{color:var(--o4);text-decoration:none}
   <div class="quiz" id="quiz"></div>
 </div>
 
+<!-- PRIVACY POLICY (hidden until opened from footer) -->
+<div class="privacy-modal-bg" id="privacyModalBg" onclick="if(event.target===this)closePrivacy()">
+  <div class="privacy-modal">
+    <button class="privacy-modal-close" onclick="closePrivacy()">×</button>
+    <div class="policy-box">
+      <h2>プライバシーポリシー</h2>
+      <div class="policy-updated">制定日：2026年7月3日</div>
+      <p>Villafaras（以下「当サイト」）は、ご利用者の個人情報の重要性を認識し、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定め、個人情報の適切な保護に努めます。</p>
+
+      <h3>1. 運営者情報</h3>
+      <p>当サイトは「Villafaras」が運営しています。</p>
+
+      <h3>2. 収集する情報</h3>
+      <p>当サイトでは、お問い合わせフォームのご利用等の際に、お名前・メールアドレス等のご入力いただいた情報を取得する場合があります。また、サイトの閲覧に伴い、Cookie等を通じてIPアドレス・ブラウザの種類・アクセス日時・閲覧ページ等の情報が自動的に収集されることがあります。</p>
+
+      <h3>3. 利用目的</h3>
+      <ul>
+        <li>お問い合わせへの対応・ご連絡のため</li>
+        <li>サイトの利用状況の分析、コンテンツの改善のため</li>
+        <li>不正利用の防止、セキュリティ確保のため</li>
+      </ul>
+
+      <h3>4. アクセス解析ツールについて</h3>
+      <p>当サイトでは、サイトの利用状況を把握する目的で、Googleアナリティクス等のアクセス解析ツールを導入する場合があります。これらのツールはCookieを利用してデータを収集しますが、個人を特定する情報は含まれません。この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。取得されたデータは各ツール提供者のプライバシーポリシーに基づき管理されます。</p>
+
+      <h3>5. アフィリエイトプログラムについて</h3>
+      <p>当サイトは、掲載施設の「空室・料金を探す」ボタン等を通じて、Booking.com・Airbnb・一休.com・楽天トラベル・Expedia・Agoda等の各予約サイト（OTA）が提供するアフィリエイトプログラムに参加しています。これらのリンクを経由してご予約等が成立した場合、当サイトは各社より紹介料を受け取ることがあります。この仕組みによって発生する費用はご利用者様の負担に転嫁されるものではありません。なお、各予約サイトの利用に伴い提供される情報は、各社のプライバシーポリシーに基づき取り扱われます。</p>
+
+      <h3>6. 第三者提供について</h3>
+      <p>当サイトは、法令に基づく場合を除き、ご本人の同意なく取得した個人情報を第三者に提供することはありません。</p>
+
+      <h3>7. 掲載情報の正確性について</h3>
+      <p>当サイトに掲載している施設情報（料金・設備・写真・空室状況等）は2026年7月調査時点のものであり、最新の内容と異なる場合があります。正確な情報は、必ず各予約サイトまたは施設公式サイトにてご確認ください。当サイトは、掲載情報の正確性・完全性について保証するものではなく、これらの情報に基づいて生じた損害について責任を負いかねます。</p>
+
+      <h3>8. 個人情報の開示・訂正・削除等</h3>
+      <p>ご本人からの個人情報の開示・訂正・利用停止・削除等のご請求については、下記のお問い合わせ窓口までご連絡ください。確認の上、法令に従い適切に対応いたします。</p>
+
+      <h3>9. 本ポリシーの変更</h3>
+      <p>当サイトは、法令の変更やサービス内容の変更等に応じて、本ポリシーの内容を予告なく変更することがあります。変更後の内容は、本ページに掲載した時点で効力を生じるものとします。</p>
+
+      <h3>10. お問い合わせ窓口</h3>
+      <p>本ポリシーに関するお問い合わせは、以下の窓口までお願いいたします。<br>
+      運営者：Villafaras<br>
+      メールアドレス：<a href="mailto:info@villafaras.jp">info@villafaras.jp</a>（※連絡先は仮設定です。実際のアドレスに差し替えてください）</p>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="foot-logo">villafaras</div>
   <div style="color:rgba(255,255,255,.4);font-size:11px;letter-spacing:2px;margin-bottom:12px">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
   ※本ページにはプロモーション（アフィリエイトリンク）が含まれます<br>
   掲載情報は2026年7月調査時点のものです。最新の空室状況・料金・ご予約は各予約サイトでご確認ください。<br>
-  <a href="privacy.html">プライバシーポリシー</a><br>
+  <a href="#" onclick="event.preventDefault();openPrivacy();">プライバシーポリシー</a><br>
   © 2026 villafaras（ヴィラファラス）
 </footer>
 
@@ -553,6 +613,8 @@ const QUIZ=[
 let quizStep=0,quizAns={};
 function openQuiz(){quizStep=0;quizAns={tags:new Set()};renderQuiz();document.getElementById('quizBg').classList.add('show');}
 function closeQuiz(){document.getElementById('quizBg').classList.remove('show');}
+function openPrivacy(){document.getElementById('privacyModalBg').classList.add('show');}
+function closePrivacy(){document.getElementById('privacyModalBg').classList.remove('show');}
 function renderQuiz(){
   const s=QUIZ[quizStep];
   const dots=QUIZ.map((_,i)=>`<div class="quiz-dot ${i<=quizStep?'on':''}"></div>`).join('');
@@ -585,7 +647,7 @@ function finishQuiz(){
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;let cur=0;const step=Math.ceil(target/40);const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},25);});}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeQuiz();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeQuiz();closePrivacy();}});
 applyFilters();
 try{
   const heroStats=document.querySelector('.hero-stats');
