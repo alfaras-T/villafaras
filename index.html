@@ -583,8 +583,7 @@ function openModal(id){
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
-      <div class="modal-price">${v.price}<span> ~ / 棟泊</span></div>
-      ${v.pricePerPerson?`<div class="price-per-person">${v.pricePerPerson}</div>`:''}
+      ${v.pricePerPerson?`<div class="modal-price">${v.pricePerPerson}</div>`:`<div class="modal-price">${v.price}<span> ~ / 棟泊</span></div>`}
       <div class="modal-ota-label">空室・料金を探す</div>
       <div class="ota-grid">${otaButtonsHTML(v)}</div>
       ${linksHTML}
