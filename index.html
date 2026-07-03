@@ -635,8 +635,16 @@ function finishQuiz(){
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;let cur=0;const step=Math.ceil(target/40);const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},25);});}
-const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();io.disconnect();}});});io.observe(document.querySelector('.hero-stats'));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeQuiz();}});
 applyFilters();
+try{
+  const heroStats=document.querySelector('.hero-stats');
+  if(heroStats&&typeof IntersectionObserver!=='undefined'){
+    const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();io.disconnect();}});});
+    io.observe(heroStats);
+  }else if(heroStats){
+    animateCounters();
+  }
+}catch(e){}
 </script>
 </body></html>
