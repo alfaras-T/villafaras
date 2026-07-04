@@ -127,7 +127,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .card-feature{font-size:12px;color:var(--ink2);background:var(--o-pale);border-radius:8px;padding:8px 11px;line-height:1.5;margin-top:auto}
 .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
 .modal-notice{font-size:10.5px;color:var(--muted);margin:-4px 0 4px;line-height:1.4}
-.card-price{font-size:15px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif}.card-price span{font-size:10px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}.card-price .tilde{color:var(--o1);font-weight:800}
+.card-price{font-size:15px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif}.card-price span{font-size:10px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}.card-price .tilde{color:var(--o1);font-weight:800;font-size:15px}
 .card-btn{font-size:11px;font-weight:700;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;border-radius:8px;padding:8px 15px;cursor:pointer;text-decoration:none;transition:transform .15s}
 .card-btn:hover{transform:scale(1.05)}
 .pill-row{display:flex;flex-wrap:wrap;gap:4px}
@@ -174,7 +174,15 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .sns-link:hover{background:var(--o1);color:white;transform:translateY(-2px)}
 .modal-price{font-size:24px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif;margin:8px 0}
 .modal-price span{font-size:12px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}
-.modal-price .tilde{color:var(--o1);font-weight:800;font-size:16px}
+.modal-price .tilde{color:var(--o1);font-weight:800;font-size:24px}
+.contact-form{margin-top:10px}
+.contact-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin:14px 0 6px}
+.contact-label .req{color:#fff;background:var(--o1);font-size:9px;padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:700}
+.contact-input,.contact-textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);box-sizing:border-box}
+.contact-textarea{resize:vertical}
+.contact-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
+.contact-submit{width:100%;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:transform .15s;margin-top:16px}
+.contact-submit:hover{transform:scale(1.02)}
 .price-per-person{display:inline-block;font-size:12px;font-weight:700;color:var(--ink2);background:var(--o-pale);border-radius:8px;padding:4px 10px;margin:-2px 0 8px}
 .modal-actions{display:flex;gap:10px;margin-top:16px}
 .modal-cta{flex:1;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;text-align:center;cursor:pointer;font-family:inherit;transition:transform .15s}
@@ -441,12 +449,34 @@ footer a{color:var(--o4);text-decoration:none}
   </div>
 </div>
 
+<!-- CONTACT FORM (hidden until opened from footer) -->
+<div class="privacy-modal-bg" id="contactModalBg" onclick="if(event.target===this)closeContact()">
+  <div class="privacy-modal">
+    <button class="privacy-modal-close" onclick="closeContact()">×</button>
+    <div class="policy-box">
+      <h2>お問い合わせ</h2>
+      <div class="policy-updated">ご質問・ご要望など、お気軽にご連絡ください。</div>
+      <div class="contact-form">
+        <label class="contact-label">お名前<span class="req">必須</span></label>
+        <input type="text" id="cfName" class="contact-input" placeholder="山田 太郎">
+        <label class="contact-label">メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="cfEmail" class="contact-input" placeholder="example@mail.com">
+        <label class="contact-label">お問い合わせ内容<span class="req">必須</span></label>
+        <textarea id="cfMessage" class="contact-textarea" rows="5" placeholder="お問い合わせ内容をご記入ください"></textarea>
+        <button class="contact-submit" onclick="submitContact()">送信する</button>
+        <p class="contact-note">※送信ボタンを押すと、お使いのメールアプリが起動し、入力内容がメール本文にセットされます。内容をご確認のうえ送信してください。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="foot-logo">villafaras</div>
   <div style="color:rgba(255,255,255,.4);font-size:11px;letter-spacing:2px;margin-bottom:12px">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
   ※本ページにはプロモーション（アフィリエイトリンク）が含まれます<br>
   掲載情報は2026年7月調査時点のものです。最新の空室状況・料金・ご予約は各予約サイトでご確認ください。<br>
-  <a href="#" onclick="event.preventDefault();openPrivacy();">プライバシーポリシー</a><br>
+  <a href="#" onclick="event.preventDefault();openPrivacy();">プライバシーポリシー</a>　
+  <a href="#" onclick="event.preventDefault();openContact();">お問い合わせ</a><br>
   © 2026 villafaras（ヴィラファラス）
 </footer>
 
@@ -597,7 +627,7 @@ function openModal(id){
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
       ${v.pricePerPerson?`<div class="modal-price">${v.pricePerPerson}<span class="tilde"> ~ </span><span>/ 人</span></div>`:`<div class="modal-price">${v.price}<span class="tilde"> ~ </span><span>/ 棟泊</span></div>`}
-      <div class="modal-notice">掲載情報は2026年7月調査時点のものです。</div>
+      <div class="modal-notice">※掲載情報は2026年7月調査時点のものです。</div>
       <div class="modal-ota-label">空室・料金を探す</div>
       <div class="ota-grid">${otaButtonsHTML(v)}</div>
       ${linksHTML}
@@ -630,6 +660,17 @@ function openQuiz(){quizStep=0;quizAns={tags:new Set()};renderQuiz();document.ge
 function closeQuiz(){document.getElementById('quizBg').classList.remove('show');}
 function openPrivacy(){document.getElementById('privacyModalBg').classList.add('show');}
 function closePrivacy(){document.getElementById('privacyModalBg').classList.remove('show');}
+function openContact(){document.getElementById('contactModalBg').classList.add('show');}
+function closeContact(){document.getElementById('contactModalBg').classList.remove('show');}
+function submitContact(){
+  const name=document.getElementById('cfName').value.trim();
+  const email=document.getElementById('cfEmail').value.trim();
+  const msg=document.getElementById('cfMessage').value.trim();
+  if(!name||!email||!msg){alert('お名前・メールアドレス・お問い合わせ内容をすべてご入力ください。');return;}
+  const subject=encodeURIComponent('【Villafaras】お問い合わせ');
+  const body=encodeURIComponent('お名前：'+name+'\nメールアドレス：'+email+'\n\nお問い合わせ内容：\n'+msg);
+  window.location.href='mailto:info@villafaras.jp?subject='+subject+'&body='+body;
+}
 function renderQuiz(){
   const s=QUIZ[quizStep];
   const dots=QUIZ.map((_,i)=>`<div class="quiz-dot ${i<=quizStep?'on':''}"></div>`).join('');
@@ -662,7 +703,7 @@ function finishQuiz(){
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;let cur=0;const step=Math.ceil(target/40);const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},25);});}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeQuiz();closePrivacy();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeQuiz();closePrivacy();closeContact();}});
 applyFilters();
 try{
   const heroStats=document.querySelector('.hero-stats');
