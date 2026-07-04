@@ -519,14 +519,14 @@ const SNS_COLORS={
 };
 function linksRowHTML(v){
   const items=[];
-  if(v.official)items.push(`<a class="official-link" href="${v.official}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">公式サイト</a>`);
+  if(v.official)items.push(`<a class="official-link" href="${v.official}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">公式サイト ↗</a>`);
   (v.sns||[]).forEach(s=>{
     const key=snsIconKey(s);
     const icon=SNS_ICONS[key]||'';
     const label=snsLabel(key);
     const bg=SNS_COLORS[key];
     const style=bg?` style="background:${bg};color:#fff"`:'';
-    items.push(`<a class="sns-link" href="${s}"${style} target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">${icon}<span>${label}</span></a>`);
+    items.push(`<a class="sns-link" href="${s}"${style} target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">${icon}<span>${label} ↗</span></a>`);
   });
   if(items.length===0)return '';
   return `<div class="modal-links">${items.join('')}</div>`;
