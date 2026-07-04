@@ -126,7 +126,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .card-addr{font-size:11px;color:var(--muted)}
 .card-feature{font-size:12px;color:var(--ink2);background:var(--o-pale);border-radius:8px;padding:8px 11px;line-height:1.5;margin-top:auto}
 .card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
-.card-notice{font-size:9px;color:var(--muted);margin-top:6px;line-height:1.4}
+.modal-notice{font-size:10.5px;color:var(--muted);margin:-4px 0 4px;line-height:1.4}
 .card-price{font-size:15px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif}.card-price span{font-size:10px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}.card-price .tilde{color:var(--o1);font-weight:800}
 .card-btn{font-size:11px;font-weight:700;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;border-radius:8px;padding:8px 15px;cursor:pointer;text-decoration:none;transition:transform .15s}
 .card-btn:hover{transform:scale(1.05)}
@@ -535,7 +535,7 @@ function cardHTML(v){
   const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
   let feat=v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
   const isFav=favs.has(v.id);
-  return `<div class="card" onclick="openModal(${v.id})"><div class="card-img" style="background-image:url('${v.img}')"><span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.stopPropagation();toggleFav(${v.id},this)">${isFav?'❤️':'🤍'}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson?v.pricePerPerson:v.price}<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span></div><span class="card-btn" onclick="event.stopPropagation();openModal(${v.id})">詳細・予約</span></div><div class="card-notice">掲載情報は2026年7月調査時点のものです。</div></div></div>`;
+  return `<div class="card" onclick="openModal(${v.id})"><div class="card-img" style="background-image:url('${v.img}')"><span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.stopPropagation();toggleFav(${v.id},this)">${isFav?'❤️':'🤍'}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson?v.pricePerPerson:v.price}<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span></div><span class="card-btn" onclick="event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></div>`;
 }
 function applyFilters(){
   const sort=document.getElementById('sortSelect').value;
@@ -597,6 +597,7 @@ function openModal(id){
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
       ${v.pricePerPerson?`<div class="modal-price">${v.pricePerPerson}<span class="tilde"> ~ </span><span>/ 人</span></div>`:`<div class="modal-price">${v.price}<span class="tilde"> ~ </span><span>/ 棟泊</span></div>`}
+      <div class="modal-notice">掲載情報は2026年7月調査時点のものです。</div>
       <div class="modal-ota-label">空室・料金を探す</div>
       <div class="ota-grid">${otaButtonsHTML(v)}</div>
       ${linksHTML}
