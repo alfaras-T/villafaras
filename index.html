@@ -630,6 +630,12 @@ function toggleChip(el){const t=el.dataset.tag;if(activeTags.has(t)){activeTags.
 function togglePrefChip(el){const p=el.dataset.pref;if(activePrefs.has(p)){activePrefs.delete(p);el.classList.remove('on');}else{activePrefs.add(p);el.classList.add('on');}applyFilters();}
 function filterByTag(t){resetFilters(true);activeTags.add(t);document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.tag===t)c.classList.add('on');});applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function heartIcon(filled){return `<svg width="16" height="16" viewBox="0 0 24 24" fill="${filled?'currentColor':'none'}" stroke="currentColor" stroke-width="2" style="vertical-align:-3px"><path d="M12 21s-7.5-4.35-10.5-9.5C-0.5 7.5 2 3.5 6 3.5c2.5 0 4.5 1.5 6 3.5 1.5-2 3.5-3.5 6-3.5 4 0 6.5 4 4.5 8-3 5.15-10.5 9.5-10.5 9.5z"/></svg>`;}
+function mapQuery(v){
+  if(v.geo)return `${v.geo.lat},${v.geo.lng}`;
+  // drop fine-grained lot numbers (banchi/gou) that often fail to geocode, keep name + town-level address
+  const simplified=v.addr.replace(/[0-9０-９\-−ー]+(号)?\s*$/,'').trim();
+  return `${v.name} ${simplified||v.addr}`;
+}
 function shuffleArray(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function filterByFeature(tags){
   resetFilters(true);
@@ -667,8 +673,8 @@ function openModal(id){
   document.getElementById('modal').innerHTML=`
     <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
     <div class="modal-body">
-      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="${v.geo?`https://www.google.com/maps/search/?api=1&query=${v.geo.lat},${v.geo.lng}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name+' '+v.addr)}`}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="${v.geo?`https://www.google.com/maps?q=${v.geo.lat},${v.geo.lng}&output=embed`:`https://www.google.com/maps?q=${encodeURIComponent(v.name+' '+v.addr)}&output=embed`}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
+      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(v))}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(mapQuery(v))}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
