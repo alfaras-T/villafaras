@@ -139,7 +139,8 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px;margin-bottom:30px}
 .card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;position:relative;cursor:pointer}
 .card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(180,60,0,.12)}
-.card-img{height:160px;background-size:cover;background-position:center;position:relative;background-color:#EADBCB}
+.card-img{height:160px;position:relative;background-color:#EADBCB;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
 .card-badge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;padding:4px 11px;border-radius:30px;backdrop-filter:blur(4px);color:white}
 .badge-yamanashi{background:rgba(5,150,105,.9)}.badge-kanagawa{background:rgba(29,78,216,.9)}.badge-saitama{background:rgba(180,83,9,.9)}.badge-chiba{background:rgba(217,119,6,.9)}.badge-gunma{background:rgba(109,40,217,.9)}.badge-tochigi{background:rgba(4,120,87,.9)}.badge-ibaraki{background:rgba(14,116,144,.9)}.badge-shizuoka{background:rgba(225,29,72,.9)}.badge-nagano{background:rgba(7,89,133,.9)}
 .fav{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);backdrop-filter:blur(4px);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:transform .15s;z-index:3}
@@ -179,7 +180,8 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .policy-box li{margin-bottom:6px}
 .policy-box a{color:var(--o1);text-decoration:underline}
 @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-img{height:240px;background-size:cover;background-position:center;border-radius:20px 20px 0 0;position:relative}
+.modal-img{height:240px;border-radius:20px 20px 0 0;position:relative;overflow:hidden}
+.modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-badge{position:absolute;bottom:12px;left:12px;font-size:11px;font-weight:700;padding:5px 13px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
 .modal-body{padding:22px 24px 24px}
@@ -588,7 +590,7 @@ function cardHTML(v){
   const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
   let feat=v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
   const isFav=favs.has(v.id);
-  return `<div class="card" onclick="openModal(${v.id})"><div class="card-img" style="background-image:url('${v.img}')"><span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn" onclick="event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></div>`;
+  return `<div class="card" onclick="openModal(${v.id})"><div class="card-img"><img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async"><span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn" onclick="event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></div>`;
 }
 function applyFilters(){
   const sort=document.getElementById('sortSelect').value;
@@ -663,7 +665,7 @@ function openModal(id){
     </div>`;
   const linksHTML=linksRowHTML(v);
   document.getElementById('modal').innerHTML=`
-    <div class="modal-img" style="background-image:url('${v.img}')"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
+    <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
     <div class="modal-body">
       <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.addr)}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(v.addr)}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
