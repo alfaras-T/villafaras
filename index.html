@@ -113,6 +113,23 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .lucky-btn:hover{transform:scale(1.04)}
 .reset-btn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit}
 .count-bar{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:16px}
+.view-toggle{display:none;gap:6px}
+.view-btn{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--border);background:white;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.view-btn.on{background:var(--o1);border-color:var(--o1);color:white}
+@media(max-width:700px){
+  .view-toggle{display:flex}
+  .grid.compact{grid-template-columns:repeat(3,1fr);gap:8px}
+  .grid.compact .card{border-radius:10px}
+  .grid.compact .card-img{aspect-ratio:1/1;height:auto}
+  .grid.compact .card-badge{font-size:7.5px;padding:2px 6px;top:5px;left:5px}
+  .grid.compact .fav{width:22px;height:22px;font-size:11px;top:5px;right:5px}
+  .grid.compact .card-body{padding:6px 6px 8px;gap:3px}
+  .grid.compact .card-name{font-size:10.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .grid.compact .card-addr,.grid.compact .card-feature,.grid.compact .pill-row,.grid.compact .card-btn,.grid.compact .card-notice{display:none}
+  .grid.compact .card-footer{padding-top:4px;border-top:none;flex-direction:column;align-items:flex-start;gap:0}
+  .grid.compact .card-price{font-size:10px}
+  .grid.compact .card-price span{font-size:7.5px}
+}
 .count-bar strong{color:var(--o1);font-size:18px;font-weight:800;font-family:'Poppins',sans-serif}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px;margin-bottom:30px}
 .card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;position:relative;cursor:pointer}
@@ -383,7 +400,7 @@ footer a{color:var(--o4);text-decoration:none}
       <button class="reset-btn" onclick="resetFilters()">条件をリセット</button>
     </div>
   </div>
-  <div class="count-bar"><span><strong id="countNum">0</strong> 件のヴィラが見つかりました</span></div>
+  <div class="count-bar"><span><strong id="countNum">0</strong> 件のヴィラが見つかりました</span><div class="view-toggle" id="viewToggle"><button class="view-btn on" data-mode="normal" onclick="setGridView('normal')" aria-label="詳細表示"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/></svg></button><button class="view-btn" data-mode="compact" onclick="setGridView('compact')" aria-label="3列表示"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="16" y="9.5" width="5" height="5" rx="1"/></svg></button></div></div>
   <div class="grid" id="grid"></div>
   <button class="load-more" id="loadMore" onclick="loadMore()">もっと見る</button>
 </div>
@@ -588,6 +605,11 @@ function applyFilters(){
   else filtered.sort((a,b)=>a.id-b.id);
   document.getElementById('countNum').textContent=filtered.length;
   shownCount=0;document.getElementById('grid').innerHTML='';loadMore();
+}
+function setGridView(mode){
+  const grid=document.getElementById('grid');
+  if(mode==='compact')grid.classList.add('compact');else grid.classList.remove('compact');
+  document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('on',b.dataset.mode===mode));
 }
 function loadMore(){
   const grid=document.getElementById('grid');const slice=filtered.slice(shownCount,shownCount+PAGE);let html='';
