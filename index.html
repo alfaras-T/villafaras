@@ -570,13 +570,17 @@ function cardHTML(v){
 }
 function applyFilters(){
   const sort=document.getElementById('sortSelect').value;
-  const q=(document.getElementById('heroSearch').value||'').toLowerCase();
+  const qRaw=(document.getElementById('heroSearch').value||'').trim();
+  const words=qRaw.length?qRaw.split(/[\s\u3000]+/).map(w=>w.toLowerCase()).filter(Boolean):[];
   filtered=VILLAS.filter(v=>{
     if(showFavsOnly&&!favs.has(v.id))return false;
     if(activePrefs.size>0&&!activePrefs.has(v.pref))return false;
     if(v.pnum>maxPrice)return false;
     for(const t of activeTags){if(!(v.tags||[]).includes(t))return false;}
-    if(q){const hay=(v.name+v.addr+v.feature+(v.tags||[]).map(t=>TAG_LABELS[t]||'').join('')).toLowerCase();if(!hay.includes(q))return false;}
+    if(words.length){
+      const hay=(v.name+v.addr+v.feature+(PREF_JP[v.pref]||'')+'県'+(v.tags||[]).map(t=>TAG_LABELS[t]||'').join('')).toLowerCase();
+      for(const w of words){if(!hay.includes(w))return false;}
+    }
     return true;
   });
   if(sort==='low')filtered.sort((a,b)=>a.pnum-b.pnum);
