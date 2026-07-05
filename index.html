@@ -185,6 +185,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .modal-body{padding:22px 24px 24px}
 .modal-body h3{font-size:20px;font-weight:800;margin-bottom:4px;color:var(--ink)}
 .modal-addr{font-size:12px;color:var(--muted);margin-bottom:12px}
+.map-link{margin-left:8px;font-size:11px;color:var(--o1);font-weight:700;text-decoration:none;white-space:nowrap}
 .modal-feat{font-size:13px;color:var(--ink2);line-height:1.8;background:var(--o-pale);border-radius:12px;padding:14px 16px;margin:12px 0}
 .modal-facts{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}
 .fact{flex:1;min-width:84px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:9px 10px;text-align:center}
@@ -662,7 +663,7 @@ function openModal(id){
   document.getElementById('modal').innerHTML=`
     <div class="modal-img" style="background-image:url('${v.img}')"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
     <div class="modal-body">
-      <h3>${v.name}</h3><div class="modal-addr">${v.addr}</div>
+      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.addr.startsWith(PREF_JP[v.pref])?v.addr:(PREF_JP[v.pref]||'')+'県'+v.addr)}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">地図で見る ↗</a></div>
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
