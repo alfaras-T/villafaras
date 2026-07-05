@@ -562,10 +562,15 @@ const SNS_COLORS={
  tiktok:'#000000',
  sns:'',
 };
+const SNS_ORDER={x:0,instagram:1,facebook:2,line:3,youtube:4,tiktok:5,sns:6};
 function linksRowHTML(v){
   const items=[];
   if(v.official)items.push(`<a class="official-link" href="${v.official}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">公式サイト ↗</a>`);
-  (v.sns||[]).forEach(s=>{
+  const sortedSns=(v.sns||[]).slice().sort((a,b)=>{
+    const ka=snsIconKey(a),kb=snsIconKey(b);
+    return (SNS_ORDER[ka]??99)-(SNS_ORDER[kb]??99);
+  });
+  sortedSns.forEach(s=>{
     const key=snsIconKey(s);
     const icon=SNS_ICONS[key]||'';
     const label=snsLabel(key);
