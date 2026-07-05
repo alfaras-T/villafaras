@@ -243,12 +243,12 @@ footer a{color:var(--o4);text-decoration:none}
 .feat-rail-eyebrow{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--o1),var(--o2));color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 13px;border-radius:30px;box-shadow:0 4px 12px rgba(255,107,43,.3);white-space:nowrap}
 .feat-rail-title{font-size:15px;font-weight:800;color:var(--ink)}
 .feat-rail-title span{color:var(--o1)}
-.feat-rail-hint{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap}
-.feat-rail{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.feat-rail-hint{display:none}
+.feat-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:4px 2px 12px}
 .feat-rail::-webkit-scrollbar{height:6px}
 .feat-rail::-webkit-scrollbar-track{background:transparent}
 .feat-rail::-webkit-scrollbar-thumb{background:var(--o-soft);border-radius:10px}
-.feat-card{position:relative;flex:0 0 auto;width:232px;height:106px;border-radius:15px;overflow:hidden;cursor:pointer;scroll-snap-align:start;box-shadow:0 6px 18px rgba(180,60,0,.10);transition:transform .18s,box-shadow .18s}
+.feat-card{position:relative;width:100%;height:106px;border-radius:15px;overflow:hidden;cursor:pointer;box-shadow:0 6px 18px rgba(180,60,0,.10);transition:transform .18s,box-shadow .18s}
 .feat-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(180,60,0,.22)}
 .feat-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .35s}
 .feat-card:hover .feat-card-bg{transform:scale(1.08)}
@@ -257,7 +257,7 @@ footer a{color:var(--o4);text-decoration:none}
 .feat-card-tag{align-self:flex-start;background:rgba(255,255,255,.22);backdrop-filter:blur(4px);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.4px;border:1px solid rgba(255,255,255,.3)}
 .feat-card-body strong{color:#fff;font-size:13.5px;font-weight:800;line-height:1.35;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .feat-card-10{position:absolute;top:0;right:0;z-index:3;background:var(--o4);color:var(--ink);font-family:'Poppins',sans-serif;font-size:11px;font-weight:800;padding:3px 11px 4px;border-bottom-left-radius:13px;box-shadow:-2px 2px 6px rgba(0,0,0,.12)}
-@media(max-width:700px){.feat-rail-wrap{margin-top:16px}.feat-rail-hint{display:none}.feat-card{width:204px;height:98px}.feat-rail-title{font-size:14px}}
+@media(max-width:700px){.feat-rail-wrap{margin-top:16px}.feat-rail{grid-template-columns:repeat(2,1fr);gap:8px}.feat-card{height:72px;border-radius:11px}.feat-card-body{padding:8px 10px}.feat-card-tag{font-size:8.5px;padding:2px 7px}.feat-card-body strong{font-size:11px;line-height:1.25}.feat-card-10{font-size:9px;padding:2px 8px 3px}.feat-rail-title{font-size:14px}}
 </style></head><body>
 
 <!-- ▼▼▼【将来の広告枠】9月以降、ここにALFARASなどへの誘導バナー（リンク付き）を設置できます ▼▼▼ -->
