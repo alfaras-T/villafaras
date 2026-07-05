@@ -595,7 +595,17 @@ function loadMore(){
 function toggleChip(el){const t=el.dataset.tag;if(activeTags.has(t)){activeTags.delete(t);el.classList.remove('on');}else{activeTags.add(t);el.classList.add('on');}applyFilters();}
 function togglePrefChip(el){const p=el.dataset.pref;if(activePrefs.has(p)){activePrefs.delete(p);el.classList.remove('on');}else{activePrefs.add(p);el.classList.add('on');}applyFilters();}
 function filterByTag(t){resetFilters(true);activeTags.add(t);document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.tag===t)c.classList.add('on');});applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
-function filterByFeature(tags){resetFilters(true);tags.forEach(t=>activeTags.add(t));document.querySelectorAll('.chip').forEach(c=>{if(tags.includes(c.dataset.tag))c.classList.add('on');});applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
+function shuffleArray(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function filterByFeature(tags){
+  resetFilters(true);
+  tags.forEach(t=>activeTags.add(t));
+  document.querySelectorAll('.chip').forEach(c=>{if(tags.includes(c.dataset.tag))c.classList.add('on');});
+  const matches=VILLAS.filter(v=>tags.every(t=>(v.tags||[]).includes(t)));
+  filtered=shuffleArray(matches).slice(0,10);
+  document.getElementById('countNum').textContent=filtered.length;
+  shownCount=0;document.getElementById('grid').innerHTML='';loadMore();
+  document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
+}
 function filterByPref(p){resetFilters(true);activePrefs.add(p);document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.pref===p)c.classList.add('on');});applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function resetFilters(silent){activeTags.clear();activePrefs.clear();showFavsOnly=false;maxPrice=650000;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));document.getElementById('sortSelect').value='rec';document.getElementById('heroSearch').value='';document.getElementById('priceRange').value=650000;document.getElementById('priceVal').textContent='上限なし';if(!silent)applyFilters();}
 function updatePrice(){const v=+document.getElementById('priceRange').value;maxPrice=v;document.getElementById('priceVal').textContent=(v>=650000)?'上限なし':'～'+v.toLocaleString()+'円';applyFilters();}
