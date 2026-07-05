@@ -52,9 +52,13 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 @media(max-width:480px){.hero-search{padding:6px}.hero-search input{padding:11px 14px;font-size:13.5px}.hero-search button{padding:11px 18px;font-size:13px}}
 .hero-quiz-btn{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);color:white;font-size:13px;font-weight:600;padding:10px 24px;border-radius:30px;cursor:pointer;font-family:inherit;margin-bottom:30px;transition:all .15s}
 .hero-quiz-btn:hover{background:white;color:var(--o1)}
-.hero-stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.hstat{background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px 26px;color:white;min-width:96px}
-.hstat strong{display:block;font-family:'Poppins',sans-serif;font-size:30px;font-weight:800;line-height:1}.hstat span{font-size:11px;opacity:.9}
+.hero-stats{display:flex;justify-content:center;align-items:center;gap:0;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:18px 6px;max-width:620px;margin:0 auto;box-shadow:0 10px 34px rgba(120,40,0,.14)}
+.hstat{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:white;padding:0 8px;min-width:0}
+.hstat-ic{font-size:17px;line-height:1;opacity:.95}
+.hstat strong{display:block;font-family:'Poppins',sans-serif;font-size:27px;font-weight:800;line-height:1.15}
+.hstat-label{font-size:10.5px;opacity:.88;letter-spacing:.3px;white-space:nowrap}
+.hstat-div{width:1px;height:38px;background:rgba(255,255,255,.28);flex-shrink:0}
+@media(max-width:480px){.hero-stats{padding:14px 2px;border-radius:16px}.hstat{padding:0 3px}.hstat strong{font-size:19px}.hstat-ic{font-size:14px}.hstat-label{font-size:8.5px}.hstat-div{height:30px}}
 .wave{display:block;width:100%;height:48px;margin-top:-1px}
 .container{max-width:1140px;margin:0 auto;padding:0 20px}
 .section{padding:54px 0 0}
@@ -270,14 +274,17 @@ footer a{color:var(--o4);text-decoration:none}
   <div class="hero-content">
     <div class="hero-badge">villafaras — 関東甲信越静</div>
     <h1>週末は、<br>とっておきのヴィラへ。</h1>
-    <p>サウナ・温泉・絶景・ペット可…気分で選べる厳選270施設。<br>あなたの「行きたい」がきっと見つかる。</p>
+    <p>サウナ・温泉・絶景・ペット可…気分で選べる厳選286施設。<br>あなたの「行きたい」がきっと見つかる。</p>
     <div class="hero-search"><input type="text" id="heroSearch" placeholder="エリア・施設名・「サウナ」などで検索" onkeydown="if(event.key==='Enter')heroGo()"><button onclick="heroGo()">探す</button></div>
     <button class="hero-quiz-btn" onclick="openQuiz()">✨ 30秒診断であなたにぴったりのヴィラを探す</button>
     <div class="hero-stats">
-      <div class="hstat"><strong data-count="270">0</strong><span>掲載施設</span></div>
-      <div class="hstat"><strong data-count="139">0</strong><span>サウナ付き</span></div>
-      <div class="hstat"><strong data-count="53">0</strong><span>温泉付き</span></div>
-      <div class="hstat"><strong data-count="57">0</strong><span>ペット可</span></div>
+      <div class="hstat"><span class="hstat-ic">🏡</span><strong data-count="286">0</strong><span class="hstat-label">掲載施設</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-ic">🧖</span><strong data-count="278">0</strong><span class="hstat-label">サウナ付き</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-ic">♨️</span><strong data-count="81">0</strong><span class="hstat-label">温泉付き</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-ic">🐾</span><strong data-count="119">0</strong><span class="hstat-label">ペット可</span></div>
     </div>
   </div>
 </section>
