@@ -667,8 +667,8 @@ function openModal(id){
   document.getElementById('modal').innerHTML=`
     <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
     <div class="modal-body">
-      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.addr)}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(v.addr)}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
+      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="${v.geo?`https://www.google.com/maps/search/?api=1&query=${v.geo.lat},${v.geo.lng}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name+' '+v.addr)}`}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="${v.geo?`https://www.google.com/maps?q=${v.geo.lat},${v.geo.lng}&output=embed`:`https://www.google.com/maps?q=${encodeURIComponent(v.name+' '+v.addr)}&output=embed`}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.feature||''}</div>
       ${factsHTML}
