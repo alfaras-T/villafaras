@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/196591/196591.html" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/suitovuirare-hai-bie-di-shuang-mei-an.ja.html?aid=356980&amp;label=gog235jc-10CAsodUIlc3VpdG92dWlyYXJlLWhhaS1iaWUtZGktc2h1YW5nLW1laS1hbkgVWANodYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCm76p0QbAAgHSAiQyOTkxZjIwZC05NjA4LTQ1YjctOGE2Yi02MmM0NzY4N2I0OTHYAgHgAgE&amp;sid=d09eb3a48368814d763be073eddcc7a8&amp;dest_id=-225981&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;hpos=1&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;srepoch=1781161776&amp;srpvid=e211324efab30219&amp;type=total&amp;ucfs=1&amp;" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FF385C;--ota-text:#fff" href="https://www.airbnb.jp/rooms/990939157351063246?source_impression_id=p3_1781161733_P3rHRTosZ4XMCLDU" target="_blank" rel="noopener nofollow">Airbnb<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://www.resolstay.jp/details/atamisoubaian/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/resolstay/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">静岡県熱海市水口町2-15-25<a href="https://www.google.com/maps/search/?api=1&query=%E7%86%B1%E6%B5%B7%E5%88%A5%E9%82%B8%E3%80%80%E5%8F%8C%E6%A2%85%E5%BA%B5%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E6%B0%B4%E5%8F%A3%E7%94%BA2-15-25" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=%E7%86%B1%E6%B5%B7%E5%88%A5%E9%82%B8%E3%80%80%E5%8F%8C%E6%A2%85%E5%BA%B5%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E6%B0%B4%E5%8F%A3%E7%94%BA2-15-25&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

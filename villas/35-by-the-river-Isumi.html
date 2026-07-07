@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/188228/188228.html" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00051694/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/secret-break-isumi-isumishi.ja.html?aid=318615&amp;label=New_Japanese_JA_JP_27025415665-yJjRRahgAyOzLYp6AnBN9wS619224290098%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-199487767465%3Alp9221605%3Ali%3Adec%3Adm&amp;sid=d09eb3a48368814d763be073eddcc7a8&amp;dest_id=-242994&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;hpos=1&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A%2CA&amp;sb_price_type=total&amp;sr_order=popularity&amp;srepoch=1780984103&amp;srpvid=47ef28cd691101d3&amp;type=total&amp;ucfs=1&amp;" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FF385C;--ota-text:#fff" href="https://www.airbnb.jp/rooms/948446048402428439?source_impression_id=p3_1780983924_P3L5U4ddtXrh8SgS" target="_blank" rel="noopener nofollow">Airbnb<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/en-nz/by-the-river-isumi-h74734777/hotel/onjuku-jp.html" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://www.isumiriver.com/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.twitter.com/wix" style="background:#1DA1F2;color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X(旧Twitter) ↗</span></a><a class="sns-link" href="https://www.instagram.com/bytheriver_isumi/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a><a class="sns-link" href="https://www.facebook.com/wix" style="background:#1877F2;color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34v7.03C18.34 21.21 22 17.06 22 12.06z"/></svg><span>Facebook ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">千葉県いすみ市岬町椎木820-1<a href="https://www.google.com/maps/search/?api=1&query=by%20the%20river%20Isumi%20%E5%8D%83%E8%91%89%E7%9C%8C%E3%81%84%E3%81%99%E3%81%BF%E5%B8%82%E5%B2%AC%E7%94%BA%E6%A4%8E%E6%9C%A8820-1" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=by%20the%20river%20Isumi%20%E5%8D%83%E8%91%89%E7%9C%8C%E3%81%84%E3%81%99%E3%81%BF%E5%B8%82%E5%B2%AC%E7%94%BA%E6%A4%8E%E6%9C%A8820-1&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

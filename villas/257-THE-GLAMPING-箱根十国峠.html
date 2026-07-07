@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/187583/?s_kwcid=paidsearch&amp;ifd=152995&amp;iasid=weg_trmd_travel-booking_&amp;ultra_advid=3093437606&amp;ultra_cid=2039583540&amp;ultra_agid=153197527837&amp;gclsrc=aw.ds&amp;&amp;saf_src=google_g&amp;saf_pt=&amp;saf_kw=&amp;saf_dv=&amp;saf_cam=2039583540&amp;saf_grp=153197527837&amp;saf_ad=673010133340&amp;account_id=3093437606&amp;saf_acc=3093437606&amp;saf_cam_tp=search&amp;gad_source=1&amp;gad_campaignid=2039583540&amp;gbraid=0AAAAAD-xRgOg8cDrEVLe6OyaBZlgH0YJP&amp;gclid=Cj0KCQjwi8nRBhDhARIsAHZf_pawtWCdcllnAq-dBJ_T3kzZro7Iq-JIoMbDZkH4Yf9kFkOuqKGOYEAaAn1KEALw_wcB" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/the-glamping-xiang-gen-shi-guo-sang.ja.html?label=New_Japanese_JA_JP_27025410385-*c1ryjX_ZGW7L*RtNX9izAS619224289567:pl:ta:p1:p2:ac:ap:neg:fi:tikwl-64415224945:lp1009303:li:dec:dm&amp;sid=d7c8368027251ff7686409cb8cf4d4d5&amp;gclid=Cj0KCQjwi8nRBhDhARIsAHZf_pYECje0kyXNsFtC0OXsll56cN_sk54HAo0bbqpt94cgguXHhEaksIEaAjn2EALw_wcB&amp;aid=318615&amp;ucfs=1&amp;arphpl=1&amp;dest_id=443035&amp;dest_type=city&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=1&amp;hapos=1&amp;sr_order=popularity&amp;srpvid=1eb9281b92741391&amp;srepoch=1781761339&amp;from=searchresults" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#00355F;--ota-text:#fff" href="https://www.expedia.co.jp/Kannami-Hotels-THE-GLAMPING-Hakonejukkokutouge.h95403450.Hotel-Information" target="_blank" rel="noopener nofollow">Expedia<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://www.jukkoku-cable.jp/glamping/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://x.com/glampingjukkoku" style="background:#1DA1F2;color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X(旧Twitter) ↗</span></a><a class="sns-link" href="https://www.instagram.com/theglamping_hakonejukkokutouge/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">静岡県熱海市伊豆山字日金山1146-6<a href="https://www.google.com/maps/search/?api=1&query=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

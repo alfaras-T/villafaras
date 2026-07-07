@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/194954/194954.html" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00052296/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/surf-up.ja.html?label=gog235jc-10CAsodUIHc3VyZi11cEgVWANodYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCoJGk0QbAAgHSAiRlYjJkOGU0Ni0xYzU0LTQzMjctOTc5ZS1iNDU0MDMxOTFhMzfYAgHgAgE&amp;sid=d09eb3a48368814d763be073eddcc7a8&amp;aid=356980&amp;ucfs=1&amp;arphpl=1&amp;dest_id=-230062&amp;dest_type=city&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=1&amp;hapos=1&amp;sr_order=popularity&amp;srpvid=3ce32fd161dd000c&amp;srepoch=1781074088&amp;from=searchresults" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/surf-up/hotel/chiba-jp.html?cid=1844104&amp;ds=EvApNQbe%2FeYcHkcu" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://surf-up.co.jp/" target="_blank" rel="noopener nofollow">公式サイト ↗</a></div>
-        <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">千葉県長生郡一宮町一宮9974<a href="https://www.google.com/maps/search/?api=1&query=SURF%20UP%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%95%B7%E7%94%9F%E9%83%A1%E4%B8%80%E5%AE%AE%E7%94%BA%E4%B8%80%E5%AE%AE9974" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=SURF%20UP%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%95%B7%E7%94%9F%E9%83%A1%E4%B8%80%E5%AE%AE%E7%94%BA%E4%B8%80%E5%AE%AE9974&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

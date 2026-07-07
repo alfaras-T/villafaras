@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/198303/?s_kwcid=paidsearch&amp;ifd=152995&amp;iasid=weg_trmd_travel-booking_&amp;ultra_advid=3093437606&amp;ultra_cid=2039583540&amp;ultra_agid=153197527837&amp;gclsrc=aw.ds&amp;&amp;saf_src=google_g&amp;saf_pt=&amp;saf_kw=&amp;saf_dv=&amp;saf_cam=2039583540&amp;saf_grp=153197527837&amp;saf_ad=673010133340&amp;account_id=3093437606&amp;saf_acc=3093437606&amp;saf_cam_tp=search&amp;gad_source=1&amp;gad_campaignid=2039583540&amp;gbraid=0AAAAAD-xRgMv3CzpMTjC03_d-lk-BXa5N&amp;gclid=CjwKCAjw857RBhAgEiwAI-1yKBlOpJEfoTbFH1OEma42mUTCTWn1Jvk1v5uNFSBaWYz8hS9t9OY6tRoCO-IQAvD_BwE" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00052032/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/umiyamatikura.ja.html?label=New_Japanese_JA_JP_27025415665-yJjRRahgAyOzLYp6AnBN9wS619224290098%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-199487767465%3Alp20636%3Ali%3Adec%3Adm&amp;sid=d09eb3a48368814d763be073eddcc7a8&amp;gclid=CjwKCAjw857RBhAgEiwAI-1yKDmGqcfTMBRane7BGj31seOG8cW7hbXDhN1J-kUTAc4SoLCNTo4J_xoCqUoQAvD_BwE&amp;aid=318615&amp;ucfs=1&amp;arphpl=1&amp;dest_id=900050344&amp;dest_type=city&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=1&amp;hapos=1&amp;sr_order=popularity&amp;srpvid=bd91222552990086&amp;srepoch=1781067088&amp;from=searchresults" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FF385C;--ota-text:#fff" href="https://www.airbnb.jp/rooms/1196824037808405373?source_impression_id=p3_1781067061_P3fFZ8yTfEcVzJNx" target="_blank" rel="noopener nofollow">Airbnb<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://umiyama-chikura.com/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/umiyama_chikura/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">千葉県南房総市千倉町北朝夷1470-2<a href="https://www.google.com/maps/search/?api=1&query=UMIYAMA%20CHIKURA%20%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%97%E6%88%BF%E7%B7%8F%E5%B8%82%E5%8D%83%E5%80%89%E7%94%BA%E5%8C%97%E6%9C%9D%E5%A4%B71470-2" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=UMIYAMA%20CHIKURA%20%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%97%E6%88%BF%E7%B7%8F%E5%B8%82%E5%8D%83%E5%80%89%E7%94%BA%E5%8C%97%E6%9C%9D%E5%A4%B71470-2&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

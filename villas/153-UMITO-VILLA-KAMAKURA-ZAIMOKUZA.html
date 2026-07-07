@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://hotel.travel.rakuten.co.jp/hotelinfo/plan/196394?f_nen1=2026&amp;f_tuki1=07&amp;f_hi1=05&amp;f_nen2=2026&amp;f_tuki2=07&amp;f_hi2=06&amp;f_heya_su=1&amp;f_otona_su=2&amp;f_s1=0&amp;bookingSource=c1&amp;adType=1&amp;scid=we_hpa_xxxx&amp;scid=we_hpa_xxxx&amp;ifd=153269&amp;iasid=weg_trmd_travel-booking_&amp;ultra_advid=5582096529&amp;ultra_cid=22553915168&amp;ultra_agid=179994195056&amp;gad_source=0&amp;gad_campaignid=22553915168&amp;gbraid=0AAAAAD2UT8Uj-CHcJTCbw-Y8KPgG0tb4e&amp;gclid=Cj0KCQjwo_PRBhDNARIsAEcVALVdojiciqOJd-ji1x83DA-nLgyfIVlNIKv0Ux9p_8P4y-eP8jSTb-oaAjqREALw_wcB&amp;gclsrc=aw.ds#sort_kin_min&amp;tracking=&amp;saf_src=google_g&amp;saf_pt=&amp;saf_kw=&amp;saf_dv=&amp;saf_cam=22553915168&amp;saf_grp=179994195056&amp;saf_ad=752008724087&amp;account_id=5582096529&amp;saf_acc=5582096529" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00051946/?adcid=20757913357&amp;adgid=173842764214&amp;gclid=Cj0KCQjwo_PRBhDNARIsAEcVALUhmzKQ9RfGsekXn-mGk1o-jigmcEW9Wino_lbeDkHOaGy8BmrSuzYaAiXKEALw_wcB&amp;ikCo=google" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/umito-villa-kamakura-zaimokuza.ja.html?aid=311984&amp;label=umito-villa-kamakura-zaimokuza-HIIA1GLHwCcMjAmhJiqFZAS757443102391:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-2425910590079:lp1009303:li:dec:dm:ppccp=UmFuZG9tSVYkc2RlIyh9YbSsBl3MCvHsD8UKUHIRFxY&amp;sid=d7c8368027251ff7686409cb8cf4d4d5&amp;all_sr_blocks=1412237101_412967539_4_0_0&amp;checkin=2026-07-06&amp;checkout=2026-07-07&amp;dest_id=-231760&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=0&amp;hapos=1&amp;highlighted_blocks=1412237101_412967539_4_0_0&amp;hpos=1&amp;matching_block_id=1412237101_412967539_4_0_0&amp;no_rooms=1&amp;req_adults=2&amp;req_children=0&amp;room1=A,A&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=1412237101_412967539_4_0_0__25168000&amp;srepoch=1782440116&amp;srpvid=b1110fd5656a002d&amp;type=total&amp;ucfs=1&amp;" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/en-sg/umito-villa-kamakura-zaimokuza/hotel/kamakura-jp.html?cid=1844104&amp;ds=n/TwByPg8u2AAPTj" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#00355F;--ota-text:#fff" href="https://www.expedia.co.jp/Yokohama-Hotels-UMITO-VILLA-KAMAKURA-ZAIMOKUZA.h120072234.Hotel-Information?chkin=2026-07-05&amp;chkout=2026-07-06&amp;x_pwa=1&amp;rfrr=HSR&amp;pwa_ts=1782440013695&amp;referrerUrl=aHR0cHM6Ly93d3cuZXhwZWRpYS5jby5qcC9Ib3RlbC1TZWFyY2g%3D&amp;useRewards=false&amp;rm1=a2&amp;regionId=6048365&amp;destination=鎌倉市%2C+神奈川県%2C+日本&amp;destType=MARKET&amp;neighborhoodId=953234086368018432&amp;selected=120072234&amp;latLong=35.31923%2C139.546682&amp;mpo=EC&amp;sort=RECOMMENDED&amp;top_dp=208000&amp;top_cur=JPY&amp;mctc=10&amp;userIntent=&amp;selectedRoomType=327265470&amp;selectedRatePlan=404332413&amp;categorySearch=any_option&amp;searchId=14f7b89a-4536-4cbf-b3c6-cb76ff636fe1" target="_blank" rel="noopener nofollow">Expedia<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://hotel.umito.jp/kamakura-zaimokuza/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/umito_villa_kamakura/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の神奈川の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">神奈川県鎌倉市材木座5-10-44<a href="https://www.google.com/maps/search/?api=1&query=UMITO%20VILLA%20KAMAKURA%20ZAIMOKUZA%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E9%8E%8C%E5%80%89%E5%B8%82%E6%9D%90%E6%9C%A8%E5%BA%A75-10-44" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=UMITO%20VILLA%20KAMAKURA%20ZAIMOKUZA%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E9%8E%8C%E5%80%89%E5%B8%82%E6%9D%90%E6%9C%A8%E5%BA%A75-10-44&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の神奈川の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>

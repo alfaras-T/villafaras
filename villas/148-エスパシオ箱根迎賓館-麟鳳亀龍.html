@@ -24,11 +24,13 @@ header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
   .hero-block{grid-area:hero}
   .map-block{grid-area:map;position:sticky;top:70px}
   .right-block{grid-area:right}
+  .back-link{grid-area:back}
 }
+.back-link{display:block;margin-top:12px}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -85,7 +87,6 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-ota-label">空室・料金を探す</div>
         <div class="ota-grid"><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00003228/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/esupasio-xiang-gen-ying-bin-guan-lin-feng-gui-long-rin-poh-ki-ryu.ja.html?label=gog235jc-10CAsodUJBZXN1cGFzaW8teGlhbmctZ2VuLXlpbmctYmluLWd1YW4tbGluLWZlbmctZ3VpLWxvbmctcmluLXBvaC1raS1yeXVIFVgDaHWIAQGYATO4AQfIAQ3YAQPoAQH4AQGIAgGoAgG4AtTM89EGwAIB0gIkMmEwMjhhM2YtZmRmMC00N2U3LTk4YjMtMWU1NjQwNDE1ZmMx2AIB4AIB&amp;sid=d7c8368027251ff7686409cb8cf4d4d5&amp;aid=356980&amp;ucfs=1&amp;arphpl=1&amp;checkin=2026-07-06&amp;checkout=2026-07-07&amp;dest_id=-228233&amp;dest_type=city&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=1&amp;hapos=1&amp;sr_order=popularity&amp;srpvid=b6003b6b4c7a05ab&amp;srepoch=1782376027&amp;soh=1&amp;from=searchresults#no_availability_msg" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/ja-jp/espacio-the-hakone-geihinkan-rin-poh-ki-ryu/hotel/all/hakone-jp.html?countryId=3&amp;finalPriceView=2&amp;isShowMobileAppPrice=false&amp;cid=1833981&amp;numberOfBedrooms=&amp;familyMode=false&amp;adults=2&amp;children=0&amp;rooms=1&amp;maxRooms=0&amp;checkIn=2026-07-3&amp;isCalendarCallout=false&amp;childAges=&amp;numberOfGuest=0&amp;missingChildAges=false&amp;travellerType=1&amp;showReviewSubmissionEntry=false&amp;currencyCode=JPY&amp;isFreeOccSearch=false&amp;los=1&amp;searchrequestid=0310a545-0cd3-4e53-86f6-5d3a1475504b" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#00355F;--ota-text:#fff" href="https://www.expedia.co.jp/Hakone-Hotels-ESPACIO-HAKONE-GEIHINKAN-RIN-POH-KI-RYU.h103822942.Hotel-Information" target="_blank" rel="noopener nofollow">Expedia<span>で見る ↗</span></a></div>
         <div class="modal-links"><a class="official-link" href="https://houoh.jp" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/rinpoh_kiryu/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-        <a class="back-link" href="../index.html">← 他の神奈川の宿泊施設も見る</a>
       </div>
     </div>
     <div class="map-block">
@@ -93,6 +94,7 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
       <div class="modal-addr">神奈川県足柄下郡箱根町宮ノ下72<a href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%B9%E3%83%91%E3%82%B7%E3%82%AA%E7%AE%B1%E6%A0%B9%E8%BF%8E%E8%B3%93%E9%A4%A8%E3%80%80%E9%BA%9F%E9%B3%B3%E4%BA%80%E9%BE%8D%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E8%B6%B3%E6%9F%84%E4%B8%8B%E9%83%A1%E7%AE%B1%E6%A0%B9%E7%94%BA%E5%AE%AE%E3%83%8E%E4%B8%8B72" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=%E3%82%A8%E3%82%B9%E3%83%91%E3%82%B7%E3%82%AA%E7%AE%B1%E6%A0%B9%E8%BF%8E%E8%B3%93%E9%A4%A8%E3%80%80%E9%BA%9F%E9%B3%B3%E4%BA%80%E9%BE%8D%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E8%B6%B3%E6%9F%84%E4%B8%8B%E9%83%A1%E7%AE%B1%E6%A0%B9%E7%94%BA%E5%AE%AE%E3%83%8E%E4%B8%8B72&output=embed" loading="lazy"></iframe></div>
     </div>
+    <a class="back-link" href="../index.html">← 他の神奈川の宿泊施設も見る</a>
   </div>
 </div>
 <footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>
