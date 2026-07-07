@@ -184,6 +184,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-badge{position:absolute;bottom:12px;left:12px;font-size:11px;font-weight:700;padding:5px 13px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
+.modal-fav-icon{position:absolute;bottom:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--o1)}
 .modal-body{padding:22px 24px 24px}
 .modal-body h3{font-size:20px;font-weight:800;margin-bottom:4px;color:var(--ink)}
 .modal-addr{font-size:13px;color:var(--ink2);margin-bottom:12px;font-weight:600}
@@ -651,7 +652,7 @@ function resetFilters(silent){activeTags.clear();activePrefs.clear();showFavsOnl
 function updatePrice(){const v=+document.getElementById('priceRange').value;maxPrice=v;document.getElementById('priceVal').textContent=(v>=650000)?'上限なし':'～'+v.toLocaleString()+'円';applyFilters();}
 function heroGo(){applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function toggleFav(id,el){if(favs.has(id)){favs.delete(id);el.classList.remove('on');el.innerHTML=heartIcon(false);}else{favs.add(id);el.classList.add('on');el.innerHTML=heartIcon(true);}document.getElementById('favCount').textContent=favs.size;
-  const mf=document.getElementById('modalFav');if(mf&&+mf.dataset.id===id)mf.innerHTML=favs.has(id)?heartIcon(true)+' 気になるリストに追加済み':heartIcon(false)+' 気になるリストに追加';}
+  const mf=document.getElementById('modalFav');if(mf&&+mf.dataset.id===id)mf.innerHTML=heartIcon(favs.has(id));}
 function showFavs(){if(favs.size===0){alert('気になるヴィラのハートを押すと、ここにまとまります！');return;}showFavsOnly=!showFavsOnly;document.querySelector('.fab').style.opacity=showFavsOnly?1:.85;applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function lucky(){const pool=filtered.length?filtered:VILLAS;openModal(pool[Math.floor(Math.random()*pool.length)].id);}
 
@@ -670,7 +671,7 @@ function openModal(id){
     </div>`;
   const linksHTML=linksRowHTML(v);
   document.getElementById('modal').innerHTML=`
-    <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
+    <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="modal-fav-icon" id="modalFav" data-id="${id}" onclick="toggleFavFromModal(${id})">${heartIcon(isFav)}</button></div>
     <div class="modal-body">
       <h3>${v.name}</h3>
       <div class="pill-row">${pills}</div>
@@ -684,7 +685,6 @@ function openModal(id){
       <div class="modal-addr-label">所在地</div>
       <div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(v))}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(mapQuery(v))}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
-      <button class="modal-fav full" id="modalFav" data-id="${id}" onclick="toggleFavFromModal(${id})">${heartIcon(isFav)} ${isFav?'気になるリストに追加済み':'気になるリストに追加'}</button>
       <div class="modal-similar"><h4>条件が近いヴィラ</h4><div class="sim-row">${simHTML}</div></div>
     </div>`;
   document.getElementById('modalBg').classList.add('show');
@@ -694,7 +694,7 @@ function closeModal(){document.getElementById('modalBg').classList.remove('show'
 function toggleFavFromModal(id){
   if(favs.has(id))favs.delete(id);else favs.add(id);
   document.getElementById('favCount').textContent=favs.size;
-  const mf=document.getElementById('modalFav');mf.innerHTML=favs.has(id)?heartIcon(true)+' 気になるリストに追加済み':heartIcon(false)+' 気になるリストに追加';
+  const mf=document.getElementById('modalFav');mf.innerHTML=heartIcon(favs.has(id));
   // sync grid hearts
   applyFilters();
 }
