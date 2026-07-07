@@ -22,10 +22,13 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px;position:sticky;top:0;z-index:10}
 header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
-.layout{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start}
-@media (max-width:860px){.layout{grid-template-columns:1fr}}
-.col-left{position:sticky;top:70px}
-@media (max-width:860px){.col-left{position:static}}
+.layout{display:block}
+@media (min-width:861px){
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .hero-block{grid-area:hero}
+  .map-block{grid-area:map;position:sticky;top:70px}
+  .right-block{grid-area:right}
+}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -64,13 +67,10 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 <header><a href="../index.html">← villafaras（ヴィラファラス）一覧に戻る</a></header>
 <div class="wrap">
   <div class="layout">
-    <div class="col-left">
+    <div class="hero-block">
       <div class="modal-img"><img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=600&q=75" alt="VILLA　SUOMI" loading="eager"><span class="modal-badge" style="background:rgba(5,150,105,.9)">山梨</span></div>
-      <div class="modal-addr-label">所在地</div>
-      <div class="modal-addr">山梨県南都留郡山中湖村平野字向切詰506-704<a href="https://www.google.com/maps/search/?api=1&query=VILLA%E3%80%80SUOMI%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B9%B3%E9%87%8E%E5%AD%97%E5%90%91%E5%88%87%E8%A9%B0506-704" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=VILLA%E3%80%80SUOMI%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B9%B3%E9%87%8E%E5%AD%97%E5%90%91%E5%88%87%E8%A9%B0506-704&output=embed" loading="lazy"></iframe></div>
     </div>
-    <div class="col-right">
+    <div class="right-block">
       <div class="modal-body">
         <h1>VILLA　SUOMI</h1>
         <div class="pill-row"><span class="pill" style="background:#FEF3C7;color:#92400E">サウナ</span><span class="pill" style="background:#FCE7F3;color:#9D174D">BBQ</span><span class="pill" style="background:#E0E7FF;color:#3730A3">大人数</span><span class="pill" style="background:#DBEAFE;color:#1E40AF">湖</span><span class="pill" style="background:#DCFCE7;color:#166534">山</span></div>
@@ -87,6 +87,11 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-links"><a class="official-link" href="https://villa-suomi.jp" target="_blank" rel="noopener nofollow">公式サイト ↗</a></div>
         <a class="back-link" href="../index.html">← 他の山梨の宿泊施設も見る</a>
       </div>
+    </div>
+    <div class="map-block">
+      <div class="modal-addr-label">所在地</div>
+      <div class="modal-addr">山梨県南都留郡山中湖村平野字向切詰506-704<a href="https://www.google.com/maps/search/?api=1&query=VILLA%E3%80%80SUOMI%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B9%B3%E9%87%8E%E5%AD%97%E5%90%91%E5%88%87%E8%A9%B0506-704" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=VILLA%E3%80%80SUOMI%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B9%B3%E9%87%8E%E5%AD%97%E5%90%91%E5%88%87%E8%A9%B0506-704&output=embed" loading="lazy"></iframe></div>
     </div>
   </div>
 </div>

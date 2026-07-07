@@ -22,10 +22,13 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px;position:sticky;top:0;z-index:10}
 header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
-.layout{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start}
-@media (max-width:860px){.layout{grid-template-columns:1fr}}
-.col-left{position:sticky;top:70px}
-@media (max-width:860px){.col-left{position:static}}
+.layout{display:block}
+@media (min-width:861px){
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .hero-block{grid-area:hero}
+  .map-block{grid-area:map;position:sticky;top:70px}
+  .right-block{grid-area:right}
+}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -64,13 +67,10 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 <header><a href="../index.html">← villafaras（ヴィラファラス）一覧に戻る</a></header>
 <div class="wrap">
   <div class="layout">
-    <div class="col-left">
+    <div class="hero-block">
       <div class="modal-img"><img src="https://www.amaovilla.com/wp-content/uploads/2022/12/avik_eyecatch.png" alt="THE GLAMPING 箱根十国峠" loading="eager"><span class="modal-badge" style="background:rgba(225,29,72,.9)">静岡</span></div>
-      <div class="modal-addr-label">所在地</div>
-      <div class="modal-addr">静岡県熱海市伊豆山字日金山1146-6<a href="https://www.google.com/maps/search/?api=1&query=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6&output=embed" loading="lazy"></iframe></div>
     </div>
-    <div class="col-right">
+    <div class="right-block">
       <div class="modal-body">
         <h1>THE GLAMPING 箱根十国峠</h1>
         <div class="pill-row"><span class="pill" style="background:#FEF3C7;color:#92400E">サウナ</span><span class="pill" style="background:#D1FAE5;color:#065F46">ペットOK</span><span class="pill" style="background:#FCE7F3;color:#9D174D">BBQ</span><span class="pill" style="background:#DCFCE7;color:#166534">山</span></div>
@@ -87,6 +87,11 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-links"><a class="official-link" href="https://www.jukkoku-cable.jp/glamping/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://x.com/glampingjukkoku" style="background:#1DA1F2;color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X(旧Twitter) ↗</span></a><a class="sns-link" href="https://www.instagram.com/theglamping_hakonejukkokutouge/" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
         <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
       </div>
+    </div>
+    <div class="map-block">
+      <div class="modal-addr-label">所在地</div>
+      <div class="modal-addr">静岡県熱海市伊豆山字日金山1146-6<a href="https://www.google.com/maps/search/?api=1&query=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=THE%20GLAMPING%20%E7%AE%B1%E6%A0%B9%E5%8D%81%E5%9B%BD%E5%B3%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%86%B1%E6%B5%B7%E5%B8%82%E4%BC%8A%E8%B1%86%E5%B1%B1%E5%AD%97%E6%97%A5%E9%87%91%E5%B1%B11146-6&output=embed" loading="lazy"></iframe></div>
     </div>
   </div>
 </div>

@@ -22,10 +22,13 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px;position:sticky;top:0;z-index:10}
 header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
-.layout{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start}
-@media (max-width:860px){.layout{grid-template-columns:1fr}}
-.col-left{position:sticky;top:70px}
-@media (max-width:860px){.col-left{position:static}}
+.layout{display:block}
+@media (min-width:861px){
+  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right";gap:36px;align-items:start}
+  .hero-block{grid-area:hero}
+  .map-block{grid-area:map;position:sticky;top:70px}
+  .right-block{grid-area:right}
+}
 .modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
 .modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
@@ -64,13 +67,10 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
 <header><a href="../index.html">← villafaras（ヴィラファラス）一覧に戻る</a></header>
 <div class="wrap">
   <div class="layout">
-    <div class="col-left">
+    <div class="hero-block">
       <div class="modal-img"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=600&q=75" alt="GIFTHOUSE 館山 那古海岸" loading="eager"><span class="modal-badge" style="background:rgba(217,119,6,.9)">千葉</span></div>
-      <div class="modal-addr-label">所在地</div>
-      <div class="modal-addr">千葉県館山市那古1672-183<a href="https://www.google.com/maps/search/?api=1&query=GIFTHOUSE%20%E9%A4%A8%E5%B1%B1%20%E9%82%A3%E5%8F%A4%E6%B5%B7%E5%B2%B8%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%A4%A8%E5%B1%B1%E5%B8%82%E9%82%A3%E5%8F%A41672-183" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=GIFTHOUSE%20%E9%A4%A8%E5%B1%B1%20%E9%82%A3%E5%8F%A4%E6%B5%B7%E5%B2%B8%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%A4%A8%E5%B1%B1%E5%B8%82%E9%82%A3%E5%8F%A41672-183&output=embed" loading="lazy"></iframe></div>
     </div>
-    <div class="col-right">
+    <div class="right-block">
       <div class="modal-body">
         <h1>GIFTHOUSE 館山 那古海岸</h1>
         <div class="pill-row"><span class="pill" style="background:#FEF3C7;color:#92400E">サウナ</span><span class="pill" style="background:#EDE9FE;color:#4C1D95">プール</span><span class="pill" style="background:#CFFAFE;color:#155E75">海</span></div>
@@ -87,6 +87,11 @@ footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
         <div class="modal-links"><a class="official-link" href="https://nagokaigan.gifthouse.jp/nagokaigan/" target="_blank" rel="noopener nofollow">公式サイト ↗</a></div>
         <a class="back-link" href="../index.html">← 他の千葉の宿泊施設も見る</a>
       </div>
+    </div>
+    <div class="map-block">
+      <div class="modal-addr-label">所在地</div>
+      <div class="modal-addr">千葉県館山市那古1672-183<a href="https://www.google.com/maps/search/?api=1&query=GIFTHOUSE%20%E9%A4%A8%E5%B1%B1%20%E9%82%A3%E5%8F%A4%E6%B5%B7%E5%B2%B8%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%A4%A8%E5%B1%B1%E5%B8%82%E9%82%A3%E5%8F%A41672-183" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=GIFTHOUSE%20%E9%A4%A8%E5%B1%B1%20%E9%82%A3%E5%8F%A4%E6%B5%B7%E5%B2%B8%20%E5%8D%83%E8%91%89%E7%9C%8C%E9%A4%A8%E5%B1%B1%E5%B8%82%E9%82%A3%E5%8F%A41672-183&output=embed" loading="lazy"></iframe></div>
     </div>
   </div>
 </div>
