@@ -588,7 +588,7 @@ function linksRowHTML(v){
 }
 function cardHTML(v){
   const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
-  let feat=v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
+  let feat=v.desc||v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
   const isFav=favs.has(v.id);
   return `<div class="card" onclick="openModal(${v.id})"><div class="card-img"><img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async"><span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn" onclick="event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></div>`;
 }
