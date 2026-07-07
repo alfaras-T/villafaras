@@ -671,8 +671,7 @@ function openModal(id){
   document.getElementById('modal').innerHTML=`
     <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span></div>
     <div class="modal-body">
-      <h3>${v.name}</h3><div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(v))}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(mapQuery(v))}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
+      <h3>${v.name}</h3>
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.desc||v.feature||''}</div>
       ${factsHTML}
@@ -681,6 +680,8 @@ function openModal(id){
       <div class="modal-ota-label">空室・料金を探す</div>
       <div class="ota-grid">${otaButtonsHTML(v)}</div>
       ${linksHTML}
+      <div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(v))}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(mapQuery(v))}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
       <button class="modal-fav full" id="modalFav" data-id="${id}" onclick="toggleFavFromModal(${id})">${heartIcon(isFav)} ${isFav?'気になるリストに追加済み':'気になるリストに追加'}</button>
       <div class="modal-similar"><h4>条件が近いヴィラ</h4><div class="sim-row">${simHTML}</div></div>
     </div>`;
