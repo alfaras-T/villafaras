@@ -632,7 +632,7 @@ function filterByTag(t){resetFilters(true);activeTags.add(t);document.querySelec
 function heartIcon(filled){return `<svg width="16" height="16" viewBox="0 0 24 24" fill="${filled?'currentColor':'none'}" stroke="currentColor" stroke-width="2" style="vertical-align:-3px"><path d="M12 21s-7.5-4.35-10.5-9.5C-0.5 7.5 2 3.5 6 3.5c2.5 0 4.5 1.5 6 3.5 1.5-2 3.5-3.5 6-3.5 4 0 6.5 4 4.5 8-3 5.15-10.5 9.5-10.5 9.5z"/></svg>`;}
 function mapQuery(v){
   if(v.geo)return `${v.geo.lat},${v.geo.lng}`;
-  return `${v.name} ${v.addr}`;
+  return v.addr;
 }
 function shuffleArray(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function filterByFeature(tags){
