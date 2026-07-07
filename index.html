@@ -187,6 +187,8 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .modal-fav-icon{position:absolute;bottom:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--o1)}
 .modal-body{padding:22px 24px 24px}
 .modal-body h3{font-size:20px;font-weight:800;margin-bottom:4px;color:var(--ink)}
+.newtab-link{font-size:10px;font-weight:500;color:var(--muted);text-decoration:none;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.newtab-link:hover{color:var(--o1)}
 .modal-addr{font-size:13px;color:var(--ink2);margin-bottom:12px;font-weight:600}
 .modal-addr-label{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.02em;margin:14px 0 4px}
 .map-link{margin-left:8px;font-size:11px;color:var(--o1);font-weight:700;text-decoration:none;white-space:nowrap}
@@ -675,7 +677,7 @@ function openModal(id){
   document.getElementById('modal').innerHTML=`
     <div class="modal-img"><img src="${v.img}" alt="${v.name}" loading="eager" decoding="async"><button class="modal-close" onclick="closeModal()">×</button><span class="modal-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="modal-fav-icon" id="modalFav" data-id="${id}" onclick="toggleFavFromModal(${id})">${heartIcon(isFav)}</button></div>
     <div class="modal-body">
-      <h3>${v.name}</h3>
+      <h3>${v.name}<a class="newtab-link" href="villas/${VILLA_SLUGS[id]||''}.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">新しいタブで開く ↗</a></h3>
       <div class="pill-row">${pills}</div>
       <div class="modal-feat">${v.desc||v.feature||''}</div>
       ${factsHTML}
