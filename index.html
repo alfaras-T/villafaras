@@ -247,7 +247,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .quiz-opt:hover{border-color:var(--o1);background:var(--o-pale);transform:translateY(-2px)}
 .quiz-prog{display:flex;gap:6px;justify-content:center;margin-top:20px}
 .quiz-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}.quiz-dot.on{background:var(--o1)}
-footer{background:linear-gradient(135deg,var(--ink),#3D2818);color:rgba(255,255,255,.7);text-align:center;padding:48px 20px;font-size:13px;line-height:2;margin-top:40px;word-break:keep-all;overflow-wrap:break-word}
+footer{background:linear-gradient(135deg,var(--ink),#3D2818);color:rgba(255,255,255,.7);text-align:center;padding:48px 20px;font-size:11.5px;line-height:1.9;margin-top:40px;word-break:keep-all;overflow-wrap:break-word}
 .foot-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--o4);letter-spacing:3px;margin-bottom:6px}
 footer a{color:var(--o4);text-decoration:none}
 @media(max-width:700px){.mini-intro{flex-direction:column;text-align:center}.mini-intro a{margin:0 auto}.price-slider input[type=range]{width:120px}}
@@ -284,8 +284,8 @@ footer a{color:var(--o4);text-decoration:none}
   <div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div>
   <div class="hero-content">
     <div class="hero-badge">villafaras — 関東甲信越静</div>
-    <h1>週末は、<br>とっておきのヴィラへ。</h1>
-    <p>サウナ・温泉・絶景・ペット可…気分で選べる厳選286施設。<br>あなたの「行きたい」がきっと見つかる。</p>
+    <h1>週末は、<br><span style="white-space:nowrap">とっておきのヴィラへ。</span></h1>
+    <p>サウナ・温泉・絶景・ペット可…気分で選べる<span style="white-space:nowrap">厳選286施設。</span><br>あなたの「行きたい」がきっと見つかる。</p>
     <div class="hero-search"><input type="text" id="heroSearch" placeholder="エリア・施設名・「サウナ」などで検索" onkeydown="if(event.key==='Enter')heroGo()"><button onclick="heroGo()">探す</button></div>
     <button class="hero-quiz-btn" onclick="openQuiz()">30秒診断であなたにぴったりのヴィラを探す</button>
     <div class="hero-stats">
