@@ -33,7 +33,7 @@
 --gold:#C9A84C;--gold2:#E5C76B;--lux-black:#0E0E0E;--lux-d:#161616}
 body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
 .topbar{background:linear-gradient(90deg,var(--o1),var(--o2));color:white;padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:14px;position:sticky;top:0;z-index:300;font-size:13px;font-weight:500}
-.promo-notice{background:#F4EDE4;color:var(--muted);text-align:center;padding:5px 16px;font-size:11px;letter-spacing:.2px}
+.promo-notice{background:#F4EDE4;color:var(--muted);text-align:center;padding:5px 16px;font-size:11px;letter-spacing:.2px;word-break:keep-all;overflow-wrap:break-word}
 .topbar a{background:white;color:var(--o1);padding:5px 16px;border-radius:30px;text-decoration:none;font-weight:700;font-size:12px;transition:transform .15s}
 .topbar a:hover{transform:scale(1.05)}
 .hero{position:relative;overflow:hidden;padding:70px 24px 90px;text-align:center;background:linear-gradient(135deg,#FF6B2B 0%,#FF8A3D 45%,#FFB347 80%,#FFD166 100%)}
@@ -43,8 +43,8 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
 .hero-content{position:relative;z-index:2;max-width:740px;margin:0 auto}
 .hero-badge{display:inline-block;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);color:white;font-size:12px;font-weight:700;letter-spacing:2px;padding:7px 22px;border-radius:30px;margin-bottom:22px;border:1px solid rgba(255,255,255,.3)}
-.hero h1{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(34px,5.5vw,60px);color:white;line-height:1.12;margin-bottom:18px;font-weight:800;text-shadow:0 4px 20px rgba(180,60,0,.25)}
-.hero p{color:rgba(255,255,255,.95);font-size:16px;margin-bottom:34px;line-height:1.8}
+.hero h1{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(34px,5.5vw,60px);color:white;line-height:1.12;margin-bottom:18px;font-weight:800;text-shadow:0 4px 20px rgba(180,60,0,.25);word-break:keep-all;overflow-wrap:break-word}
+.hero p{color:rgba(255,255,255,.95);font-size:16px;margin-bottom:34px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
 .hero-search{display:flex;background:white;border-radius:50px;padding:7px;max-width:520px;margin:0 auto 18px;box-shadow:0 12px 40px rgba(180,60,0,.25)}
 .hero-search input{flex:1;min-width:0;border:none;outline:none;padding:12px 22px;font-size:15px;font-family:inherit;border-radius:50px;color:var(--ink);background:transparent}
 .hero-search button{flex-shrink:0;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:12px 32px;border-radius:50px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:transform .15s}
@@ -247,7 +247,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .quiz-opt:hover{border-color:var(--o1);background:var(--o-pale);transform:translateY(-2px)}
 .quiz-prog{display:flex;gap:6px;justify-content:center;margin-top:20px}
 .quiz-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}.quiz-dot.on{background:var(--o1)}
-footer{background:linear-gradient(135deg,var(--ink),#3D2818);color:rgba(255,255,255,.7);text-align:center;padding:48px 20px;font-size:13px;line-height:2;margin-top:40px}
+footer{background:linear-gradient(135deg,var(--ink),#3D2818);color:rgba(255,255,255,.7);text-align:center;padding:48px 20px;font-size:13px;line-height:2;margin-top:40px;word-break:keep-all;overflow-wrap:break-word}
 .foot-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--o4);letter-spacing:3px;margin-bottom:6px}
 footer a{color:var(--o4);text-decoration:none}
 @media(max-width:700px){.mini-intro{flex-direction:column;text-align:center}.mini-intro a{margin:0 auto}.price-slider input[type=range]{width:120px}}
