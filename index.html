@@ -472,7 +472,7 @@ const PREF_JP={"yamanashi":"山梨","kanagawa":"神奈川","saitama":"埼玉","c
 const TAG_LABELS={"sauna":"サウナ","onsen":"温泉","rotenburo":"露天風呂","pet":"ペットOK","pool":"プール","bbq":"BBQ","group":"大人数","sea":"海","lake":"湖","river":"川","mountain":"山"};
 const BADGE=v=>'badge-'+v;
 let activeTags=new Set(),activePrefs=new Set(),favs=new Set(),shownCount=0,filtered=[],showFavsOnly=false,maxPrice=650000;
-const PAGE=24;
+const PAGE=window.innerWidth<=700?8:24;
 /* ===================================================================
    ▼▼▼ OTAアフィリエイト設定 ▼▼▼
    各施設の「予約・空室を探す」ボタンから飛ぶ先です。
