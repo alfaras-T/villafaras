@@ -29,6 +29,13 @@
     return div.innerHTML;
   }
 
+  function formatDate(isoString) {
+    if (!isoString) return '';
+    var d = new Date(isoString);
+    if (isNaN(d.getTime())) return '';
+    return d.getFullYear() + '\u5e74' + (d.getMonth() + 1) + '\u6708' + d.getDate() + '\u65e5';
+  }
+
   function renderStars(rating) {
     var full = Math.round(rating);
     var html = '';
@@ -68,7 +75,8 @@
         reviews.push({
           name: f.name && f.name.stringValue ? f.name.stringValue : '\u533f\u540d',
           rating: f.rating && f.rating.integerValue ? parseInt(f.rating.integerValue, 10) : 0,
-          comment: f.comment && f.comment.stringValue ? f.comment.stringValue : ''
+          comment: f.comment && f.comment.stringValue ? f.comment.stringValue : '',
+          createdAt: f.createdAt && f.createdAt.timestampValue ? f.createdAt.timestampValue : ''
         });
       }
       onDone(null, reviews);
@@ -160,6 +168,7 @@
               '<div class="review-item-head">' +
                 '<span class="review-item-stars">' + renderStars(r.rating) + '</span>' +
                 '<span class="review-item-name">' + escapeHtml(r.name) + '</span>' +
+                '<span class="review-item-date">' + formatDate(r.createdAt) + '</span>' +
               '</div>' +
               '<div class="review-item-comment">' + escapeHtml(r.comment).replace(/\n/g, '<br>') + '</div>' +
             '</div>';
