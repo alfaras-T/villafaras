@@ -289,6 +289,9 @@
     for (var i = 0; i < containers.length; i++) {
       initReviewWidget(containers[i]);
     }
+    if (document.querySelectorAll('[data-rating-for]').length > 0) {
+      window.villafarasApplyCardRatings();
+    }
   }
 
   if (document.readyState === 'loading') {
