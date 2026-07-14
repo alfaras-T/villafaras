@@ -149,6 +149,10 @@
     });
   }
 
+  window.villafarasGetRatingsMap = function (cb) {
+    loadAllRatings(cb);
+  };
+
   window.villafarasApplyCardRatings = function () {
     loadAllRatings(function (map) {
       var els = document.querySelectorAll('[data-rating-for]');
