@@ -683,7 +683,6 @@ function openModal(id){
       <div class="card-rating" data-rating-for="${v.id}"></div>
       <div class="modal-feat">${v.desc||v.feature||''}</div>
       ${factsHTML}
-      ${saunaSpecHTML(v)}
       ${v.pricePerPerson==='−'?`<div class="modal-price">−</div>`:v.pricePerPerson?`<div class="modal-price">${v.pricePerPerson}<span class="tilde"> ~ </span><span>/ 人</span></div>`:`<div class="modal-price">${v.price}<span class="tilde"> ~ </span><span>/ 棟泊</span></div>`}
       <div class="modal-notice">※掲載情報は2026年7月調査時点のものです。</div>
       <div class="modal-ota-label">空室・料金を探す</div>
@@ -691,6 +690,7 @@ function openModal(id){
       ${linksHTML}
       <div class="modal-addr-label">所在地</div>
       <div class="modal-addr">${v.addr}<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery(v))}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">大きな地図で見る ↗</a></div>
+      ${saunaSpecHTML(v)}
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=${encodeURIComponent(mapQuery(v))}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onclick="event.stopPropagation()"></iframe></div>
       <div class="review-widget" data-villa-id="${v.id}"></div>
       <div class="modal-similar"><h4>条件が近いヴィラ</h4><div class="sim-row">${simHTML}</div></div>
