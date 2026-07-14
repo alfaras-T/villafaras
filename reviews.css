@@ -22,3 +22,7 @@
 .review-form-msg{margin-top:10px;font-size:13px;min-height:16px}
 .review-form-msg-error{color:#BE123C}
 .review-form-msg-success{color:#15803D}
+.card-rating{display:none;align-items:center;gap:4px;margin:2px 0 4px;font-size:12px}
+.card-rating-stars{color:var(--o1,#FF6B2B);font-size:12px;letter-spacing:1px}
+.card-rating-num{font-weight:700;color:var(--ink,#2A1A10)}
+.card-rating-count{color:var(--muted,#A88C78)}
