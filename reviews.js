@@ -177,6 +177,18 @@
     var summaryEl = document.createElement('div');
     summaryEl.className = 'review-summary';
 
+    var sortWrap = document.createElement('div');
+    sortWrap.className = 'review-sort-wrap';
+    sortWrap.innerHTML =
+      '<label class="review-sort-label">\u4e26\u3079\u66ff\u3048</label>' +
+      '<select class="review-sort-select">' +
+        '<option value="new">\u65b0\u3057\u3044\u9806</option>' +
+        '<option value="old">\u53e4\u3044\u9806</option>' +
+        '<option value="rating_high">\u8a55\u4fa1\u306e\u9ad8\u3044\u9806</option>' +
+        '<option value="rating_low">\u8a55\u4fa1\u306e\u4f4e\u3044\u9806</option>' +
+      '</select>';
+    sortWrap.style.display = 'none';
+
     var listEl = document.createElement('div');
     listEl.className = 'review-list';
     listEl.innerHTML = '<div class="review-loading">\u53e3\u30b3\u30df\u3092\u8aad\u307f\u8fbc\u307f\u4e2d...</div>';
@@ -207,18 +219,59 @@
       '<div class="review-form-msg"></div>';
 
     container.appendChild(summaryEl);
+    container.appendChild(sortWrap);
     container.appendChild(listEl);
     container.appendChild(formWrap);
+
+    var currentReviews = [];
+
+    function sortReviews(reviews, sortKey) {
+      var arr = reviews.slice();
+      if (sortKey === 'old') {
+        arr.sort(function (a, b) { return (a.createdAt || '') < (b.createdAt || '') ? -1 : 1; });
+      } else if (sortKey === 'rating_high') {
+        arr.sort(function (a, b) { return b.rating - a.rating; });
+      } else if (sortKey === 'rating_low') {
+        arr.sort(function (a, b) { return a.rating - b.rating; });
+      } else {
+        arr.sort(function (a, b) { return (a.createdAt || '') < (b.createdAt || '') ? 1 : -1; });
+      }
+      return arr;
+    }
+
+    function renderList(reviews) {
+      var html = '';
+      for (var j = 0; j < reviews.length; j++) {
+        var r = reviews[j];
+        html +=
+          '<div class="review-item">' +
+            '<div class="review-item-head">' +
+              '<span class="review-item-stars">' + renderStars(r.rating) + '</span>' +
+              '<span class="review-item-name">' + escapeHtml(r.name) + '</span>' +
+              '<span class="review-item-date">' + formatDate(r.createdAt) + '</span>' +
+            '</div>' +
+            '<div class="review-item-comment">' + escapeHtml(r.comment).replace(/\n/g, '<br>') + '</div>' +
+          '</div>';
+      }
+      listEl.innerHTML = html;
+    }
+
+    var sortSelect = sortWrap.querySelector('.review-sort-select');
+    sortSelect.addEventListener('change', function () {
+      renderList(sortReviews(currentReviews, sortSelect.value));
+    });
 
     function loadAndRender() {
       fetchReviews(villaId, function (err, reviews) {
         if (err) {
           listEl.innerHTML = '<div class="review-empty">\u53e3\u30b3\u30df\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002</div>';
           summaryEl.innerHTML = '';
+          sortWrap.style.display = 'none';
           return;
         }
         if (reviews.length === 0) {
           summaryEl.innerHTML = '';
+          sortWrap.style.display = 'none';
           listEl.innerHTML = '<div class="review-empty">\u307e\u3060\u53e3\u30b3\u30df\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u6700\u521d\u306e\u53e3\u30b3\u30df\u3092\u6295\u7a3f\u3057\u3066\u307f\u307e\u305b\u3093\u304b\uff1f</div>';
           return;
         }
@@ -232,20 +285,10 @@
           '<span class="review-avg-num">' + avg.toFixed(1) + '</span>' +
           '<span class="review-count">(' + reviews.length + '\u4ef6\u306e\u53e3\u30b3\u30df)</span>';
 
-        var html = '';
-        for (var j = 0; j < reviews.length; j++) {
-          var r = reviews[j];
-          html +=
-            '<div class="review-item">' +
-              '<div class="review-item-head">' +
-                '<span class="review-item-stars">' + renderStars(r.rating) + '</span>' +
-                '<span class="review-item-name">' + escapeHtml(r.name) + '</span>' +
-                '<span class="review-item-date">' + formatDate(r.createdAt) + '</span>' +
-              '</div>' +
-              '<div class="review-item-comment">' + escapeHtml(r.comment).replace(/\n/g, '<br>') + '</div>' +
-            '</div>';
-        }
-        listEl.innerHTML = html;
+        currentReviews = reviews;
+        sortWrap.style.display = reviews.length > 1 ? 'flex' : 'none';
+        sortSelect.value = 'new';
+        renderList(sortReviews(currentReviews, 'new'));
       });
     }
 
