@@ -287,12 +287,16 @@
   function init() {
     var containers = document.querySelectorAll('.review-widget');
     for (var i = 0; i < containers.length; i++) {
+      if (containers[i].getAttribute('data-review-inited') === '1') continue;
+      containers[i].setAttribute('data-review-inited', '1');
       initReviewWidget(containers[i]);
     }
     if (document.querySelectorAll('[data-rating-for]').length > 0) {
       window.villafarasApplyCardRatings();
     }
   }
+
+  window.villafarasInitReviews = init;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
