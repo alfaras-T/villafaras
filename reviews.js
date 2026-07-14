@@ -98,6 +98,78 @@
     xhrRequest('POST', url, body, onDone);
   }
 
+  var ratingsState = { data: {}, ready: false, loading: false, callbacks: [] };
+
+  function loadAllRatings(cb) {
+    if (ratingsState.ready) {
+      cb(ratingsState.data);
+      return;
+    }
+    ratingsState.callbacks.push(cb);
+    if (ratingsState.loading) return;
+    ratingsState.loading = true;
+
+    var url = FIRESTORE_BASE + ':runQuery?key=' + FIREBASE_API_KEY;
+    var body = {
+      structuredQuery: {
+        from: [{ collectionId: 'reviews' }],
+        where: {
+          fieldFilter: { field: { fieldPath: 'approved' }, op: 'EQUAL', value: { booleanValue: true } }
+        }
+      }
+    };
+    xhrRequest('POST', url, body, function (err, data) {
+      var totals = {};
+      if (!err && data) {
+        for (var i = 0; i < data.length; i++) {
+          var doc = data[i].document;
+          if (!doc || !doc.fields) continue;
+          var f = doc.fields;
+          var vid = f.villaId && f.villaId.stringValue ? f.villaId.stringValue : null;
+          var rating = f.rating && f.rating.integerValue ? parseInt(f.rating.integerValue, 10) : 0;
+          if (!vid) continue;
+          if (!totals[vid]) totals[vid] = { total: 0, count: 0 };
+          totals[vid].total += rating;
+          totals[vid].count += 1;
+        }
+      }
+      var finalMap = {};
+      for (var k in totals) {
+        if (!totals.hasOwnProperty(k)) continue;
+        finalMap[k] = { avg: totals[k].total / totals[k].count, count: totals[k].count };
+      }
+      ratingsState.data = finalMap;
+      ratingsState.ready = true;
+      ratingsState.loading = false;
+      var cbs = ratingsState.callbacks;
+      ratingsState.callbacks = [];
+      for (var j = 0; j < cbs.length; j++) {
+        cbs[j](finalMap);
+      }
+    });
+  }
+
+  window.villafarasApplyCardRatings = function () {
+    loadAllRatings(function (map) {
+      var els = document.querySelectorAll('[data-rating-for]');
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var vid = el.getAttribute('data-rating-for');
+        var info = map[vid];
+        if (info) {
+          el.innerHTML =
+            '<span class="card-rating-stars">' + renderStars(info.avg) + '</span>' +
+            '<span class="card-rating-num">' + info.avg.toFixed(1) + '</span>' +
+            '<span class="card-rating-count">(' + info.count + ')</span>';
+          el.style.display = 'flex';
+        } else {
+          el.innerHTML = '';
+          el.style.display = 'none';
+        }
+      }
+    });
+  };
+
   function initReviewWidget(container) {
     var villaId = container.getAttribute('data-villa-id');
     if (!villaId) return;
