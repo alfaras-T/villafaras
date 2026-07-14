@@ -273,7 +273,7 @@ footer a{color:var(--o4);text-decoration:none}
 .feat-card-body strong{color:#fff;font-size:13.5px;font-weight:800;line-height:1.35;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .feat-card-10{position:absolute;top:0;right:0;z-index:3;background:var(--o4);color:var(--ink);font-family:'Poppins',sans-serif;font-size:11px;font-weight:800;padding:3px 11px 4px;border-bottom-left-radius:13px;box-shadow:-2px 2px 6px rgba(0,0,0,.12)}
 @media(max-width:700px){.feat-rail-wrap{margin-top:16px}.feat-rail{grid-template-columns:repeat(2,1fr);gap:8px}.feat-card{height:72px;border-radius:11px}.feat-card-body{padding:8px 10px}.feat-card-tag{font-size:8.5px;padding:2px 7px}.feat-card-body strong{font-size:11px;line-height:1.25}.feat-card-10{font-size:9px;padding:2px 8px 3px}.feat-rail-title{font-size:14px}}
-</style></head><body>
+</style><link rel="stylesheet" href="reviews.css"></head><body>
 
 <!-- ▼▼▼【将来の広告枠】9月以降、ここにALFARASなどへの誘導バナー（リンク付き）を設置できます ▼▼▼ -->
 <div class="topbar"><span>関東甲信越静｜サウナ・温泉・絶景で選ぶ厳選ヴィラガイド</span></div>
@@ -557,7 +557,7 @@ function cardHTML(v){
   let feat=v.desc||v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
   const isFav=favs.has(v.id);
   const slug=VILLA_SLUGS[v.id]||'';
-  return `<a class="card" href="villas/${slug}.html" onclick="event.preventDefault();openModal(${v.id})"><div class="card-img">${v.img?`<img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async">`:`<div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>`}<span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.preventDefault();event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn" onclick="event.preventDefault();event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></a>`;
+  return `<a class="card" href="villas/${slug}.html" onclick="event.preventDefault();openModal(${v.id})"><div class="card-img">${v.img?`<img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async">`:`<div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>`}<span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.preventDefault();event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="card-rating" data-rating-for="${v.id}"></div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn" onclick="event.preventDefault();event.stopPropagation();openModal(${v.id})">詳細・予約</span></div></div></a>`;
 }
 function applyFilters(){
   const sort=document.getElementById('sortSelect').value;
@@ -592,6 +592,7 @@ function loadMore(){
   if(filtered.length===0)html='<div class="empty">条件に合うヴィラが見つかりませんでした。条件を変えてお試しください。</div>';
   grid.insertAdjacentHTML('beforeend',html);shownCount+=slice.length;
   document.getElementById('loadMore').style.display=shownCount<filtered.length?'block':'none';
+  if(window.villafarasApplyCardRatings)window.villafarasApplyCardRatings();
 }
 function toggleChip(el){const t=el.dataset.tag;if(activeTags.has(t)){activeTags.delete(t);el.classList.remove('on');}else{activeTags.add(t);el.classList.add('on');}applyFilters();}
 function togglePrefChip(el){const p=el.dataset.pref;if(activePrefs.has(p)){activePrefs.delete(p);el.classList.remove('on');}else{activePrefs.add(p);el.classList.add('on');}applyFilters();}
@@ -733,6 +734,7 @@ try{
   }
 }catch(e){}
 </script>
+<script src="reviews.js"></script>
 </body>
 <!-- redeploy -->
 </html>
