@@ -9,6 +9,7 @@
 .review-item-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
 .review-item-stars{color:var(--o1,#FF6B2B);font-size:14px}
 .review-item-name{font-size:13px;font-weight:700;color:var(--ink2,#5C4434)}
+.review-item-date{font-size:12px;color:var(--muted,#A88C78);margin-left:auto}
 .review-item-comment{font-size:14px;color:var(--ink,#2A1A10);line-height:1.7;white-space:pre-wrap;word-break:break-word}
 .review-form-wrap{background:var(--cream,#FFFBF7);border:1px solid var(--border,#F0E2D5);border-radius:14px;padding:18px}
 .review-form-title{font-size:15px;font-weight:700;margin-bottom:12px;color:var(--ink,#2A1A10)}
