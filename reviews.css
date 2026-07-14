@@ -4,6 +4,9 @@
 .review-avg-num{font-weight:700;font-size:16px;color:var(--ink,#2A1A10)}
 .review-count{font-size:13px;color:var(--muted,#A88C78)}
 .review-list{margin-bottom:24px}
+.review-sort-wrap{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.review-sort-label{font-size:12px;color:var(--ink2,#5C4434)}
+.review-sort-select{padding:6px 10px;border:1px solid var(--border,#F0E2D5);border-radius:8px;font-size:13px;font-family:inherit;background:var(--white,#FFF);color:var(--ink,#2A1A10);-webkit-appearance:none;appearance:none}
 .review-empty,.review-loading{font-size:14px;color:var(--muted,#A88C78);padding:12px 0}
 .review-item{padding:14px 0;border-bottom:1px solid var(--border,#F0E2D5)}
 .review-item-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
