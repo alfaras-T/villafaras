@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜villafaras（ヴィラファラス）</title>
+<meta name="description" content="villafaras（ヴィラファラス）へのご質問・ご要望はこちらからお気軽にお問い合わせください。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF}
+body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
+header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px}
+header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
+.hero{background:linear-gradient(135deg,var(--o1),var(--o3));padding:44px 24px 36px;text-align:center;color:#fff}
+.hero h1{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:800;margin-bottom:10px;text-shadow:0 4px 16px rgba(120,40,0,.2)}
+.hero p{font-size:14px;opacity:.95}
+.wrap{max-width:560px;margin:0 auto;padding:34px 24px 60px}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:26px 22px}
+.contact-form{margin-top:0}
+.contact-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin:14px 0 6px}
+.contact-label:first-child{margin-top:0}
+.contact-label .req{color:#fff;background:var(--o1);font-size:9px;padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:700}
+.contact-input,.contact-textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);box-sizing:border-box;background:var(--cream)}
+.contact-input:focus,.contact-textarea:focus{outline:none;border-color:var(--o2)}
+.contact-textarea{resize:vertical}
+.contact-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
+.contact-submit{width:100%;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;margin-top:16px}
+.contact-submit:hover{opacity:.92}
+.back-link{display:block;text-align:center;margin-top:28px;color:var(--o1);text-decoration:none;font-weight:700;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header><a href="index.html">← villafaras（ヴィラファラス）トップに戻る</a></header>
+
+<div class="hero">
+  <h1>お問い合わせ</h1>
+  <p>ご質問・ご要望など、お気軽にご連絡ください。</p>
+</div>
+
+<div class="wrap">
+  <div class="contact-card">
+    <div class="contact-form">
+      <label class="contact-label">お名前<span class="req">必須</span></label>
+      <input type="text" id="cfName" class="contact-input" placeholder="山田 太郎">
+      <label class="contact-label">メールアドレス<span class="req">必須</span></label>
+      <input type="email" id="cfEmail" class="contact-input" placeholder="example@mail.com">
+      <label class="contact-label">お問い合わせ内容<span class="req">必須</span></label>
+      <textarea id="cfMessage" class="contact-textarea" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
+      <button type="button" class="contact-submit" onclick="submitContact()">送信する</button>
+      <p class="contact-note">※送信ボタンを押すと、お使いのメールアプリが起動し、入力内容がメール本文にセットされます。内容をご確認のうえ送信してください。</p>
+    </div>
+  </div>
+
+  <a class="back-link" href="index.html">← villafaras（ヴィラファラス）トップに戻る</a>
+</div>
+
+<footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>
+
+<script>
+function submitContact(){
+  var name=document.getElementById('cfName').value.replace(/^\s+|\s+$/g,'');
+  var email=document.getElementById('cfEmail').value.replace(/^\s+|\s+$/g,'');
+  var msg=document.getElementById('cfMessage').value.replace(/^\s+|\s+$/g,'');
+  if(!name||!email||!msg){alert('お名前・メールアドレス・お問い合わせ内容をすべてご入力ください。');return;}
+  var subject=encodeURIComponent('【Villafaras】お問い合わせ');
+  var body=encodeURIComponent('お名前：'+name+'\nメールアドレス：'+email+'\n\nお問い合わせ内容：\n'+msg);
+  window.location.href='mailto:info@villafaras.jp?subject='+subject+'&body='+body;
+}
+</script>
+</body>
+</html>
