@@ -1,0 +1,60 @@
+/* villafaras 一次データ（施設スペック）表示 -------------------------------- */
+/* iPad Safari 対応: -webkit- プレフィックス付与 / 外部ライブラリ不使用       */
+
+.spec-block{margin:16px 0 20px}
+
+/* --- ヘッダ（掲載率） --- */
+.spec-head{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.spec-title{font-size:11px;color:var(--muted,#A88C78);font-weight:700;letter-spacing:.02em}
+.spec-cov{font-size:11px;color:var(--muted,#A88C78);font-weight:700;margin-left:auto}
+.spec-cov b{color:var(--o1,#FF6B2B);font-size:12px}
+.spec-bar{width:100%;height:4px;border-radius:4px;background:var(--o-soft,#FFE8D6);overflow:hidden;margin-bottom:10px}
+.spec-bar i{display:block;height:100%;background:var(--o1,#FF6B2B);border-radius:4px;-webkit-transition:width .3s ease;transition:width .3s ease}
+
+/* --- 調査済みのみ表示トグル --- */
+.spec-toggle{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:6px;font-size:11.5px;color:var(--ink2,#5C4434);font-weight:700;margin-bottom:10px;cursor:pointer;-webkit-user-select:none;user-select:none}
+.spec-toggle input{-webkit-appearance:none;appearance:none;width:30px;height:17px;border-radius:20px;background:var(--border,#F0E2D5);position:relative;outline:none;cursor:pointer;-webkit-transition:background .2s;transition:background .2s;flex:0 0 auto}
+.spec-toggle input::after{content:"";position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff;-webkit-transition:-webkit-transform .2s;transition:transform .2s}
+.spec-toggle input:checked{background:var(--o1,#FF6B2B)}
+.spec-toggle input:checked::after{-webkit-transform:translateX(13px);transform:translateX(13px)}
+
+/* --- グループ --- */
+.spec-group{background:var(--white,#FFF);border:1px solid var(--border,#F0E2D5);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.spec-group-head{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:6px;padding:9px 13px;background:var(--o-pale,#FFF4ED);cursor:pointer;-webkit-user-select:none;user-select:none}
+.spec-group-name{font-size:12.5px;font-weight:700;color:var(--ink,#2A1A10)}
+.spec-group-cnt{font-size:10.5px;color:var(--muted,#A88C78);font-weight:700}
+.spec-group-arw{margin-left:auto;font-size:10px;color:var(--muted,#A88C78);-webkit-transition:-webkit-transform .2s;transition:transform .2s}
+.spec-group.is-open .spec-group-arw{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.spec-group-body{display:none;padding:4px 13px 8px}
+.spec-group.is-open .spec-group-body{display:block}
+
+/* --- 行 --- */
+.spec-row{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border,#F0E2D5);font-size:13px}
+.spec-row:last-child{border-bottom:none}
+.spec-k{color:var(--muted,#A88C78);font-weight:700;flex:0 0 42%;line-height:1.45}
+.spec-k small{display:block;font-size:10px;font-weight:400;color:var(--muted,#A88C78);opacity:.8;margin-top:1px;line-height:1.35}
+.spec-v{color:var(--ink,#2A1A10);font-weight:700;flex:1 1 auto;text-align:right;line-height:1.45;word-break:break-word}
+
+/* 未調査 / なし の区別（3値） */
+.spec-none{color:#C4B5A6;font-weight:400;font-size:12px}
+.spec-no{color:var(--ink2,#5C4434);font-weight:700;opacity:.6}
+
+/* --- 出典バッジ --- */
+.spec-src{display:inline-block;margin-left:6px;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:20px;vertical-align:1px;letter-spacing:.02em}
+.src-owner{background:#DCFCE7;color:#166534}
+.src-desk{background:#E0E7FF;color:#3730A3}
+.src-auto{background:#F1F5F9;color:#475569}
+.src-review{background:#FEF3C7;color:#92400E}
+
+/* --- フッタ（オーナー導線 / 凡例） --- */
+.spec-legend{display:-webkit-box;display:-webkit-flex;display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 6px}
+.spec-foot{font-size:11px;color:var(--muted,#A88C78);line-height:1.6;margin-top:6px}
+.spec-foot a{color:var(--o1,#FF6B2B);font-weight:700;text-decoration:none}
+.spec-foot a:hover{text-decoration:underline}
+.spec-owner-cta{display:block;margin-top:8px;padding:9px 12px;border:1.5px dashed var(--o2,#FF8A3D);border-radius:10px;font-size:11.5px;font-weight:700;color:var(--o1,#FF6B2B);text-decoration:none;text-align:center}
+.spec-owner-cta:hover{background:var(--o-pale,#FFF4ED)}
+
+@media (max-width:520px){
+  .spec-k{flex:0 0 46%;font-size:12.5px}
+  .spec-v{font-size:12.5px}
+}
