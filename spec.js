@@ -203,96 +203,105 @@
 
   function buildHTML(villaId) {
     var data = DATA[String(villaId)] || {};
-    var total = 0, filled = 0;
-    var groupsHTML = '';
+    var known = [], sections = '', total = 0, filled = 0;
     var i, j;
 
     for (i = 0; i < SCHEMA.length; i++) {
       var grp = SCHEMA[i];
       var rowsHTML = '';
-      var gTotal = 0, gFilled = 0;
 
       for (j = 0; j < grp.rows.length; j++) {
         var row = grp.rows[j];
         var cell = normalize(data[row.k]);
-        gTotal++; total++;
-        if (cell) { gFilled++; filled++; }
+        total++;
 
-        var label = '<span class="spec-k">' + esc(row.l) +
-          (row.n ? '<small>' + esc(row.n) + '</small>' : '') + '</span>';
-        var value = cell
-          ? renderValue(row, cell)
-          : '<span class="spec-none">未調査</span>';
-
-        rowsHTML += '<div class="spec-row" data-k="' + esc(row.k) + '" data-filled="' +
-          (cell ? '1' : '0') + '">' + label +
-          '<span class="spec-v">' + value + '</span></div>';
+        if (cell) {
+          /* 調査済み → ラベル上・値下のカード（主役として上部に並べる） */
+          filled++;
+          known.push(
+            '<div class="spec-card">' +
+              '<span class="spec-card-k">' + esc(row.l) + '</span>' +
+              '<span class="spec-card-v">' + renderValue(row, cell) + '</span>' +
+            '</div>');
+        } else {
+          /* 未調査 → 開閉の中に格納。既定では描画しない */
+          rowsHTML +=
+            '<div class="spec-row">' +
+              '<span class="spec-k">' + esc(row.l) +
+                (row.n ? '<small>' + esc(row.n) + '</small>' : '') +
+              '</span>' +
+              '<span class="spec-v"><span class="spec-none">未調査</span></span>' +
+            '</div>';
+        }
       }
 
-      groupsHTML +=
-        '<div class="spec-group' + (gFilled > 0 ? ' is-open' : '') + '">' +
-          '<div class="spec-group-head">' +
-            '<span class="spec-group-name">' + esc(grp.g) + '</span>' +
-            '<span class="spec-group-cnt">' + gFilled + ' / ' + gTotal + '</span>' +
-            '<span class="spec-group-arw">▼</span>' +
-          '</div>' +
-          '<div class="spec-group-body">' + rowsHTML + '</div>' +
-        '</div>';
+      if (rowsHTML) {
+        sections += '<div class="spec-sec">' +
+          '<div class="spec-sec-h">' + esc(grp.g) + '</div>' + rowsHTML + '</div>';
+      }
     }
 
-    var pct = total ? Math.round(filled / total * 100) : 0;
+    var rest = total - filled;
+    var out = '<div class="spec-head"><span class="spec-title">施設スペック</span>';
+    if (filled > 0) {
+      out += '<span class="spec-cov"><b>' + filled + '</b> / ' + total + ' 調査済み</span>';
+    }
+    out += '</div>';
 
-    return '' +
-      '<div class="spec-head">' +
-        '<span class="spec-title">施設スペック</span>' +
-        '<span class="spec-cov">調査済み <b>' + filled + '</b> / ' + total + '</span>' +
-      '</div>' +
-      '<div class="spec-bar"><i style="width:' + pct + '%"></i></div>' +
-      '<label class="spec-toggle"><input type="checkbox" class="spec-only-filled">調査済みの項目のみ表示</label>' +
-      groupsHTML +
-      '<div class="spec-foot">' +
-        '出典 — ' +
+    if (filled > 0) {
+      out += '<div class="spec-bar"><i style="width:' +
+             Math.max(2, Math.round(filled / total * 100)) + '%"></i></div>';
+      out += '<div class="spec-known">' + known.join('') + '</div>';
+    } else {
+      /* 0件（286件中281件）で進捗バーや空の見出しを並べない */
+      out += '<div class="spec-blank">この施設はまだ調査中です。' +
+             '確認できた項目から順に掲載していきます。</div>';
+    }
+
+    if (rest > 0) {
+      out += '<button type="button" class="spec-more">' +
+               '未調査の項目を見る（' + rest + '）' +
+               '<span class="spec-more-arw">▼</span>' +
+             '</button>' +
+             '<div class="spec-rest">' + sections + '</div>';
+    }
+
+    if (filled > 0) {
+      out += '<div class="spec-foot">出典 — ' +
         '<span class="spec-src src-owner">施設</span> 施設回答　' +
         '<span class="spec-src src-desk">公式</span> 公式サイト調べ　' +
         '<span class="spec-src src-auto">自動</span> 座標から算出　' +
         '<span class="spec-src src-review">宿泊者</span> レビュー集計<br>' +
         '「未調査」は情報が未確認であることを示すもので、設備が存在しないことを意味しません。' +
-      '</div>' +
-      '<a class="spec-owner-cta" href="' + (window.VILLAFARAS_SPEC_OWNER_URL || '../owner.html') + '">' +
-        '施設関係者の方へ — 掲載情報を更新する' +
-      '</a>';
+        '</div>';
+    }
+
+    out += '<a class="spec-owner-cta" href="' +
+      (window.VILLAFARAS_SPEC_OWNER_URL || '../owner.html') + '">' +
+      '施設関係者の方へ — 掲載情報を更新する</a>';
+
+    return out;
   }
 
-  /* --- イベント（委譲。個別バインドしないので再描画に強い） --- */
+  /* --- イベント（文書レベルの委譲。モーダル等の後差し込みにも効く） --- */
+  function hasClass(el, name) {
+    return el && el.className && String(el.className).indexOf(name) > -1;
+  }
+
   function onClick(e) {
     var el = e.target;
     while (el && el !== document.body) {
-      if (el.className && String(el.className).indexOf('spec-group-head') > -1) {
-        var grp = el.parentNode;
-        var open = String(grp.className).indexOf('is-open') > -1;
-        grp.className = open ? 'spec-group' : 'spec-group is-open';
+      if (hasClass(el, 'spec-more') && !hasClass(el, 'spec-more-arw')) {
+        var block = el;
+        while (block && !hasClass(block, 'spec-block')) block = block.parentNode;
+        if (block) {
+          block.className = hasClass(block, 'is-open')
+            ? block.className.replace(/\s*is-open/, '')
+            : block.className + ' is-open';
+        }
         return;
       }
       el = el.parentNode;
-    }
-  }
-
-  function onChange(e) {
-    var el = e.target;
-    if (!el || !el.className || String(el.className).indexOf('spec-only-filled') < 0) return;
-    var block = el;
-    while (block && String(block.className || '').indexOf('spec-block') < 0) block = block.parentNode;
-    if (!block) return;
-    var rows = block.getElementsByClassName('spec-row');
-    for (var i = 0; i < rows.length; i++) {
-      var filled = rows[i].getAttribute('data-filled') === '1';
-      rows[i].style.display = (el.checked && !filled) ? 'none' : '';
-    }
-    var groups = block.getElementsByClassName('spec-group');
-    for (var g = 0; g < groups.length; g++) {
-      var cnt = groups[g].getElementsByClassName('spec-group-cnt')[0];
-      var has = cnt && cnt.innerHTML.indexOf('0 /') !== 0;
-      groups[g].style.display = (el.checked && !has) ? 'none' : '';
     }
   }
 
@@ -305,7 +314,6 @@
     var blocks = document.getElementsByClassName('spec-block');
     for (var i = 0; i < blocks.length; i++) render(blocks[i]);
     document.addEventListener('click', onClick, false);
-    document.addEventListener('change', onChange, false);
   }
 
   /* index.html のモーダルからも同じ描画を使えるよう公開する */

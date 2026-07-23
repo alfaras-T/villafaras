@@ -1,60 +1,58 @@
 /* villafaras 一次データ（施設スペック）表示 -------------------------------- */
 /* iPad Safari 対応: -webkit- プレフィックス付与 / 外部ライブラリ不使用       */
+/* レイアウトは既存の .modal-facts / .fact パターンに合わせている            */
 
-.spec-block{margin:16px 0 20px}
+.spec-block{margin:18px 0 20px}
 
-/* --- ヘッダ（掲載率） --- */
-.spec-head{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+/* --- ヘッダ --- */
+.spec-head{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;gap:8px;margin-bottom:8px}
 .spec-title{font-size:11px;color:var(--muted,#A88C78);font-weight:700;letter-spacing:.02em}
-.spec-cov{font-size:11px;color:var(--muted,#A88C78);font-weight:700;margin-left:auto}
-.spec-cov b{color:var(--o1,#FF6B2B);font-size:12px}
-.spec-bar{width:100%;height:4px;border-radius:4px;background:var(--o-soft,#FFE8D6);overflow:hidden;margin-bottom:10px}
-.spec-bar i{display:block;height:100%;background:var(--o1,#FF6B2B);border-radius:4px;-webkit-transition:width .3s ease;transition:width .3s ease}
+.spec-cov{font-size:10.5px;color:var(--muted,#A88C78);font-weight:700;margin-left:auto;white-space:nowrap}
+.spec-cov b{color:var(--o1,#FF6B2B)}
+.spec-bar{width:100%;height:3px;border-radius:3px;background:var(--o-soft,#FFE8D6);overflow:hidden;margin-bottom:12px}
+.spec-bar i{display:block;height:100%;background:var(--o1,#FF6B2B);border-radius:3px}
 
-/* --- 調査済みのみ表示トグル --- */
-.spec-toggle{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:6px;font-size:11.5px;color:var(--ink2,#5C4434);font-weight:700;margin-bottom:10px;cursor:pointer;-webkit-user-select:none;user-select:none}
-.spec-toggle input{-webkit-appearance:none;appearance:none;width:30px;height:17px;border-radius:20px;background:var(--border,#F0E2D5);position:relative;outline:none;cursor:pointer;-webkit-transition:background .2s;transition:background .2s;flex:0 0 auto}
-.spec-toggle input::after{content:"";position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff;-webkit-transition:-webkit-transform .2s;transition:transform .2s}
-.spec-toggle input:checked{background:var(--o1,#FF6B2B)}
-.spec-toggle input:checked::after{-webkit-transform:translateX(13px);transform:translateX(13px)}
+/* --- 調査済みの値（主役）：ラベル上・値下のカード --- */
+.spec-known{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:8px}
+.spec-card{-webkit-box-flex:1;-webkit-flex:1 1 calc(50% - 4px);flex:1 1 calc(50% - 4px);min-width:132px;background:var(--white,#FFF);border:1px solid var(--border,#F0E2D5);border-radius:12px;padding:10px 13px}
+.spec-card-k{display:block;font-size:10px;font-weight:700;letter-spacing:.03em;color:var(--muted,#A88C78);margin-bottom:3px}
+.spec-card-v{display:block;font-size:14.5px;font-weight:700;color:var(--ink,#2A1A10);line-height:1.4;word-break:break-word}
+.spec-card-v .spec-no{color:var(--ink2,#5C4434);opacity:.55}
 
-/* --- グループ --- */
-.spec-group{background:var(--white,#FFF);border:1px solid var(--border,#F0E2D5);border-radius:12px;margin-bottom:8px;overflow:hidden}
-.spec-group-head{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:6px;padding:9px 13px;background:var(--o-pale,#FFF4ED);cursor:pointer;-webkit-user-select:none;user-select:none}
-.spec-group-name{font-size:12.5px;font-weight:700;color:var(--ink,#2A1A10)}
-.spec-group-cnt{font-size:10.5px;color:var(--muted,#A88C78);font-weight:700}
-.spec-group-arw{margin-left:auto;font-size:10px;color:var(--muted,#A88C78);-webkit-transition:-webkit-transform .2s;transition:transform .2s}
-.spec-group.is-open .spec-group-arw{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
-.spec-group-body{display:none;padding:4px 13px 8px}
-.spec-group.is-open .spec-group-body{display:block}
+/* --- 未調査ゼロ件時のひとこと --- */
+.spec-blank{font-size:12.5px;color:var(--muted,#A88C78);background:var(--o-pale,#FFF4ED);border-radius:12px;padding:12px 14px;line-height:1.7}
 
-/* --- 行 --- */
-.spec-row{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border,#F0E2D5);font-size:13px}
-.spec-row:last-child{border-bottom:none}
-.spec-k{color:var(--muted,#A88C78);font-weight:700;flex:0 0 42%;line-height:1.45}
-.spec-k small{display:block;font-size:10px;font-weight:400;color:var(--muted,#A88C78);opacity:.8;margin-top:1px;line-height:1.35}
-.spec-v{color:var(--ink,#2A1A10);font-weight:700;flex:1 1 auto;text-align:right;line-height:1.45;word-break:break-word}
+/* --- 「未調査の項目を見る」開閉 --- */
+.spec-more{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;gap:5px;width:100%;margin-top:10px;padding:9px 12px;background:none;border:1px solid var(--border,#F0E2D5);border-radius:10px;font-family:inherit;font-size:11.5px;font-weight:700;color:var(--ink2,#5C4434);cursor:pointer;-webkit-appearance:none;appearance:none;text-align:left}
+.spec-more:hover{background:var(--o-pale,#FFF4ED)}
+.spec-more-arw{margin-left:auto;font-size:9px;color:var(--muted,#A88C78);-webkit-transition:-webkit-transform .2s;transition:transform .2s}
+.spec-block.is-open .spec-more-arw{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 
-/* 未調査 / なし の区別（3値） */
-.spec-none{color:#C4B5A6;font-weight:400;font-size:12px}
-.spec-no{color:var(--ink2,#5C4434);font-weight:700;opacity:.6}
+/* --- 未調査の項目一覧（開閉の中身）--- */
+.spec-rest{display:none;margin-top:8px;padding:2px 13px 6px;background:var(--cream,#FFFBF7);border:1px solid var(--border,#F0E2D5);border-radius:12px}
+.spec-block.is-open .spec-rest{display:block}
+.spec-sec{padding:9px 0 3px}
+.spec-sec + .spec-sec{border-top:1px solid var(--border,#F0E2D5)}
+.spec-sec-h{font-size:11px;font-weight:700;color:var(--ink,#2A1A10);margin-bottom:4px}
+.spec-row{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;gap:8px;padding:4px 0;font-size:12.5px}
+.spec-k{color:var(--ink2,#5C4434);-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;line-height:1.45}
+.spec-k small{display:block;font-size:10px;color:var(--muted,#A88C78);opacity:.85;line-height:1.35;margin-top:1px}
+.spec-v{-webkit-box-flex:0;-webkit-flex:0 0 auto;flex:0 0 auto;text-align:right;font-weight:700;color:var(--ink,#2A1A10);line-height:1.45}
+.spec-none{color:#C9BAAB;font-weight:400;font-size:11.5px}
+.spec-no{color:var(--ink2,#5C4434);font-weight:700;opacity:.55}
 
 /* --- 出典バッジ --- */
-.spec-src{display:inline-block;margin-left:6px;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:20px;vertical-align:1px;letter-spacing:.02em}
+.spec-src{display:inline-block;margin-left:5px;font-size:9px;font-weight:700;padding:1px 5px;border-radius:20px;vertical-align:1px;letter-spacing:.02em}
 .src-owner{background:#DCFCE7;color:#166534}
 .src-desk{background:#E0E7FF;color:#3730A3}
 .src-auto{background:#F1F5F9;color:#475569}
 .src-review{background:#FEF3C7;color:#92400E}
 
-/* --- フッタ（オーナー導線 / 凡例） --- */
-.spec-legend{display:-webkit-box;display:-webkit-flex;display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 6px}
-.spec-foot{font-size:11px;color:var(--muted,#A88C78);line-height:1.6;margin-top:6px}
-.spec-foot a{color:var(--o1,#FF6B2B);font-weight:700;text-decoration:none}
-.spec-foot a:hover{text-decoration:underline}
-.spec-owner-cta{display:block;margin-top:8px;padding:9px 12px;border:1.5px dashed var(--o2,#FF8A3D);border-radius:10px;font-size:11.5px;font-weight:700;color:var(--o1,#FF6B2B);text-decoration:none;text-align:center}
+/* --- フッタ --- */
+.spec-foot{font-size:10.5px;color:var(--muted,#A88C78);line-height:1.65;margin-top:9px}
+.spec-owner-cta{display:block;margin-top:9px;padding:9px 12px;border:1px dashed var(--o2,#FF8A3D);border-radius:10px;font-size:11.5px;font-weight:700;color:var(--o1,#FF6B2B);text-decoration:none;text-align:center}
 .spec-owner-cta:hover{background:var(--o-pale,#FFF4ED)}
 
-@media (max-width:520px){
-  .spec-k{flex:0 0 46%;font-size:12.5px}
-  .spec-v{font-size:12.5px}
+@media (max-width:420px){
+  .spec-card{-webkit-flex:1 1 100%;flex:1 1 100%}
 }
