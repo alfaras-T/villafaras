@@ -141,8 +141,8 @@
       { k: 'elevation',     l: '標高',           u: 'm',   ch: 'auto' },
       { k: 'supermarket',   l: '最寄りスーパー', u: '分',  ch: 'auto', n: '車での所要時間' },
       { k: 'conveni',       l: '最寄りコンビニ', u: '分',  ch: 'auto' },
-      { k: 'ic',            l: '最寄りIC',       u: '分',  ch: 'auto' },
-      { k: 'station',       l: '最寄り駅',       u: '分',  ch: 'auto' },
+      { k: 'ic',            l: '最寄りIC',                 ch: 'auto' },
+      { k: 'station',       l: '最寄り駅',                 ch: 'auto' },
       { k: 'onsen',         l: '最寄り日帰り温泉', u: '分', ch: 'auto' }
     ]},
 
@@ -272,7 +272,8 @@
         '<span class="spec-src src-desk">公式</span> 公式サイト調べ　' +
         '<span class="spec-src src-auto">自動</span> 座標から算出　' +
         '<span class="spec-src src-review">宿泊者</span> レビュー集計<br>' +
-        '「未調査」は情報が未確認であることを示すもので、設備が存在しないことを意味しません。' +
+        '「未調査」は情報が未確認であることを示すもので、設備が存在しないことを意味しません。<br>' +
+        '周辺情報: © OpenStreetMap contributors ／ 標高: 国土地理院 ／ 所要時間は車での目安' +
         '</div>';
     }
 
