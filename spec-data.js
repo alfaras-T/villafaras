@@ -819,6 +819,24 @@ window.VILLAFARAS_SPEC = {
     onsen:       { v: 7, src: 'auto', at: '2026-07' }
   },
 
+  "89": {  /* 景雅 奥河口湖 */
+    elevation:   { v: 860, src: 'auto', at: '2026-07' },
+    supermarket: { v: 9, src: 'auto', at: '2026-07' },
+    conveni:     { v: 4, src: 'auto', at: '2026-07' },
+    ic:          { v: '富士吉田忍野スマートIC 18分', src: 'auto', at: '2026-07' },
+    station:     { v: '河口湖 11分', src: 'auto', at: '2026-07' },
+    onsen:       { v: 7, src: 'auto', at: '2026-07' }
+  },
+
+  "90": {  /* totonoco 湖畔の隠れ家 */
+    elevation:   { v: 837, src: 'auto', at: '2026-07' },
+    supermarket: { v: 9, src: 'auto', at: '2026-07' },
+    conveni:     { v: 3, src: 'auto', at: '2026-07' },
+    ic:          { v: '富士吉田忍野スマートIC 17分', src: 'auto', at: '2026-07' },
+    station:     { v: '河口湖 10分', src: 'auto', at: '2026-07' },
+    onsen:       { v: 6, src: 'auto', at: '2026-07' }
+  },
+
   "91": {  /* ビジョングランピングリゾート山中湖 */
     elevation:   { v: 976, src: 'auto', at: '2026-07' },
     supermarket: { v: 1, src: 'auto', at: '2026-07' },
@@ -1030,7 +1048,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 654, src: 'auto', at: '2026-07' },
     supermarket: { v: 10, src: 'auto', at: '2026-07' },
     conveni:     { v: 9, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (上り);那須高原スマートIC 22分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 22分', src: 'auto', at: '2026-07' },
     station:     { v: '黒田原 16分', src: 'auto', at: '2026-07' },
     onsen:       { v: 11, src: 'auto', at: '2026-07' }
   },
@@ -1049,7 +1067,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 319, src: 'auto', at: '2026-07' },
     supermarket: { v: 1, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '黒磯板室IC;黒磯PA (上り) 10分', src: 'auto', at: '2026-07' },
+    ic: { v: '黒磯板室IC 10分', src: 'auto', at: '2026-07' },
     station:     { v: '黒磯 4分', src: 'auto', at: '2026-07' },
     onsen:       { v: 5, src: 'auto', at: '2026-07' }
   },
@@ -1058,7 +1076,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 490, src: 'auto', at: '2026-07' },
     supermarket: { v: 4, src: 'auto', at: '2026-07' },
     conveni:     { v: 4, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 17分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 17分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 16分', src: 'auto', at: '2026-07' },
     onsen:       { v: 7, src: 'auto', at: '2026-07' }
   },
@@ -1067,7 +1085,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 690, src: 'auto', at: '2026-07' },
     supermarket: { v: 7, src: 'auto', at: '2026-07' },
     conveni:     { v: 8, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 23分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 23分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 22分', src: 'auto', at: '2026-07' },
     onsen:       { v: 4, src: 'auto', at: '2026-07' }
   },
@@ -1076,7 +1094,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 834, src: 'auto', at: '2026-07' },
     supermarket: { v: 5, src: 'auto', at: '2026-07' },
     conveni:     { v: 5, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 22分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 22分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 22分', src: 'auto', at: '2026-07' },
     onsen:       { v: 6, src: 'auto', at: '2026-07' }
   },
@@ -1085,7 +1103,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 851, src: 'auto', at: '2026-07' },
     supermarket: { v: 5, src: 'auto', at: '2026-07' },
     conveni:     { v: 5, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 23分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 23分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 22分', src: 'auto', at: '2026-07' },
     onsen:       { v: 6, src: 'auto', at: '2026-07' }
   },
@@ -1094,7 +1112,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 498, src: 'auto', at: '2026-07' },
     supermarket: { v: 3, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 19分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 19分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 15分', src: 'auto', at: '2026-07' },
     onsen:       { v: 8, src: 'auto', at: '2026-07' }
   },
@@ -1103,7 +1121,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 812, src: 'auto', at: '2026-07' },
     supermarket: { v: 5, src: 'auto', at: '2026-07' },
     conveni:     { v: 4, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 21分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 21分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 20分', src: 'auto', at: '2026-07' },
     onsen:       { v: 2, src: 'auto', at: '2026-07' }
   },
@@ -1112,7 +1130,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 533, src: 'auto', at: '2026-07' },
     supermarket: { v: 17, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '黒磯板室IC;黒磯PA (下り) 22分', src: 'auto', at: '2026-07' },
+    ic: { v: '黒磯板室IC 22分', src: 'auto', at: '2026-07' },
     station:     { v: '上三依塩原温泉口 9分', src: 'auto', at: '2026-07' },
     onsen:       { v: 1, src: 'auto', at: '2026-07' }
   },
@@ -1121,7 +1139,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 428, src: 'auto', at: '2026-07' },
     supermarket: { v: 4, src: 'auto', at: '2026-07' },
     conveni:     { v: 1, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 10分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 10分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 9分', src: 'auto', at: '2026-07' },
     onsen:       { v: 3, src: 'auto', at: '2026-07' }
   },
@@ -1130,7 +1148,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 459, src: 'auto', at: '2026-07' },
     supermarket: { v: 2, src: 'auto', at: '2026-07' },
     conveni:     { v: 3, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 13分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 13分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 12分', src: 'auto', at: '2026-07' },
     onsen:       { v: 5, src: 'auto', at: '2026-07' }
   },
@@ -1166,7 +1184,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 429, src: 'auto', at: '2026-07' },
     supermarket: { v: 9, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '黒磯板室IC;黒磯PA (下り) 14分', src: 'auto', at: '2026-07' },
+    ic: { v: '黒磯板室IC 14分', src: 'auto', at: '2026-07' },
     station:     { v: '那須塩原 17分', src: 'auto', at: '2026-07' },
     onsen:       { v: 4, src: 'auto', at: '2026-07' }
   },
@@ -1175,7 +1193,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 434, src: 'auto', at: '2026-07' },
     supermarket: { v: 2, src: 'auto', at: '2026-07' },
     conveni:     { v: 1, src: 'auto', at: '2026-07' },
-    ic:          { v: '那須高原SA (下り);那須高原スマートIC 11分', src: 'auto', at: '2026-07' },
+    ic: { v: '那須高原スマートIC 11分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 10分', src: 'auto', at: '2026-07' },
     onsen:       { v: 4, src: 'auto', at: '2026-07' }
   },
@@ -1184,7 +1202,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 530, src: 'auto', at: '2026-07' },
     supermarket: { v: 9, src: 'auto', at: '2026-07' },
     conveni:     { v: 8, src: 'auto', at: '2026-07' },
-    ic:          { v: '黒磯板室IC;黒磯PA (上り) 21分', src: 'auto', at: '2026-07' },
+    ic: { v: '黒磯板室IC 21分', src: 'auto', at: '2026-07' },
     station:     { v: '高久 22分', src: 'auto', at: '2026-07' },
     onsen:       { v: 7, src: 'auto', at: '2026-07' }
   },
@@ -1565,7 +1583,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 962, src: 'auto', at: '2026-07' },
     supermarket: { v: 9, src: 'auto', at: '2026-07' },
     conveni:     { v: 8, src: 'auto', at: '2026-07' },
-    ic:          { v: '佐久平PA(上り);佐久平スマートIC 28分', src: 'auto', at: '2026-07' },
+    ic: { v: '佐久平スマートIC 28分', src: 'auto', at: '2026-07' },
     station:     { v: '中軽井沢 10分', src: 'auto', at: '2026-07' },
     onsen:       { v: 1, src: 'auto', at: '2026-07' }
   },
@@ -1583,7 +1601,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 958, src: 'auto', at: '2026-07' },
     supermarket: { v: 9, src: 'auto', at: '2026-07' },
     conveni:     { v: 8, src: 'auto', at: '2026-07' },
-    ic:          { v: '佐久平PA(上り);佐久平スマートIC 28分', src: 'auto', at: '2026-07' },
+    ic: { v: '佐久平スマートIC 28分', src: 'auto', at: '2026-07' },
     station:     { v: '中軽井沢 10分', src: 'auto', at: '2026-07' },
     onsen:       { v: 1, src: 'auto', at: '2026-07' }
   },
@@ -1701,7 +1719,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 937, src: 'auto', at: '2026-07' },
     supermarket: { v: 3, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '佐久平PA(上り);佐久平スマートIC 31分', src: 'auto', at: '2026-07' },
+    ic: { v: '佐久平スマートIC 31分', src: 'auto', at: '2026-07' },
     station:     { v: '中軽井沢 3分', src: 'auto', at: '2026-07' },
     onsen:       { v: 3, src: 'auto', at: '2026-07' }
   },
@@ -1737,7 +1755,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 939, src: 'auto', at: '2026-07' },
     supermarket: { v: 7, src: 'auto', at: '2026-07' },
     conveni:     { v: 5, src: 'auto', at: '2026-07' },
-    ic:          { v: '佐久平PA(上り);佐久平スマートIC 25分', src: 'auto', at: '2026-07' },
+    ic: { v: '佐久平スマートIC 25分', src: 'auto', at: '2026-07' },
     station:     { v: '軽井沢 8分', src: 'auto', at: '2026-07' },
     onsen:       { v: 3, src: 'auto', at: '2026-07' }
   },
@@ -1746,7 +1764,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 772, src: 'auto', at: '2026-07' },
     supermarket: { v: 3, src: 'auto', at: '2026-07' },
     conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '佐久平PA(上り);佐久平スマートIC 12分', src: 'auto', at: '2026-07' },
+    ic: { v: '佐久平スマートIC 12分', src: 'auto', at: '2026-07' },
     station:     { v: '御代田 5分', src: 'auto', at: '2026-07' },
     onsen:       { v: 10, src: 'auto', at: '2026-07' }
   },
@@ -2574,7 +2592,7 @@ window.VILLAFARAS_SPEC = {
     elevation:   { v: 73, src: 'auto', at: '2026-07' },
     supermarket: { v: 18, src: 'auto', at: '2026-07' },
     conveni:     { v: 6, src: 'auto', at: '2026-07' },
-    ic:          { v: '日立中央IC;日立中央PA(下り) 66分', src: 'auto', at: '2026-07' },
+    ic: { v: '日立中央IC 66分', src: 'auto', at: '2026-07' },
     station:     { v: '上小川 7分', src: 'auto', at: '2026-07' },
     onsen:       { v: 10, src: 'auto', at: '2026-07' }
   }
