@@ -1432,7 +1432,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "114": {  /* エンゼルフォレスト那須 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 654, src: 'auto', at: '2026-07' },

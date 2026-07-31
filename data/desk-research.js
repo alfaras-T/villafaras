@@ -387,3 +387,7 @@
     coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' }
   },
+
+  "114": { /* エンゼルフォレスト那須 ─ ログプレミアム等の一部コテージのみ */
+    sauna_exists:  { v: 'room', src: 'desk', at: '2026-07' }
+  },
