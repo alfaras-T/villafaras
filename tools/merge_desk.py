@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import io, json, re
+import io, json, re, sys
 
-SRC = "out/spec-data-desk.js"
+SRCS = sys.argv[1:] or ["out/spec-data-desk.js"]
 DATA = "spec-data.js"
 
 def parse(text):
@@ -18,7 +18,11 @@ def parse(text):
 cur = io.open(DATA, encoding="utf-8").read()
 head = cur[:cur.index("window.VILLAFARAS_SPEC = {")]
 existing = parse(re.sub(r"/\*.*?\*/", "", cur, flags=re.DOTALL))
-desk = parse(io.open(SRC, encoding="utf-8").read())
+desk = {}
+for src in SRCS:
+    for vid, f in parse(io.open(src, encoding="utf-8").read()).items():
+        desk.setdefault(vid, {}).update(f)
+print("読み込み: %s" % ", ".join(SRCS))
 
 merged, added, skipped = {}, 0, 0
 for vid in set(list(existing) + list(desk)):
