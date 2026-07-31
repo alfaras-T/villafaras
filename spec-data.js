@@ -42,9 +42,6 @@ window.VILLAFARAS_SPEC = {
   },
 
   "2": {  /* 古民家宿るうふ 波之家 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 26, src: 'auto', at: '2026-07' },
