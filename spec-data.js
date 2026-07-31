@@ -938,7 +938,13 @@ window.VILLAFARAS_SPEC = {
   },
 
   "74": {  /* SANU 2nd Home 八ヶ岳2nd */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
+    stove:        { v: 'gas', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    rest_chair:   { v: 'chair', src: 'desk', at: '2026-07' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 1198, src: 'auto', at: '2026-07' },

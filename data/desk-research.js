@@ -391,3 +391,12 @@
   "114": { /* エンゼルフォレスト那須 ─ ログプレミアム等の一部コテージのみ */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-07' }
   },
+
+  "74": { /* SANU 2nd Home 八ヶ岳2nd ─ サウナ付きは2キャビンのみ（+5,000円） */
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    stove:         { v: 'gas', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-07' }
+  },
