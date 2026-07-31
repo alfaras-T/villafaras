@@ -373,3 +373,17 @@
     loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
     fee_bbq:       { v: 'incl', src: 'desk', at: '2026-07' }
   },
+
+  "9": {  /* sendouQ */
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "10": { /* sendouQ second／third dog */
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "15": { /* amane ─ プレミアムフラットルームのみサウナ */
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' }
+  },

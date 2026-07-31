@@ -29,6 +29,8 @@
      ------------------------------------------------------------------ */
   var O = {
     yesno:    { yes: 'あり', no: 'なし' },
+    saunaex:  { yes: 'あり', room: '一部客室のみ',
+                shared: '共用施設のみ', no: 'なし' },
     kahi:     { yes: '可', no: '不可' },
     stove:    { wood: '薪ストーブ', electric: '電気ストーブ', gas: 'ガス' },
     saunatype:{ indoor: '室内サウナ', hut: 'サウナ小屋', barrel: 'バレルサウナ', tent: 'テントサウナ' },
@@ -70,7 +72,7 @@
      ------------------------------------------------------------------ */
   var SCHEMA = [
     { g: 'サウナ', rows: [
-      { k: 'sauna_exists', l: 'サウナ',        o: 'yesno',     ch: 'desk' },
+      { k: 'sauna_exists', l: 'サウナ',        o: 'saunaex',   ch: 'desk' },
       { k: 'sauna_type',   l: '形式',          o: 'saunatype', ch: 'desk' },
       { k: 'stove',        l: '熱源',          o: 'stove',     ch: 'desk' },
       { k: 'sauna_temp',   l: '室温',          u: '℃',         ch: 'owner' },
