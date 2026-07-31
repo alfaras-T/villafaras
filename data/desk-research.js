@@ -324,3 +324,38 @@
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
     rest_chair:    { v: 'chair', src: 'desk', at: '2026-07' }
   },
+
+  "89": { /* 景雅 奥河口湖 */
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "90": { /* totonoco 湖畔の隠れ家 */
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "95": { /* 天空の温泉ヴィラ紬 河口湖 */
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-07' },
+    sound_rule:    { v: 'night', src: 'desk', at: '2026-07' }
+  },
+
+  "201": { /* キュレーション熱海桃乃八庵 */
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "202": { /* キュレーション熱海須藤水園 */
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "203": { /* キュレーション熱海桃山雅苑 */
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-07' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },

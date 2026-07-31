@@ -1110,7 +1110,11 @@ window.VILLAFARAS_SPEC = {
 
   "89": {  /* 景雅 奥河口湖 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-07' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 860, src: 'auto', at: '2026-07' },
     supermarket:  { v: 9, src: 'auto', at: '2026-07' },
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
@@ -1122,7 +1126,9 @@ window.VILLAFARAS_SPEC = {
   "90": {  /* totonoco 湖畔の隠れ家 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 837, src: 'auto', at: '2026-07' },
     supermarket:  { v: 9, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -1184,13 +1190,16 @@ window.VILLAFARAS_SPEC = {
 
   "95": {  /* 天空の温泉ヴィラ紬 河口湖 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-07' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-07' },
     elevation:    { v: 869, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '富士吉田西桂SIC 19分', src: 'auto', at: '2026-07' },
     station:      { v: '河口湖 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    sound_rule:   { v: 'night', src: 'desk', at: '2026-07' }
   },
 
   "96": {  /* yl&Co.Hotel in Mt.Fuji */
@@ -2492,7 +2501,9 @@ window.VILLAFARAS_SPEC = {
 
   "201": {  /* キュレーション熱海桃乃八庵 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 83, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
@@ -2502,23 +2513,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "202": {  /* キュレーション熱海須藤水園 */
-    capacity:    { v: 6, src: 'desk', at: '2026-07' },
-    elevation:   { v: 72, src: 'auto', at: '2026-07' },
-    supermarket: { v: 3, src: 'auto', at: '2026-07' },
-    conveni:     { v: 1, src: 'auto', at: '2026-07' },
-    ic:          { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
-    station:     { v: '熱海 2分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 1, src: 'auto', at: '2026-07' }
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
+    capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:    { v: 72, src: 'auto', at: '2026-07' },
+    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
+    conveni:      { v: 1, src: 'auto', at: '2026-07' },
+    ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
+    station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
+    onsen:        { v: 1, src: 'auto', at: '2026-07' }
   },
 
   "203": {  /* キュレーション熱海桃山雅苑 */
-    capacity:    { v: 8, src: 'desk', at: '2026-07' },
-    elevation:   { v: 126, src: 'auto', at: '2026-07' },
-    supermarket: { v: 6, src: 'auto', at: '2026-07' },
-    conveni:     { v: 2, src: 'auto', at: '2026-07' },
-    ic:          { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
-    station:     { v: '熱海 2分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 3, src: 'auto', at: '2026-07' }
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
+    capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:    { v: 126, src: 'auto', at: '2026-07' },
+    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
+    conveni:      { v: 2, src: 'auto', at: '2026-07' },
+    ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
+    station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
+    onsen:        { v: 3, src: 'auto', at: '2026-07' }
   },
 
   "204": {  /* オーシャンビュー南熱海 */
