@@ -359,3 +359,17 @@
     capacity:      { v: 8, src: 'desk', at: '2026-07' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
   },
+
+  "13": { /* Ocean's Terrace TORAMII */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_temp:    { v: '80〜90', src: 'desk', at: '2026-07' }
+  },
+
+  "170": { /* Six on the Beach TORAMII -Enoshima- */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_cap:     { v: 6, src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    fee_bbq:       { v: 'incl', src: 'desk', at: '2026-07' }
+  },

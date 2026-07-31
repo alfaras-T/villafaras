@@ -195,6 +195,9 @@ window.VILLAFARAS_SPEC = {
 
   "13": {  /* Ocean's Terrace TORAMII */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_temp:   { v: '80〜90', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 2, src: 'auto', at: '2026-07' },
@@ -2103,14 +2106,19 @@ window.VILLAFARAS_SPEC = {
 
   "170": {  /* Six on the Beach TORAMII -Enoshima- */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 6, src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 12, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 6, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '茅ヶ崎中央IC 18分', src: 'auto', at: '2026-07' },
     station:      { v: '片瀬江ノ島 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' }
   },
 
   "171": {  /* Noёl HAKONE GENSEN */
