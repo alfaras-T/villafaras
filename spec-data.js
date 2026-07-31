@@ -2620,7 +2620,11 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 256, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2632,8 +2636,12 @@ window.VILLAFARAS_SPEC = {
   "215": {  /* マイグレテラス */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 250, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2645,8 +2653,10 @@ window.VILLAFARAS_SPEC = {
   "216": {  /* マイグレ天 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    capacity:     { v: 7, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 333, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
@@ -2659,8 +2669,11 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 250, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2684,8 +2697,12 @@ window.VILLAFARAS_SPEC = {
 
   "219": {  /* マイグレIKKI */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 10, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 252, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2696,7 +2713,12 @@ window.VILLAFARAS_SPEC = {
 
   "220": {  /* マイグレKENKEN */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 253, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2707,7 +2729,13 @@ window.VILLAFARAS_SPEC = {
 
   "221": {  /* マイグレYEBISU */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 9, src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 234, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2718,8 +2746,12 @@ window.VILLAFARAS_SPEC = {
 
   "222": {  /* マイグレ海の声 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 7, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 18, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
@@ -2730,7 +2762,12 @@ window.VILLAFARAS_SPEC = {
 
   "223": {  /* マイグレケニーズハウス */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 16, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 249, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2741,7 +2778,12 @@ window.VILLAFARAS_SPEC = {
 
   "224": {  /* マイグレchillax */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 7, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 201, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 6, src: 'auto', at: '2026-07' },
@@ -2752,8 +2794,11 @@ window.VILLAFARAS_SPEC = {
 
   "225": {  /* マイグレHOODSTAR */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 226, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
@@ -2764,7 +2809,11 @@ window.VILLAFARAS_SPEC = {
 
   "226": {  /* マイグレアトリエ */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 253, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2775,7 +2824,11 @@ window.VILLAFARAS_SPEC = {
 
   "227": {  /* マイグレA5 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 254, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -2786,8 +2839,11 @@ window.VILLAFARAS_SPEC = {
 
   "228": {  /* マイグレパノラマ */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 12, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 252, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },

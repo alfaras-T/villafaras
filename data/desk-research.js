@@ -72,3 +72,118 @@
     wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     fee_bbq:      { v: 'extra', src: 'desk', at: '2026-07' }
   },
+
+  "214": { /* マイグレICE */
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "215": { /* マイグレテラス */
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "216": { /* マイグレ天 */
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    capacity:      { v: 7, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "217": { /* マイグレフラット */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "218": { /* マイグレ600 */
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' }
+  },
+
+  "219": { /* マイグレIKKI */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "220": { /* マイグレKENKEN */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "221": { /* マイグレYEBISU */
+    sauna_cap:     { v: 9, src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "222": { /* マイグレ海の声 */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "223": { /* マイグレケニーズハウス */
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "224": { /* マイグレchillax */
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "225": { /* マイグレHOODSTAR */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "226": { /* マイグレアトリエ */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "227": { /* マイグレA5 */
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
+
+  "228": { /* マイグレパノラマ */
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+  },
