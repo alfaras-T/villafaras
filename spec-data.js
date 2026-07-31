@@ -1504,6 +1504,8 @@ window.VILLAFARAS_SPEC = {
   "121": {  /* COCO VILLA 那須高原 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     elevation:    { v: 498, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
@@ -1515,6 +1517,10 @@ window.VILLAFARAS_SPEC = {
 
   "122": {  /* Earthboat Nasu */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 812, src: 'auto', at: '2026-07' },
@@ -2316,14 +2322,17 @@ window.VILLAFARAS_SPEC = {
 
   "188": {  /* COCO VILLA 軽井沢 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     elevation:    { v: 937, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '佐久平スマートIC 31分', src: 'auto', at: '2026-07' },
     station:      { v: '中軽井沢 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' }
   },
 
   "189": {  /* Tatehata House 北軽井沢 */
@@ -2407,7 +2416,10 @@ window.VILLAFARAS_SPEC = {
 
   "195": {  /* Earthboat Kurohime */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 740, src: 'auto', at: '2026-07' },
@@ -2510,17 +2522,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "204": {  /* オーシャンビュー南熱海 */
-    capacity:    { v: 9, src: 'desk', at: '2026-07' },
-    elevation:   { v: 290, src: 'auto', at: '2026-07' },
-    supermarket: { v: 10, src: 'auto', at: '2026-07' },
-    conveni:     { v: 8, src: 'auto', at: '2026-07' },
-    ic:          { v: '山伏峠IC 21分', src: 'auto', at: '2026-07' },
-    station:     { v: '網代 8分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 13, src: 'auto', at: '2026-07' }
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    comfort_cap:   { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:     { v: 290, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 10, src: 'auto', at: '2026-07' },
+    conveni:       { v: 8, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 21分', src: 'auto', at: '2026-07' },
+    station:       { v: '網代 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    winter_access: { v: 'tire', src: 'desk', at: '2026-07' }
   },
 
   "205": {  /* オーシャンビュー熱海自然郷 */
+    bbq_roof:    { v: 'none', src: 'desk', at: '2026-07' },
     capacity:    { v: 10, src: 'desk', at: '2026-07' },
+    comfort_cap: { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:      { v: 'no', src: 'desk', at: '2026-07' },
     elevation:   { v: 508, src: 'auto', at: '2026-07' },
     supermarket: { v: 13, src: 'auto', at: '2026-07' },
     conveni:     { v: 11, src: 'auto', at: '2026-07' },
@@ -2530,7 +2549,10 @@ window.VILLAFARAS_SPEC = {
   },
 
   "206": {  /* オーシャンビュー熱海自然楼 */
+    bbq_roof:    { v: 'none', src: 'desk', at: '2026-07' },
     capacity:    { v: 10, src: 'desk', at: '2026-07' },
+    pet_ok:      { v: 'no', src: 'desk', at: '2026-07' },
+    wifi:        { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:   { v: 322, src: 'auto', at: '2026-07' },
     supermarket: { v: 9, src: 'auto', at: '2026-07' },
     conveni:     { v: 10, src: 'auto', at: '2026-07' },
@@ -2540,13 +2562,18 @@ window.VILLAFARAS_SPEC = {
   },
 
   "207": {  /* パノーラ伊豆赤沢 */
-    capacity:    { v: 6, src: 'desk', at: '2026-07' },
-    elevation:   { v: 200, src: 'auto', at: '2026-07' },
-    supermarket: { v: 7, src: 'auto', at: '2026-07' },
-    conveni:     { v: 7, src: 'auto', at: '2026-07' },
-    ic:          { v: '河津七滝IC 48分', src: 'auto', at: '2026-07' },
-    station:     { v: '伊豆高原 8分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 6, src: 'auto', at: '2026-07' }
+    kitchen_type:    { v: 'both', src: 'desk', at: '2026-07' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-07' },
+    bbq_roof:        { v: 'none', src: 'desk', at: '2026-07' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 200, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 7, src: 'auto', at: '2026-07' },
+    conveni:         { v: 7, src: 'auto', at: '2026-07' },
+    ic:              { v: '河津七滝IC 48分', src: 'auto', at: '2026-07' },
+    station:         { v: '伊豆高原 8分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 6, src: 'auto', at: '2026-07' }
   },
 
   "208": {  /* パノーラ熱海桜沢 */
@@ -2562,30 +2589,39 @@ window.VILLAFARAS_SPEC = {
   },
 
   "209": {  /* 伊豆高原プライム */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 202, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 43分', src: 'auto', at: '2026-07' },
-    station:      { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-07' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-07' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 202, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 6, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '大平IC 43分', src: 'auto', at: '2026-07' },
+    station:         { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 4, src: 'auto', at: '2026-07' }
   },
 
   "210": {  /* 熱海オーシャンハウス */
-    capacity:    { v: 6, src: 'desk', at: '2026-07' },
-    elevation:   { v: 439, src: 'auto', at: '2026-07' },
-    supermarket: { v: 12, src: 'auto', at: '2026-07' },
-    conveni:     { v: 11, src: 'auto', at: '2026-07' },
-    ic:          { v: '玄岳IC 7分', src: 'auto', at: '2026-07' },
-    station:     { v: '伊豆多賀 11分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 13, src: 'auto', at: '2026-07' }
+    bbq_roof:      { v: 'none', src: 'desk', at: '2026-07' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:     { v: 439, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 12, src: 'auto', at: '2026-07' },
+    conveni:       { v: 11, src: 'auto', at: '2026-07' },
+    ic:            { v: '玄岳IC 7分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆多賀 11分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    winter_access: { v: 'tire', src: 'desk', at: '2026-07' }
   },
 
   "211": {  /* オーシャンテラスAtami */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 1, src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 462, src: 'auto', at: '2026-07' },
     supermarket:  { v: 13, src: 'auto', at: '2026-07' },
     conveni:      { v: 11, src: 'auto', at: '2026-07' },
@@ -2595,19 +2631,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "212": {  /* 熱海リゾート */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 304, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 9, src: 'auto', at: '2026-07' },
-    conveni:      { v: 10, src: 'auto', at: '2026-07' },
-    ic:           { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-07' },
+    sauna_cap:       { v: 2, src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-07' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-07' },
+    kitchen_burners: { v: 2, src: 'desk', at: '2026-07' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    elevation:       { v: 304, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 9, src: 'auto', at: '2026-07' },
+    conveni:         { v: 10, src: 'auto', at: '2026-07' },
+    ic:              { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
+    station:         { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 11, src: 'auto', at: '2026-07' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-07' }
   },
 
   "213": {  /* 熱海別邸　双梅庵 */
     capacity:    { v: 4, src: 'desk', at: '2026-07' },
+    wifi:        { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:   { v: 105, src: 'auto', at: '2026-07' },
     supermarket: { v: 3, src: 'auto', at: '2026-07' },
     conveni:     { v: 3, src: 'auto', at: '2026-07' },
@@ -2910,6 +2952,9 @@ window.VILLAFARAS_SPEC = {
 
   "234": {  /* COCO VILLA 伊豆赤沢 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     elevation:    { v: 84, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
@@ -2921,6 +2966,10 @@ window.VILLAFARAS_SPEC = {
 
   "235": {  /* COCO VILLA 大室山 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     elevation:    { v: 423, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
@@ -3223,6 +3272,9 @@ window.VILLAFARAS_SPEC = {
 
   "261": {  /* Earthboat Minakami Fujiwara */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 840, src: 'auto', at: '2026-07' },
@@ -3235,6 +3287,9 @@ window.VILLAFARAS_SPEC = {
 
   "262": {  /* Earthboat Minakami Hodaigi */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 958, src: 'auto', at: '2026-07' },
@@ -3326,7 +3381,9 @@ window.VILLAFARAS_SPEC = {
 
   "270": {  /* COCO VILLA 長瀞 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     elevation:    { v: 241, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
@@ -3339,6 +3396,10 @@ window.VILLAFARAS_SPEC = {
   "271": {  /* Earthboat Saitama Kawajima */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-07' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 12, src: 'auto', at: '2026-07' },
@@ -3399,6 +3460,9 @@ window.VILLAFARAS_SPEC = {
 
   "276": {  /* COCO VILLA 大洗 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    rest_chair:   { v: 'chair', src: 'desk', at: '2026-07' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 19, src: 'auto', at: '2026-07' },
