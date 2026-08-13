@@ -763,15 +763,19 @@ window.VILLAFARAS_SPEC = {
   },
 
   "57": {  /* Refwind */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 24, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '鋸南保田IC 2分', src: 'auto', at: '2026-07' },
-    station:      { v: '保田 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 24, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 3, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '鋸南保田IC 2分', src: 'auto', at: '2026-07' },
+    station:         { v: '保田 2分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 1, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' }
   },
 
   "58": {  /* UMIYAMA CHIKURA */

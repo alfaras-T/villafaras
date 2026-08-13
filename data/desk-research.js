@@ -877,3 +877,37 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' }
   },
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+
+   Refwind:
+     「A棟、B棟共にプライベートサウナをご用意しております。2時間タイマー」
+     「プールデッキから続く屋根付きBBQキッチンで雨天時も楽しめる」→ bbq_roof=roof
+     「開放的な屋外BBQグリルに加えて、室内のIHキッチンも」→ kitchen_type=ih
+     「焚き火台に薪をくべ」→ firepit=stand
+     「1棟最大定員6名」（2棟貸切も可）、「※調味料はご持参ください」→ bring_seasoning=bring
+     「※わんちゃんはB棟のみ」→ pet_ok=yes
+     除外: coldbath … 「プールを水風呂代わりに」とあり専用の水風呂ではない
+           sauna_hours … 「2時間タイマー」は加熱の自動停止であり利用可能時間ではない
+
+   THE POOL HOUSE TOKYO BAY:
+     「プールで遊ぶ、サウナ・ジャグジーで寛ぐ」「最大12名（シングルベッド×4、
+     セミダブルベッド×4）までの宿泊」。日帰りは最大20名だが capacity は宿泊で採る。
+     除外: ブランド共通の「サウナやジェットバス・BBQ設備も完備（一部施設除く）」は
+           施設ごとに異なるため、東京ベイ個別の記載があるものだけを採用。
+           sauna_type/stove/coldbath … 記載なし */
+
+  "57": {   /* Refwind */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' }
+  },
+
+  "25": {   /* THE POOL HOUSE TOKYO BAY */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thepoolhouse.jp/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://thepoolhouse.jp/' }
+  },
