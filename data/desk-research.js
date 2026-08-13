@@ -657,3 +657,41 @@
     bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
     firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' }
   },
+
+/* Outdoor Cottage Group（北軽井沢）3棟 公式サイトより（2026-08確認）
+   出典: https://www.kashikiribesso.com/compare/ および各棟の詳細ページ
+   公式の5棟比較表に定員・推奨人数・設備・ペット可否が一覧化されている。
+   「雨でもOKの屋根付きBBQスペース」「素泊まり（食材、着火剤、薪や炭はお客様でご用意）」と明記。
+   北軽井沢Iは「区画に当施設以外の建物がなく」とあるため villa_type=solo。
+   除外: sauna_type … 「野外サウナ」表記のみで小屋型／バレル型の別が不明 */
+
+  "263": {   /* アウトドア貸切別荘北軽井沢1 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    comfort_cap:     { v: 7, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' }
+  },
+
+  "264": {   /* アウトドア貸切別荘北軽井沢2 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    capacity:        { v: 5, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    comfort_cap:     { v: 4, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' }
+  },
+
+  "265": {   /* アウトドアアトラクション北軽井沢 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' }
+  },

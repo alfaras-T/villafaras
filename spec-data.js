@@ -3472,35 +3472,51 @@ window.VILLAFARAS_SPEC = {
 
   "263": {  /* アウトドア貸切別荘北軽井沢1 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    bbq_roof:     { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
     capacity:     { v: 7, src: 'desk', at: '2026-07' },
+    comfort_cap:  { v: 7, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
     elevation:    { v: 976, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 9, src: 'auto', at: '2026-07' },
     ic:           { v: '厚田IC 37分', src: 'auto', at: '2026-07' },
     station:      { v: '万座・鹿沢口 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    firewood_fee: { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' }
   },
 
   "264": {  /* アウトドア貸切別荘北軽井沢2 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    bbq_roof:     { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    comfort_cap:  { v: 4, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' },
     elevation:    { v: 1102, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 7, src: 'auto', at: '2026-07' },
     ic:           { v: '小諸IC 47分', src: 'auto', at: '2026-07' },
     station:      { v: '大前 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    onsen:        { v: 11, src: 'auto', at: '2026-07' },
+    firewood_fee: { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/' }
   },
 
   "265": {  /* アウトドアアトラクション北軽井沢 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    bbq_roof:     { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    comfort_cap:  { v: 6, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
     elevation:    { v: 981, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 10, src: 'auto', at: '2026-07' },
     ic:           { v: '厚田IC 38分', src: 'auto', at: '2026-07' },
     station:      { v: '万座・鹿沢口 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    onsen:        { v: 9, src: 'auto', at: '2026-07' },
+    firewood_fee: { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' }
   },
 
   "266": {  /* 温泉グランピングシマブルー */
