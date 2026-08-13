@@ -695,3 +695,53 @@
     comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' }
   },
+
+/* 赤城宿（LOOF inc.）公式サイトより（2026-08確認）
+   清芳山荘: 本館の設備一覧より。「檜風呂、サウナ、水風呂、シャワー」、
+     外につながるウッドデッキで露天風呂・水風呂 → outdoor_rest。定員2〜8名。
+     調味料（サラダ油・塩・醤油・胡椒）、アルミホイル・ラップ、
+     バスタオル/フェイスタオル/歯ブラシ/シャンプー等あり。
+   珠蕾山荘: 「307㎡の広大な平屋建築」→ steps=flat。華の間と蕾の間を繋げて最大12名。
+   除外した項目:
+     清芳山荘 sauna_type … 本館はフィンランドサウナ、質庫・奥庫はテントサウナで
+       客室により形式が異なる（るうふ公式のサウナ一覧で確認）。DBは山荘単位の1エントリのため入れない
+     清芳山荘 steps … 本館・質庫・奥庫で構造が異なる
+     kitchen_type … 調理器具一覧に加熱方式の記載がない
+     wifi … 記載が見当たらない */
+
+  "259": {   /* 赤城宿 清芳山荘 -seiho- */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' }
+  },
+
+  "260": {   /* 赤城宿 珠蕾山荘 -shurai- */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/shurai-sanso/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/shurai-sanso/' },
+    steps:           { v: 'flat', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/shurai-sanso/' }
+  },
+
+/* GLAMDAY STYLE HOTEL SUITE 2施設 公式サイトより（2026-08確認）
+   川ノ音: SARASARA・SOUSOU の2棟いずれも「プライベートサウナ」、各2〜6名。
+   山ノ麓: CEDAR/MAPLE/WALNUT/BIRCH/FIR TREE の5棟いずれも「プライベートサウナ」。
+     FACILITIES に Wi-Fi有、タオル・バスタオル、シャンプー等アメニティ一式の記載。
+   除外: kitchen_type … 「システムキッチン」とあるのみで加熱方式の記載がない
+         川ノ音の wifi/bring_* … 設備一覧が山ノ麓ほど詳細でなく確認できない */
+
+  "181": {   /* GLAMDAY STYLE HOTEL SUITE 川ノ音 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' }
+  },
+
+  "180": {   /* GLAMDAY STYLE HOTEL SUITE 山ノ麓 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' }
+  },

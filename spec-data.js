@@ -2372,16 +2372,19 @@ window.VILLAFARAS_SPEC = {
   },
 
   "180": {  /* GLAMDAY STYLE HOTEL SUITE 山ノ麓 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 943, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '横川SA(上り) 25分', src: 'auto', at: '2026-07' },
-    station:      { v: '軽井沢 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:         { v: 'wood', src: 'desk', at: '2026-07' },
+    capacity:      { v: 7, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    elevation:     { v: 943, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 2, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '横川SA(上り) 25分', src: 'auto', at: '2026-07' },
+    station:       { v: '軽井沢 2分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' }
   },
 
   "181": {  /* GLAMDAY STYLE HOTEL SUITE 川ノ音 */
@@ -3418,20 +3421,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "259": {  /* 赤城宿 清芳山荘 -seiho- */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 528, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 5, src: 'auto', at: '2026-07' },
-    ic:           { v: '渋川伊香保IC 22分', src: 'auto', at: '2026-07' },
-    station:      { v: '大胡 16分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    elevation:       { v: 528, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 5, src: 'auto', at: '2026-07' },
+    ic:              { v: '渋川伊香保IC 22分', src: 'auto', at: '2026-07' },
+    station:         { v: '大胡 16分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/seiho-sanso/honkan/' }
   },
 
   "260": {  /* 赤城宿 珠蕾山荘 -shurai- */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    steps:        { v: 'flat', src: 'desk', at: '2026-08', url: 'https://akagi-shuku.com/hotels/shurai-sanso/' },
     elevation:    { v: 557, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 6, src: 'auto', at: '2026-07' },
