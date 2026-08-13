@@ -3208,7 +3208,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "253": {  /* 伊豆グランピングリゾートIshiki385 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://izuglam385.com/stay/' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
@@ -3568,7 +3568,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "282": {  /* GLAMPING KASHIMA 753 #00 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/%E3%83%90%E3%83%AC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%8A/' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
     elevation:    { v: 28, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },

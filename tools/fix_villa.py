@@ -4,32 +4,17 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    # --- 一部客室のみサウナ付き
-    "281": {"name": "SPA＆ごはんゆるうむ",
-            "reason": "「セルフロウリュ可能なサウナ又は岩盤浴付き客室あり」と公式に明記。サウナ付きは一部客室のみで、他に共用のタワーサウナ等4種がある（2026-08確認）",
-            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://yuluumu.co.jp/"}}},
-    "99":  {"name": "ハンズアウトドアリゾート",
-            "reason": "テントサウナは「VILLAのお部屋のみ」（3,800円/組）でPAO・Residenceには無い。別にバレルサウナ（12,000円/組・時間枠制）を共用（2026-08確認）",
-            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://glampicks.jp/glamping/g46375/"}}},
-
     # --- 共用サウナのみ。shared はトップの絞り込み対象外なので sauna タグも外す。
-    "266": {"name": "温泉グランピングシマブルー",
-            "reason": "全7棟の客室設備は温泉露天風呂。サウナは楓仙峡に面した独立施設「森のサウナ」を貸切で共用（2026-08確認）",
+    "253": {"name": "伊豆グランピングリゾートIshiki385",
+            "reason": "サウナは1,000円/1名・各時間最大6人までの1時間毎予約制で、予約枠内のみ貸切。公式も「屋外型バレルサウナは日帰り利用もOK」と案内。客室4タイプ（ドーム／サファリテント／ロッジ／キャンプサイト）にサウナは無い（2026-08確認）",
             "remove_tags": ["sauna"],
             "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://shimablue.jp"}}},
-    "168": {"name": "湯屋　やまざくら",
-            "reason": "全6室の旅館で、サウナは露天風呂・内風呂と並ぶ「三つの貸切風呂」の一つ。2024年6月新設のプライベートサウナも貸切利用で客室内ではない（2026-08確認）",
+                                          "url": "https://izuglam385.com/stay/"}}},
+    "282": {"name": "GLAMPING KASHIMA 753 #00",
+            "reason": "施設単独設備としてバレルサウナ（約90℃・チラー付き水風呂）を設置。客室3タイプ（ドームテント／ロイヤルコテージGRAY／クラブコテージBROWN）の設備はユニットバス等でサウナは含まれない（2026-08確認）",
             "remove_tags": ["sauna"],
             "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://hakoneyamazakura.com"}}},
-    "254": {"name": "伊豆グランヴィレッジ　グランピング",
-            "reason": "「敷地内には、温泉に浸かれるつぼ湯や檜の香りが広がるフィンランド式サウナを併設」。予約制・90分3,980円の貸切オプションで、テント側はバス・トイレのみ（2026-08確認）",
-            "remove_tags": ["sauna"],
-            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://travel.rakuten.co.jp/HOTEL/184404/184404.html"}}},
+                                          "url": "https://gp753.jp/kashima/%E3%83%90%E3%83%AC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%8A/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
