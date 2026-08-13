@@ -1052,25 +1052,37 @@ window.VILLAFARAS_SPEC = {
   },
 
   "81": {  /* 古民家宿るうふ　織之家 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 485, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 14, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '初狩PA(下り) 15分', src: 'auto', at: '2026-07' },
-    station:      { v: '初狩 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    elevation:       { v: 485, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 14, src: 'auto', at: '2026-07' },
+    conveni:         { v: 4, src: 'auto', at: '2026-07' },
+    ic:              { v: '初狩PA(下り) 15分', src: 'auto', at: '2026-07' },
+    station:         { v: '初狩 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' }
   },
 
   "82": {  /* 古民家宿るうふ　祝之家 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 249, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '田富東ランプ 5分', src: 'auto', at: '2026-07' },
-    station:      { v: '東花輪 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    elevation:       { v: 249, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '田富東ランプ 5分', src: 'auto', at: '2026-07' },
+    station:         { v: '東花輪 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' }
   },
 
   "83": {  /* THE TIME FUJI */
@@ -1720,6 +1732,8 @@ window.VILLAFARAS_SPEC = {
 
   "133": {  /* GEOSPOT MOTOHAKONE B */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 871, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
@@ -1731,6 +1745,8 @@ window.VILLAFARAS_SPEC = {
 
   "134": {  /* GEOSPOT MOTOHAKONE C */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 870, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
@@ -3015,37 +3031,46 @@ window.VILLAFARAS_SPEC = {
   },
 
   "231": {  /* Hiire IZU FUTO */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 289, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    elevation:     { v: 289, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 41分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 5分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
   },
 
   "232": {  /* Hiire IZU OLIVE */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 103, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 44分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆高原 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    elevation:     { v: 103, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 2, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 44分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆高原 3分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
   },
 
   "233": {  /* Hiire IZU OMURO */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 231, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 40分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆高原 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    elevation:     { v: 231, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 3, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 40分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆高原 5分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
   },
 
   "234": {  /* COCO VILLA 伊豆赤沢 */

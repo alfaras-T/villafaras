@@ -515,3 +515,74 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
   },
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+   Hiire 3棟 / GEOSPOT MOTOHAKONE 3棟 / るうふ 織之家・祝之家
+   除外した項目と理由:
+     Hiire stove … 「エストニア製のサウナ」とあるのみで薪／電気の別が不明
+     GEOSPOT bbq_roof … 「BBQデッキ」とあるのみで屋根の有無が不明
+     るうふ sauna_type … 「フィンランドサウナ」は形式（室内/小屋/バレル）を特定しない */
+
+  "231": {   /* Hiire IZU FUTO */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
+  },
+
+  "232": {   /* Hiire IZU OLIVE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
+  },
+
+  "233": {   /* Hiire IZU OMURO */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
+  },
+
+  "132": {   /* GEOSPOT MOTOHAKONE A */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    coldbath:        { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' }
+  },
+
+  "133": {   /* GEOSPOT MOTOHAKONE B */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    coldbath:        { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' }
+  },
+
+  "134": {   /* GEOSPOT MOTOHAKONE C */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    coldbath:        { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' }
+  },
+
+  "81": {   /* 古民家宿るうふ　織之家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' }
+  },
+
+  "82": {   /* 古民家宿るうふ　祝之家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' }
+  },
