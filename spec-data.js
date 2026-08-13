@@ -1248,7 +1248,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "99": {  /* ハンズアウトドアリゾート */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://glampicks.jp/glamping/g46375/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 928, src: 'auto', at: '2026-07' },
@@ -2091,7 +2091,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "168": {  /* 湯屋　やまざくら */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     elevation:    { v: 642, src: 'auto', at: '2026-07' },
@@ -3221,7 +3221,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "254": {  /* 伊豆グランヴィレッジ　グランピング */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404.html' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
     elevation:    { v: 228, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
@@ -3366,7 +3366,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "266": {  /* 温泉グランピングシマブルー */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://shimablue.jp' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     elevation:    { v: 674, src: 'auto', at: '2026-07' },
     supermarket:  { v: 23, src: 'auto', at: '2026-07' },
@@ -3556,7 +3556,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "281": {  /* SPA＆ごはんゆるうむ */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     elevation:    { v: 30, src: 'auto', at: '2026-07' },
