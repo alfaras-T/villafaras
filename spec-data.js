@@ -943,8 +943,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "69": {  /* primera villa */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' },
     elevation:    { v: 23, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },

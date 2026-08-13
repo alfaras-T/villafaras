@@ -4,10 +4,12 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    "252": {"name": "伊豆高原テントリゾート",
-            "reason": "公式サイト全ページ（stay/facilities/guide/about）にサウナの記載が0件。共有設備は管理棟・シャワールーム・トイレ・ゴミスペース・駐車場のみで、レンタル品リストにもサウナは無い。第三者掲載に「テントサウナスペース」の記述はあるが施設がサウナを備えているとは確認できないため、あり／なしを断定せず未調査に戻す（2026-08確認）",
-            "remove_tags": ["sauna"],
-            "remove_spec": ["sauna_exists"]},
+    "69": {"name": "primera villa",
+           "reason": "公式サイト（トップ／Roomページ／FAQ）のいずれにもサウナの記載が一切なく、設備は天然温泉・プール・テラス・キッチンのみ。OTA・検索でも裏付けが取れないため、あり／なしを断定せず未調査に戻す。feature の「サウナ」はチャネルB第一段の自動抽出由来と思われる（2026-08確認）",
+           "remove_tags": ["sauna"],
+           "remove_spec": ["sauna_exists"],
+           "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                     "url": "https://www.primera-gr.co.jp/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
