@@ -936,3 +936,45 @@
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' }
   },
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+
+   and FOREST勝浦 竹の離れ:
+     「セルフチェックイン スマートロックで入室できます」→ checkin_method=smart
+     「アーリーチェックイン レイトチェックアウト [有料・応相談]」→ early_late=yes
+     設備欄に 露天風呂/室内シャワー、サウナ/水風呂、wi-fi、バスタオル・フェイスタオル、
+     歯ブラシセット・コットン・綿棒セット。「BBQセット貸出し可(有料)」→ fee_bbq=extra
+     「テラスを含め全てのスペースがお客様専用」→ villa_type=solo。常設8名まで。
+     「ペット可 (別途清掃費あり/中型犬まで可)」→ pet_ok=yes
+     除外: sauna_type・stove … 記載なし
+           bring_towel は ready としたが「各1枚、ご宿泊人数分のみ」の注記あり
+
+   ビーチテラス房総:
+     「室内には3人まで入れる専用サウナ」→ sauna_type=indoor, sauna_cap=3
+     「心地よい海風が吹き抜けるテラスでの外気浴」→ outdoor_rest=yes
+     「最大8名まで宿泊可能」「5棟の2階建てヴィラ」→ capacity=8, steps=stairs
+     除外: villa_type … 5棟が同一サイト内だが棟間の配置が読めず solo/multi を確定できない
+           coldbath … 水風呂の記載なし */
+
+  "60": {   /* and FOREST勝浦 竹の離れ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' }
+  },
+
+  "41": {   /* ビーチテラス房総 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
+    sauna_cap:       { v: 3, src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' }
+  },
