@@ -886,6 +886,8 @@ window.VILLAFARAS_SPEC = {
   "67": {  /* EKVOLI MARINA VILLA, Isumi Garden */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 3, src: 'auto', at: '2026-07' },
@@ -897,15 +899,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "68": {  /* SURF UP */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 4, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 9分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    elevation:     { v: 4, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 10, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '長生IC 9分', src: 'auto', at: '2026-07' },
+    station:       { v: '東浪見 4分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' }
   },
 
   "69": {  /* primera villa */

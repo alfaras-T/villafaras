@@ -845,3 +845,35 @@
    Information: Capacity 2〜4名 / 153㎡ / Wi-Fi あり。「一日一組」→ villa_type=solo
    除外: sauna_type・stove … 記載なし
          water_temp … 「天然水」とあるのみで水温の記載なし */
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+
+   SURF UP:
+     「客室情報」の諸元表より。宿泊人数 最大14名 / 新築一棟貸し2階建て4LDK。
+     設備欄に サウナ・無料Wi-Fi、アメニティ欄にタオル・バスタオル、シャンプー等一式。
+     「OUTDOOR SAUNA アウトドアサウナ」「誰にも邪魔されないプライベートサウナ」。
+     除外: sauna_type … 「アウトドアサウナ」表記のみで小屋型／バレル型の別が不明
+           coldbath・kitchen_type … 記載なし
+
+   EKVOLI MARINA VILLA, Isumi Garden:
+     「1日一組限定10名まで大人数で宿泊できる一棟貸タイプ」→ capacity=10, villa_type=solo
+     「焚き火も愉しめるBBQスペース」→ firepit=stand
+     除外: sauna_type・stove・coldbath … サウナの詳細記載なし
+           bbq_roof … BBQスペースの屋根の有無が不明 */
+
+  "68": {   /* SURF UP */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    capacity:        { v: 14, src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://surf-up.co.jp/' }
+  },
+
+  "67": {   /* EKVOLI MARINA VILLA, Isumi Garden */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ekvoli.com/ekvoli-marina-villa' }
+  },
