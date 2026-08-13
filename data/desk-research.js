@@ -586,3 +586,74 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' }
   },
+
+/* 軽井沢365 3棟 公式サイトより（2026-08確認）
+   棟ごとに仕様が異なることを個別ページで確認した。
+   - フォレストガーデン八風台: サウナ小屋11㎡、23時-8時は利用停止、スキップフロアで階段が多い
+   - プレイガーデン大日向: 屋内サウナ（浴室隣）、水風呂は浴槽と兼用、ととのいベンチ
+   - リバーサイドヴィラ八風台: 水風呂おけ＋ととのいデッキ、インフィニティチェア2
+   ストーブは全棟 TYLO 社の電気ストーブ。薪ストーブ・焚き火の薪は料金に含む。
+   除外: 大日向の coldbath … 「水風呂が浴槽と兼用」で bath/none どちらとも言い切れない
+         大日向の outdoor_rest … 屋内導線の記載のみで外気浴の明記なし */
+
+  "175": {   /* 軽井沢365 リバーサイドヴィラ八風台 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    comfort_cap:     { v: 10, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' }
+  },
+
+  "173": {   /* 軽井沢365 フォレストガーデン八風台 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/happudai' }
+  },
+
+  "174": {   /* 軽井沢365 プレイガーデン大日向 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    rest_chair:      { v: 'bench', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/ohinata' }
+  },
