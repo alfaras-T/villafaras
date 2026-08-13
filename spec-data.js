@@ -1853,7 +1853,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "148": {  /* エスパシオ箱根迎賓館　麟鳳亀龍 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-07' },
     capacity:     { v: 2, src: 'desk', at: '2026-07' },
     elevation:    { v: 414, src: 'auto', at: '2026-07' },
     supermarket:  { v: 1, src: 'auto', at: '2026-07' },
