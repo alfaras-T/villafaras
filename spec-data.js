@@ -484,15 +484,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "36": {  /* STAR VILLAGE TATEYAMA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 33, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 10分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 33, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 10分', src: 'auto', at: '2026-07' },
+    station:         { v: '館山 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' }
   },
 
   "37": {  /* VILLA SENSE kujukuri */

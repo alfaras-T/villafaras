@@ -978,3 +978,32 @@
     capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' },
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://beach-terrace.jp/boso/' }
   },
+
+/* STAR VILLAGE TATEYAMA（2026-08確認）
+   /rooms の「設備・備品」欄より:
+     ゲストルーム5部屋（各部屋セミダブルベッド2台）→ capacity=10
+     キッチン「IHコンロ」→ kitchen_type=ih
+     調味料（塩、胡椒、醤油、オリーブオイル、BBQ用ソース一式）→ bring_seasoning=ready
+     アメニティ（シャンプー、ボディーソープ、歯ブラシ、OSAJI一式）、
+     バスタオル・フェイスタオル（人数分）→ bring_towel/bring_amenity=ready
+     「大型ファイヤーピット プール横に1カ所」→ firepit=stand
+     「完全プライベート空間」の一棟貸切 → villa_type=solo
+   サウナは「プール横に1カ所」だが施設全体を1組で貸し切るため sauna_exists=yes。
+   除外した項目と理由:
+     sauna_type・stove・loyly … 「オーシャンビューサウナ」「本格木製サウナ」
+       「関東トップクラスのサウナ」とあるのみで形式・熱源の記載がない
+     coldbath … 水風呂の記載なし（プール横にシャワーとジャグジー）
+     bbq_roof … テラスに「villageオリジナルカーテン」「ジェットヒーター（冬季限定）」
+       とあり雨天利用を想定した記述はあるが、屋根の有無は明記されていない
+     wifi … TV欄にネット利用の記載はあるが Wi-Fi 自体の明記がない */
+
+  "36": {   /* STAR VILLAGE TATEYAMA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' }
+  },
