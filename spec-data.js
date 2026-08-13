@@ -446,16 +446,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "33": {  /* and RIVER勝浦 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 48, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 9, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '市原鶴舞IC 17分', src: 'auto', at: '2026-07' },
-    station:      { v: '総元 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    elevation:       { v: 48, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 9, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '市原鶴舞IC 17分', src: 'auto', at: '2026-07' },
+    station:         { v: '総元 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' }
   },
 
   "34": {  /* Retreat Villa Aym */
@@ -819,24 +827,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "60": {  /* and FOREST勝浦 竹の離れ */
-    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:          { v: 'electric', src: 'desk', at: '2026-07' },
-    coldbath:       { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    capacity:       { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
-    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    elevation:      { v: 73, src: 'auto', at: '2026-07' },
-    supermarket:    { v: 8, src: 'auto', at: '2026-07' },
-    conveni:        { v: 2, src: 'auto', at: '2026-07' },
-    ic:             { v: '市原鶴舞IC 17分', src: 'auto', at: '2026-07' },
-    station:        { v: '久我原 2分', src: 'auto', at: '2026-07' },
-    onsen:          { v: 9, src: 'auto', at: '2026-07' },
-    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    elevation:       { v: 73, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 8, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '市原鶴舞IC 17分', src: 'auto', at: '2026-07' },
+    station:         { v: '久我原 2分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' }
   },
 
   "61": {  /* 天神郷 昊 -Sora- */
@@ -943,13 +952,13 @@ window.VILLAFARAS_SPEC = {
   },
 
   "69": {  /* primera villa */
-    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' },
-    elevation:    { v: 23, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
-    station:      { v: '竹岡 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    capacity:    { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' },
+    elevation:   { v: 23, src: 'auto', at: '2026-07' },
+    supermarket: { v: 8, src: 'auto', at: '2026-07' },
+    conveni:     { v: 3, src: 'auto', at: '2026-07' },
+    ic:          { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
+    station:     { v: '竹岡 3分', src: 'auto', at: '2026-07' },
+    onsen:       { v: 2, src: 'auto', at: '2026-07' }
   },
 
   "70": {  /* The Pacific Retreat TATEYAMA */

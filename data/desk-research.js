@@ -1007,3 +1007,41 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' }
   },
+
+/* and RIVER勝浦（2026-08確認）
+   出典: https://www.andriver-katsuura.com/
+   姉妹施設 and FOREST勝浦 竹の離れ と同一運営で諸元表の書式も共通。
+     「予約可能人数 最大8名まで」→ capacity=8
+     「1棟のみの貸別荘です 1日1組様限定」→ villa_type=solo
+     「セルフチェックイン スマートロックで入室できます」→ checkin_method=smart
+     「アーリーチェックイン レイトチェックアウト [有料・応相談] 1時間あたり10,000円+tax」
+       → early_late=yes
+     設備欄に 露天風呂/室内風呂、サウナ/水風呂、wi-fi、タオル・アメニティ一式
+     「BBQセット貸出し可(有料)」機材 Weber Pulse 1000電気グリル → fee_bbq=extra
+     「食材、調味料はお客様にてご準備をお願い致します」→ bring_seasoning=bring
+     「ペット可 (別途清掃費あり/中型犬まで可)」→ pet_ok=yes
+   除外: sauna_type・stove・loyly … 記載なし（アメニティに「サウナ用アロマオイル2種」
+         はあるがロウリュ可否の明示ではない）
+         kitchen_type … 調理器具一覧に加熱方式の記載がない */
+
+  "33": {   /* and RIVER勝浦 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' }
+  },
+
+  "60": {   /* and FOREST勝浦 竹の離れ */
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' }
+  },
+
+/* 補足: 竹の離れも同じ BBQセット貸出しの記述で「食材、調味料はお客様にて
+   ご準備をお願い致します」とあるため bring_seasoning=bring を追加した。 */
