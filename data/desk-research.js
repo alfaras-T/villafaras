@@ -786,3 +786,62 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' }
   },
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+
+   九十九里 point59:
+     施設概要が階層別。1階カウンターIHキッチン／2階お風呂に「サウナ・シャワー室」。
+     定員6名＋追加最大4名で定員10名。1階2階＋屋外の構成 → steps=stairs。
+     「一棟貸切」かつ独立物件 → villa_type=solo。ペット用トイレ・ドッグラン完備。
+     除外: coldbath … 水風呂の記載なし（1階メインバスは「立ち湯」）
+           sauna_type/stove/loyly … 記載なし
+
+   THE CLUB 919 DOG FRIENDLY:
+     「フィンランドサウナの伝統に基づいた本物のロウリュ式サウナ」
+     「サウナストーンから立ち昇る蒸気」→ loyly=yes。
+     設備一覧に「システムキッチン（ドイツ製IH）」「フリーWifi」。
+     除外: sauna_type … 「フィンランドサウナ」は様式であり形式を特定しない
+           capacity … 公式サイトに定員の記載が見当たらない
+           coldbath … 水風呂の記載なし（プール・ジャグジーのみ） */
+
+  "51": {   /* 九十九里 point59 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' }
+  },
+
+  "50": {   /* THE CLUB 919 DOG FRIENDLY */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' }
+  },
+
+  "16": {   /* みささ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    water_src:       { v: 'spring', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' }
+  },
+
+/* みささ（2026-08確認）
+   「本格的なアロマロウリュがお楽しみいただけるプライベートサウナ」→ loyly=yes
+   「鋸山の伏流水による水風呂は肌にやさしい天然水を使用」→ water_src=spring
+   「解放感あふれる外気浴デッキ」→ outdoor_rest=yes
+   「※24：00から6：00のあいだはサウナをご利用いただけません」→ sauna_hours=limited
+   Information: Capacity 2〜4名 / 153㎡ / Wi-Fi あり。「一日一組」→ villa_type=solo
+   除外: sauna_type・stove … 記載なし
+         water_temp … 「天然水」とあるのみで水温の記載なし */

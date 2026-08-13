@@ -236,9 +236,14 @@ window.VILLAFARAS_SPEC = {
 
   "16": {  /* みささ */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
+    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'spring', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/spa/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.awa-misasa.com/room/' },
     elevation:    { v: 2, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
@@ -653,27 +658,37 @@ window.VILLAFARAS_SPEC = {
   },
 
   "50": {  /* THE CLUB 919 DOG FRIENDLY */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '真亀JCT 2分', src: 'auto', at: '2026-07' },
-    station:      { v: '東金 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    elevation:     { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 3, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '真亀JCT 2分', src: 'auto', at: '2026-07' },
+    station:       { v: '東金 10分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 11, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://theclub919.com/facilities/' }
   },
 
   "51": {  /* 九十九里 point59 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '真亀JCT 2分', src: 'auto', at: '2026-07' },
-    station:      { v: '東金 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    elevation:     { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 3, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '真亀JCT 2分', src: 'auto', at: '2026-07' },
+    station:       { v: '東金 10分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 11, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bai-bain.com/property/017_Point59.html' }
   },
 
   "52": {  /* 緑邸～OHTAKI～ */
