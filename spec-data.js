@@ -254,13 +254,18 @@ window.VILLAFARAS_SPEC = {
 
   "17": {  /* the MELLOW HOUSE 館山 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     elevation:    { v: 6, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 10, src: 'auto', at: '2026-07' },
     ic:           { v: '富浦IC 21分', src: 'auto', at: '2026-07' },
     station:      { v: '館山 17分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    onsen:        { v: 7, src: 'auto', at: '2026-07' },
+    early_late:   { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    fee_bbq:      { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' }
   },
 
   "18": {  /* On the wave 館山 */

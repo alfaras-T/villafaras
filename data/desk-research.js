@@ -911,3 +911,28 @@
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thepoolhouse.jp/' },
     capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://thepoolhouse.jp/' }
   },
+
+/* the MELLOW HOUSE 館山（2026-08確認）
+   /room/bathroom/ より「大きなお風呂は大人4人でも広々です。水風呂も完備」→ coldbath=bath
+   「コンパクトなガラス張りのサウナ」（形式は室内／小屋のいずれとも特定できず sauna_type は除外）
+   FAQ より:
+     「最大20名様（大人12名、子供8名）まで可能」→ capacity=20
+     「ペットの同伴はできません」→ pet_ok=no
+     「有料オプションにて、アーリーチェックイン・レイトチェックアウトも可能」→ early_late=yes
+     「BBQグリル（有料オプション）」→ fee_bbq=extra
+   除外した項目と理由:
+     checkin_method … 「17時以降はセルフチェックイン」「基本無人施設」とある一方で
+       「チェックイン時、チェックアウト時のみ立ち会わせていただきます」ともあり、
+       さらに解錠方式（スマートロック／キーボックス）の記載がないため確定できない
+     late_arrival … 21時以降の到着可否についての記載がない
+     kitchen_type … 「基本的な調理家電、キッチン設備」とあるのみで加熱方式の記載なし */
+
+  "17": {   /* the MELLOW HOUSE 館山 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    capacity:        { v: 20, src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' }
+  },
