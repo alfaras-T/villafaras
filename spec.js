@@ -68,7 +68,11 @@
         o    = 選択肢マスタ名（省略時は生値をそのまま表示）
         u    = 単位
         n    = ラベル下の補足（業界語の言い換えなど）
-        ch   = 想定取得チャネル（owner / desk / auto / review）
+        ch   = 取得チャネル（owner / desk / auto / review）
+               ※ 2026-08、机上調査済み57施設での実測充足率をもとに見直した。
+                 設計時の想定と実態が食い違っていた8項目を修正済み。
+                 desk と書ける条件は「公式サイトに記載される慣習があること」。
+                 記載が慣習化していない項目は充足率が1割を切るため owner とする。
      ------------------------------------------------------------------ */
   var SCHEMA = [
     { g: 'サウナ', rows: [
@@ -77,7 +81,7 @@
       { k: 'stove',        l: '熱源',          o: 'stove',     ch: 'desk' },
       { k: 'sauna_temp',   l: '室温',          u: '℃',         ch: 'owner' },
       { k: 'sauna_cap',    l: 'サウナ定員',    u: '名',         ch: 'owner' },
-      { k: 'loyly',        l: 'セルフロウリュ', o: 'loyly',     ch: 'owner', n: '石に水をかけられるか' },
+      { k: 'loyly',        l: 'セルフロウリュ', o: 'loyly',     ch: 'desk', n: '石に水をかけられるか' },
       { k: 'heat_time',    l: '加温時間',      o: 'heattime',  ch: 'owner', n: '入れるようになるまで' },
       { k: 'sauna_hours',  l: '利用可能時間',  o: 'hours',     ch: 'owner' }
     ]},
@@ -89,21 +93,21 @@
       { k: 'water_src',    l: '水源',          o: 'wsrc',      ch: 'owner' },
       { k: 'water_depth',  l: '水深',          o: 'depth',     ch: 'owner' },
       { k: 'outdoor_rest', l: '外気浴スペース', o: 'yesno',     ch: 'desk' },
-      { k: 'rest_chair',   l: '休憩イス',      o: 'chair',     ch: 'desk' }
+      { k: 'rest_chair',   l: '休憩イス',      o: 'chair',     ch: 'owner' }
     ]},
 
     { g: '貸切・音', rows: [
-      { k: 'villa_type',    l: '貸切構成',     o: 'villatype', ch: 'desk' },
+      { k: 'villa_type',    l: '貸切構成',     o: 'villatype', ch: 'owner' },
       { k: 'neighbor_dist', l: '隣棟との距離', o: 'ndist',     ch: 'owner' },
       { k: 'sound_rule',    l: '音のルール',   o: 'sound',     ch: 'owner' }
     ]},
 
     { g: 'キッチン・火まわり', rows: [
       { k: 'kitchen_type',    l: '加熱方式',     o: 'ktype',   ch: 'desk' },
-      { k: 'kitchen_burners', l: 'コンロ口数',   u: '口',      ch: 'desk' },
-      { k: 'bbq_roof',        l: 'BBQの屋根',    o: 'bbqroof', ch: 'desk', n: '雨天でもBBQできるか' },
+      { k: 'kitchen_burners', l: 'コンロ口数',   u: '口',      ch: 'owner' },
+      { k: 'bbq_roof',        l: 'BBQの屋根',    o: 'bbqroof', ch: 'owner', n: '雨天でもBBQできるか' },
       { k: 'bbq_cleanup',     l: 'BBQ後片付け',  o: 'cleanup', ch: 'owner' },
-      { k: 'firepit',         l: '焚き火',       o: 'firepit', ch: 'desk' },
+      { k: 'firepit',         l: '焚き火',       o: 'firepit', ch: 'owner' },
       { k: 'firewood_fee',    l: '薪代',         o: 'fee',     ch: 'owner' }
     ]},
 
@@ -134,12 +138,12 @@
       { k: 'comfort_cap',  l: '推奨人数',      u: '名', ch: 'owner', n: 'ゆったり過ごせる人数' },
       { k: 'pet_ok',       l: 'ペット',        o: 'kahi', ch: 'desk' },
       { k: 'kids_free',    l: '添い寝無料',    u: '歳まで', ch: 'owner' },
-      { k: 'steps',        l: '段差・階段',    o: 'steps', ch: 'desk' },
+      { k: 'steps',        l: '段差・階段',    o: 'steps', ch: 'owner' },
       { k: 'wifi',         l: 'Wi-Fi',         o: 'yesno', ch: 'desk' }
     ]},
 
     { g: 'アクセス・周辺', rows: [
-      { k: 'winter_access', l: '冬季アクセス',   o: 'winter', ch: 'auto' },
+      { k: 'winter_access', l: '冬季アクセス',   o: 'winter', ch: 'owner' },
       { k: 'elevation',     l: '標高',           u: 'm',   ch: 'auto' },
       { k: 'supermarket',   l: '最寄りスーパー', u: '分',  ch: 'auto', n: '車での所要時間' },
       { k: 'conveni',       l: '最寄りコンビニ', u: '分',  ch: 'auto' },
