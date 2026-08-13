@@ -987,14 +987,30 @@ window.VILLAFARAS_SPEC = {
   },
 
   "72": {  /* VILLA LAGI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 42, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 6, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 19分', src: 'auto', at: '2026-07' },
-    station:      { v: '太東 6分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 19, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_temp:      { v: 65, src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    loyly:           { v: 'auto', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    elevation:       { v: 42, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 10, src: 'auto', at: '2026-07' },
+    conveni:         { v: 6, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 19分', src: 'auto', at: '2026-07' },
+    station:         { v: '太東 6分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 19, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' }
   },
 
   "73": {  /* SANU 2nd Home 南アルプス1st */

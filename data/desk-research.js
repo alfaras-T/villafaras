@@ -1045,3 +1045,45 @@
 
 /* 補足: 竹の離れも同じ BBQセット貸出しの記述で「食材、調味料はお客様にて
    ご準備をお願い致します」とあるため bring_seasoning=bring を追加した。 */
+
+/* VILLA LAGI（2026-08確認）
+   SAUNA＆SPAページの記述が詳細で、サウナ仕様がまとめて確定できた。
+     「６５℃の室内温度ながらも」→ sauna_temp=65
+     「オートロウリュとオートファンを設置」→ loyly=auto
+     「天然地下水の水風呂」「地下100mの天然地下水」→ coldbath=bath, water_src=well
+     「森を見下ろす休憩処」「森を見下ろす外気浴」→ outdoor_rest=yes
+   Q&Aより:
+     「露天風呂・サウナとも滞在中お好きな時間にご利用いただけます」→ sauna_hours=h24
+     「大型の屋根付きアウトドアダイニングスペースですので、安心して」→ bbq_roof=roof
+     「定員は何名ですか？ 大人14名です」→ capacity=14
+     「ペット同伴は不可です」→ pet_ok=no
+     「全館・施設内全てにWi-Fi完備」→ wifi=yes
+     「アーリーチェックイン、アウト…1時間延長につき10000円」→ early_late=yes
+     キッチン設備「IHコンロ3口」→ kitchen_type=ih, kitchen_burners=3
+     キッチン設備にゴミ袋 → bring_trash=ready
+   「1日1組限定一棟貸切」→ villa_type=solo
+   除外: sauna_type … 「マグマスパサウナ」は熱源方式の呼称で、
+         室内／小屋／バレル／テントのいずれとも特定できない
+         stove … 天然溶岩石を使う旨はあるが薪／電気／ガスの別が不明
+         water_temp … 水温の記載なし */
+
+  "72": {   /* VILLA LAGI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    sauna_temp:      { v: 65, src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    loyly:           { v: 'auto', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    capacity:        { v: 14, src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' }
+  },
