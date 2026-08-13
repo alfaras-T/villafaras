@@ -3520,7 +3520,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "278": {  /* LUCY RESORT（ルーシー リゾート） */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 25, src: 'auto', at: '2026-07' },

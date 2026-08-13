@@ -4,10 +4,10 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    "187": {"name": "GREENSEED軽井沢",
-            "reason": "公式客室ページに「バレルサウナが併設されたお部屋【OBSIDIAN】がございます」と明記。全6タイプ（VEIN/ASH/BREEZE/OBSIDIAN/CASCADE/CLOUD）のうちOBSIDIAN棟のみ屋外に貸切バレルサウナを併設（有料オプション）。エストニア製、整いチェアあり、要事前予約（2026-08確認）",
+    "278": {"name": "LUCY RESORT（ルーシー リゾート）",
+            "reason": "公式「楽しみ方」ページに「※プライベートサウナ、ジャグジー風呂・薪風呂は、ご利用サイトにより設備が異なります」と明記。全8棟の共通設備一覧（エアコン・冷蔵庫・トイレ等）にサウナは無く、区画により有無が分かれる。サウナは各サイト区画内の専用設備でセルフロウリュ可（2026-08確認）",
             "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://greenseed-villa.com/rooms/"}}},
+                                          "url": "https://www.lucyresort.com/glamping/enjoy/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
