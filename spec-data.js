@@ -2335,7 +2335,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "187": {  /* GREENSEED軽井沢 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 970, src: 'auto', at: '2026-07' },

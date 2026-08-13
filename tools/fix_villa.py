@@ -4,17 +4,10 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    # --- 共用サウナのみ。shared はトップの絞り込み対象外なので sauna タグも外す。
-    "253": {"name": "伊豆グランピングリゾートIshiki385",
-            "reason": "サウナは1,000円/1名・各時間最大6人までの1時間毎予約制で、予約枠内のみ貸切。公式も「屋外型バレルサウナは日帰り利用もOK」と案内。客室4タイプ（ドーム／サファリテント／ロッジ／キャンプサイト）にサウナは無い（2026-08確認）",
-            "remove_tags": ["sauna"],
-            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://izuglam385.com/stay/"}}},
-    "282": {"name": "GLAMPING KASHIMA 753 #00",
-            "reason": "施設単独設備としてバレルサウナ（約90℃・チラー付き水風呂）を設置。客室3タイプ（ドームテント／ロイヤルコテージGRAY／クラブコテージBROWN）の設備はユニットバス等でサウナは含まれない（2026-08確認）",
-            "remove_tags": ["sauna"],
-            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://gp753.jp/kashima/%E3%83%90%E3%83%AC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%8A/"}}},
+    "187": {"name": "GREENSEED軽井沢",
+            "reason": "公式客室ページに「バレルサウナが併設されたお部屋【OBSIDIAN】がございます」と明記。全6タイプ（VEIN/ASH/BREEZE/OBSIDIAN/CASCADE/CLOUD）のうちOBSIDIAN棟のみ屋外に貸切バレルサウナを併設（有料オプション）。エストニア製、整いチェアあり、要事前予約（2026-08確認）",
+            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
+                                          "url": "https://greenseed-villa.com/rooms/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
