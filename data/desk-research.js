@@ -400,3 +400,118 @@
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
     rest_chair:    { v: 'chair', src: 'desk', at: '2026-07' }
   },
+
+/* SANU 2nd Home 公式備品リストより一括転記（2026-08確認）
+   出典: https://2ndhome.sa-nu.com/supplies_list_new/sanucabin
+   BEE / MOSS / RAY の3建築タイプで内容が共通であることを確認したうえで全拠点に適用。
+   除外した項目:
+     firepit / firewood_fee … RAYには焚き火台がなく、タイプにより異なる
+     bring_trash          … ゴミ袋の記載が備品リストに無い */
+
+  "73": {   /* SANU 2nd Home 南アルプス1st */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "74": {   /* SANU 2nd Home 八ヶ岳2nd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "75": {   /* SANU 2nd Home 八ヶ岳3rd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "76": {   /* SANU 2nd Home 河口湖2nd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "118": {   /* SANU 2nd Home 那須1st */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "119": {   /* SANU 2nd Home 那須2nd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "120": {   /* SANU 2nd Home 那須3rd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "176": {   /* SANU 2nd Home 北軽井沢2nd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "177": {   /* SANU 2nd Home 蓼科1st */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "178": {   /* SANU 2nd Home 軽井沢2nd */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "179": {   /* SANU 2nd Home 白馬1st */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+
+  "246": {   /* SANU 2nd Home 伊豆1st */
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
