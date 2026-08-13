@@ -745,3 +745,44 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/yamanofumoto/' }
   },
+
+/* チャネルB 机上調査 追加分（2026-08確認）
+
+   SEA-LIFE TSURIGASAKI:
+     「国産木材を使用した地産地消のバレルサウナ」「国産のサウナ用ガスヒーターを使用。
+     ガスを熱源にサウナストーンを熱することでセルフロウリュ可能」
+     「井戸水を使用した冷水風呂を併設し、サウナ→水風呂→外気浴」
+     トップの諸元表より 棟数1棟 / 最大19名 / アメニティ・タオルセット一式。
+     除外: water_temp・chiller … 記載なし
+
+   閑閑舎:
+     設備一覧より IHクッキングヒーター、リクライニングチェア（屋外）、
+     お茶ロウリュセット、薪（焚き火用）・着火剤が備品に含まれる → firewood_fee=incl。
+     除外: sauna_type … EAST/WESTともサンドウォールサウナ（洞窟状）で
+           室内/小屋/バレル/テントのいずれにも該当しない
+           coldbath … 水風呂の記載がなく、WESTは岩盤浴と水素風呂 */
+
+  "55": {   /* SEA-LIFE TSURIGASAKI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    stove:           { v: 'gas', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    capacity:        { v: 19, src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' }
+  },
+
+  "46": {   /* 閑閑舎 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' }
+  },

@@ -598,15 +598,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "46": {  /* 閑閑舎 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '片貝IC 6分', src: 'auto', at: '2026-07' },
-    station:      { v: '求名 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 19, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-07' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    elevation:       { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 4, src: 'auto', at: '2026-07' },
+    ic:              { v: '片貝IC 6分', src: 'auto', at: '2026-07' },
+    station:         { v: '求名 12分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 19, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://kankansha.com/equipment/' }
   },
 
   "47": {  /* Hackberry Holiday Home */
@@ -709,16 +716,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "55": {  /* SEA-LIFE TSURIGASAKI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 5, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 12, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 12, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    stove:         { v: 'gas', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:     { v: 5, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 12, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '長生IC 13分', src: 'auto', at: '2026-07' },
+    station:       { v: '東浪見 3分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' }
   },
 
   "56": {  /* THE VIBES VILLA */
