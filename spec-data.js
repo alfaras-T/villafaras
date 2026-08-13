@@ -3197,7 +3197,6 @@ window.VILLAFARAS_SPEC = {
   },
 
   "252": {  /* 伊豆高原テントリゾート */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 275, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },

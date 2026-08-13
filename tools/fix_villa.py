@@ -4,10 +4,10 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    "278": {"name": "LUCY RESORT（ルーシー リゾート）",
-            "reason": "公式「楽しみ方」ページに「※プライベートサウナ、ジャグジー風呂・薪風呂は、ご利用サイトにより設備が異なります」と明記。全8棟の共通設備一覧（エアコン・冷蔵庫・トイレ等）にサウナは無く、区画により有無が分かれる。サウナは各サイト区画内の専用設備でセルフロウリュ可（2026-08確認）",
-            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://www.lucyresort.com/glamping/enjoy/"}}},
+    "252": {"name": "伊豆高原テントリゾート",
+            "reason": "公式サイト全ページ（stay/facilities/guide/about）にサウナの記載が0件。共有設備は管理棟・シャワールーム・トイレ・ゴミスペース・駐車場のみで、レンタル品リストにもサウナは無い。第三者掲載に「テントサウナスペース」の記述はあるが施設がサウナを備えているとは確認できないため、あり／なしを断定せず未調査に戻す（2026-08確認）",
+            "remove_tags": ["sauna"],
+            "remove_spec": ["sauna_exists"]},
 }
 
 DRY = "--dry-run" in sys.argv
