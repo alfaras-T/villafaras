@@ -897,15 +897,19 @@ window.VILLAFARAS_SPEC = {
   },
 
   "65": {  /* THE NALU */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 13, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 11分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    capacity:       { v: 4, src: 'desk', at: '2026-07' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:      { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 13, src: 'auto', at: '2026-07' },
+    conveni:        { v: 4, src: 'auto', at: '2026-07' },
+    ic:             { v: '長生IC 11分', src: 'auto', at: '2026-07' },
+    station:        { v: '東浪見 4分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 11, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' }
   },
 
   "66": {  /* Villa Yno */

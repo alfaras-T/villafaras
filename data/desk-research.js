@@ -1087,3 +1087,44 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' }
   },
+
+/* THE NALU（2026-08確認）
+   INFORMATION ページより:
+     「ご宿泊人数の上限は、大人4名様および添い寝可能な子ども2名様（合計6名様まで）」
+       → capacity=6
+     「玄関は暗証番号式のスマートロックを採用しています」→ checkin_method=smart
+     「アーリーチェックインをご希望の際は、事前にご相談ください」
+     「レイトチェックアウトをご希望の際も、事前にご相談ください」→ early_late=yes
+     「プール、サウナ、BBQスペース、ドッグランなど、プライベート空間を自由に」
+       → villa_type=solo, pet_ok=yes
+   BATHROOM/SAUNA ページより:
+     「完全プライベートサウナを完備」→ sauna_exists=yes
+     オーガニックアメニティ（竹製歯ブラシ・カミソリ・ボディタオル）→ bring_amenity=ready
+   除外した項目と理由:
+     sauna_type・stove・loyly・coldbath … サウナ専用ページがあるにもかかわらず
+       「完全プライベートサウナを完備」以上の記載がなく、形式・熱源・水風呂すべて不明
+     bring_towel … アメニティ欄にボディタオルはあるがバスタオルの記載がない
+     kids_free … スキーマは「歳まで」の年齢を持つ項目。「添い寝可能な子ども2名」は
+       人数であって年齢の記載ではないため入れられない
+     early_late は「事前にご相談ください」で可否のみ。有料無料は不明 */
+
+  "65": {   /* THE NALU */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' }
+  },
+
+/* primera villa（2026-08確認）
+   公式サイト（トップ／Roomページ／FAQ）のいずれにもサウナの記載がなく、
+   設備は天然温泉・プール・テラス・キッチンのみ。OTA・検索でも裏付けが取れず、
+   sauna_exists を削除し sauna タグも除去した（tools/fix_villa.py で実施、commit 91692ba）。
+   あわせて公式の「定員：12名 間取り：4LDK 寝室：3部屋」に基づき定員を9→12名に訂正。
+   ※本ファイルは一次記録。spec-data.js への反映は fix_villa.py 側で完了済み。 */
+
+  "69": {   /* primera villa */
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' }
+  },
