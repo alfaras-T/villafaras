@@ -1534,3 +1534,36 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' }
   },
+
+/* THE POOL HOUSE 木更津（2026-08確認）
+   公式予約サイト（chillnn）。注意事項のアコーディオンを展開して取得。
+     「プールだけでなく、ミストサウナやBBQ、屋上（スカイテラス）設備も完備」
+     注意事項「サウナは、ミストサウナとなっております。ご注意ください」
+     注意事項「21時以降のチェックインも可能ではございますが、深夜帯はご連絡を
+       いただいてもすぐに対応できない場合がございます」→ late_arrival=contact
+     注意事項「ペット同伴は、宿泊・日帰り・撮影ともご遠慮いただいております」
+       → pet_ok=no
+     注意事項「BBQの食材はプランに含まれておりません」→ fee_bbq=extra
+     「各寝室にはシングルベッド6台、ソファベッド2台を完備し、最大8名まで」
+       → capacity=8
+     施設設備に Wi-Fi、お部屋のアメニティに 歯ブラシ・ひげ剃り・スリッパ 他20項目
+     「貸切ヴィラ」「貸切のプライベート空間」→ villa_type=solo
+   除外した項目と理由:
+     sauna_type … ミストサウナはスキーマの選択肢（indoor/hut/barrel/tent）の
+       いずれにも該当しない。閑閑舎のサンドウォール、VILLA LAGI のマグマスパ、
+       北軽井沢の野外サウナに続き4件目。選択肢の追加を要検討
+     stove・loyly・coldbath・outdoor_rest … ミストサウナのため該当しないか記載なし
+     kitchen_type … 「キッチンとダイニングエリアも充実」のみで加熱方式の記載なし
+   注記: プール水温は「クールモード 28-29℃」と明記されているが、
+     これは遊泳用でありサウナの水風呂ではないため water_temp には入れない。 */
+
+  "26": {   /* THE POOL HOUSE 木更津 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    late_arrival:    { v: 'contact', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' }
+  },
