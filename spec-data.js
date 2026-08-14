@@ -373,14 +373,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "26": {  /* THE POOL HOUSE 木更津 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '袖ヶ浦 7分', src: 'auto', at: '2026-07' },
-    station:      { v: '袖ケ浦 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    elevation:     { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 4, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '袖ヶ浦 7分', src: 'auto', at: '2026-07' },
+    station:       { v: '袖ケ浦 4分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    fee_bbq:       { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
+    late_arrival:  { v: 'contact', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' }
   },
 
   "27": {  /* Sumera Resort Minato */
