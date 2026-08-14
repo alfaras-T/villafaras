@@ -1415,3 +1415,43 @@
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' }
   },
+
+/* STRADDIE HOUSE（館山）（2026-08確認）
+   ※ 公式サイトは TATEYAMA / NISEKO の2拠点構成。DB該当は館山側。
+   FACILITIES:
+     「間取り 4LDK＋ウッドデッキ＋屋外ジャグジー＋地下サウナ/バス」
+     「定員 6名様 最大8名様」→ capacity=8
+     地下にサウナ室があり1F/2Fもあるため steps=stairs
+   SAUNA & JACUZZI:
+     「建物地下にはサウナ室を完備しております」→ sauna_type=indoor
+     「サウナストーブは、世界NO,1シェアの「HARVIA」を完備」→ stove=electric
+     「室内に水風呂も完備しております」→ coldbath=bath
+     「外気浴用に空が望める専用チェアをご用意」→ outdoor_rest=yes, rest_chair=chair
+   設備一覧:
+     キッチン「業務用ガスコンロ」→ kitchen_type=gas
+     「岩塩・胡椒・オリーブオイル・醤油」→ bring_seasoning=ready
+     アメニティ「バスタオル・フェイスタオル・歯ブラシ・シャンプー…」
+     その他「無線LAN」→ wifi=yes
+   除外した項目と理由:
+     loyly … HARVIA は電気ストーブだがロウリュ可否の明示がない
+     pet_ok … メイン棟はペット入室禁止で、別棟トレーラーハウスのみ犬同伴可。
+       DBの1エントリでは yes/no を代表させられない
+     water_temp・water_src … 記載なし
+     fee_bbq … BBQレンタルの記載はあるが有料無料が不明 */
+
+  "30": {   /* STRADDIE HOUSE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' }
+  },

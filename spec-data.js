@@ -419,14 +419,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "30": {  /* STRADDIE HOUSE */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 16, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 11, src: 'auto', at: '2026-07' },
-    conveni:      { v: 7, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 18分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 13分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    elevation:       { v: 16, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 11, src: 'auto', at: '2026-07' },
+    conveni:         { v: 7, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 18分', src: 'auto', at: '2026-07' },
+    station:         { v: '館山 13分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' }
   },
 
   "31": {  /* moe-luana */
