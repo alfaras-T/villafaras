@@ -4,9 +4,11 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    "38": {"name": "Asile＆OLILI",
-           "reason": "DBは Asile と OLILI の2棟を1エントリにまとめているが、公式サイトを確認したところサウナ形式が棟で異なる。Asile は「OUTDOOR SAUNA 北欧から輸入したバレルサウナ」、OLILI は「INDOOR SAUNA 3階部分に海が見える室内サウナ」。既存の barrel は片棟のみの値であり代表させられないため削除する。定員も Asile 最大8名 / OLILI 最大14名 と異なり、既存値9名の根拠が不明なため削除（2026-08確認）",
-           "remove_spec": ["sauna_type", "capacity"]},
+    "49": {"name": "古民家一棟貸切旅館　成田さくら邸",
+           "reason": "公式サイトを確認したところ、成田さくら邸自体の設備は五右衛門風呂・檜のバスルーム・和室2室・玄関土間・広縁・囲炉裏でサウナを含まない。サウナは同一運営・同一住所（佐倉市吉見204）の併設施設「Saunacamp かぐやの森」にあり、営業時間11:00-16:00・完全予約制でDAYキャンプやBBQの日帰り客も受け入れる独立した営業体。客室内サウナではないため shared とし、絞り込み対象外のため sauna タグも除去する（2026-08確認）",
+           "remove_tags": ["sauna"],
+           "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
+                                         "url": "https://www.okamura-is.co.jp/kaguyanomori/"}}},
 }
 
 DRY = "--dry-run" in sys.argv

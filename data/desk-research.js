@@ -1335,3 +1335,18 @@
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' }
   },
+
+/* 古民家一棟貸切旅館 成田さくら邸（2026-08確認）
+   成田さくら邸自体の設備は五右衛門風呂・檜のバスルーム・和室2室（各10畳）・
+   玄関土間・広縁・囲炉裏で、サウナを含まない。
+   サウナは同一運営・同一住所の併設施設「Saunacamp かぐやの森」にあり、
+   営業時間11:00-16:00・完全予約制でDAYキャンプ・BBQの日帰り客も受け入れる
+   独立した営業体。よって sauna_exists=shared とし sauna タグを除去した
+   （tools/fix_villa.py で実施）。
+   除外: sauna_type/stove/loyly/coldbath … かぐやの森側にも「お外のサウナ」
+     「熱風で汗をかいたあとは、お水で冷やす」以上の記載がない
+     capacity/kitchen_type … 料金表ページにあるが本文からは取得できず */
+
+  "49": {   /* 古民家一棟貸切旅館　成田さくら邸 */
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/KOMINKA-Ryokan/' }
+  },
