@@ -550,15 +550,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "38": {  /* Asile＆OLILI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 30, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
-    station:      { v: '竹岡 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://asile-villa.com/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://asile-villa.com/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    elevation:       { v: 30, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 7, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
+    station:         { v: '竹岡 2分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' }
   },
 
   "39": {  /* VILLA UMICHIKA 九十九里一宮 */

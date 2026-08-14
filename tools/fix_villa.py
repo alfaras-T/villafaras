@@ -4,12 +4,9 @@
 import glob, io, json, os, re, sys
 
 FIXES = {
-    "69": {"name": "primera villa",
-           "reason": "公式サイト（トップ／Roomページ／FAQ）のいずれにもサウナの記載が一切なく、設備は天然温泉・プール・テラス・キッチンのみ。OTA・検索でも裏付けが取れないため、あり／なしを断定せず未調査に戻す。feature の「サウナ」はチャネルB第一段の自動抽出由来と思われる（2026-08確認）",
-           "remove_tags": ["sauna"],
-           "remove_spec": ["sauna_exists"],
-           "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                     "url": "https://www.primera-gr.co.jp/"}}},
+    "38": {"name": "Asile＆OLILI",
+           "reason": "DBは Asile と OLILI の2棟を1エントリにまとめているが、公式サイトを確認したところサウナ形式が棟で異なる。Asile は「OUTDOOR SAUNA 北欧から輸入したバレルサウナ」、OLILI は「INDOOR SAUNA 3階部分に海が見える室内サウナ」。既存の barrel は片棟のみの値であり代表させられないため削除する。定員も Asile 最大8名 / OLILI 最大14名 と異なり、既存値9名の根拠が不明なため削除（2026-08確認）",
+           "remove_spec": ["sauna_type", "capacity"]},
 }
 
 DRY = "--dry-run" in sys.argv
