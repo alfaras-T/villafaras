@@ -1370,3 +1370,48 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' }
   },
+
+/* Hygge Chalet Hakuba（2026-08確認）
+   System&Service ページのサウナ欄・オプション欄が非常に詳細。
+     「2024年春完成本格薪ストーブ式 アウトドアサウナ」→ stove=wood
+     「アロマロウリュには白樺や白檀などの天然精油を使用」→ loyly=yes
+     「火入れ～利用開始まではスタッフが準備し、室温80～90℃でご案内します」
+       → sauna_temp=85（80〜90℃の中央値）
+     「ご利用人数：最大8名様」→ sauna_cap=8
+     「ご利用時間：22時まで（2時間制）」→ sauna_hours=limited
+     「北アルプスの天然地下水を引き込んだ水風呂」「白馬三山や唐松岳に降り積もった
+       雪や雨が、数十年の歳月をかけて濾過された」→ coldbath=bath, water_src=spring
+     「森に囲まれたウッドデッキでの外気浴へ」→ outdoor_rest=yes
+     セット内容「Coleman インフィニティチェア ×4」→ rest_chair=infinity
+     「最大８名様までのご利用が可能」→ capacity=8
+     「焚火台レンタル：6,000円（薪2束付き）追加薪：1束 1,000円」
+       → firepit=stand, firewood_fee=extra
+     「本格BBQレンタルセット 大人（12歳以上）：2,000円」→ fee_bbq=extra
+     「※食材・調味料・飲料は各自ご準備ください」→ bring_seasoning=bring
+   除外した項目と理由:
+     sauna_type … 「アウトドアサウナ」「レッドシダーの香りに包まれながら」
+       とあるが小屋型／バレル型の別が特定できない。
+       なお2021年導入の MORZH SKY（テントサウナ）も併存する可能性がある
+     water_temp … 天然地下水とあるが水温の記載なし
+     kitchen_type … 「アイランド型システムキッチン」のみで加熱方式の記載なし
+   注記: サウナは貸切25,000円（2時間）の有料オプション。
+     水風呂は「※冬季は凍結のため利用不可」。 */
+
+  "190": {   /* Hygge chalet hakuba */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    sauna_temp:      { v: 85, src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    sauna_cap:       { v: 8, src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    water_src:       { v: 'spring', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' }
+  },

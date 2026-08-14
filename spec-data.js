@@ -2670,15 +2670,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "190": {  /* Hygge chalet hakuba（ヒュッゲ シャレー） */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 786, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '更埴IC 49分', src: 'auto', at: '2026-07' },
-    station:      { v: '飯森 6分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-07' },
+    sauna_temp:      { v: 85, src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    sauna_cap:       { v: 8, src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    water_src:       { v: 'spring', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    elevation:       { v: 786, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '更埴IC 49分', src: 'auto', at: '2026-07' },
+    station:         { v: '飯森 6分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' }
   },
 
   "191": {  /* 軽井沢 HOUSE VILLA */
