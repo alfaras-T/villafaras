@@ -327,14 +327,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "22": {  /* 海都-kaito- TOKYOBAY */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 10, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '富津金谷IC 2分', src: 'auto', at: '2026-07' },
-    station:      { v: '浜金谷 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    elevation:       { v: 10, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 6, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '富津金谷IC 2分', src: 'auto', at: '2026-07' },
+    station:         { v: '浜金谷 1分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/faq' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' }
   },
 
   "23": {  /* The TRAVELERS Chateau Tateyama */

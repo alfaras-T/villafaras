@@ -1567,3 +1567,40 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19a7b2c445a3bb' }
   },
+
+/* 海都-kaito- TOKYOBAY（2026-08確認）
+   /kaito/room の設備一覧が細かい。
+     インナーテラス欄「サウナ ロウリュ用桶 ロウリュ用うちわ 寝転びチェア」
+       → sauna_type=indoor（インナーテラス内）, loyly=yes, rest_chair=chair
+     キッチン「３口ガスコンロ」→ kitchen_type=gas, kitchen_burners=3
+     キッチン「ラップ アルミホイル」→ bring_wrap=ready
+     バスルーム「バスタオル フェイスタオル バスローブ サウナハット 歯ブラシ…
+       John master organic（シャンプー/コンディショナー/…）」
+       → bring_towel=ready, bring_amenity=ready
+   FAQ:
+     「お客様ご自身で道の駅や近隣のスーパー、直売店で仕入れた食材を使って」
+       かつ設備一覧に調味料の記載がない → bring_seasoning=bring
+   「貸別荘」で敷地全体を1組利用 → villa_type=solo
+   除外した項目と理由:
+     early_late … FAQに「13:00〜アーリーチェックインが可能。別途15,000円」
+       「レイトチェックアウトは受け付けておりません」とあり、アーリーのみ可。
+       スキーマはアーリー／レイトを1項目・可/不可の2値でまとめているため、
+       どちらを代表させても誤りになる。粒度不足による該当なしで5件目
+     stove … サウナの熱源の記載なし（ロウリュ用桶があるがストーブ種別は不明）
+     coldbath … 「露天風呂 温水・冷水利用可能」とあるが専用の水風呂ではない
+     capacity … 寝具は「シングル3/クイーン2」だが宿泊定員の明記がない
+     wifi … 設備一覧に記載が見当たらない */
+
+  "22": {   /* 海都-kaito- TOKYOBAY */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/faq' }
+  },
