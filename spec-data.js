@@ -503,15 +503,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "34": {  /* Retreat Villa Aym */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 12, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 14分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    elevation:       { v: 12, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 4, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
+    station:         { v: '館山 14分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' }
   },
 
   "35": {  /* by the river Isumi */

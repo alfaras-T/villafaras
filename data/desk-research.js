@@ -1455,3 +1455,52 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://straddiehouse.com/tateyama/' }
   },
+
+/* Retreat Villa Aym（2026-08確認・公式サイトは2026-06にリニューアル）
+   Moments:
+     「コンパクトなサウナルームに満ちるやわらかな熱。サウナストーンに水を落とすと、
+       ロウリュの蒸気が静かに立ちのぼります」→ sauna_type=indoor, loyly=yes
+     「扉を開け、バスルームを抜ければ、そのままプールへ。水に身を預け、
+       テラスで風にあたる」→ outdoor_rest=yes
+   Overview:
+     「総棟数 3棟」「定員 1棟10名（全3棟利用時 最大30名）」
+       → capacity=10, villa_type=multi
+     「無料Wi-Fi完備」「ペットの同伴はご遠慮いただいております」
+     「チェックイン 15:00 – 18:00」→ late_arrival=no
+   設備・アメニティ:
+     屋外「リクライニングチェア」→ rest_chair=chair
+     キッチン「※ 調味料は含まれておりません」→ bring_seasoning=bring
+     バスルーム「バスタオル / フェイスタオル / シャンプー…」
+   その他ご案内:
+     「プールやBBQなどの屋外施設のご利用は21:00まで」→ sauna_hours=limited
+   FAQ:
+     「サウナ設備をご利用の際は、水風呂としてご利用いただけます」（プールを指す）
+       ※ coldbath に「プール兼用」の選択肢がないため値は入れない
+     「アーリーチェックイン 1時間前：11,000円 / レイトチェックアウト」
+       → early_late=yes
+   除外した項目と理由:
+     stove … サウナストーンの記載はあるが薪／電気／ガスの別が不明
+     kitchen_type … 家電一覧にコンロの記載がない（IHヒーターは管理棟の有料貸出品）
+     coldbath … プールを水風呂として使う方式で、スキーマの選択肢
+       （bath/river/shower/none）のいずれにも該当しない。
+       Refwind・GIFTHOUSE館山でも同じ理由で見送っており3件目。選択肢の追加を要検討
+     water_temp・water_src … プールが水風呂を兼ねるため該当しない
+     bbq_roof … 「屋外ルーフドテラス」とあるがBBQ位置との関係が不明 */
+
+  "34": {   /* Retreat Villa Aym */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' }
+  },
