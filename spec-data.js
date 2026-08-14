@@ -993,17 +993,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "70": {  /* The Pacific Retreat TATEYAMA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    chiller:      { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 26, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 6, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 14分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    loyly:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    coldbath:       { v: 'bath', src: 'desk', at: '2026-07' },
+    chiller:        { v: 'yes', src: 'desk', at: '2026-07' },
+    water_temp:     { v: 't1518', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    outdoor_rest:   { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    rest_chair:     { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/' },
+    kitchen_type:   { v: 'ih', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    capacity:       { v: 7, src: 'desk', at: '2026-07' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:      { v: 26, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 6, src: 'auto', at: '2026-07' },
+    conveni:        { v: 6, src: 'auto', at: '2026-07' },
+    ic:             { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
+    station:        { v: '館山 14分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 4, src: 'auto', at: '2026-07' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' }
   },
 
   "71": {  /* Casita Laguna */

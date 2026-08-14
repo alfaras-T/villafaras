@@ -1210,3 +1210,38 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' }
   },
+
+/* The Pacific Retreat TATEYAMA（2026-08確認）
+   SAUNA＆BATH ページ:
+     「本格的なサウナと、チラー設備により16℃に保たれた水風呂」
+       → chiller=yes, water_temp=t1518（15〜18℃）, coldbath=bath
+     「サウナはお好みの温度に設定でき、ロウリュも可能」→ loyly=yes
+     「浴室からはベランダに直接出られ、設置されたインフィニティチェアで海風を
+       浴びながら外気浴を」→ outdoor_rest=yes, rest_chair=infinity
+   FAQ:
+     「スマートロックによる非対面チェックイン」→ checkin_method=smart
+     「宿泊定員は旅館業法に基づき７名様まで」→ capacity=7
+     「ペットは犬のみ、中型犬まで宿泊可能」→ pet_ok=yes
+     「コンロはIHコンロ」→ kitchen_type=ih
+     「BBQコンロ、炭、着火剤、トング等はご用意が御座いますが、食材については
+       ご持参ください」→ fee_bbq=incl
+   「一棟貸しのバケーションレンタル」→ villa_type=solo
+   除外: sauna_type・stove … 形式・熱源の記載なし
+         sauna_temp … 「お好みの温度に設定でき」とあり固定値がない
+         water_src … 水源の記載なし */
+
+  "70": {   /* The Pacific Retreat TATEYAMA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    chiller:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    water_temp:      { v: 't1518', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/sauna%ef%bc%86bath-2/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/' }
+  },
