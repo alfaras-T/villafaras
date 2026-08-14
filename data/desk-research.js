@@ -1164,3 +1164,49 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' }
   },
+
+/* moe resort 2件（2026-08確認）
+
+   moe-luana:
+     「本格的なバレルロウリュウサウナにジャグジーもご用意。大自然の中、外気浴も」
+       → sauna_type=barrel, loyly=yes, outdoor_rest=yes
+     「バーベキュースペースは、安心の屋根付き。ガス台仕様のため、火を起こす必要も
+       ございません」→ bbq_roof=roof
+     設備欄「一棟貸切」「ペット可」、アメニティに タオル・バスタオル一式
+     除外: sauna_cap・coldbath … 記載なし（ジャグジーはあるが水風呂の明示なし）
+           stove … 「ロウリュウサウナ」とあるが熱源の別が不明
+
+   moe-akala,moe-aina:
+     「最大8名様でご利用いただけるバレルロウリュウサウナ。水風呂完備」
+       → sauna_type=barrel, sauna_cap=8, loyly=yes, coldbath=bath
+     「プールサイドベッドでの外気浴は格別です」→ outdoor_rest=yes
+     「バーベキュースペースは、安心の屋根付きガス台仕様です」→ bbq_roof=roof
+     設備欄「一棟貸切」「ペット可」
+     除外: stove … 熱源の別が不明
+           capacity … 「10人掛けのダイニングテーブル」はあるが宿泊定員の記載なし */
+
+  "31": {   /* moe-luana */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-luana' }
+  },
+
+  "32": {   /* moe-akala,moe-aina */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    sauna_cap:       { v: 8, src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://moe-resort.co.jp/moe-akala-moe-aina' }
+  },
