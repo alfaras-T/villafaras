@@ -747,8 +747,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "49": {  /* 古民家一棟貸切旅館　成田さくら邸 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 26, src: 'auto', at: '2026-07' },
