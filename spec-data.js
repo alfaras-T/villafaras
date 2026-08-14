@@ -575,15 +575,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "40": {  /* THE BLUE POINT seaside villa */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 4, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 12, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 10分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    elevation:       { v: 4, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 12, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 10分', src: 'auto', at: '2026-07' },
+    station:         { v: '東浪見 4分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' }
   },
 
   "41": {  /* ビーチテラス房総 */

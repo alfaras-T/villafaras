@@ -1245,3 +1245,34 @@
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/' }
   },
+
+/* THE BLUE POINT seaside villa（2026-08確認）
+   施設・設備ページより:
+     「宿泊定員 定員12名様まで」→ capacity=12
+     キッチン「ガスコンロ」→ kitchen_type=gas
+     「調味料（砂糖・油・塩コショウ）」→ bring_seasoning=ready
+     「ラップ・アルミホイル」→ bring_wrap=ready
+     アメニティ「歯ブラシ・バスタオル・フェイスタオル・シャンプー…」
+       → bring_towel=ready, bring_amenity=ready
+     「WiFi 有」→ wifi=yes
+   トップ「1日1組限定のプール・サウナハウス付き350平米の贅沢ヴィラ」
+     「愛犬と泊まれる350坪一棟貸切」→ villa_type=solo, pet_ok=yes
+   FAQ「プール・ジャグジー・サウナ・トランポリンあります」→ sauna_exists=yes
+   除外した項目と理由:
+     sauna_type … 「サウナハウス付き」とあるが小屋型と断定できる記述ではない
+     stove・loyly・coldbath・outdoor_rest … 記載なし
+     bring_trash … 「ゴミ箱」の記載はあるがゴミ袋の記載がない
+     checkin_method … チェックイン時刻の記載のみで方式が不明 */
+
+  "40": {   /* THE BLUE POINT seaside villa */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' }
+  },
