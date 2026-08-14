@@ -510,16 +510,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "37": {  /* VILLA SENSE kujukuri */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '片貝IC 2分', src: 'auto', at: '2026-07' },
-    station:      { v: '東金 11分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 13, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    stove:         { v: 'wood', src: 'desk', at: '2026-07' },
+    sauna_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    elevation:     { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 2, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '片貝IC 2分', src: 'auto', at: '2026-07' },
+    station:       { v: '東金 11分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' }
   },
 
   "38": {  /* Asile＆OLILI */

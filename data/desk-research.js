@@ -1128,3 +1128,39 @@
   "69": {   /* primera villa */
     capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' }
   },
+
+/* VILLA SENSE kujukuri（2026-08確認）
+   施設詳細の諸元表が非常に精密で、サウナ仕様が一行で確定できた。
+     「サウナ バレルサウナ（6人用＋前室あり）、電気ストーブ（HARVIA）、ロウリュウ可」
+       → sauna_type=barrel, sauna_cap=6, stove=electric, loyly=yes
+     「水風呂も別途、ご用意しています」→ coldbath=bath
+     ハウスルール「プールやサウナなどテラス・ガーデンのご利用は21時まで
+       （朝は8時から）」→ sauna_hours=limited
+     「専用のガスコンロとピザ窯を設けたBBQテラスは屋根もあり、天候に左右されずに」
+       → bbq_roof=roof
+     「薪で火を囲めるファイヤーピット」→ firepit=stand
+     「定員 最大16名」「1日1組だけが体験できる」→ capacity=16, villa_type=solo
+     「WiFi無料」、アメニティにバスタオル／フェイスタオル一式
+   除外した項目と理由:
+     kitchen_type … 「ペニンシュラキッチン」「調理家電が充実」とあるのみで
+       加熱方式の記載がない（BBQテラスのガスコンロは屋外設備）
+     water_temp・water_src … 水風呂の水温・水源の記載なし
+     outdoor_rest … テラス・ガーデンは広いが外気浴スペースとしての明示がない */
+
+  "37": {   /* VILLA SENSE kujukuri */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    sauna_cap:       { v: 6, src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    capacity:        { v: 16, src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-sense-kujukuri.com/' }
+  },
