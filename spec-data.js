@@ -282,14 +282,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "19": {  /* GIFTHOUSE 館山 那古海岸 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 4分', src: 'auto', at: '2026-07' },
-    station:      { v: '那古船形 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    elevation:       { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 2, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 4分', src: 'auto', at: '2026-07' },
+    station:         { v: '那古船形 2分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' }
   },
 
   "20": {  /* GIFTHOUSE 2nd 館山 洲宮 */
@@ -715,9 +723,8 @@ window.VILLAFARAS_SPEC = {
   },
 
   "49": {  /* 古民家一棟貸切旅館　成田さくら邸 */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
-    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/KOMINKA-Ryokan/' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 26, src: 'auto', at: '2026-07' },

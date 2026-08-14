@@ -1336,17 +1336,37 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' }
   },
 
-/* 古民家一棟貸切旅館 成田さくら邸（2026-08確認）
-   成田さくら邸自体の設備は五右衛門風呂・檜のバスルーム・和室2室（各10畳）・
-   玄関土間・広縁・囲炉裏で、サウナを含まない。
-   サウナは同一運営・同一住所の併設施設「Saunacamp かぐやの森」にあり、
-   営業時間11:00-16:00・完全予約制でDAYキャンプ・BBQの日帰り客も受け入れる
-   独立した営業体。よって sauna_exists=shared とし sauna タグを除去した
-   （tools/fix_villa.py で実施）。
-   除外: sauna_type/stove/loyly/coldbath … かぐやの森側にも「お外のサウナ」
-     「熱風で汗をかいたあとは、お水で冷やす」以上の記載がない
-     capacity/kitchen_type … 料金表ページにあるが本文からは取得できず */
+/* GIFTHOUSE 館山 那古海岸（2026-08確認）
+   Spa & Activity ページ:
+     「＜ 室内サウナ ＞ サウナも完備」→ sauna_type=indoor
+     「BBQセットレンタル ¥5,000(税込)」→ fee_bbq=extra
+     「食料、調味料はお客様にてご準備をお願い致します」→ bring_seasoning=bring
+   Rooms ページ:
+     「定員：1〜10名」→ capacity=10
+     Kitchen Features に「3口IH」→ kitchen_type=ih, kitchen_burners=3
+     Amenities にシャンプー・トリートメント・クレンジング等一式
+   トップ「1日1組様限定のスモールラグジュアリーヴィラ」→ villa_type=solo
+   「チェックイン：15:00〜18:00」→ 受付が18:00までのため late_arrival=no
+   除外した項目と理由:
+     coldbath … 「冬場はプールを水風呂代わりに」とあり専用の水風呂ではない
+     stove・loyly … 記載なし
+     outdoor_rest … 「サウナの後は、屋外プールで整うことも可能」だが
+       外気浴スペースとしての明示ではない
+     bring_towel … アメニティ欄にタオルの記載がない
+   注記: Rooms ページに「チェックイン：15:00〜18:00」と
+     「チェックイン：15:00〜24:00」の2つの記載が併存している。
+     ページ上部・トップページ・全ページ共通フッターはいずれも18:00のため
+     18:00を採用したが、要再確認。 */
 
-  "49": {   /* 古民家一棟貸切旅館　成田さくら邸 */
-    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/KOMINKA-Ryokan/' }
+  "19": {   /* GIFTHOUSE 館山 那古海岸 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' }
   },
