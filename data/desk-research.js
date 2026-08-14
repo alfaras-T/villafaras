@@ -1276,3 +1276,40 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aonoie.jp/bluepoint/facilities.html' }
   },
+
+/* RICKA KATSUURA（2026-08確認）
+   トップページ:
+     「贅沢なプライベートサウナとブラックプール、チラーで冷やされた水風呂を完備」
+       → chiller=yes, coldbath=bath
+     施設概要「定員人数 12名」
+     チャイルドポリシー「5歳以下のお子様は添い寝可能」→ kids_free=5
+   /room/:
+     「サウナは木材で覆われた円形の建物で」→ sauna_type=hut
+     キッチン「IHコンロ」「基本調味料」→ kitchen_type=ih, bring_seasoning=ready
+     「ファイヤーピット ¥2,000（薪10本＆着火セット付）」→ firepit=stand, firewood_fee=extra
+     「BBQ Grill 料金 ¥5,000」→ fee_bbq=extra
+     設備欄に Wi-Fi、Amenities に タオル・歯ブラシ・シャンプー等一式
+     Canon(母屋/定員6名)・Sonata(離れ/定員3名)・Fuga・Lento の複数棟構成
+       で敷地全体を1組で貸切 → villa_type=multi（同一サイト内に複数棟）
+   除外した項目と理由:
+     stove・loyly・water_temp … 記載なし
+     outdoor_rest … クールダウンはブラックプールで、外気浴スペースの明示がない
+     bbq_roof … 屋根の有無の記載がない */
+
+  "62": {   /* RICKA KATSUURA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    chiller:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    kids_free:       { v: 5, src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' }
+  },

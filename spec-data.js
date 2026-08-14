@@ -894,15 +894,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "62": {  /* RICKA KATSUURA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 80, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 9, src: 'auto', at: '2026-07' },
-    ic:           { v: '市原鶴舞IC 24分', src: 'auto', at: '2026-07' },
-    station:      { v: '勝浦 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-07' },
+    chiller:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    elevation:       { v: 80, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 10, src: 'auto', at: '2026-07' },
+    conveni:         { v: 9, src: 'auto', at: '2026-07' },
+    ic:              { v: '市原鶴舞IC 24分', src: 'auto', at: '2026-07' },
+    station:         { v: '勝浦 10分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
+    kids_free:       { v: 5, src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' }
   },
 
   "63": {  /* Dear Wan Spa Garden */
