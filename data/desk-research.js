@@ -1604,3 +1604,42 @@
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/faq' }
   },
+
+/* BEST SPA 99（2026-08確認）
+   1ページ完結型のサイト。SAUNA 欄に仕様が明記されている。
+     「SAUNA Collection 収容人数３名 温度100℃」→ sauna_cap=3, sauna_temp=100
+     「国産バレルサウナ、プール、BBQテラス、ドッグラン完備」→ sauna_type=barrel
+     「宿泊定員6名」「3LDK、2階建て」→ capacity=6, steps=stairs
+     「1階：リビング、ダイニング、キッチン、バスルーム、プール、バレルサウナ、
+       ドッグパーク／2階：ベッドルーム×３部屋、シャワールーム」
+     Garden「プール6m×3m/バレルサウナ/ガーデンファーニチャー/
+       BBQグリル(要事前予約）」→ fee_bbq=incl（予約制だが料金の記載なし＝別料金の明示なし）
+     各室に FreeWi-Fi、Amenities にバスタオル・フェイスタオル・
+       バスアメニティー（エラバシェ）等一式
+     「ペット用アイテム（ペットシート、フードボウル）」「ドッグパーク」→ pet_ok=yes
+   注意事項:
+     「焚き火、打ち上げ花火のご利用は禁止させていただきます」→ firepit=no
+     「夜間の屋外での大声での会話や音響設備のご利用はお控えください
+       (ご利用時間22時迄）」→ sauna_hours=limited（屋外設備の利用時間制限）
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest … 記載なし
+     kitchen_type … 「カセットコンロ」のみで据付コンロの記載がなく
+       ih/gas のいずれとも判断できない
+     water_temp・water_src … 水風呂自体の記載がない */
+
+  "24": {   /* BEST SPA 99 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_cap:       { v: 3, src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_temp:      { v: 100, src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' }
+  },

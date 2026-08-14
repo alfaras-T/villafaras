@@ -359,16 +359,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "24": {  /* BEST SPA 99 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 2, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '真亀JCT 4分', src: 'auto', at: '2026-07' },
-    station:      { v: '東金 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_cap:     { v: 3, src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    firepit:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    elevation:     { v: 2, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '真亀JCT 4分', src: 'auto', at: '2026-07' },
+    station:       { v: '東金 12分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
+    fee_bbq:       { v: 'incl', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' }
   },
 
   "25": {  /* THE POOL HOUSE TOKYO BAY */
