@@ -978,16 +978,23 @@ window.VILLAFARAS_SPEC = {
   },
 
   "64": {  /* VILLA Seamu */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '真亀JCT 5分', src: 'auto', at: '2026-07' },
-    station:      { v: '東金 11分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 14, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'barrel', src: 'desk', at: '2026-07' },
+    stove:          { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    sauna_cap:      { v: 4, src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    loyly:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    firepit:        { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    capacity:       { v: 11, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:      { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 4, src: 'auto', at: '2026-07' },
+    conveni:        { v: 3, src: 'auto', at: '2026-07' },
+    ic:             { v: '真亀JCT 5分', src: 'auto', at: '2026-07' },
+    station:        { v: '東金 11分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 14, src: 'auto', at: '2026-07' },
+    checkin_method: { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    late_arrival:   { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' }
   },
 
   "65": {  /* THE NALU */

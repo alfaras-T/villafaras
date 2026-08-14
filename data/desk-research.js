@@ -1504,3 +1504,33 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' }
   },
+
+/* VILLA Seamu（2026-08確認）
+   公式サイト（seamu.jp）はテンプレート状態で全セクションに同一文が入っており、
+   サウナの記述が一切ない。OTA掲載を出典とする。
+     「国産最高級バロウ社（ストーブ：ハルビア製）のバレルサウナを2025年12月上旬に導入。
+       ロウリュウも出来ます。最大4名。（サウナはオプション）」
+       → sauna_type=barrel, stove=electric（ハルビア）, loyly=yes, sauna_cap=4
+     一休「ご宿泊前にオンライン宿泊者名簿へのご記入をお願いしております。確認後、
+       玄関ドアの暗証番号をお知らせいたします。非対面チェックイン」
+       → checkin_method=keybox（暗証番号式）
+     一休「IN 15:00～21:00」→ 21:00まで受付のため late_arrival=ok
+     「1日1組限定」「焚き火台を備えた完全プライベート空間」
+       → villa_type=solo, firepit=stand
+   ※ capacity は別途 fix_villa.py で 9→11 に訂正する。
+     一休「当施設は最大11名様までご宿泊いただけます。予約サイト上では9名様までの
+     ご予約が可能です」とあり、既存値9は予約システム上の制限値であって定員ではない。
+   除外した項目と理由:
+     coldbath・outdoor_rest … 記載なし
+     sauna_hours … サウナはオプション扱いだが利用可能時間の記載がない */
+
+  "64": {   /* VILLA Seamu */
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' }
+  },
