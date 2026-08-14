@@ -1314,45 +1314,24 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' }
   },
 
-/* Asile＆OLILI（2026-08確認）
-   DBは2棟を1エントリにまとめているため、両棟で共通と確認できた項目のみ登録する。
-
-   2棟でサウナ形式が異なることが判明:
-     Asile  : 「OUTDOOR SAUNA 北欧から輸入したバレルサウナ」→ barrel
-     OLILI  : 「INDOOR SAUNA 海抜25mの高台、その3階部分に海が見える室内サウナ」→ indoor
-   → 既存の sauna_type=barrel は片棟のみの値のため別途 fix_villa.py で削除する
-
-   両棟共通:
-     「サウナストーブは電気式を採用しており事前準備不要ながら、サウナストーンは
-       設置しているのでセルフロウリュも愉しめます」→ stove=electric, loyly=yes
-   OLILI側の記載（Asileも同一運営・同一注意事項）:
-     「ととのう為のテラス、水風呂を設けました」→ coldbath=bath
-     注意事項「プール、サウナ、BBQの利用は【夜21：00まで】」→ sauna_hours=limited
-     注意事項「塩・胡椒などの調味料は衛生上の観点からご準備しておりません」
-       → bring_seasoning=bring
-     注意事項「ペットの同行はご遠慮いただいております」→ pet_ok=no
-     注意事項「敷地内での焚火、花火を含む火器の使用は禁止」→ firepit=none
-     設備欄「無線WiFi、有線LAN」「ラップ、アルミホイル」
-       バスタオル・フェイスタオル・シャンプー等一式
+/* Under the Sea UBARA（2026-08確認）
+   公式予約サイト（chillnn）の施設情報より:
+     「キッズポリシー 0〜5歳：0円」→ kids_free=5
+     「チェックイン 15:00 ~ 21:00」→ 受付が21:00までのため late_arrival=no
+     施設設備・サービスに「バーベキュー設備 プール サウナ 駐車場」→ sauna_exists=yes
+     お部屋の設備・アメニティに「歯ブラシ スリッパ くし 綿棒 他29項目」
+       → bring_amenity=ready
    除外した項目と理由:
-     sauna_type … 棟により barrel / indoor と異なる
-     capacity … Asile 最大8名 / OLILI 最大14名 と棟で異なり、
-       1エントリの代表値を決められない（既存値9名の根拠も不明）
-     outdoor_rest … OLILI は「ととのう為のテラス」があるが Asile 側に明示がない
-     bbq_roof … 記載なし */
+     sauna_type・stove・loyly・coldbath … 予約サイトの設備一覧は
+       「サウナ」の一語のみで詳細がない
+     capacity・pet_ok・kitchen_type … 展開が必要なモーダル内にあり取得できず
+     bring_towel … 「他29項目」に含まれる可能性があるが未展開のため不明
+   注記: 公式サイトが独立ドメインを持たず予約システム（chillnn）のみ。
+     terracecollections / Jade Group と同様、情報量に限界がある。 */
 
-  "38": {   /* Asile＆OLILI */
-    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://asile-villa.com/' },
-    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://asile-villa.com/' },
-    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' },
-    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://olili.asile-villa.com/' }
+  "59": {   /* Under the Sea UBARA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
+    kids_free:       { v: 5, src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' }
   },
