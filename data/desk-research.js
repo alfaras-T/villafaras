@@ -1994,3 +1994,43 @@
     capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/' }
   },
+
+/* VILLA UMICHIKA 九十九里一宮（2026-08確認）
+   2棟（PRIVATE VILLA 6886 / POOL & SAUNA VILLA 6885）の比較表があり、
+   共通設備と相違点が明確に整理されている。
+   共通設備（FACILITIES）:
+     「大型バレルサウナ（セルフロウリュ対応）」→ sauna_type=barrel, loyly=yes
+     「※サウナのご利用は21:00までとなります」→ sauna_hours=limited
+     「サウナの後は、外気浴や露天ジャグジーでゆったりと」→ outdoor_rest=yes
+     「IHコンロ・電子レンジ・冷蔵庫・調理器具・食器類を完備」→ kitchen_type=ih
+     「屋根付きのウッドデッキには、大型ガスBBQグリルをご用意」→ bbq_roof=roof
+     「※BBQグリルのご利用は有料オプションとなります」→ fee_bbq=extra
+     「はみがきセットやタオル類をはじめ、シャンプー、コンディショナー、
+       ボディソープ、ドライヤー」→ bring_towel=ready, bring_amenity=ready
+   ご利用の流れ:
+     「ご宿泊日の前日までに、施設入室に必要なキーボックスNo.をご案内いたします」
+       → checkin_method=keybox
+   2棟構成 → villa_type=multi
+   除外した項目と理由:
+     capacity … 6886が最大8名、6885が最大10名と棟で異なる
+     coldbath … 「露天ジャグジー」は「サウナ後のクールダウン」にも
+       「温水を張って」も使う兼用設備で、専用の水風呂ではない
+     stove・sauna_temp・sauna_cap … 記載なし
+     pet_ok・wifi … 記載が見当たらない
+   注記: 6885のプールは「ヒートポンプ方式による水温管理のため
+     ご利用期間は5月上旬〜10月下旬を想定」。床暖房は6886のみ。 */
+
+  "39": {   /* VILLA UMICHIKA 九十九里一宮 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' }
+  },

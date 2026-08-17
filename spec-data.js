@@ -655,16 +655,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "39": {  /* VILLA UMICHIKA 九十九里一宮 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 12, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 11分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'barrel', src: 'desk', at: '2026-07' },
+    loyly:          { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_hours:    { v: 'limited', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    outdoor_rest:   { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    villa_type:     { v: 'multi', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    kitchen_type:   { v: 'ih', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    bbq_roof:       { v: 'roof', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    capacity:       { v: 8, src: 'desk', at: '2026-07' },
+    elevation:      { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 12, src: 'auto', at: '2026-07' },
+    conveni:        { v: 4, src: 'auto', at: '2026-07' },
+    ic:             { v: '長生IC 11分', src: 'auto', at: '2026-07' },
+    station:        { v: '東浪見 4分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    checkin_method: { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' }
   },
 
   "40": {  /* THE BLUE POINT seaside villa */
