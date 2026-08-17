@@ -1926,3 +1926,36 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' }
   },
+
+/* PRIVE（2026-08確認）
+   公式サイト（priveresort.jp）の構成は POOL / BBQ / LIVING ROOM / BED ROOM /
+   Kitchen でサウナのセクションがなく、全文でサウナの出現回数は0。
+   DBの feature・desc にもサウナの記述がないが、サウナ自体は実在する。
+   公式サイトが更新されていないケースと判断し、サウナイキタイとOTAを出典とする。
+
+   サウナイキタイ登録内容:
+     「サウナ室 温度100度／ドライサウナ／電気／TV無」→ sauna_temp=100, stove=electric
+     「サウナ小屋（屋外・水着着用）○」→ sauna_type=hut
+     「水風呂 水深110~140cm／プール」
+   一休:
+     プラン名「プール・サウナ独占 カップルプラン」「同 ファミリープラン」
+     「一棟貸し 185平米 定員 1名～6名」→ villa_type=solo
+     「IN 15:00～20:00」→ late_arrival=no
+   除外した項目と理由:
+     coldbath … サウナイキタイの水風呂欄がプールを指しており、
+       専用の水風呂ではない。スキーマに「プール兼用」の選択肢がないため
+       入れられない（Refwind・GIFTHOUSE館山・Retreat Villa Aym に続き4件目）
+     loyly … サウナイキタイに記載なし
+     water_temp・sauna_cap … サウナイキタイの該当欄が「-」で未登録
+     water_depth … スキーマは knee/waist/chest/shoulder の体感基準。
+       110〜140cmは成人の腰〜胸にまたがり単一値に決められない。
+       また対象がプールであり専用水風呂の水深ではない */
+
+  "29": {   /* PRIVE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    sauna_temp:      { v: 100, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' }
+  },

@@ -452,13 +452,18 @@ window.VILLAFARAS_SPEC = {
 
   "29": {  /* PRIVE */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    sauna_temp:   { v: 100, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 6, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '長生IC 10分', src: 'auto', at: '2026-07' },
     station:      { v: '八積 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    onsen:        { v: 9, src: 'auto', at: '2026-07' },
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' }
   },
 
   "30": {  /* STRADDIE HOUSE */
