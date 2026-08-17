@@ -2084,3 +2084,46 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' }
   },
+
+/* HARUKA KANATA 森のヴィラ（2026-08確認）
+   公式サイトの構成が「森のヴィラ、森のカフェ、森のサウナからなる
+   プライベートヴィレッジ」で、サウナが各棟の設備ではなく独立した施設として
+   紹介されているため shared を疑ったが、宿泊者の占有と確認できた。
+     TRIPTO「森のサウナ ご宿泊の方は滞在中完全貸切となりますので、
+       お好きな時間にサウナをご利用いただけます」
+     一休「全てのタイプで、サウナ・露天風呂・BBQグリル・薪/ペレットストーブ、
+       焚き火台は共通でご利用いただけます」
+     → sauna_exists=yes を維持
+   公式サイト:
+     「セルフロウリュウが楽しめるエストニア産のバレルサウナ、水風呂、露天風呂、
+       外気浴スペース、焚き火スペース」
+       → sauna_type=barrel, loyly=yes, coldbath=bath, outdoor_rest=yes,
+         firepit=stand
+   サウナイキタイ（実測値・宿泊者投稿）:
+     サウナ室 105℃ / 水風呂 15℃ → sauna_temp=105, water_temp=t1518
+     「夜22:00までサウナOK。翌朝6:00から利用OK」→ sauna_hours=limited
+   一休「趣の異なる3棟のヴィラ -「HARUKA棟」「KANATA棟」「SUMIKA棟」」
+     → villa_type=multi
+   楽天トラベル「チェックイン15:00〜18:00」→ late_arrival=no
+   除外した項目と理由:
+     capacity … HARUKA棟2名／KANATA棟12名／SUMIKA棟6名／2棟貸切14名と
+       構成により大きく異なり、DBの1エントリでは代表値を決められない
+     stove … 薪ストーブは居室のもの。サウナの熱源は明示がない
+     sauna_cap … 記載なし
+   注記: 公式サイトは2棟（HARUKA/KANATA・敷地2,000㎡）の記載だが、
+     一休は3棟（+SUMIKA棟・2025年5月新設・敷地5,000㎡）となっており、
+     公式サイトが更新されていない。日帰り利用も可能。 */
+
+  "45": {   /* HARUKA KANATA 森のヴィラ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tripto.jp/facilities/263' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    sauna_temp:      { v: 105, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    water_temp:      { v: 't1518', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051622/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100.html' }
+  },

@@ -760,7 +760,16 @@ window.VILLAFARAS_SPEC = {
 
   "45": {  /* HARUKA KANATA 森のヴィラ */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
     stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    sauna_temp:   { v: 105, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    water_temp:   { v: 't1518', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/78941' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
+    villa_type:   { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051622/' },
+    firepit:      { v: 'stand', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 70, src: 'auto', at: '2026-07' },
@@ -768,7 +777,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 10, src: 'auto', at: '2026-07' },
     ic:           { v: '鋸南富山IC 13分', src: 'auto', at: '2026-07' },
     station:      { v: '岩井 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 14, src: 'auto', at: '2026-07' }
+    onsen:        { v: 14, src: 'auto', at: '2026-07' },
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100.html' }
   },
 
   "46": {  /* 閑閑舎 */
