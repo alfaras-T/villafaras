@@ -1714,3 +1714,54 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' }
   },
+
+/* 海野宿一棟貸し宿 上州屋（2026-08確認）
+   ROOMS ページのサウナ欄が非常に詳細。
+     「室内は全面檜で心安らぐサウナ」→ sauna_type=indoor
+     「フィンランド製の電気式ストーブにアロマ水でセルフロウリュを」
+       → stove=electric, loyly=yes
+     「サウナ温度：80〜100℃ １℃単位でご指定いただけます」→ sauna_temp=90（中央値）
+     「庭に設けた信楽焼の水風呂。氷を入れて水温を下げることができます」
+       → coldbath=bath
+     「紅葉、広い空を眺めながらお入りください」＋庭・ウッドデッキでの休憩
+       → outdoor_rest=yes
+     FACILITY キッチン「IHヒーター３口」「調味料（醤油・料理酒・みりん・砂糖・油）」
+       → kitchen_type=ih, kitchen_burners=3, bring_seasoning=ready
+     「敷地には、OMOYA・DOZO・OKAIKOの三棟があります」→ villa_type=multi
+     OMOYA は一階に土間・キッチン・リビング、二階が寝室 → steps=stairs
+   STAY ページ:
+     「ご利用定員 最大８名様」→ capacity=8
+     「サウナについて ご利用時間：15:00〜23:00 / 翌6:00〜」→ sauna_hours=limited
+     「チェックイン：15:00〜20:00 無断で20時を過ぎた場合は当日キャンセル扱い」
+       → late_arrival=no
+     「ペット（中型犬１匹まで5,500円）同伴でご滞在いただけます。
+       主屋土間またはウッドデッキに限ります」→ pet_ok=yes
+     「BBQセットのお持ち込みはできません。レンタルをご利用ください」
+       レンタル用品「BBQセット：1日8,800円（税込）」→ fee_bbq=extra
+   除外した項目と理由:
+     sauna_cap … サイズの記載がない
+     water_temp … 「氷を入れて水温を下げることができます」とあり固定値がない
+     water_src … 記載なし
+     wifi … 設備一覧に記載が見当たらない
+   注記: サウナは水着着用制。ウッドデッキ・屋内は専用ポンチョ着用。
+     アロマ水は静岡県産日本茶／東御市産ユーカリ（季節限定）。 */
+
+  "194": {   /* 海野宿一棟貸し宿　上州屋 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    sauna_temp:      { v: 90, src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' }
+  },
