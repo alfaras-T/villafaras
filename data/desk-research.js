@@ -1893,3 +1893,36 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' }
   },
+
+/* THE SECOND Nasukogen Forest House（2026-08確認）
+   「部屋・設備」欄:
+     「・サウナ HARVIAサウナヒーター」→ stove=electric
+     「・Wi-Fi」「・浴槽」「・シャワー」「・ドッグラン兼ガーデン」
+   「家具・家電」欄:
+     「・IHコンロ」→ kitchen_type=ih
+     「・Coleman ロードトリップグリル」（BBQグリル）
+   「備品・アメニティ」欄:
+     「・タオル類」「・シャンプー」「・コンディショナー」「・ボディソープ」
+     「・歯ブラシ」→ bring_towel=ready, bring_amenity=ready
+   A棟（5LDK・定員14名）とB棟（2LDK・定員6名）の2棟構成 → villa_type=multi
+   「ペット：犬種問わず2頭まで」（両棟）→ pet_ok=yes
+   除外した項目と理由:
+     capacity … A棟14名／B棟6名と棟で異なり、DBの1エントリでは代表値を決められない
+     sauna_type・loyly・coldbath・outdoor_rest … 設備一覧に「サウナ」とあるのみで
+       形式・ロウリュ可否・水風呂の記載がない。「浴槽」はあるが水風呂の明示ではない
+     kitchen_burners … IHコンロとあるが口数の記載がない
+     bring_seasoning … 「調理器具」「食器一式」はあるが調味料の記載がない
+     late_arrival … 「チェックイン 16：00」のみで受付終了時刻の記載がない
+   注記: 「※サウナ利用の際は水着着用が必須となります」
+     「※ナイトウェア・コーヒー豆・ペットシートのご用意はございません」 */
+
+  "117": {   /* THE SECOND Nasukogen Forest House */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' }
+  },

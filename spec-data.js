@@ -1759,15 +1759,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "117": {  /* THE SECOND Nasukogen Forest House */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 490, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '那須高原スマートIC 17分', src: 'auto', at: '2026-07' },
-    station:      { v: '高久 16分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    elevation:     { v: 490, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 4, src: 'auto', at: '2026-07' },
+    conveni:       { v: 4, src: 'auto', at: '2026-07' },
+    ic:            { v: '那須高原スマートIC 17分', src: 'auto', at: '2026-07' },
+    station:       { v: '高久 16分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.thesecondhotels.com/nasukogen-forest-house' }
   },
 
   "118": {  /* SANU 2nd Home 那須1st */
