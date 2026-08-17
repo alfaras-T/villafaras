@@ -2127,3 +2127,39 @@
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051622/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100.html' }
   },
+
+/* ポーラーリゾート 2施設（2026-08確認）
+   公式サイト「建物別詳細・予約」ページに全30棟の一覧があり、
+   定員／犬同伴／BBQ／サウナ／駐車場が棟ごとに整理されている。
+     「ポーラーハウスカナディアン南軽井沢1 定員：19名 犬同伴：不可 BBQ：可
+       サウナ：あり 駐車場：5台」
+     「ポーラーハウス南軽井沢１ 定員：19名 犬同伴：可 ドッグランあり 120㎡
+       BBQ：可 サウナ：あり 駐車場：4台」
+   bbq_roof の判定:
+     同一覧では「BBQ：可 屋根付き」と明示される棟（あさまヴィラ、西軽井沢１、
+     中軽井沢１、軽井沢など）と、「BBQ：可」のみの棟が併記されている。
+     該当2件はいずれも屋根付きの記載がないため open（屋根なし）と判定した。
+   除外した項目と理由:
+     sauna_type・stove・loyly・coldbath・outdoor_rest … 一覧は
+       「サウナ：あり」のみで仕様の記載がない。個別ページ（写真・設備を見る）は
+       Wixの遅延読み込みで棟ごとのURLが取得できなかった
+     kitchen_type・wifi・bring_* … 同上
+   注記: ポーラーリゾートは軽井沢エリアに30棟を展開。一覧によれば
+     サウナありは該当2件のほか、あさまヴィラ／カナディアン西軽井沢１／
+     西軽井沢１／軽井沢など。DBには2件のみ収録されている。 */
+
+  "192": {   /* ポーラーハウスカナディアン南軽井沢1 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    capacity:        { v: 19, src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' }
+  },
+
+  "268": {   /* ポーラーハウス南軽井沢1 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    capacity:        { v: 19, src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' }
+  },

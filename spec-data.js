@@ -2836,7 +2836,10 @@ window.VILLAFARAS_SPEC = {
 
   "192": {  /* ポーラーハウスカナディアン南軽井沢1 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    bbq_roof:     { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     elevation:    { v: 939, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
@@ -3892,7 +3895,10 @@ window.VILLAFARAS_SPEC = {
 
   "268": {  /* ポーラーハウス南軽井沢1 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    bbq_roof:     { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     capacity:     { v: 15, src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     elevation:    { v: 939, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 8, src: 'auto', at: '2026-07' },
