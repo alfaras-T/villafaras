@@ -2163,3 +2163,46 @@
     bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' }
   },
+
+/* tokoro hotel Isumi（2026-08確認）
+   overview ページの設備一覧が網羅的。
+     「【設備】バス・シャワー / 独立洗面台 / プライベート露天風呂 /
+       ロウリュウサウナ / 井戸水風呂 / …／ ガスコンロ（4口）」
+       → loyly=yes, coldbath=bath, water_src=well,
+         kitchen_type=gas, kitchen_burners=4
+     「【調味料】塩、胡椒、醤油、油」→ bring_seasoning=ready
+     「【生活家電】…無料Wi-Fi」→ wifi=yes
+     「●アメニティ● シャンプー、トリートメント、ボディソープ、歯ブラシ、綿棒、
+       コットン、タオル類（バスタオル・フェイスタオル）、ハンドソープ、スリッパ、
+       ナイトウェア」→ bring_towel=ready, bring_amenity=ready
+     「■プライベートサウナ / 露天風呂 / 井戸水風呂
+       ・ご利用回数 滞在中 回数無制限 ・ご利用時間 15時から翌朝10時」
+       → sauna_hours=h24（滞在中いつでも利用可）
+     「定員 2~7名（お子様を含め8名）」→ capacity=8
+   ISUMI トップ「お風呂は別棟でご用意。露天風呂とロウリュウサウナを
+     備え付けております」→ sauna_type=hut（別棟）
+   「露天風呂・サウナ付き一組限定のお宿」→ villa_type=solo
+   除外した項目と理由:
+     stove … 「ロウリュウサウナ」とあるが薪／電気／ガスの別が不明
+     sauna_temp・sauna_cap・water_temp … 記載なし
+     outdoor_rest … 別棟に露天風呂はあるが外気浴スペースの明示がない
+     late_arrival … 「チェックイン 15:00〜」のみで受付終了時刻の記載がない
+   注記: 「サウナコンシェルジュおすすめのアロマのロウリュ」が無料サービス。
+     同ブランドの tokoro hotel JUJI（市原市・2026/4/1オープン）はDB未収録。 */
+
+  "53": {   /* tokoro hotel Isumi */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    kitchen_burners: { v: 4, src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' }
+  },

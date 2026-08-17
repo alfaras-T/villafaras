@@ -883,14 +883,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "53": {  /* tokoro hotel Isumi */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    elevation:    { v: 14, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '茂原長南IC 26分', src: 'auto', at: '2026-07' },
-    station:      { v: '新田野 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 15, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    kitchen_burners: { v: 4, src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    capacity:        { v: 7, src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    elevation:       { v: 14, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 7, src: 'auto', at: '2026-07' },
+    conveni:         { v: 4, src: 'auto', at: '2026-07' },
+    ic:              { v: '茂原長南IC 26分', src: 'auto', at: '2026-07' },
+    station:         { v: '新田野 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 15, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' }
   },
 
   "54": {  /* Zekkei stay ISUMI cabin */
