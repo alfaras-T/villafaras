@@ -902,6 +902,13 @@ window.VILLAFARAS_SPEC = {
 
   "56": {  /* THE VIBES VILLA */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    sauna_temp:   { v: 110, src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     elevation:    { v: 5, src: 'auto', at: '2026-07' },
     supermarket:  { v: 9, src: 'auto', at: '2026-07' },

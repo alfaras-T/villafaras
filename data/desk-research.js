@@ -1959,3 +1959,38 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' }
   },
+
+/* THE VIBES VILLA（勝浦）（2026-08確認）
+   サウナ専用ページの内容が全施設中もっとも充実。
+     「スカイグレーのキューブデザインが特徴的な…オリジナルのデザイン
+       内部にはヒノキを使用」テラスに設置された独立サウナ → sauna_type=hut
+     「熱したサウナストーンに水をかけるロウリュはお好きな量・タイミングで
+       自由にお使いいただけます」→ loyly=yes
+     「温度にこだわるサウナーの皆様にもご満足いただけるよう
+       最高温度は110度まで設定が可能です」→ sauna_temp=110
+     注意事項「安全上ならびに騒音防止等の観点から「24時」以降のご利用は
+       お控えいただきますよう」→ sauna_hours=limited
+     注意事項「サウナおよび水風呂、ジャグジーをご利用の際は必ず水着の着用を」
+       → coldbath=bath（水風呂の存在が確認できる）
+     「オーシャンフロントならではの贅沢な外気浴をお楽しみください」
+       → outdoor_rest=yes
+   トップ「８名様まで宿泊可能」「1日、1組、1棟貸切」→ capacity=8, villa_type=solo
+   除外した項目と理由:
+     stove … サウナストーンの記載はあるが薪／電気／ガスの別が不明
+     sauna_cap … 「ゆったり座れる2段ベンチシート」とあるが人数の記載がない
+     water_temp・water_src … 水風呂の存在は確認できるが仕様の記載がない
+   注記: サウナは全宿泊プランに含まれ追加料金不要。水着着用・マット必須。
+     サウナバケツに「白樺の葉の香り」アロマオイルを用意。
+     目の前の鵜原海岸での「海風呂」体験も可能と案内している。 */
+
+  "56": {   /* THE VIBES VILLA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    sauna_temp:      { v: 110, src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/plan/private-sauna/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://thevibesvilla.com/katsuura/' }
+  },
