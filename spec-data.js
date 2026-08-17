@@ -1122,14 +1122,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "71": {  /* Casita Laguna */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    elevation:    { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 21分', src: 'auto', at: '2026-07' },
-    station:      { v: '長者町 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 21, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/about/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-07' },
+    elevation:       { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 21分', src: 'auto', at: '2026-07' },
+    station:         { v: '長者町 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 21, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' }
   },
 
   "72": {  /* VILLA LAGI */

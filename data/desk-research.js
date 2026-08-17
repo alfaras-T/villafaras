@@ -1765,3 +1765,37 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' }
   },
+
+/* Casita Laguna（2026-08確認・2025年10月オープン）
+   FAQ が充実。
+     「設備は何がありますか？ システムキッチン、ウォシュレット付きトイレ、
+       床暖房（LDK）、エアコン、洗濯機、サウナ、水風呂がございます」
+       → sauna_exists=yes, coldbath=bath
+     「プールはありますか？ いいえ。ただ、３m×１.２mと広めの水風呂がございますので、
+       そちらでお子様を遊ばせることは可能です」
+     「定員は何名ですか？ 最大で７名までとなっております」→ capacity=7
+     「調味料（塩、胡椒、醤油、オリーブオイル）」→ bring_seasoning=ready
+     「バスタオル/人、フェイスタオル２枚/人、MARKS＆WEB（シャンプー、リンス、
+       クレンジング、洗顔、化粧水、乳液、ボディソープ）」
+     「BBQコンロは貸出できますか？ はい。無料でBBQグリルの貸出をしております」
+       → fee_bbq=incl
+   ABOUT「2組までの家族や、気心知れた友人たちとだけで過ごす」一棟貸ヴィラ
+     → villa_type=solo
+   除外した項目と理由:
+     sauna_type・stove・loyly … サウナ専用セクションがなく、FACILITY の文章内で
+       「サウナと水風呂で整い」と触れられるのみで形式・熱源の記載がない
+     water_depth … 「３m×１.２m」は水風呂の平面寸法であり深さではない
+     outdoor_rest … 庭はあるが外気浴スペースとしての明示がない
+     kitchen_type … 「システムキッチン」のみで加熱方式の記載がない
+     bbq_roof … 「BBQハウス」とあり建屋の可能性が高いが屋根の明示がない */
+
+  "71": {   /* Casita Laguna */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/about/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/about/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' }
+  },
