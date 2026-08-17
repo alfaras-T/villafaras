@@ -1643,3 +1643,36 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' }
   },
+
+/* サンライズヴィラ大洗（2026-08確認）
+   サウナは施設共通設備のため sauna_exists=shared に訂正（tools/fix_villa.py で実施）。
+   「施設紹介」ページ:
+     「Spa Sauna スパ & サウナ フィンランドサウナの歴史に深く根付く
+       世界的サウナヒーターブランド『ＨＡＲＶＩＡ』採用」→ stove=electric
+     「［OPEN］5:00–9:00／14:00–23:00 ※貸切制（90分）のため、
+       チェックイン時にお申し付けください」→ sauna_hours=limited
+   「ゲストルーム」ページ:
+     「プライベートスイートヴィラ 定員：６名」→ capacity=6
+     「階段で2階に上がると」→ steps=stairs
+     客室設備に タオル/バスタオル/ボディーソープ/シャンプー/リンス等
+     「広々としたアウトドアリビングには、ガスグリルが設置されています。
+       軒の下で天候に左右されずにBBQをお楽しみいただけます」→ bbq_roof=roof
+   「貸切利用」ページ:
+     「客室（3棟）」「宿泊最大18名様（6名×3棟）」→ villa_type=multi
+   除外した項目と理由:
+     sauna_type・loyly・coldbath・outdoor_rest … 記載なし
+     kitchen_type … 「キッチン完備」とあるが加熱方式の記載なし。
+       FAQに「炊飯器はございません」とあり設備は簡素な模様
+     fee_bbq … 貸切プランのオプションに「BBQプラン：9,900円」とあるが、
+       通常宿泊時の扱いが不明 */
+
+  "274": {   /* サンライズヴィラ大洗 */
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/private-use/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' }
+  },

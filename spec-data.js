@@ -3870,16 +3870,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "274": {  /* サンライズヴィラ大洗 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 7, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '夏海IC 1分', src: 'auto', at: '2026-07' },
-    station:      { v: '大洗 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/private-use/' },
+    bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    elevation:     { v: 7, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '夏海IC 1分', src: 'auto', at: '2026-07' },
+    station:       { v: '大洗 5分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' }
   },
 
   "275": {  /* ときわ邸 M-GARDEN */
