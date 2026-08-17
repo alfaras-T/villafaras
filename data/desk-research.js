@@ -1799,3 +1799,58 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' }
   },
+
+/* MOOSKA DE STUBEN（2026-08確認）
+   施設概要の「サウナ仕様」欄が全施設中もっとも詳細。
+     「薪ストーブ：HARVIA LEGEND300」→ stove=wood
+     「ストーン：かんらん岩 240kg積載」
+     「フレッシュエアー：吸排気最適化」「断熱：３重構造・厚さ12mm黒タイル」
+     「クナイプトシャワー：サウナ室内に完備」
+     「男女混浴：８人同時利用可能」→ sauna_cap=8
+     「ラドル：指物師一点もの・両利き対応」→ loyly=yes（ロウリュ用の柄杓）
+     「薪：里山間伐材を完全乾燥」
+   /sauna のメタ記述:
+     「男女混浴貸切で利用できるフィンランド式の薪サウナ。…
+       利根川源流の湧水を使った水風呂と自然に囲まれた中で外気浴を楽しめます」
+       → coldbath=bath, water_src=spring, outdoor_rest=yes
+   施設案内図に「別次元の薪サウナ／湧水風呂／外気浴スペース／薪ストーブ付ラウンジ／
+     焚き火外気浴」と独立した棟・スペースとして図示 → sauna_type=hut
+   施設概要:
+     「利用定員 ８名様まで（1日1組限定）」「利用形式 一棟貸切グランピング・ヴィラ」
+       → capacity=8, villa_type=solo
+     寝室が1階・2階に分かれる → steps=stairs
+     「チェックイン １５：００〜１９：００」→ late_arrival=no
+     「チェックアウト １０：００（レイトプラン １２：００）」→ early_late=yes
+     アメニティに バスタオル/サウナポンチョ/サウナハット/サウナマット/水着/パジャマ/
+       化粧水/歯ブラシ/Wi-Fi/調理器具・調味料
+     オプション「BBQ食材セット 6,600円」→ fee_bbq=extra
+     「焚火」がスペースに含まれる → firepit=stand
+   除外した項目と理由:
+     sauna_temp … 「負担の少ない温湿度設定」とあるが具体的な数値がない
+     water_temp … 湧水とあるが水温の記載がない
+     kitchen_type … 調理器具の列挙はあるが加熱方式の記載がない
+     bbq_roof … 「タープ付きのウッドデッキ」とあるがタープは屋根とは別概念
+   注記: オプションに「白樺ヴィヒタ 5,500円／束」あり。
+     日帰りサウナ（publicsaunaday）も別途実施している模様。 */
+
+  "267": {   /* MOOSKA DE STUBEN */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    sauna_cap:       { v: 8, src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://mooska.jp/sauna' },
+    water_src:       { v: 'spring', src: 'desk', at: '2026-08', url: 'https://mooska.jp/sauna' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' }
+  },
