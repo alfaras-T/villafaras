@@ -1676,3 +1676,41 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' }
   },
+
+/* Sumera Resort Minato（2026-08確認）
+   1ページに全情報が集約されている。
+     「03 サウナ 本館玄関横に本格的なサウナを設置いたしました。
+       外の浴槽は水風呂としてご利用いただけるほか、温水でのご利用も可能です」
+     Facilities 補足「サウナ隣接一人用浴槽あり：温水・冷水・シャワーホースあり」
+       → coldbath=bath（専用の浴槽が水風呂として明示されている）
+     宿泊プラン「1. 大人3名様まで 本館(2階建て)のみ / 2. 大人3名〜5名様まで
+       本館+別館(平屋)利用」→ capacity=5
+     「1棟貸し切り2階建ての本館と、平屋建ての別館」→ steps=stairs, villa_type=multi
+     「愛犬とプール・サウナ・BBQを独占する富津の１日１組限定プライベートヴィラ」
+     「ペット宿泊料金：無料」→ pet_ok=yes
+     Facilities に Wi-Fi、Amenity に ハンドタオル/バスタオル/歯ブラシ/
+       シャンプー/化粧水/乳液 一式
+     「ファイヤーピット用の薪もご用意しております」→ firepit=stand, firewood_fee=incl
+   除外した項目と理由:
+     sauna_type・stove・loyly … 「本格的なサウナ」以上の記載がない
+     outdoor_rest … 多目的ガーデンベンチはあるが外気浴スペースとしての明示がない
+     kitchen_type … 「調理器具一式」のみで加熱方式の記載がない
+     bring_seasoning … 調味料の記載がない
+     water_temp・water_src … 記載なし
+   注記: プールが「夏季以外はサウナの水風呂としてもご使用いただけます」とあるが、
+     サウナ隣接の専用浴槽が別にあるため coldbath=bath とした。
+     プール兼用のみの施設（Refwind・GIFTHOUSE館山・Retreat Villa Aym）とは区別している。 */
+
+  "27": {   /* Sumera Resort Minato */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    capacity:        { v: 5, src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' }
+  },

@@ -410,15 +410,23 @@ window.VILLAFARAS_SPEC = {
   },
 
   "27": {  /* Sumera Resort Minato */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 3, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '富津中央IC 12分', src: 'auto', at: '2026-07' },
-    station:      { v: '上総湊 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    capacity:      { v: 3, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    elevation:     { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 7, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '富津中央IC 12分', src: 'auto', at: '2026-07' },
+    station:       { v: '上総湊 4分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' },
+    firewood_fee:  { v: 'incl', src: 'desk', at: '2026-08', url: 'https://sumera.co.jp/minato/' }
   },
 
   "28": {  /* VACATIONHOUSE TORAMI 7521 */
