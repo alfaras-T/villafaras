@@ -1854,3 +1854,42 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' }
   },
+
+/* GIFTHOUSE 2nd 館山 洲宮（2026-08確認）
+   トップ「Spa & Activity 新設バレルサウナ・屋外ジャグジーなど充実」→ sauna_type=barrel
+   activity.php:
+     「＜ 屋外薪サウナ ＞ 新たに設置されたサウナは…」→ stove=wood
+     「サウナで温まった後は、水風呂でクールダウン」→ coldbath=bath
+     「＜ 整い場 ＞ プライベートサウナでしっかり温まったら、すぐ横の
+       リクライニングチェアへ。潮風と青空を感じながら深呼吸する外気浴は」
+       → outdoor_rest=yes, rest_chair=chair
+   room.php:
+     「客室：全1室 (1棟貸切) 定員：最大8名」→ capacity=8, villa_type=solo
+     Kitchen Features「ガスコンロ×1」→ kitchen_type=gas, kitchen_burners=1
+     Amenities「シャンプー、ボディーソープ類(john masters organics)、タオル類」
+     「チェックイン：15:00〜24:00」→ late_arrival=ok
+   除外した項目と理由:
+     loyly … 薪サウナだがロウリュ可否の明示がない
+     sauna_cap・sauna_temp・water_temp・water_src … 記載なし
+     bring_seasoning … カトラリーの列挙は詳細だが調味料の記載がない
+     wifi … 記載が見当たらない
+   注記: 姉妹施設 GIFTHOUSE 館山 那古海岸（id=19）とは設備が異なる。
+     那古海岸は「3口IH」「室内サウナ」「チェックイン15:00〜18:00」に対し、
+     洲宮は「ガスコンロ×1」「屋外薪バレルサウナ」「15:00〜24:00」。
+     同一ブランドでも施設ごとの確認が必要。 */
+
+  "20": {   /* GIFTHOUSE 2nd 館山 洲宮 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    kitchen_burners: { v: 1, src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' }
+  },

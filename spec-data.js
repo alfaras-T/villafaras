@@ -301,17 +301,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "20": {  /* GIFTHOUSE 2nd 館山 洲宮 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 13, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 6, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 16分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 13分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-07' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-07' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/activity.php' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    kitchen_burners: { v: 1, src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    capacity:        { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 13, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 6, src: 'auto', at: '2026-07' },
+    conveni:         { v: 6, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 16分', src: 'auto', at: '2026-07' },
+    station:         { v: '館山 13分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' }
   },
 
   "21": {  /* UMInoTERRACE */
