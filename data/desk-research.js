@@ -2034,3 +2034,53 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' }
   },
+
+/* On the wave 館山（2026-08確認）
+   ※ the MELLOW HOUSE 館山（id=17）と同一運営。
+   お風呂&サウナ ページ:
+     「HEARVIAのサウナストーブ」→ stove=electric（HARVIA の表記ゆれ）
+     「ロウリュアロマもご用意しておりますので、自分好みでロウリュを楽しむことが
+       できます」→ loyly=yes
+     「1人用の水風呂は、サウナ室のすぐ横にあります。季節によって水風呂の温度を
+       調整するために業務用の製氷機も完備」→ coldbath=bath
+     「ウッドデッキにダイレクトに出られる設計」→ outdoor_rest=yes
+   Q&A:
+     「最大10名（大人6名、子供4名）まで可能です」→ capacity=10
+     「寝室は２階にあるのですが」→ steps=stairs
+     「一棟貸切タイプとなりますので、スタッフは常駐しておりません」→ villa_type=solo
+     「小型犬2頭まで可能です」→ pet_ok=yes
+     「チェックアウト時間前に出発される場合は、鍵をキーボックスへお戻しください」
+       → checkin_method=keybox
+     「オプションでアーリーチェックイン、レイトチェックアウトに対応可能です」
+       → early_late=yes
+     「有料オプションでWEBER社製の電気グリルをご用意しております。（5,500円）」
+       → fee_bbq=extra
+     「塩、胡椒、醤油、オリーブオイル、サラダ油がございます」→ bring_seasoning=ready
+   除外した項目と理由:
+     sauna_cap … 同一ページ内に「4人入ってもゆったりと使える広々としたサウナ室」と
+       「6人入ってもゆったりできる広いサウナ室です」の両方の記載があり矛盾している。
+       GIFTHOUSE館山那古海岸のチェックイン時刻に続き、サイト内で数値が
+       食い違う2例目
+     sauna_type … 「サウナ室」とあり屋内と思われるが明示がない
+     water_temp … 「季節によって水風呂の温度を調整するために業務用の製氷機」
+       とあり固定値がない
+     bring_towel … アメニティリストの詳細が画像内にあり取得できず
+   注記: 「アイスバス」利用も案内している。
+     2階は犬の出入り禁止。BBQは備え付け機材以外（炭など）禁止。 */
+
+  "18": {   /* On the wave 館山 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' }
+  },
