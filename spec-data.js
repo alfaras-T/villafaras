@@ -2810,14 +2810,23 @@ window.VILLAFARAS_SPEC = {
   },
 
   "186": {  /* Lakeside villa SUI HAKUBA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    elevation:    { v: 823, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 9, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '筑北PA(下り) 41分', src: 'auto', at: '2026-07' },
-    station:      { v: '簗場 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    sauna_cap:      { v: 4, src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    villa_type:     { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    kitchen_type:   { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    capacity:       { v: 4, src: 'desk', at: '2026-07' },
+    steps:          { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    elevation:      { v: 823, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 9, src: 'auto', at: '2026-07' },
+    conveni:        { v: 4, src: 'auto', at: '2026-07' },
+    ic:             { v: '筑北PA(下り) 41分', src: 'auto', at: '2026-07' },
+    station:        { v: '簗場 1分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' }
   },
 
   "187": {  /* GREENSEED軽井沢 */

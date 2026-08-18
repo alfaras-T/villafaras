@@ -2548,3 +2548,50 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' }
   },
+
+/* Lakeside villa SUI HAKUBA（2026-08確認）
+   SAUNA 欄:
+     「各ヴィラには、4人がゆったりと座れ、リビング越しに屋外の景色を望む
+       プライベートサウナをご用意しています。お好みに応じて温度も調整できます」
+       「定員：4名」→ sauna_type=indoor（リビングに面した屋内）, sauna_cap=4
+   VILLAS 欄:
+     「桜などの樹々が囲む静かな敷地内に建つヴィラは3棟のみ」→ villa_type=multi
+     「各棟ともキッチン付きの広々としたリビング（1階）と、2つのベッドルーム（2階）で
+       構成し、テラスとサウナを備えています」→ steps=stairs
+     「ご利用にあたっては、セルフチェックイン・チェックアウト方式を採用」
+       → checkin_method=smart
+     「※全棟Wi-Fi完備／屋内・テラスとも禁煙」→ wifi=yes
+   BEDROOM 欄:
+     ベッドルーム1「タイプ：ツイン／11㎡ 定員：2名様 階数：2階」
+     ベッドルーム2「タイプ：ツイン／9㎡ 定員：2名様 階数：2階」
+       → capacity=4（2室×2名）
+   設備・備品:
+     ［キッチン］「IHコンロ、冷蔵庫、オーブンレンジ、電気ケトル、
+       ネスプレッソマシン、調理器具、食器、カトラリー、グラス、洗剤、スポンジ、
+       ハンドソープ」→ kitchen_type=ih
+     ［浴室］「バスタオル、タオル、シャンプー、コンディショナー、ボディーソープ、
+       歯ブラシセット、カミソリ、コットン+綿棒セット、くし、ドライヤー」
+   除外した項目と理由:
+     sauna_temp … 「お好みに応じて温度も調整できます」で固定値がない
+     stove・loyly・coldbath・outdoor_rest … 記載なし。
+       テラス20㎡はあるが外気浴スペースとしての明示がない
+     bring_seasoning … キッチン備品に洗剤・スポンジはあるが調味料の記載がない
+     winter_access … 白馬・青木湖エリアだが冬季アクセスの記載がない
+     pet_ok・bbq_roof・fee_bbq … 記載なし（BBQはケータリングのオプション）
+   注記: 「徒歩圏内に飲食店やコンビニエンスストアがございませんので、
+     松本駅や長野駅よりレンタカーでお越しいただくことをおすすめしております」。
+     扉ホールディングス（明神館グループ）運営。 */
+
+  "186": {   /* Lakeside villa SUI HAKUBA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' }
+  },
