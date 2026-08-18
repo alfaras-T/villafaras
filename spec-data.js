@@ -1957,14 +1957,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "124": {  /* 北欧伝説 ドワーフの村 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 428, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '那須高原スマートIC 10分', src: 'auto', at: '2026-07' },
-    station:      { v: '高久 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/cottage' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/cottage' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    bbq_roof:      { v: 'open', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    firepit:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    steps:         { v: 'flat', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    elevation:     { v: 428, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 4, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '那須高原スマートIC 10分', src: 'auto', at: '2026-07' },
+    station:       { v: '高久 9分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    firewood_fee:  { v: 'incl', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    winter_access: { v: 'tire', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' }
   },
 
   "125": {  /* 森deワーケなすっぽ */

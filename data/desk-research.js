@@ -2368,3 +2368,47 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' }
   },
+
+/* 北欧伝説 ドワーフの村（2026-08確認）
+   草屋根のコテージ ページ:
+     「高い天井と大きな窓 / 火の灯る暖炉 / 専用サウナとデッキ」
+     「お風呂には湯船もサウナもあるので、お好みで。温まったら空の見えるデッキで、
+       心ゆくまでくつろいでください」→ sauna_type=indoor（浴室内）, outdoor_rest=yes
+   Q&A:
+     「1棟6床のベッドで、基本的には6名です。全棟で５棟あります」
+       → capacity=6, villa_type=multi
+     「完全なバリアフリー対応ではございませんが、段差は最小限に抑えた造りに
+       なっております」→ steps=flat
+     「雨や雪除け用タープテントを貸出できます」→ bbq_roof=open
+       （常設の屋根ではなく貸出タープのため roof ではない）
+     「焚き火台はご遠慮願います。薪の持ち込みは可能です。但し、BBQ炉に於いてのみ」
+       → firepit=no, firewood_fee=incl（持込可・BBQ炉で使用）
+     「降りますが、深雪状況は稀です。ただし冬季に車でお越しの際は
+       スタッドレスタイヤ装着をお勧めします」→ winter_access=tire
+     「Wi-Fiは使えますか？ ご利用いただけます」→ wifi=yes
+     「各コテージ内にパジャマ・タオル類・アメニティグッズ・スリッパをご用意…
+       雪肌精SET（乳液、化粧水、クレンジングオイル）、ヘアブラシ、歯ブラシ…」
+   除外した項目と理由:
+     pet_ok … 「コテージ ナナカマドに限り、体重10kg以下の愛犬を2匹まで」
+       で5棟中1棟のみ。DBの1エントリでは yes/no を代表させられない
+     stove・loyly・coldbath … サウナの熱源・ロウリュ・水風呂の記載がない
+     kitchen_type … 家電の列挙は詳細だが加熱方式の記載がない
+     kids_free … 「ベビーベッドはございません」のみで年齢の記載がない
+   注記: 暖炉は「薪は使えません」。BBQは防火上「炭火のみ」。
+     一般財団法人が運営する非営利型の施設。 */
+
+  "124": {   /* 北欧伝説 ドワーフの村 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/cottage' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/cottage' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/cottage' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    steps:           { v: 'flat', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    winter_access:   { v: 'tire', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' }
+  },
