@@ -2244,3 +2244,37 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' }
   },
+
+/* 庄屋の里 古民家たなか（2026-08確認）
+   「1000坪の敷地内には、日本庭園はもちろんプール、テントサウナ、
+     BBQが可能な東屋、露天風呂の他、芝生エリアには焚き火ゾーンの設備を
+     ご用意し」→ sauna_type=tent, bbq_roof=roof（東屋＝屋根付き）
+   「サウナ＆焚き火 プール横に設置されたサウナ、芝生広場内に焚き火
+     （キャンプファイアー）スペースのご用意がございます。薪 3,300円 (税込)」
+     → firepit=stand, firewood_fee=extra
+   BBQオプション「Aプラン 13200円/人」「Bプラン 9900円/人」→ fee_bbq=extra
+   「必要に応じて調味料、お肉などの他食材等はご持参下さい」
+     → bring_seasoning=bring
+   「大切な方々と一棟貸切の贅沢な時間を」→ villa_type=solo
+   除外した項目と理由:
+     stove・loyly・sauna_cap・sauna_temp … テントサウナとあるのみで仕様の記載がない
+     coldbath … プール横にサウナがあるが、プールを水風呂として使う旨の
+       明示がない。専用の水風呂の記載もない
+     outdoor_rest … 芝生エリア・日本庭園はあるが外気浴スペースの明示がない
+     capacity … 「2名宿泊時の目安の料金体系」とあるのみで定員の記載がない
+     kitchen_type … 「広々としたアイランドキッチンと最新式の調理家電」とあるが
+       加熱方式の記載がない
+     wifi・pet_ok … 記載が見当たらない
+   注記: 料金は変動制。ハイシーズン145,560円／ショルダー80,000円／
+     レギュラー60,000円（いずれも2名時の目安・税込）。 */
+
+  "48": {   /* 庄屋の里 古民家たなか */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    sauna_type:      { v: 'tent', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' }
+  },

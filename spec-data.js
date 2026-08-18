@@ -818,15 +818,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "48": {  /* 庄屋の里 古民家たなか */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 12, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 5, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 15分', src: 'auto', at: '2026-07' },
-    station:      { v: '太東 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 15, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'tent', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 12, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 10, src: 'auto', at: '2026-07' },
+    conveni:         { v: 5, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 15分', src: 'auto', at: '2026-07' },
+    station:         { v: '太東 2分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 15, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' }
   },
 
   "49": {  /* 古民家一棟貸切旅館　成田さくら邸 */
