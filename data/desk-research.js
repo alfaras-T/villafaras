@@ -2457,3 +2457,41 @@
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
     kids_free:       { v: 12, src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' }
   },
+
+/* zekkei stay ISUMI cabin（2026-08確認）
+   公式サイトが独立ドメインを持たず予約システム（chillnn）のみのため取得量は限定的。
+   お部屋一覧:
+     「isumi cabin いすみ川沿いの絶景サウナ付きキャビン ¥50,000~/ 1名」
+       全1室のキャビンにサウナが付属 → sauna_exists=yes, villa_type=solo
+   プラン:
+     「isumi cabin 素泊まりプラン」
+     「日帰りサウナを貸切！デイプラン（平日限定）貸切サウナで思う存分楽しみたい人」
+       → 日帰り客も利用するが平日限定であり、宿泊時は貸切のため yes が正当
+   留意事項:
+     「チェックイン 15:00 ~ 24:00」→ late_arrival=ok
+     「キッズポリシー 0〜12歳：0円」→ kids_free=12
+   注意事項（アコーディオン内・DOMから抽出）:
+     愛犬の同伴「・２頭まで同伴可能です。体重や大きさの制限はございません」
+       → pet_ok=yes
+     お子様の宿泊「屋外デッキと室内ロフトに手すりがないため」→ steps=stairs
+     「２台まで駐車可能です」「未成年者だけでのご利用はお断り」「敷地内外
+       に関わらず、喫煙は厳禁」
+   除外した項目と理由:
+     sauna_type・stove・loyly・coldbath・outdoor_rest … 予約システムの
+       施設情報には設備一覧がなく、サウナの仕様が一切不明
+     kitchen_type・wifi・bring_* … 同上
+     capacity … 「¥50,000~/ 1名」は課金表示の最低人数であって定員ではない。
+       既存値6（チャネルB第一段の抽出）を維持する
+   注記: 「薪ストーブもございますので火傷には十分ご注意ください」との記載あり
+     （これは居室の暖房であってサウナストーブではない）。
+     既存の stove=wood / loyly / coldbath は第一段抽出由来で、
+     今回の予約システムページでは裏付けが取れなかった。要再確認。 */
+
+  "54": {   /* Zekkei stay ISUMI cabin */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    kids_free:       { v: 12, src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' }
+  },

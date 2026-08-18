@@ -939,14 +939,18 @@ window.VILLAFARAS_SPEC = {
     stove:        { v: 'wood', src: 'desk', at: '2026-07' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:        { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
     elevation:    { v: 4, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '長生IC 18分', src: 'auto', at: '2026-07' },
     station:      { v: '太東 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 18, src: 'auto', at: '2026-07' }
+    onsen:        { v: 18, src: 'auto', at: '2026-07' },
+    kids_free:    { v: 12, src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    late_arrival: { v: 'ok', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' }
   },
 
   "55": {  /* SEA-LIFE TSURIGASAKI */
