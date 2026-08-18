@@ -2495,3 +2495,56 @@
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' }
   },
+
+/* トライハク軽井沢 神楽-かぐら-（2026-08確認・2025年8月OPEN）
+   ※ 同ブランド3施設（ひなた／ゆずき／かぐら）のうち、サウナがあるのは
+     かぐらのみ。他2施設の諸元にサウナの記載はない。
+   施設・設備ページ:
+     「宿は 3つのベッドルーム、ゆとりあるLDK、サウナ を備えた和モダンの平屋造り」
+       → sauna_type=indoor（屋内）, steps=flat（平屋）
+     「半屋内テラスでは BBQ や 星空ダイニング もお楽しみいただけます」
+       → bbq_roof=roof
+     「1日1組限定のプレミアムバケーションレンタル」→ villa_type=solo
+   トップの諸元:
+     「平屋3LDK 135㎡ / デッキ 16㎡ / ドッグラン 約350㎡」
+     「コンフォート6名 / 最大14名」→ capacity=14, comfort_cap=6
+     「1バスルーム / 2トイレ / サウナ」
+     「チェックイン時間：16:00〜22:00 玄関のキーパッドに電子錠のパスワードを
+       入力してご入室ください」→ checkin_method=keybox, late_arrival=ok
+     GUEST SERVICES「Wi-Fi 高速インターネット完備」
+     「愛犬と一緒に※1 愛犬1頭目から有料」「宿泊頭数 3頭まで 全犬種対応」
+       → pet_ok=yes
+   オプション:
+     BBQ「かぐら：コールマン ガス式」夏季（4月第3土〜10月第4金）限定・
+       事前予約制の有償オプション → fee_bbq=extra
+     薪ストーブ「かぐら：HETA NORN 薪25cm~40cm オーブン無」冬季限定・有償
+     焚き火台は「ひなた」のみでかぐらには無い → firepit=no
+   アメニティ: シャンプー・コンディショナー・ボディソープ、フェイスタオル、
+     バスタオル、バスマット、歯ブラシ、ヘアブラシ、綿棒、スリッパ
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest・sauna_temp・sauna_cap …
+       設備一覧に「サウナ」とあるのみで仕様の記載が一切ない
+     kitchen_type … 「システムキッチン 全棟に大きなキッチン」のみで
+       加熱方式の記載がない
+     bring_seasoning … キッチン用品の欄はあるが調味料の記載がない
+     winter_access … 標高1000mだが冬季アクセスの記載がない
+   注記: 薪ストーブの薪は「広葉樹ミックスの薪1束（7〜10kg程度）」が
+     オプション料金に含まれる。連泊時のタオル類は2泊分まで。 */
+
+  "197": {   /* トライハク軽井沢 神楽-かぐら- */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    capacity:        { v: 14, src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    steps:           { v: 'flat', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' }
+  },

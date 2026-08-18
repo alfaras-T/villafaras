@@ -2982,15 +2982,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "197": {  /* トライハク軽井沢 神楽-かぐら- */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 1066, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '佐久小諸JCT 16分', src: 'auto', at: '2026-07' },
-    station:      { v: '信濃追分 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    bbq_roof:       { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    firepit:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    capacity:       { v: 4, src: 'desk', at: '2026-07' },
+    comfort_cap:    { v: 6, src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:          { v: 'flat', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    elevation:      { v: 1066, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 6, src: 'auto', at: '2026-07' },
+    conveni:        { v: 3, src: 'auto', at: '2026-07' },
+    ic:             { v: '佐久小諸JCT 16分', src: 'auto', at: '2026-07' },
+    station:        { v: '信濃追分 5分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    checkin_method: { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
+    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
+    late_arrival:   { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' }
   },
 
   "198": {  /* T&A Resort&Sauna KARUIZAWA */
