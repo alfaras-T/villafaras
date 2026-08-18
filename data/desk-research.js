@@ -2206,3 +2206,41 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tokoro-hotel.com/isumi/overview' }
   },
+
+/* 雫花（しずか）（2026-08確認）
+   トップ「雫花に佇む、全5邸のプライベートヴィラ。その全てに専用のバレルサウナと
+     温泉露天風呂が備えられています」→ sauna_exists=yes, sauna_type=barrel
+   Private Villa / Luxury Villa の2タイプがあるが、サウナ関連の記述は共通:
+     両タイプとも「■ガーデン：国産檜のバレルサウナ、水風呂、館山温泉露天風呂」
+       → coldbath=bath
+     両タイプとも「ロウリュ対応オリジナル電気ヒーター」→ stove=electric, loyly=yes
+     両タイプとも「■アメニティ：室内着、タオル類、各種コスメ用品」
+   サウナのモデルはタイプで異なる:
+     Private: 「バレルサウナアップライト（縦型バレルサウナ）」
+       「室内はウッドデッキにフロアレベルを合わせた仕様」
+     Luxury: 「フラッグシップモデルの2m・ブラウン系のバロウサウナ」
+       「体感温度を変えて楽しめる段違いベンチを採用」
+     いずれもバレル型のため sauna_type=barrel は共通で確定できる
+   全5邸のヴィラサイト → villa_type=multi
+   「ガーデン」にサウナ・水風呂・露天風呂が並ぶ屋外構成 → outdoor_rest=yes
+   除外した項目と理由:
+     capacity … Private（約100m²）とLuxury（約130m²・ツイン×1＋キングサイズ×1）で
+       異なり、DBの1エントリでは代表値を決められない
+     sauna_cap … Luxury の「段違いベンチ」の記載はあるが人数の明示がない
+     sauna_temp・water_temp・water_src … 記載なし
+     kitchen_type … 「テラスキッチン」「グリル式テーブル」とあるが加熱方式が不明
+   注記: 隣接する姉妹館「花しぶき」の露天風呂付大浴場を無料で利用可能
+     （15:00〜24:00、5:00〜10:00）。ただしこれは宿泊者特典であり
+     雫花自体のサウナは各ヴィラ専用のため sauna_exists=yes が正当。 */
+
+  "42": {   /* 雫花 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' }
+  },

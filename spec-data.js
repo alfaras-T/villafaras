@@ -722,16 +722,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "42": {  /* 雫花 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 2, src: 'desk', at: '2026-07' },
-    elevation:    { v: 6, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sizca.jp/' },
+    capacity:      { v: 2, src: 'desk', at: '2026-07' },
+    elevation:     { v: 6, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 7, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '富浦IC 13分', src: 'auto', at: '2026-07' },
+    station:       { v: '館山 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://sizca.jp/villas/private.html' }
   },
 
   "43": {  /* Montevan RESORT VILLA */
