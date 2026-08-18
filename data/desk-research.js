@@ -2323,3 +2323,48 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' }
   },
+
+/* &SUN Laie back（2026-08確認）
+   ※ 所在地は千葉県南房総市久枝。公式サイトのページタイトルは「| 葉山」だが、
+     これは同ブランドが葉山拠点のためテンプレートのタイトルが残っているもので、
+     施設自体は南房総。FAQの「南房総の海目の前に建つ屋外プール付きリゾートヴィラ
+     …サウナや全自動洗濯機・ガス乾燥機など充実した設備」が正しい記述。
+     Yahoo!トラベルも「館山・南房総のサウナありの貸別荘」として掲載。
+   FAQ:
+     「サウナや全自動洗濯機・ガス乾燥機など充実した設備」→ sauna_exists=yes
+     「定員は6名様までです」→ capacity=6
+     「小型犬一頭のみ宿泊可能です。オプションよりお申込み下さい。（8,000円/税込）」
+       → pet_ok=yes
+     「10歳以上のお子様は大人1名様分としてカウント致します」→ kids_free=9
+     「全館Wi-Fiをお使いいただけます」→ wifi=yes
+     「１棟貸しの施設ですので」→ villa_type=solo
+   SERVICE:
+     「BBQの機材のお持ち込みをご遠慮頂いております。ご希望のお客様は
+       1台10,000yen(税込)にて機材の貸出し」→ fee_bbq=extra
+   ROOM:
+     BATHROOM/MAKEROOM「タオル類 (バスタオル・フェイスタオル) / 歯ブラシ /
+       シャンプー / コンディショナー / ボディーソープ / ブラシ / ドライヤー /
+       スリッパ / 綿棒」
+     KITCHEN「…調味料（塩・胡椒）」→ bring_seasoning=ready
+   除外した項目と理由:
+     sauna_type・stove・loyly・coldbath・outdoor_rest … ROOMページの設備一覧
+       （LIVING DINING / BEDROOM / BATHROOM / ROOFTOP / KITCHEN）に
+       サウナの記載が一切なく、FAQの一言のみで仕様が不明
+     kitchen_type … ROOMページは「3口IHキッチン」、FAQは「ガスコンロ（3口）」と
+       記述が食い違っている。サイト内の矛盾3例目（GIFTHOUSE那古海岸の
+       チェックイン時刻、On the wave のサウナ定員に続く）
+   注記: kids_free=9 は「10歳以上は大人1名分」からの判定。
+     9歳以下が添い寝無料という直接の記載ではないため要確認。 */
+
+  "8": {   /* &SUN Laie back */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/service/' },
+    kids_free:       { v: 9, src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' }
+  },

@@ -136,15 +136,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "8": {  /* &SUN Laie back */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 5, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '鋸南富山IC 7分', src: 'auto', at: '2026-07' },
-    station:      { v: '岩井 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    elevation:       { v: 5, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '鋸南富山IC 7分', src: 'auto', at: '2026-07' },
+    station:         { v: '岩井 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/service/' },
+    kids_free:       { v: 9, src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' }
   },
 
   "9": {  /* sendouQ */
