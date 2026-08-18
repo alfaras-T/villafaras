@@ -449,15 +449,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "28": {  /* VACATIONHOUSE TORAMI 7521 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 7, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 12, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 12, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 7, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 12, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 13分', src: 'auto', at: '2026-07' },
+    station:         { v: '東浪見 4分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' }
   },
 
   "29": {  /* PRIVE */

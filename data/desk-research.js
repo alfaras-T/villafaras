@@ -2278,3 +2278,48 @@
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' }
   },
+
+/* VACATIONHOUSE TORAMI 7521（2026-08確認）
+   「施設のご紹介」ページに設備・基本情報・諸注意が集約されている。
+   設備:
+     「ウッドデッキには星空を見ながらくつろげるジャグジー、
+       ロウリュウを楽しめるサウナを配置」→ loyly=yes
+     「パウダールームから直接ウッドデッキへアクセスでき、屋外ジャグジーや
+       サウナへ行けます」＋屋外用ベンチ＆イス＆パラソル・防水ビーズクッション
+       → outdoor_rest=yes
+     「ＢＢＱスペースにはWeber社製大型ＢＢＱガスグリル(有償オプション)」
+       → fee_bbq=extra
+   基本情報:
+     アメニティ「バスタオル、フェイスタオル、ボディーソープ、シャンプー、
+       トリートメント、ハンドソープ、綿棒、ドライヤー、スリッパ…」
+     室内設備「※食品衛生法の観点から食材・調味料のご用意はございません」
+       → bring_seasoning=bring
+   諸注意:
+     「近隣に居住者がいますので、夜21時以降、ＢＢＱ、屋外での飲酒、
+       大きな声での歓談は固く禁止します」→ sauna_hours=limited
+       （サウナは屋外ウッドデッキ設置のため21時以降は事実上利用不可）
+     「駐車場を含む敷地内での花火、水風船…等は禁止」
+     「プール、テント、BBQグリル、七輪、等のお持込みは禁止」→ firepit=no
+     「ご宿泊登録者以外の方の施設内立ち入りはできません」→ villa_type=solo
+   除外した項目と理由:
+     sauna_type … ウッドデッキ配置の屋外サウナだが小屋型／バレル型の別が不明
+     stove・sauna_cap・sauna_temp … 記載なし
+     coldbath … 「屋外シャワー」「ジャグジー」はあるが水風呂の記載がない
+     capacity … ダブルベッド4台＋ソファーベッドだが定員の明示がない
+     kitchen_type … 調理器具の列挙は詳細だが加熱方式の記載がない
+       （食器の注記に「ガス火/オーブン不可」とあるがこれは食器の耐熱性の話）
+   注記: sauna_hours=limited は屋外設備全般の21時制限からの判定であり、
+     サウナ単体の利用時間が明記されているわけではない。 */
+
+  "28": {   /* VACATIONHOUSE TORAMI 7521 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://vacationhouse.jp/information/' }
+  },
