@@ -1005,16 +1005,23 @@ window.VILLAFARAS_SPEC = {
   },
 
   "58": {  /* UMIYAMA CHIKURA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 30, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
-    station:      { v: '千倉 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 13, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'barrel', src: 'desk', at: '2026-07' },
+    coldbath:       { v: 'bath', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    firepit:        { v: 'stand', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    capacity:       { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    steps:          { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    elevation:      { v: 30, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 4, src: 'auto', at: '2026-07' },
+    conveni:        { v: 3, src: 'auto', at: '2026-07' },
+    ic:             { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
+    station:        { v: '千倉 3分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 13, src: 'auto', at: '2026-07' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    kids_free:      { v: 12, src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' }
   },
 
   "59": {  /* Under the Sea UBARA */

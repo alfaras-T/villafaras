@@ -2412,3 +2412,48 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://dwarvenvillage.jp/qa' }
   },
+
+/* UMIYAMA CHIKURA（2026-08確認）
+   1ページに全情報が集約されている。
+   Sauna 欄:
+     「高台に設置されたバレルサウナは、庭の椰子の木々とその奥に広がる
+       田園風景を一望できる贅沢な癒しの空間です」→ sauna_type=barrel
+   Features 欄（アイコン一覧）:
+     「フルキッチン / 調理器具 / 食器＆カトラリー / 冷蔵庫 / 電子レンジ /
+       トースター / コーヒーメーカー / ワインセラー / BBQグリル / バスタブ /
+       サウナ＆水風呂 / 暖炉 / 焚き火 / ポータブルスピーカー / プロジェクター /
+       Wi-Fi / 敷地内駐車スペース」
+       → coldbath=bath, wifi=yes, firepit=stand
+     「施設タイプ 1棟貸し ※ご宿泊中はテラスを含め全てのスペースが
+       お客様専用になります」→ villa_type=solo
+     「宿泊人数 大人6名・子供3名 (12歳以下) ※お子様含め最大9名様」
+       → capacity=9, kids_free=12
+     「チェックイン セルフチェックイン ※ご予約後メールにて
+       スマートロックの鍵番号をお送りします」→ checkin_method=smart
+     「ペット同伴 受入可（２匹まで）※小型犬、中型犬（20kg以下）のみ可能」
+       → pet_ok=yes
+   シアタールームが1階、リビング・ダイニングが2階 → steps=stairs
+   除外した項目と理由:
+     stove・loyly・sauna_temp・sauna_cap … バレルサウナとあるのみで
+       熱源・ロウリュ可否・温度・定員の記載がない
+     outdoor_rest … ウッドデッキはあるが外気浴スペースとしての明示がない
+     kitchen_type … 「フルキッチン」のみで加熱方式の記載がない
+     bbq_roof … 「広々としたウッドデッキ」でBBQ可だが屋根の記載がない
+     bring_* … アメニティ・調味料の記載が見当たらない
+   注記: kids_free=12 は「子供3名 (12歳以下)」からの判定。
+     12歳以下が子供料金という区分であり、添い寝無料の直接の記載ではない。
+     室内に薪ストーブあり（暖炉）。全エリア禁煙。 */
+
+  "58": {   /* UMIYAMA CHIKURA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' },
+    kids_free:       { v: 12, src: 'desk', at: '2026-08', url: 'https://umiyama-chikura.com/' }
+  },
