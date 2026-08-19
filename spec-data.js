@@ -1439,14 +1439,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "79": {  /* est ed.1 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 989, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '八ヶ岳PA(下り) 9分', src: 'auto', at: '2026-07' },
-    station:      { v: '甲斐大泉 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    stove:         { v: 'wood', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    sauna_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    elevation:     { v: 989, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '八ヶ岳PA(下り) 9分', src: 'auto', at: '2026-07' },
+    station:       { v: '甲斐大泉 4分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bring_wrap:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' }
   },
 
   "80": {  /* 2gether foret */

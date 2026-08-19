@@ -3790,3 +3790,58 @@
     capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/stay/' },
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/stay/' }
   },
+
+/* est ed.1（エストエディション）（2026-08確認）
+   施設案内ページが設備ごとに整理されており、サウナの記述が詳細。
+   ガーデン・サウナ:
+     「約6人一緒に入る事の出来る薪ストーブ式のサウナです」
+       → stove=wood, sauna_cap=6
+     「セルフロウリュでリフレッシュ」→ loyly=yes
+     「専用のサウナローブやサウナハット、サウナマットも完備しています」
+     「ガラス張りのサウナはプールや庭を眺めながら楽しめます」
+       ガーデンに設置された独立サウナ → sauna_type=hut
+     「外気浴空間には、サウナチェアを2台完備しています」
+       → outdoor_rest=yes, rest_chair=chair
+   プール:
+     「夏はもとより冬には給湯システムにより11月末まで利用か可能です。
+       冬はサウナの水風呂としても」
+   ガーデン・BBQ:
+     「ガス式のBBQコンロがございます」
+     「外用シンクや調理器具、食器、ラップ、ホイルも完備」→ bring_wrap=ready
+     「BBQエリアは屋根付きですので、小雨程度なら外でのお食事を
+       お楽しみいただけます」→ bbq_roof=roof
+   ガーデン・ファイアーピット:
+     「Höfatsのファイーピットを完備」→ firepit=stand
+   キッチン:「室内のIHコンロで、自由にお料理ができます」→ kitchen_type=ih
+   ベッドルーム:「クィーンベッド2台の寝室、セミダブル2台の寝室の2室」
+     → capacity=4
+   パウダールーム:「Aesopの洗顔やアロマキャンドル…バスタオル、ハンドタオル、
+     ウォッシュタオル以外にもバスローブもございます」
+   「完全プライベートな1棟貸しの別荘」→ villa_type=solo
+   除外した項目と理由:
+     coldbath … 「冬はサウナの水風呂としても」はプール兼用であり
+       専用の水風呂ではない。スキーマに該当する選択肢がないため入れられない
+       （Refwind・GIFTHOUSE館山・Retreat Villa Aym・PRIVE・Sea by TORAMII・
+       ノーラ名栗・THE LOOKOUT KUSATSU に続き8件目）
+     sauna_temp・water_temp・water_src … 記載なし
+     wifi・pet_ok・bring_seasoning … 記載が見当たらない
+   注記: 標高約1000m、八ヶ岳の麓。予約は一休.com（vacation/00051677）。
+     同ドメインに姉妹施設「2gether foret」あり（id=80）。 */
+
+  "79": {   /* est ed.1 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    sauna_cap:       { v: 6, src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' }
+  },
