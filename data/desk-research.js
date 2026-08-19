@@ -3347,3 +3347,50 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' }
   },
+
+/* ノーラ名栗（2026-08確認）
+   ※ サウナ有無は既に shared に訂正済み（ナイトサウナは他の宿泊者と共同利用、
+     日帰りサウナ客も受入）。今回はサウナ専用ページから仕様を追加した。
+   SAUNA CLUB（日帰りプラン）:
+     「ノーラ名栗がお届けするのは、自然と一体になれる、そんなテントサウナ体験」
+       → sauna_type=tent
+     「サウナ内に入れた薪ストーブで、熱したサウナストーンにアロマ水をかけ、
+       その暑い蒸気でテント内を蒸らす「ロウリュ」を楽しむことができます」
+       → stove=wood, loyly=yes
+     「定員 2~4名」→ sauna_cap=4
+     「利用時間 10：30～15：30」「利用可能年齢 6歳以上」→ sauna_hours=limited
+     「ノーラ名栗のテントサウナはグループごとの貸し出しとなりますので」
+   共用設備:
+     「外気浴用スペース(チェア付き)／水風呂(プール)／屋外冷水シャワー／
+       駐車場(無料)／多目的トイレ／ベビーチェア／おむつ交換台」
+       → outdoor_rest=yes, rest_chair=chair
+   プランに含まれている備品:
+     「サウナ用テント／サウナ用チェア(長椅子)／サウナ用ストーブ／
+       バスタオル(人数分)／ロウリュ用アロマオイル／ロウリュ用バケツ(柄杓セット)／
+       燃料セット(薪、炭)」→ bring_towel=ready
+   スケジュール:「設営・火起こし15分／サウナ利用150分／片付け15分」
+   ご利用のルール:「クワイエットゾーン(外気浴ゾーン)ではお静かにお過ごしください」
+   禁止事項:「ペット同伴での利用」「直火、焚火等の行為」「18歳未満のみでの
+     サウナ利用」「プールでの遊泳」
+   除外した項目と理由:
+     coldbath … 「水風呂(プール)」でプールが水風呂を兼ねている。
+       スキーマに「プール兼用」の選択肢がないため入れられない。
+       Refwind・GIFTHOUSE館山・Retreat Villa Aym・PRIVE・Sea by TORAMII に
+       続き6件目
+     sauna_temp・water_temp・water_src … 記載なし
+     fee_bbq … BBQは別ページ（/bbq/）で扱われており、サウナページには記載なし
+   注記: このページの内容は日帰りの SAUNA CLUB プラン。
+     宿泊者向けのナイトサウナ（15時頃〜22時、他の宿泊者と共同利用）は
+     別の扱いで、shared 判定の根拠となっている。
+     持ち物に「タオル(バスタオル以外)」とあり、バスタオルのみプラン込み。 */
+
+  "272": {   /* ノーラ名栗 */
+    sauna_type:      { v: 'tent', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
+  },

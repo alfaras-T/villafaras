@@ -4171,6 +4171,13 @@ window.VILLAFARAS_SPEC = {
 
   "272": {  /* ノーラ名栗 */
     sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834.html' },
+    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_cap:    { v: 4, src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    rest_chair:   { v: 'chair', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 250, src: 'auto', at: '2026-07' },
@@ -4178,7 +4185,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 19, src: 'auto', at: '2026-07' },
     ic:           { v: '狭山PA(外廻り) 46分', src: 'auto', at: '2026-07' },
     station:      { v: '西吾野 18分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    bring_towel:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
   },
 
   "273": {  /* HOLE37 */
