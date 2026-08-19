@@ -3194,3 +3194,53 @@
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     bring_towel:     { v: 'bring', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
   },
+
+/* enukoti（エヌコティ）（2026-08確認）
+   SAUNA ページ:
+     「セルフロウリュを楽しめる本格的なフィンランド式サウナを室内に設置」
+       → sauna_type=indoor, loyly=yes
+     「※ＨＡＲＶＩＡ １～２名様用サウナ」→ stove=electric, sauna_cap=2
+     「サウナ後はテラスで⾵を感じ、鳥や木々の⾳に⽿を澄ませながら」
+       → outdoor_rest=yes
+     「※サウナハット、ポンチョはご持参ください」
+     注意事項「長時間継続利用により安全制御機能が作動し」
+   ROOMS ページ:
+     「定員2〜４名（小上がりベッド2名様／ロフト利用1〜2名様）｜39.7㎡」
+       → capacity=4, steps=stairs（ロフト）
+     「29.12㎡の広々としたテラスには、専用BBQガスグリル（weber社）を設置」
+       → fee_bbq=incl（備え付けで貸出料金の記載なし）
+     「【無料Wi-Fi完備】」→ wifi=yes
+     「各コテージ内に専用サウナが付いており」
+     備品に「タオルハンガー スリッパ ティッシュ」
+   トップページ:
+     「異なるデザインの北欧家具を設えた２棟」→ villa_type=multi
+     TOPICS「水風呂再開です。八ヶ岳山麓水は冷え冷えです!!!!!」
+       → coldbath=bath, water_src=spring
+   除外した項目と理由:
+     sauna_temp・water_temp … 記載なし
+     kitchen_type … 「キッチンがあるレイアウト」のみで加熱方式の記載がない
+     pet_ok・bring_seasoning・checkin_method … 記載なし
+     winter_access … TOPICS に「昨夜さらりとまとった雪は路面に全く残って
+       いません。どうぞ雪道へのご不安なく」とあるが、これは特定日の状況で
+       通年の判定にはならない。標高1,200m
+     bring_towel … 備品欄に「タオルハンガー」はあるがタオル自体の記載がない
+   注記: sauna_cap=2 は現時点の最小値。HARVIA の1〜2名様用という
+     小型サウナで、定員4名のコテージに対してサウナは2名までという
+     組み合わせ。 */
+
+  "200": {   /* enukoti（エヌコティ） */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    sauna_cap:       { v: 2, src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://enukoti.com/' },
+    water_src:       { v: 'spring', src: 'desk', at: '2026-08', url: 'https://enukoti.com/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://enukoti.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' }
+  },

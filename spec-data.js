@@ -3147,16 +3147,25 @@ window.VILLAFARAS_SPEC = {
 
   "200": {  /* enukoti（エヌコティ） */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
     stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 2, src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/sauna/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'spring', src: 'desk', at: '2026-08', url: 'https://enukoti.com/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'multi', src: 'desk', at: '2026-08', url: 'https://enukoti.com/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
+    steps:        { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
     elevation:    { v: 1192, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 7, src: 'auto', at: '2026-07' },
     ic:           { v: '中央道原PA(下り) 12分', src: 'auto', at: '2026-07' },
     station:      { v: '富士見 11分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    bring_towel:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' }
   },
 
   "201": {  /* キュレーション熱海桃乃八庵 */
