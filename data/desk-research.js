@@ -2979,3 +2979,53 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' }
   },
+
+/* Hackberry Holiday Home（2026-08確認）
+   Concept「1日１組だけの癒やしの空間」「サウナ・ジム・屋外プール・カラオケ他」
+     → sauna_exists=yes, villa_type=solo
+   注意事項:
+     「BBQ機器（￥3,300）、薪（15本￥3,300）、シーシャ（￥3,300／回）」
+       → fee_bbq=extra, firewood_fee=extra
+     「蛇口の水は地下水を汲み上げて消毒しています」→ water_src=well
+     「喫煙は焚き火スペースをご利用ください」→ firepit=stand
+   FAQ:
+     「定員は7人です。未就学のお子様は添い寝に限り宿泊可能です」
+       → capacity=7, kids_free=6
+     「チェックインは16時、チェックアウトは翌朝11時となります。（2026年10月1日より）」
+     「11～16時は清掃時間のため、チェックイン前とチェックアウト後のご利用は
+       できません」→ late_arrival は判定不能（終了時刻の記載がない）
+     「無料のWi-Fiが利用できます」→ wifi=yes
+     「オリーブオイル、塩、砂糖、みりん、醤油を常備しています」
+       → bring_seasoning=ready
+     「バスタオル・フェイスタオル各2枚をおひとり１セットご用意しております」
+     「トレーニングウェア、水着、パジャマ、ハンテンをご用意しております」
+     「手持ち花火に限り、ファイヤーピット周辺で行うことができます」
+     「スタッフは不在ですが、緊急時やお困りの際にはお電話くだされば」
+   除外した項目と理由:
+     sauna_type・stove・sauna_temp・sauna_cap・coldbath・outdoor_rest …
+       FAQの「サウナの操作はどのようにしますか？」の回答が「お客様による
+       スイッチの接作が必要です。詳しくは室内のインフォメーションブックを
+       ご覧ください」で、仕様には触れていない
+     loyly … 記載なし
+     water_temp … 「プールは年中利用可能。2月は10℃、5月頃から水温が20度を超えて、
+       8月は30℃近く」はプールの水温であって水風呂ではない
+     checkin_method … 「スタッフは不在」とあるが解錠方式の記載がない
+     late_arrival … チェックイン16時とあるが受付終了時刻の記載がない
+     kitchen_type … 記載なし
+   注記: 予約は一休.com経由。「サウナ室横にある虫とり網」という記述から
+     サウナ室はプールに隣接している。 */
+
+  "47": {   /* Hackberry Holiday Home */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' }
+  },

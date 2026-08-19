@@ -840,14 +840,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "47": {  /* Hackberry Holiday Home */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 7, src: 'desk', at: '2026-07' },
-    elevation:    { v: 38, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 5, src: 'auto', at: '2026-07' },
-    ic:           { v: '下総IC 14分', src: 'auto', at: '2026-07' },
-    station:      { v: '滑河 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 15, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    elevation:       { v: 38, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 7, src: 'auto', at: '2026-07' },
+    conveni:         { v: 5, src: 'auto', at: '2026-07' },
+    ic:              { v: '下総IC 14分', src: 'auto', at: '2026-07' },
+    station:         { v: '滑河 9分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 15, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' }
   },
 
   "48": {  /* 庄屋の里 古民家たなか */
