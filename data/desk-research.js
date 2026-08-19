@@ -3704,3 +3704,49 @@
     coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
     water_temp:      { v: 't1015', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' }
   },
+
+/* 和モダングランピング｜NAGOMI CAMP（2026-08確認）
+   ※ サウナ有無は既に shared に訂正済み（全4棟共用のバレルサウナ1基を
+     時間制・別料金3,500円/組・定員2名で貸切利用）。今回は仕様を追加した。
+     施設ページの構成も shared 判定を裏付ける。共用設備として
+     「フロント／トイレ／予約制シャワールーム／BBQテラス／ドリンクバー／
+     キャンプファイヤー／貸切サウナ／ピザ作り体験」が横並びで紹介されている。
+   施設ページ:
+     「貸切サウナ 森林浴/水風呂でととのう」→ coldbath=bath, outdoor_rest=yes
+     「4組限定の静寂なプライベートグランピング／森林サウナや夜の焚火で
+       手軽なキャンプ体験と／個性溢れるトイレ・シャワーをお使いいただけます」
+     「キャンプファイヤー 夜は焚火で寛ぎのひと時を」→ firepit=stand
+     「予約制シャワールーム チェックイン時にご予約」
+     ＜シャワールームアメニティ＞「バスタオル／ドライヤー／
+       シャンプー/リンス/ボディソープ／コットン＆綿棒／化粧落とし／
+       ヘアブラシ／乳液/化粧水」→ bring_towel=ready, bring_amenity=ready
+   トップページ:
+     「庭園が一望できる4種類のドームテントからお選びいただけます」
+       籠-kago-（定員2〜4名）／麻-asa-（2〜4名）／波-nami-（2〜4名）／
+       ドッググランピング紗綾-saya-（1〜3名・中型犬2頭まで可）
+       → capacity=4, villa_type=multi, pet_ok=yes
+     「全天候型お食事スペースを各テントに完備」→ bbq_roof=roof
+     「各お部屋にBBQグリル完備」「地域産の食材を使用した本格BBQ」
+       「生ビールを含む15種類以上のフリードリンク付き」→ fee_bbq=incl
+   除外した項目と理由:
+     sauna_type・stove・loyly・sauna_temp・water_temp・water_src …
+       「貸切サウナ」「森林サウナ」とあるのみで仕様の記載がない。
+       サウナ専用ページも存在しない
+     sauna_cap … 既存の調査で「定員2名」と判明しているが、
+       公式サイト上には記載がない（OTA由来）
+     kitchen_type … グランピングのため専用キッチンの記載がない
+   注記: capacity=4 は3棟の上限。ドッググランピング紗綾のみ1〜3名。
+     「1日4組限定」で全棟が同時に埋まる構成のため、サウナは共用となる。 */
+
+  "129": {   /* 和モダングランピング｜NAGOMI CAMP */
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' }
+  },

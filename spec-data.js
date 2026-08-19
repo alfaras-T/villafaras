@@ -2145,16 +2145,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "129": {  /* 和モダングランピング｜NAGOMI CAMP */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://www.glamping-tochigi.com/' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 429, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 9, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '黒磯板室IC 14分', src: 'auto', at: '2026-07' },
-    station:      { v: '那須塩原 17分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://www.glamping-tochigi.com/' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    capacity:      { v: 4, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:     { v: 429, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 9, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '黒磯板室IC 14分', src: 'auto', at: '2026-07' },
+    station:       { v: '那須塩原 17分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/facility' },
+    fee_bbq:       { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.nagomi-camp.jp/' }
   },
 
   "130": {  /* 那須温泉グランピング Nenn（ネン） */
