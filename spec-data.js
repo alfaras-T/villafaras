@@ -1078,14 +1078,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "61": {  /* 天神郷 昊 -Sora- */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 12, src: 'desk', at: '2026-07' },
-    elevation:    { v: 61, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 8, src: 'auto', at: '2026-07' },
-    ic:           { v: '鋸南富山IC 9分', src: 'auto', at: '2026-07' },
-    station:      { v: '岩井 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://www.furusato-tax.jp/product/detail/12234/6493487' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.furusato-tax.jp/product/detail/12234/6493487' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    elevation:       { v: 61, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 8, src: 'auto', at: '2026-07' },
+    conveni:         { v: 8, src: 'auto', at: '2026-07' },
+    ic:              { v: '鋸南富山IC 9分', src: 'auto', at: '2026-07' },
+    station:         { v: '岩井 9分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 11, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' }
   },
 
   "62": {  /* RICKA KATSUURA */

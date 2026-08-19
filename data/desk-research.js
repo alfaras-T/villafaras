@@ -2738,3 +2738,61 @@
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://touemon.net/' }
   },
+
+/* 天神郷 昊 -Sora-（2026-08確認）
+   ※ DBの official は https://tian-shen-xiang-hao.hotel-koromo.com/ となっているが、
+     これは公式サイトではなくアフィリエイト型の集約サイト（設備一覧にサウナの
+     記載すらない）。正しい公式サイトは https://tenjingo-sora.com/。
+     別途 index.html の official 差し替えが必要。
+   公式トップ:
+     「こだわりの露天風呂とサウナを増設。お好きな時間に貸切でお楽しみいただけます」
+     「一日一組限定、一棟まるごと貸切でご利用いただけます。
+       定員は小学生以上の方を合わせて 12名です」→ capacity=12, villa_type=solo
+   FAQ:
+     「添い寝等で寝具を使わない未就学児は、大人1名様につきお子様1名まで無料」
+       → kids_free=6（未就学児＝6歳まで）
+     「チェックインは、15:00〜18:00です」→ late_arrival=no
+     「滞在中は、ご予約時にメール等にてお伝えしているキーボックス番号または
+       電子キーの暗証番号を使っての解錠となります」→ checkin_method=keybox
+     「雨天でもBBQはできますか？ ガレージ内で可能です」→ bbq_roof=roof
+     「バーベキューコンロ（2台）、焼き網、鉄板、炭、着火材…をオプション
+       （5,000円）にてご利用いただけます」→ fee_bbq=extra
+     「オリーブオイル、食塩、岩塩、ブラックペッパー、BBQ用ハーブソルト各種、
+       砂糖をご用意しております」→ bring_seasoning=ready
+     「アルミホイル、クッキングシート、サランラップ…」→ bring_wrap=ready
+     「無料のWi-Fiがご利用いただけます」→ wifi=yes
+     「古民家本来の魅力を感じていただく事を大切にいたしておりますので、
+       バリアフリーではございません」→ steps=stairs
+     「ペット連れのご利用はお断りしております」→ pet_ok=no
+     「焚き火については禁止しております。花火については手持ち花火のみ使用可能」
+       → firepit=no
+   ふるさと納税掲載（南房総市）:
+     「露天風呂は24時間ご利用可能です サウナは16時～22時と翌朝6時から9時まで」
+       → sauna_hours=limited
+     一休の紹介文「総杉造りの屋外サウナ」→ sauna_type=hut
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest・sauna_cap・sauna_temp …
+       公式サイト・FAQとも記載がない
+     kitchen_type … 調理器具の列挙は詳細だが加熱方式の記載がない
+     early_late … 「お問い合わせください」とあるのみで可否が確定しない
+   注記: 2024年8月グランドオープン。2019年の房総半島台風で被災した
+     築約70年の古民家をリノベーション。駐車5台、EV充電用200Vあり。 */
+
+  "61": {   /* 天神郷 昊 -Sora- */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://www.furusato-tax.jp/product/detail/12234/6493487' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.furusato-tax.jp/product/detail/12234/6493487' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' }
+  },
