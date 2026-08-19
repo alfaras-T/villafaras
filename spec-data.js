@@ -4371,6 +4371,7 @@ window.VILLAFARAS_SPEC = {
   "281": {  /* SPA＆ごはんゆるうむ */
     sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'multi', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/stay/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     elevation:    { v: 30, src: 'auto', at: '2026-07' },
     supermarket:  { v: 1, src: 'auto', at: '2026-07' },
