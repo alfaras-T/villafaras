@@ -216,14 +216,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "14": {  /* Sea by TORAMII */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 10, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 11, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '長生IC 12分', src: 'auto', at: '2026-07' },
-    station:      { v: '東浪見 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 12, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    kitchen_type:   { v: 'ih', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    capacity:       { v: 9, src: 'desk', at: '2026-07' },
+    elevation:      { v: 10, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 11, src: 'auto', at: '2026-07' },
+    conveni:        { v: 2, src: 'auto', at: '2026-07' },
+    ic:             { v: '長生IC 12分', src: 'auto', at: '2026-07' },
+    station:        { v: '東浪見 2分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 12, src: 'auto', at: '2026-07' },
+    bring_towel:    { v: 'bring', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    kids_free:      { v: 12, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
   },
 
   "15": {  /* amane */

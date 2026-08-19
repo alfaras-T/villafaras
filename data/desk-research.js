@@ -3143,3 +3143,54 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' }
   },
+
+/* Sea by TORAMII（2026-08確認）
+   ※ トップページ（toramii.jp）の Sea by TORAMII 紹介文には
+     「贅沢10畳ものキッチンやジャグジーと共に」とありサウナに触れていないが、
+     個別ページに「2024年6月オリジナルサウナがリビングに新設！」とある。
+     トップの紹介文が更新されていないだけで、サウナは実在する。
+   Photo Gallery「カウンター付きサウナ」:
+     「2024年6月17日に新設されるサウナ。外を眺めながら、リビングで遊ぶ子供を
+       眺めながら。バルコニーのジャグジーを水風呂としてご利用いただけます」
+       → sauna_type=indoor（リビング内）
+   Stay:
+     「お1人様から最大10名様までご利用いただけます」→ capacity=10
+     「敷地内の建物・庭付帯設備の一式を最大19時間でお貸出し」
+       「コンシェルジュやフロントスタッフのサービスはございません」
+       → villa_type=solo
+     「食材や飲み物、その他BBQや料理に必要な備品、タオルやパジャマは
+       ご用意ください」→ bring_towel=bring
+   FACILITY:
+     室内設備「キッチンルーム（IH）一般調理器具」→ kitchen_type=ih
+     室外設備「BBQガスコンロ（ガス使用料無料）」→ fee_bbq=incl
+     衛生対策「チェックイン／アウトに必要なやりとりはオンラインのため、
+       無人対応（非接触）となります」→ checkin_method=smart
+   料金:
+     「※小学生以下は完全無料になります。人数に含みません」→ kids_free=12
+     「有料オプションレイトチェックアウト：1時間あたり＋ご利用料代金の10％、
+       最大2時間（12時まで）」→ early_late=yes
+   除外した項目と理由:
+     coldbath … 「バルコニーのジャグジーを水風呂としてご利用いただけます」は
+       兼用設備であり専用の水風呂ではない。Refwind・GIFTHOUSE館山・
+       Retreat Villa Aym・PRIVE と同じ理由で見送り（5件目）
+     stove・loyly・sauna_temp・sauna_cap・outdoor_rest … 記載なし
+     bring_amenity・bring_seasoning … 「タオルやパジャマはご用意ください」
+       とありアメニティ類も持参と思われるが明示がない
+     late_arrival … 「アーリーチェックインは現在行っておりません」とあるが
+       チェックイン受付の終了時刻の記載がない
+   注記: early_late=yes はレイトチェックアウトのみ可でアーリーは不可。
+     スキーマがアーリー／レイトを1項目にまとめているため片方しか表現できない。
+     海都-kaito-（アーリーのみ可）と逆のパターンで、粒度不足の2例目。 */
+
+  "14": {   /* Sea by TORAMII */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    kids_free:       { v: 12, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    bring_towel:     { v: 'bring', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
+  },
