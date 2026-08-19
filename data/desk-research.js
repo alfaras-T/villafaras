@@ -2796,3 +2796,57 @@
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://tenjingo-sora.com/faq/' }
   },
+
+/* DAIGO SAUNA（2026-08確認）
+   トップ SAUNA 欄:
+     「大谷石づくりの蔵サウナ 石の壁からのじんわりとした熱を身体に浴びながら」
+       蔵をリノベーションした独立棟 → sauna_type=hut
+     「蔵の薄暗い空間に薪ストーブの炎がゆらめく」→ stove=wood
+     「セルフロウリュもご自由にどうぞ」→ loyly=yes
+     「ととのいスペースは大子町の絶景が広がっています」→ outdoor_rest=yes
+     「庭を使ったバーベキューや焚き火も楽しめ」→ firepit=stand
+   FAQ:
+     「サウナのご利用時間は通常チェックイン日の16〜18時とさせていただきます」
+     「宿泊日の、16〜19時のうち2時間を目安にサウナを利用していただけます」
+       → sauna_hours=limited
+     「薪ストーブで温めるため必ずスタッフが常駐いたします」
+     「最大収容人数 大人8名程度」「9名様以上の場合、雑魚寝でのプランもあります」
+       → capacity=8
+     「古民家をリノベーションした宿泊施設であるため段差がある箇所がございます」
+       → steps=stairs
+     「当施設はペットの同伴はご遠慮いただいております」→ pet_ok=no
+     備品・設備に「Wi-Fi」、アメニティにシャンプー〜バスタオル一式
+     「オプション(有料)でBBQグリルをご用意しております。炭や着火剤などは
+       ご用意をお願いいたします」→ fee_bbq=extra
+     「食材を持ち込んでいただきご自由に料理などを」かつ調味料の記載なし
+       → bring_seasoning=bring
+     「一棟貸し切りでのご利用となるため」→ villa_type=solo
+   除外した項目と理由:
+     coldbath・sauna_cap・sauna_temp・water_temp … 記載なし
+     kitchen_type … 備品に「ホットプレート」はあるがコンロの記載がない
+     checkin_method … 「薪ストーブで温めるため必ずスタッフが常駐」とあるが、
+       これはサウナ稼働時の話でチェックイン方式の記載ではない
+   注記: トップページは「客室は全部で３室ご用意、最大12名が宿泊できます」だが、
+     FAQは「最大収容人数 大人8名程度」で食い違う。9名以上は雑魚寝プランの
+     応相談となっているため、通常の定員として8を採用した。
+     サイト内で数値が食い違う4例目。
+     日帰りサウナDayは現在休業中、2026年3月頃再開予定。 */
+
+  "279": {   /* 大谷石の蔵サウナと古民家宿 DAIGO SAUNA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' }
+  },

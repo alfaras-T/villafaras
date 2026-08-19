@@ -4170,16 +4170,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "279": {  /* 大谷石の蔵サウナと古民家宿 DAIGO SAUNA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 14, src: 'desk', at: '2026-07' },
-    elevation:    { v: 127, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '中郷SA(下り) 53分', src: 'auto', at: '2026-07' },
-    station:      { v: '常陸大子 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
+    capacity:        { v: 14, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    elevation:       { v: 127, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '中郷SA(下り) 53分', src: 'auto', at: '2026-07' },
+    station:         { v: '常陸大子 1分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' }
   },
 
   "280": {  /* 一棟貸切宿　藤右衛門 */
