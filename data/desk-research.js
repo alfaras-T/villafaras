@@ -3574,3 +3574,50 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' }
   },
+
+/* THE LOOKOUT KUSATSU（2026-08確認）
+   ※ 公式サイト（kitakaru.localinfo.jp／AmebaOwnd）は簡易的な作りで、
+     THE LOOKOUT KUSATSU の紹介ページに サウナの記載が一切ない。
+     温泉・プロジェクター・謎解き・屋内BBQ・ペレットストーブが訴求の中心。
+     トップページの「サウナ付きグランピング施設！…軽井沢でサウナ付
+     グランピングをしたいなら Glamping Villa REI」という記述も別施設を指す。
+     OTA掲載を出典とする。「公式に記載なし」パターンの5件目。
+   OTA掲載（tabilmo・アコー等）:
+     「【サウナ】Max70度ほどの1人用サウナを完備！遠赤外線効果と、
+       ヒーターが近いのでサウナーの方でもしっかり汗をかけます！
+       お風呂までの導線も完璧！」
+       → sauna_temp=70, sauna_cap=1, stove=electric（遠赤外線ヒーター）,
+         sauna_type=indoor（屋内・浴室併設）
+     「水風呂は温泉の風呂釜と併用です。温泉と水を混ぜて冷泉にも出来るので、
+       よりお肌に良いサウナ体験が出来ます！」
+     「【屋内BBQ可能！】屋内BBQコンロを完備し、安全で本格的なBBQができます
+       ※屋外で火や炭を使ったBBQは不可」→ bbq_roof=roof
+     「【一棟貸切で安心】完全プライベートな一棟貸切だから」→ villa_type=solo
+     「定員 1〜8名 ペット可 ベッド数(布団含む)7台 駐車場2台」→ pet_ok=yes
+     「夜の到着OK 20時30分までであればチェックイン可能です」→ late_arrival=ok
+     設備「ガスコンロと調理器具あります」「IHコンロと鍋があります」
+       → kitchen_type=gas（据付はガスコンロ、IHは可搬式と判断）
+     「タオル、歯ブラシなどのアメニティがあります」
+   除外した項目と理由:
+     loyly … 遠赤外線ヒーターでサウナストーンの記載がなく、ロウリュ可否が不明
+     coldbath … 「水風呂は温泉の風呂釜と併用」で専用の水風呂ではない。
+       スキーマに兼用の選択肢がないため入れられない（7件目）
+     outdoor_rest … 記載なし
+     water_temp … 「温泉と水を混ぜて冷泉にも出来る」で固定値がない
+   注記: sauna_cap=1 は現時点の最小値。定員8名の施設に対し
+     サウナは1人用という組み合わせで、enukoti（定員4名／サウナ2名）より
+     さらに差が大きい。「サウナ付き」の実態を示す good example。 */
+
+  "269": {   /* THE LOOKOUT KUSATSU */
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    sauna_temp:      { v: 70, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    sauna_cap:       { v: 1, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' }
+  },

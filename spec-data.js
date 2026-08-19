@@ -4149,14 +4149,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "269": {  /* THE LOOKOUT KUSATSU */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 1134, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '厚田IC 34分', src: 'auto', at: '2026-07' },
-    station:      { v: '羽根尾 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    sauna_temp:    { v: 70, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    sauna_cap:     { v: 1, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    elevation:     { v: 1134, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '厚田IC 34分', src: 'auto', at: '2026-07' },
+    station:       { v: '羽根尾 12分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    late_arrival:  { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' }
   },
 
   "270": {  /* COCO VILLA 長瀞 */
