@@ -2076,16 +2076,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "125": {  /* 森deワーケなすっぽ */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 459, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '那須高原スマートIC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '高久 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    coldbath:        { v: 'shower', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00916051/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 459, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 2, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '那須高原スマートIC 13分', src: 'auto', at: '2026-07' },
+    station:         { v: '高久 12分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.nasuppo.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' }
   },
 
   "126": {  /* 御宿 憩（OYADO IKOI） */

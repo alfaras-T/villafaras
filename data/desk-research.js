@@ -3468,3 +3468,55 @@
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' }
   },
+
+/* 森deワーケなすっぽ（2026-08確認）
+   ※ 公式サイト（nasuppo.com）はワーケーション訴求に特化しており、
+     トップページの設備紹介はオフィス機器（27インチマルチモニター、
+     エルゴヒューマンチェア、ドッキングステーション、複合機等）が中心で
+     サウナに一切触れていない。OTA掲載を出典とする。
+     FARM SIDE・PRIVE・Sea by TORAMII に続き4件目の「公式に記載なし」パターン。
+   じゃらん遊び体験のプラン説明:
+     「目の前には檜の香りの屋外タイプ最新型バレルサウナに入り放題！」
+       → sauna_type=barrel
+     「森の中、バレルサウナ、ロウリュウ、外気浴、BBQ、那須の大自然」
+       → loyly=yes, outdoor_rest=yes
+     「更衣室や休憩でオシャレなお部屋でシャワーと洗面所までセット
+       更に水風呂としても利用可」→ coldbath=shower（シャワーが水風呂代わり）
+     「○サウナ ・なすっぽタオル贈呈1枚 ・レンタル屋外サンダル1足と
+       サウナ着（ポンチョ）1着 ※バスタオルは更衣室に付いております」
+       → bring_towel=ready
+     「※サウナハットのご用意はありませんのでご利用される方はご持参ください」
+     「■備品や買い出し等 炭、着火剤、食材、調味料、割り箸、紙皿、プラコップは
+       お客様にてご用意をお願い致します」→ bring_seasoning=bring
+     「○BBQ コンロ等の機材は付いております」（プラン料金に含む）
+       ただし炭・着火剤は持参のため fee_bbq=extra
+   栃ナビ「都心から約2時間、那須の森に佇む全5室の隠れ家。
+     屋外共用部ではキッチン、BBQ、バレルサウナ、焚き火でリフレッシュ」
+   Yahoo!トラベル「5部屋のみの小規模な施設のため、プライベート感を大切にした
+     滞在が叶います。施設全体を貸し切って、チームビルディングや家族での
+     特別な時間を過ごすことも可能です」→ villa_type=multi
+   公式サイト「無人セルフチェックイン（スマート電子錠）リンキー」
+     → checkin_method=smart
+   除外した項目と理由:
+     stove・sauna_cap・sauna_temp・water_temp・water_src … 記載なし
+     kitchen_type … 「屋外共用部ではキッチン」とあるが加熱方式の記載がない
+     capacity … 既存値6。全5室で1室あたりの定員は Type A（ワーケーション
+       シングル）／Type B（ワーケーションファミリー）で異なると思われるが、
+       公式・OTAとも1室あたりの定員が明記されていない。既存値を維持
+   注記: サウナは屋外共用部にあり全5室で共有する構成だが、
+     「5部屋限定の隠れ家」「他のお客様を気にせず過ごせるプライベート空間」
+     「カップルの場合は貸切状態」との記載があり、日帰りサウナ営業も
+     確認できないため sauna_exists=yes を維持した。
+     ただし複数組が同時滞在する構成のため、shared の可能性は残る。要再確認。 */
+
+  "125": {   /* 森deワーケなすっぽ */
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    coldbath:        { v: 'shower', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00916051/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.nasuppo.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' }
+  },
