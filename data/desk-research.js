@@ -2653,3 +2653,51 @@
     bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://levata.jp/' }
   },
+
+/* Montevan RESORT VILLA（2026-08確認）
+   NEWS［2025.12.24］「2025年夏、全3棟のヴィラ全てに「バレルサウナ」が新設されました。
+     自分たちだけのプライベートな空間で「ととのう」ひとときを」→ sauna_type=barrel
+   INFORMATION:
+     「全室「ガーデンプール」＆「天然温泉露天ジャグジー風呂」＆「プライベートサウナ」付
+       1棟丸ごと貸切スタイル・全3棟」→ sauna_exists=yes, villa_type=multi
+     「【敷地面積270㎡】リビング＋2ベッドルーム（定員 10名様）」→ capacity=10
+     「メゾネットタイプのヴィラ」→ steps=stairs
+   FACILITY:
+     「チェックイン15:00〜20:00、チェックアウト10:00（追加料金にて
+       アーリーチェックイン/レイトチェックアウトも可能）」
+       → late_arrival=no, early_late=yes
+     「ペット同伴不可、喫煙不可（電子タバコ含む）」→ pet_ok=no
+   お車でお越しのお客様へ:
+     「チェックイン処理、鍵の受け渡しはサービスデスクにて行います」
+       → checkin_method=staff
+   BBQ:
+     「ご自身でお好みの食材を持ち込んで」「※BBQグリルはガスタイプとなっており、
+       追加料金にてレンタル可能です」→ fee_bbq=extra, bring_seasoning=bring
+   AMENITY: Wi-Fi、IHコンロ、シャンプー・コンディショナー、歯ブラシ、
+     バスタオル、フェイスタオル、バスローブ 等
+   除外した項目と理由:
+     coldbath … 専用の水風呂の記載がない。ガーデンプールと天然温泉露天
+       ジャグジーはあるが、水風呂として使う旨の明示もない
+     water_depth … 「ガーデンプール（6m×3m・水深1.1m）」はプールの水深であって
+       水風呂の深さではない（PRIVE と同じ理由で見送り）
+     stove・loyly・sauna_cap・sauna_temp・outdoor_rest … 記載なし
+   注記: 天然温泉「香の湯」ナトリウム-塩化物泉、源泉温度18.8℃（加温・加水あり）。
+     2025年に温泉登録完了。サウナは2025年夏の新設で比較的新しい。 */
+
+  "43": {   /* Montevan RESORT VILLA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    checkin_method:  { v: 'staff', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' }
+  },

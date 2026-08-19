@@ -757,15 +757,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "43": {  /* Montevan RESORT VILLA */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 8, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '富浦IC 12分', src: 'auto', at: '2026-07' },
-    station:      { v: '館山 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-07' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    elevation:       { v: 8, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 6, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '富浦IC 12分', src: 'auto', at: '2026-07' },
+    station:         { v: '館山 7分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    checkin_method:  { v: 'staff', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' }
   },
 
   "44": {  /* 久留里山荘（QULRI SANSO） */
