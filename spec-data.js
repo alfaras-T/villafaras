@@ -2089,14 +2089,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "126": {  /* 御宿 憩（OYADO IKOI） */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 12, src: 'desk', at: '2026-07' },
-    elevation:    { v: 401, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '日光口PA(下り) 4分', src: 'auto', at: '2026-07' },
-    station:      { v: '今市 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    sauna_cap:       { v: 5, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    elevation:       { v: 401, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 2, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '日光口PA(下り) 4分', src: 'auto', at: '2026-07' },
+    station:         { v: '今市 1分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' }
   },
 
   "127": {  /* VillaEL5 */

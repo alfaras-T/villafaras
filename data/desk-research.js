@@ -3290,3 +3290,60 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' }
   },
+
+/* 御宿 憩（OYADO IKOI）（2026-08確認）
+   ※ 公式サイトは英語版のみ本文が取得できた（stay-japan.tokyo/en/ikoi/）。
+   概要:
+     「4LDK private house located in the Nikko/Kinugawa area.」
+     「With another small building made of well-known stone, Japanese garden,
+       and a small creek next to the house」→ 石造りの別棟あり
+     「Charcoal BBQ, bicycles, large pots, sauna available with extra charge.」
+   SPECIAL NOTES:
+     「Use of Sauna and pottery bath in the stone building is 16:00 to 21:00,
+       7:30 to 9:30.」→ sauna_type=hut（石造りの別棟内）, sauna_hours=limited
+     「You can use them during the day if you are staying more than 1 night.」
+     「Use of the garden such as for a BBQ is until 21:00.」
+     「Check-in: 16:00～ / Check-out ～10:00」
+     「Please contact us for early check-in and late check-out.」→ early_late=yes
+   AMENITIES/FACILITY:
+     「Indoor bath, Pottery bath, Sauna, 2 toilets」
+     「4LDK 6 Double beds and extra 3 futon sets for up to 15 people」
+       → capacity=15
+     「Pocket WIFI(reservation required)」→ wifi=yes
+     「Face towel / Bath towel / Toothbrush / Shampoo / Conditioner / Body soap」
+     「BBQ stove set (5,000 yen/5 people, 900 yen per person for 6 people or more.
+       This includes stove, table, tongs, tableware, charcoal, oil, salt and pepper.
+       Free if you request a meal set)」→ fee_bbq=extra, bring_seasoning=ready
+     「Sauna: 5,000 yen for up to 5 people (1000 yen per person from 6 people)」
+       → sauna_cap=5
+   母屋と石造りの別棟の2棟構成 → villa_type=multi
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest・sauna_temp … 記載なし
+     kitchen_type … 「Kitchen utensils」「Pots and pans」のみで加熱方式の記載がない
+     checkin_method … 「We will contact you with check-in instructions after
+       your reservation is completed」で方式が不明
+     late_arrival … 「Please be sure to contact us if you will check in after
+       the scheduled time」とあり要連絡だが、受付終了時刻の記載がない
+     pet_ok・steps … 記載なし
+   注記: サウナは有料（5名まで5,000円、6名以上は1名1,000円）だが
+     宿泊者専用の敷地内設備のため sauna_exists=yes。
+     本文中に「up to 10 people」と「up to 15 people」の両方の記載があり、
+     前者は概要文（6 double beds and 3 single futons）、後者は
+     AMENITIES欄（6 Double beds and extra 3 futon sets）。
+     寝具構成は同じだが人数が異なる。サイト内の数値不一致6例目。
+     AMENITIES欄の15を採用した。 */
+
+  "126": {   /* 御宿 憩（OYADO IKOI） */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    sauna_cap:       { v: 5, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    capacity:        { v: 15, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' }
+  },
