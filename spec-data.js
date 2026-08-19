@@ -1426,16 +1426,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "78": {  /* enico.Mt.Fuji Resort & Glamping */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 1029, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
-    station:      { v: '河口湖 11分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/' },
+    capacity:      { v: 8, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:     { v: 1029, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 4, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
+    station:       { v: '河口湖 11分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    early_late:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' }
   },
 
   "79": {  /* est ed.1 */

@@ -3886,3 +3886,51 @@
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' }
   },
+
+/* enico.Mt.Fuji Resort & Glamping（2026-08確認）
+   ※ DBには enico.Mt.Fuji smile（id=77・富士河口湖町船津3130-3）と
+     enico.Mt.Fuji Resort & Glamping（id=78・鳴沢村字猿口7472-11）の2件があるが、
+     住所が異なる別施設。enico-mount-fuji.com は id=78 の公式サイト。
+     id=77（smile／旧TOCORO.Kisaragi）は別サイトを持つと思われ、
+     現在の official には広告トラッキングパラメータが付いたまま登録されている。
+     両者の official 要確認。
+   ページタイトル:
+     「【山梨】enico.Mt.Fuji Resort&Glamping - 各棟バレルサウナ・ジャグジー完備、
+       最高峰のグランピング施設」→ sauna_type=barrel
+   DBのdesc（既存）:
+     「5000平米の敷地に7棟の客室棟を配置した、日本初の全棟バレルサウナ＆
+       ジャグジー付きリゾートヴィラ＆グランピング施設」→ villa_type=multi
+   FAQ:
+     「A：チェックイン 15：00～18：00、チェックアウト 8：00～10：00」
+       → late_arrival=no
+     「※レイトチェックアウトも可能ですが、３０分につき２０００円頂戴して
+       おりますので」→ early_late=yes
+     「A：シャンプー、ボディーソープ、リンス、歯ブラシ、ヘヤードライヤー、櫛、
+       髭剃り、コットン、バスタオル、フェイスタオル、作務衣、スリッパ」
+       → bring_towel=ready, bring_amenity=ready
+     「A：当施設では、小型犬は最大3匹から大型犬は最大2匹までご宿泊可能です。
+       わんちゃん用のご宿泊費として、1匹5000円を頂いております」→ pet_ok=yes
+     「※シトリンとターコイズではワンちゃんの同伴もお断りさせていただいております」
+     「A：普通自動車が１４台駐車することが可能です」
+     「A：寝室にエアコンと、ダイニングにストーブをご用意」
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest・sauna_temp・sauna_cap …
+       コテージページは棟ごとにスクロールで遅延読み込みされる構造で、
+       各棟の詳細ページ（Detail）まで到達できなかった。
+       FAQにもサウナの仕様に関する設問がない
+     capacity … 7棟それぞれで異なると思われるが取得できず
+     kitchen_type … 備品欄に調理器具の列挙はあるがコンロの記載がない
+     bring_seasoning・wifi・fee_bbq … 記載なし
+   注記: 棟名は誕生石をイメージ（ムーンストーン、シトリン、ターコイズ等）。
+     河口湖駅から無料送迎あり（予約制）。 */
+
+  "78": {   /* enico.Mt.Fuji Resort & Glamping */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' }
+  },
