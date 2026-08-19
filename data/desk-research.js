@@ -3934,3 +3934,46 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' }
   },
+
+/* enico.Mt.Fuji smile（旧 TOCORO.Mt.Fuji Kisaragi）（2026-08確認）
+   ※ DBの official は enico-mount-fuji.com に広告トラッキングパラメータ
+     （?gad_source=1&gad_campaignid=…&gclid=…）が付いた状態で登録されていたが、
+     このドメインは姉妹施設 enico.Mt.Fuji Resort & Glamping（id=78・鳴沢村）の
+     公式サイトであり、当施設（富士河口湖町船津3130-3）のものではない。
+     専用の公式サイトは見つからず、OTA掲載のみのため Expedia の施設ページに
+     差し替えた。あわせて id=78 側のパラメータも除去した。
+   Expedia 設備一覧:
+     「Entire home 3 bedrooms 1 bathroom Sleeps 10」→ capacity=10, villa_type=solo
+     Main amenities「Sauna／Hot tub／Terrace／Air conditioning／
+       Vending machine／Luggage storage」→ sauna_exists=yes
+     「The property features a sauna, a terrace, and an outdoor private hot tub」
+     Internet「Free WiFi」→ wifi=yes
+     Kitchen「Refrigerator／Stovetop／Microwave／Espresso maker／Toaster oven／
+       Coffee grinder／Electric kettle／Freezer／Cookware/dishes/utensils」
+     Bathrooms「Bathtub or shower／Bidet／Slippers／Hair dryer」
+       → bring_amenity=ready
+     「Check-in start time: 4 PM; Check-in end time: 11:00 PM」→ late_arrival=ok
+     「Is enico.Mt.Fuji smile pet-friendly? No, pets are not allowed」→ pet_ok=no
+     「This smoke-free vacation home features a sauna, a hot tub」
+   DBのdesc（既存）:
+     「デッキには70℃前後のバレルサウナとジャグジー（4〜11月利用可）を新設し、
+       黒の琉球畳を敷いた1階和室は…2階のリビングとお風呂場からは富士山が見え」
+   除外した項目と理由:
+     sauna_type・stove・loyly・coldbath・outdoor_rest・sauna_temp …
+       Expedia の設備一覧は「Sauna」の一語のみ。DBのdescには
+       「70℃前後のバレルサウナ」とあるが、出典が不明なため採用しない
+     kitchen_type … 「Stovetop」とあるがIH／ガスの別が不明
+     bring_towel … Bedrooms に「Bed sheets provided」はあるがタオルの記載がない
+     steps … 1階和室・2階リビングの構成だが Expedia の記載ではない
+   注記: 「This property does not have elevators」との注記あり。
+     ジャグジーは4〜11月のみ利用可（DBのdescより）。 */
+
+  "77": {   /* enico.Mt.Fuji smile */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' }
+  },

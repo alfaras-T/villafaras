@@ -1414,15 +1414,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "77": {  /* enico.Mt.Fuji smile */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    elevation:    { v: 859, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 1, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '富士吉田忍野スマートIC 8分', src: 'auto', at: '2026-07' },
-    station:      { v: '河口湖 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    capacity:      { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    elevation:     { v: 859, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 1, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '富士吉田忍野スマートIC 8分', src: 'auto', at: '2026-07' },
+    station:       { v: '河口湖 2分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
+    late_arrival:  { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' }
   },
 
   "78": {  /* enico.Mt.Fuji Resort & Glamping */
