@@ -3520,3 +3520,57 @@
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' }
   },
+
+/* SAUNA VILLA 然（2026-08確認）
+   ※ sauna_exists を yes → room に訂正した（別途 fix_villa.py で実施）。
+     「※デラックスツインにサウナ設備はございません」と明記されており、
+     スイート・ジュニアスイートのみにサウナがある。
+   客室構成:
+     スイート（84㎡・定員2〜6名）「ゲスト全員で入れる大きなサウナ、IHキッチン、
+       約6畳のウッドデッキ、安全な階段でつながるロフト」
+       設備「浴室（ジャグジーバス、水風呂）、サウナ、外気浴デッキ、ロフト」
+       → coldbath=bath, outdoor_rest=yes, kitchen_type=ih, steps=stairs
+     ジュニアスイート（49㎡・定員1〜2名）「2名まで入れる部屋付きサウナに、
+       外気浴のできるウッドデッキも備えた」
+       「浴室には信楽焼の浴槽、ウッドデッキには五右衛門風呂の水風呂」
+     デラックスツイン（23㎡・定員1〜2名）「※デラックスツインにサウナ設備は
+       ございません」
+   過ごし方:
+     「スイート及びジュニアスイートには、お部屋に備え付けのサウナをご用意。
+       フィンランドHARVIA製サウナストープを導入し、24時間いつでも本格的な
+       セルフロウリュウとサウナをお楽しみいただけます」
+       → sauna_type=indoor（部屋付き）, stove=electric, loyly=yes, sauna_hours=h24
+     「エントランスカウンターに設置したタブレットで、たった数分で完了」
+       → checkin_method=smart
+   お知らせ 2026.05.08:
+     「水風呂のチラー（冷却）装置 再開いたしました！」→ chiller=yes
+   設備/備品「サウナ／ワインサーバー／浴槽（ジャグジー、信楽焼浴槽）／Wi-Fi／
+     キッチン／食器・カトラリー／調理器具／アメニティ／歯ブラシ／
+     各種バスアメニティ／タオル／スリッパ」
+   除外した項目と理由:
+     capacity … スイート2〜6名／ジュニアスイート1〜2名／デラックスツイン1〜2名と
+       客室により異なる
+     sauna_cap … スイートは「ゲスト全員で入れる大きなサウナ」、
+       ジュニアスイートは「2名まで入れる部屋付きサウナ」と客室により異なる
+     sauna_temp・water_temp・water_src … 記載なし
+     bring_seasoning・pet_ok・fee_bbq … 記載なし
+   注記: chiller=yes は「再開いたしました」という告知からの判定。
+     一時的に停止していた時期があることを示すが、現在は稼働している。
+     長野駅より1.2kmの市街地立地のホテル形態。 */
+
+  "185": {   /* SAUNA VILLA 然 */
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    chiller:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villazen.jp/' }
+  },
