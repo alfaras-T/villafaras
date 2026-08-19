@@ -3845,3 +3845,44 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' }
   },
+
+/* 2gether foret（2026-08確認）
+   ※ 公式サイト（est-ed.com/2gether-foret/）は概要のみで専用の施設案内が
+     存在しない。ROOM も BOOKING も est ed.1 と同じURL（一休 00051677）を
+     指している。一休の 2gether foret 専用ページ（00051898）を出典とする。
+   一休 施設紹介:
+     「2024年8月グランドオープンしたest edグループの2号棟「2gether foret」は、
+       ”森と共に”をテーマとした完全プライベートな貸別荘です。施設は、本館ヴィラを
+       はじめ、キャンピングカーのエアストリームにもベッドルームがあり宿泊可能です。
+       プールやサウナ、露天風呂もあり自然と共に過ごせる空間です」
+   一休 プラン詳細:
+     「本館：ベッドルーム×1，リビング、ダイニング、キッチン、バスルーム、洗面、
+       トイレ×1 エアストリームトレーラーハウス：ベッドルーム、ダイニング、
+       キッチン、シャワールーム、トイレ×1 プール、サウナ、露天風呂（ジャグジー付き）」
+       → villa_type=multi（本館＋エアストリームの2棟構成）
+     「80平米 ベッドルーム2室あり 定員1名～5名」→ capacity=5
+     「IN15:00～17:00 OUT11:00」→ late_arrival=no
+     「ガス式のBBQコンロも完備しております」→ fee_bbq=incl
+   プール:
+     「24時間入ることが出来るプールは、お子様にも大人気ですが、大人も楽しめる
+       ように長さ7メートルに施工されています。冬場は、28℃まで温度設定が可能です。
+       サウナの水風呂としても活躍しています」
+   除外した項目と理由:
+     coldbath … プール兼用であり専用の水風呂ではない。姉妹施設 est ed.1 と
+       同じ構成。スキーマに該当する選択肢がないため入れられない（9件目）
+     sauna_type・stove・loyly・sauna_cap・sauna_temp・outdoor_rest …
+       一休の掲載は「サウナ」の一語のみで仕様の記載がない。
+       姉妹施設 est ed.1 は「約6人一緒に入る事の出来る薪ストーブ式のサウナ」と
+       詳細だが、別施設のため転用しない
+     kitchen_type・wifi・pet_ok・bring_* … 記載なし
+   注記: est ed.1（id=79・住所 4986-1025）と 2gether foret（id=80・4986-1029）は
+     隣接する別施設。公式サイトは est ed.1 の情報が中心で、
+     2gether foret の設備詳細は公式には存在しない。 */
+
+  "80": {   /* 2gether foret */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/' },
+    capacity:        { v: 5, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' }
+  },

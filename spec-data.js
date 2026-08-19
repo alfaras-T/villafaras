@@ -1464,13 +1464,16 @@ window.VILLAFARAS_SPEC = {
 
   "80": {  /* 2gether foret */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'multi', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
     elevation:    { v: 989, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '八ヶ岳PA(下り) 9分', src: 'auto', at: '2026-07' },
     station:      { v: '甲斐大泉 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' }
   },
 
   "81": {  /* 古民家宿るうふ　織之家 */
