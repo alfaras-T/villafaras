@@ -2160,6 +2160,10 @@ window.VILLAFARAS_SPEC = {
   "130": {  /* 那須温泉グランピング Nenn（ネン） */
     sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489.html' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
+    sauna_temp:   { v: 110, src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    water_temp:   { v: 't1015', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 434, src: 'auto', at: '2026-07' },

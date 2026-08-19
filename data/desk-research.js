@@ -3666,3 +3666,41 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' },
     villa_type:      { v: 'shared', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' }
   },
+
+/* 那須温泉グランピング Nenn（2026-08確認）
+   ※ サウナ有無は既に shared に訂正済み（大浴場内のサウナを時間制で共用、
+     全17室にあるのはヴィンテージバス＝浴槽でサウナではない）。
+     今回は /spa/ ページから仕様を追加した。ページ構成も shared 判定を裏付ける
+     （SPA01 温泉大浴場／SAUNA01 サウナ(大浴場内)／SAUNA02 サウナ(水風呂)／
+     SPA03 畳敷きひのき風呂／SPA04 岩盤浴付き風呂 と、すべて共用設備として整理）。
+   SAUNA01 サウナ(大浴場内):
+     「大浴場に完備しているサウナも好評♪ 男性大浴場には、ドライサウナ(最大110℃）、
+       女性大浴場にはミストサウナをご用意しています」
+       → sauna_temp=110（男性大浴場のドライサウナ）
+   SAUNA02 サウナ(水風呂):
+     「男女どちらにも水風呂（14℃）があり、交互浴でしっかりととのえることが
+       できます」→ coldbath=bath, water_temp=t1015（10〜15℃）
+   温泉について:
+     「ご利用可能時間 大浴場／15:00〜23:30(最終入湯23：00)/翌朝7：00～9：30」
+       → sauna_hours=limited
+     「貸切風呂／15:00〜23:30（予約制 最終受付22：30）」
+     泉質「ナトリウム塩化・硫酸塩温泉（弱アルカリ性低張性高温泉）」
+   貸切風呂は別料金:
+     「畳敷きひのき風呂 1時間 3,300円／1グループ（税込）」
+     「岩盤浴付き風呂 1時間 3,300円／1グループ（税込）」
+   除外した項目と理由:
+     sauna_type … 男性大浴場はドライサウナ、女性大浴場はミストサウナと
+       性別により異なる。またミストサウナはスキーマの選択肢
+       （indoor/hut/barrel/tent）に該当しない
+     stove・loyly・sauna_cap・outdoor_rest・water_src … 記載なし
+   注記: water_temp=14℃ は実測値として明記された希少なケース。
+     これまで water_temp が埋まったのは Pacific Retreat（チラー16℃）、
+     HARUKA KANATA（サウナイキタイ実測15℃）に続き3件目。
+     いずれも t1518 または t1015 に収まっている。 */
+
+  "130": {   /* 那須温泉グランピング Nenn（ネン） */
+    sauna_temp:      { v: 110, src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    water_temp:      { v: 't1015', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' }
+  },
