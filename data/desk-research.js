@@ -3244,3 +3244,49 @@
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' }
   },
+
+/* 有形文化財ホテル 飯塚邸（2026-08確認）
+   ※ サウナ有無は既に shared に訂正済み（独立サウナ棟「里鎮」を6棟で共有、
+     日帰り客も受入）。今回はサウナ専用ページから仕様を追加した。
+     ページ内容も shared 判定を裏付けている（日帰り利用の時間枠が
+     午前①8:00〜9:30／②10:00〜11:30、午後①12:00〜13:30／②14:00〜15:30 と
+     明確に設定され、宿泊者とは別枠）。
+   サウナの特徴:
+     「八溝のひのきを使用したサウナ室」独立した建物 → sauna_type=hut
+     「地元産アロマで楽しむロウリュウ」「サウナストーンに水をかけて蒸気を
+       発生させるロウリュは、セルフロウリュ方式をとっております」→ loyly=yes
+     「外気浴ができる大きな水風呂は、適度な冷たさが体を引き締め」
+       「外気浴スペースでは、風や緑を感じながら」→ coldbath=bath, outdoor_rest=yes
+     「２階にはリラックスルームを設けており、飲み物もご用意しております」
+       「大きな水風呂とリラックス空間をご用意」→ rest_chair=chair
+   ルール・注意事項:
+     「複数人での利用 : 最大6名様まで同時にご利用いただけます」→ sauna_cap=6
+     「最大90分／¥4,400（税込）」（日帰り）
+     「邸のお部屋：無料 ／ 蔵のお部屋：宿泊プランにより、サウナ利用料金が異なります」
+     時間枠制のため → sauna_hours=limited
+   設備: 受付／待合室／サウナ室／サウナストーブ／リラックスルーム／
+     更衣室（2部屋）／シャワールーム／水風呂（外気浴）／トイレ／ロッカー4台／
+     ブルートゥーススピーカー
+   無料アメニティ: ボディソープ／シャンプー／トリートメント／ヘアブラシ／
+     ヘアドライヤー／洗顔料／クレンジング／化粧水／ボディミルク／ポンチョ／
+     フェースタオル／バスタオル／ヘアゴム／コットンキット／かみそり／
+     マルチ携帯充電器／サンダル／飲み物
+   除外した項目と理由:
+     stove … 「サウナストーブ」と設備欄にあるのみで熱源の別が不明
+     sauna_temp … 「長時間滞在できる温度帯にして会話とともに楽しめる空間」
+       とあるが具体的な数値がない
+     water_temp・water_src … 「澄んだ水風呂」とあるのみで記載なし
+   注記: レンタル品は水着¥550／サウナハット¥550（いずれも税込／回）。
+     アロマは栃木県産のユズ、ヒノキ、スギなど四季折々のブレンド。 */
+
+  "115": {   /* 有形文化財ホテル 飯塚邸 */
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    sauna_cap:       { v: 6, src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' }
+  },

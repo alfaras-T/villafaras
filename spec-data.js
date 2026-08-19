@@ -1895,14 +1895,23 @@ window.VILLAFARAS_SPEC = {
   },
 
   "115": {  /* 有形文化財ホテル 飯塚邸 */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00050899/' },
-    capacity:     { v: 3, src: 'desk', at: '2026-07' },
-    elevation:    { v: 119, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '野高谷北ランプ 38分', src: 'auto', at: '2026-07' },
-    station:      { v: '烏山 14分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00050899/' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    sauna_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    capacity:      { v: 3, src: 'desk', at: '2026-07' },
+    elevation:     { v: 119, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 7, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '野高谷北ランプ 38分', src: 'auto', at: '2026-07' },
+    station:       { v: '烏山 14分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://iizukatei.ohtawaragt.co.jp/sauna' }
   },
 
   "116": {  /* Kito NASU */
