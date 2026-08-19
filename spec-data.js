@@ -4264,15 +4264,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "278": {  /* LUCY RESORT（ルーシー リゾート） */
-    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 25, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: 'つくば西スマートIC 6分', src: 'auto', at: '2026-07' },
-    station:      { v: '万博記念公園 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 25, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: 'つくば西スマートIC 6分', src: 'auto', at: '2026-07' },
+    station:         { v: '万博記念公園 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 7, src: 'auto', at: '2026-07' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' }
   },
 
   "279": {  /* 大谷石の蔵サウナと古民家宿 DAIGO SAUNA */

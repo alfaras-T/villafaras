@@ -3427,3 +3427,44 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' }
   },
+
+/* LUCY RESORT（ルーシー リゾート）（2026-08確認）
+   ※ サウナ有無は既に room に訂正済み。今回はサウナ仕様と設備を追加した。
+     「楽しみ方」ページに room 判定の根拠が再掲されている:
+     「※プライベートサウナ、ジャグジー風呂・薪風呂は、
+       ご利用サイトにより設備が異なります」
+   楽しみ方ページ:
+     「アウトドアでもサウナが楽しめます！プライベートな空間でお好きな時間に
+       入ることができます」
+     「ストーンに水をかけて自分の好きな温度に調整ができます」→ loyly=yes
+     「開放的な広いサイト区画内での外気浴や、自然の音、外の景色を堪能できるのも
+       プライベートサウナならではの魅力です」→ outdoor_rest=yes
+     「サイトスペース内は「屋根つきアウトドアリビング」「トイレ」「外キッチン」」
+   FAQ:
+     「各グランピングサイトには、焚火やお食事をお楽しみいただける
+       全天候型のアウトドアリビングを備え付けております」
+       → bbq_roof=roof, firepit=stand
+     「グランピングオプションとしてBBQ用具セット（有料）をご用意しております。
+       【セット内容】コンロ・炭・網・トング ¥3,850（税込）」→ fee_bbq=extra
+     「素泊まりプラン・食事付きプランのどちらでも、追加の食材を自由に
+       お持ち込みいただけます」かつ調味料の記載がない → bring_seasoning=bring
+   除外した項目と理由:
+     sauna_temp … 「ストーンに水をかけて自分の好きな温度に調整ができます」で
+       固定値がない。Pacific Retreat・SUI HAKUBA と同じ理由
+     sauna_type・stove・coldbath・sauna_cap … 記載なし。
+       サイト区画内に「バスジェット付ジャグジー、薪風呂」はあるが
+       水風呂としての明示がない
+     capacity … サイトにより異なる（セーラムトレーラーハウス／エアストリーム／
+       イージードーム／ロータスベルテント等の複数タイプ）
+   注記: 「※プライベートサウナ、ジャグジー風呂・薪風呂は、ご利用サイトにより
+     設備が異なります」という注記は room 判定の直接の根拠。
+     全8棟のうちどのサイトにサウナがあるかは公式サイトに一覧がない。 */
+
+  "278": {   /* LUCY RESORT（ルーシー リゾート） */
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/glamping/enjoy/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.lucyresort.com/faq/' }
+  },
