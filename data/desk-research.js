@@ -3077,3 +3077,69 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' }
   },
+
+/* UMInoTERRACE VILLA（2026-08確認）
+   ※ DBの住所「千倉町川口70-1」は4棟のうち VILLA に対応。
+     （Chikura=川口209-3、Hanare=白間津1364-1、Garden=白浜町滝口5580-170）
+   備品一覧 Terrace:
+     「バレルサウナ／電気ストーブ（60~90°）／セルフロウリュアロマ」
+       → sauna_type=barrel, stove=electric, loyly=yes
+     「インフィニティプール／お子様プールエリア（水深浅）／樽風呂（温水、冷水利用可）
+       ／オーバーヘッドシャワー（温水・冷水利用可）」
+     「BBQテーブル／テーブル埋込式ガスコンロ２ケ／組立式タープ（雨天時や日除けに
+       お使いいただけます）」→ bbq_roof=open（常設屋根ではなく組立式タープ）
+     「焚き火台／薪(１束¥2,000-/税込)／着火剤(無料)」
+       → firepit=stand, firewood_fee=extra
+   注意事項:
+     「※BBQコンロ、プール、サウナは24時間ご利用可能です」→ sauna_hours=h24
+     「サウナは電気ストーブを採用しております。4時間で切れる設定となって
+       おりますのでお客様ご自身で設定ください」
+     「【バレルサウナは外気影響されやすく気温によって70~90°の温度差がございます】」
+       → sauna_temp=80（70〜90の中央値）
+     「サウナストーンに水をかける（ロウリュ）と、水蒸気が一気に発生いたします」
+     「ペットを連れてのご利用はご遠慮ください」→ pet_ok=no
+     「花火のご利用は、禁止させていただきます」
+     「チェックイン 15:00~（アーリーチェックインをご希望の方は13:00〜可能
+       別途15000円請求）」→ early_late=yes
+   料金:
+     「2名〜最大12名までご利用いただけます」「推奨利用人数は6名となっております」
+       → capacity=12, comfort_cap=6
+   1F/2Fにベッドルームがある構成 → steps=stairs
+   リビングダイニング「3口ガスコンロ」「ラップ／アルミホイル」「高速wifi」
+     → kitchen_type=gas, kitchen_burners=3, bring_wrap=ready, wifi=yes
+   バスルーム「バスタオル／バスローブ／サウナハット／フェイスタオル／歯ブラシ／
+     john masters organics フルラインナップ」
+   除外した項目と理由:
+     coldbath … 「樽風呂（温水、冷水利用可）」は兼用設備で専用の水風呂ではない。
+       インフィニティプールも温水プール
+     outdoor_rest … テラスは広いが外気浴スペースとしての明示がない
+     sauna_cap・water_temp・water_src … 記載なし
+     bring_seasoning … キッチン備品に調味料の記載がない
+   注記: sauna_temp=80 は「70~90°の温度差」の中央値。備品一覧では
+     「電気ストーブ（60~90°）」と設定範囲が記載されており、両者で下限が異なる。
+     実運用の記載である注意事項側（70~90）を採用した。
+     12名以上の場合は徒歩3分の Chikura 棟と合わせて最大24名まで可能。 */
+
+  "21": {   /* UMInoTERRACE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    sauna_temp:      { v: 80, src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    comfort_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' }
+  },
