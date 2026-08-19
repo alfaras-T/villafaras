@@ -4170,13 +4170,20 @@ window.VILLAFARAS_SPEC = {
 
   "280": {  /* 一棟貸切宿　藤右衛門 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'hut', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    villa_type:   { v: 'multi', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    bbq_roof:     { v: 'roof', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     capacity:     { v: 5, src: 'desk', at: '2026-07' },
     elevation:    { v: 5, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 9, src: 'auto', at: '2026-07' },
     ic:           { v: '千代田石岡IC 23分', src: 'auto', at: '2026-07' },
     station:      { v: '高浜 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 18, src: 'auto', at: '2026-07' }
+    onsen:        { v: 18, src: 'auto', at: '2026-07' },
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://touemon.net/' }
   },
 
   "281": {  /* SPA＆ごはんゆるうむ */

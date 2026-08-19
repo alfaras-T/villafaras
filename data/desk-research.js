@@ -2701,3 +2701,40 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' }
   },
+
+/* 一棟貸切宿 藤右衛門（2026-08確認）
+   ページタイトル「茨城の一棟貸切宿「藤右衛門」｜サウナ・屋内BBQ・露天風呂」
+   Facilities 棟内のご案内:
+     「敷地内には趣ある母屋を中心に、蔵、サウナ棟、鉄板焼棟の全4棟が
+       ゆったりと配置されており、滞在中はすべての建物を貸切でご利用いただけます」
+       → villa_type=multi、4棟すべて1組占有のため sauna_exists=yes
+     サウナ棟「静けさの中で心と身体をととのえる、完全プライベートなサウナエリア。
+       サウナ、水風呂に加え、シャワーとジャグジーも備えた贅沢な整い空間です」
+       → sauna_type=hut（独立したサウナ棟）, coldbath=bath
+     Concept「『ととのいスペース』では、本格的なサウナと水風呂、
+       自然に囲まれた外気浴が、心身を深く整えてくれます」→ outdoor_rest=yes
+     じゅうじゅう亭（鉄板焼棟）「業務用ガスコンロや鉄板、たこ焼き器、
+       クレープメーカー、ピザ窯などを完備」「倉庫を改装した空間のため、
+       夏季は早めの空調使用をおすすめします」
+       → kitchen_type=gas, bbq_roof=roof（屋内BBQ）
+   Access「チェックイン 15:00 / チェックアウト 10:00」→ late_arrival=no
+   除外した項目と理由:
+     stove・loyly・sauna_cap・sauna_temp・water_temp・water_src …
+       サウナ棟の個別ページ（/sauna/）は画像主体で本文が取得できず、
+       トップページには仕様の記載がない
+     capacity・pet_ok・wifi・bring_* … 各棟の「設備・備品」ページが
+       同様に取得できず不明
+   注記: サウナ棟の名称は「ととのいスペース サウナ満天星」。
+     じゅうじゅう亭は「※無煙ではありませんので、匂いや煙が気になる方は
+     ご注意ください」との注記あり。運営はさくらいアセットマネジメント合同会社。 */
+
+  "280": {   /* 一棟貸切宿　藤右衛門 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    kitchen_type:    { v: 'gas', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://touemon.net/' }
+  },
