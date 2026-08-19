@@ -604,13 +604,18 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
     stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    villa_type:   { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    firepit:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    steps:        { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
     elevation:    { v: 7, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '長生IC 17分', src: 'auto', at: '2026-07' },
     station:      { v: '太東 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 17, src: 'auto', at: '2026-07' }
+    onsen:        { v: 17, src: 'auto', at: '2026-07' },
+    fee_bbq:      { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    fee_cleaning: { v: 16500, src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' }
   },
 
   "36": {  /* STAR VILLAGE TATEYAMA */

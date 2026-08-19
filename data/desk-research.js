@@ -2850,3 +2850,39 @@
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' }
   },
+
+/* by the river Isumi（2026-08確認）
+   ページタイトル「一棟貸し切りの貸別荘 By the River Isumi 自然の恵みを感じる
+     プライベートリトリート＆バレルサウナで癒しのひととき」→ sauna_type=barrel
+   注意事項:
+     「露天風呂、サウナをご利用の際は、必ず水着の着用をお願い致します」
+       → sauna_exists=yes
+     「火災防止の為、花火等の火器類のご使用は禁止とさせて頂きます」→ firepit=no
+     「客室、テラスは土足厳禁です」「当施設は貸別荘ですので食事は付きません」
+   price:
+     「3名 / ￥109,600 … 8名 / ￥214,000 ※最大8名様まで」→ capacity=8
+     「別途清掃費 一律 ￥16,500」→ fee_cleaning=16500
+     「中学生以上 大人料金 小学生以下 ￥6,600」
+   オプション「￥6,600(税込) BBQセット」→ fee_bbq=extra
+   「一棟貸しのバケーションレンタル」→ villa_type=solo
+   concept「コテージ内に備わる階段からは川岸へアクセスできる」→ steps=stairs
+   除外した項目と理由:
+     stove・loyly・coldbath・outdoor_rest・sauna_cap・sauna_temp …
+       spec欄はアコーディオン内にあるが設備の詳細が取得できず、
+       サウナの仕様に関する記載が本文中に見当たらない
+     kitchen_type・wifi・pet_ok・bring_* … 同上
+     kids_free … 「小学生以下 ￥6,600」は子供料金であって無料の記載ではない
+   注記: fee_cleaning は充足0件だった項目の1件目。
+     「泥酔等で嘔吐された場合、特殊な清掃が必要となる為、別途11,000円」
+     という追加請求の規定も記載されている。 */
+
+  "35": {   /* by the river Isumi */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    firepit:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    fee_cleaning:    { v: 16500, src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' }
+  },
