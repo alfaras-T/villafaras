@@ -2939,17 +2939,25 @@ window.VILLAFARAS_SPEC = {
   },
 
   "191": {  /* 軽井沢 HOUSE VILLA */
-    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 1034, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '佐久小諸JCT 14分', src: 'auto', at: '2026-07' },
-    station:      { v: '信濃追分 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'room', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com' },
+    stove:          { v: 'wood', src: 'desk', at: '2026-07' },
+    coldbath:       { v: 'bath', src: 'desk', at: '2026-07' },
+    villa_type:     { v: 'multi', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/' },
+    firepit:        { v: 'stand', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    capacity:       { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    elevation:      { v: 1034, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 5, src: 'auto', at: '2026-07' },
+    conveni:        { v: 2, src: 'auto', at: '2026-07' },
+    ic:             { v: '佐久小諸JCT 14分', src: 'auto', at: '2026-07' },
+    station:        { v: '信濃追分 4分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    late_arrival:   { v: 'contact', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' }
   },
 
   "192": {  /* ポーラーハウスカナディアン南軽井沢1 */

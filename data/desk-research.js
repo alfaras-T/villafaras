@@ -2886,3 +2886,52 @@
     fee_cleaning:    { v: 16500, src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' }
   },
+
+/* 軽井沢 HOUSE VILLA（軽井沢ハウスヴィラ）（2026-08確認）
+   ※ サウナ有無は既に room に訂正済み（commit 22f95d9 ほか）。今回は仕様の追加調査。
+   お部屋紹介ページ（6棟の一覧）:
+     Villa A（定員12名・184㎡）… 写真タブに サウナ なし
+     Villa B（サウナ付）（定員11名・127㎡）… 写真タブ「外観・サウナ」
+     平屋棟（定員11名・128㎡・バリアフリー）… 写真タブ「庭・サウナ」
+     サウナ棟（定員13名・135㎡）「サウナと水風呂付き」→ coldbath=bath
+     足湯棟（定員13名・137㎡）… サウナなし
+     檜風呂棟（定員13名・135㎡）… サウナなし
+     → 6棟中サウナがあるのは Villa B・平屋棟・サウナ棟。room 判定を裏付け
+   FAQ:
+     「ビデオカメラ機能付きの遠隔で確認できる特殊なインターホンを設置…
+       その後、遠隔で開閉ができるスマートロックにて鍵を開錠」
+       → checkin_method=smart
+     「チェックインの時間は16〜20時…20時を過ぎる場合、事前にお電話等にて
+       ご連絡をお願いしております」→ late_arrival=contact
+     「アーリーチェックインやレイトチェックアウトは利用状況に応じてご対応可能
+       ですが、追加費用が発生致します」→ early_late=yes
+     「ペットの同室は可能ですか？ 可能です。但し…オプション料金が発生」
+       → pet_ok=yes
+     「各室にエアコン、リビング部分に床暖房、薪ストーブ、焚き火台、BBQ台…」
+       → firepit=stand
+     「タオル、シャンプー、コンディショナー、ボディソープ・歯ブラシ・綿棒・
+       使い捨てスリッパのご用意はございます。部屋着、髭剃り、ヘアブラシ、
+       化粧水等のご用意はございません」
+   除外した項目と理由:
+     capacity … 棟により11〜13名と異なり、DBの1エントリでは代表値を決められない
+     steps … 平屋棟のみバリアフリー設計で他棟は不明。棟により異なる
+     sauna_type・stove・loyly・outdoor_rest・sauna_cap … 棟ごとの詳細ページが
+       あるがサウナの仕様に関する記載が見当たらない
+     kitchen_type・bring_seasoning … 記載なし
+     fee_pet … 「オプション料金が発生」とあるが金額は予約ページ側で不明
+   注記: 「全棟に薪ストーブ」がコンセプトの一つ。標高約1,000m。
+     一棟貸しで完全非対面チェックインを導入している点を強調している。 */
+
+  "191": {   /* 軽井沢 HOUSE VILLA */
+    sauna_exists:    { v: 'room', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/room' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/room' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    late_arrival:    { v: 'contact', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' }
+  },
