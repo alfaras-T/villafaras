@@ -3394,3 +3394,36 @@
     rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
   },
+
+/* VillaEL5（2026-08確認）
+   ※ DBの official（https://stay-japan.tokyo/villa5/）は404で失効。
+     同ドメインの施設一覧（/en/hotels/）にも VillaEL5 に相当する項目がなく、
+     運営から外れた可能性がある。じゃらんの施設ページに差し替えた。
+   OTA掲載（お宿でポン！等）:
+     「サウナ、バーベキューガーデン、会議室、宴会場、貸自転車、露天風呂、
+       駐車場あり、麻雀室、お庭には、五右衛門風呂２つ、内風呂１つ。サウナ。
+       タオル、歯ブラシ、WIFI、ドライヤー、BBQコンロ、鍋、焼肉プレート、
+       たこ焼き機、他キッチン用品」
+       → sauna_exists=yes を維持, wifi=yes, bring_towel=ready, bring_amenity=ready
+     じゃらん「【じゃらんSALE】サウナでリフレッシュ！体験型プラン 朝食のみ
+       5名様まで同一料金」
+     やどろく「5名様まで同一料金。貸切お宿となっており…お庭でのBBQや
+       室内でのしゃぶしゃぶ、五右衛門風呂もお楽しみいただけます」
+       → villa_type=solo
+   除外した項目と理由:
+     capacity … 既存値28は根拠不明のため別途 fix_villa.py で削除した。
+       DBの feature は「6LDK一棟貸し185平米」、desc は「200平米・7LDK」と
+       食い違い、OTAにも定員の記載がない
+     sauna_type・stove・loyly・coldbath・outdoor_rest … OTAの設備一覧は
+       「サウナ」の一語のみで仕様が一切不明
+     kitchen_type・bring_seasoning・pet_ok・fee_bbq … 記載なし
+   注記: サイト内の数値不一致7例目（DBの feature と desc の間）。
+     この施設は公式サイトが失効しているため、今後の更新は
+     OTA掲載に依存することになる。 */
+
+  "127": {   /* VillaEL5 */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' }
+  },

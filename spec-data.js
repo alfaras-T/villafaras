@@ -2110,15 +2110,18 @@ window.VILLAFARAS_SPEC = {
   },
 
   "127": {  /* VillaEL5 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 28, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 384, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 1, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '土沢IC 8分', src: 'auto', at: '2026-07' },
-    station:      { v: '下今市 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    elevation:     { v: 384, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 1, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '土沢IC 8分', src: 'auto', at: '2026-07' },
+    station:       { v: '下今市 2分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' }
   },
 
   "128": {  /* Haga Farm＆Glamping（芳賀ファーム&グランピング） */
