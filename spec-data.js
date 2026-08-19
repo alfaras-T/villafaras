@@ -1880,16 +1880,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "116": {  /* Kito NASU */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    elevation:    { v: 319, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 1, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '黒磯板室IC 10分', src: 'auto', at: '2026-07' },
-    station:      { v: '黒磯 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'hut', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    stove:          { v: 'wood', src: 'desk', at: '2026-07' },
+    coldbath:       { v: 'bath', src: 'desk', at: '2026-07' },
+    outdoor_rest:   { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    capacity:       { v: 8, src: 'desk', at: '2026-07' },
+    steps:          { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    wifi:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    elevation:      { v: 319, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 1, src: 'auto', at: '2026-07' },
+    conveni:        { v: 2, src: 'auto', at: '2026-07' },
+    ic:             { v: '黒磯板室IC 10分', src: 'auto', at: '2026-07' },
+    station:        { v: '黒磯 4分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    firewood_fee:   { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' }
   },
 
   "117": {  /* THE SECOND Nasukogen Forest House */

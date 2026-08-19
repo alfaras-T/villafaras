@@ -3029,3 +3029,51 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' }
   },
+
+/* Kito NASU（2026-08確認）
+   About「Kitoは、自然豊かな那須にある、プライベートサウナ付きの一棟貸しヴィラです」
+     「施設内には薪でじんわり温まるプライベートサウナ、薪ストーブを設置し」
+     → sauna_exists=yes, stove=wood, villa_type=solo
+   Sauna「Kino Sauna 自然の一部になる時間」:
+     「家に寄り添う大きな木のようなサウナを目指しました」
+     「木の幹はサウナ室、その枝と葉は屋根。屋根は広々と伸びて外気浴に心地いい
+       "木陰"をつくります。屋根から流れ落ちた雨水は窪んだ穴に溜まり、
+       "水たまり"のような水風呂になります」
+       → sauna_type=hut（独立したサウナ棟）, coldbath=bath, outdoor_rest=yes
+   Room / Amenities & Facilities:
+     「客室タイプ 4LDK」「定員 最大8名」→ capacity=8
+     間取り図が 1F/2F に分かれている → steps=stairs
+     客室備品「WiFi、冷蔵庫、テレビ、オーディオ機器、プロジェクター、Netflix、
+       Hulu、エアコン、暖炉、調理用具、電子レンジ、湯沸かしポット、食器類、
+       炊飯器、専用洗濯機、乾燥機」→ wifi=yes
+     アメニティ「歯ブラシ、くし、ひげ剃り、綿棒、基礎化粧品、シャワーキャップ、
+       タオル類、シャンプー、リンス、ボディーソープ」
+     オプション「バーベキューセット…※食材はついておりません」
+       「薪セット（サウナ・ストーブ用）」→ fee_bbq=extra, firewood_fee=extra
+   「スマートチェックインサービス導入のお知らせ…当日もタブレットにて
+     セルフチェックインが可能」→ checkin_method=smart
+   除外した項目と理由:
+     loyly・sauna_cap・sauna_temp・water_temp・water_src …
+       コンセプト説明が中心で仕様の記載がない
+     kitchen_type … 「調理用具」とあるのみで加熱方式の記載がない
+     bring_seasoning・pet_ok・bbq_roof … 記載なし
+   注記: サウナのコンセプトデザイン監修は「銭湯図解」の塩谷歩波氏。
+     水風呂が「屋根から流れ落ちた雨水が溜まる」設計という点が特徴的で、
+     水源としては特殊。water_src の選択肢（well/spring 等）に該当しない。 */
+
+  "116": {   /* Kito NASU */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    stove:           { v: 'wood', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kito-nasu.jp/' }
+  },
