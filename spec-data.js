@@ -3081,14 +3081,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "199": {  /* 北軽井沢 貸別荘 FARMSIDE */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    elevation:    { v: 1172, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 13, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '小諸IC 40分', src: 'auto', at: '2026-07' },
-    station:      { v: '万座・鹿沢口 15分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'http://www8.wind.ne.jp/n-farm/stay.html' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79265' },
+    villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'http://www8.wind.ne.jp/n-farm/stay.html' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    capacity:      { v: 4, src: 'desk', at: '2026-07' },
+    elevation:     { v: 1172, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 13, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '小諸IC 40分', src: 'auto', at: '2026-07' },
+    station:       { v: '万座・鹿沢口 15分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    fee_bbq:       { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://newsite.kitakaruizawafarmstay.com/log-house/' }
   },
 
   "200": {  /* enukoti（エヌコティ） */

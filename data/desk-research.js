@@ -2935,3 +2935,47 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' }
   },
+
+/* 北軽井沢 貸別荘 FARM SIDE（2026-08確認）
+   ※ DBの official は新サイト（newsite.kitakaruizawafarmstay.com/log-house/）だが、
+     このページはクローバー・ログハウス単体の紹介でサウナの記載がない。
+     新サイトは全体を通してサウナに触れておらず、宿泊ページの施設一覧
+     （チモシー・ヴィラ／クローバー・ログハウス／浅間山山番屋敷）にも記載なし。
+     一方、旧公式サイトとサウナイキタイでサウナの存在が確認できたため yes を維持。
+     公式サイトのリニューアルに伴う情報の引き継ぎ漏れと判断した。
+   旧公式サイト（www8.wind.ne.jp/n-farm/stay.html）:
+     「＜洋館のチモシー棟＞ サウナ・ジャグジー・システムキッチン・暖炉・エアコン・
+       冷暖房完備の1棟貸し」
+     「＜ログハウスのクローバー棟＞ サウナ・システムキッチン・薪ストーブ・
+       エアコン・冷暖房完備の１棟貸し」
+       → 両棟にサウナあり。sauna_type=indoor（棟内設備）, villa_type=multi
+   サウナイキタイ:
+     「ドライサウナ／対流式（ストーン）／電気／TV無／クローバー棟とチモシー棟」
+       → stove=electric
+   ACTIVITY ページ:
+     「BBQ設備（BBQ炉、金網、炭（5キロ）、着火剤、ライター、トング、うちわ、
+       軍手、紙皿、紙コップ、割り箸）は、有料（5,500円（税込）/現地決済）」
+       → fee_bbq=extra
+     設備に「IHコンロ」、無料アメニティに「シャンプー リンス ボディーソープ
+       フェイスタオル バスタオル スリッパ 歯ブラシ ヘアドライヤー」
+   新サイト「チェックイン：16:00～18:00 チェックアウト：11:00」→ late_arrival=no
+   除外した項目と理由:
+     capacity … チモシー棟1〜6名、クローバー棟1〜4名と棟で異なる
+     steps … チモシー棟はバリアフリー、クローバー棟はロフト付きで棟により異なる
+     loyly … 「対流式（ストーン）」だがロウリュ可否の明示がない
+     coldbath・outdoor_rest・sauna_temp・sauna_cap … サウナイキタイの
+       該当欄が「-」で未登録
+   注記: 既存の capacity=4 はクローバー棟の値。DBが1エントリのため
+     チモシー棟（最大6名）を代表できていない。要検討。 */
+
+  "199": {   /* 北軽井沢 貸別荘 FARMSIDE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'http://www8.wind.ne.jp/n-farm/stay.html' },
+    sauna_type:      { v: 'indoor', src: 'desk', at: '2026-08', url: 'http://www8.wind.ne.jp/n-farm/stay.html' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79265' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'http://www8.wind.ne.jp/n-farm/stay.html' },
+    fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://newsite.kitakaruizawafarmstay.com/log-house/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://kitakaruizawafarmstay.com/activity/' }
+  },
