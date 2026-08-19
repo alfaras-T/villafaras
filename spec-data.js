@@ -4279,17 +4279,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "277": {  /* No.12 Kashima Fan Zone */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    chiller:      { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    elevation:    { v: 38, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 1, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '潮来IC 11分', src: 'auto', at: '2026-07' },
-    station:      { v: '鹿島サッカースタジアム 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    chiller:       { v: 'yes', src: 'desk', at: '2026-07' },
+    villa_type:    { v: 'shared', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' },
+    elevation:     { v: 38, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 1, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '潮来IC 11分', src: 'auto', at: '2026-07' },
+    station:       { v: '鹿島サッカースタジアム 2分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' }
   },
 
   "278": {  /* LUCY RESORT（ルーシー リゾート） */
