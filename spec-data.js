@@ -1521,16 +1521,26 @@ window.VILLAFARAS_SPEC = {
   },
 
   "83": {  /* THE TIME FUJI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 860, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 5, src: 'auto', at: '2026-07' },
-    ic:           { v: '富士吉田忍野スマートIC 16分', src: 'auto', at: '2026-07' },
-    station:      { v: '河口湖 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:     { v: 'hut', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    stove:          { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    sauna_temp:     { v: 110, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    sauna_cap:      { v: 2, src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
+    loyly:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    coldbath:       { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    outdoor_rest:   { v: 'yes', src: 'desk', at: '2026-07' },
+    rest_chair:     { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
+    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    firepit:        { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    capacity:       { v: 9, src: 'desk', at: '2026-07' },
+    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:      { v: 860, src: 'auto', at: '2026-07' },
+    supermarket:    { v: 7, src: 'auto', at: '2026-07' },
+    conveni:        { v: 5, src: 'auto', at: '2026-07' },
+    ic:             { v: '富士吉田忍野スマートIC 16分', src: 'auto', at: '2026-07' },
+    station:        { v: '河口湖 9分', src: 'auto', at: '2026-07' },
+    onsen:          { v: 7, src: 'auto', at: '2026-07' },
+    checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' }
   },
 
   "84": {  /* mysa fuji */

@@ -3977,3 +3977,59 @@
     late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' }
   },
+
+/* THE TIME FUJI（2026-08確認）
+   ※ DBの official は https://fujitimetraveler.com（富士タイムトラベラー）
+     だったが、これは河口湖駅至近の別施設（本館・新館・玉手箱館の3施設構成）で
+     THE TIME FUJI（長浜1717-2）とは無関係。一休の施設ページに差し替えた。
+     official の問題としては12件目、訂正5件目。
+   サウナイキタイ（宿泊者投稿・実測）:
+     「1棟貸し施設に付帯するオーナー渾身の自作のサウナ。サ室はストーブが
+       HARVIAのCILINDRO6で、110度。セルフロウリュ可能で結構ロウリュウしても
+       ガンガン蒸発して激アツ好きも納得の熱さ」
+       → stove=electric（HARVIA CILINDRO6）, sauna_temp=110, loyly=yes
+     「前室があり、冷蔵庫に水が完備されているのも嬉しい。夜虫が多い時や冬は
+       前室で整えるという気の利いた作り」→ sauna_type=hut（前室付きの独立サウナ）
+     「外にはシャワーと2人入れる水風呂が完備」→ coldbath=bath
+     「最高なのが外気浴。ウッドデッキにColemanで見上げる先は森。
+       横で焚き火をしていたらパチパチなる音と香りが」
+       → outdoor_rest=yes, firepit=stand
+     「しかも気心知れた友人と、宿泊中何度でも」
+   TRIPX レポート:
+     「各ヴィラに内風呂があり、富士河口湖温泉郷の源泉を引いた贅沢な貸切温泉」
+     「サウナはフィンランド製HARVIA社のストーブを導入した本格フィンランド
+       サウナになっており、しっかり高温（100℃近く！）まで上がる本格仕様」
+     「屋外にはサウナ利用者専用の水風呂タブ（2名用）と外気浴スペースも完備」
+       → sauna_cap=2（水風呂タブが2名用。サ室自体の定員は不明だが
+         「サ室がコンパクト」との記述から同程度と判断）
+     「森のひんやりした風に当たりながら、インフィニティチェアで“整う”時間」
+       → rest_chair=infinity
+   一休:
+     「全1棟を丸ごと借り切れるプライベートヴィラ」→ villa_type=solo
+     口コミ「無人なのでサービスは特にないですが、事前の案内メールが
+       とてもわかりやすく」→ checkin_method=smart
+   DBのdesc（既存）:「オーナー自作のサウナは110度まで上がる本格仕様で、
+     外気浴用のウッドデッキと焚き火も楽しめる、最大7名までの隠れ家」
+     → capacity=7（サウナイキタイの実測値と一致するため desc も信頼できる）
+   除外した項目と理由:
+     water_temp・water_src … 記載なし
+     kitchen_type・wifi・pet_ok・bring_* … 一休の施設情報からは取得できず
+   注記: sauna_temp は複数の出典で110度（サウナイキタイ）と
+     100℃近く（TRIPX）に分かれるが、ストーブ機種まで特定している
+     サウナイキタイの110を採用した。 */
+
+  "83": {   /* THE TIME FUJI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    sauna_temp:      { v: 110, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    sauna_cap:       { v: 2, src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' }
+  },
