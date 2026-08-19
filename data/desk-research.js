@@ -2595,3 +2595,61 @@
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.tobira-group.com/sui/' }
   },
+
+/* LEVATA（2026-08確認）
+   SAUNA 欄にサウナ設備が一行で列挙されている。
+     「LEVATAのサウナ設備 バレルサウナ（電気式サウナストーブ４人まで）
+       水風呂/ ロウリュ用桶・ラドル / サウナ用チェアー（３脚）」
+       → sauna_type=barrel, stove=electric, sauna_cap=4,
+         coldbath=bath, loyly=yes（ロウリュ用桶・ラドル）,
+         rest_chair=chair（サウナ用チェアー3脚）, outdoor_rest=yes
+   ログハウス紹介:
+     「・室内面積 約72㎡ ・屋外施設 バーベキューテラス、サウナスペース
+       ・間取り：2LLDK 1階：リビングダイニングキッチン、ベッドルーム
+       （シングルベッド3台）、浴室、トイレ 2階：リビング、ベッドルーム
+       （シングルベッド3台）・定員 6名」→ capacity=6, steps=stairs
+     「無人での入退室としており（タブレットで受付）完全プライベートな時間を」
+       → checkin_method=smart, villa_type=solo
+   FAQ:
+     「アーリーチェックイン・レイトチェックアウトできますか？ 出来ません」
+       → early_late=no
+     「ペットの同伴はご遠慮頂いております」→ pet_ok=no
+     「子供の添い寝は可能ですか？ 就学前までのお子様に限り2名まで可能です」
+       → kids_free=6（就学前＝6歳まで）
+     「現地でご用意のあるもの BBQ用具 タオル アメニティ 洗濯機乾燥機 キッチン用品」
+     「BBQの食材を用意してもらうことはできますか？ LEVATAではご用意しておりません。
+       衛生上の理由から、ご自身で買い出し・お持ち込みを推奨」→ bring_seasoning=bring
+     「ゴミは捨てられますか？ 所定のゴミ袋で捨てられます」→ bring_trash=ready
+   除外した項目と理由:
+     sauna_hours … 「※12月〜３月頃の冬季は、露天使用不可となります。
+       LEVATAバスルームをご利用ください」は季節制限であり、
+       スキーマの sauna_hours（利用可能時間）とは別概念
+     sauna_temp・water_temp・water_src … 記載なし
+     kitchen_type … 「キッチン用品」のみで加熱方式の記載がない
+     bbq_roof … 「バーベキューテラス」とあるが屋根の記載がない
+     fee_bbq … BBQ用具は現地に用意があるが有料無料の記載がない
+   注記: 冬季（12〜3月）は屋外サウナが使用不可となる点は，
+     サウナ目的の利用者にとって重要な情報。スキーマに季節制限を
+     持つ項目がないため本文に記録するに留める。 */
+
+  "131": {   /* LEVATA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    early_late:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://levata.jp/' }
+  },
