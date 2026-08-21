@@ -65,7 +65,13 @@ villas/               # 施設個別ページ
 `FIXES` に書いて `--dry-run` で確認してから実行する。
 リポジトリ直下で実行すること（パスは相対）。
 
-対応する操作: `remove_tags` / `set_spec` / `remove_spec` / `old_desc`+`new_desc`
+対応する操作: `remove_tags` / `set_spec` / `remove_spec` / `set_villa` /
+`old_desc`+`new_desc`
+
+`set_villa` は index.html の VILLAS スカラー項目を訂正する。
+`capacity` / `checkin` / `checkout` は villas/*.html の fact 行にも描画されるので
+そちらもあわせて書き換わる。**定員は index.html・個別ページ・spec-data.js の
+3箇所に出る。** `set_spec` だけでは片手落ちになる。
 
 ### 机上調査の反映は tools/merge_desk.py
 
@@ -74,6 +80,15 @@ python3 tools/merge_desk.py out/spec-data-desk.js data/desk-research.js
 ```
 
 既存値がある項目は上書きせずスキップする（既存優先）。
+
+**この既存優先が、後から調べた正しい値を黙って捨てる。** 見送りは集計件数しか
+出ないので気づけない。2026-08 に定員2件（軽井沢365 リバーサイドヴィラ、
+トライハク神楽）が、desk-research.js に正しい値がありながら反映されていな
+かったことが判明した。マージ前に必ず次を実行して食い違いを確認すること。
+
+```
+python3 tools/validate.py data/desk-research.js
+```
 
 一次記録として `data/desk-research.js` にも追記する。
 **fix_villa.py で訂正した施設も desk-research.js に記録すること。**
@@ -88,23 +103,47 @@ python3 tools/merge_desk.py out/spec-data-desk.js data/desk-research.js
 
 ## 生成データの検証（必須）
 
-spec-data.js に入れる前に必ず以下を通す。過去に3件の誤りをこれで防いだ。
+**`tools/validate.py` を通す。** 手でやっていた確認をすべてこれにまとめてある。
+
+```
+python3 tools/validate.py                       spec-data.js（マージ後込み）
+python3 tools/validate.py data/desk-research.js 候補ファイル
+python3 tools/validate.py --allow-remove        訂正で項目を消したとき
+```
+
+エラーがあれば終了コード 1。選択肢マスタと項目定義は `spec.js` の
+`var O` / `var SCHEMA` から直接読むので、スキーマを変えても検証側の修正は要らない。
+
+見ている内容は次の3段階。
 
 1. **選択肢照合** — `spec.js` の `var O = {...}` にある選択肢マスタと突き合わせる
 2. **単位確認** — 数値項目は `u:` の単位（℃/名/口/歳まで/円）と意味が一致するか
 3. **型チェック** — 選択肢型の項目に数値を入れていないか
 
-過去の失敗例:
+過去の失敗例（いずれも validate.py で検出できることを確認済み）:
 - `steps` に存在しない値 `'many'`（正しくは `flat` / `stairs`）
 - `kids_free`（単位「歳まで」）に人数を入れかけた
 - `water_temp`（選択肢型 u10/t1015/t1518/t1822/o22）に数値16を入れかけた
 - `firepit` の「不可」を `'none'` と書いた（正しくは `'no'`）
 
-マージ後は以下も確認する。
+範囲だけでは拾えない単位の取り違えは交差チェックで見ている。
 
-- タグと `sauna_exists` の整合（yes/room ならタグあり、shared/no/未調査ならタグなし）
-- 施設数286の維持、波括弧の対応
-- 総フィールド数が増えているか（マージが空振りしていないか）
+- `comfort_cap > capacity` … 推奨人数が定員を超える（2件見つかった）
+- `kids_free == capacity` … 「歳まで」に人数を入れた疑い
+- `sauna_exists=no` なのにサウナ項目がある … 訂正時の消し忘れ
+
+マージ後は施設数286の維持、波括弧の対応、タグと `sauna_exists` の整合
+（yes/room ならタグあり、shared/no/未調査ならタグなし）、総フィールド数の増減も見る。
+**減ったときは件数ではなく消えた項目そのものを出す。** 訂正で消したのか
+マージの取りこぼしかを見分けるため。訂正で消したときは `--allow-remove` を付ける。
+
+### 値の書き方の規約
+
+- **公式が範囲で書いている数値項目は上限を採る。**
+  例: TORAMII「80〜90度まで自動上昇する電気式」→ `sauna_temp: 90`
+- **選択肢のどの区分にも割り当てられない値は入れない。** 未調査に戻す。
+  例: Oyado S の水風呂は掛け流しで通年変動し「10〜18」。
+  `water_temp` は「夏場の水温」の区分なので割り当てられない
 
 ---
 
@@ -263,12 +302,18 @@ Sea by TORAMII=レイトのみ）。
 
 ## 次にやること
 
-1. **チャネルBの継続** — 未調査85施設
-2. **スキーマ改修** — とくに `early_late` の分割と `coldbath` の選択肢追加
-3. **spec-survey.html の作成** — 冬に一斉送付予定
-4. **チャネルDの入力欄実装** — 母数が要るので着手が早いほど良い
-5. **公式URLの訂正** — 未訂正5件（Jade Group 3、Avalon Cove、Villa Torami）
-6. **primera villa の feature 修正** — サウナが存在しないと確定したが紹介文は未修正
+1. **既存優先で取りこぼした37件の訂正** — `capacity` 31 / `stove` 6。
+   `python3 tools/validate.py data/desk-research.js` で一覧できる。
+   とくに `capacity=9` は64件（すべて 2026-07）と突出しており、初期一括投入時の
+   頭打ち値の疑いが濃い。37件中21件がこの `spec=9`。**index.html 側も同じ値を
+   持っているため、訂正には `set_villa` が要る**（個別ページの fact 行も動く）
+2. **チャネルBの継続** — 未調査85施設
+3. **スキーマ改修** — とくに `early_late` の分割と `coldbath` の選択肢追加
+4. **spec-survey.html の作成** — 冬に一斉送付予定
+5. **チャネルDの入力欄実装** — 母数が要るので着手が早いほど良い
+6. **公式URLの訂正** — 未訂正5件（Jade Group 3、Avalon Cove、Villa Torami）
+7. **primera villa の feature 修正** — サウナが存在しないと確定したが紹介文は未修正
+8. **トライハク神楽のドッグラン面積** — 紹介文「350平米」／公式諸元表「約250㎡」
 
 ---
 
