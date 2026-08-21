@@ -311,7 +311,7 @@
   },
 
   "271": { /* Earthboat Saitama Kawajima */
-    stove:         { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-07' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
@@ -1000,7 +1000,7 @@
   "36": {   /* STAR VILLAGE TATEYAMA */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
-    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
+    capacity:        { v: 15, src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.star-village.net/rooms' },
@@ -1494,7 +1494,7 @@
     sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     rest_chair:      { v: 'chair', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
-    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    capacity:        { v: 30, src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
@@ -2839,7 +2839,7 @@
     loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/' },
     sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
-    capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://daigo-sauna.jp/faq' },
@@ -3338,7 +3338,7 @@
     sauna_type:      { v: 'hut', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     sauna_cap:       { v: 5, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
-    capacity:        { v: 15, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
@@ -3839,7 +3839,7 @@
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
-    capacity:        { v: 4, src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
@@ -4025,10 +4025,10 @@
     loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     sauna_temp:      { v: 110, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
-    sauna_cap:       { v: 2, src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
+    sauna_cap:       { v: 6, src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
-    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    capacity:        { v: 9, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' }
@@ -4082,4 +4082,74 @@
 
    要確認: トライハク神楽の紹介文は「350平米ドッグラン」だが公式の諸元表は
            「約250㎡」。250㎡が正しいと思われる（未訂正）。
+   ========================================================================== */
+
+/* ==========================================================================
+   2026-08 既存優先で取りこぼしていた37件の検証と訂正
+   --------------------------------------------------------------------------
+   tools/validate.py に spec-data.js との食い違いを一覧する検査を入れたところ
+   37件（capacity 31 / stove 6）が出た。全件を公式サイトで裏取りした結果、
+   34施設35フィールドを訂正した。
+
+   結論の内訳:
+     desk が正しかった      29件 … spec/index の値が誤り
+     spec が正しかった       3件 … id=79 est ed.1 / id=83 THE TIME FUJI /
+                                    id=271 Earthboat Saitama Kawajima
+     どちらでもなかった      3件 … id=36 / id=279 / id=126
+
+   spec が正しかった3件は、このファイル側の値を訂正した（上のブロックを直接修正）。
+     id=79  … desk=4 は OTA の下位プラン「4名様まで」の人数だった。
+              一休「定員 1名～6名」より 6 が正しい。
+     id=83  … desk=7 の出典に一休を記録していたが、一休は「定員 1名～9名」。
+              実際は DB の紹介文「最大7名までの隠れ家」を採っていた。
+              **DB の desc を裏付けなしに使った例。** 9 が正しい。
+     id=271 … desk=wood は誤り。公式「電気ストーブサウナ」、運営会社の
+              プレスリリースに「トレーラーハウス内のサウナ室は面積が限られて
+              おり、薪ストーブでは必要な離隔距離の確保が難しい」ため
+              HARVIA 電気ヒーターを採用、と選定理由まで記載がある。
+
+   判断が割れた3件:
+     id=36 STAR VILLAGE TATEYAMA … spec=9 / desk=10 のいずれでもなく 15。
+              公式 /plan「最大利用人数は15名です」。OTA2件は「基本9名（最大
+              15名様まで）」と書いており、この「基本9名」が spec=9 の出所と
+              思われる。基本人数と最大定員の取り違え。
+     id=279 DAIGO SAUNA … サイト内に 8 / 12 / 14 の3通りが併存。
+              断定形で2箇所に出る 12 を採った（/stay「客室は全部で３室ご用意、
+              最大12名が宿泊できます」＋ chillnn プラン説明「最大12名で宿泊
+              できるプラン」）。プラン名「(9〜14名様はこちら)」と予約UIの上限14は
+              予約区分、FAQ「大人8名程度」は程度付きのため採らなかった。
+     id=126 御宿 憩 … 日本語公式は一貫して「最大10名様」。英語版は冒頭 10・
+              設備欄 15 で同一ページ内が矛盾しており、desk=15 はこの一文だけが
+              根拠だった。じゃらんは4プランすべて「最大１２名様」で spec=12 と
+              一致するが、旅館業法の登録定員の可能性がある。公式優先で 10。
+
+   37件の外で見つかった訂正:
+     id=83 sauna_cap … 2 は水風呂の収容人数だった。出典 note.com の原文は
+              「屋外にはサウナ利用者専用の水風呂タブ（2名用）と外気浴スペースも
+              完備」。サウナイキタイは「サウナ室 収容人数 6人」。6 に訂正。
+              sauna_cap 23件を点検したが同種の取り違えは他になかった
+              （値が1〜2の他4件は実際に小型サウナ。enukoti は公式
+              「HARVIA 1〜2名様用サウナ」とサウナイキタイの両方で2を確認）。
+
+   除外した項目:
+     id=34 Retreat Villa Aym のペット・棟別定員 … 公式は「1棟10名」「全3棟利用時
+              最大30名」の両方を出す。villa_type=multi、feature「1日3組限定」、
+              desc「最大30名まで対応可能」と揃うため施設全体の30を採ったが、
+              棟単位の値を持てる構造ではない。
+     id=53 tokoro hotel Isumi の内訳 … 公式は「定員 2~7名（お子様を含め8名）」と
+              2段構え。規約どおり最大の8を採ったが、大人のみなら7。
+
+   --------------------------------------------------------------------------
+   残っている課題:
+
+   ・capacity=9 は 64件 -> 49件 に減った。**残る49件は未調査。**
+     今回調べた17件のうち16件で9が誤りだった（正しかったのは id=83 のみ）。
+     残りも同様に誤っている可能性が高い。
+
+   ・index.html と spec-data.js の capacity が食い違う5件（id=64/69/170/226/216）。
+     これは今回の37件とは別系統で、**spec-data.js だけ訂正されて index.html と
+     villas/*.html が取り残された**もの。fix_villa.py に set_villa が無かった
+     時期の訂正と思われる。id=64（一休URLあり）と id=69（公式URLあり）は
+     2026-08 の調査値なので spec 側が正しいとみられるが、id=170/216/226 は
+     2026-07 で出典URLがなく要検証。
    ========================================================================== */
