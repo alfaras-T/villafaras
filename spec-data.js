@@ -49,7 +49,6 @@ window.VILLAFARAS_SPEC = {
 
   "2": {  /* 古民家宿るうふ 波之家 */
     sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522.html' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
@@ -204,7 +203,7 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
-    sauna_temp:   { v: '80〜90', src: 'desk', at: '2026-07' },
+    sauna_temp:   { v: 90, src: 'desk', at: '2026-08', url: 'https://toramii.jp/oceans-terrace-toramii/' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 2, src: 'auto', at: '2026-07' },
@@ -2261,7 +2260,7 @@ window.VILLAFARAS_SPEC = {
 
   "133": {  /* GEOSPOT MOTOHAKONE B */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 871, src: 'auto', at: '2026-07' },
@@ -2274,7 +2273,7 @@ window.VILLAFARAS_SPEC = {
 
   "134": {  /* GEOSPOT MOTOHAKONE C */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'cold', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://geo-spot.com/motohakone/' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
     elevation:    { v: 870, src: 'auto', at: '2026-07' },
@@ -2735,7 +2734,6 @@ window.VILLAFARAS_SPEC = {
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     chiller:      { v: 'yes', src: 'desk', at: '2026-07' },
-    water_temp:   { v: '10〜18', src: 'desk', at: '2026-07' },
     capacity:     { v: 12, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 829, src: 'auto', at: '2026-07' },
@@ -2809,7 +2807,7 @@ window.VILLAFARAS_SPEC = {
     rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
-    capacity:        { v: 6, src: 'desk', at: '2026-07' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
     comfort_cap:     { v: 10, src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa365.jp/stay/riversidevilla' },
@@ -3184,7 +3182,7 @@ window.VILLAFARAS_SPEC = {
     villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
     bbq_roof:       { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
     firepit:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
-    capacity:       { v: 4, src: 'desk', at: '2026-07' },
+    capacity:       { v: 14, src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
     comfort_cap:    { v: 6, src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/' },
     pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
     steps:          { v: 'flat', src: 'desk', at: '2026-08', url: 'https://www.tryhaku.jp/rooms/' },
