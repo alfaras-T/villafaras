@@ -32,100 +32,64 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "52": {"name": "緑邸～OHTAKI～",
-           "reason": "sauna_type='tent' -> 'barrel' は c195be8 で訂正済み（公式「離れに本格的なバレルサウナが"
-                     "楽しめる施設をご用意いたしました。」）。同じページに未設定のまま残っていた項目を拾う。"
-                     "サウナ「サウナでじっくり汗をかいた後に、汗を流して檜の水風呂につかり、椅子に座り大多喜の"
-                     "心地よい風にあたり整いましょう。」／写真キャプション「セルフローリュも可能」「外気浴スペース」／"
-                     "【追加オプション】「バレルサウナ 檜製水風呂」→ loyly=yes, coldbath=bath, outdoor_rest=yes。"
-                     "BBQ「お好きな食材を持ち込み、ご家族とバーベキューはいかがでしょうか。離れには屋根があるので、"
-                     "多少の雨でも安心です。」→ bbq_roof=roof。"
-                     "【アメニティ】バスタオル・ハンドタオル・シャンプー・コンディショナー・ボディソープ・歯ブラシ・ひげ剃り、"
-                     "【調理器具等】「食器、調理器、調味料などはご自由にお使いください」→ bring_towel / bring_amenity / "
-                     "bring_seasoning=ready。【施設設備】「無料Wi-Fi」→ wifi=yes。"
-                     "あわせて feature の「テントサウナ」を「バレルサウナ」に直す（extract_b.py が sauna_type='tent' を"
-                     "出した元がこの誤記）。"
-                     "見送り: (1) サウナの別料金「※ご利用は別料金となります。お申し込みの際に、サウナのご利用をお伝えください」は"
-                     "受け皿の項目がない。sauna_hours は「利用可能時間」であって申込要否の欄ではないので入れない。"
-                     "(2) firewood_fee は BBQ が「食材と薪炭などをお持ちこみください」＝持参で、fee の incl/extra どちらでもない。"
-                     "(3) rest_chair は「椅子に座り」だけで infinity/bench/chair のどれか判別できない（2026-08確認）",
-           "old_desc": "人工芝の庭・BBQ・テントサウナ",
-           "new_desc": "人工芝の庭・BBQ・バレルサウナ",
-           "set_spec": {
-               "sauna_type":      {"v": "barrel", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "loyly":           {"v": "yes", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "coldbath":        {"v": "bath", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "outdoor_rest":    {"v": "yes", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "bbq_roof":        {"v": "roof", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "bring_towel":     {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "bring_amenity":   {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "bring_seasoning": {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"},
-               "wifi":            {"v": "yes", "src": "desk", "at": "2026-08",
-                                   "url": "https://www.ryokutei.jp/facility"}}},
+    "143": {"name": "mysa hakone",
+            "reason": "capacity=9 は OTA の定員欄の仕様上限。公式コンセプトページに「最大宿泊可能人数：12人」「最大12名宿泊可能」とあり 12 が正しい。あわせてサウナイキタイで水風呂・熱源・室温・定員を確認した。「水風呂 収容人数：2人 水深80~110cm 1人用の、肩まで浸かれるプールが2つ置いております。季節によって温度は変わります。秋〜春は15℃、冬はシングルになります。」「サウナ室 温度80度 収容人数：10人 ドライサウナ 薪」「●外気浴 デッキチェア: 8席」（2026-08確認）",
+            "set_villa": {"capacity": "12"},
+            "set_spec": {
+                         "capacity":   {"v": 12, "src": "desk", "at": "2026-08",
+                                        "url": "https://hotel-mysa.com/concept/"},
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-08",
+                                        "url": "https://hotel-mysa.com/concept/"},
+                         "loyly":      {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://hotel-mysa.com/concept/"},
+                         "coldbath":   {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "stove":      {"v": "wood", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "sauna_temp": {"v": 80, "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "sauna_cap":  {"v": 10, "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "water_depth":{"v": "shoulder", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "outdoor_rest":{"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "rest_chair": {"v": "chair", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"},
+                         "wifi":       {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/63970"}}},
 
-    "92": {"name": "VILLA SAISON FUJI",
-           "reason": "capacity=9 は一休の「定員」欄（9名が仕様上限）由来の既定値で誤り。公式FAQ「最大定員は何名ですか？ "
-                     "最大定員は24名です。ヴィラには3つの寝室があり、10名様までご利用可能です。別館も3つの寝室があり、"
-                     "11名様(無料のお子様除く)以上のご予約でヴィラ＋別館をご利用頂けます。」、"
-                     "「ご宿泊者以外の方は、施設内にお入りいただけません。最大利用人数も24名様までとなっております。」。"
-                     "公式予約ページの諸元表も「定員 最大24名」、本文「追加でエクストラベッドやベビーベッドも設置可能で、"
-                     "最大24名様までご宿泊頂けます。」。検索要約に出る10名/13名は本館ヴィラのみの利用可能人数（FAQの人数表で"
-                     "1〜10名様＝ヴィラのみ、13〜14名様＝別館寝室2まで）であって施設の定員ではない。"
-                     "DB の feature「最大24名が宿泊できる」desc「最大24名まで滞在できます」とも一致する。"
-                     "「当施設は敷地内全体を一組限定で貸切りとなりますので、ヴィラ・別館すべて他のお客様とご一緒になることは"
-                     "ありません。共有施設もなく、全施設、貸切となります。」なので棟別に代表値が割れる型でもない。"
-                     "ついでに stove='wood' も誤り。FAQ「サウナで使用するストーブと燃料は何ですか？ 電気ストーブです。」で、"
-                     "薪ストーブは客室の暖房（「薪ストーブとファイアーピットで使う薪は、無料でご用意しております。」）。"
-                     "desc の「薪ストーブを備え」を extract_b.py が拾って入れた値とみられる。"
-                     "同FAQから loyly=yes（「ロウリュウは出来ますか？ 可能です。」）、"
-                     "sauna_hours=limited（「近隣にご配慮いただくため、プールやサウナのご利用は21時までとなります。」）、"
-                     "early_late=no（「アーリーチェックインもレイトチェックアウトも承っておりません。」）、"
-                     "firewood_fee=incl・firepit=stand（上記の薪無料とファイアーピット）、"
-                     "fee_bbq=incl（「簡単な操作で着火できるガスグリルを備えており、自由にご使用いただけます。炭や燃料などの"
-                     "ご持参は不要です。」）、fee_pet=0（「ペットは無料でご宿泊いただけます。」）、"
-                     "bring_towel / bring_amenity=ready（「・バスタオル／フェイスタオル ・バスローブ ・パジャマ ・シャンプー、"
-                     "コンディショナー…」）、bring_seasoning=ready（「塩、コショウ、オリーブオイル、醤油、バター。」）、"
-                     "wifi=yes（「高速無制限の光ケーブル・インターネットを無料でご利用いただけます」）。"
-                     "見送り: (1) coldbath は「秋・冬はサウナの水風呂としてご利用ください」（プール）"
-                     "「サウナの際には水風呂としてもご利用頂けます」（ジャグジー）で、CLAUDE.md に既知のプール兼用の選択肢が"
-                     "ない型（これで10件目）。(2) villa_type はヴィラ＋別館の2棟だが一組貸切なので solo とも multi とも"
-                     "決められない。チェックイン15:00〜18:00・チェックアウト11:00 は既存値と一致（2026-08確認）",
-           "set_villa": {"capacity": "24"},
-           "set_spec": {
-               "capacity":        {"v": 24, "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "stove":           {"v": "electric", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "loyly":           {"v": "yes", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "sauna_hours":     {"v": "limited", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "early_late":      {"v": "no", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "firepit":         {"v": "stand", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "firewood_fee":    {"v": "incl", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "fee_bbq":         {"v": "incl", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "fee_pet":         {"v": 0, "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "bring_towel":     {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "bring_amenity":   {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "bring_seasoning": {"v": "ready", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"},
-               "wifi":            {"v": "yes", "src": "desk", "at": "2026-08",
-                                   "url": "https://villa-saison-fuji.com/faq/"}}},
+    "162": {"name": "プライベートヴィラ愛川",
+            "reason": "capacity=5 は誤り。公式の客室ページに「定員 １棟につき10名（添い寝のお子様除く）」とあり、ベッド構成「クイーンベッド１台、ダブルベッド4台、ソファーベット5台」とも整合する。同ページの施設内設備が列挙形式で「貸切露天ジャグジー風呂・サウナ、浴室、水風呂、屋根付きBBQガーデン…全館Wi-Fi完備」とあり、ジャグジーとは別に水風呂が独立して挙がっているため coldbath=bath。「セルフロウリュも可能なバレルサウナとジャグジーを設置」「IHコンロ3口、鍋用IHコンロ」（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {
+                         "capacity":    {"v": 10, "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"},
+                         "coldbath":    {"v": "bath", "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"},
+                         "loyly":       {"v": "yes", "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"},
+                         "outdoor_rest":{"v": "yes", "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"},
+                         "kitchen_type":{"v": "ih", "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"},
+                         "wifi":        {"v": "yes", "src": "desk", "at": "2026-08",
+                                         "url": "https://withthedogs.jp/villa"}}},
+
+    "171": {"name": "Noёl HAKONE GENSEN",
+            "reason": "capacity=9 は一休の定員欄の仕様上限で誤り。同じページのプラン名が「最大20名様、1棟貸しプラン」、本文に「・最大定員：16名様（エアーマットレス併用で最大20名様）」「本施設は最大20名様まで宿泊可能ですが、一休のサイト仕様上9名様しか予約ができません。10名以上の場合は別途ご連絡下さい。」とある。範囲は上限を採る規約に従い 20 とする（エアーマットレスなしの通常定員は16）（2026-08確認）",
+            "set_villa": {"capacity": "20"},
+            "set_spec": {"capacity": {"v": 20, "src": "desk", "at": "2026-08",
+                                      "url": "https://www.ikyu.com/vacation/00051638/11400824/10235981/"}}},
+
+    "170": {"name": "Six on the Beach TORAMII -Enoshima-",
+            "reason": "index.html の capacity が 9、spec-data.js が 12 で食い違っていた。公式に「お1人様から最大12名様までご自由にご利用いただけます」とあり spec-data.js 側の 12 が正しい。index.html と個別ページを合わせる。あわせて屋外設備の列挙「星空ジャグジー、サウナ、WeberBBQグリル、エコスマートファイヤー、温水シャワー、ダイニングシステムなど全て無料でご利用いただけます」より outdoor_rest=yes、室内設備「キッチン用品（IHコンロ）」より kitchen_type=ih（2026-08確認）",
+            "set_villa": {"capacity": "12"},
+            "set_spec": {
+                         "outdoor_rest":{"v": "yes", "src": "desk", "at": "2026-08",
+                                         "url": "https://toramii.jp/enoshima/"},
+                         "kitchen_type":{"v": "ih", "src": "desk", "at": "2026-08",
+                                         "url": "https://toramii.jp/enoshima/"}}},
 }
 
 DRY = "--dry-run" in sys.argv

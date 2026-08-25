@@ -958,24 +958,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "52": {  /* 緑邸～OHTAKI～ */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 22, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 12, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '市原鶴舞IC 14分', src: 'auto', at: '2026-07' },
-    station:      { v: '上総中川 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 17, src: 'auto', at: '2026-07' },
-    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    bbq_roof: { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    bring_towel: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 22, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 12, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '市原鶴舞IC 14分', src: 'auto', at: '2026-07' },
+    station:         { v: '上総中川 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 17, src: 'auto', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
-    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
   },
 
   "53": {  /* tokoro hotel Isumi */
@@ -1662,27 +1662,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "92": {  /* VILLA SAISON FUJI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    capacity:     { v: 24, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:    { v: 854, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 4, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '富士吉田忍野スマートIC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '河口湖 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' },
-    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    early_late: { v: 'no', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    firepit: { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    firewood_fee: { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    fee_bbq: { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    fee_pet: { v: 0, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    bring_towel: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    capacity:        { v: 24, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    elevation:       { v: 854, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '富士吉田忍野スマートIC 13分', src: 'auto', at: '2026-07' },
+    station:         { v: '河口湖 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    early_late:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_pet:         { v: 0, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    coldbath:        { v: 'tub', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
   },
 
   "93": {  /* ヴィラグリファーム七里岩 */
@@ -2408,14 +2409,24 @@ window.VILLAFARAS_SPEC = {
 
   "143": {  /* mysa hakone */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://hotel-mysa.com/concept/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 563, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '須雲川IC 20分', src: 'auto', at: '2026-07' },
     station:      { v: '彫刻の森 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'tent', src: 'desk', at: '2026-08', url: 'https://hotel-mysa.com/concept/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel-mysa.com/concept/' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    stove: { v: 'wood', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    sauna_temp: { v: 80, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    sauna_cap: { v: 10, src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    water_depth: { v: 'shoulder', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    rest_chair: { v: 'chair', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/63970' }
   },
 
   "144": {  /* シエロ箱根仙石原 */
@@ -2638,14 +2649,19 @@ window.VILLAFARAS_SPEC = {
   "162": {  /* プライベートヴィラ愛川 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 5, src: 'desk', at: '2026-07' },
+    capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 116, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '相模原愛川IC 26分', src: 'auto', at: '2026-07' },
     station:      { v: 'ダム下 山麓 11分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 21, src: 'auto', at: '2026-07' }
+    onsen:        { v: 21, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://withthedogs.jp/villa' }
   },
 
   "163": {  /* 箱根温泉別邸白鷺 */
@@ -2742,13 +2758,15 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '茅ヶ崎中央IC 18分', src: 'auto', at: '2026-07' },
     station:      { v: '片瀬江ノ島 1分', src: 'auto', at: '2026-07' },
     onsen:        { v: 2, src: 'auto', at: '2026-07' },
-    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' }
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/enoshima/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://toramii.jp/enoshima/' }
   },
 
   "171": {  /* Noёl HAKONE GENSEN */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    capacity:     { v: 20, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051638/11400824/10235981/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 840, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },

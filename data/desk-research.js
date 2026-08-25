@@ -4270,8 +4270,18 @@
   "44": {   /* 久留里山荘（QULRI SANSO） */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051772/' }
   },
-  "52": {   /* 緑邸～OHTAKI～ */
-    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
+  "52": {   /* 緑邸～OHTAKI～ ─ sauna_type は tent からの訂正 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
   },
   "64": {   /* VILLA Seamu */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' }
@@ -4303,8 +4313,22 @@
   "91": {   /* ビジョングランピングリゾート山中湖 */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vision-glamping.com/yamanakako' }
   },
-  "92": {   /* VILLA SAISON FUJI */
-    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
+  "92": {   /* VILLA SAISON FUJI ─ capacity は一休の上限値9からの訂正。https://villa-saison-fuji.com/reserve/ の諸元表「定員 最大24名」でも確認。stove は desc 由来の wood からの訂正。coldbath はプール（秋・冬のみ真水）とジャグジー（通年）の両方が水風呂兼用で、通年側の tub を採った */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    capacity:        { v: 24, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    coldbath:        { v: 'tub', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    early_late:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_pet:         { v: 0, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
   },
   "93": {   /* ヴィラグリファーム七里岩 */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://greefarm.jp/' }
