@@ -32,173 +32,36 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "1": {"name": "古民家宿るうふ 清之家",
-            "reason": "capacity=9 は誤り。「2名〜10名様までご利用いただけます」より 10 に訂正。寝具（シングル4・ダブル2・布団2＝10）と整合。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://loof-inn.com/hotels/seinoie"}}},
-
-    "13": {"name": "Ocean's Terrace TORAMII",
-            "reason": "capacity=9 は誤り。「お1人様から最大12名様までご自由にご利用いただけます。」より 12 に訂正。料金表も「1～4名様」「5～12名様」の2区分。DB紹介文の「最大14名」は誤り。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://toramii.jp/oceans-terrace-toramii/"}}},
-
-    "22": {"name": "海都-kaito- TOKYOBAY",
-            "reason": "capacity=9 は誤り。「客室定員 12名 推奨人数7名」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://piyoresort.com/kaito/room/"}}},
-
-    "23": {"name": "The TRAVELERS Chateau Tateyama",
-            "reason": "capacity=9 は誤り。「一棟貸し（3LDK）最大10名様 禁煙」より 10 に訂正。公式URLがInstagramだったため実サイトを特定。要URL訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://yamato-stay.com/the-travelers-chateau-tateyama"}}},
-
-    "44": {"name": "久留里山荘（QULRI SANSO）",
-            "reason": "capacity=9 は誤り。「最大10名様までの宿泊が可能」より 10 に訂正。公式サイトが存在せずOTAのみ。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://travel.yahoo.co.jp/00051772/"}}},
-
     "52": {"name": "緑邸～OHTAKI～",
-            "reason": "capacity=9 は誤り。「最大で10名様が宿泊可能」より 10 に訂正。料金ページも4名〜10名の段階料金。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://www.ryokutei.jp/facility"}}},
-
-    "66": {"name": "Villa Yno",
-            "reason": "capacity=9 は誤り。「定員：最大10名（セミダブルベッド×4台、敷布団×2組）」より 10 に訂正。公式サイト未発見。同ページの「定員：1名～9名」は一休系の仕様上限。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://travel.yahoo.co.jp/00052212/room/"}}},
-
-    "83": {"name": "THE TIME FUJI",
-            "reason": "capacity=9 は誤り。「宿泊人数は7名様までとなっております。」より 7 に訂正。前回 一休「定員 1名～9名」を根拠に9としたのは誤り。一休の定員欄は9名が仕様上限で実定員ではない。施設自身の予約サイトで7名を確認。（2026-08確認）",
-            "set_villa": {"capacity": "7"},
-            "set_spec": {"capacity": {"v": 7, "src": "desk", "at": "2026-08",
-                                      "url": "https://thetime.snack.chillnn.com/ja/snack/6c870504-3e7c-49b8-b172-6efd732e4704"}}},
-
-    "84": {"name": "mysa fuji",
-            "reason": "capacity=9 は誤り。「最大宿泊可能人数：10人」より 10 に訂正。「9名以上でご宿泊の場合は折り畳みマットレス2台をご利用ください」と整合。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://hotel-mysa-fuji.com/concept/"}}},
-
-    "85": {"name": "mysa yamanakako",
-            "reason": "capacity=9 は誤り。「折りたたみマットレスをご用意しておりますので、5名以上でご宿泊の場合はそちらをご利用ください。（最大10名）」より 10 に訂正。公式サイト未発見。姉妹施設 mysa fuji（公式で10確認済み）と同型。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://travel.yahoo.co.jp/00052086/room/"}}},
+           "reason": "sauna_type='tent' は誤り。公式施設紹介ページに「バレルサウナ」「離れにあるサウナルーム」「離れに本格的なバレルサウナが楽しめる施設をご用意いたしました。」とあり barrel が正しい。サウナ有無の検証中に発見（2026-08確認）",
+           "set_spec": {"sauna_type": {"v": "barrel", "src": "desk", "at": "2026-08",
+                                       "url": "https://www.ryokutei.jp/facility"}}},
 
     "98": {"name": "SILVER SPRAY 山中湖",
-            "reason": "capacity=9 は誤り。「最大10名まで宿泊可能です」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://silver-spray.jp/cottage.php"}}},
+           "reason": "sauna_exists='yes' は誤り。公式のビジター（日帰り客向け）ページに「BBQ、アウトドアサウナ体験を気軽に楽しんでいただきたい。そんな思いから、日帰りでの利用も承っております。」「サウナコース 4名まで1組6,000円(税込) 10:30～15:30（内150分 ※入浴時間込み）」とあり、日帰り客が同じアウトドアサウナを使う。コテージの設備欄に「テントサウナ」はあるが、実利用は「アウトドアサウナ体験 5,500円（税込）～」の予約制・時間制（ワンセット2時間、利用時間 15時～21時 / 7時～9時）で、宿泊者が滞在中いつでも使える形ではない。判定基準どおり shared に訂正しサウナタグを外す（2026-08確認）",
+           "remove_tags": ["sauna"],
+           "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
+                                         "url": "https://silver-spray.jp/visiter.php"}}},
 
-    "101": {"name": "KURA YARD",
-            "reason": "capacity=9 は誤り。「最大15名まで泊まれる大きな家」より 15 に訂正。DB紹介文の「最大13名」とも食い違う。公式が15。（2026-08確認）",
-            "set_villa": {"capacity": "15"},
-            "set_spec": {"capacity": {"v": 15, "src": "desk", "at": "2026-08",
-                                      "url": "https://kurayard.com"}}},
+    "105": {"name": "BLANC FUJI",
+            "reason": "sauna_exists='yes' は誤り。公式に「Spa Villaには露天風呂、Sauna Villaにはプライベートサウナがそれぞれ付いており」とあり、サウナが付くのは Sauna Villa のみ。Living Villa はBBQプランの記載のみでサウナの言及がない。一部の棟のみサウナ付きなので room に訂正する。room はサウナタグを維持する（2026-08確認）",
+            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
+                                          "url": "https://blan-c.com/fuji/"}}},
 
-    "103": {"name": "Private villa FujiNagi",
-            "reason": "capacity=9 は誤り。「定員 10名（子供料金のかかるお子様も含む）」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://www.fujinagi.com/overview-facility.html"}}},
+    "108": {"name": "THE THIRD PLACE Mt.Fuji",
+            "reason": "sauna_exists='yes' は誤り。公式予約サイトの棟紹介で「煌 – Köu –」だけに「サウナ→水風呂→外気浴テラスの整いコースを富士山の絶景とともに」とあり、「燈 – Töu –」「燿 – Yöu –」にはサウナの記載がない。敷地の説明も「個性ある3棟のヴィラに加え、ゲストハウス、アウトドアサウナ、焚き火スペースを配し」で、屋外サウナは棟とは別の共用設備。一部の棟のみサウナ付きなので room に訂正する（2026-08確認）",
+            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
+                                          "url": "https://www.chillnn.com/ja/19ad918d44dad/"}}},
 
-    "107": {"name": "ReTune | SPA & SAUNA / VILLA",
-            "reason": "capacity=9 は誤り。「宿泊 10名迄」より 10 に訂正。公式はJS描画で取得不可。紹介文の「8人まで」はテントサウナの定員で別項目。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://kawaguchiko.e-villa.jp/capacity/10.html"}}},
+    "125": {"name": "森deワーケなすっぽ",
+            "reason": "sauna_exists='yes' は誤り。公式サイトにはサウナの記載が一切なく、実在はじゃらんの「遊び・体験」枠で確認できる。プラン名が「じゃらん限定《BBQ+サウナ+部屋（シャワー、風呂、ベッド）or更衣室のみ（シャワー風呂）セットプラン》」で、更衣室のみの選択肢は宿泊しない日帰り客向け。中庭のバレルサウナを日帰り客と共用している。villa_type='multi'（複数棟）とも整合する。shared に訂正しサウナタグを外す（2026-08確認）",
+            "remove_tags": ["sauna"],
+            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
+                                          "url": "https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/"}}},
 
-    "121": {"name": "COCO VILLA 那須高原",
-            "reason": "capacity=9 は誤り。「最大利用人数 12名 ※ 推奨人数は6名です」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://coco-villa.jp/villa/nasu-kogen/"}}},
-
-    "140": {"name": "ルクス箱根湯本 LUX HAKONE YUMOTO",
-            "reason": "capacity=9 は誤り。「最大定員11名です。ベッド数は、ダブルベッド2台、シングルベッド3台、ダブル布団2組（畳ロフト）となります。」より 11 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "11"},
-            "set_spec": {"capacity": {"v": 11, "src": "desk", "at": "2026-08",
-                                      "url": "https://lux-hakone.com/faq/"}}},
-
-    "142": {"name": "プライベートリゾート仙居",
-            "reason": "capacity=9 は誤り。「6LDK・最大16名対応。」より 16 に訂正。施設独自サイト https://hakone-senkyo.com/ を発見（要URL訂正）。（2026-08確認）",
-            "set_villa": {"capacity": "16"},
-            "set_spec": {"capacity": {"v": 16, "src": "desk", "at": "2026-08",
-                                      "url": "https://beds24.com/booking.php?propid=283750"}}},
-
-    "149": {"name": "MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ",
-            "reason": "capacity=9 は誤り。「4ベッドルームで最大18名まで利用可能です。」より 18 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "18"},
-            "set_spec": {"capacity": {"v": 18, "src": "desk", "at": "2026-08",
-                                      "url": "https://moroisoso.jp"}}},
-
-    "183": {"name": "Hakuba Amber Resort",
-            "reason": "capacity=9 は誤り。「最大12名 3LDKでゆったり家族風呂付きシャレー／お布団を追加購入（5,500円/式）することで最大12名まで対応可能」より 12 に訂正。公式サイトなし（Jade Group はリンク集のみ）。プラン名の数字は仕様上限とは別系統。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://www.ikyu.com/00051318/"}}},
-
-    "188": {"name": "COCO VILLA 軽井沢",
-            "reason": "capacity=9 は誤り。「最大利用人数：12名」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://coco-villa.jp/villa/karuizawa/"}}},
-
-    "212": {"name": "熱海リゾート",
-            "reason": "capacity=9 は誤り。「定員 10名」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://www.resolstay.jp/details/atamiresort/"}}},
-
-    "234": {"name": "COCO VILLA 伊豆赤沢",
-            "reason": "capacity=9 は誤り。「最大利用人数：10名 ※ 推奨人数は7名です」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://coco-villa.jp/villa/izuakazawa/"}}},
-
-    "243": {"name": "Azure Palace 伊豆高原",
-            "reason": "capacity=9 は誤り。「収容人数 14名まで可能／FAQ「最大収容人数何名でしょうか？14名までご宿泊可能です。」」より 14 に訂正。ページ内住所「伊東市富戸1317-4479」で近接する別施設との取り違えがないことを確認。（2026-08確認）",
-            "set_villa": {"capacity": "14"},
-            "set_spec": {"capacity": {"v": 14, "src": "desk", "at": "2026-08",
-                                      "url": "https://azurepalace.net"}}},
-
-    "245": {"name": "villa 緑と物語",
-            "reason": "capacity=9 は誤り。「定員：最大10名」より 10 に訂正。公式はJS描画で取得不可。OTA部屋名も「10名様まで宿泊可」。同ページの「1名～9名」は仕様上限。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://prtimes.jp/main/html/rd/p/000000001.000154491.html"}}},
-
-    "247": {"name": "SANA 伊豆大室山-Pool Villa-",
-            "reason": "capacity=9 は誤り。「定員： 10人」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://luxevillas-izu.com/stay/sana-izuomuroyama/"}}},
-
-    "250": {"name": "プライベートリゾート南風",
-            "reason": "capacity=9 は誤り。「最大11名様まで滞在可能」より 11 に訂正。登録URL https://izu-nao.com/t は誤り（要URL訂正）。同ページの「定員 1名～9名」は仕様上限。（2026-08確認）",
-            "set_villa": {"capacity": "11"},
-            "set_spec": {"capacity": {"v": 11, "src": "desk", "at": "2026-08",
-                                      "url": "https://izu-nao.com/"}}},
-
-    "270": {"name": "COCO VILLA 長瀞",
-            "reason": "capacity=9 は誤り。「最大利用人数 12名 ※ 推奨人数は8名です」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                      "url": "https://coco-villa.jp/villa/nagatoro/"}}},
-
-    "276": {"name": "COCO VILLA 大洗",
-            "reason": "capacity=9 は誤り。「最大利用人数：10名 / 推奨人数は5名です」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                      "url": "https://coco-villa.jp/villa/oarai/"}}},
+    "135": {"name": "ASNOVA RESORT FOLQ HAKONE GORA",
+            "reason": "公式URLの誤登録。登録されていた https://asnova-resort.com/noie-hakone/ は id=136「NOIE HAKONE SENGOKUHARA」（仙石原1246-275）のページで、別施設。id=135 は強羅1322-19 の FOLQ HAKONE GORA で、正しいURLは https://asnova-resort.com/folq-gora/ 。sauna_exists='yes' 自体は正しく「セルフロウリュもできる個室サウナ」を確認済みのため値は変更しない（2026-08確認）",
+            "set_villa": {"official": "https://asnova-resort.com/folq-gora/"}},
 }
 
 DRY = "--dry-run" in sys.argv
@@ -252,6 +115,7 @@ for vid, fx in FIXES.items():
 
     # VILLAS のスカラー項目。同じ値を持つ別施設を誤爆しないよう、
     # "id": N を含む施設オブジェクトの範囲内に限定して置換する。
+    old_vals = {}
     for k, val in (fx.get("set_villa") or {}).items():
         mid = re.search(r'"id":\s*%s\s*[,}]' % vid, s)
         if not mid:
@@ -267,6 +131,7 @@ for vid, fx in FIXES.items():
         if mk.group(2) == str(val):
             print("    %s は既に %s" % (k, val)); continue
         print("    %s: %s -> %s" % (k, mk.group(2), val))
+        old_vals[k] = mk.group(2)
         s = s[:st] + seg[:mk.start()] + '%s"%s"' % (mk.group(1), val) \
             + seg[mk.end():] + s[en:]
 
@@ -288,7 +153,14 @@ for vid, fx in FIXES.items():
                     s = s.replace(t + "…", fx["new_desc"][:len(t)] + "…")
                     print("    meta 短縮版を差し替え")
         for k, val in (fx.get("set_villa") or {}).items():
+            # fact 行ではないが本文中にそのまま出る項目（official など）は
+            # 旧い値を新しい値に置き換える。個別ページは1施設分なので誤爆しない。
             if k not in VILLA_FACTS:
+                old = old_vals.get(k)
+                if old and old in s:
+                    n = s.count(old)
+                    s = s.replace(old, val)
+                    print("    %s を %d 箇所差し替え -> %s" % (k, n, val))
                 continue
             label, fmt = VILLA_FACTS[k]
             new = fmt % val

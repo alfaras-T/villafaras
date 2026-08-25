@@ -375,11 +375,11 @@
   },
 
   "9": {  /* sendouQ */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=1st' }
   },
 
   "10": { /* sendouQ second／third dog */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' }
   },
 
   "15": { /* amane ─ プレミアムフラットルームのみサウナ */
@@ -4028,7 +4028,7 @@
     sauna_cap:       { v: 6, src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     rest_chair:      { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://note.com/tripx/n/n3b220a4f3630' },
-    capacity:        { v: 9, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
+    capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/79203' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051670/' }
@@ -4207,3 +4207,194 @@
             Hakuba Jolie Maison https://www.ikyu.com/vacation/00051589/
      id=249 グラン熱川 … 公式サイトは今回も特定できず。
    ========================================================================== */
+
+/* ==========================================================================
+   2026-08 sauna_exists の裏取り（未検証146件のうち60件）
+   --------------------------------------------------------------------------
+   sauna_exists は初期の一括投入で286件中273件が一律 yes だった。出典を
+   埋め戻した結果、裏取り済み89件・未検証146件と判明したので、うち60件を調べた。
+
+   結果は 60件中4件（6.7%）が誤り。既に調べてあった41件の誤り率31%より大幅に
+   低い。**41件は「怪しいと思って調べた施設」なので、その率を未調査の母集団に
+   当てはめたのが誤りだった。** 残り86件も6〜7%程度と見るのが妥当。
+
+   訂正した4件（fix_villa.py で反映済み）:
+     id=98  SILVER SPRAY 山中湖   yes -> shared   日帰りサウナコースあり
+     id=105 BLANC FUJI            yes -> room     Sauna Villa のみサウナ付き
+     id=108 THE THIRD PLACE       yes -> room     煌 Köu のみサウナ付き
+     id=125 森deワーケなすっぽ      yes -> shared   じゃらん遊び・体験枠で日帰り客と共用
+
+   ついでに見つかった誤り:
+     id=52  緑邸 sauna_type tent -> barrel（公式「離れに本格的なバレルサウナ」）
+     id=135 公式URLが id=136 のものだった -> https://asnova-resort.com/folq-gora/
+
+   以下は yes が正しいと確認できた施設。値は変えず出典のみ記録する。
+   ========================================================================== */
+
+  "0": {   /* 古民家宿るうふ 揺之家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/yuraginoie/' }
+  },
+  "1": {   /* 古民家宿るうふ 清之家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/seinoie' }
+  },
+  "3": {   /* 古民家宿るうふ 遊之家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/yunoie' }
+  },
+  "4": {   /* るうふ別邸 鴨川919 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/kamogawa919' }
+  },
+  "5": {   /* ＆SUN Hung five */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-hungfive/room/' }
+  },
+  "6": {   /* CAP MARTIN Funny house */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/funnyhouse-cap-martin/' }
+  },
+  "7": {   /* PREMIUM Funny house */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/funnyhouse-premium/' }
+  },
+  "11": {   /* Avalon Cove */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052130/' }
+  },
+  "12": {   /* Villa Torami */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051727/' }
+  },
+  "13": {   /* Ocean's Terrace TORAMII */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/oceans-terrace-toramii/' }
+  },
+  "23": {   /* The TRAVELERS Chateau Tateyama */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051783/' }
+  },
+  "38": {   /* Asile＆OLILI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://asile-villa.com/' }
+  },
+  "44": {   /* 久留里山荘（QULRI SANSO） */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051772/' }
+  },
+  "52": {   /* 緑邸～OHTAKI～ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
+  },
+  "64": {   /* VILLA Seamu */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' }
+  },
+  "66": {   /* Villa Yno */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00052212/' }
+  },
+  "84": {   /* mysa fuji */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel-mysa-fuji.com/concept/' }
+  },
+  "85": {   /* mysa yamanakako */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ampmedia.jp/2025/03/21/mysa-yamanakako-2503/' }
+  },
+  "86": {   /* hotel norm. air */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.hotel-normair.com' }
+  },
+  "87": {   /* hotel norm. ao */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.hotel-normao.com' }
+  },
+  "88": {   /* hotel norm. fuji */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.hotel-norm.com' }
+  },
+  "89": {   /* 景雅 奥河口湖 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://global-stays.jp/keiga/' }
+  },
+  "90": {   /* totonoco 湖畔の隠れ家 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://global-stays.jp/totonoco/' }
+  },
+  "91": {   /* ビジョングランピングリゾート山中湖 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vision-glamping.com/yamanakako' }
+  },
+  "92": {   /* VILLA SAISON FUJI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
+  },
+  "93": {   /* ヴィラグリファーム七里岩 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://greefarm.jp/' }
+  },
+  "94": {   /* abrAsus hotel Fuji */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' }
+  },
+  "95": {   /* 天空の温泉ヴィラ紬 河口湖 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://global-stays.jp/tsumugi/' }
+  },
+  "96": {   /* yl&Co.Hotel in Mt.Fuji */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/faq' }
+  },
+  "97": {   /* VILLA　SUOMI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-suomi.jp/room/kumpula/' }
+  },
+  "100": {   /* MT.FUJI SKY CABIN */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mtfuji-camp-resort.jp/mtfujiskycabin/' }
+  },
+  "101": {   /* KURA YARD */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kurayard.com/sauna' }
+  },
+  "102": {   /* SAUNEA白州 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakushu.saunea.jp' }
+  },
+  "103": {   /* Private villa FujiNagi */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.fujinagi.com/overview-facility.html' }
+  },
+  "106": {   /* 郷音 -G.O.A.T.- The Summit Club */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://goat-glamping.com/rooms' }
+  },
+  "109": {   /* Kakoi 雪嶺 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052459/' }
+  },
+  "111": {   /* HOTEL SEION FUJI */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://fuji.hotel-seion.com' }
+  },
+  "112": {   /* private villa ietona */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ietona.com' }
+  },
+  "113": {   /* ASH Villa 富士河口湖 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' }
+  },
+  "121": {   /* COCO VILLA 那須高原 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' }
+  },
+  "122": {   /* Earthboat Nasu */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/nasu' }
+  },
+  "123": {   /* RIVER VIEW HOUSE */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052428/' }
+  },
+  "127": {   /* VillaEL5 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/yad355155/' }
+  },
+  "135": {   /* ASNOVA RESORT FOLQ HAKONE GORA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://asnova-resort.com/folq-gora/' }
+  },
+  "136": {   /* ASNOVA RESORT NOIE HAKONE SENGOKUHARA */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://asnova-resort.com/noie-hakone/' }
+  },
+  "137": {   /* P's Wood 箱根仙石原 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ps-wood.jp/' }
+  },
+  "138": {   /* Casablanca Villa Hakone */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://casablancaworld.jp/villa-hakone/' }
+  },
+  "140": {   /* ルクス箱根湯本 LUX HAKONE YUMOTO */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://lux-hakone.com' }
+  },
+  "141": {   /* koti hakone */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://vacation-koti.jp' }
+  },
+  "142": {   /* プライベートリゾート仙居 */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beds24.com/booking.php?propid=283750' }
+  },
+
+/* 次の4件は公式サイトが JavaScript 描画等で本文を取得できず、OTA・報道・
+   プレスリリースなどの二次情報で yes と判断した。出典としては弱いので、
+   将来もっと確度の高い情報が得られたら差し替えること。 */
+
+  "104": {   /* 憩~ikoi_Fuji ─ 二次情報のみ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com' }
+  },
+  "107": {   /* ReTune | SPA & SAUNA / VILLA ─ 二次情報のみ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://retune.jp' }
+  },
+  "110": {   /* THE BLISS FUJI ─ 二次情報のみ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel.alterna3.jp/bliss-fuji' }
+  },
+  "139": {   /* moon hakone ─ 二次情報のみ */
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moon-hakone.com' }
+  },
