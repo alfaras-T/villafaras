@@ -3747,7 +3747,9 @@ window.VILLAFARAS_SPEC = {
     sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
     sauna_cap: { v: 2, src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
     sauna_temp: { v: 95, src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
-    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' }
+    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9/room/198f05d15012dc' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9/room/198f05d15012dc' }
   },
 
   "231": {  /* Hiire IZU FUTO */
@@ -3804,7 +3806,14 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '河津七滝IC 46分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆高原 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    sauna_cap: { v: 4, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    chiller: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' }
   },
 
   "235": {  /* COCO VILLA 大室山 */
@@ -3813,13 +3822,19 @@ window.VILLAFARAS_SPEC = {
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
     elevation:    { v: 423, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 7, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 38分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    sauna_cap: { v: 6, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    chiller: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' }
   },
 
   "236": {  /* Tiny Base The MOUNTAiN */
@@ -3832,7 +3847,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 14分', src: 'auto', at: '2026-07' },
     station:      { v: '河津 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' }
   },
 
   "237": {  /* Tiny Base The Irita-hama */
@@ -3844,7 +3862,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 13分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆急下田 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338.html' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338.html' }
   },
 
   "238": {  /* 月と太陽 */
@@ -3868,7 +3888,13 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 42分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    sauna_temp: { v: 95, src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
+    sauna_cap: { v: 8, src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' }
   },
 
   "240": {  /* Wellリゾート富士 */
@@ -3879,7 +3905,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 6, src: 'auto', at: '2026-07' },
     ic:           { v: '足柄SA/スマートIC(上り) 8分', src: 'auto', at: '2026-07' },
     station:      { v: '御殿場 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'none', src: 'desk', at: '2026-08', url: 'https://wellresort.jp/faq/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://wellresort.jp/faq/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://wellresort.jp/faq/' }
   },
 
   "241": {  /* Poolen ITO */
@@ -3890,7 +3919,12 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 48分', src: 'auto', at: '2026-07' },
     station:      { v: '城ヶ崎海岸 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' }
   },
 
   "242": {  /* the villa Oka 伊豆高原温泉 */
@@ -3901,7 +3935,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 46分', src: 'auto', at: '2026-07' },
     station:      { v: '城ヶ崎海岸 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://note.com/the_villa_oka/n/n1ff90d61d2c3' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://note.com/the_villa_oka/n/n1ff90d61d2c3' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://note.com/the_villa_oka/n/n1ff90d61d2c3' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://note.com/the_villa_oka/n/n1ff90d61d2c3' }
   },
 
   "243": {  /* Azure Palace 伊豆高原 */
@@ -3912,7 +3950,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    onsen:        { v: 6, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'tent', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' }
   },
 
   "244": {  /* HAKU-AKAZAWA- 【波空】 */
@@ -3924,7 +3964,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 41分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆大川 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    water_temp: { v: 't1015', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
+    rest_chair: { v: 'chair', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' }
   },
 
   "245": {  /* villa 緑と物語 */
@@ -3935,7 +3978,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 44分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆高原 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://prtimes.jp/main/html/rd/p/000000001.000154491.html' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://prtimes.jp/main/html/rd/p/000000001.000154491.html' }
   },
 
   "246": {  /* SANU 2nd Home 伊豆1st */
@@ -3965,7 +4010,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' }
   },
 
   "248": {  /* エンゼルフォレスト中伊豆 */
