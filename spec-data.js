@@ -3006,7 +3006,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '更埴IC 48分', src: 'auto', at: '2026-07' },
     station:      { v: '白馬 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051589/' }
   },
 
   "185": {  /* SAUNA VILLA 然 */
@@ -3230,7 +3231,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '佐久小諸JCT 16分', src: 'auto', at: '2026-07' },
     station:      { v: '信濃追分 6分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    onsen:        { v: 6, src: 'auto', at: '2026-07' },
+    sauna_hours: { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/en-us/00052381/' }
   },
 
   "197": {  /* トライハク軽井沢 神楽-かぐら- */
@@ -3312,16 +3314,16 @@ window.VILLAFARAS_SPEC = {
   },
 
   "201": {  /* キュレーション熱海桃乃八庵 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
+    capacity:     { v: 6, src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 83, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/tounoyaan/' }
   },
 
   "202": {  /* キュレーション熱海須藤水園 */
@@ -3412,11 +3414,13 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
     station:      { v: '来宮 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    onsen:        { v: 6, src: 'auto', at: '2026-07' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' }
   },
 
   "209": {  /* 伊豆高原プライム */
-    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/v_izukougen/' },
     kitchen_type:    { v: 'gas', src: 'desk', at: '2026-07' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-07' },
     capacity:        { v: 8, src: 'desk', at: '2026-07' },
@@ -3426,7 +3430,8 @@ window.VILLAFARAS_SPEC = {
     conveni:         { v: 1, src: 'auto', at: '2026-07' },
     ic:              { v: '大平IC 43分', src: 'auto', at: '2026-07' },
     station:         { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
-    onsen:           { v: 4, src: 'auto', at: '2026-07' }
+    onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/v_izukougen/' }
   },
 
   "210": {  /* 熱海オーシャンハウス */
@@ -3501,7 +3506,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ice' }
   },
 
   "215": {  /* マイグレテラス */
@@ -3518,7 +3524,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/terrace' }
   },
 
   "216": {  /* マイグレ天 */
@@ -3533,7 +3540,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 42分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/tensyukau' }
   },
 
   "217": {  /* マイグレフラット */
@@ -3579,7 +3587,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' }
   },
 
   "220": {  /* マイグレKENKEN */
@@ -3595,7 +3605,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' }
   },
 
   "221": {  /* マイグレYEBISU */
@@ -3660,7 +3673,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 6, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 44分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆大川 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    onsen:        { v: 7, src: 'auto', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' },
+    rest_chair: { v: 'chair', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' }
   },
 
   "225": {  /* マイグレHOODSTAR */
@@ -3690,7 +3705,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/atelier' }
   },
 
   "227": {  /* マイグレA5 */
@@ -3705,7 +3721,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' }
   },
 
   "228": {  /* マイグレパノラマ */
@@ -3720,7 +3738,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/panorama' }
   },
 
   "229": {  /* WEAZER西伊豆 */
