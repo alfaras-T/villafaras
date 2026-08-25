@@ -8,7 +8,7 @@
 
 選択肢マスタと項目定義は spec.js から読む。エラーがあれば終了コード 1。
 """
-import io, json, os, re, subprocess, sys
+import collections, io, json, os, re, subprocess, sys
 
 SPEC = "spec.js"
 INDEX = "index.html"
@@ -30,6 +30,11 @@ VALID_SRC = ("owner", "desk", "auto", "review")
 
 # --allow-remove: 訂正で項目を消したときに、削除をエラー扱いしない
 ALLOW_REMOVE = False
+
+# 偏り検査の閾値。最頻値がこの割合を超え、かつ出典URL無しがこの割合を超えたら警告する
+MIN_BIAS_N = 20      # これ未満の件数では偏りを判定しない
+BIAS_SHARE = 0.80
+BIAS_NOURL = 0.50
 
 
 # --------------------------------------------------------------------------
@@ -567,6 +572,70 @@ def check_conflicts(path, villas, rows, names, rep):
             "候補側が正しいなら fix_villa.py で訂正する" % len(hits))
 
 
+def check_bias(villas, rows, rep, path):
+    """一つの値に偏っていて、しかも出典が無い項目を挙げる。
+
+    初期の一括投入で既定値が入ったまま残っている項目を見つけるための検査。
+    実例:
+      capacity=9      64件（一休の「定員」欄は9名が仕様上限。実定員ではない）
+      sauna_exists=yes 273件（着手時。裏を取ると3割が room/shared だった）
+    どちらも投入時点でこの検査があれば気づけた。
+    """
+    label = dict((k, r["l"]) for k, r in rows.items())
+    print("\n=== 偏り検査（既定値が残っていないか）===")
+    hits = []
+    for key in sorted(rows):
+        row = rows[key]
+        if row.get("ch") == "auto":
+            continue          # 座標からの算出値は偏って当然なので見ない
+        cnt = collections.Counter()
+        withurl = collections.Counter()
+        for _v, f, _o in villas:
+            c = f.get(key)
+            if not c:
+                continue
+            v = str(c["v"])
+            cnt[v] += 1
+            if c.get("url"):
+                withurl[v] += 1
+        tot = sum(cnt.values())
+        if tot < MIN_BIAS_N:
+            continue
+        verified = sum(withurl.values())
+
+        # 規則1: その項目では裏取りが進んでいるのに、この値だけ一件も裏が
+        #        取れていない。capacity=9（64件すべて出典なし）がこれ。
+        #        割合では引っかからない（64/284=22%）ので件数と均質性で見る。
+        #        裏取り前は候補が複数並んで読めなくなるため、最多の1件だけ出し
+        #        残りは件数で添える。
+        cand = [(n, v) for v, n in cnt.items()
+                if n >= MIN_BIAS_N and withurl[v] == 0 and verified > 0]
+        if cand:
+            cand.sort(reverse=True)
+            n, v = cand[0]
+            why = "裏取りが一件もない"
+            if len(cand) > 1:
+                why += "（他に裏取りのない値 %d 種）" % (len(cand) - 1)
+            hits.append((n, key, v, n, tot, why))
+
+        # 規則2: 一つの値に極端に偏っていて、大半に出典がない。
+        top, n = cnt.most_common(1)[0]
+        if (n / float(tot) >= BIAS_SHARE
+                and (tot - verified) / float(tot) >= BIAS_NOURL
+                and not any(h[1] == key and h[2] == top for h in hits)):
+            hits.append((n, key, top, n, tot, "%.0f%% がこの値" % (n / float(tot) * 100)))
+
+    if not hits:
+        print("  問題なし")
+        return
+    for _s, key, v, n, tot, why in sorted(hits, reverse=True):
+        print("  [△] %-14s %-8s %3d/%-3d 件 — %s" % (key, v, n, tot, why))
+        print("       %s — 既定値のまま残っていないか裏を取ること"
+              % label.get(key, key))
+        rep.add("WARN", "偏り", path, None, key, None,
+                "%s の値 %s に偏り（%d/%d 件、%s）" % (key, v, n, tot, why))
+
+
 def units_table(villas, rows):
     print("\n=== 単位確認（数値項目の分布）===")
     print("  %-16s %-6s %6s %6s %6s %6s" % ("項目", "単位", "件数", "最小", "中央", "最大"))
@@ -623,6 +692,7 @@ def main():
             check_merged(p, text, villas, villa_list, rep)
         else:
             check_conflicts(p, villas, rows, names, rep)
+        check_bias(villas, rows, rep, p)
         units_table(villas, rows)
 
     print("\n=== その他の整合性 ===")
