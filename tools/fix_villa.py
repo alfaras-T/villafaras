@@ -32,240 +32,173 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "14": {"name": "Sea by TORAMII",
-            "reason": "capacity=9 は誤り。公式「お1人様から最大10名様までご利用いただけます。」より 10 に訂正。（2026-08確認）",
+    "1": {"name": "古民家宿るうふ 清之家",
+            "reason": "capacity=9 は誤り。「2名〜10名様までご利用いただけます」より 10 に訂正。寝具（シングル4・ダブル2・布団2＝10）と整合。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://toramii.jp/sea-by-toramii/"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://loof-inn.com/hotels/seinoie"}}},
 
-    "17": {"name": "the MELLOW HOUSE 館山",
-            "reason": "capacity=9 は誤り。公式「最大20名様まで宿泊可能。（大人12名、子供8名）」より 20 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "20"},
-            "set_spec": {
-                         "capacity": {"v": 20, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.mellowhouse.jp/question/"}}},
-
-    "18": {"name": "On the wave 館山",
-            "reason": "capacity=6 は誤り。公式「最大10名（大人6名、子供4名）まで可能です。※子供は未就学児まで。小学生以上は大人カウントとなります。」より 10 に訂正。トップページでも同内容を確認。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://otw-tateyama.com/qa/"}}},
-
-    "19": {"name": "GIFTHOUSE 館山 那古海岸",
-            "reason": "capacity=6 は誤り。公式「定員：1〜10名」より 10 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://nagokaigan.gifthouse.jp/nagokaigan/room.php"}}},
-
-    "21": {"name": "UMInoTERRACE",
-            "reason": "capacity=9 は誤り。公式「2名〜最大12名までご利用いただけます。」より 12 に訂正。推奨6名は comfort_cap。隣接別棟と合わせた24名は除外。（2026-08確認）",
+    "13": {"name": "Ocean's Terrace TORAMII",
+            "reason": "capacity=9 は誤り。「お1人様から最大12名様までご自由にご利用いただけます。」より 12 に訂正。料金表も「1～4名様」「5～12名様」の2区分。DB紹介文の「最大14名」は誤り。（2026-08確認）",
             "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://piyo-terrace.com/vacationrentals/uminoterrace-villa/"}}},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://toramii.jp/oceans-terrace-toramii/"}}},
 
-    "25": {"name": "THE POOL HOUSE TOKYO BAY",
-            "reason": "capacity=8 は誤り。公式「最大12名（シングルベッド×４、セミダブルベッド×４）までの宿泊」より 12 に訂正。姉妹施設KISARAZU(最大8名)と同ページ内で区別を確認。（2026-08確認）",
+    "22": {"name": "海都-kaito- TOKYOBAY",
+            "reason": "capacity=9 は誤り。「客室定員 12名 推奨人数7名」より 12 に訂正。（2026-08確認）",
             "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://thepoolhouse.jp/"}}},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://piyoresort.com/kaito/room/"}}},
 
-    "27": {"name": "Sumera Resort Minato",
-            "reason": "capacity=3 は誤り。公式「大人3名～5名様まで（本館+別館プラン）」より 5 に訂正。本館のみは3名。villa_type=multi と整合。（2026-08確認）",
-            "set_villa": {"capacity": "5"},
-            "set_spec": {
-                         "capacity": {"v": 5, "src": "desk", "at": "2026-08",
-                                        "url": "https://sumera.co.jp/minato/"}}},
-
-    "34": {"name": "Retreat Villa Aym",
-            "reason": "capacity=9 は誤り。公式「全3棟利用時 最大30名」より 30 に訂正。feature「1日3組限定」desc「最大30名まで対応可能」と一致。1エントリ＝施設全体。（2026-08確認）",
-            "set_villa": {"capacity": "30"},
-            "set_spec": {
-                         "capacity": {"v": 30, "src": "desk", "at": "2026-08",
-                                        "url": "https://aym.wyes-resort.com/"}}},
-
-    "36": {"name": "STAR VILLAGE TATEYAMA",
-            "reason": "capacity=9 は誤り。公式「最大利用人数は15名です。それ以上の人数での利用を希望する場合は、必ず事前にご相談ください。」より 15 に訂正。spec=9/desk=10 とも誤り。OTA2件も「基本9名（最大15名様まで）」。（2026-08確認）",
-            "set_villa": {"capacity": "15"},
-            "set_spec": {
-                         "capacity": {"v": 15, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.star-village.net/plan"}}},
-
-    "37": {"name": "VILLA SENSE kujukuri",
-            "reason": "capacity=9 は誤り。公式「4ベッドルーム、最大定員16名」より 16 に訂正。公式サイトに定員の記載がなくOTA複数一致で採用。stove=wood は誤り。「電気ストーブ（HARVIA） 6人用＋前室あり」より electric に訂正。公式はJS描画で取得不可。運営会社WILL合同会社のプレスリリースで確認。（2026-08確認）",
-            "set_villa": {"capacity": "16"},
-            "set_spec": {
-                         "capacity": {"v": 16, "src": "desk", "at": "2026-08",
-                                        "url": "https://travel.yahoo.co.jp/00052168/room/"},
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                     "url": "https://prtimes.jp/main/html/rd/p/000000001.000159602.html"}}},
-
-    "40": {"name": "THE BLUE POINT seaside villa",
-            "reason": "capacity=9 は誤り。公式「定員12名様まで」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://aonoie.jp/bluepoint/facilities.html"}}},
-
-    "43": {"name": "Montevan RESORT VILLA",
-            "reason": "capacity=9 は誤り。公式「【敷地面積270㎡】リビング＋2ベッドルーム（定員 10名様）」より 10 に訂正。（2026-08確認）",
+    "23": {"name": "The TRAVELERS Chateau Tateyama",
+            "reason": "capacity=9 は誤り。「一棟貸し（3LDK）最大10名様 禁煙」より 10 に訂正。公式URLがInstagramだったため実サイトを特定。要URL訂正。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.montevan.com/"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://yamato-stay.com/the-travelers-chateau-tateyama"}}},
 
-    "51": {"name": "九十九里 point59",
-            "reason": "capacity=9 は誤り。公式「一棟貸切 [定員6名] ※追加人数の場合(最大4名様まで)定員10名」より 10 に訂正。（2026-08確認）",
+    "44": {"name": "久留里山荘（QULRI SANSO）",
+            "reason": "capacity=9 は誤り。「最大10名様までの宿泊が可能」より 10 に訂正。公式サイトが存在せずOTAのみ。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://bai-bain.com/property/017_Point59.html"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://travel.yahoo.co.jp/00051772/"}}},
 
-    "53": {"name": "tokoro hotel Isumi",
-            "reason": "capacity=7 は誤り。公式「Capacity／定員 2~7名（お子様を含め8名）」より 8 に訂正。spec=7は基本人数。規約どおり最大宿泊人数の8を採用。（2026-08確認）",
-            "set_villa": {"capacity": "8"},
-            "set_spec": {
-                         "capacity": {"v": 8, "src": "desk", "at": "2026-08",
-                                        "url": "https://tokoro-hotel.com/isumi/overview"}}},
-
-    "55": {"name": "SEA-LIFE TSURIGASAKI",
-            "reason": "capacity=9 は誤り。公式「大人10名＋子供9名の最大19名様までとなっております」より 19 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "19"},
-            "set_spec": {
-                         "capacity": {"v": 19, "src": "desk", "at": "2026-08",
-                                        "url": "https://sea-life.ne.jp/faq/"}}},
-
-    "58": {"name": "UMIYAMA CHIKURA",
-            "reason": "capacity=6 は誤り。公式「宿泊人数 大人6名・子供3名 (12歳以下) ＊お子様含め最大9名様がご宿泊いただけます。」より 9 に訂正。spec=6 は大人のみの数だった。（2026-08確認）",
-            "set_villa": {"capacity": "9"},
-            "set_spec": {
-                         "capacity": {"v": 9, "src": "desk", "at": "2026-08",
-                                        "url": "https://umiyama-chikura.com/"}}},
-
-    "62": {"name": "RICKA KATSUURA",
-            "reason": "capacity=9 は誤り。公式「定員人数：12名」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://ricka-resort.com/katsuura/"}}},
-
-    "65": {"name": "THE NALU",
-            "reason": "capacity=4 は誤り。公式「ご宿泊人数の上限は、大人4名様および添い寝可能な子ども2名様（合計6名様まで）とします。」より 6 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "6"},
-            "set_spec": {
-                         "capacity": {"v": 6, "src": "desk", "at": "2026-08",
-                                        "url": "https://the-nalu.com/information/"}}},
-
-    "67": {"name": "EKVOLI MARINA VILLA, Isumi Garden",
-            "reason": "capacity=9 は誤り。公式「1日一組限定10名まで大人数で宿泊できる一棟貸タイプ」より 10 に訂正。（2026-08確認）",
+    "52": {"name": "緑邸～OHTAKI～",
+            "reason": "capacity=9 は誤り。「最大で10名様が宿泊可能」より 10 に訂正。料金ページも4名〜10名の段階料金。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ekvoli.com/ekvoli-marina-villa"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://www.ryokutei.jp/facility"}}},
 
-    "68": {"name": "SURF UP",
-            "reason": "capacity=9 は誤り。公式「宿泊人数 最大14名」より 14 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "14"},
-            "set_spec": {
-                         "capacity": {"v": 14, "src": "desk", "at": "2026-08",
-                                        "url": "https://surf-up.co.jp/"}}},
-
-    "72": {"name": "VILLA LAGI",
-            "reason": "capacity=6 は誤り。公式「定員2～14名」より 14 に訂正。トップではなくROOMページに記載。Q&Aの「6名まで同料金」は料金区分で上限ではない。（2026-08確認）",
-            "set_villa": {"capacity": "14"},
-            "set_spec": {
-                         "capacity": {"v": 14, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.chiba-isumi-privatevilla.com/room/"}}},
-
-    "77": {"name": "enico.Mt.Fuji smile",
-            "reason": "capacity=9 は誤り。公式「Entire home 3 bedrooms 1 bathroom Sleeps 10」より 10 に訂正。公式・公式予約とも定員記載なし。OTA2件一致。旧名 Tocoro. Mt.Fuji Kisaragi で住所一致を確認。（2026-08確認）",
+    "66": {"name": "Villa Yno",
+            "reason": "capacity=9 は誤り。「定員：最大10名（セミダブルベッド×4台、敷布団×2組）」より 10 に訂正。公式サイト未発見。同ページの「定員：1名～9名」は一休系の仕様上限。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://travel.yahoo.co.jp/00052212/room/"}}},
 
     "83": {"name": "THE TIME FUJI",
-            "reason": "sauna_cap=2 は水風呂の収容人数の取り違え。出典note.comの原文は「屋外にはサウナ利用者専用の水風呂タブ（2名用）」で、2名は水風呂の数字。サウナ定員と取り違えていた。「サウナ室 温度 110 度 収容人数： 6 人」より 6 に訂正。（2026-08確認）",
-            "set_spec": {
-                         "sauna_cap": {"v": 6, "src": "desk", "at": "2026-08",
-                                         "url": "https://sauna-ikitai.com/saunas/79203"}}},
+            "reason": "capacity=9 は誤り。「宿泊人数は7名様までとなっております。」より 7 に訂正。前回 一休「定員 1名～9名」を根拠に9としたのは誤り。一休の定員欄は9名が仕様上限で実定員ではない。施設自身の予約サイトで7名を確認。（2026-08確認）",
+            "set_villa": {"capacity": "7"},
+            "set_spec": {"capacity": {"v": 7, "src": "desk", "at": "2026-08",
+                                      "url": "https://thetime.snack.chillnn.com/ja/snack/6c870504-3e7c-49b8-b172-6efd732e4704"}}},
+
+    "84": {"name": "mysa fuji",
+            "reason": "capacity=9 は誤り。「最大宿泊可能人数：10人」より 10 に訂正。「9名以上でご宿泊の場合は折り畳みマットレス2台をご利用ください」と整合。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://hotel-mysa-fuji.com/concept/"}}},
+
+    "85": {"name": "mysa yamanakako",
+            "reason": "capacity=9 は誤り。「折りたたみマットレスをご用意しておりますので、5名以上でご宿泊の場合はそちらをご利用ください。（最大10名）」より 10 に訂正。公式サイト未発見。姉妹施設 mysa fuji（公式で10確認済み）と同型。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://travel.yahoo.co.jp/00052086/room/"}}},
+
+    "98": {"name": "SILVER SPRAY 山中湖",
+            "reason": "capacity=9 は誤り。「最大10名まで宿泊可能です」より 10 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://silver-spray.jp/cottage.php"}}},
+
+    "101": {"name": "KURA YARD",
+            "reason": "capacity=9 は誤り。「最大15名まで泊まれる大きな家」より 15 に訂正。DB紹介文の「最大13名」とも食い違う。公式が15。（2026-08確認）",
+            "set_villa": {"capacity": "15"},
+            "set_spec": {"capacity": {"v": 15, "src": "desk", "at": "2026-08",
+                                      "url": "https://kurayard.com"}}},
+
+    "103": {"name": "Private villa FujiNagi",
+            "reason": "capacity=9 は誤り。「定員 10名（子供料金のかかるお子様も含む）」より 10 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://www.fujinagi.com/overview-facility.html"}}},
+
+    "107": {"name": "ReTune | SPA & SAUNA / VILLA",
+            "reason": "capacity=9 は誤り。「宿泊 10名迄」より 10 に訂正。公式はJS描画で取得不可。紹介文の「8人まで」はテントサウナの定員で別項目。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://kawaguchiko.e-villa.jp/capacity/10.html"}}},
 
     "121": {"name": "COCO VILLA 那須高原",
-            "reason": "stove=wood は誤り。「方式：電気式サウナ / サウナストーブ：HARVIA（ハルビア）」より electric に訂正。（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                     "url": "https://coco-villa.jp/villa/nasu-kogen/"}}},
+            "reason": "capacity=9 は誤り。「最大利用人数 12名 ※ 推奨人数は6名です」より 12 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "12"},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://coco-villa.jp/villa/nasu-kogen/"}}},
 
-    "126": {"name": "御宿 憩（OYADO IKOI）",
-            "reason": "capacity=12 は誤り。公式「4LDK約130平米 最大10名様」より 10 に訂正。日本語公式は一貫して10。英語版は冒頭10・設備欄15で自己矛盾。じゃらんの12は登録定員の可能性。（2026-08確認）",
+    "140": {"name": "ルクス箱根湯本 LUX HAKONE YUMOTO",
+            "reason": "capacity=9 は誤り。「最大定員11名です。ベッド数は、ダブルベッド2台、シングルベッド3台、ダブル布団2組（畳ロフト）となります。」より 11 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "11"},
+            "set_spec": {"capacity": {"v": 11, "src": "desk", "at": "2026-08",
+                                      "url": "https://lux-hakone.com/faq/"}}},
+
+    "142": {"name": "プライベートリゾート仙居",
+            "reason": "capacity=9 は誤り。「6LDK・最大16名対応。」より 16 に訂正。施設独自サイト https://hakone-senkyo.com/ を発見（要URL訂正）。（2026-08確認）",
+            "set_villa": {"capacity": "16"},
+            "set_spec": {"capacity": {"v": 16, "src": "desk", "at": "2026-08",
+                                      "url": "https://beds24.com/booking.php?propid=283750"}}},
+
+    "149": {"name": "MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ",
+            "reason": "capacity=9 は誤り。「4ベッドルームで最大18名まで利用可能です。」より 18 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "18"},
+            "set_spec": {"capacity": {"v": 18, "src": "desk", "at": "2026-08",
+                                      "url": "https://moroisoso.jp"}}},
+
+    "183": {"name": "Hakuba Amber Resort",
+            "reason": "capacity=9 は誤り。「最大12名 3LDKでゆったり家族風呂付きシャレー／お布団を追加購入（5,500円/式）することで最大12名まで対応可能」より 12 に訂正。公式サイトなし（Jade Group はリンク集のみ）。プラン名の数字は仕様上限とは別系統。（2026-08確認）",
+            "set_villa": {"capacity": "12"},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://www.ikyu.com/00051318/"}}},
+
+    "188": {"name": "COCO VILLA 軽井沢",
+            "reason": "capacity=9 は誤り。「最大利用人数：12名」より 12 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "12"},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://coco-villa.jp/villa/karuizawa/"}}},
+
+    "212": {"name": "熱海リゾート",
+            "reason": "capacity=9 は誤り。「定員 10名」より 10 に訂正。（2026-08確認）",
             "set_villa": {"capacity": "10"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://stay-japan.tokyo/ikoi/"}}},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://www.resolstay.jp/details/atamiresort/"}}},
 
-    "131": {"name": "LEVATA",
-            "reason": "stove=wood は誤り。「バレルサウナ（電気式サウナストーブ４人まで）」より electric に訂正。（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                     "url": "https://levata.jp/"}}},
+    "234": {"name": "COCO VILLA 伊豆赤沢",
+            "reason": "capacity=9 は誤り。「最大利用人数：10名 ※ 推奨人数は7名です」より 10 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://coco-villa.jp/villa/izuakazawa/"}}},
 
-    "173": {"name": "軽井沢365 フォレストガーデン八風台",
-            "reason": "stove=wood は誤り。「TYLO社の電気ストーブを採用した離れのサウナ小屋と、屋外に水風呂も設置。」より electric に訂正。（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                     "url": "https://karuizawa365.jp/stay/happudai"}}},
+    "243": {"name": "Azure Palace 伊豆高原",
+            "reason": "capacity=9 は誤り。「収容人数 14名まで可能／FAQ「最大収容人数何名でしょうか？14名までご宿泊可能です。」」より 14 に訂正。ページ内住所「伊東市富戸1317-4479」で近接する別施設との取り違えがないことを確認。（2026-08確認）",
+            "set_villa": {"capacity": "14"},
+            "set_spec": {"capacity": {"v": 14, "src": "desk", "at": "2026-08",
+                                      "url": "https://azurepalace.net"}}},
 
-    "192": {"name": "ポーラーハウスカナディアン南軽井沢1",
-            "reason": "capacity=9 は誤り。公式「４名様から１９名様まで宿泊できますので」より 19 に訂正。住所「長野県北佐久郡軽井沢町発地336-1」でDB一致。id=268と定員が同じだが犬同伴可否・駐車台数が異なる別施設。（2026-08確認）",
-            "set_villa": {"capacity": "19"},
-            "set_spec": {
-                         "capacity": {"v": 19, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1"}}},
+    "245": {"name": "villa 緑と物語",
+            "reason": "capacity=9 は誤り。「定員：最大10名」より 10 に訂正。公式はJS描画で取得不可。OTA部屋名も「10名様まで宿泊可」。同ページの「1名～9名」は仕様上限。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://prtimes.jp/main/html/rd/p/000000001.000154491.html"}}},
 
-    "194": {"name": "海野宿一棟貸し宿　上州屋",
-            "reason": "capacity=5 は誤り。公式「最大８名様」より 8 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "8"},
-            "set_spec": {
-                         "capacity": {"v": 8, "src": "desk", "at": "2026-08",
-                                        "url": "https://joshuya-unnojuku.jp/stay"}}},
+    "247": {"name": "SANA 伊豆大室山-Pool Villa-",
+            "reason": "capacity=9 は誤り。「定員： 10人」より 10 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://luxevillas-izu.com/stay/sana-izuomuroyama/"}}},
 
-    "200": {"name": "enukoti（エヌコティ）",
-            "reason": "stove=wood は誤り。「ドライサウナ 対流式（ストーン） 電気 TV無」より electric に訂正。公式はHARVIA表記のみで方式不明。サウナイキタイで電気式と確認。住所も一致。（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                     "url": "https://sauna-ikitai.com/saunas/79664"}}},
+    "250": {"name": "プライベートリゾート南風",
+            "reason": "capacity=9 は誤り。「最大11名様まで滞在可能」より 11 に訂正。登録URL https://izu-nao.com/t は誤り（要URL訂正）。同ページの「定員 1名～9名」は仕様上限。（2026-08確認）",
+            "set_villa": {"capacity": "11"},
+            "set_spec": {"capacity": {"v": 11, "src": "desk", "at": "2026-08",
+                                      "url": "https://izu-nao.com/"}}},
 
-    "204": {"name": "オーシャンビュー南熱海",
-            "reason": "capacity=9 は誤り。公式「定員 12名（推奨8名）」より 12 に訂正。（2026-08確認）",
+    "270": {"name": "COCO VILLA 長瀞",
+            "reason": "capacity=9 は誤り。「最大利用人数 12名 ※ 推奨人数は8名です」より 12 に訂正。（2026-08確認）",
             "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.resolstay.jp/details/minamiatami/"}}},
+            "set_spec": {"capacity": {"v": 12, "src": "desk", "at": "2026-08",
+                                      "url": "https://coco-villa.jp/villa/nagatoro/"}}},
 
-    "260": {"name": "赤城宿 珠蕾山荘 -shurai-",
-            "reason": "capacity=6 は誤り。公式「2つの間を繋げて最大12名での利用も可能です」より 12 に訂正。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://akagi-shuku.com/hotels/shurai-sanso/"}}},
-
-    "268": {"name": "ポーラーハウス南軽井沢1",
-            "reason": "capacity=15 は誤り。公式「4名様から19名様まで宿泊できます。」より 19 に訂正。詳細ページの住所「群馬県甘楽郡下仁田町西野牧12514-9」でDB一致を確認。同名別棟「南軽井沢1 with DOG」(8名)「南軽井沢3」(11名)とは別。（2026-08確認）",
-            "set_villa": {"capacity": "19"},
-            "set_spec": {
-                         "capacity": {"v": 19, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/ハウス南軽井沢_1"}}},
-
-    "279": {"name": "大谷石の蔵サウナと古民家宿 DAIGO SAUNA",
-            "reason": "capacity=14 は誤り。公式「客室は全部で３室ご用意、最大12名が宿泊できます」より 12 に訂正。サイト内に4通りの数値。断定形で2箇所（stay本文・chillnnプラン説明「最大12名で宿泊できるプラン」）に出る12を採用。プラン名「(9〜14名様はこちら)」と予約UI上限14は予約区分、FAQ「大人8名程度」は程度付き。（2026-08確認）",
-            "set_villa": {"capacity": "12"},
-            "set_spec": {
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-08",
-                                        "url": "https://daigo-sauna.jp/stay"}}},
+    "276": {"name": "COCO VILLA 大洗",
+            "reason": "capacity=9 は誤り。「最大利用人数：10名 / 推奨人数は5名です」より 10 に訂正。（2026-08確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                      "url": "https://coco-villa.jp/villa/oarai/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
