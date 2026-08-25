@@ -3078,7 +3078,14 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '佐久平スマートIC 31分', src: 'auto', at: '2026-07' },
     station:      { v: '中軽井沢 3分', src: 'auto', at: '2026-07' },
     onsen:        { v: 3, src: 'auto', at: '2026-07' },
-    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' }
+    fee_bbq:      { v: 'incl', src: 'desk', at: '2026-07' },
+    sauna_type: { v: 'hut', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    sauna_cap: { v: 4, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    chiller: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' }
   },
 
   "189": {  /* Tatehata House 北軽井沢 */
@@ -3209,7 +3216,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 9, src: 'auto', at: '2026-07' },
     ic:           { v: '信濃町IC 9分', src: 'auto', at: '2026-07' },
     station:      { v: '黒姫 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    onsen:        { v: 7, src: 'auto', at: '2026-07' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/kurohime' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/kurohime' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/kurohime' }
   },
 
   "196": {  /* Karuizawa Luxe Villa */
@@ -3435,7 +3445,7 @@ window.VILLAFARAS_SPEC = {
 
   "211": {  /* オーシャンテラスAtami */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_cap:    { v: 1, src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 1, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'no', src: 'desk', at: '2026-07' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
@@ -3450,7 +3460,7 @@ window.VILLAFARAS_SPEC = {
   "212": {  /* 熱海リゾート */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:      { v: 'indoor', src: 'desk', at: '2026-07' },
-    sauna_cap:       { v: 2, src: 'desk', at: '2026-07' },
+    sauna_cap:       { v: 2, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/atamiresort/' },
     coldbath:        { v: 'bath', src: 'desk', at: '2026-07' },
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-07' },
     kitchen_burners: { v: 2, src: 'desk', at: '2026-07' },
@@ -3461,7 +3471,9 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
     station:         { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
     onsen:           { v: 11, src: 'auto', at: '2026-07' },
-    late_arrival:    { v: 'ok', src: 'desk', at: '2026-07' }
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/atamiresort/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/atamiresort/' }
   },
 
   "213": {  /* 熱海別邸　双梅庵 */
@@ -3589,10 +3601,10 @@ window.VILLAFARAS_SPEC = {
   "221": {  /* マイグレYEBISU */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
-    sauna_cap:    { v: 9, src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 9, src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
+    water_src:    { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 234, src: 'auto', at: '2026-07' },
@@ -3712,14 +3724,15 @@ window.VILLAFARAS_SPEC = {
   },
 
   "229": {  /* WEAZER西伊豆 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     elevation:    { v: 85, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 9, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 24分', src: 'auto', at: '2026-07' },
     station:      { v: '修善寺 28分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' }
   },
 
   "230": {  /* WEAZER西伊豆 廻 */
@@ -3730,7 +3743,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 9, src: 'auto', at: '2026-07' },
     ic:           { v: '大平IC 26分', src: 'auto', at: '2026-07' },
     station:      { v: '修善寺 30分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 11, src: 'auto', at: '2026-07' }
+    onsen:        { v: 11, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    sauna_cap: { v: 2, src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    sauna_temp: { v: 95, src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' }
   },
 
   "231": {  /* Hiire IZU FUTO */
