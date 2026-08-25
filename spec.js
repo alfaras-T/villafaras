@@ -37,7 +37,10 @@
     loyly:    { yes: 'セルフロウリュ可', auto: 'オートロウリュ', no: '不可' },
     heattime: { u30: '30分未満', m30: '30〜60分', m60: '60〜90分', o90: '90分以上', always: '常時稼働' },
     hours:    { h24: '24時間', limited: '時間制限あり', reserve: '要予約制' },
-    coldbath: { bath: '水風呂', river: '川・湖', shower: 'シャワーのみ', none: 'なし' },
+    /* pool / tub は 2026-08 追加。専用の水風呂ではなく他設備を冷却に使う施設が
+       12件あり、bath とも none とも言えず未調査に落ちていたため。 */
+    coldbath: { bath: '水風呂', pool: 'プール兼用', tub: '浴槽・ジャグジー兼用',
+                river: '川・湖', shower: 'シャワーのみ', none: 'なし' },
     wtemp:    { u10: '10℃未満', t1015: '10〜15℃', t1518: '15〜18℃', t1822: '18〜22℃', o22: '22℃以上' },
     wsrc:     { tap: '水道水', well: '井戸水・地下水', spring: '湧水', river: '川・湖' },
     depth:    { knee: '膝くらい', waist: '腰くらい', chest: '胸くらい', shoulder: '肩まで' },

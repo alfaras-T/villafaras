@@ -33,35 +33,99 @@ def json_obj_end(s, i):
 
 FIXES = {
     "52": {"name": "緑邸～OHTAKI～",
-           "reason": "sauna_type='tent' は誤り。公式施設紹介ページに「バレルサウナ」「離れにあるサウナルーム」「離れに本格的なバレルサウナが楽しめる施設をご用意いたしました。」とあり barrel が正しい。サウナ有無の検証中に発見（2026-08確認）",
-           "set_spec": {"sauna_type": {"v": "barrel", "src": "desk", "at": "2026-08",
-                                       "url": "https://www.ryokutei.jp/facility"}}},
+           "reason": "sauna_type='tent' -> 'barrel' は c195be8 で訂正済み（公式「離れに本格的なバレルサウナが"
+                     "楽しめる施設をご用意いたしました。」）。同じページに未設定のまま残っていた項目を拾う。"
+                     "サウナ「サウナでじっくり汗をかいた後に、汗を流して檜の水風呂につかり、椅子に座り大多喜の"
+                     "心地よい風にあたり整いましょう。」／写真キャプション「セルフローリュも可能」「外気浴スペース」／"
+                     "【追加オプション】「バレルサウナ 檜製水風呂」→ loyly=yes, coldbath=bath, outdoor_rest=yes。"
+                     "BBQ「お好きな食材を持ち込み、ご家族とバーベキューはいかがでしょうか。離れには屋根があるので、"
+                     "多少の雨でも安心です。」→ bbq_roof=roof。"
+                     "【アメニティ】バスタオル・ハンドタオル・シャンプー・コンディショナー・ボディソープ・歯ブラシ・ひげ剃り、"
+                     "【調理器具等】「食器、調理器、調味料などはご自由にお使いください」→ bring_towel / bring_amenity / "
+                     "bring_seasoning=ready。【施設設備】「無料Wi-Fi」→ wifi=yes。"
+                     "あわせて feature の「テントサウナ」を「バレルサウナ」に直す（extract_b.py が sauna_type='tent' を"
+                     "出した元がこの誤記）。"
+                     "見送り: (1) サウナの別料金「※ご利用は別料金となります。お申し込みの際に、サウナのご利用をお伝えください」は"
+                     "受け皿の項目がない。sauna_hours は「利用可能時間」であって申込要否の欄ではないので入れない。"
+                     "(2) firewood_fee は BBQ が「食材と薪炭などをお持ちこみください」＝持参で、fee の incl/extra どちらでもない。"
+                     "(3) rest_chair は「椅子に座り」だけで infinity/bench/chair のどれか判別できない（2026-08確認）",
+           "old_desc": "人工芝の庭・BBQ・テントサウナ",
+           "new_desc": "人工芝の庭・BBQ・バレルサウナ",
+           "set_spec": {
+               "sauna_type":      {"v": "barrel", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "loyly":           {"v": "yes", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "coldbath":        {"v": "bath", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "outdoor_rest":    {"v": "yes", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "bbq_roof":        {"v": "roof", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "bring_towel":     {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "bring_amenity":   {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "bring_seasoning": {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"},
+               "wifi":            {"v": "yes", "src": "desk", "at": "2026-08",
+                                   "url": "https://www.ryokutei.jp/facility"}}},
 
-    "98": {"name": "SILVER SPRAY 山中湖",
-           "reason": "sauna_exists='yes' は誤り。公式のビジター（日帰り客向け）ページに「BBQ、アウトドアサウナ体験を気軽に楽しんでいただきたい。そんな思いから、日帰りでの利用も承っております。」「サウナコース 4名まで1組6,000円(税込) 10:30～15:30（内150分 ※入浴時間込み）」とあり、日帰り客が同じアウトドアサウナを使う。コテージの設備欄に「テントサウナ」はあるが、実利用は「アウトドアサウナ体験 5,500円（税込）～」の予約制・時間制（ワンセット2時間、利用時間 15時～21時 / 7時～9時）で、宿泊者が滞在中いつでも使える形ではない。判定基準どおり shared に訂正しサウナタグを外す（2026-08確認）",
-           "remove_tags": ["sauna"],
-           "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                         "url": "https://silver-spray.jp/visiter.php"}}},
-
-    "105": {"name": "BLANC FUJI",
-            "reason": "sauna_exists='yes' は誤り。公式に「Spa Villaには露天風呂、Sauna Villaにはプライベートサウナがそれぞれ付いており」とあり、サウナが付くのは Sauna Villa のみ。Living Villa はBBQプランの記載のみでサウナの言及がない。一部の棟のみサウナ付きなので room に訂正する。room はサウナタグを維持する（2026-08確認）",
-            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://blan-c.com/fuji/"}}},
-
-    "108": {"name": "THE THIRD PLACE Mt.Fuji",
-            "reason": "sauna_exists='yes' は誤り。公式予約サイトの棟紹介で「煌 – Köu –」だけに「サウナ→水風呂→外気浴テラスの整いコースを富士山の絶景とともに」とあり、「燈 – Töu –」「燿 – Yöu –」にはサウナの記載がない。敷地の説明も「個性ある3棟のヴィラに加え、ゲストハウス、アウトドアサウナ、焚き火スペースを配し」で、屋外サウナは棟とは別の共用設備。一部の棟のみサウナ付きなので room に訂正する（2026-08確認）",
-            "set_spec": {"sauna_exists": {"v": "room", "src": "desk", "at": "2026-08",
-                                          "url": "https://www.chillnn.com/ja/19ad918d44dad/"}}},
-
-    "125": {"name": "森deワーケなすっぽ",
-            "reason": "sauna_exists='yes' は誤り。公式サイトにはサウナの記載が一切なく、実在はじゃらんの「遊び・体験」枠で確認できる。プラン名が「じゃらん限定《BBQ+サウナ+部屋（シャワー、風呂、ベッド）or更衣室のみ（シャワー風呂）セットプラン》」で、更衣室のみの選択肢は宿泊しない日帰り客向け。中庭のバレルサウナを日帰り客と共用している。villa_type='multi'（複数棟）とも整合する。shared に訂正しサウナタグを外す（2026-08確認）",
-            "remove_tags": ["sauna"],
-            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-08",
-                                          "url": "https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/"}}},
-
-    "135": {"name": "ASNOVA RESORT FOLQ HAKONE GORA",
-            "reason": "公式URLの誤登録。登録されていた https://asnova-resort.com/noie-hakone/ は id=136「NOIE HAKONE SENGOKUHARA」（仙石原1246-275）のページで、別施設。id=135 は強羅1322-19 の FOLQ HAKONE GORA で、正しいURLは https://asnova-resort.com/folq-gora/ 。sauna_exists='yes' 自体は正しく「セルフロウリュもできる個室サウナ」を確認済みのため値は変更しない（2026-08確認）",
-            "set_villa": {"official": "https://asnova-resort.com/folq-gora/"}},
+    "92": {"name": "VILLA SAISON FUJI",
+           "reason": "capacity=9 は一休の「定員」欄（9名が仕様上限）由来の既定値で誤り。公式FAQ「最大定員は何名ですか？ "
+                     "最大定員は24名です。ヴィラには3つの寝室があり、10名様までご利用可能です。別館も3つの寝室があり、"
+                     "11名様(無料のお子様除く)以上のご予約でヴィラ＋別館をご利用頂けます。」、"
+                     "「ご宿泊者以外の方は、施設内にお入りいただけません。最大利用人数も24名様までとなっております。」。"
+                     "公式予約ページの諸元表も「定員 最大24名」、本文「追加でエクストラベッドやベビーベッドも設置可能で、"
+                     "最大24名様までご宿泊頂けます。」。検索要約に出る10名/13名は本館ヴィラのみの利用可能人数（FAQの人数表で"
+                     "1〜10名様＝ヴィラのみ、13〜14名様＝別館寝室2まで）であって施設の定員ではない。"
+                     "DB の feature「最大24名が宿泊できる」desc「最大24名まで滞在できます」とも一致する。"
+                     "「当施設は敷地内全体を一組限定で貸切りとなりますので、ヴィラ・別館すべて他のお客様とご一緒になることは"
+                     "ありません。共有施設もなく、全施設、貸切となります。」なので棟別に代表値が割れる型でもない。"
+                     "ついでに stove='wood' も誤り。FAQ「サウナで使用するストーブと燃料は何ですか？ 電気ストーブです。」で、"
+                     "薪ストーブは客室の暖房（「薪ストーブとファイアーピットで使う薪は、無料でご用意しております。」）。"
+                     "desc の「薪ストーブを備え」を extract_b.py が拾って入れた値とみられる。"
+                     "同FAQから loyly=yes（「ロウリュウは出来ますか？ 可能です。」）、"
+                     "sauna_hours=limited（「近隣にご配慮いただくため、プールやサウナのご利用は21時までとなります。」）、"
+                     "early_late=no（「アーリーチェックインもレイトチェックアウトも承っておりません。」）、"
+                     "firewood_fee=incl・firepit=stand（上記の薪無料とファイアーピット）、"
+                     "fee_bbq=incl（「簡単な操作で着火できるガスグリルを備えており、自由にご使用いただけます。炭や燃料などの"
+                     "ご持参は不要です。」）、fee_pet=0（「ペットは無料でご宿泊いただけます。」）、"
+                     "bring_towel / bring_amenity=ready（「・バスタオル／フェイスタオル ・バスローブ ・パジャマ ・シャンプー、"
+                     "コンディショナー…」）、bring_seasoning=ready（「塩、コショウ、オリーブオイル、醤油、バター。」）、"
+                     "wifi=yes（「高速無制限の光ケーブル・インターネットを無料でご利用いただけます」）。"
+                     "見送り: (1) coldbath は「秋・冬はサウナの水風呂としてご利用ください」（プール）"
+                     "「サウナの際には水風呂としてもご利用頂けます」（ジャグジー）で、CLAUDE.md に既知のプール兼用の選択肢が"
+                     "ない型（これで10件目）。(2) villa_type はヴィラ＋別館の2棟だが一組貸切なので solo とも multi とも"
+                     "決められない。チェックイン15:00〜18:00・チェックアウト11:00 は既存値と一致（2026-08確認）",
+           "set_villa": {"capacity": "24"},
+           "set_spec": {
+               "capacity":        {"v": 24, "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "stove":           {"v": "electric", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "loyly":           {"v": "yes", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "sauna_hours":     {"v": "limited", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "early_late":      {"v": "no", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "firepit":         {"v": "stand", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "firewood_fee":    {"v": "incl", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "fee_bbq":         {"v": "incl", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "fee_pet":         {"v": 0, "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "bring_towel":     {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "bring_amenity":   {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "bring_seasoning": {"v": "ready", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"},
+               "wifi":            {"v": "yes", "src": "desk", "at": "2026-08",
+                                   "url": "https://villa-saison-fuji.com/faq/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
@@ -209,6 +273,10 @@ for vid, fx in FIXES.items():
                      if "\n  }," in nb else nb
                 print("    spec: %s を追加 -> %s" % (k, body))
         nb = re.sub(r",(\s*\n  \},)", r"\1", nb)
+        # 項目を追加したとき、それまで最後だった項目にはカンマが無い。
+        # 補わないと "}" の直後に次の項目が続いて JS の構文エラーになる。
+        # 波括弧の対応は取れてしまうので validate.py の括弧検査では気づけない。
+        nb = re.sub(r"\}\n(\s+)(\w+):", r"},\n\1\2:", nb)
         if nb != blk:
             s = s.replace(blk, nb, 1)
             if fx.get("remove_spec"):

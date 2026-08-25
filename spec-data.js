@@ -230,7 +230,8 @@ window.VILLAFARAS_SPEC = {
     checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
-    kids_free:      { v: 12, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
+    kids_free:      { v: 12, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
   },
 
   "15": {  /* amane */
@@ -321,7 +322,8 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
-    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' }
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' }
   },
 
   "20": {  /* GIFTHOUSE 2nd 館山 洲宮 */
@@ -374,7 +376,8 @@ window.VILLAFARAS_SPEC = {
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
-    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' }
+    firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' }
   },
 
   "22": {  /* 海都-kaito- TOKYOBAY */
@@ -395,7 +398,8 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/faq' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://piyoresort.com/kaito/room' }
   },
 
   "23": {  /* The TRAVELERS Chateau Tateyama */
@@ -514,7 +518,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '長生IC 10分', src: 'auto', at: '2026-07' },
     station:      { v: '八積 2分', src: 'auto', at: '2026-07' },
     onsen:        { v: 9, src: 'auto', at: '2026-07' },
-    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' }
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051452/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/87598' }
   },
 
   "30": {  /* STRADDIE HOUSE */
@@ -622,7 +627,8 @@ window.VILLAFARAS_SPEC = {
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
-    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' }
+    late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' }
   },
 
   "35": {  /* by the river Isumi */
@@ -729,7 +735,8 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
     bring_towel:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
     checkin_method: { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
-    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' }
+    fee_bbq:        { v: 'extra', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://umichika.jp/villa/' }
   },
 
   "40": {  /* THE BLUE POINT seaside villa */
@@ -960,7 +967,15 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '市原鶴舞IC 14分', src: 'auto', at: '2026-07' },
     station:      { v: '上総中川 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 17, src: 'auto', at: '2026-07' }
+    onsen:        { v: 17, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bbq_roof: { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_towel: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ryokutei.jp/facility' }
   },
 
   "53": {  /* tokoro hotel Isumi */
@@ -1057,7 +1072,8 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '鋸南保田IC 2分', src: 'auto', at: '2026-07' },
     station:         { v: '保田 2分', src: 'auto', at: '2026-07' },
     onsen:           { v: 1, src: 'auto', at: '2026-07' },
-    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' }
+    bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' }
   },
 
   "58": {  /* UMIYAMA CHIKURA */
@@ -1468,7 +1484,8 @@ window.VILLAFARAS_SPEC = {
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
     bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
-    bring_wrap:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' }
+    bring_wrap:    { v: 'ready', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://est-ed.com/facility/' }
   },
 
   "80": {  /* 2gether foret */
@@ -1482,7 +1499,8 @@ window.VILLAFARAS_SPEC = {
     station:      { v: '甲斐大泉 4分', src: 'auto', at: '2026-07' },
     onsen:        { v: 4, src: 'auto', at: '2026-07' },
     fee_bbq:      { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
-    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' }
+    late_arrival: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051898/11525288/10264716/' }
   },
 
   "81": {  /* 古民家宿るうふ　織之家 */
@@ -1645,15 +1663,26 @@ window.VILLAFARAS_SPEC = {
 
   "92": {  /* VILLA SAISON FUJI */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    capacity:     { v: 24, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 854, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '富士吉田忍野スマートIC 13分', src: 'auto', at: '2026-07' },
     station:      { v: '河口湖 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    early_late: { v: 'no', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firepit: { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    firewood_fee: { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_bbq: { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    fee_pet: { v: 0, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_towel: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
   },
 
   "93": {  /* ヴィラグリファーム七里岩 */
@@ -4213,7 +4242,8 @@ window.VILLAFARAS_SPEC = {
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
     bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
-    late_arrival:  { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' }
+    late_arrival:  { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' }
   },
 
   "270": {  /* COCO VILLA 長瀞 */
@@ -4264,7 +4294,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '狭山PA(外廻り) 46分', src: 'auto', at: '2026-07' },
     station:      { v: '西吾野 18分', src: 'auto', at: '2026-07' },
     onsen:        { v: 1, src: 'auto', at: '2026-07' },
-    bring_towel:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
+    bring_towel:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
   },
 
   "273": {  /* HOLE37 */

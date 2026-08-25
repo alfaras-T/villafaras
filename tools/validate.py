@@ -231,6 +231,12 @@ def load_data(path, rep, merged):
     for ln, msg in brace_report(text):
         rep.add("ERROR", "波括弧", path, None, None, ln, msg)
 
+    # 「} 改行 識別子:」はカンマ欠落。波括弧の対応は取れてしまうので
+    # brace_report では見つからないが、JS としては構文エラーになる。
+    for m in re.finditer(r"\}\n\s+(\w+):", text):
+        rep.add("ERROR", "構文", path, None, m.group(1), lineno(text, m.start()),
+                "項目 %s の直前にカンマがありません" % m.group(1))
+
     s = blank_comments(text)
     blocks = []
     for m in re.finditer(r'"(\d+)"\s*:\s*\{', s):
