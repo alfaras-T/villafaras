@@ -4028,13 +4028,15 @@ window.VILLAFARAS_SPEC = {
 
   "249": {  /* グラン熱川 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    capacity:     { v: 16, src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
     elevation:    { v: 276, src: 'auto', at: '2026-07' },
     supermarket:  { v: 8, src: 'auto', at: '2026-07' },
     conveni:      { v: 7, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 40分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆熱川 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' }
   },
 
   "250": {  /* プライベートリゾート南風 */
@@ -4102,7 +4104,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 10分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆急下田 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 14, src: 'auto', at: '2026-07' }
+    onsen:        { v: 14, src: 'auto', at: '2026-07' },
+    sauna_cap: { v: 6, src: 'desk', at: '2026-08', url: 'https://www.ai-inc.net/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ai-inc.net/' }
   },
 
   "256": {  /* パーパスリゾート EG Sky Terrace 熱川 */
@@ -4115,7 +4119,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '河津逆川IC 33分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆熱川 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
+    water_temp: { v: 't1015', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
+    sauna_temp: { v: 80, src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' }
   },
 
   "257": {  /* THE GLAMPING 箱根十国峠 */
@@ -4138,7 +4146,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '山伏峠IC 36分', src: 'auto', at: '2026-07' },
     station:      { v: '川奈 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    onsen:        { v: 9, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://alivio-stay.jp/luxe-ogi/' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://alivio-stay.jp/luxe-ogi/' }
   },
 
   "259": {  /* 赤城宿 清芳山荘 -seiho- */
@@ -4183,7 +4193,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 20, src: 'auto', at: '2026-07' },
     ic:           { v: '谷川岳PA(下り) 27分', src: 'auto', at: '2026-07' },
     station:      { v: '湯檜曽 17分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    onsen:        { v: 6, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_fujiwara' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_fujiwara' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_fujiwara' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_fujiwara' }
   },
 
   "262": {  /* Earthboat Minakami Hodaigi */
@@ -4198,7 +4212,12 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 20, src: 'auto', at: '2026-07' },
     ic:           { v: '谷川岳PA(下り) 27分', src: 'auto', at: '2026-07' },
     station:      { v: '湯檜曽 17分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
+    sauna_temp: { v: 90, src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
+    water_temp: { v: 't1015', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' }
   },
 
   "263": {  /* アウトドア貸切別荘北軽井沢1 */
@@ -4309,7 +4328,7 @@ window.VILLAFARAS_SPEC = {
     sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
     stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
     sauna_temp:    { v: 70, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
-    sauna_cap:     { v: 1, src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    sauna_cap:     { v: 1, src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00921891/' },
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
     bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
@@ -4338,7 +4357,14 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '寄居折原 8分', src: 'auto', at: '2026-07' },
     station:      { v: '樋口 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    onsen:        { v: 10, src: 'auto', at: '2026-07' },
+    sauna_cap: { v: 4, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    chiller: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' }
   },
 
   "271": {  /* Earthboat Saitama Kawajima */
@@ -4348,14 +4374,17 @@ window.VILLAFARAS_SPEC = {
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     firepit:      { v: 'stand', src: 'desk', at: '2026-07' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 4, src: 'desk', at: '2026-08', url: 'https://earthboat.jp/saitama_kawajima' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/saitama_kawajima' },
     elevation:    { v: 12, src: 'auto', at: '2026-07' },
     supermarket:  { v: 9, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '桶川北本IC 11分', src: 'auto', at: '2026-07' },
     station:      { v: '鴻巣 13分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 12, src: 'auto', at: '2026-07' }
+    onsen:        { v: 12, src: 'auto', at: '2026-07' },
+    rest_chair: { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/saitama_kawajima' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/saitama_kawajima' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/saitama_kawajima' }
   },
 
   "272": {  /* ノーラ名栗 */
@@ -4388,7 +4417,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 6, src: 'auto', at: '2026-07' },
     ic:           { v: '千代田PA(下り) 23分', src: 'auto', at: '2026-07' },
     station:      { v: '宮脇 16分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 13, src: 'auto', at: '2026-07' }
+    onsen:        { v: 13, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051662/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051662/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051662/' }
   },
 
   "274": {  /* サンライズヴィラ大洗 */
@@ -4425,15 +4457,22 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-07' },
+    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
     capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
     elevation:    { v: 19, src: 'auto', at: '2026-07' },
     supermarket:  { v: 10, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '夏海IC 6分', src: 'auto', at: '2026-07' },
     station:      { v: '涸沼 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    chiller: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    coldbath: { v: 'tub', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    sauna_cap: { v: 8, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
+    firepit: { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' }
   },
 
   "277": {  /* No.12 Kashima Fan Zone */

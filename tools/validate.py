@@ -453,6 +453,26 @@ def check_merged(path, text, villas, villa_list, rep):
              dist.get("yes", 0) + dist.get("room", 0)))
     print("  %s" % ("○ 一致" if not bad else "× %d 件ずれています" % bad))
 
+    # pet_ok も同じ構造。サウナタグしか見ていなかったため
+    # 「pet_ok=no なのにペットタグあり」を1件見逃していた（COCO VILLA 大洗）。
+    print("\n=== タグと pet_ok の整合 ===")
+    pbad = 0
+    for vid, fields, _o in villas:
+        cell = fields.get("pet_ok")
+        if not cell:
+            continue          # 未調査はタグの有無を問わない
+        has = "pet" in tags.get(vid, set())
+        want = cell["v"] == "yes"
+        if has != want:
+            pbad += 1
+            rep.add("ERROR", "整合性", path, vid, "pet_ok", cell["line"],
+                    "pet_ok=%s なのにタグは%s" % (cell["v"], "あり" if has else "なし"))
+    print("  petタグ %d 件 ／ pet_ok=yes %d 件"
+          % (sum(1 for t in tags.values() if "pet" in t),
+             sum(1 for _v, f, _o in villas
+                 if f.get("pet_ok") and f["pet_ok"]["v"] == "yes")))
+    print("  %s" % ("○ 一致" if not pbad else "× %d 件ずれています" % pbad))
+
     print("\n=== 総フィールド数 ===")
     total = sum(len(f) for _v, f, _o in villas)
     head = git_show(path)
