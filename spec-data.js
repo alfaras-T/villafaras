@@ -949,7 +949,8 @@ window.VILLAFARAS_SPEC = {
     stove: { v: 'wood', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' },
     sauna_temp: { v: 90, src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' },
     coldbath: { v: 'pool', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' },
-    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' }
+    water_src: { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' },
+    water_temp: { v: 't1518', src: 'desk', at: '2026-08', url: 'https://www.okamura-is.co.jp/kaguyanomori/index.html' }
   },
 
   "50": {  /* THE CLUB 919 DOG FRIENDLY */
@@ -4249,7 +4250,8 @@ window.VILLAFARAS_SPEC = {
     sauna_type: { v: 'hut', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
     loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
     sauna_hours: { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' }
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    water_temp: { v: 't1822', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' }
   },
 
   "255": {  /* 貸別荘「碧 ai」 */
@@ -4374,7 +4376,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
     sauna_temp: { v: 90, src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' },
-    water_temp: { v: 't1015', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/minakami_hodaigi' }
+    water_temp: { v: 't1518', src: 'desk', at: '2026-08', url: 'https://sauna-ikitai.com/saunas/84795' }
   },
 
   "263": {  /* アウトドア貸切別荘北軽井沢1 */
@@ -4739,7 +4741,8 @@ window.VILLAFARAS_SPEC = {
     sauna_type: { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
     sauna_temp: { v: 90, src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
     chiller: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
-    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' }
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
+    water_temp: { v: 't1518', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' }
   },
 
   "283": {  /* THE BOTANICAL RESORT 林音（リンネ） */

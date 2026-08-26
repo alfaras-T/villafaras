@@ -32,9 +32,25 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "80": {"name": "2gether foret",
-           "reason": "pet_ok=yes を記録したのにペットタグが無く、validate.py のタグ整合検査が検出した。出典は一休の「ペット可（相談可、1頭まで、別途料金あり）」。ペット可の施設が検索に出てこない状態だったのでタグを付ける（2026-08確認）",
-           "add_tags": ["pet"]},
+    "262": {"name": "Earthboat Minakami Hodaigi",
+            "reason": "water_temp=t1015 は境界の取り違え。出典は「15度の水風呂」で、2026-08 に区間の境界を「下限を含み上限を含まない」に統一したため 15℃ちょうどは t1518（15℃以上18℃未満）になる。**同じ15℃を id=45 HARUKA KANATA は t1518、この施設は t1015 と記録しており、旧ラベル「10〜15℃」「15〜18℃」の重複が実際に不整合を生んでいた。**（2026-08確認）",
+            "set_spec": {"water_temp": {"v": "t1518", "src": "desk", "at": "2026-08",
+                                        "url": "https://sauna-ikitai.com/saunas/84795"}}},
+
+    "49": {"name": "古民家一棟貸切旅館　成田さくら邸",
+           "reason": "境界を統一したため記録できるようになった。共用サウナ「Saunacamp かぐやの森」の水風呂は独立2回の検索で「15度」と一致。15℃ちょうどは t1518（2026-08確認）",
+           "set_spec": {"water_temp": {"v": "t1518", "src": "desk", "at": "2026-08",
+                                       "url": "https://www.okamura-is.co.jp/kaguyanomori/index.html"}}},
+
+    "282": {"name": "GLAMPING KASHIMA 753",
+            "reason": "境界を統一したため記録できるようになった。公式「チラー付き水風呂」で「水風呂は15度」。15℃ちょうどは t1518（2026-08確認）",
+            "set_spec": {"water_temp": {"v": "t1518", "src": "desk", "at": "2026-08",
+                                        "url": "https://gp753.jp/kashima/"}}},
+
+    "254": {"name": "伊豆グランヴィレッジ　グランピング",
+            "reason": "境界を統一したため記録できるようになった。水風呂は「約18度」。18℃ちょうどは t1822（18℃以上22℃未満）。なお coldbath は公式「ツボ湯（水風呂）」と第三者「ドラム缶水風呂」で表現が食い違うため引き続き入れない（2026-08確認）",
+            "set_spec": {"water_temp": {"v": "t1822", "src": "desk", "at": "2026-08",
+                                        "url": "https://id-village.jp/granvillage/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
