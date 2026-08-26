@@ -2587,7 +2587,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '須雲川IC 13分', src: 'auto', at: '2026-07' },
     station:      { v: '大平台 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' }
   },
 
   "147": {  /* 箱根芦ノ湖ゴルフヴィラ */
@@ -2634,13 +2638,14 @@ window.VILLAFARAS_SPEC = {
   "150": {  /* 3rd HOUSE INAMURAGASAKI */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://3rd-house.jp/mustread/forguest/' },
     elevation:    { v: 5, src: 'auto', at: '2026-07' },
     supermarket:  { v: 1, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '釜利谷JCT 19分', src: 'auto', at: '2026-07' },
     station:      { v: '稲村ヶ崎 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://3rd-house.jp/mustread/forguest/' }
   },
 
   "151": {  /* 琥珀-AMBER- */
@@ -2672,13 +2677,14 @@ window.VILLAFARAS_SPEC = {
   "153": {  /* UMITO VILLA KAMAKURA ZAIMOKUZA */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
     elevation:    { v: 7, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '釜利谷JCT 15分', src: 'auto', at: '2026-07' },
     station:      { v: '由比ヶ浜 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' }
   },
 
   "154": {  /* LULLA */
@@ -2721,14 +2727,16 @@ window.VILLAFARAS_SPEC = {
 
   "157": {  /* TANZAWA seven lanes by DAICHI */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://www.7lanes.jp/' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     elevation:    { v: 390, src: 'auto', at: '2026-07' },
     supermarket:  { v: 21, src: 'auto', at: '2026-07' },
     conveni:      { v: 17, src: 'auto', at: '2026-07' },
     ic:           { v: '鮎沢PA(上り) 37分', src: 'auto', at: '2026-07' },
     station:      { v: '谷峨 12分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.7lanes.jp/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.7lanes.jp/' }
   },
 
   "158": {  /* GIFTHOUSE 三浦 諸磯 */
@@ -2746,14 +2754,17 @@ window.VILLAFARAS_SPEC = {
 
   "159": {  /* 葉山THE・TERRACE　HOUSE */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://tripto.jp/facilities/425' },
     capacity:     { v: 13, src: 'desk', at: '2026-07' },
     elevation:    { v: 4, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '逗子IC 15分', src: 'auto', at: '2026-07' },
     station:      { v: '逗子・葉山 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 12, src: 'auto', at: '2026-07' }
+    onsen:        { v: 12, src: 'auto', at: '2026-07' },
+    sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://tripto.jp/facilities/425' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://tripto.jp/facilities/425' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tripto.jp/facilities/425' }
   },
 
   "160": {  /* 雅・仙石原 */
@@ -2871,14 +2882,15 @@ window.VILLAFARAS_SPEC = {
 
   "168": {  /* 湯屋　やまざくら */
     sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     elevation:    { v: 642, src: 'auto', at: '2026-07' },
     supermarket:  { v: 1, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '足柄SA/スマートIC(上り) 18分', src: 'auto', at: '2026-07' },
     station:      { v: '上強羅 9分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' }
   },
 
   "169": {  /* 湯と灯りに包まれる別世界 */
@@ -3112,38 +3124,47 @@ window.VILLAFARAS_SPEC = {
 
   "181": {  /* GLAMDAY STYLE HOTEL SUITE 川ノ音 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' },
     capacity:     { v: 6, src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' },
     elevation:    { v: 973, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '横川SA(上り) 25分', src: 'auto', at: '2026-07' },
     station:      { v: '軽井沢 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    onsen:        { v: 9, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://gs-hotelsuite.jp/kawanone/' }
   },
 
   "182": {  /* The Aurora Chalet */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     elevation:    { v: 776, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '更埴IC 48分', src: 'auto', at: '2026-07' },
     station:      { v: '飯森 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
+    sauna_temp: { v: 90, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
+    water_temp: { v: 't1518', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051575/' }
   },
 
   "183": {  /* Hakuba Amber Resort */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' },
     elevation:    { v: 775, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '更埴IC 48分', src: 'auto', at: '2026-07' },
     station:      { v: '飯森 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' }
   },
 
   "184": {  /* Hakuba Jolie Maison */
@@ -3206,14 +3227,16 @@ window.VILLAFARAS_SPEC = {
 
   "187": {  /* GREENSEED軽井沢 */
     sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    capacity:     { v: 6, src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 970, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '佐久小諸JCT 11分', src: 'auto', at: '2026-07' },
     station:      { v: '信濃追分 3分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' }
   },
 
   "188": {  /* COCO VILLA 軽井沢 */
@@ -3311,7 +3334,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '佐久平スマートIC 25分', src: 'auto', at: '2026-07' },
     station:      { v: '軽井沢 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1' },
+    sauna_cap: { v: 3, src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1' }
   },
 
   "193": {  /* SAUNA FOREST CABIN 軽井沢御代田 */
@@ -3482,27 +3509,30 @@ window.VILLAFARAS_SPEC = {
   },
 
   "202": {  /* キュレーション熱海須藤水園 */
-    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
-    capacity:     { v: 6, src: 'desk', at: '2026-07' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051777/' },
+    capacity:     { v: 4, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051777/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051777/' },
     elevation:    { v: 72, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051777/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051777/' }
   },
 
   "203": {  /* キュレーション熱海桃山雅苑 */
-    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' },
+    capacity:     { v: 8, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' },
     elevation:    { v: 126, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' }
   },
 
   "204": {  /* オーシャンビュー南熱海 */
