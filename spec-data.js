@@ -2848,7 +2848,6 @@ window.VILLAFARAS_SPEC = {
   },
 
   "169": {  /* 湯と灯りに包まれる別世界 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     elevation:    { v: 14, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
