@@ -3496,9 +3496,9 @@ window.VILLAFARAS_SPEC = {
   },
 
   "201": {  /* キュレーション熱海桃乃八庵 */
-    kitchen_type: { v: 'ih', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
     capacity:     { v: 6, src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
     elevation:    { v: 83, src: 'auto', at: '2026-07' },
     supermarket:  { v: 4, src: 'auto', at: '2026-07' },
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
@@ -3532,7 +3532,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:      { v: '熱海 2分', src: 'auto', at: '2026-07' },
     onsen:        { v: 3, src: 'auto', at: '2026-07' },
-    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' }
+    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051776/' }
   },
 
   "204": {  /* オーシャンビュー南熱海 */

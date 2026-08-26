@@ -32,149 +32,18 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "146": {"name": "TIMeSCAPE -hakone-",
-            "reason": "「檜のサウナから、山の緑と空に心癒される」「現時点ではペットの同伴は承っておりません」「当施設の敷地内でFree Wi-Fiをお使いいただけます」、FAQ「自然に囲まれた水風呂」「木々のゆらめきを浴びながら外気浴をご堪能ください」。サウナは材質（檜）の記述のみで構造が非公表のため sauna_type は入れない（2026-08確認）",
+    "201": {"name": "キュレーション熱海桃乃八庵",
+            "reason": "公式の設備欄「Wi-Fi」「IHコンロ」。楽天トラベルでも住所「〒413-0005静岡県熱海市春日町8-18」と部屋設備の wifi を確認した。**sauna_exists は入れない**: 公式にも楽天の設備一覧にもサウナの記載が無いが、これは○✕列挙の✕ではなく単なる不記載であり、否定の根拠にならない。同ブランドの須藤水園・桃山雅苑は一休の○✕欄に「× サウナ」があったため no を記録できたが、桃乃八庵は一休に施設ページ自体が存在しない。capacity も公式が「定員最大6名」と「定員4名」の両方を載せており決められないため入れない（2026-08確認）",
             "set_spec": {
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
-                                        "url": "https://timescape-hakone.jp/faq/"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://timescape-hakone.jp/faq/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://timescape-hakone.jp/faq/"},
                          "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://timescape-hakone.jp/faq/"}}},
-
-    "150": {"name": "3rd HOUSE INAMURAGASAKI",
-            "reason": "「屋上にございますサウナ」「ペット立ち入り可能エリアは、3階ペットルームのほか…屋外部分」「Wi-fi環境：下り250Mdps／上り220Mdps」。定員は西棟8名／東棟6名で棟により異なるうえ西棟が資料により8名／9名で食い違うため変更しない。coldbath は「ジャグジー」の言及のみで「水風呂」の語が出ないため入れない（2026-08確認）",
-            "set_spec": {
-                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://3rd-house.jp/mustread/forguest/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://3rd-house.jp/mustread/forguest/"}}},
-
-    "153": {"name": "UMITO VILLA KAMAKURA ZAIMOKUZA",
-            "reason": "「プライベートサウナを備え、湯船からも海を眺められる特別な空間」「宿泊定員：4名」「愛犬同伴対応」。水風呂の記載あり。**sauna_exists は yes のまま変更しない**（1棟のヴィラで「一部客室のみ」を示す記述はない）。wifi の出典 /qa は材木座固有ではなくUMITOブランド共通FAQのため入れない（2026-08確認）",
-            "set_spec": {
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
-                                        "url": "https://hotel.umito.jp/kamakura-zaimokuza/"},
-                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://hotel.umito.jp/kamakura-zaimokuza/"}}},
-
-    "157": {"name": "TANZAWA seven lanes by DAICHI",
-            "reason": "施設独自サイトを新たに特定。DAICHI公式と一休の2ソースで「テントサウナ」が一致。「Capacity 1~8 people」も chillnn と一休の2ソースで一致。「Pet Not allowed」。sauna_hours は当初「サウナストーブの連続使用は40分まで」を根拠にしかけたが**これは葉山THE・TERRACE HOUSE の情報**と判明したため入れない（2026-08確認）",
-            "set_spec": {
-                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.7lanes.jp/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.7lanes.jp/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.7lanes.jp/"}}},
-
-    "159": {"name": "葉山THE・TERRACE　HOUSE",
-            "reason": "公式はJS描画で取得不可のため代理店サイトを出典とする。「屋上の使用時間（バーベキュー・サウナ）は21時までとなっております」「サウナストーブの連続使用は40分までにお願いいたします」→sauna_hours=limited、「定員10名」「ペット同伴不可」「Wi-Fiも無料でご利用いただけます」。sauna_type=barrel は二次情報2件の一致による。WebSearch要約が「ドライサウナとバレルサウナ」と混在的に述べたが公式系の代理店サイトは終始バレルサウナのみを描写するため後者を採った（2026-08確認）",
-            "set_spec": {
-                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-08",
-                                        "url": "https://tripto.jp/facilities/425"},
-                         "sauna_hours": {"v": "limited", "src": "desk", "at": "2026-08",
-                                        "url": "https://tripto.jp/facilities/425"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://tripto.jp/facilities/425"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://tripto.jp/facilities/425"}}},
-
-    "168": {"name": "湯屋　やまざくら",
-            "reason": "「プライベートサウナと水風呂付きで、“ととのう”を体感してみてください」→coldbath=bath、「Wi-Fi接続」。sauna_hours は「チェックイン～23:30」がサウナ専用か温泉全体かが不明瞭なため入れない（2026-08確認）",
-            "set_spec": {
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
-                                        "url": "https://hakoneyamazakura.com/onsen.html"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://hakoneyamazakura.com/onsen.html"}}},
-
-    "181": {"name": "GLAMDAY STYLE HOTEL SUITE 川ノ音",
-            "reason": "トラッキングパラメータなしの正規URLで確認。「プライベートサウナ」「バスルームに併設」→sauna_type=indoor、「ご宿泊人数 2～6名」（SARASARA・SOUSOU両棟共通）、「隣接のテラスでは、自然の風を感じる外気浴で」「Wi-Fi 有」。**stove は入れない**: WebSearch要約が「Harviaストーブ・100℃近く」と述べたが記事本文2本を直接取得しても裏付けが取れず、「薪ストーブ」の語はテラスの暖炉についての記述だった（2026-08確認）",
-            "set_spec": {
-                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-08",
-                                        "url": "https://gs-hotelsuite.jp/kawanone/"},
-                         "capacity": {"v": 6, "src": "desk", "at": "2026-08",
-                                        "url": "https://gs-hotelsuite.jp/kawanone/"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://gs-hotelsuite.jp/kawanone/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://gs-hotelsuite.jp/kawanone/"}}},
-
-    "182": {"name": "The Aurora Chalet",
-            "reason": "公式サイトが存在しない（jadehotelgroup.com はリンク集のみ）ためOTAを出典とする。住所「北安曇郡白馬村北城836-141」で照合済み。「当施設で大好評のサウナはロウリュウ式で薪ストーブを使用、オールシーズンご利用可能です」→stove=wood / loyly=yes、「ペット 不可」「無料WiFi」。サウナイキタイで独立2回の検索が90℃・17℃で一致した。capacity は一休「定員 1名～9名」がOTA上限表記に該当し、かつ AURORA-1／AURORA-2 が1リスティングに混在するため入れない（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "wood", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "sauna_temp": {"v": 90, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "water_temp": {"v": "t1518", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/vacation/00051575/"}}},
-
-    "183": {"name": "Hakuba Amber Resort",
-            "reason": "住所「北安曇郡白馬村北城830-90」で照合済み。「サウナ あり」「1匹につき5,200円の追加料金」→pet_ok=yes、「wi-fiが利用可能です」。capacity は一休「定員 1名～9名」（3LDK）「1名～6名」（2LDK）でOTA上限表記の疑いがあり変更しない（2026-08確認）",
-            "set_spec": {
-                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051318/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051318/"}}},
-
-    "187": {"name": "GREENSEED軽井沢",
-            "reason": "サウナ利用規約PDFに「水を一気にかけると、水が蒸発せずに電気ストーブにかかり、故障の原因となります」→stove=electric、「サウナストーンへの水かけ（ロウリュ）については、1回あたり柄杓1杯～2杯程度でお願いいたします」→loyly=yes、「ご利用人数 最大6名」（全6タイプ共通）（2026-08確認）",
-            "set_spec": {
-                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
-                                        "url": "https://greenseed-villa.com/rooms/"},
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://greenseed-villa.com/rooms/"},
-                         "capacity": {"v": 6, "src": "desk", "at": "2026-08",
-                                        "url": "https://greenseed-villa.com/rooms/"}}},
-
-    "192": {"name": "ポーラーハウスカナディアン南軽井沢1",
-            "reason": "住所「北佐久郡軽井沢町発地336-1」で照合し、酷似名の「ポーラーハウス南軽井沢1」（群馬県下仁田町）と区別した。「1階サウナ室…本格3人用ナチュラルサウナ」→sauna_type=indoor / sauna_cap=3、「外気浴では南軽井沢の澄んだ空気を胸いっぱいに吸い込みます」「Wi-Fi完備でワーケーションも可能」。**stove と coldbath は入れない**: レビュー文の「薪の香りに包まれながら」から wood と即断しかけたが、運営元ブログが自社サウナを「ロウリュ（湿式）」と「ナチュラル（遠赤外線）」に分類しており本施設は後者。遠赤外線は wood/electric/gas のいずれにも当てはまらない。同ブログは「ナチュラルサウナの後は水風呂でなく25～30℃のぬるま湯やシャワーを推奨」とも明記している。「薪の香り」はログハウスの建材由来とみられる（2026-08確認）",
-            "set_spec": {
-                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1"},
-                         "sauna_cap": {"v": 3, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1"}}},
-
-    "202": {"name": "キュレーション熱海須藤水園",
-            "reason": "**sauna_exists=no。** 一休の設備欄が○✕形式で「サウナ：× なし」と明示している。公式（curationhotels.com）にもサウナの記載が一切ない。同ブランドの桃山雅苑も同じく✕で、桃乃八庵も公式にサウナの記載がない。公式「寝室2部屋（定員最大4名）」→capacity=4（一休は「定員1名～6名」と食い違うため公式を優先）、「本施設は、ペットの同伴は禁止とさせていただいております」「Wi-Fi環境あり」「IHコンロ」（2026-08確認）",
-            "set_villa": {"capacity": "4"},
-            "set_spec": {
-                         "sauna_exists": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051777/"},
-                         "capacity": {"v": 4, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051777/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051777/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051777/"},
+                                        "url": "https://www.curationhotels.com/tounoyaan/"},
                          "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051777/"}}},
+                                        "url": "https://www.curationhotels.com/tounoyaan/"}}},
 
     "203": {"name": "キュレーション熱海桃山雅苑",
-            "reason": "**sauna_exists=no。** 一休の設備欄が○✕形式で「× サウナ」と明示。公式にもサウナの記載がない。「最大8名で宿泊ができ」（公式）と「定員 1名～8名」（一休）の2ソースが一致、「Wi-Fi」「ポータブルIHコンロ」（2026-08確認）",
+            "reason": "一休 00051776 を直接開いて住所「静岡県熱海市桃山町23-25」がDBと一致することを確認し、あわせて基本情報「ペット 不可」と設備・特徴「× ペット可」を確認した（W4-2では取りこぼしていた）（2026-08確認）",
             "set_spec": {
-                         "sauna_exists": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051776/"},
-                         "capacity": {"v": 8, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051776/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051776/"},
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
                                         "url": "https://www.ikyu.com/00051776/"}}},
 }
 
