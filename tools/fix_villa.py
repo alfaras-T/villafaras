@@ -32,10 +32,137 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "269": {"name": "THE LOOKOUT KUSATSU",
-            "reason": "公式サイトにサウナの記載が無い施設。OTA掲載の施設紹介文「Max70度の1人用サウナを完備！遠赤外線でしっかり汗をかけます！」より sauna_cap=1。サウナイキタイでも「ドライサウナ 遠赤外線型 電気」と確認でき、既存の sauna_type=indoor / stove=electric と整合する。**loyly は記録しない**: 遠赤外線方式ゆえロウリュ不可という説はあるが、サウナイキタイのロウリュ欄は3つとも空欄で、これはデータ未登録であって明示的な否定ではない。**sauna_temp も記録しない**: 施設紹介文の「Max70度」とサウナイキタイの「温度 80 度」が食い違う（2026-08確認）",
-            "set_spec": {"sauna_cap": {"v": 1, "src": "desk", "at": "2026-08",
-                                       "url": "https://travel.yahoo.co.jp/00921891/"}}},
+    "9": {"name": "sendouQ",
+            "reason": "公式施設紹介「火を使わないので安全に使用できる電気式のサウナです。大人3人がゆったりと入れる広さで、宿泊中お好きな時間にご利用いただけます。サウナ浴の後、隣接のプールで汗を流す爽快感は格別です。」「※ストーブの水かけはご遠慮ください。電気式サウナ窯の為漏電の恐れがあります。」——1段落から5項目が確定した。ロウリュは明示的に禁止されており理由（漏電）も書かれているため、**本DBで初の loyly=no**。クールダウンは隣接プールなので coldbath=pool（2026-08確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
+                                     "url": "https://sendouq.jp/about/?facility=1st"},
+                         "sauna_cap": {"v": 3, "src": "desk", "at": "2026-08",
+                                         "url": "https://sendouq.jp/about/?facility=1st"},
+                         "sauna_hours": {"v": "h24", "src": "desk", "at": "2026-08",
+                                           "url": "https://sendouq.jp/about/?facility=1st"},
+                         "loyly": {"v": "no", "src": "desk", "at": "2026-08",
+                                     "url": "https://sendouq.jp/about/?facility=1st"},
+                         "coldbath": {"v": "pool", "src": "desk", "at": "2026-08",
+                                        "url": "https://sendouq.jp/about/?facility=1st"}}},
+
+    "11": {"name": "Avalon Cove",
+            "reason": "登録URL（terracecollections.jp）の個別ページは404で、実質の一次情報は一休。「エストニア製のHUUMサウナ」→HUUMは電気ヒーターブランドのため stove=electric、「ペット 不可」「wi-fiが利用可能です」（2026-08確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
+                                     "url": "https://www.ikyu.com/00052130/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                      "url": "https://www.ikyu.com/00052130/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://www.ikyu.com/00052130/"}}},
+
+    "23": {"name": "The TRAVELERS Chateau Tateyama",
+            "reason": "公式（yamato-stay.com）はJS描画で本文取得不可。一休英語版に「barrel sauna」「Entire house rental (3LDK) for up to 10 guests」「Free internet (Wi-Fi)」（2026-08確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-08",
+                                          "url": "https://www.ikyu.com/en-us/00051783/11509093/10260125/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://www.ikyu.com/en-us/00051783/11509093/10260125/"}}},
+
+    "25": {"name": "THE POOL HOUSE TOKYO BAY",
+            "reason": "公式FAQ「TOKYO BAYの宿泊者のみご利用可。（22：00～8：00までの間はご使用いただけません。）」→sauna_hours=limited、「ペット同伴は、宿泊・日帰り・撮影ともご遠慮いただいております」、「館内、Wi-Fi完備です」。姉妹施設「木更津」はミストサウナ・定員8名で仕様が異なるため除外した（2026-08確認）",
+            "set_spec": {
+                         "sauna_hours": {"v": "limited", "src": "desk", "at": "2026-08",
+                                           "url": "https://thepoolhouse.jp/faq"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                      "url": "https://thepoolhouse.jp/faq"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://thepoolhouse.jp/faq"}}},
+
+    "66": {"name": "Villa Yno",
+            "reason": "公式サイトが存在しないためOTAを出典とする。「ペット：不可」「wi-fiが利用可能です」。なお同ページ内に「定員 1名～9名」（OTA仕様上限）と「10名まで宿泊可能」が併存しており、後者を採る既存値10が正しい（2026-08確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                      "url": "https://travel.yahoo.co.jp/00052212/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://travel.yahoo.co.jp/00052212/"}}},
+
+    "86": {"name": "hotel norm. air",
+            "reason": "公式「温度は95℃で設定されており」「4〜5人でお楽しみいただけます」→sauna_temp=95, sauna_cap=5（範囲は上限）。一休の滞在記に「日本のホテル初導入のイタリア製」「ユニークな形をした大きなバスタブ」→coldbath=tub、「IHヒーターにはコンロが3つ」、「バルコニーには外気浴用の椅子があり」。酷似名の別施設 hotel norm. fuji（hotel-norm.com）の「85℃サウナ・10℃水風呂」と混同しないよう区別した（2026-08確認）",
+            "set_spec": {
+                         "sauna_temp": {"v": 95, "src": "desk", "at": "2026-08",
+                                          "url": "https://www.hotel-normair.com"},
+                         "sauna_cap": {"v": 5, "src": "desk", "at": "2026-08",
+                                         "url": "https://www.hotel-normair.com"},
+                         "coldbath": {"v": "tub", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.hotel-normair.com"},
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
+                                            "url": "https://www.hotel-normair.com"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                            "url": "https://www.hotel-normair.com"},
+                         "rest_chair": {"v": "chair", "src": "desk", "at": "2026-08",
+                                          "url": "https://www.hotel-normair.com"},
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                     "url": "https://www.hotel-normair.com"}}},
+
+    "87": {"name": "hotel norm. ao",
+            "reason": "公式「湧水風呂とスチームサウナ」、楽天トラベル記事「富士山の伏流水が使われ」→water_src=spring（2ソース一致）。サウナはスチーム式で sauna_type の4区分（indoor/hut/barrel/tent）に当てはめられないため入れない（2026-08確認）",
+            "set_spec": {
+                         "water_src": {"v": "spring", "src": "desk", "at": "2026-08",
+                                         "url": "https://www.hotel-normao.com"}}},
+
+    "96": {"name": "yl&Co.Hotel in Mt.Fuji",
+            "reason": "公式FAQ「申し訳ございません。ペット同伴でのご宿泊はご遠慮させていただいております。」（2026-08確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                      "url": "https://www.ylandco-hotel.com/faq.html"}}},
+
+    "97": {"name": "VILLA　SUOMI",
+            "reason": "公式「サウナストーンにアロマ水を掛けて、湿度と香りでじっくりと発汗させていく」「セルフで楽しめる」→loyly=yes、「バスタブに水を張れば、併設したサウナ用の水風呂としても」→coldbath=tub、「テラスでくつろげるように折り畳み式のチェアーをご用意」→outdoor_rest=yes, rest_chair=chair。サウナ温度はトップ「６０℃～８０℃程度」とfixtures「７０℃～８０℃ぐらい」で下限が食い違うが上限は一致するため80を採る（2026-08確認）",
+            "set_spec": {
+                         "sauna_temp": {"v": 80, "src": "desk", "at": "2026-08",
+                                          "url": "https://villa-suomi.jp/fixtures/"},
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                     "url": "https://villa-suomi.jp/fixtures/"},
+                         "coldbath": {"v": "tub", "src": "desk", "at": "2026-08",
+                                        "url": "https://villa-suomi.jp/fixtures/"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                            "url": "https://villa-suomi.jp/fixtures/"},
+                         "rest_chair": {"v": "chair", "src": "desk", "at": "2026-08",
+                                          "url": "https://villa-suomi.jp/fixtures/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://villa-suomi.jp/fixtures/"}}},
+
+    "98": {"name": "SILVER SPRAY 山中湖",
+            "reason": "既存の sauna_exists=shared（日帰りサウナコースあり）と整合する。テントサウナで薪ストーブ、サウナ室の収容人数は10名（宿泊定員10名とは別項目）。準備に1時間30分を要し利用時間枠が決まっているため sauna_hours=reserve。「富士山を眺めながら外気浴」（2026-08確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-08",
+                                          "url": "https://silver-spray.jp/main.php"},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-08",
+                                     "url": "https://silver-spray.jp/main.php"},
+                         "sauna_cap": {"v": 10, "src": "desk", "at": "2026-08",
+                                         "url": "https://silver-spray.jp/main.php"},
+                         "sauna_hours": {"v": "reserve", "src": "desk", "at": "2026-08",
+                                           "url": "https://silver-spray.jp/main.php"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                            "url": "https://silver-spray.jp/main.php"},
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                     "url": "https://silver-spray.jp/main.php"}}},
+
+    "105": {"name": "BLANC FUJI",
+            "reason": "公式FAQ「チェックイン当日は24時まで、チェックアウト日は7時から10時まで」→sauna_hours=limited、「全室でWi-Fiインターネットを無料でご利用頂けます」。施設ページに「サウナーに大人気のインフィニティチェアを完備」。既存の sauna_exists=room は正しく、加えて「Suite Pet Villa -Sauna-」（犬同伴可・サウナ付き）という客室タイプが別途あることが判明したため pet_ok は単一値に決められず入れない（2026-08確認）",
+            "set_spec": {
+                         "sauna_hours": {"v": "limited", "src": "desk", "at": "2026-08",
+                                           "url": "https://blan-c.com/fuji/faq/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                    "url": "https://blan-c.com/fuji/faq/"},
+                         "rest_chair": {"v": "infinity", "src": "desk", "at": "2026-08",
+                                          "url": "https://blan-c.com/fuji/faq/"}}},
+
+    "252": {"name": "伊豆高原テントリゾート",
+            "reason": "公式お知らせ「大好評だったテントサウナが、最新設備と薪ストーブでグレードアップして帰ってきました！」→sauna_type=tent, stove=wood。stay.php のヴィラサイト設備欄に「キッチン（IH）」。guide.php「ヴィラサイトはペット同伴OK。（テントサイトはプランによりOK。キャビンはご遠慮いただいております）」。capacity は stay.php のヴィラサイト欄が「定員 5名」で既存値6と食い違うが、宿泊タイプが複数ありDBの1件がどれを指すか特定できないため変更しない（2026-08確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-08",
+                                          "url": "https://tentresort-izu.com/stay.php"},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-08",
+                                     "url": "https://tentresort-izu.com/stay.php"},
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
+                                            "url": "https://tentresort-izu.com/stay.php"}}},
 }
 
 DRY = "--dry-run" in sys.argv
