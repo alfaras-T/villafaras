@@ -32,19 +32,109 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "201": {"name": "キュレーション熱海桃乃八庵",
-            "reason": "公式の設備欄「Wi-Fi」「IHコンロ」。楽天トラベルでも住所「〒413-0005静岡県熱海市春日町8-18」と部屋設備の wifi を確認した。**sauna_exists は入れない**: 公式にも楽天の設備一覧にもサウナの記載が無いが、これは○✕列挙の✕ではなく単なる不記載であり、否定の根拠にならない。同ブランドの須藤水園・桃山雅苑は一休の○✕欄に「× サウナ」があったため no を記録できたが、桃乃八庵は一休に施設ページ自体が存在しない。capacity も公式が「定員最大6名」と「定員4名」の両方を載せており決められないため入れない（2026-08確認）",
+    "8": {"name": "&SUN Laie back",
+            "reason": "ROOMページ ROOFTOP「サマーベッド×2／テーブルセット×1」→outdoor_rest=yes。**kitchen_type は入れない**: ROOMページ「3口IHキッチン」とFAQページ「ガスコロン（3口）」がサイト内で食い違う。同じ「3口」なのに IH とガスで矛盾しており判断できない（CLAUDE.md記載のサイト内食い違い類型）。なお公式の住所表記は「久枝1274-7」でDBの「1274-3」と番地末尾が異なるが、施設名・写真・特徴が一致し南房総である点も確認済み（2026-08確認）",
             "set_spec": {
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.curationhotels.com/tounoyaan/"},
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.curationhotels.com/tounoyaan/"}}},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://beach.funnyfunny.jp/andsun-laie-back/"}}},
 
-    "203": {"name": "キュレーション熱海桃山雅苑",
-            "reason": "一休 00051776 を直接開いて住所「静岡県熱海市桃山町23-25」がDBと一致することを確認し、あわせて基本情報「ペット 不可」と設備・特徴「× ペット可」を確認した（W4-2では取りこぼしていた）（2026-08確認）",
+    "62": {"name": "RICKA KATSUURA",
+            "reason": "一休の設備欄「✕ ペット可」＋基本情報「不可。ペットのお持ち込みは、施設の衛生管理上、固くお断りいたします。」→pet_ok=no（一休内で矛盾なく明確な否定）。coldbath=bath は既存値のままとするが、公式トップ「チラーで冷やされた水風呂」に対しRoomページは「サウナで温まった後、プールで心地よくクールダウンする」とも書いており pool 兼用の余地がある（2026-08確認）",
             "set_spec": {
                          "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051776/"}}},
+                                        "url": "https://www.ikyu.com/00052124/"}}},
+
+    "65": {"name": "THE NALU",
+            "reason": "一休「Wi-Fi 利用可能」。**coldbath は入れない**: POOLページのプールは「8m×4mのゆったりとした温水プール」と温水仕様が明記されており水風呂兼用とは考えにくいが、水風呂が無いという否定表現でもないため未調査に戻す。サウナ専用ページは「完全プライベートなサウナも完備。自分だけのリズムで心身を整える極上のひとときを。」と形容詞のみで仕様が無い（CLAUDE.md の「外れ」の型そのもの）（2026-08確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00052209/"}}},
+
+    "70": {"name": "The Pacific Retreat TATEYAMA",
+            "reason": "FAQ「無料でご利用頂けます」（Wi-Fi）。他項目は既存値と一致。sauna_type / stove は「本格的なサウナ」としか書かれておらず構造・熱源の記載が無い（2026-08確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://pacific-retreat-tateyama.com/faq/"}}},
+
+    "71": {"name": "Casita Laguna",
+            "reason": "WebFetchが403のため実機ブラウザで閲覧。ABOUTページ諸元表「【サウナハウス】3～4人 サウナヒーター（ハルビア電気式）、水風呂」→stove=electric、「【キッチン】IHコンロ、炊飯器…」→kitchen_type=ih、「【その他】…Wi-Fi（無料）」。pet_ok=no は一休「✕ ペット可」「不可」（公式に記載なし）。coldbath=bath はFAQ「プールはありますか？いいえ…3m×1.2mと広めの水風呂がございます」でプールを明示的に否定したうえでの水風呂。**sauna_type は入れない**: 「サウナ棟」「サウナハウス」の呼称は hut を思わせるが、バスルームから専用ドアで内部接続しており indoor とも読める（2026-08確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-08",
+                                        "url": "https://casitalaguna.com/faq"},
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
+                                        "url": "https://casitalaguna.com/faq"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://casitalaguna.com/faq"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://casitalaguna.com/faq"}}},
+
+    "73": {"name": "SANU 2nd Home 南アルプス1st",
+            "reason": "同上のMOSS型記事に南アルプス1stが名指しされている。「ロウリュ用バケツ/柄杓」→loyly=yes、「テラスに水風呂とととのい椅子を備えています。」→coldbath=bath / outdoor_rest=yes。wifi は一休。pet_ok=yes は既存値のままとするが、一休が設備欄「✕ ペット可」・基本情報「可（愛犬と泊まれる部屋に限定）」と自己矛盾しており確度中（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+
+    "74": {"name": "SANU 2nd Home 八ヶ岳2nd",
+            "reason": "一休「Wi-Fi 利用可能」。他項目は既存値と一致し、とくに sauna_type=barrel は公式マガジン「SANU CABIN BEE with Sauna」の「ONE SAUNAのバレルサウナを採用」（対象拠点に八ヶ岳2ndを明記）で独立に裏付けられた（2026-08確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00052019/"}}},
+
+    "75": {"name": "SANU 2nd Home 八ヶ岳3rd",
+            "reason": "同上のMOSS型記事に八ヶ岳3rdが名指しされている。「ロウリュ用バケツ/柄杓」→loyly=yes、「オープンエアの外気浴で心地よいひと時を」→outdoor_rest=yes。wifi は一休。sauna_exists=room は公式拠点ページの部屋タイプ一覧に加え、SANUのプレスリリース「プライベートサウナ：3棟 ＊プライベートサウナは一部の棟のみ対象となります」でも裏付けられた（既存値と一致）（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+
+    "76": {"name": "SANU 2nd Home 河口湖2nd",
+            "reason": "SANU公式マガジン「SANU CABIN MOSS with Sauna」記事。対象拠点として河口湖2nd・八ヶ岳3rd・南アルプス1stを名指ししている（ブランド一律適用ではなく拠点の列挙）。「ロウリュ用バケツ/柄杓」→loyly=yes、「テラスに水風呂とととのい椅子を備えています。」→coldbath=bath / outdoor_rest=yes、「バルコニーにはゆったりと寛げるチェアが備えられ」。wifi は一休。**sauna_type / stove は入れない**: MOSS型の構造・熱源は記載がない。BEE型（八ヶ岳2nd）の同種記事にはバレルと明記があるが、型が違うので流用しない。なお同記事は水風呂が冬季11〜4月は凍結のため利用制限とも書いており、季節制限を記録する項目が無い（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+
+    "81": {"name": "古民家宿るうふ　織之家",
+            "reason": "公式「ロウリュでじっくり汗をかくフィンランドサウナで心身をスッキリ流し」→loyly=yes。一休「✕ ペット可」「ペット 不可」、一休「Wi-Fi 利用可能」。**stove は入れない**: 「フィンランドサウナ」はスタイルの呼称で熱源ではない。備品欄の「ペレットストーブ、灯油ストーブ」は居室の暖房でサウナのストーブとは別物（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/shikinoie/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/shikinoie/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/shikinoie/"}}},
+
+    "82": {"name": "古民家宿るうふ　祝之家",
+            "reason": "公式「ロウリュでじっくり汗を引き出し、水風呂でリセット、貸切サウナをご堪能。」→loyly=yes。一休の設備欄「✕ ペット可」「ペット 不可」→pet_ok=no、一休「wi-fiが利用可能です」。sauna_type は「杉のサウナ」と材質のみ、stove は熱源の記載が無いため入れない（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/iwainoie/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/iwainoie/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://loof-inn.com/hotels/iwainoie/"}}},
+
+    "92": {"name": "VILLA SAISON FUJI",
+            "reason": "公式「アイランドキッチンのIHコンロに加え、室内でもBBQをお楽しみ頂けるように、ブロイル・キングのBBQガスグリルを備えつけました」→kitchen_type=both、公式トップ「サウナとデイベッドで整いましょう」→outdoor_rest=yes。sauna_type は「八角推で、全面ガラス張りの構造」でプールデッキ設置の独立建屋だが indoor / hut のどちらとも決めがたく入れない（2026-08確認）",
+            "set_spec": {
+                         "kitchen_type": {"v": "both", "src": "desk", "at": "2026-08",
+                                        "url": "https://villa-saison-fuji.com/villa/"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://villa-saison-fuji.com/villa/"}}},
 }
 
 DRY = "--dry-run" in sys.argv

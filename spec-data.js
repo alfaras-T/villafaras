@@ -150,7 +150,8 @@ window.VILLAFARAS_SPEC = {
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/room/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/service/' },
-    kids_free:       { v: 9, src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' }
+    kids_free:       { v: 9, src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/faq/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beach.funnyfunny.jp/andsun-laie-back/' }
   },
 
   "9": {  /* sendouQ */
@@ -1212,7 +1213,8 @@ window.VILLAFARAS_SPEC = {
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
     firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/room/' },
-    kids_free:       { v: 5, src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' }
+    kids_free:       { v: 5, src: 'desk', at: '2026-08', url: 'https://ricka-resort.com/katsuura/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052124/' }
   },
 
   "63": {  /* Dear Wan Spa Garden */
@@ -1261,7 +1263,8 @@ window.VILLAFARAS_SPEC = {
     onsen:          { v: 11, src: 'auto', at: '2026-07' },
     bring_amenity:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
-    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' }
+    early_late:     { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052209/' }
   },
 
   "66": {  /* Villa Yno */
@@ -1338,7 +1341,8 @@ window.VILLAFARAS_SPEC = {
     station:        { v: '館山 14分', src: 'auto', at: '2026-07' },
     onsen:          { v: 4, src: 'auto', at: '2026-07' },
     checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
-    fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' }
+    fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' }
   },
 
   "71": {  /* Casita Laguna */
@@ -1355,7 +1359,11 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
-    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' }
+    fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://www.casitalaguna.com/faq/' },
+    stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://casitalaguna.com/faq' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://casitalaguna.com/faq' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://casitalaguna.com/faq' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://casitalaguna.com/faq' }
   },
 
   "72": {  /* VILLA LAGI */
@@ -1400,7 +1408,11 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "74": {  /* SANU 2nd Home 八ヶ岳2nd */
@@ -1424,7 +1436,8 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052019/' }
   },
 
   "75": {  /* SANU 2nd Home 八ヶ岳3rd */
@@ -1443,7 +1456,10 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "76": {  /* SANU 2nd Home 河口湖2nd */
@@ -1461,7 +1477,11 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "77": {  /* enico.Mt.Fuji smile */
@@ -1557,7 +1577,10 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/shikinoie/' }
   },
 
   "82": {  /* 古民家宿るうふ　祝之家 */
@@ -1574,7 +1597,10 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/iwainoie/' }
   },
 
   "83": {  /* THE TIME FUJI */
@@ -1737,7 +1763,9 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    coldbath:        { v: 'tub', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' }
+    coldbath:        { v: 'tub', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
+    kitchen_type: { v: 'both', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/villa/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/villa/' }
   },
 
   "93": {  /* ヴィラグリファーム七里岩 */
