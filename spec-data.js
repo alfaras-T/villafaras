@@ -1680,7 +1680,9 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
     station:      { v: '河口湖 8分', src: 'auto', at: '2026-07' },
     onsen:        { v: 7, src: 'auto', at: '2026-07' },
-    water_src: { v: 'spring', src: 'desk', at: '2026-08', url: 'https://www.hotel-normao.com' }
+    water_src: { v: 'spring', src: 'desk', at: '2026-08', url: 'https://www.hotel-normao.com' },
+    pet_ok: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.hotel-normao.com/amenithies' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.hotel-normao.com/amenithies' }
   },
 
   "88": {  /* hotel norm. fuji */
@@ -1821,7 +1823,9 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '富士吉田忍野スマートIC 12分', src: 'auto', at: '2026-07' },
     station:      { v: '河口湖 8分', src: 'auto', at: '2026-07' },
     onsen:        { v: 4, src: 'auto', at: '2026-07' },
-    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/faq.html' }
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/faq.html' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/stay.html' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/stay.html' }
   },
 
   "97": {  /* VILLA　SUOMI */
@@ -1947,7 +1951,12 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '河口湖IC 19分', src: 'auto', at: '2026-07' },
     station:      { v: '河口湖 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    onsen:        { v: 8, src: 'auto', at: '2026-07' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com/overview' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com/overview' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com/overview' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com/overview' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel-ikoi-fuji.com/overview' }
   },
 
   "105": {  /* BLANC FUJI */
@@ -2028,7 +2037,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '山中湖 25分', src: 'auto', at: '2026-07' },
     station:      { v: '駿河小山 29分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    onsen:        { v: 6, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hotel.alterna3.jp/bliss-fuji/activity' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hotel.alterna3.jp/bliss-fuji/activity' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel.alterna3.jp/bliss-fuji/activity' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel.alterna3.jp/bliss-fuji/activity' }
   },
 
   "111": {  /* HOTEL SEION FUJI */
@@ -2515,7 +2528,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '須雲川IC 7分', src: 'auto', at: '2026-07' },
     station:      { v: '箱根湯本 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    sauna_type: { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://moon-hakone.com/experience' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://moon-hakone.com/experience' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moon-hakone.com/experience' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://moon-hakone.com/experience' }
   },
 
   "140": {  /* ルクス箱根湯本 LUX HAKONE YUMOTO */
@@ -2645,7 +2662,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 1, src: 'auto', at: '2026-07' },
     ic:           { v: '須雲川IC 16分', src: 'auto', at: '2026-07' },
     station:      { v: '宮ノ下 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    onsen:        { v: 1, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00003228/' }
   },
 
   "149": {  /* MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ */
@@ -2684,7 +2702,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '釜利谷JCT 16分', src: 'auto', at: '2026-07' },
     station:      { v: '和田塚 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.treef-vacation-house.com/kohaku-amber' }
   },
 
   "152": {  /* NIWA　KAMAKURA */
@@ -2750,7 +2771,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 4, src: 'auto', at: '2026-07' },
     ic:           { v: '芦ノ湖大観IC 14分', src: 'auto', at: '2026-07' },
     station:      { v: '上強羅 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 3, src: 'auto', at: '2026-07' }
+    onsen:        { v: 3, src: 'auto', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://monsgora.com/stay' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://monsgora.com/stay' }
   },
 
   "157": {  /* TANZAWA seven lanes by DAICHI */
@@ -2848,7 +2871,9 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
     ic:           { v: '芦ノ湖大観IC 13分', src: 'auto', at: '2026-07' },
     station:      { v: '早雲山 2分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 2, src: 'auto', at: '2026-07' }
+    onsen:        { v: 2, src: 'auto', at: '2026-07' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/xiang-gen-wen-quan-bie-di-bai-lu-ge-shi-sauna-zui-da-8ming.ja.html' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/xiang-gen-wen-quan-bie-di-bai-lu-ge-shi-sauna-zui-da-8ming.ja.html' }
   },
 
   "164": {  /* HAKONE DOMA */
@@ -2859,7 +2884,11 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 7, src: 'auto', at: '2026-07' },
     ic:           { v: '箱根峠IC 11分', src: 'auto', at: '2026-07' },
     station:      { v: '早雲山 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    onsen:        { v: 4, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051866/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051866/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051866/' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051866/' }
   },
 
   "165": {  /* 箱根懐來 */
@@ -3478,7 +3507,10 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
     ic:           { v: '佐久小諸JCT 12分', src: 'auto', at: '2026-07' },
     station:      { v: '御代田 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    onsen:        { v: 9, src: 'auto', at: '2026-07' },
+    stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' }
   },
 
   "199": {  /* 北軽井沢 貸別荘 FARMSIDE */
