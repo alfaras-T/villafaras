@@ -94,6 +94,27 @@ python3 tools/validate.py data/desk-research.js
 **fix_villa.py で訂正した施設も desk-research.js に記録すること。**
 記録漏れがあると未調査リストに残り続ける。
 
+### 調査対象の選定は tools/blanks.py
+
+**空欄の数え方とエージェントに渡す選択肢マスタを手で書かない。** 2026-08 に
+両方で事故を起こした。
+
+```
+python3 tools/blanks.py            上位20施設を一覧
+python3 tools/blanks.py -n 14      件数を指定
+python3 tools/blanks.py --prompt   調査指示（選択肢マスタ＋対象）を出力
+```
+
+- **セルの正規表現は空白数を決め打ちしないこと。** spec-data.js は
+  `capacity:     { v: 8, ... }` のように `key:` のあとの空白数が揃っていない。
+  `(\w+): \{ v:` と書いたため大半のセルを取りこぼし、調査済みの施設が
+  「空欄10」に見えて**14施設中12施設を二重調査させた**。id=92 は22項目
+  入っているのに1項目しか数えられていなかった。
+  総フィールド数を validate.py と突き合わせれば 724 対 3975 で気づけた
+- **選択肢マスタは `spec.js` の `var O` から生成する。** 手で写した際に
+  `loyly` を yes/no の2択と書いて `auto`（オートロウリュ）を落とし、
+  `sauna_type` に存在しない `cabin` を混ぜた
+
 ### コミット
 
 小さく、意味のある単位で分ける。メッセージは日本語。
@@ -419,7 +440,17 @@ Sea by TORAMII=レイトのみ）。
    `set_villa` が無かった時期の訂正と思われる。id=64（一休URL）と id=69（公式URL）は
    2026-08 の調査値なので spec 側が正しいとみられる。id=170/216/226 は 2026-07 で
    出典URLがなく要検証。
-3. **チャネルBの継続** — 未調査85施設
+3. **チャネルBの継続** — 残り空欄1326（`python3 tools/blanks.py` で確認）。
+   未記録かつ空欄のある施設が190。項目別の充足は次のとおりで、
+   **難しいのは kitchen_type / stove / loyly / outdoor_rest / sauna_type**。
+
+   | 項目 | 充足 | 項目 | 充足 |
+   |---|---|---|---|
+   | capacity | 100% | outdoor_rest | 36% |
+   | sauna_exists | 97% | loyly | 35% |
+   | pet_ok | 66% | stove | 31% |
+   | wifi | 54% | kitchen_type | 29% |
+   | coldbath | 48% | sauna_type | 40% |
 4. **スキーマ改修** — とくに `early_late` の分割と `coldbath` の選択肢追加
 5. **spec-survey.html の作成** — 冬に一斉送付予定
 6. **チャネルDの入力欄実装** — 母数が要るので着手が早いほど良い
