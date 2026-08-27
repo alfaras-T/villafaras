@@ -48,7 +48,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "2": {  /* 古民家宿るうふ 波之家 */
-    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522.html' },
+    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://loof-inn.com/hotels/naminoie/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
@@ -3589,7 +3589,6 @@ window.VILLAFARAS_SPEC = {
     ic:          { v: '玄岳IC 7分', src: 'auto', at: '2026-07' },
     station:     { v: '伊豆多賀 12分', src: 'auto', at: '2026-07' },
     onsen:       { v: 13, src: 'auto', at: '2026-07' },
-    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanveiwatamishizenkyo/' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanveiwatamishizenkyo/' }
   },
 
@@ -3636,7 +3635,6 @@ window.VILLAFARAS_SPEC = {
   },
 
   "209": {  /* 伊豆高原プライム */
-    sauna_exists:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/v_izukougen/' },
     kitchen_type:    { v: 'gas', src: 'desk', at: '2026-07' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-07' },
     capacity:        { v: 8, src: 'desk', at: '2026-07' },
@@ -3706,7 +3704,6 @@ window.VILLAFARAS_SPEC = {
     ic:          { v: '伊豆山港 7分', src: 'auto', at: '2026-07' },
     station:     { v: '来宮 3分', src: 'auto', at: '2026-07' },
     onsen:       { v: 3, src: 'auto', at: '2026-07' },
-    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/atamisoubaian/' },
     pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/atamisoubaian/' }
   },
 
@@ -3961,7 +3958,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "229": {  /* WEAZER西伊豆 */
-    sauna_exists: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00003033/' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
     elevation:    { v: 85, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
@@ -3969,7 +3966,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '大平IC 24分', src: 'auto', at: '2026-07' },
     station:      { v: '修善寺 28分', src: 'auto', at: '2026-07' },
     onsen:        { v: 10, src: 'auto', at: '2026-07' },
-    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' }
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/1836d2246923a9' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00003033/' }
   },
 
   "230": {  /* WEAZER西伊豆 廻 */
