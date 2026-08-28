@@ -76,9 +76,14 @@ def main():
     print("\n## 調査対象（%d施設）\n" % len(rows))
     for b, vid, v in rows:
         miss = [k for k in desk if k not in have.get(vid, set())]
+        # 広告クリック計測の中継URL（google.com/aclk）は単体で開いても施設に
+        # 到達しない。2026-08 の ota 全件走査で14エントリ見つかっている。
+        ikyu = (v.get("ota") or {}).get("ikyu") or ""
+        if "google.com/aclk" in ikyu:
+            ikyu = "(壊れたURL。一休で施設名を検索すること)"
         print("- id=%s 「%s」\n    住所: %s\n    公式: %s\n    一休: %s\n    空欄: %s"
               % (vid, v["name"], v.get("addr", ""), v.get("official") or "(なし)",
-                 (v.get("ota") or {}).get("ikyu") or "(なし)", ", ".join(miss)))
+                 ikyu or "(なし)", ", ".join(miss)))
 
 
 main()
