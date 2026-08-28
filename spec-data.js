@@ -3777,7 +3777,7 @@ window.VILLAFARAS_SPEC = {
 
   "216": {  /* マイグレ天 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-07' },
+    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' },
     stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 7, src: 'desk', at: '2026-07' },
@@ -3788,7 +3788,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '大平IC 42分', src: 'auto', at: '2026-07' },
     station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
     onsen:        { v: 5, src: 'auto', at: '2026-07' },
-    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/tensyukau' }
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/tensyukau' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' }
   },
 
   "217": {  /* マイグレフラット */

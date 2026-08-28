@@ -32,9 +32,21 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "87": {"name": "hotel norm. ao",
-            "reason": "pet_ok=yes を記録したところ validate.py のタグ整合チェックが「pet_ok=yes なのにタグはなし」を検出した。一休の設備欄「○ ペット可」と基本情報「可。同伴いただけるペットは、超小型犬（体重5kg未満）に限ります。同伴頭数は、1組あたり3頭までとさせていただきます。」で両欄が一致しており、施設固有の具体的な条件まで書かれている。同ブランドの hotel norm. fuji（id=88）は pet_ok=yes とタグの両方を持っており、air（id=86）は pet_ok 未調査でタグも無く整合している（2026-08確認）",
-            "add_tags": ["pet"]},
+    "64": {"name": "VILLA Seamu",
+            "reason": "**index.html の capacity=9 は OTA の9名上限表記の遺物。** 一休 00052182 を確認したところ住所「〒283-0105 千葉県山武郡九十九里町粟生1795-4」がDBと一致し、同ページに「定員 1名～9名」と並んで**「最大11名定員」**の記載がある。spec-data.js 側の11が正しく、set_villa が無かった時期の訂正で index.html と個別ページが取り残されていた（2026-08確認）",
+            "set_villa": {"capacity": "11"}},
+
+    "69": {"name": "primera villa",
+            "reason": "**index.html の capacity=9 は OTA の9名上限表記の遺物。** 一休 00052313 で住所「〒299-1861 千葉県富津市金谷530-1」の一致を確認し、「定員 1名～9名」と並んで**「3室×4名様（最大12名様（12ベッド）まで対応）」**の記載がある。spec-data.js 側の12が正しい。**サウナについては値を変更しない**（下記の記録を参照）（2026-08確認）",
+            "set_villa": {"capacity": "12"}},
+
+    "216": {"name": "マイグレ天",
+            "reason": "楽天トラベルで住所「〒413-0231 静岡県伊東市富戸1317-3573 ※別荘区画住所 大室高原4-722」の一致を確認し、「【サウナ】こだわりのフィンランド式テントサウナ！水風呂もご用意しております！」から coldbath=bath を新規に記録する。同記述は既存の sauna_type=tent（2026-07・出典なし）も裏付けるため出典URLを付ける。**capacity は入れない**: index.html の5と spec-data.js の7が食い違ったままだが、楽天にも定員の記載が無く決められない（2026-08確認）",
+            "set_spec": {
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://travel.rakuten.co.jp/HOTEL/183452/183452.html"},
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-08",
+                                        "url": "https://travel.rakuten.co.jp/HOTEL/183452/183452.html"}}},
 }
 
 DRY = "--dry-run" in sys.argv
