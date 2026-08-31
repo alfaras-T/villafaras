@@ -36,9 +36,15 @@ def load():
                 opts[k] = mo.group(1)
     masters = dict(re.findall(r"^\s*(\w+):\s*\{([^}]*)\},?\s*$", 
                               re.search(r"var O = \{(.*?)\n\s*\};", sjs, re.S).group(1), re.M))
-    have = {vid: set(re.findall(CELL, blk))
-            for vid, blk in re.findall(r'^  "(\d+)": \{(.*?)\n  \},?', spec, re.M | re.S)}
-    return villas, desk, opts, masters, have
+    have, nosrc = {}, {}
+    for vid, blk in re.findall(r'^  "(\d+)": \{(.*?)\n  \},?', spec, re.M | re.S):
+        have[vid] = set(re.findall(CELL, blk))
+        # 出典URLの無い desk 値は初期一括投入のコホート。2026-08 の走査で
+        # 566件すべてが at:'2026-07' と判明し、そこから誤りが複数出ている。
+        # 施設を開くならついでに検証させる。
+        nosrc[vid] = [k for k, body in re.findall(r"(\w+):\s*\{([^}]*)\}", blk)
+                      if "src: 'desk'" in body and "url:" not in body]
+    return villas, desk, opts, masters, have, nosrc
 
 
 def option_text(desk, opts, masters):
@@ -57,7 +63,7 @@ def main():
     n = 20
     if "-n" in sys.argv:
         n = int(sys.argv[sys.argv.index("-n") + 1])
-    villas, desk, opts, masters, have = load()
+    villas, desk, opts, masters, have, nosrc = load()
     done = {m for line in io.open("data/desk-research.js", encoding="utf-8")
             for m in re.findall(r"id=(\d+)", line)}
     rows = sorted(((len([k for k in desk if k not in have.get(str(v["id"]), set())]),
@@ -84,6 +90,9 @@ def main():
         print("- id=%s 「%s」\n    住所: %s\n    公式: %s\n    一休: %s\n    空欄: %s"
               % (vid, v["name"], v.get("addr", ""), v.get("official") or "(なし)",
                  ikyu or "(なし)", ", ".join(miss)))
+        ns = [k for k in nosrc.get(vid, []) if k in desk]
+        if ns:
+            print("    出典なし（ついでに検証）: %s" % ", ".join(ns))
 
 
 main()
