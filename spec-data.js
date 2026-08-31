@@ -2105,8 +2105,8 @@ window.VILLAFARAS_SPEC = {
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     elevation:    { v: 1007, src: 'auto', at: '2026-07' },
     supermarket:  { v: 3, src: 'auto', at: '2026-07' },
     conveni:      { v: 3, src: 'auto', at: '2026-07' },
@@ -3436,9 +3436,9 @@ window.VILLAFARAS_SPEC = {
   "193": {  /* SAUNA FOREST CABIN 軽井沢御代田 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    sauna_cap:    { v: 6, src: 'desk', at: '2026-07' },
+    sauna_cap:    { v: 6, src: 'desk', at: '2026-08', url: 'https://saunaforestcabin.com' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://saunaforestcabin.com' },
     capacity:     { v: 9, src: 'desk', at: '2026-07' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 772, src: 'auto', at: '2026-07' },
@@ -4191,7 +4191,7 @@ window.VILLAFARAS_SPEC = {
 
   "239": {  /* AMAO VILLA */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
+    capacity:     { v: 9, src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:    { v: 199, src: 'auto', at: '2026-07' },
     supermarket:  { v: 6, src: 'auto', at: '2026-07' },

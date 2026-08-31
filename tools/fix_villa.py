@@ -32,12 +32,38 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "48": {"name": "庄屋の里 古民家たなか",
-            "reason": "**pet_ok=yes は誤り。no が正しい。** 既存値は 2026-07 で出典URLが無く、公式サイト（kominkatanaka.com）にはペットに関する記述が一切ない。一休 00051341 を直接開いて住所「〒299-4501 千葉県いすみ市岬町椎木1589」がDBと一致することを確認したうえで、設備・特徴欄「× ペット可」と基本情報欄「ペット 不可」の両方を確認した。○✕列挙の✕という記録条件を満たす明示的な否定なので、出典の無い yes より優先する。あわせて index.html のペットタグを削除する（2026-08確認）",
-            "remove_tags": ["pet"],
+    "239": {"name": "AMAO VILLA",
+            "reason": "**capacity=9 は正しい。** 公式（amao-villa-futo）に「定員：9人」「最大9名まで宿泊OK」と明記されており、出典URLが無かったため埋め戻す。OTAの9名上限表記の遺物ではない。あわせて同ページから「3口IHコンロ」「Wi-Fi」「心地よいクールダウンを叶える水風呂」「最大8名様までご一緒いただける」「最高95℃まで楽しめる本格仕様のサウナ」を確認し、既存値と一致したので出典を付ける。**なおDBの feature は「AMAO VILLA 城ヶ崎」を、desc は「最大10名まで宿泊できる」を書いており、公式の富戸（定員9）と食い違っている。紹介文が別物件のものになっている疑いがある**（2026-08確認）",
             "set_spec": {
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.ikyu.com/00051341/"}}},
+                         "capacity": {"v": 9, "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
+                         "sauna_cap": {"v": 8, "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
+                         "sauna_temp": {"v": 95, "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.amaovilla.com/amao-villa-futo/"}}},
+
+    "193": {"name": "SAUNA FOREST CABIN 軽井沢御代田",
+            "reason": "公式トップ「サウナは最大６人で入れる広々空間」→sauna_cap=6、「汗をかいたら、外の休憩スペースで自然の風を感じてください」→outdoor_rest=yes。どちらも既存値（2026-07・出典なし）と一致したので出典を付ける。**capacity=9 は裏が取れなかった**: 公式トップに宿泊定員の記載が無い。出典なしのまま残す（2026-08確認）",
+            "set_spec": {
+                         "sauna_cap": {"v": 6, "src": "desk", "at": "2026-08",
+                                        "url": "https://saunaforestcabin.com"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://saunaforestcabin.com"}}},
+
+    "113": {"name": "ASH Villa 富士河口湖",
+            "reason": "**capacity=9 は OTA の9名上限表記の遺物で誤り。** 公式FAQは「最大10名様まで」（Deluxe Villa 1010）と「最大6名様まで」（2-Bedroom Villa 2020）の2棟しか挙げておらず、9 はどちらでもない。DBの desc 自身も「2棟展開のプライベートヴィラ。最大10名の『Deluxe Villa 1010』…最大6名の『2-Bedroom Villa 2020』」と書いている。棟で定員が違うため代表値を置きにくいが、**既知の誤りである9を残すより施設全体の最大である10を採る**（desc の先頭に来る棟でもある）。あわせてFAQ「可能でございます。事前に犬種と頭数のご連絡をお願い致します。」で pet_ok=yes に出典を付け、official に付いていた広告トラッキングパラメータ（?utm_source=GBP…）を除去する。**coldbath は触らない**: FAQ はプールについて「ご使用頂けない季節は水景や水風呂としてご利用くださいませ」と書いており既存の bath ではなく pool の可能性があるが、2棟のどちらの話か特定できない（2026-08確認）",
+            "set_villa": {"capacity": "10", "official": "https://ash-villa.com/"},
+            "set_spec": {
+                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
+                                        "url": "https://ash-villa.com/faq/"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://ash-villa.com/faq/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
