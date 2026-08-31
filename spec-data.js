@@ -2982,7 +2982,8 @@ window.VILLAFARAS_SPEC = {
     ic:           { v: '足柄SA/スマートIC(上り) 18分', src: 'auto', at: '2026-07' },
     station:      { v: '上強羅 9分', src: 'auto', at: '2026-07' },
     onsen:        { v: 2, src: 'auto', at: '2026-07' },
-    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' }
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00031190/' }
   },
 
   "169": {  /* 湯と灯りに包まれる別世界 */
@@ -3017,16 +3018,18 @@ window.VILLAFARAS_SPEC = {
   },
 
   "171": {  /* Noёl HAKONE GENSEN */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://n-o-e-l.com/hakone/gensen' },
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://n-o-e-l.com/hakone/gensen' },
     capacity:     { v: 20, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051638/11400824/10235981/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://n-o-e-l.com/hakone/gensen' },
     elevation:    { v: 840, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 5, src: 'auto', at: '2026-07' },
     ic:           { v: '芦ノ湖大観IC 16分', src: 'auto', at: '2026-07' },
     station:      { v: '早雲山 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    onsen:        { v: 5, src: 'auto', at: '2026-07' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://n-o-e-l.com/hakone/gensen' },
+    sauna_cap: { v: 6, src: 'desk', at: '2026-08', url: 'https://n-o-e-l.com/hakone/gensen' }
   },
 
   "172": {  /* Oyado S */
@@ -3130,7 +3133,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     capacity:        { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     elevation:       { v: 1164, src: 'auto', at: '2026-07' },
     supermarket:     { v: 6, src: 'auto', at: '2026-07' },
     conveni:         { v: 5, src: 'auto', at: '2026-07' },
@@ -3140,7 +3143,10 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "177": {  /* SANU 2nd Home 蓼科1st */
@@ -3185,7 +3191,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     capacity:        { v: 4, src: 'desk', at: '2026-07' },
-    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     elevation:       { v: 791, src: 'auto', at: '2026-07' },
     supermarket:     { v: 5, src: 'auto', at: '2026-07' },
     conveni:         { v: 3, src: 'auto', at: '2026-07' },
@@ -3195,7 +3201,10 @@ window.VILLAFARAS_SPEC = {
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
-    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+    bring_wrap:      { v: 'ready', src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "180": {  /* GLAMDAY STYLE HOTEL SUITE 山ノ麓 */
@@ -3247,7 +3256,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "183": {  /* Hakuba Amber Resort */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' },
     capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051318/' },
     elevation:    { v: 775, src: 'auto', at: '2026-07' },
@@ -3261,8 +3270,8 @@ window.VILLAFARAS_SPEC = {
 
   "184": {  /* Hakuba Jolie Maison */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    capacity:     { v: 9, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 9, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051589/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051589/' },
     elevation:    { v: 719, src: 'auto', at: '2026-07' },
     supermarket:  { v: 2, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
@@ -3673,12 +3682,12 @@ window.VILLAFARAS_SPEC = {
   },
 
   "207": {  /* パノーラ伊豆赤沢 */
-    kitchen_type:    { v: 'both', src: 'desk', at: '2026-07' },
+    kitchen_type:    { v: 'both', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/p_izuakazawa/' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-07' },
     bbq_roof:        { v: 'none', src: 'desk', at: '2026-07' },
-    capacity:        { v: 6, src: 'desk', at: '2026-07' },
-    pet_ok:          { v: 'no', src: 'desk', at: '2026-07' },
-    wifi:            { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/p_izuakazawa/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/p_izuakazawa/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/p_izuakazawa/' },
     elevation:       { v: 200, src: 'auto', at: '2026-07' },
     supermarket:     { v: 7, src: 'auto', at: '2026-07' },
     conveni:         { v: 7, src: 'auto', at: '2026-07' },
@@ -3730,11 +3739,11 @@ window.VILLAFARAS_SPEC = {
   },
 
   "211": {  /* オーシャンテラスAtami */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
     sauna_cap:    { v: 1, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    capacity:     { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-07' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-07' },
+    capacity:     { v: 8, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
     elevation:    { v: 462, src: 'auto', at: '2026-07' },
     supermarket:  { v: 13, src: 'auto', at: '2026-07' },
     conveni:      { v: 11, src: 'auto', at: '2026-07' },
@@ -4075,8 +4084,8 @@ window.VILLAFARAS_SPEC = {
   "232": {  /* Hiire IZU OLIVE */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
     capacity:      { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
-    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hiire-izu-olive.snack.chillnn.com/ja/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hiire-izu-olive.snack.chillnn.com/ja/' },
     elevation:     { v: 103, src: 'auto', at: '2026-07' },
     supermarket:   { v: 2, src: 'auto', at: '2026-07' },
     conveni:       { v: 1, src: 'auto', at: '2026-07' },
@@ -4084,7 +4093,10 @@ window.VILLAFARAS_SPEC = {
     station:       { v: '伊豆高原 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
-    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' }
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://hi-ire.com/stay' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hiire-izu-olive.snack.chillnn.com/ja/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hiire-izu-olive.snack.chillnn.com/ja/' },
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://hiire-izu-olive.snack.chillnn.com/ja/' }
   },
 
   "233": {  /* Hiire IZU OMURO */
@@ -4262,7 +4274,9 @@ window.VILLAFARAS_SPEC = {
     station:      { v: '富戸 8分', src: 'auto', at: '2026-07' },
     onsen:        { v: 6, src: 'auto', at: '2026-07' },
     sauna_type: { v: 'tent', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' }
+    wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' }
   },
 
   "244": {  /* HAKU-AKAZAWA- 【波空】 */
@@ -4277,7 +4291,9 @@ window.VILLAFARAS_SPEC = {
     onsen:        { v: 1, src: 'auto', at: '2026-07' },
     water_temp: { v: 't1015', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
     rest_chair: { v: 'chair', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' }
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' }
   },
 
   "245": {  /* villa 緑と物語 */
@@ -4314,7 +4330,7 @@ window.VILLAFARAS_SPEC = {
   "247": {  /* SANA 伊豆大室山-Pool Villa- */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052349/' },
     elevation:    { v: 285, src: 'auto', at: '2026-07' },
     supermarket:  { v: 5, src: 'auto', at: '2026-07' },
     conveni:      { v: 2, src: 'auto', at: '2026-07' },
@@ -4386,8 +4402,6 @@ window.VILLAFARAS_SPEC = {
     ic:          { v: '大平IC 40分', src: 'auto', at: '2026-07' },
     station:     { v: '伊豆高原 9分', src: 'auto', at: '2026-07' },
     onsen:       { v: 7, src: 'auto', at: '2026-07' },
-    sauna_type: { v: 'tent', src: 'desk', at: '2026-08', url: 'https://tentresort-izu.com/stay.php' },
-    stove: { v: 'wood', src: 'desk', at: '2026-08', url: 'https://tentresort-izu.com/stay.php' },
     kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://tentresort-izu.com/stay.php' }
   },
 

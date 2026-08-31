@@ -32,38 +32,130 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "239": {"name": "AMAO VILLA",
-            "reason": "**capacity=9 は正しい。** 公式（amao-villa-futo）に「定員：9人」「最大9名まで宿泊OK」と明記されており、出典URLが無かったため埋め戻す。OTAの9名上限表記の遺物ではない。あわせて同ページから「3口IHコンロ」「Wi-Fi」「心地よいクールダウンを叶える水風呂」「最大8名様までご一緒いただける」「最高95℃まで楽しめる本格仕様のサウナ」を確認し、既存値と一致したので出典を付ける。**なおDBの feature は「AMAO VILLA 城ヶ崎」を、desc は「最大10名まで宿泊できる」を書いており、公式の富戸（定員9）と食い違っている。紹介文が別物件のものになっている疑いがある**（2026-08確認）",
+    "252": {"name": "伊豆高原テントリゾート",
+            "reason": "**sauna_type=tent と stove=wood を削除する。出典に挙げた stay.php に根拠が無い。** 同ページを直接取得したところ「サウナ」の語は一度も登場せず、「テント」は宿泊タイプのテント泊（「自然を存分に味わうならやっぱりテント泊。高低差を利用したプライベートな空間となっております。」）を指し、「薪」に至ってはページに存在しない。施設名の「テント」とDBの紹介文にある「BBQや焚き火」から、テントサウナ＋薪ストーブと読み違えたものとみられる。予約サイトの全14プラン（アメニティを「IH用ケトル」レベルまで列挙）にもサウナの記載は無い。validate.py が「sauna_exists が未設定なのにサウナ項目があります」と警告し続けていた不整合の正体。**同じ stay.php から取った kitchen_type=ih は「キッチン（IH）」の記載があり正しい**ので残す。sauna_exists は明示的な否定文が無いため未調査のままとする。あわせて official に付いていた Google 広告のトラッキングパラメータ（?gad_source=1&gclid=…）を除去する（2026-08確認）",
+            "set_villa": {"official": "https://tentresort-izu.com/"},
+            "remove_spec": ["sauna_type", "stove"]},
+
+    "168": {"name": "湯屋　やまざくら",
+            "reason": "一休の設備欄「ペットOK：✕」＋基本情報「ペット：不可」で一致。**sauna_type は入れない**: 温泉・サウナページ「内湯『せせらぎ』2024年6月にリニューアル。プライベートサウナと水風呂付きで」から indoor が有力だが、この「プライベート」は貸切風呂（予約制）の意味で既存の sauna_exists=shared と整合しており、構造の明記ではない。**kitchen_type も入れない**: 客室備品一覧にキッチン関連の記載が無いが、これは「ある物だけを列挙する」形式なので none の根拠にならない（2026-08確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00031190/"}}},
+
+    "171": {"name": "Noёl HAKONE GENSEN",
+            "reason": "公式「Sauna: ロウリュのできるフィンランド式のサウナとジェットバスでじっくりと整う」→loyly=yes、「1Fのバレルサウナは6名様まで利用可能です」→sauna_cap=6（既存の sauna_type=barrel も同文で裏付けられたので出典を付ける）。sauna_exists=yes は公式のSaunaセクションと一休の独立行「サウナ あり」の2ソース。pet_ok=yes は公式「当宿はワンちゃんも一緒にご宿泊いただけます」＋一休「ペット可（5頭まで）」。**stove は入れない**: 「フィンランド式」はスタイルの呼称。**coldbath も入れない**: 「サウナの隣にはジェットバスもご用意しております」とあるがジェットバスは温浴が通例で、水風呂の明記が無い。**wifi も入れない**: 「50台以上の同時接続可能なルーター」はWi-Fiの明記ではない（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://n-o-e-l.com/hakone/gensen"},
+                         "sauna_cap": {"v": 6, "src": "desk", "at": "2026-08",
+                                        "url": "https://n-o-e-l.com/hakone/gensen"},
+                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-08",
+                                        "url": "https://n-o-e-l.com/hakone/gensen"},
+                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://n-o-e-l.com/hakone/gensen"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://n-o-e-l.com/hakone/gensen"}}},
+
+    "176": {"name": "SANU 2nd Home 北軽井沢2nd",
+            "reason": "公式マガジン「SANU CABIN MOSS with Sauna」が「サウナ付き客室 提供エリア：北軽井沢2nd／八ヶ岳3rd／白馬1st／河口湖2nd／南アルプス1st」と名指しで列挙しているため一律適用ではない。「サウナ用備品: ロウリュ用バケツ/柄杓、風呂桶…を設置しています」→loyly=yes、「テラスに水風呂とととのい椅子を備えています」→coldbath=bath、「オープンエアの外気浴で心地よいひと時を」→outdoor_rest=yes。pet_ok は一休 00052029 の設備欄「○ペット可」＋基本情報「ペット可」で一致。**stove は入れない**: 一休の口コミに「サウナは電気式で」とあるが口コミは設備の根拠にしない。**sauna_type も入れない**: MOSS型の構造の明記が無い（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+
+    "179": {"name": "SANU 2nd Home 白馬1st",
+            "reason": "同じMOSS型記事に白馬1stが名指しされている。loyly / coldbath / outdoor_rest は id=176 と同じ根拠。pet_ok は一休 00052076 の設備欄「○ペット可」＋基本情報「ペット可」で一致。**stove は入れない**: 一休の口コミに「入った時の木の香りがお気に入り」「木のいい香りに癒され」とあるが、これは CLAUDE.md が警告する「薪の香り」から wood と誤認するパターンそのもの（2026-08確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+
+    "183": {"name": "Hakuba Amber Resort",
+            "reason": "住所「北城830-90」の一致を確認し、設備欄「○ペット可」と独立行「サウナ あり」で既存値に出典を付ける。**公式URLが機能していない**: jadehotelgroup.com の EXPLORE HOMES から辿ると sit-jadehotelgroup.gutingjun.com（ステージング環境・読み込み中のまま停止）と jadehotelgroup.gutingjun.com/property/89（「Amber Echoland Mr. T」という別物件。住所が北城3020でDBの830-90と不一致）に着地する。jadegroup.deltahq.com の property-detail は全て404（2026-08確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00051318/"},
+                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00051318/"}}},
+
+    "184": {"name": "Hakuba Jolie Maison",
+            "reason": "住所「北城2918-1」の一致を確認。**capacity=9 の既存値（2026-07・出典なし）に裏付けが取れた**: 一休のプラン名に「・人気TYLO高級サウナ・4LDK最大9名」とあり、これは定員欄の機械的な「1～9」ではなく施設固有の記述。pet_ok=yes も設備欄「○ペット可」＋基本情報「ペット可」で一致。**stove は入れない**: プラン名の「TYLO」はスウェーデンの電気サウナヒーターのブランドで electric の有力な手がかりだが、公式側で確認が取れていない。id=283 で HARVIA を根拠にしなかったのと同じ扱いにする（2026-08確認）",
             "set_spec": {
                          "capacity": {"v": 9, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
-                         "sauna_cap": {"v": 8, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
-                         "sauna_temp": {"v": 95, "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://www.amaovilla.com/amao-villa-futo/"}}},
-
-    "193": {"name": "SAUNA FOREST CABIN 軽井沢御代田",
-            "reason": "公式トップ「サウナは最大６人で入れる広々空間」→sauna_cap=6、「汗をかいたら、外の休憩スペースで自然の風を感じてください」→outdoor_rest=yes。どちらも既存値（2026-07・出典なし）と一致したので出典を付ける。**capacity=9 は裏が取れなかった**: 公式トップに宿泊定員の記載が無い。出典なしのまま残す（2026-08確認）",
-            "set_spec": {
-                         "sauna_cap": {"v": 6, "src": "desk", "at": "2026-08",
-                                        "url": "https://saunaforestcabin.com"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://saunaforestcabin.com"}}},
-
-    "113": {"name": "ASH Villa 富士河口湖",
-            "reason": "**capacity=9 は OTA の9名上限表記の遺物で誤り。** 公式FAQは「最大10名様まで」（Deluxe Villa 1010）と「最大6名様まで」（2-Bedroom Villa 2020）の2棟しか挙げておらず、9 はどちらでもない。DBの desc 自身も「2棟展開のプライベートヴィラ。最大10名の『Deluxe Villa 1010』…最大6名の『2-Bedroom Villa 2020』」と書いている。棟で定員が違うため代表値を置きにくいが、**既知の誤りである9を残すより施設全体の最大である10を採る**（desc の先頭に来る棟でもある）。あわせてFAQ「可能でございます。事前に犬種と頭数のご連絡をお願い致します。」で pet_ok=yes に出典を付け、official に付いていた広告トラッキングパラメータ（?utm_source=GBP…）を除去する。**coldbath は触らない**: FAQ はプールについて「ご使用頂けない季節は水景や水風呂としてご利用くださいませ」と書いており既存の bath ではなく pool の可能性があるが、2棟のどちらの話か特定できない（2026-08確認）",
-            "set_villa": {"capacity": "10", "official": "https://ash-villa.com/"},
-            "set_spec": {
-                         "capacity": {"v": 10, "src": "desk", "at": "2026-08",
-                                        "url": "https://ash-villa.com/faq/"},
+                                        "url": "https://www.ikyu.com/00051589/"},
                          "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
-                                        "url": "https://ash-villa.com/faq/"}}},
+                                        "url": "https://www.ikyu.com/00051589/"}}},
+
+    "207": {"name": "パノーラ伊豆赤沢",
+            "reason": "出典なしだった4項目すべてに裏付けが取れた。「【調理器具】…IHヒーター・グリル付き3口ガスコンロ」→kitchen_type=both、「定員 6名」、「ペット：本施設は、ペットの同伴は禁止とさせていただいております。」、「ネット環境：Wi-Fi環境あり」。**sauna_exists は入れない**: ページ全文に「サウナ」の文字列が1件も無く、同ページは「ペット: 禁止」「BBQ: 行うことができません」と否定を明示する形式ではあるが、サウナについては否定文が無い。resolstay の不記載を根拠にした否定は2026-08に3件取り消したばかり（2026-08確認）",
+            "set_spec": {
+                         "kitchen_type": {"v": "both", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/p_izuakazawa/"},
+                         "capacity": {"v": 6, "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/p_izuakazawa/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/p_izuakazawa/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/p_izuakazawa/"}}},
+
+    "211": {"name": "オーシャンテラスAtami",
+            "reason": "出典なしだった4項目すべてに裏付けが取れた。「定員 8名」、「ペット：本施設は、ペットの同伴は禁止」、「Wi-Fi・デスク・チェアも揃い」、「1名用プライベートサウナと温泉を備えた一棟貸しスイートヴィラ」→sauna_exists=yes（既存の sauna_cap=1 とも整合）。**kitchen_type は入れない**: 調理器具リストの「カセットコンロ」は卓上の携帯コンロで備え付けキッチンの種別ではない（2026-08確認）",
+            "set_spec": {
+                         "capacity": {"v": 8, "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/oceanterrace/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/oceanterrace/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/oceanterrace/"},
+                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.resolstay.jp/details/oceanterrace/"}}},
+
+    "232": {"name": "Hiire IZU OLIVE",
+            "reason": "同ブランドのFUTO/OMUROからの流用ではなく**OLIVE専用ページで確認**した。注意事項「当施設のサウナは、必ず水着着用の上、ご利用をお願いいたします。特に、水着未着用での屋外の水風呂や整いスペースのご使用は固く禁じられております。」→coldbath=bath / outdoor_rest=yes。sauna_type=indoor は hi-ire.com/stay の「しつらえ」欄が「専用バスルーム／客室サウナ／シャワー／バスタブ」と並べており、同ページが「Hiireは三つの棟に分かれています」として OLIVE/OMURO/FUTO を名指ししているため採用可。wifi も同欄「WiFi／冷蔵庫」。**stove は入れない**: 「エストニア製のサウナをご用意」は原産地であって熱源ではない。pet_ok=yes は既存値だが「当施設では、愛犬とご一緒に過ごす滞在も承っております」で裏付けが取れた（有料オプション・25kg以内中型犬1匹までの条件付き）（2026-08確認）",
+            "set_spec": {
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://hiire-izu-olive.snack.chillnn.com/ja/"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://hiire-izu-olive.snack.chillnn.com/ja/"},
+                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-08",
+                                        "url": "https://hiire-izu-olive.snack.chillnn.com/ja/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://hiire-izu-olive.snack.chillnn.com/ja/"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://hiire-izu-olive.snack.chillnn.com/ja/"}}},
+
+    "243": {"name": "Azure Palace 伊豆高原",
+            "reason": "公式「大自然の中でサウナと水風呂で整う」→coldbath=bath。pet_ok は一休 00051726 の設備欄「× ペット可」＋基本情報「ペット 不可」で一致。**outdoor_rest は入れない**: 「自然の中の広いお庭をご用意しています。サウナゾーンでは心身から整い、BBQエリアでは…」はサウナが屋外にあることを示唆するが外気浴スペースの明記ではない。**要確認**: 一休のプラン名に「岩盤造りの温泉サウナ」という表記があり既存の sauna_type=tent と印象が異なる（2026-08確認）",
+            "set_spec": {
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-08",
+                                        "url": "https://azurepalace.net"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://azurepalace.net"}}},
+
+    "244": {"name": "HAKU-AKAZAWA- 【波空】",
+            "reason": "公式「FACILITY サウナ：1階のサウナスペースには…水風呂は温度14度前後、バイブラ付き。整いスペースには…」→sauna_type=indoor（建物1階内）。pet_ok は一休 00051755 の設備欄「× ペット可」＋基本情報「ペット 不可」で一致。**なお「水風呂は温度14度前後」は既存の water_temp=t1015（10℃以上15℃未満）と完全に整合し、良い裏付けになった**（2026-08確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.haku-resort.com/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.haku-resort.com/"}}},
+
+    "247": {"name": "SANA 伊豆大室山-Pool Villa-",
+            "reason": "一休の設備欄「○ペット可」＋基本情報「ペット 可」＋紹介文「ワンちゃんもご一緒に」「ペットフレンドリーの大邸宅」で一致。**capacity=10 の既存値も裏付けが取れた**: 公式「定員：10人」、一休の紹介文も「最大10名まで宿泊できる」。一休の定員欄「1～9名」はOTA上限の遺物（2026-08確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-08",
+                                        "url": "https://www.ikyu.com/00052349/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
