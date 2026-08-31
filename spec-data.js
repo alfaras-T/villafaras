@@ -928,7 +928,7 @@ window.VILLAFARAS_SPEC = {
     bbq_roof:        { v: 'roof', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.kominkatanaka.com/' },
     capacity:        { v: 7, src: 'desk', at: '2026-07' },
-    pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051341/' },
     elevation:       { v: 12, src: 'auto', at: '2026-07' },
     supermarket:     { v: 10, src: 'auto', at: '2026-07' },
     conveni:         { v: 5, src: 'auto', at: '2026-07' },
