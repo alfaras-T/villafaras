@@ -32,32 +32,95 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "45": {"name": "HARUKA KANATA 森のヴィラ",
-            "reason": "**capacity=6（2026-07・出典なし）も紹介文の「20名」もどちらも誤り。** 公式サイトを直接取得したところ棟別に定員が書かれていた。HARUKA棟「2名用（こども含む3名）」／KANATA棟「4名〜8名用（※最大12名）」／2棟利用「6名〜14名用（※最大17名）」。DBは施設全体の1エントリなので2棟利用の上限17を採る（「範囲は上限を採る」規約）。既存の6は「6名〜14名用」の下限を読んだものとみられる。紹介文の20はページのどこにも出てこない。**stove=wood（2026-07・出典なし）は要注意**: 同じ公式ページに熱源の記載が無く、sauna_type=barrel と loyly と coldbath はこのページを出典にしているのに stove だけ出典が無い。バレルサウナは薪が多いので誤りとは限らないが裏が取れていない（2026-09確認）",
-            "set_villa": {"capacity": "17"},
+    "130": {"name": "那須温泉グランピング Nenn（ネン）",
+            "reason": "**sauna_type=barrel（2026-07・出典なし）を削除する。公式の記述と矛盾する。** 公式 /spa/ を直接取得したところ「男性大浴場には、ドライサウナ（最大110℃）、女性大浴場にはミストサウナをご用意しています。」とあり、バレル・テント・小屋のいずれの語も使われていない。**性別で形式が違うため sauna_type に代表値を置けない。**「大浴場に完備しているサウナ」で既存の sauna_exists=shared も裏付けられた。あわせて同ページの「男女どちらにも水風呂（14℃）があり、交互浴でしっかりととのえることができます」から water_temp=t1015 を記録する（同じページの「ドライサウナ（最大110℃）」を sauna_temp=110 として採用済みなので、同じ書式の数値として扱う）（2026-09確認）",
+            "remove_spec": ["sauna_type"],
             "set_spec": {
-                         "capacity": {"v": 17, "src": "desk", "at": "2026-09",
-                                        "url": "https://harukakanata2.heteml.net/"}}},
+                         "water_temp": {"v": "t1015", "src": "desk", "at": "2026-09",
+                                        "url": "https://nenn-nasu.com/spa/"}}},
 
-    "215": {"name": "マイグレテラス",
-            "reason": "**紹介文の「10名」が誤りで、capacity=8 のほうが正しかった。** 公式に「定員 8名」と明記。あわせて出典の無かった4項目にも裏付けが取れた。「オリジナルブレンドの精油アロマでお好きなだけロウリュを」→loyly=yes、「地下から汲み上げられた冷たい天然水で冷水浴を」→coldbath=bath / water_src=well、「Wi-Fi 完備」。**stove=electric は裏が取れなかった**: 「本格的フィンランド製harviaのサウナストーブ」とあるがHARVIA社は薪式・電気式の両方を製造しており、「大容量のサウナストーンは遠赤外線を放出する富士溶岩」も熱源の特定にはならない（2026-09確認）",
+    "90": {"name": "totonoco 湖畔の隠れ家",
+            "reason": "一休の設備欄「× ペット可」＋基本情報「ペット：不可」で両欄一致。既存の capacity=3 も公式「最大収容人数：18名（プライベートヴィラ3名×6室）」と一休「定員：1名～3名」の2ソースで裏付けが取れた（1棟3名）（2026-09確認）",
             "set_spec": {
-                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/terrace"},
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/terrace"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/terrace"},
-                         "water_src": {"v": "well", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/terrace"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052569/"},
+                         "capacity": {"v": 3, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052569/"}}},
+
+    "91": {"name": "ビジョングランピングリゾート山中湖",
+            "reason": "公式「無料Wi-Fi」＋一休「wi-fiが利用可能です」。既存値も裏付けが取れた: 一休「部屋内に露天風呂・水風呂・テントサウナがあるため滞在中は完全貸切でご利用いただけます」→sauna_type=tent / coldbath=bath、**「部屋内」なので客室設備であることも確認できた**。**capacity=6 は要検討**: 公式に記載が無く、一休はデラックス「1～6名」スイート「2～8名」で客室数15室。6はデラックスの上限とのみ一致する。**pet_ok=yes も棟限定**: 一休の基本情報に「ペットが泊まれる部屋は『愛犬同伴OK！デラックスグランピング』のみとなります」（2026-09確認）",
+            "set_spec": {
                          "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/terrace"}}},
+                                        "url": "https://www.ikyu.com/00051605/"},
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051605/"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051605/"}}},
+
+    "93": {"name": "ヴィラグリファーム七里岩",
+            "reason": "**capacity=5（2026-07・出典なし）を11に訂正する。** 公式は「ヴィラ森と風」（大人5名）と「ヴィラ山と空」（大人6名）の2棟構成で、一休に「2棟で大人11名まで宿泊可能」と施設全体の数字が明記されている。既存の5は森と風の単棟のみを読んだもの。id=45 HARUKA KANATA で2棟利用の上限17を採ったのと同じ扱いにする（公式が全棟利用時の数字を出しているならそれを使う）。wifi は一休「wi-fiが利用可能です」（2026-09確認）",
+            "set_villa": {"capacity": "11"},
+            "set_spec": {
+                         "capacity": {"v": 11, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051403/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051403/"}}},
+
+    "95": {"name": "天空の温泉ヴィラ紬 河口湖",
+            "reason": "既存の pet_ok=no に裏付けが取れた。公式「室内での喫煙が確認された場合、別途クリーニング代を請求することがあります。ペット同伴でのご宿泊が確認された場合、別途クリーニング代を請求することがあります。」は**喫煙の禁止と並記された罰則の文脈**であり許可ではない。一休も「× ペット可」「ペット：不可」で3点整合。**kitchen_type=gas は触らない**: 公式は「室内にガスボンベ式のカセットガスコンロを用意」で、カセットコンロを kitchen_type の根拠にしない方針（id=211 / id=24 で同じ判断をした）と食い違うため、既存値の扱いは方針決定待ちとする（2026-09確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://global-stays.jp/tsumugi/"}}},
+
+    "106": {"name": "郷音 -G.O.A.T.- The Summit Club",
+            "reason": "公式の各棟ページ「セルフ ロウリュウ」→loyly=yes、「露天 ジャグジー」「ゼログラビティチェア x2、サンベッド x2」→outdoor_rest=yes、「IHコンロ、IH対応鍋」→kitchen_type=ih、「Wi-Fi」。既存の stove=wood も公式トップの Sauna 見出し直下で裏付けが取れた: 「聖地『サウナしきじ』の娘の笹野美紀恵がプロデュース。完全オリジナルの薪ストーブ、そして外気浴は目の前に広がる自然の景色で」**サウナ自体の説明のなかに薪ストーブが出てくるので居室ストーブとの混同ではない**。**capacity=16 は要再調査**: /rooms で各棟「定員×4」の表記が繰り返され複数棟の存在も示唆されており、16と整合しない（2026-09確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://goat-glamping.com/rooms"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://goat-glamping.com/rooms"},
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
+                                        "url": "https://goat-glamping.com/rooms"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://goat-glamping.com/rooms"},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-09",
+                                        "url": "https://goat-glamping.com/rooms"}}},
+
+    "128": {"name": "Haga Farm＆Glamping（芳賀ファーム&グランピング）",
+            "reason": "公式「オープンテラスにはソファセットとハモック」→outdoor_rest=yes。既存の capacity=4 も「1棟最大4名様のご利用」「3ベッド・ソファー（4名様の場合3ベッド・ソファーベッド）」で裏付け。**kitchen_type は入れない**: 「アウトドアキッチン（ウェーバー社製ガスグリル、冷蔵庫）」は屋外BBQ用のガスグリルで室内キッチンの加熱方式ではない。**stove も入れない**: 「森のバレルサウナ」は「国産総ヒノキ造り」と素材の記述のみ（2026-09確認）",
+            "set_spec": {
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://hagafarm.com/cabin/"},
+                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
+                                        "url": "https://hagafarm.com/cabin/"}}},
+
+    "138": {"name": "Casablanca Villa Hakone",
+            "reason": "公式「テラスには五右衛門風呂を設置。サウナ後の水風呂としてご利用いただけます。お湯を入れれば露天風呂としてもお使いいただけます。」→outdoor_rest=yes（屋外にサウナ後の設備がある）。wifi は一休「wi-fiが利用可能です。」。既存の capacity=8 も一休「定員 1名～8名」「客室数 1室」で裏付けが取れた（8は9名上限の罠ではない）。**なお紹介文は「13名」と書いており食い違う。公式・一休の8を採る**。**coldbath は入れない**: 上の引用は五右衛門風呂を水風呂にも露天風呂にも使えると書いており tub 相当だが、既存値が無く新規に入れるには温冷両用の解釈が要るため次波に回す（2026-09確認）",
+            "set_spec": {
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://casablancaworld.jp/villa-hakone/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://casablancaworld.jp/villa-hakone/"},
+                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
+                                        "url": "https://casablancaworld.jp/villa-hakone/"}}},
+
+    "140": {"name": "ルクス箱根湯本 LUX HAKONE YUMOTO",
+            "reason": "公式FAQ「可能です。アロマもご用意しております。」（ロウリュの可否への回答）→loyly=yes。既存の capacity=11 も一休で裏付けが取れた: 「定員 1名～9名」（OTA上限なので不使用）と「3ベッドルームで最大11名までご宿泊」が併記されており、**11は9名罠を正しく回避した値**だった。**outdoor_rest は入れない**: 「温泉露天風呂やプール・デイベッド」の記載はあるがサウナ後の休憩スペースとの明記が無い（2026-09確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://lux-hakone.com/faq/"}}},
 
     "151": {"name": "琥珀-AMBER-",
-            "reason": "**紹介文の「10名」が誤りで、capacity=5 のほうが正しかった。** 公式に「最大5人まで」「2名/1泊 *1名追加につき ¥8,000 かかります」と明記されている。サウナは「ジャグジーとサウナを完備」以上の記載が無く、形式・熱源・水風呂・外気浴はいずれも不明のまま（2026-09確認）",
+            "reason": "既存の sauna_exists=yes に出典を付ける。公式「ジャグジーとサウナを完備。」一休「サウナ あり」の2ソース（2026-09確認）",
             "set_spec": {
-                         "capacity": {"v": 5, "src": "desk", "at": "2026-09",
+                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-09",
                                         "url": "https://www.treef-vacation-house.com/kohaku-amber"}}},
+
+    "247": {"name": "SANA 伊豆大室山-Pool Villa-",
+            "reason": "一休「wi-fiが利用可能です」。住所「〒413-0231 静岡県伊東市富戸1317-2951」の一致も確認した。**outdoor_rest は入れない**: 「ハンモックやインフィニティチェアに揺られながら」はあるがサウナ後の外気浴スペースとの明記が無い（2026-09確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052349/"}}},
 }
 
 DRY = "--dry-run" in sys.argv
