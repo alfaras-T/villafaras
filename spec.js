@@ -153,7 +153,9 @@
     ]},
 
     { g: 'アクセス・周辺', rows: [
-      { k: 'winter_access', l: '冬季アクセス',   o: 'winter', ch: 'owner' },
+      /* 標高から導出する（tools/winter.py）。設計書どおりチャネルA。
+         ただし標高200〜500mの帯は判定できないため空けてある。 */
+      { k: 'winter_access', l: '冬季アクセス',   o: 'winter', ch: 'auto' },
       { k: 'elevation',     l: '標高',           u: 'm',   ch: 'auto' },
       { k: 'supermarket',   l: '最寄りスーパー', u: '分',  ch: 'auto', n: '車での所要時間' },
       { k: 'conveni',       l: '最寄りコンビニ', u: '分',  ch: 'auto' },
