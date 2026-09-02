@@ -24,8 +24,13 @@ RANGE = {
     "elevation": (0, 3000), "supermarket": (0, 180), "conveni": (0, 180),
     "onsen": (0, 180), "arrival_real": (0, 600),
 }
+# sauna_exists が no / 未設定なら成立しないはずの項目。
+# 水風呂まわりを入れていなかったため、id=2（2026-01 にサウナ提供終了）に
+# coldbath が残っているのを 2026-09 まで検出できなかった。
 SAUNA_FIELDS = ["sauna_type", "stove", "sauna_temp", "sauna_cap",
-                "loyly", "heat_time", "sauna_hours"]
+                "loyly", "heat_time", "sauna_hours",
+                "coldbath", "water_temp", "water_src", "water_depth",
+                "chiller", "outdoor_rest", "rest_chair"]
 VALID_SRC = ("owner", "desk", "auto", "review")
 
 # --allow-remove: 訂正で項目を消したときに、削除をエラー扱いしない
