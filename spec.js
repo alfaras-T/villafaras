@@ -124,7 +124,15 @@
     { g: '到着・チェックイン', rows: [
       { k: 'checkin_method', l: 'チェックイン方式', o: 'checkin', ch: 'owner' },
       { k: 'late_arrival',   l: '21時以降の到着',   o: 'late',    ch: 'owner' },
-      { k: 'early_late',     l: 'アーリー / レイト', o: 'kahi',   ch: 'owner' }
+      /* アーリーとレイトは 2026-09 に分割した。1項目にまとめていると
+         「アーリーのみ可」「レイトのみ可」の施設が表現できず、オーナー
+         調査票でも片方しか当てはまらない施設が答えられなくなるため。
+         設計書のステップ1（項目の凍結）は送付前に済ませる必要がある。 */
+      { k: 'early_checkin',  l: 'アーリーチェックイン', o: 'kahi', ch: 'owner' },
+      { k: 'late_checkout',  l: 'レイトチェックアウト', o: 'kahi', ch: 'owner' },
+      /* 移行用。旧 early_late の16件を early_checkin / late_checkout に
+         振り分けたら、この行と spec-data.js の残存セルを削除する。 */
+      { k: 'early_late',     l: 'アーリー / レイト（旧）', o: 'kahi', ch: 'owner' }
     ]},
 
     { g: '追加料金', rows: [
