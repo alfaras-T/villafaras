@@ -32,117 +32,129 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "90": {"name": "totonoco 湖畔の隠れ家",
-            "reason": "出典の無かった3項目に裏付けが取れた。公式「サウナ、水風呂、外気浴コーナーで『整う』時間をぜひお過ごしください」→coldbath=bath / outdoor_rest=yes、施設概要「インターネット環境: フリーWi-Fi」→wifi=yes。**kitchen_type は入れない**: 設備欄は「調理器具・食器類」のみでコンロ自体の記載が無い（2026-09確認）",
+    "0": {"name": "古民家宿るうふ 揺之家",
+            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の8件目。** 公式を直接取得したところ、**「薪ストーブ」という語がページに一度も登場しない。** 暖房は「空調設備」欄の「ペレットストーブ、エアコン」で、しかもペレットはスキーマの wood/electric/gas のどれでもない。サウナの説明は「杉のサウナと檜の水風呂」「サウナ完備のウッドデッキで夕日を見ながら整う」までで熱源の記載が一切ない。一休の口コミも「薪ストーブも設置されていたので寒い時期は薪ストーブとサウナを楽しめそう」と**両者を並列の別設備**として書いている。sauna_type=indoor は公式の間取りで寝室1・寝室2と並んで「09 - SAUNA」と部屋番号が振られており母屋内の一室として扱われているため。pet_ok=no と wifi は一休 00051840。既存の coldbath=bath / outdoor_rest=yes / kitchen_type=ih / capacity=7 もすべて公式で裏付けが取れた（2026-09確認）",
+            "remove_spec": ["stove"],
             "set_spec": {
+                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
                          "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://global-stays.jp/totonoco/"},
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
                          "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://global-stays.jp/totonoco/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://global-stays.jp/totonoco/"}}},
-
-    "94": {"name": "abrAsus hotel Fuji",
-            "reason": "公式デザインページ「窓のないオープンリビングで…サウナのあとの外気浴にもぴったりです」→outdoor_rest=yes（**サウナと明示的に紐付いている**）。FAQ「外にあるテラスは、寒くないですか？→テラスのソファに電気毛布2枚のご用意がございます」も補強。**sauna_type は入れない**: 公式は「SAUNA TRAILER」＝トレーラーサウナで、indoor/hut/barrel/tent のどれにも該当しない（スキーマ不足の新しい型）。**wifi も入れない**: FAQ全項目（約60問）をDOM直読みで確認したが一切言及が無い（2026-09確認）",
-            "set_spec": {
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://abrasushotel.jp/fuji/room1/"}}},
-
-    "97": {"name": "VILLA　SUOMI",
-            "reason": "一休の設備欄「✕ペット可」＋基本情報「不可」で一致。既存の capacity=6 も「クンプラ 定員1名〜6名」「ワロイサ 定員1名〜6名」と2室型とも独立に6を示しており、9名上限の機械読み取りではない。**sauna_type は入れない**: 「フィンランドのHONKAのログホームだからこそ、本場のフィンランドサウナを」から indoor が推測できるが「フィンランドサウナ」はスタイル呼称。**stove も入れない**: 設備リストは「sauna stove」と英語表記のみ。なお**BBQ用の「Soloストーブ」（焚き火台）が別項目で存在する**ので混同しないこと（2026-09確認）",
-            "set_spec": {
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051019/"},
-                         "capacity": {"v": 6, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051019/"}}},
-
-    "115": {"name": "有形文化財ホテル 飯塚邸",
-            "reason": "公式の客室ページ6室（本宅／新宅A／新宅B／文庫蔵／土蔵A／土蔵B）すべての設備欄に「ＩＨ」「Wifi」「ペット不可」が明記されており、一休の設備欄「✕ペット可」＋基本情報「不可」とも一致する。**capacity=3 は要検討**: 本宅4名・新宅A5名・新宅B5名・文庫蔵3名・土蔵A3名・土蔵B3名と棟ごとに異なり、「最大4〜5名様×3グループ様まで」という記述はあるが全棟合計の単一数値が無い。既存の3は最小値のみを反映している。**住所の不一致を発見**: DBは「栃木県那須郡那珂川町矢又1948」だが、公式のフッター・アクセス欄と一休がどちらも「栃木県那珂川町馬頭360」。**チャネルAの標高・所要時間は住所から導出しているので、住所が誤っていれば連鎖する**（2026-09確認）",
-            "set_spec": {
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
                          "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
-                                        "url": "https://iizukatei.ohtawaragt.co.jp/rooms"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://iizukatei.ohtawaragt.co.jp/rooms"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://iizukatei.ohtawaragt.co.jp/rooms"}}},
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
+                         "capacity": {"v": 7, "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/yuraginoie/"}}},
 
-    "129": {"name": "和モダングランピング｜NAGOMI CAMP",
-            "reason": "グランピング4室（籠・麻・波・紗綾）すべての設備欄に「無料Wi-Fi」。既存の sauna_type=barrel も専用サウナページの「バレルサウナ／BARREL SAUNA／森林サウナ」で裏付けが取れた。**kitchen_type は入れない**: facility / glamping ページとも「ある物だけを列挙する」形式（フロント・トイレ・シャワー・BBQ・ドリンクバー等）で、不記載を否定の根拠にできない（2026-09確認）",
-            "set_spec": {
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.nagomi-camp.jp/glamping"},
-                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.nagomi-camp.jp/glamping"}}},
-
-    "137": {"name": "P's Wood 箱根仙石原",
-            "reason": "**同一ブランドに伊豆高原・元箱根の別施設があるため /hakone/ ページのみを参照した。**「国産檜のサウナは4名が同時にご利用できますので、何度でも汗を流してください。ロウリュも可能です。」→loyly=yes、設備＜キッチン＞欄「IHコンロ」「IHクッキングヒーター」→kitchen_type=ih。既存の capacity=12 も「12名まで宿泊OK」がトップ文章と概要表の2箇所にあり裏付け。**stove は入れない**: 「国産檜のサウナ」「檜の香り」は**建材の説明であって熱源ではない**。**outdoor_rest も入れない**: ウッドデッキはBBQ専用と明記されている（2026-09確認）",
-            "set_spec": {
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://ps-wood.jp/hakone/"},
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
-                                        "url": "https://ps-wood.jp/hakone/"},
-                         "capacity": {"v": 12, "src": "desk", "at": "2026-09",
-                                        "url": "https://ps-wood.jp/hakone/"}}},
-
-    "149": {"name": "MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ",
-            "reason": "**stove がサウナの説明文中に直接書かれている数少ない例。** 「サウナストーブは、薪を使用する本格フィンランド式です。ストーンにゆっくりと水をかけることで、ロウリュも楽しめます。」→stove=wood / loyly=yes。「水風呂、温水プール、サウナチェアをご用意しています」→coldbath=bath（水風呂と温水プールが別項目）／outdoor_rest=yes。sauna_exists は「Sauna 絶景の中で、最高の『ととのい』体験を。」、pet_ok=yes は公式「with Dogs」＋一休「○ペット可」＋基本情報「可」の三重確認。**sauna_type は入れない**: 間取り図で「Ground（庭）」区分にサウナ・プール・ドッグラン・BBQが分類され母屋と別区画とは分かるが、小屋／バレル／テントの形状記載が無い（2026-09確認）",
+    "4": {"name": "るうふ別邸 鴨川919",
+            "reason": "**同じ「るうふ」ブランドで id=0 と正反対の結果になった。こちらは stove=wood が正しい。** 公式のサウナの説明そのものに「薪ストーブのサウナや水風呂を完備、サウナ後には広いテラスデッキで整う時間を」「薪ストーブのサウナで汗をかき、開放的なテラスでととのう」と**2箇所で明記**されている。**同一ブランドでも棟ごとに違うという原則と、熱源はサウナの説明のなかにあるかで判定するという原則の両方を示す好例。** pet_ok=no と wifi は一休 00051889。既存の coldbath=bath / outdoor_rest=yes / kitchen_type=gas / capacity=8 も公式と一休で裏付け（2026-09確認）",
             "set_spec": {
                          "stove": {"v": "wood", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"},
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"},
-                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"},
-                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://moroisoso.jp/facility"}}},
-
-    "154": {"name": "LULLA",
-            "reason": "既存の sauna_exists=yes（一休「サウナ：あり」）と capacity=4（一休「定員 1名～4名」。9名上限の機械読み取りではない）に出典を付ける。**outdoor_rest は入れない**: 「屋上」がお部屋情報にあるがサウナとの関連付けが明示されていない（2026-09確認）",
-            "set_spec": {
-                         "sauna_exists": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00052476/"},
-                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00052476/"}}},
-
-    "165": {"name": "箱根懐來",
-            "reason": "公式「檜の香りが心地よいプライベートサウナではロウリュも堪能できます」→loyly=yes。**kitchen_type=none をこの項目で2件目として記録する**: 「安全管理の観点から、火器の使用や食材の持ち込みによる調理はご遠慮いただいております」という**明示的な禁止文**があり、「システムキッチン」の表記はあるが実際は調理不可。**sauna_type は入れない**: 「サウナのすぐ側に水風呂を備え、そのままオープンテラス/内風呂/温泉露天風呂も回遊できます」から屋内の導線と読めるが「室内」の直接表記が無い。**stove も入れない**: 温度35〜110℃・1℃刻み・5名収容と詳細な記述があるのに熱源だけ書かれていない（2026-09確認）",
-            "set_spec": {
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.hakone-kairai.jp"},
-                         "kitchen_type": {"v": "none", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.hakone-kairai.jp"}}},
-
-    "190": {"name": "Hygge chalet hakuba（ヒュッゲ シャレー）",
-            "reason": "一休の設備欄「✕ペット可」＋基本情報「不可」で一致。**サウナの改装履歴が判明した**: 2021.02.14 のニュースは「MORZH SKY(テントサウナ)を導入しました」だが、2024年春に「本格薪ストーブ式アウトドアサウナ」へ更新されており、現行の /system/ ページにテントの語は一度も出てこない。既存の stove=wood（2026-08・出典あり）はこの2024年の記述と整合する。**sauna_type は入れない**: 「アウトドアサウナ」では小屋かバレルかを区別できない。**季節制限（スキーマ外）**: 「（※冬季は凍結のため利用不可）」が /system/ ページの本文とオプション欄の2箇所にある（2026-09確認）",
-            "set_spec": {
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
                          "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00052430/"}}},
-
-    "199": {"name": "北軽井沢 貸別荘 FARMSIDE",
-            "reason": "利用規約ページの明示的な否定文「当貸別荘のポリシーによりペット同伴での宿泊はできません。」→pet_ok=no。**coldbath は入れない**: チモシー・ヴィラの設備列挙に「サウナ」と「ジャグジーバス」が別項目で並ぶが、水風呂用途に転用できる旨の明記が無くジャグジーは常時温水の可能性もあるため tub と断定できない。**なおクローバー・ログハウスの設備一覧は「・Wi-Fi・薪ストーブ・サウナ・エアコン…」と薪ストーブとサウナが別の箇条書きで並ぶ**居室ストーブ混同の典型形だが、既存の stove=electric はサウナイキタイ由来でこの公式リストを根拠にしていないため矛盾していない（2026-09確認）",
-            "set_spec": {
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://newsite.kitakaruizawafarmstay.com/"}}},
-
-    "225": {"name": "マイグレHOODSTAR",
-            "reason": "**capacity=9 の公式根拠が見つかった。** トップに「定員 9名」、本文に「寝室は2部屋をご用意しました。最大9名様までご宿泊いただけます。」と2箇所で明記されており、OTAの9名上限の遺物ではない。「露天風呂・水風呂・オーバーヘッドシャワー・シャワールーム」→coldbath=bath（水風呂が独立項目）、「③絶景×爽やかな心地いい風に包まれる、最高の外気浴スペース」→outdoor_rest=yes。既存値も裏付けが取れた: sauna_type=hut は「デッキに設けたサウナ小屋には」「1F…デッキ、サウナ小屋」の2箇所、loyly=yes は「セルフロウリュでじわじわと」「お好きなだけロウリュを」、wifi=yes は「Wi-Fi 完備」。**stove=electric は裏が取れなかった**: 「フィンランド製の超高熱度サウナストーブHarviaを採用」とあるがHarvia社は電気式・薪式の両方を製造している。薪の取り扱いの案内は見当たらないため電気寄りではあるが断定できない（2026-09確認）",
-            "set_spec": {
-                         "capacity": {"v": 9, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"},
-                         "sauna_type": {"v": "hut", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"},
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"},
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
                          "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.maigre.jp/hoodstar"}}},
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
+                         "kitchen_type": {"v": "gas", "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
+                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
+                                        "url": "https://loof-inn.com/hotels/kamogawa919"}}},
+
+    "15": {"name": "amane",
+            "reason": "客室ページ「IHクッキングヒーター、オーブンレンジ、シンク」→kitchen_type=ih、室内設備「Wi-Fi」。既存値も裏付けが取れた: 「フラットルームに、本格バレルサウナがプラスされた特別のお部屋。**全1室**」→sauna_exists=room / sauna_type=barrel、「水風呂」「外気浴スペースを確保しています」「定員4名」。**pet_ok=yes は施設単位では正しいが部屋で扱いが違う**: 一休の基本情報は「お泊まりいただけるお部屋はメゾネットルームのみ」で、**サウナ付きのプレミアムフラットルーム自体のページには「※ワンちゃんはご宿泊いただけません」と明記**されている（2026-09確認）",
+            "set_spec": {
+                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "sauna_exists": {"v": "room", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
+                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-amane.com/rooms/room_02/"}}},
+
+    "16": {"name": "みささ",
+            "reason": "**kitchen_type=none をこの項目で3件目として記録する。** 一休の設備欄に「× キッチンあり」と○✕形式で明示。公式の facilities ページにも「キッチン」「調理」「コンロ」の語が一切なく、料理は「専属バトラーが目の前で炭火で焼き上げる」等スタッフ提供が前提で整合する。sauna_type=indoor は「バスエリア：半露天風呂（天然温泉）・サウナ・水風呂（天然水）・シャワーブース」と客室のバスエリアの一部として扱われているため。pet_ok=no は一休の基本情報「不可」＋設備欄「× ペット可」。**既存の loyly / coldbath / outdoor_rest / water_src の出典URL（/room/ と /spa/）は現在404**。サイト再編で /facilities/ に統合されており、出典の張り替えが要る（2026-09確認）",
+            "set_spec": {
+                         "kitchen_type": {"v": "none", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-misasa.com/facilities/"},
+                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-misasa.com/facilities/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.awa-misasa.com/facilities/"}}},
+
+    "22": {"name": "海都-kaito- TOKYOBAY",
+            "reason": "公式「ペット 不可」＋一休の設備欄「× ペット可」＋基本情報「不可」の三重一致→pet_ok=no。公式「Wi-Fi 有り(無料)」＋一休「wi-fiが利用可能です」の二重一致。公式「テラス（屋外リラックススペース）」→outdoor_rest=yes（インナーテラスは屋内と明確に区別されている）。**stove は入れない**: 「サウナストーブ｜貸別荘のサウナ設備」という見出しはあるが直後に説明文が無く熱源が特定できない（2026-09確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://piyoresort.com/kaito/room"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://piyoresort.com/kaito/room"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://piyoresort.com/kaito/room"}}},
+
+    "31": {"name": "moe-luana",
+            "reason": "一休「wi-fiが利用可能です。有線が利用可能です。」。**capacity=9（2026-07・出典なし）は根拠が無い**: 一休は「1名〜9名」でOTA上限の疑いが濃く、公式サイトにある「最大12名」は**「お客様の声」欄のゲストの感想文**（「最大12名まで宿泊できるようなので、両親や友人家族と…と思いました」）で公式の断定ではない。予約サイト tabichat.jp にも定員の明記が無く、寝具は「ダブルベッド2台、シングルベッド4台、布団2組」。**代替値が確定できないため値は残すが、出典なし capacity=9 のコホートとして要調査**（2026-09確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051499/"}}},
+
+    "35": {"name": "by the river Isumi",
+            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の9件目。** 旅色の紹介記事に「室内にはBoConcept社のソファーや『Morso』の薪ストーブ、ALADDINX社のプロジェクターが備わり」とあり、**ソファ・プロジェクターと並ぶリビングの家具・設備**。サウナ自体の説明は「熱を均一に保つことに優れたバレルサウナ」で熱源の記載が無い。kitchen_type=gas は施設自身の予約サイトの注意事項「外出時や就寝時、ガスコンロ等ご利用、火元に十分ご注意ください」。**coldbath は入れない**: 「木の香りがさわやかな水風呂」は第三者媒体（旅色）のみの情報で公式に記載が無い。**outdoor_rest も入れない**: テラスの存在は確認できるがサウナ後の休憩用途と明記されていない（2026-09確認）",
+            "remove_spec": ["stove"],
+            "set_spec": {
+                         "kitchen_type": {"v": "gas", "src": "desk", "at": "2026-09",
+                                        "url": "https://bytheriver.booking.chillnn.com"}}},
+
+    "50": {"name": "THE CLUB 919 DOG FRIENDLY",
+            "reason": "既存の capacity=6 に出典を付ける。一休「定員 1名～6名」で、9名上限の機械的読み取りではない。**sauna_type は入れない**: 公式の設備一覧とサウナ専用ページはどちらも「フィンランドサウナの伝統に基づいた本物のロウリュ式サウナ」と様式の呼称のみ。**stove も入れない**: 「サウナストーンから立ち昇る蒸気」までで熱源の明記が無い。**coldbath も入れない**: 設備一覧に「サウナ、ジャグジー」と並記されるのみで水風呂の独立記載が無い（2026-09確認）",
+            "set_spec": {
+                         "capacity": {"v": 6, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051811/"}}},
+
+    "54": {"name": "Zekkei stay ISUMI cabin",
+            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の10件目。** 公式予約サイトの「お子様の宿泊に関して」という**安全上の注意事項**にこうある。「屋外デッキと室内ロフトに手すりがないため、ご自身で安全管理できる場合のみ予約可能です。また薪ストーブもございますので火傷には十分ご注意ください。・川沿いの柵が低いので…」。**手すりのないロフト・川沿いの柵と並ぶ居室の危険箇所の列挙**であり、前後に「サウナ」の語は一切出現しない。**wifi は入れない**: 「※高速インターネットはありますが、携帯電話の電波が不安定になるエリアがございます」は「Wi-Fi」の明記ではない。既存の loyly=yes / coldbath=bath も公式に該当記載が見つからず未確認のまま（2026-09確認）",
+            "remove_spec": ["stove"]},
+
+    "56": {"name": "THE VIBES VILLA",
+            "reason": "一休の基本情報「ペット 不可」＋設備欄「× ペット可」一致、「wi-fiが利用可能です」。**stove は入れない**: 公式のサウナ専用ページに「ハルビアのサウナヒーターを設置し、セルフロウリュが楽しめる」とあるが、Harvia社は薪式・電気式の両方を製造している。WebSearchの要約には「電気式」とあったが記事本文を直接取得しても該当記載が無く、独立ソースでの裏取りができなかった（2026-09確認）",
+            "set_spec": {
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051997/"},
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00051997/"}}},
+
+    "58": {"name": "UMIYAMA CHIKURA",
+            "reason": "**公式URL（umiyama-chikura.com）が機能していない。** 実機ブラウザで開いたところ、リダイレクトはせず正しいタイトル「UMIYAMA CHIKURA | Official Website」を返すが**本文が一切描画されない空ページ**だった（エージェントは別ブランドへのリダイレクトと報告してきたが再現しなかった）。**既存の sauna_exists / sauna_type / coldbath / capacity / pet_ok / wifi / checkin_method / kids_free の8項目がすべてこのURLを出典としており、再検証できない状態。** 代わりにサウナイキタイの構造化データを使う（住所「千葉県 南房総市 千倉町北朝夷1470番地2」で照合済み）。「セルフロウリュ｜砂時計で時間を計り、30分に1度程度の頻度でお願いします」→loyly=yes、「外気浴 デッキチェア: 2席」→outdoor_rest=yes、「サウナ室：ドライサウナ 対流式（ストーン）電気」→stove=electric。既存の capacity=9 も同ページの施設補足情報「大人6名・子供3名(12歳以下) *お子様含め最大9名様がご宿泊いただけます」で裏付けが取れた。**これは一休の9名上限とは独立した施設側の記載**（2026-09確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://sauna-ikitai.com/saunas/85685"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://sauna-ikitai.com/saunas/85685"},
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://sauna-ikitai.com/saunas/85685"},
+                         "capacity": {"v": 9, "src": "desk", "at": "2026-09",
+                                        "url": "https://sauna-ikitai.com/saunas/85685"}}},
+
+    "278": {"name": "LUCY RESORT（ルーシー リゾート）",
+            "reason": "公式トップ「グランピング施設の各区画はWIFIを整備」→wifi=yes。**coldbath は入れない**: enjoy ページの「バスジェット付ジャグジー、薪風呂を完備」は文脈上リラクゼーション用の温浴で、サウナ後の冷却用とは書かれていない。**sauna_type / stove も入れない**: 「アウトドアでもサウナが楽しめます！…ストーンに水をかけて自分の好きな温度に調整ができます」までで種類・熱源の明記が無い。**capacity=6 は要検討**: 棟ごとに定員が6/6/5/2/3/3/3名と異なり「全棟利用時は最大N名」という施設全体の数字が見当たらない。既存の6は複数の棟タイプとたまたま一致するだけ（2026-09確認）",
+            "set_spec": {
+                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.lucyresort.com"}}},
 }
 
 DRY = "--dry-run" in sys.argv
