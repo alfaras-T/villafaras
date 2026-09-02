@@ -32,37 +32,143 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "189": {"name": "Tatehata House 北軽井沢",
-            "reason": "**addr の都道府県名が重複していた。「長野県群馬県吾妻郡…」→「群馬県吾妻郡…」。** 吾妻郡長野原町北軽井沢は群馬県で、長野県は誤って前置されたもの。国土地理院のジオコーディングで検証したところ、現在の住所は「長野県」までしか解決できず保存済み座標から**42.82km**離れるのに対し、訂正案は「群馬県長野原町北軽井沢１９２４番地」と番地まで解決して**0.74km**に収まる（2026-09確認）",
-            "set_villa": {"addr": "群馬県吾妻郡長野原町北軽井沢1924-1005"}},
+    "14": {"name": "Sea by TORAMII",
+            "reason": "early_late を early_checkin / late_checkout に分割。**この施設が分割の必要性を最もはっきり示した。** 旧 early_late は yes だったが、実際にはアーリーが明示的に不可だった。公式「アーリーチェックインは現在行っておりません。ご了承ください。」／「有料でレイトチェックアウトもご用意しております。」「有料オプションレイトチェックアウト：1時間あたり＋ご利用料代金の10％、最大2時間（12時まで）」。**1項目の可/不可では『レイトのみ可』を表現できず、yes がアーリー不可を隠していた**（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://toramii.jp/sea-by-toramii/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://toramii.jp/sea-by-toramii/"}}},
 
-    "199": {"name": "北軽井沢 貸別荘 FARMSIDE",
-            "reason": "**addr の都道府県名が重複していた。「長野県群馬県吾妻郡…」→「群馬県吾妻郡…」。** id=189 と同じ誤り。吾妻郡嬬恋村鎌原は群馬県。ジオコーディングでの保存済み座標との距離は 41.52km -> 2.19km（訂正案は大字までの解決なので残差は重心距離）（2026-09確認）",
-            "set_villa": {"addr": "群馬県吾妻郡嬬恋村鎌原1054"}},
+    "17": {"name": "the MELLOW HOUSE 館山",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「※有料オプションにて、アーリーチェックイン・レイトチェックアウトも可能です。詳細は公式LINEにてお問合せください。」（1文で両方に言及）（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.mellowhouse.jp/question/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.mellowhouse.jp/question/"}}},
 
-    "124": {"name": "北欧伝説 ドワーフの村",
-            "reason": "**addr に町名が欠けていた。「栃木県那須郡高久乙170-1」→「栃木県那須郡那須町高久乙170-1」。** 那須郡には那須町と那珂川町があり、高久乙は那須町の大字。現在の住所は**ジオコーディング自体が失敗する**が、訂正案は「栃木県那須町高久乙」として解決し保存済み座標から 5.26km（大字の重心距離）。一休の掲載住所も「〒325-0303 栃木県那須郡那須町高久乙170-1」（2026-09確認）",
-            "set_villa": {"addr": "栃木県那須郡那須町高久乙170-1"}},
+    "18": {"name": "On the wave 館山",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「15時チェックイン、10時チェックアウトです。※オプションでアーリーチェックイン、レイトチェックアウトに対応可能です。」（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://otw-tateyama.com/qa/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://otw-tateyama.com/qa/"}}},
 
-    "125": {"name": "森deワーケなすっぽ",
-            "reason": "**addr に町名が欠けていた。id=124 と同じ誤り。** 現在の住所はジオコーディングが失敗するが、訂正案は「栃木県那須町高久乙５９３番地」と番地まで解決し保存済み座標から**0.49km**（2026-09確認）",
-            "set_villa": {"addr": "栃木県那須郡那須町高久乙593-424"}},
+    "21": {"name": "UMInoTERRACE",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「チェックイン 15:00~ （アーリーチェックインをご希望の方は13:00〜可能 別途15000円請求させて頂きます。」→early_checkin=yes。**late_checkout は入れない**: 同ページの「チェックアウト時間が遅れてしまった場合、30分毎に¥5,000請求させていただきますのでご注意ください。」は**超過時の延滞金の注意書きであってレイトチェックアウトの提供ではない**。他施設のような予約制オプションとしての明記が無い（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://piyo-terrace.com/vacationrentals/uminoterrace-villa/"}}},
 
-    "210": {"name": "熱海オーシャンハウス",
-            "reason": "addr の全角ハイフン「－」を半角に統一する。検索とジオコーディングで不利になるため（2026-09確認）",
-            "set_villa": {"addr": "静岡県熱海市上多賀1065-141"}},
+    "33": {"name": "and RIVER勝浦",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「チェックイン PM 15:00 チェックアウト AM 11:00 アーリーチェックイン レイトチェックアウト [有料・応相談]」。id=60 と一字一句同じ文言で、同ブランドの共通テンプレートだが両施設の別ドメインで実在を確認済み（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.andriver-katsuura.com/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.andriver-katsuura.com/"}}},
 
-    "260": {"name": "赤城宿 珠蕾山荘 -shurai-",
-            "reason": "addr の全角ハイフン「‐」を半角に統一する（2026-09確認）",
-            "set_villa": {"addr": "群馬県前橋市富士見町赤城山1841-1"}},
+    "34": {"name": "Retreat Villa Aym",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「Q. アーリーチェックイン・レイトチェックアウトは可能ですか？ A. 当日の予約状況により対応可能な場合がございます。」「●アーリーチェックイン 1時間前：11,000円（税込）」「●レイトチェックアウト ※受付はチェックイン当日18時までとなります 1時間以内：11,000円（税込）」。id=33/60 と違い個別の料金体系を持つ独自コンテンツ（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://aym.wyes-resort.com/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://aym.wyes-resort.com/"}}},
 
-    "262": {"name": "Earthboat Minakami Hodaigi",
-            "reason": "addr の全角マイナス「−」を半角ハイフンに統一する（2026-09確認）",
-            "set_villa": {"addr": "群馬県利根郡みなかみ町藤原3839-1"}},
+    "43": {"name": "Montevan RESORT VILLA",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「チェックイン15:00〜20:00、チェックアウト10:00（追加料金にてアーリーチェックイン/レイトチェックアウトも可能）※但し、当日の予約状況によってはご希望に添えない可能性もございます」（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.montevan.com/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.montevan.com/"}}},
 
-    "272": {"name": "ノーラ名栗",
-            "reason": "addr の全角ハイフン「‐」を半角に統一する（2026-09確認）",
-            "set_villa": {"addr": "埼玉県飯能市下名栗607-1"}},
+    "60": {"name": "and FOREST勝浦 竹の離れ",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「チェックイン PM 15:00 チェックアウト AM 11:00 アーリーチェックイン レイトチェックアウト [有料・応相談]」（id=33 と同文言）（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.takenohanare.com/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.takenohanare.com/"}}},
+
+    "65": {"name": "THE NALU",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「①チェックイン（15:00〜20:00）…※アーリーチェックインをご希望の際は、事前にご相談ください」「④チェックアウト（〜11:00）…※レイトチェックアウトをご希望の際も、事前にご相談ください」と別々の項目で書かれている（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://the-nalu.com/information/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://the-nalu.com/information/"}}},
+
+    "72": {"name": "VILLA LAGI",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式Q&A「アーリーチェックイン、アウトをご希望の場合は1時間延長につき10000円(6人まで)1人追加毎に＠1000円となります。事前予約、またはチェックイン時にお申し出ください。」**記録済みの出典（トップページ）にはこの記載が無く、サイト内の /qa/ にあった。出典URLも差し替える**（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.chiba-isumi-privatevilla.com/qa/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.chiba-isumi-privatevilla.com/qa/"}}},
+
+    "78": {"name": "enico.Mt.Fuji Resort & Glamping",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「チェックアウト 8：00～10：00 ※レイトチェックアウトも可能ですが、３０分につき２０００円頂戴しております」→late_checkout=yes。**early_checkin は入れない**: FAQページ全文を確認したが「アーリーチェックイン」の語自体が存在しない。不記載は不可の根拠にならないので不明のままとする（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://enico-mount-fuji.com/frequently-asked-questions/"}}},
+
+    "92": {"name": "VILLA SAISON FUJI",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「アーリーチェックイン・レイトチェックアウトに関して 申し訳ございませんが、アーリーチェックインもレイトチェックアウトも承っておりません。」と両方を明示的に否定している（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://villa-saison-fuji.com/faq/"},
+                         "late_checkout": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://villa-saison-fuji.com/faq/"}}},
+
+    "126": {"name": "御宿 憩（OYADO IKOI）",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式「・ Check-in: 16:00～ ・ Check-out time ～10:00 Please contact us for early check-in and late check-out.」（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://stay-japan.tokyo/en/ikoi/"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://stay-japan.tokyo/en/ikoi/"}}},
+
+    "131": {"name": "LEVATA",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「アーリーチェックイン・レイトチェックアウトできますか？ 出来ません」と両方を明示的に否定（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://levata.jp/"},
+                         "late_checkout": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://levata.jp/"}}},
+
+    "191": {"name": "軽井沢 HOUSE VILLA",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式FAQ「チェックインの時間は16〜20時、チェックアウトは11時迄となります。…また、アーリーチェックインやレイトチェックアウトは利用状況に応じてご対応可能ですが、追加費用が発生致します。」（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "early_checkin": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://karuizawa-house-villa.com/faq"},
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://karuizawa-house-villa.com/faq"}}},
+
+    "267": {"name": "MOOSKA DE STUBEN",
+            "reason": "early_late を early_checkin / late_checkout に分割。公式の料金ページ「レイトチェックアウト 翌12:00まで利用可能 22,000円／組」→late_checkout=yes。**early_checkin は入れない**: 「早朝サウナ」27,500円/組というオプションはあるがこれはサウナのみの早朝利用で、施設全体のアーリーチェックインではない。**記録済みの出典（トップページ）はJS描画前が空で内容を持たず、実際の情報は /price と /faq にあった**（2026-09確認）",
+            "remove_spec": ["early_late"],
+            "set_spec": {
+                         "late_checkout": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://mooska.jp/price"}}},
 }
 
 DRY = "--dry-run" in sys.argv
