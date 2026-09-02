@@ -66,16 +66,22 @@ def main():
     villas, desk, opts, masters, have, nosrc = load()
     done = {m for line in io.open("data/desk-research.js", encoding="utf-8")
             for m in re.findall(r"id=(\d+)", line)}
-    rows = sorted(((len([k for k in desk if k not in have.get(str(v["id"]), set())]),
-                    str(v["id"]), v) for v in villas if str(v["id"]) not in done),
-                  key=lambda r: -r[0])
+    unsourced = "--unsourced" in sys.argv
+    if unsourced:
+        # 出典URLの無い desk 値の多い順。空欄ではなく検証対象を選ぶモード。
+        rows = sorted(((len([k for k in nosrc.get(str(v["id"]), []) if k in desk]),
+                        str(v["id"]), v) for v in villas), key=lambda r: -r[0])
+    else:
+        rows = sorted(((len([k for k in desk if k not in have.get(str(v["id"]), set())]),
+                        str(v["id"]), v) for v in villas if str(v["id"]) not in done),
+                      key=lambda r: -r[0])
     rows = [r for r in rows if r[0] > 0][:n]
     if "--prompt" not in sys.argv:
         print("desk項目 %d: %s" % (len(desk), " ".join(desk)))
-        print("未記録で空欄のある施設 上位%d件（空欄合計 %d）"
-              % (len(rows), sum(r[0] for r in rows)))
+        lbl = "出典なし" if unsourced else "空欄"
+        print("上位%d件（%s合計 %d）" % (len(rows), lbl, sum(r[0] for r in rows)))
         for b, vid, v in rows:
-            print("  id=%-4s 空欄%-3d %s" % (vid, b, v["name"][:40]))
+            print("  id=%-4s %s%-3d %s" % (vid, lbl, b, v["name"][:40]))
         return
     print("## 埋める項目と選択肢（spec.js の var O から生成。この値以外は使わない）\n")
     print(option_text(desk, opts, masters))
