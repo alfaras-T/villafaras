@@ -2441,7 +2441,7 @@ window.VILLAFARAS_SPEC = {
 
   "122": {  /* Earthboat Nasu */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://earthboat.jp/nasu' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-09', url: 'https://earthboat.jp/nasu' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
@@ -3618,7 +3618,7 @@ window.VILLAFARAS_SPEC = {
 
   "188": {  /* COCO VILLA 軽井沢 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/karuizawa/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/karuizawa/' },
@@ -3770,7 +3770,7 @@ window.VILLAFARAS_SPEC = {
 
   "195": {  /* Earthboat Kurohime */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-09', url: 'https://earthboat.jp/kurohime' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
@@ -4423,7 +4423,7 @@ window.VILLAFARAS_SPEC = {
   "234": {  /* COCO VILLA 伊豆赤沢 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
     sauna_type:   { v: 'hut', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/izuakazawa/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/izuakazawa/' },
     elevation:    { v: 84, src: 'auto', at: '2026-07' },
@@ -4444,7 +4444,7 @@ window.VILLAFARAS_SPEC = {
 
   "235": {  /* COCO VILLA 大室山 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
@@ -4857,7 +4857,7 @@ window.VILLAFARAS_SPEC = {
 
   "261": {  /* Earthboat Minakami Fujiwara */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-09', url: 'https://earthboat.jp/minakami_fujiwara' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
@@ -4877,7 +4877,7 @@ window.VILLAFARAS_SPEC = {
 
   "262": {  /* Earthboat Minakami Hodaigi */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-07' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-09', url: 'https://earthboat.jp/minakami_hodaigi' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 3, src: 'desk', at: '2026-07' },
@@ -5045,7 +5045,7 @@ window.VILLAFARAS_SPEC = {
 
   "270": {  /* COCO VILLA 長瀞 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
@@ -5066,7 +5066,7 @@ window.VILLAFARAS_SPEC = {
 
   "271": {  /* Earthboat Saitama Kawajima */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://earthboat.jp/saitama_kawajima' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
@@ -5163,7 +5163,7 @@ window.VILLAFARAS_SPEC = {
 
   "276": {  /* COCO VILLA 大洗 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/oarai/' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-07' },
     rest_chair:   { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },
     capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/oarai/' },

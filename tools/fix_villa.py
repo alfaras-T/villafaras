@@ -32,129 +32,65 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "0": {"name": "古民家宿るうふ 揺之家",
-            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の8件目。** 公式を直接取得したところ、**「薪ストーブ」という語がページに一度も登場しない。** 暖房は「空調設備」欄の「ペレットストーブ、エアコン」で、しかもペレットはスキーマの wood/electric/gas のどれでもない。サウナの説明は「杉のサウナと檜の水風呂」「サウナ完備のウッドデッキで夕日を見ながら整う」までで熱源の記載が一切ない。一休の口コミも「薪ストーブも設置されていたので寒い時期は薪ストーブとサウナを楽しめそう」と**両者を並列の別設備**として書いている。sauna_type=indoor は公式の間取りで寝室1・寝室2と並んで「09 - SAUNA」と部屋番号が振られており母屋内の一室として扱われているため。pet_ok=no と wifi は一休 00051840。既存の coldbath=bath / outdoor_rest=yes / kitchen_type=ih / capacity=7 もすべて公式で裏付けが取れた（2026-09確認）",
-            "remove_spec": ["stove"],
+    "188": {"name": "COCO VILLA 軽井沢",
+            "reason": "**stove=electric は正しい。出典を付ける。** COCO VILLA は施設ごとに構造化されたスペック欄を持っており、「方式：電気式サウナ」と明記したうえで、ハウスルールにも「COCO VILLA 軽井沢 のサウナには『電気』を使用します。」とある。サウナストーブの銘柄は「MISA」。**ブランド5施設で銘柄が MISA / HARVIA / ブロスサウナ / NARVI / 記載なし とばらけており、文面の使い回しではなく施設ごとに書き分けられている。** とくに伊豆赤沢は銘柄が HARVIA だが方式欄で電気と明記されており、**メーカー名だけでは決まらないが方式欄があれば決まる**という好例（2026-09確認）",
             "set_spec": {
-                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"},
-                         "capacity": {"v": 7, "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/yuraginoie/"}}},
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://coco-villa.jp/villa/karuizawa/"}}},
 
-    "4": {"name": "るうふ別邸 鴨川919",
-            "reason": "**同じ「るうふ」ブランドで id=0 と正反対の結果になった。こちらは stove=wood が正しい。** 公式のサウナの説明そのものに「薪ストーブのサウナや水風呂を完備、サウナ後には広いテラスデッキで整う時間を」「薪ストーブのサウナで汗をかき、開放的なテラスでととのう」と**2箇所で明記**されている。**同一ブランドでも棟ごとに違うという原則と、熱源はサウナの説明のなかにあるかで判定するという原則の両方を示す好例。** pet_ok=no と wifi は一休 00051889。既存の coldbath=bath / outdoor_rest=yes / kitchen_type=gas / capacity=8 も公式と一休で裏付け（2026-09確認）",
+    "234": {"name": "COCO VILLA 伊豆赤沢",
+            "reason": "**stove=electric は正しい。出典を付ける。** COCO VILLA は施設ごとに構造化されたスペック欄を持っており、「方式：電気式サウナ」と明記したうえで、ハウスルールにも「COCO VILLA 伊豆赤沢 のサウナには『電気』を使用します。」とある。サウナストーブの銘柄は「HARVIA（ハルビア）」。**ブランド5施設で銘柄が MISA / HARVIA / ブロスサウナ / NARVI / 記載なし とばらけており、文面の使い回しではなく施設ごとに書き分けられている。** とくに伊豆赤沢は銘柄が HARVIA だが方式欄で電気と明記されており、**メーカー名だけでは決まらないが方式欄があれば決まる**という好例（2026-09確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://coco-villa.jp/villa/izuakazawa/"}}},
+
+    "235": {"name": "COCO VILLA 大室山",
+            "reason": "**stove=electric は正しい。出典を付ける。** COCO VILLA は施設ごとに構造化されたスペック欄を持っており、「方式：電気式サウナ」と明記したうえで、ハウスルールにも「COCO VILLA 大室山 のサウナには『電気』を使用します。」とある。サウナストーブの銘柄は「ブロスサウナ」。**ブランド5施設で銘柄が MISA / HARVIA / ブロスサウナ / NARVI / 記載なし とばらけており、文面の使い回しではなく施設ごとに書き分けられている。** とくに伊豆赤沢は銘柄が HARVIA だが方式欄で電気と明記されており、**メーカー名だけでは決まらないが方式欄があれば決まる**という好例（2026-09確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://coco-villa.jp/villa/omuroyama/"}}},
+
+    "270": {"name": "COCO VILLA 長瀞",
+            "reason": "**stove=electric は正しい。出典を付ける。** COCO VILLA は施設ごとに構造化されたスペック欄を持っており、「方式：電気式サウナ」と明記したうえで、ハウスルールにも「COCO VILLA 長瀞 のサウナには『電気』を使用します。」とある。サウナストーブの銘柄は「NARVI」。**ブランド5施設で銘柄が MISA / HARVIA / ブロスサウナ / NARVI / 記載なし とばらけており、文面の使い回しではなく施設ごとに書き分けられている。** とくに伊豆赤沢は銘柄が HARVIA だが方式欄で電気と明記されており、**メーカー名だけでは決まらないが方式欄があれば決まる**という好例（2026-09確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://coco-villa.jp/villa/nagatoro/"}}},
+
+    "276": {"name": "COCO VILLA 大洗",
+            "reason": "**stove=electric は正しい。出典を付ける。** COCO VILLA は施設ごとに構造化されたスペック欄を持っており、「方式：電気式サウナ」と明記したうえで、ハウスルールにも「COCO VILLA 大洗 のサウナには『電気』を使用します。」とある。サウナストーブの銘柄は「記載なし」。**ブランド5施設で銘柄が MISA / HARVIA / ブロスサウナ / NARVI / 記載なし とばらけており、文面の使い回しではなく施設ごとに書き分けられている。** とくに伊豆赤沢は銘柄が HARVIA だが方式欄で電気と明記されており、**メーカー名だけでは決まらないが方式欄があれば決まる**という好例（2026-09確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://coco-villa.jp/villa/oarai/"}}},
+
+    "122": {"name": "Earthboat Nasu",
+            "reason": "**stove=wood は正しい。出典を付ける。** 設備欄「サウナ：フィンランド式サウナ（薪ストーブ）」＋本文「自分で薪をくべて温めるサウナ」。**Earthboat の5施設は wood 4件・electric 1件に分かれているが、これは投入時の誤りではなく実態差だった。** Saitama Kawajima だけが公園内のグランピング型で、他4施設（山間部の一棟貸し型）とはコンセプトが異なり、公式も明確に書き分けている（2026-09確認）",
             "set_spec": {
                          "stove": {"v": "wood", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "kitchen_type": {"v": "gas", "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"},
-                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
-                                        "url": "https://loof-inn.com/hotels/kamogawa919"}}},
+                                        "url": "https://earthboat.jp/nasu"}}},
 
-    "15": {"name": "amane",
-            "reason": "客室ページ「IHクッキングヒーター、オーブンレンジ、シンク」→kitchen_type=ih、室内設備「Wi-Fi」。既存値も裏付けが取れた: 「フラットルームに、本格バレルサウナがプラスされた特別のお部屋。**全1室**」→sauna_exists=room / sauna_type=barrel、「水風呂」「外気浴スペースを確保しています」「定員4名」。**pet_ok=yes は施設単位では正しいが部屋で扱いが違う**: 一休の基本情報は「お泊まりいただけるお部屋はメゾネットルームのみ」で、**サウナ付きのプレミアムフラットルーム自体のページには「※ワンちゃんはご宿泊いただけません」と明記**されている（2026-09確認）",
+    "195": {"name": "Earthboat Kurohime",
+            "reason": "**stove=wood は正しい。出典を付ける。** 設備欄「サウナ：フィンランド式サウナ（薪ストーブ）」＋本文「自分で薪をくべて温めるサウナ」。**Earthboat の5施設は wood 4件・electric 1件に分かれているが、これは投入時の誤りではなく実態差だった。** Saitama Kawajima だけが公園内のグランピング型で、他4施設（山間部の一棟貸し型）とはコンセプトが異なり、公式も明確に書き分けている（2026-09確認）",
             "set_spec": {
-                         "kitchen_type": {"v": "ih", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "sauna_exists": {"v": "room", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"},
-                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-amane.com/rooms/room_02/"}}},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-09",
+                                        "url": "https://earthboat.jp/kurohime"}}},
 
-    "16": {"name": "みささ",
-            "reason": "**kitchen_type=none をこの項目で3件目として記録する。** 一休の設備欄に「× キッチンあり」と○✕形式で明示。公式の facilities ページにも「キッチン」「調理」「コンロ」の語が一切なく、料理は「専属バトラーが目の前で炭火で焼き上げる」等スタッフ提供が前提で整合する。sauna_type=indoor は「バスエリア：半露天風呂（天然温泉）・サウナ・水風呂（天然水）・シャワーブース」と客室のバスエリアの一部として扱われているため。pet_ok=no は一休の基本情報「不可」＋設備欄「× ペット可」。**既存の loyly / coldbath / outdoor_rest / water_src の出典URL（/room/ と /spa/）は現在404**。サイト再編で /facilities/ に統合されており、出典の張り替えが要る（2026-09確認）",
+    "261": {"name": "Earthboat Minakami Fujiwara",
+            "reason": "**stove=wood は正しい。出典を付ける。** 設備欄「サウナ：フィンランド式サウナ（薪ストーブ）」＋本文「自分で薪をくべて温めるサウナ」。**Earthboat の5施設は wood 4件・electric 1件に分かれているが、これは投入時の誤りではなく実態差だった。** Saitama Kawajima だけが公園内のグランピング型で、他4施設（山間部の一棟貸し型）とはコンセプトが異なり、公式も明確に書き分けている（2026-09確認）",
             "set_spec": {
-                         "kitchen_type": {"v": "none", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-misasa.com/facilities/"},
-                         "sauna_type": {"v": "indoor", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-misasa.com/facilities/"},
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.awa-misasa.com/facilities/"}}},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-09",
+                                        "url": "https://earthboat.jp/minakami_fujiwara"}}},
 
-    "22": {"name": "海都-kaito- TOKYOBAY",
-            "reason": "公式「ペット 不可」＋一休の設備欄「× ペット可」＋基本情報「不可」の三重一致→pet_ok=no。公式「Wi-Fi 有り(無料)」＋一休「wi-fiが利用可能です」の二重一致。公式「テラス（屋外リラックススペース）」→outdoor_rest=yes（インナーテラスは屋内と明確に区別されている）。**stove は入れない**: 「サウナストーブ｜貸別荘のサウナ設備」という見出しはあるが直後に説明文が無く熱源が特定できない（2026-09確認）",
+    "262": {"name": "Earthboat Minakami Hodaigi",
+            "reason": "**stove=wood は正しい。出典を付ける。** 設備欄「サウナ：フィンランド式サウナ（薪ストーブ）」＋本文「自分で薪をくべて温めるサウナ」。**Earthboat の5施設は wood 4件・electric 1件に分かれているが、これは投入時の誤りではなく実態差だった。** Saitama Kawajima だけが公園内のグランピング型で、他4施設（山間部の一棟貸し型）とはコンセプトが異なり、公式も明確に書き分けている（2026-09確認）",
             "set_spec": {
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://piyoresort.com/kaito/room"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://piyoresort.com/kaito/room"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://piyoresort.com/kaito/room"}}},
+                         "stove": {"v": "wood", "src": "desk", "at": "2026-09",
+                                        "url": "https://earthboat.jp/minakami_hodaigi"}}},
 
-    "31": {"name": "moe-luana",
-            "reason": "一休「wi-fiが利用可能です。有線が利用可能です。」。**capacity=9（2026-07・出典なし）は根拠が無い**: 一休は「1名〜9名」でOTA上限の疑いが濃く、公式サイトにある「最大12名」は**「お客様の声」欄のゲストの感想文**（「最大12名まで宿泊できるようなので、両親や友人家族と…と思いました」）で公式の断定ではない。予約サイト tabichat.jp にも定員の明記が無く、寝具は「ダブルベッド2台、シングルベッド4台、布団2組」。**代替値が確定できないため値は残すが、出典なし capacity=9 のコホートとして要調査**（2026-09確認）",
+    "271": {"name": "Earthboat Saitama Kawajima",
+            "reason": "**stove=electric は正しい。出典を付ける。** 拠点の特徴「…電気ストーブサウナ」＋設備欄「サウナ：電気式サウナ」。**Earthboat の5施設は wood 4件・electric 1件に分かれているが、これは投入時の誤りではなく実態差だった。** Saitama Kawajima だけが公園内のグランピング型で、他4施設（山間部の一棟貸し型）とはコンセプトが異なり、公式も明確に書き分けている（2026-09確認）",
             "set_spec": {
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051499/"}}},
-
-    "35": {"name": "by the river Isumi",
-            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の9件目。** 旅色の紹介記事に「室内にはBoConcept社のソファーや『Morso』の薪ストーブ、ALADDINX社のプロジェクターが備わり」とあり、**ソファ・プロジェクターと並ぶリビングの家具・設備**。サウナ自体の説明は「熱を均一に保つことに優れたバレルサウナ」で熱源の記載が無い。kitchen_type=gas は施設自身の予約サイトの注意事項「外出時や就寝時、ガスコンロ等ご利用、火元に十分ご注意ください」。**coldbath は入れない**: 「木の香りがさわやかな水風呂」は第三者媒体（旅色）のみの情報で公式に記載が無い。**outdoor_rest も入れない**: テラスの存在は確認できるがサウナ後の休憩用途と明記されていない（2026-09確認）",
-            "remove_spec": ["stove"],
-            "set_spec": {
-                         "kitchen_type": {"v": "gas", "src": "desk", "at": "2026-09",
-                                        "url": "https://bytheriver.booking.chillnn.com"}}},
-
-    "50": {"name": "THE CLUB 919 DOG FRIENDLY",
-            "reason": "既存の capacity=6 に出典を付ける。一休「定員 1名～6名」で、9名上限の機械的読み取りではない。**sauna_type は入れない**: 公式の設備一覧とサウナ専用ページはどちらも「フィンランドサウナの伝統に基づいた本物のロウリュ式サウナ」と様式の呼称のみ。**stove も入れない**: 「サウナストーンから立ち昇る蒸気」までで熱源の明記が無い。**coldbath も入れない**: 設備一覧に「サウナ、ジャグジー」と並記されるのみで水風呂の独立記載が無い（2026-09確認）",
-            "set_spec": {
-                         "capacity": {"v": 6, "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051811/"}}},
-
-    "54": {"name": "Zekkei stay ISUMI cabin",
-            "reason": "**stove=wood（2026-07・出典なし）を削除する。居室ストーブとの混同の10件目。** 公式予約サイトの「お子様の宿泊に関して」という**安全上の注意事項**にこうある。「屋外デッキと室内ロフトに手すりがないため、ご自身で安全管理できる場合のみ予約可能です。また薪ストーブもございますので火傷には十分ご注意ください。・川沿いの柵が低いので…」。**手すりのないロフト・川沿いの柵と並ぶ居室の危険箇所の列挙**であり、前後に「サウナ」の語は一切出現しない。**wifi は入れない**: 「※高速インターネットはありますが、携帯電話の電波が不安定になるエリアがございます」は「Wi-Fi」の明記ではない。既存の loyly=yes / coldbath=bath も公式に該当記載が見つからず未確認のまま（2026-09確認）",
-            "remove_spec": ["stove"]},
-
-    "56": {"name": "THE VIBES VILLA",
-            "reason": "一休の基本情報「ペット 不可」＋設備欄「× ペット可」一致、「wi-fiが利用可能です」。**stove は入れない**: 公式のサウナ専用ページに「ハルビアのサウナヒーターを設置し、セルフロウリュが楽しめる」とあるが、Harvia社は薪式・電気式の両方を製造している。WebSearchの要約には「電気式」とあったが記事本文を直接取得しても該当記載が無く、独立ソースでの裏取りができなかった（2026-09確認）",
-            "set_spec": {
-                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051997/"},
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.ikyu.com/00051997/"}}},
-
-    "58": {"name": "UMIYAMA CHIKURA",
-            "reason": "**公式URL（umiyama-chikura.com）が機能していない。** 実機ブラウザで開いたところ、リダイレクトはせず正しいタイトル「UMIYAMA CHIKURA | Official Website」を返すが**本文が一切描画されない空ページ**だった（エージェントは別ブランドへのリダイレクトと報告してきたが再現しなかった）。**既存の sauna_exists / sauna_type / coldbath / capacity / pet_ok / wifi / checkin_method / kids_free の8項目がすべてこのURLを出典としており、再検証できない状態。** 代わりにサウナイキタイの構造化データを使う（住所「千葉県 南房総市 千倉町北朝夷1470番地2」で照合済み）。「セルフロウリュ｜砂時計で時間を計り、30分に1度程度の頻度でお願いします」→loyly=yes、「外気浴 デッキチェア: 2席」→outdoor_rest=yes、「サウナ室：ドライサウナ 対流式（ストーン）電気」→stove=electric。既存の capacity=9 も同ページの施設補足情報「大人6名・子供3名(12歳以下) *お子様含め最大9名様がご宿泊いただけます」で裏付けが取れた。**これは一休の9名上限とは独立した施設側の記載**（2026-09確認）",
-            "set_spec": {
-                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://sauna-ikitai.com/saunas/85685"},
-                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://sauna-ikitai.com/saunas/85685"},
                          "stove": {"v": "electric", "src": "desk", "at": "2026-09",
-                                        "url": "https://sauna-ikitai.com/saunas/85685"},
-                         "capacity": {"v": 9, "src": "desk", "at": "2026-09",
-                                        "url": "https://sauna-ikitai.com/saunas/85685"}}},
-
-    "278": {"name": "LUCY RESORT（ルーシー リゾート）",
-            "reason": "公式トップ「グランピング施設の各区画はWIFIを整備」→wifi=yes。**coldbath は入れない**: enjoy ページの「バスジェット付ジャグジー、薪風呂を完備」は文脈上リラクゼーション用の温浴で、サウナ後の冷却用とは書かれていない。**sauna_type / stove も入れない**: 「アウトドアでもサウナが楽しめます！…ストーンに水をかけて自分の好きな温度に調整ができます」までで種類・熱源の明記が無い。**capacity=6 は要検討**: 棟ごとに定員が6/6/5/2/3/3/3名と異なり「全棟利用時は最大N名」という施設全体の数字が見当たらない。既存の6は複数の棟タイプとたまたま一致するだけ（2026-09確認）",
-            "set_spec": {
-                         "wifi": {"v": "yes", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.lucyresort.com"}}},
+                                        "url": "https://earthboat.jp/saitama_kawajima"}}},
 }
 
 DRY = "--dry-run" in sys.argv
