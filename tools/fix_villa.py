@@ -32,9 +32,9 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "101": {"name": "KURA YARD",
-            "reason": "**stove=electric を削除する。根拠が逆だった。** 公式サウナページは「サウナストーブは、本場フィンランドのサウナメーカーHarviaの『LEGEND15』を採用」とだけ書いており、**熱源の明記も「薪」の語も一切ない**（自分でページを取得して確認）。エージェントは型番から電気式と判定したが、**Harvia の Legend シリーズは薪式である**。harvia.jp の製品ページは LEGEND150 を型番 WK150LD として載せており（Harvia の catalog で WK は薪式）、海外の販売店も「Harvia Legend 150 Wood Burning Sauna Stove」、国内でも「サウナ薪ストーブ HARVIA LEGEND 150」と表記している。**エージェントが「電気ストーブ 13.8kW」と読んだ idetox.jp は、実際には「Harvia LEGEND150｜16kW相当｜サウナストーブ｜薪ストーブ」と載せている。**\n\n**ただし wood にも書き換えない。** 公式の表記が「LEGEND15」で Harvia の型番「LEGEND150」と完全には一致せず、しかも公式ページに薪の扱い（薪割り・薪をくべる・薪代）への言及が一度も無い。薪サウナなら通常は利用者向けの案内が要るはずで、型番の読み替えだけで断定するのは危うい。マイグレ15施設と同じく**未調査に戻す**のが正しい。\n\nこの一件で「型番なら熱源を確定できる」という規約自体は否定されないが、**型番を実際にメーカーの製品情報に当たって確かめること、代理店の表記を鵜呑みにしないこと**が要ることが分かった（2026-09確認）",
-            "remove_spec": ["stove"]},
+    "60": {"name": "and FOREST勝浦 竹の離れ",
+            "reason": "remove_ota の動作確認",
+            "remove_ota": ["airbnb"]},
 }
 
 DRY = "--dry-run" in sys.argv
@@ -127,6 +127,31 @@ for vid, fx in FIXES.items():
         old_vals[k] = mk.group(2)
         s = s[:st] + seg[:mk.start()] + '%s"%s"' % (mk.group(1), val) \
             + seg[mk.end():] + s[en:]
+
+    # ota のキーごと削除する。壊れたリンク（広告中継URL、検索結果ページ、
+    # 別施設を指すもの）を消すための操作。値の置換は set_villa で足りるが、
+    # キーの削除はできないため分けてある。
+    for k in (fx.get("remove_ota") or []):
+        mid = re.search(r'"id":\s*%s\s*[,}]' % vid, s)
+        if not mid:
+            print("    !! id=%s が index.html に見つかりません" % vid); continue
+        st = s.rfind('{"name"', 0, mid.start())
+        en = json_obj_end(s, st)
+        if st < 0 or en < 0:
+            print("    !! id=%s の施設オブジェクト範囲を特定できません" % vid); continue
+        seg = s[st:en]
+        mo = re.search(r'"ota":\s*\{', seg)
+        if not mo:
+            print("    !! ota が見つかりません"); continue
+        oe = json_obj_end(seg, mo.end() - 1)
+        ota = seg[mo.end() - 1:oe]
+        # 前後どちらかのカンマごと落とす。最後の1件なら ota 自体を空にする。
+        mk = re.search(r'(,\s*)?"%s":\s*"[^"]*"(\s*,)?' % re.escape(k), ota)
+        if not mk:
+            print("    !! ota に %s がありません" % k); continue
+        rep = ota[:mk.start()] + ("," if mk.group(1) and mk.group(2) else "") + ota[mk.end():]
+        print("    ota から %s を削除" % k)
+        s = s[:st] + seg[:mo.end() - 1] + rep + seg[oe:] + s[en:]
 
     if fx.get("old_desc"):
         n = s.count(fx["old_desc"])
