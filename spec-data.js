@@ -2087,7 +2087,6 @@ window.VILLAFARAS_SPEC = {
 
   "101": {  /* KURA YARD */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://kurayard.com/sauna' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-07' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://kurayard.com/sauna' },
     capacity:     { v: 15, src: 'desk', at: '2026-08', url: 'https://kurayard.com' },
     elevation:    { v: 840, src: 'auto', at: '2026-07' },
