@@ -505,7 +505,8 @@ window.VILLAFARAS_SPEC = {
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
     bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
     fee_bbq:       { v: 'incl', src: 'desk', at: '2026-08', url: 'https://bestspa99.com/' },
-    winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'ok', src: 'auto', at: '2026-09' },
+    kitchen_type: { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://bestspa99.com/' }
   },
 
   "25": {  /* THE POOL HOUSE TOKYO BAY */
@@ -1563,7 +1564,8 @@ window.VILLAFARAS_SPEC = {
     coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "74": {  /* SANU 2nd Home 八ヶ岳2nd */
@@ -1612,7 +1614,8 @@ window.VILLAFARAS_SPEC = {
     loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "76": {  /* SANU 2nd Home 河口湖2nd */
@@ -1635,7 +1638,8 @@ window.VILLAFARAS_SPEC = {
     coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "77": {  /* enico.Mt.Fuji smile */
@@ -1980,7 +1984,7 @@ window.VILLAFARAS_SPEC = {
 
   "95": {  /* 天空の温泉ヴィラ紬 河口湖 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://global-stays.jp/tsumugi/' },
-    kitchen_type: { v: 'gas', src: 'desk', at: '2026-07' },
+    kitchen_type: { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://global-stays.jp/tsumugi/' },
     capacity:     { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://global-stays.jp/tsumugi/' },
     elevation:    { v: 869, src: 'auto', at: '2026-07' },
@@ -2131,7 +2135,8 @@ window.VILLAFARAS_SPEC = {
     sauna_hours: { v: 'limited', src: 'desk', at: '2026-08', url: 'https://www.fujinagi.com/overview-facility.html' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.fujinagi.com/overview-facility.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
-    coldbath: { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.fujinagi.com/overview-facility.html' }
+    coldbath: { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.fujinagi.com/overview-facility.html' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.fujinagi.com/overview-facility.html' }
   },
 
   "104": {  /* 憩~ikoi_Fuji */
@@ -3444,7 +3449,8 @@ window.VILLAFARAS_SPEC = {
     loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "177": {  /* SANU 2nd Home 蓼科1st */
@@ -3506,7 +3512,8 @@ window.VILLAFARAS_SPEC = {
     loyly: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
     outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
   },
 
   "180": {  /* GLAMDAY STYLE HOTEL SUITE 山ノ麓 */
@@ -3714,7 +3721,8 @@ window.VILLAFARAS_SPEC = {
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
     firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://chalet-hakuba-hygge.com/system/' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
-    pet_ok: { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052430/' }
+    pet_ok: { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052430/' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://chalet-hakuba-hygge.com/system/' }
   },
 
   "191": {  /* 軽井沢 HOUSE VILLA */
@@ -3879,7 +3887,8 @@ window.VILLAFARAS_SPEC = {
     stove: { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
     coldbath: { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
     wifi: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
-    winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
+    winter_access: { v: 'tire', src: 'auto', at: '2026-09' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' }
   },
 
   "199": {  /* 北軽井沢 貸別荘 FARMSIDE */
@@ -4083,7 +4092,8 @@ window.VILLAFARAS_SPEC = {
     conveni:      { v: 11, src: 'auto', at: '2026-07' },
     ic:           { v: '玄岳IC 8分', src: 'auto', at: '2026-07' },
     station:      { v: '伊豆多賀 13分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 13, src: 'auto', at: '2026-07' }
+    onsen:        { v: 13, src: 'auto', at: '2026-07' },
+    kitchen_type: { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanterrace/' }
   },
 
   "212": {  /* 熱海リゾート */

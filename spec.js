@@ -42,6 +42,9 @@
     hours:    { h24: '24時間', limited: '時間制限あり', reserve: '要予約制' },
     /* pool / tub は 2026-08 追加。専用の水風呂ではなく他設備を冷却に使う施設が
        12件あり、bath とも none とも言えず未調査に落ちていたため。 */
+    /* 冬季に水風呂が凍結・休止する施設が実際に4件見つかったため 2026-09 追加。
+       サウナ目的の利用者には決定的な情報だが記録する場所が無かった。 */
+    cbseason: { year: '通年利用可', winter: '冬季休止' },
     coldbath: { bath: '水風呂', pool: 'プール兼用', tub: '浴槽・ジャグジー兼用',
                 river: '川・湖', shower: 'シャワーのみ', none: 'なし' },
     /* 区間は「下限を含み上限を含まない」。15℃ちょうどは t1518、18℃ちょうどは t1822。
@@ -55,7 +58,11 @@
     villatype:{ solo: '完全独立一棟', multi: '複数棟サイト内', shared: '共用棟あり' },
     ndist:    { solo: '隣に建物なし', o50: '50m以上', u50: '50m未満', same: '同一建物内' },
     sound:    { free: '制限なし', night: '22時以降は配慮', noinst: '楽器・カラオケ不可' },
-    ktype:    { ih: 'IH', gas: 'ガス', both: 'IH＋ガス', none: 'なし' },
+    /* cassette は 2026-09 追加。備え付けのコンロが無くカセットコンロだけの
+       施設が4件あり、gas と書くと「ガスコンロあり」で絞り込んだ利用者が
+       卓上の携帯コンロだけの施設に当たってしまうため分けた。 */
+    ktype:    { ih: 'IH', gas: 'ガス', both: 'IH＋ガス',
+                cassette: 'カセットコンロのみ', none: 'なし' },
     bbqroof:  { roof: '屋根あり（雨天可）', open: '屋根なし', none: 'BBQ不可' },
     cleanup:  { staff: '施設側', guest: '宿泊者' },
     firepit:  { stand: '焚き火台', direct: '直火可', no: '不可' },
@@ -98,6 +105,8 @@
 
     { g: '水風呂・外気浴', rows: [
       { k: 'coldbath',     l: '冷却設備',      o: 'coldbath',  ch: 'desk' },
+      { k: 'coldbath_season', l: '水風呂の季節制限', o: 'cbseason', ch: 'desk',
+        n: '冬季に凍結・休止するか' },
       { k: 'chiller',      l: '水風呂チラー',  o: 'yesno',     ch: 'owner', n: '夏場も水温を保てる冷却装置' },
       { k: 'water_temp',   l: '夏場の水温',    o: 'wtemp',     ch: 'owner' },
       { k: 'water_src',    l: '水源',          o: 'wsrc',      ch: 'owner' },
