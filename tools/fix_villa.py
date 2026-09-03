@@ -3,6 +3,22 @@
 """掲載情報の訂正ツール。設定は FIXES に書く。まず --dry-run で確認すること。"""
 import glob, io, json, os, re, sys
 
+# ota のキーと、villas/*.html のボタンに出るラベルの対応。
+# 個別ページの ota リンクは URL の文字列置換では特定できない。
+#   (a) 旧い値が別のURLの前方一致になる（id=113 の agoda "https://ash-villa.com/" は
+#       公式リンク "https://ash-villa.com/?utm_source=GBP..." の前方一致で、
+#       公式リンクまで Agoda のURLに書き換わるところだった）
+#   (b) 2つのキーが同じURLを持つ（id=246 は ikyu と agoda が両方 00052094 だった）
+# どちらもラベルで対象を特定すれば起きない。
+OTA_LABEL = {"ikyu": "一休.com", "rakuten": "楽天トラベル", "booking": "Booking.com",
+             "agoda": "Agoda", "airbnb": "Airbnb", "expedia": "Expedia"}
+
+
+def esc(u):
+    """index.html は生のURL、villas/*.html は HTML エスケープ済み。"""
+    return u.replace("&", "&amp;")
+
+
 # set_villa で触る VILLAS のスカラー項目。villas/*.html では fact 行としても描画される。
 VILLA_FACTS = {
     "capacity": ("定員", "%s名"),
@@ -32,9 +48,22 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "113": {"name": "ASH Villa 富士河口湖",
-            "reason": "**coldbath=bath を削除する。棟によって違い、代表値を置けない。** 交差検証で公式を棟別に確認した結果。\n\nDeluxe Villa 1010（最大10名）… 「お風呂は大きなヒノキ風呂、周りを気にせずご家族ご一緒に入ってお楽しみ頂けます。**サウナのあとの水風呂にもご利用いただけます。**」＝名詞が浴槽なので tub 相当。さらにFAQ「プールをご用意しているのはDeluxe villaのみ…**ご使用頂けない季節は水景や水風呂としてご利用くださいませ。**」で pool 相当の副次的な根拠もある。\n\n2-Bedroom Villa 2020（最大6名）… **水風呂の言及が一切ない。** 風呂は「松山油脂のこだわりのアロマとバスソルト…贅沢なバスタイムをお楽しみくださいませ。」とアロマ入浴の演出のみで、サウナとの接続が書かれていない。設備アイコンも1010が「プール／サウナ」の2つに対し2020は「サウナ」のみ。\n\n**既存の bath はどちらの棟の記述にも直接の裏付けが無い。** 1010 だけなら tub が最も支持されるが、2020 は不明で、棟で異なる項目は入れないという方針に従って未調査に戻す。\n\n**なお capacity で 1010 の 10 を代表値に採ったのは『施設全体の最大』という数値の集約だから正当化できたのであって、coldbath のようなカテゴリ値に同じ理屈を機械的に適用することはできない。**（2026-09確認）",
-            "remove_spec": ["coldbath"]},
+    "170": {"name": "Six on the Beach TORAMII -Enoshima-",
+            "reason": "楽天が search.travel.rakuten.co.jp/ds/yado/list?f_query= の検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
+            "remove_ota": ["rakuten"],
+            },
+    "255": {"name": "貸別荘「碧 ai」",
+            "reason": "楽天が同じく検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
+            "remove_ota": ["rakuten"],
+            },
+    "281": {"name": "SPA＆ごはんゆるうむ",
+            "reason": "楽天が同じく検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
+            "remove_ota": ["rakuten"],
+            },
+    "60": {"name": "and FOREST勝浦 竹の離れ",
+            "reason": "airbnb が airbnb.jp/s/homes の検索URL。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
+            "remove_ota": ["airbnb"],
+            },
 }
 
 DRY = "--dry-run" in sys.argv
@@ -171,13 +200,29 @@ for vid, fx in FIXES.items():
                     s = s.replace(t + "…", fx["new_desc"][:len(t)] + "…")
                     print("    meta 短縮版を差し替え")
         for k, val in (fx.get("set_villa") or {}).items():
-            # fact 行ではないが本文中にそのまま出る項目（official など）は
-            # 旧い値を新しい値に置き換える。個別ページは1施設分なので誤爆しない。
+            # ota のリンクはボタンのラベルで対象を特定する（OTA_LABEL の説明を参照）。
+            if k in OTA_LABEL:
+                label = OTA_LABEL[k]
+                pat = (r'(<a class="ota-btn"[^>]*href=")([^"]*)("[^>]*>%s<span>)'
+                       % re.escape(label))
+                m = re.search(pat, s)
+                if not m:
+                    print("    !! 個別ページに「%s」のボタンがありません" % label)
+                    continue
+                cur = old_vals.get(k)
+                if cur is not None and m.group(2) != esc(cur):
+                    print("    !! 「%s」ボタンの href が index.html と一致しません" % label)
+                    continue
+                s = s[:m.start(2)] + esc(val) + s[m.end(2):]
+                print("    個別ページの「%s」ボタンを差し替え" % label)
+                continue
+            # fact 行ではないが本文中にそのまま出る項目（official など）。
+            # 閉じ引用符まで含めて一致させる。前方一致での巻き添えを防ぐため。
             if k not in VILLA_FACTS:
                 old = old_vals.get(k)
-                if old and old in s:
-                    n = s.count(old)
-                    s = s.replace(old, val)
+                if old and (esc(old) + '"') in s:
+                    n = s.count(esc(old) + '"')
+                    s = s.replace(esc(old) + '"', esc(val) + '"')
                     print("    %s を %d 箇所差し替え -> %s" % (k, n, val))
                 continue
             label, fmt = VILLA_FACTS[k]
@@ -187,6 +232,21 @@ for vid, fx in FIXES.items():
                         lambda m: m.group(1) + new + m.group(2), s, count=1)
             if s2 != s:
                 print("    fact「%s」を %s に更新" % (label, new))
+                s = s2
+
+        # index.html から消した ota キーは、個別ページのボタンも消す。
+        # これが無いと利用者には壊れたリンクが見えたままになる。
+        for k in (fx.get("remove_ota") or []):
+            label = OTA_LABEL.get(k)
+            if not label:
+                continue
+            pat = (r'<a class="ota-btn"[^>]*>%s<span>[^<]*</span></a>'
+                   % re.escape(label))
+            s2 = re.sub(pat, "", s, count=1)
+            if s2 == s:
+                print("    !! 個別ページに「%s」のボタンがありません" % label)
+            else:
+                print("    個別ページから「%s」ボタンを削除" % label)
                 s = s2
 
         # add_tags は pill も足す。既存 pill と同じ書式に合わせるため、

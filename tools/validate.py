@@ -8,7 +8,7 @@
 
 選択肢マスタと項目定義は spec.js から読む。エラーがあれば終了コード 1。
 """
-import collections, io, json, os, re, subprocess, sys
+import collections, glob, io, json, os, re, subprocess, sys
 
 SPEC = "spec.js"
 INDEX = "index.html"
@@ -684,6 +684,44 @@ def units_table(villas, rows):
               % (key, row["u"], len(vals), vals[0], vals[len(vals) // 2], vals[-1]))
 
 
+def check_ota_buttons(villa_list, rep):
+    """index.html の ota キーと villas/*.html のボタンが一致するか。
+
+    fix_villa.py の remove_ota が index.html しか触っていなかった時期があり、
+    個別ページに壊れたリンクのボタンだけが残っていた（2026-09 に4件見つけた。
+    検索結果ページ3件と Airbnb の検索URL1件で、利用者には見えたままだった）。
+    index.html を正として、片側にしか無いものを出す。
+    """
+    lab2key = {"一休.com": "ikyu", "楽天トラベル": "rakuten", "Booking.com": "booking",
+               "Agoda": "agoda", "Airbnb": "airbnb", "Expedia": "expedia"}
+    byid = dict((str(v["id"]), v) for v in villa_list)
+    print("\n=== index.html と個別ページの ota ===")
+    n = 0
+    for path in sorted(glob.glob("villas/*.html")):
+        m = re.match(r"villas/(\d+)-", path)
+        if not m:
+            continue
+        vid = m.group(1)
+        v = byid.get(vid)
+        if v is None:
+            continue
+        text = io.open(path, encoding="utf-8").read()
+        keys = set(v.get("ota") or {})
+        btns = [lab2key.get(x) for x
+                in re.findall(r'<a class="ota-btn"[^>]*>([^<]*)<span>', text)]
+        btns = set(b for b in btns if b)
+        for k in sorted(btns - keys):
+            rep.add("ERROR", "整合性", path, vid, None, None,
+                    "個別ページに %s のボタンがあるが index.html の ota に無い"
+                    " （消し忘れた壊れたリンクの疑い）" % k)
+            n += 1
+        for k in sorted((keys & set(lab2key.values())) - btns):
+            rep.add("ERROR", "整合性", path, vid, None, None,
+                    "index.html の ota に %s があるが個別ページにボタンが無い" % k)
+            n += 1
+    print("  %s" % ("○ 一致" if not n else "× 不一致 %d 件" % n))
+
+
 def main():
     global ALLOW_REMOVE
     ALLOW_REMOVE = "--allow-remove" in sys.argv
@@ -725,6 +763,8 @@ def main():
             check_conflicts(p, villas, rows, names, rep)
         check_bias(villas, rows, rep, p)
         units_table(villas, rows)
+
+    check_ota_buttons(villa_list, rep)
 
     print("\n=== その他の整合性 ===")
     rep.dump("整合性", names)
