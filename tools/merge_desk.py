@@ -15,6 +15,15 @@ def parse(text):
             out[vid] = f
     return out
 
+# spec.js の SCHEMA に無い項目は入れない。
+# **廃止した項目が一次記録に残っていると、マージで黙って復活する。**
+# 2026-09 に early_late を early_checkin / late_checkout へ分割して
+# spec-data.js から消したが、data/desk-research.js には古い early_late の
+# 記録が残っており、次のマージで15施設ぶんが復活した（validate.py が
+# 「SCHEMA にない項目」15件で検出）。スキーマを正として弾く。
+SCHEMA_KEYS = set(re.findall(r"k:\s*'(\w+)'",
+                             io.open("spec.js", encoding="utf-8").read()))
+
 cur = io.open(DATA, encoding="utf-8").read()
 head = cur[:cur.index("window.VILLAFARAS_SPEC = {")]
 existing = parse(re.sub(r"/\*.*?\*/", "", cur, flags=re.DOTALL))
@@ -25,9 +34,13 @@ for src in SRCS:
 print("読み込み: %s" % ", ".join(SRCS))
 
 merged, added, skipped = {}, 0, 0
+dropped = {}
 for vid in set(list(existing) + list(desk)):
     f = dict(existing.get(vid, {}))
     for k, v in (desk.get(vid) or {}).items():
+        if k not in SCHEMA_KEYS and k not in f:
+            dropped.setdefault(k, []).append(vid)
+            continue
         if k in f:
             skipped += 1
         else:
@@ -35,6 +48,13 @@ for vid in set(list(existing) + list(desk)):
             added += 1
     merged[vid] = f
 print("追加 %d フィールド / 既存を優先して見送り %d" % (added, skipped))
+if dropped:
+    print("!! spec.js の SCHEMA に無いため入れなかった項目:")
+    for k in sorted(dropped):
+        ids = dropped[k]
+        print("     %-16s %d 施設（id=%s%s）"
+              % (k, len(ids), ", ".join(sorted(ids, key=int)[:8]),
+                 " ほか" if len(ids) > 8 else ""))
 
 html = io.open("index.html", encoding="utf-8").read()
 villas = json.loads(re.search(r"const VILLAS=(\[.*?\]);", html, re.DOTALL).group(1))

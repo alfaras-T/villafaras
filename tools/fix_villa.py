@@ -48,21 +48,11 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "170": {"name": "Six on the Beach TORAMII -Enoshima-",
-            "reason": "楽天が search.travel.rakuten.co.jp/ds/yado/list?f_query= の検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
-            "remove_ota": ["rakuten"],
-            },
-    "255": {"name": "貸別荘「碧 ai」",
-            "reason": "楽天が同じく検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
-            "remove_ota": ["rakuten"],
-            },
-    "281": {"name": "SPA＆ごはんゆるうむ",
-            "reason": "楽天が同じく検索結果ページ。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
-            "remove_ota": ["rakuten"],
-            },
-    "60": {"name": "and FOREST勝浦 竹の離れ",
-            "reason": "airbnb が airbnb.jp/s/homes の検索URL。index.html からは既に削除済みだが、個別ページにボタンだけ残っていた。remove_ota が villas/*.html に対応していなかったため取り残されたもの。利用者には壊れたリンクが見えたままだった。（2026-09）",
-            "remove_ota": ["airbnb"],
+    "150": {"name": "3rd HOUSE INAMURAGASAKI",
+            "reason": "**定員 6 は東棟だけを見た数字だった。** 公式の客室ページを棟別に確認したところ、東棟 Junior Suite は「定員　6名様」だが、西棟 Executive Suite は「定員　8名　(エキストラベッド利用で9名　※追加料金)」。1日2組限定で東棟・西棟を別々に貸し出す方式で、公式に「両棟合わせて最大N名」の記載は無い。棟別の数字しか無い場合は施設全体の最大を採るという先例（id=113 ASH Villa は Deluxe Villa 1010 の10、id=38 / 117 / 238 も同様）に従って 8 とする。エキストラベッドの9は追加料金の条件付きなので採らない。**数値項目なので最大が採れる。カテゴリ値なら棟で違えば入れない。**（2026-09確認）",
+            "set_villa": {"capacity": "8"},
+            "set_spec": {"capacity": {"v": 8, "src": "desk", "at": "2026-09",
+                                      "url": "https://3rd-house.jp/guest-room/west/"}},
             },
 }
 

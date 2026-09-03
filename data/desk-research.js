@@ -932,7 +932,6 @@
     coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     capacity:        { v: 20, src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' }
   },
@@ -964,7 +963,6 @@
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.takenohanare.com/' }
@@ -1032,7 +1030,6 @@
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.andriver-katsuura.com/' },
@@ -1082,7 +1079,6 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' },
     bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.chiba-isumi-privatevilla.com/' }
@@ -1112,7 +1108,6 @@
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://the-nalu.com/information/' }
@@ -1498,7 +1493,6 @@
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://aym.wyes-resort.com/' },
@@ -1848,7 +1842,6 @@
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://mooska.jp' },
@@ -2079,7 +2072,6 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' }
@@ -2646,7 +2638,6 @@
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
-    early_late:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
@@ -2695,7 +2686,6 @@
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     checkin_method:  { v: 'staff', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.montevan.com/' },
@@ -2927,7 +2917,6 @@
     coldbath:        { v: 'bath', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/room' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
     late_arrival:    { v: 'contact', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://karuizawa-house-villa.com/faq' },
@@ -3137,7 +3126,6 @@
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     firewood_fee:    { v: 'extra', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     bbq_roof:        { v: 'open', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://piyo-terrace.com/vacationrentals/uminoterrace-villa/' },
@@ -3190,7 +3178,6 @@
     kids_free:       { v: 12, src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' },
     bring_towel:     { v: 'bring', src: 'desk', at: '2026-08', url: 'https://toramii.jp/sea-by-toramii/' }
   },
@@ -3341,7 +3328,6 @@
     capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://stay-japan.tokyo/en/ikoi/' },
@@ -3930,7 +3916,6 @@
     villa_type:      { v: 'multi', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
-    early_late:      { v: 'yes', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enico-mount-fuji.com/frequently-asked-questions/' }
   },
@@ -4320,7 +4305,6 @@
     sauna_hours:     { v: 'limited', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     capacity:        { v: 24, src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     coldbath:        { v: 'tub', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
-    early_late:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     firewood_fee:    { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
     fee_bbq:         { v: 'incl', src: 'desk', at: '2026-08', url: 'https://villa-saison-fuji.com/faq/' },
@@ -6590,3 +6574,130 @@
    同じ取り残しが再発しないよう、validate.py に index.html の ota キーと
    個別ページのボタンの一致を見る検査を足した。
    ========================================================================== */
+
+/* ==========================================================================
+   2026-09 検証の波 V14-2 … 出典なし値13施設の検証
+   --------------------------------------------------------------------------
+   出典URLの無い desk 値を持つ13施設を開き、既存値の当否を確認しつつ空欄も埋めた。
+   **既存値26項目のうち、誤りと確定できたものは0件。** 一致22、不明2、
+   情報源が割れて確定できないもの2。「疑うべきだが9割は正しい」の傾向は変わらない。
+
+   ■ **id=160 雅・仙石原 — CLAUDE.md が「未決着」としていた食い違いの正体が判明**
+
+     capacity=14 と紹介文「定員8名」の食い違いは、**紹介文が姉妹施設
+     「雅・芦ノ湖 貸別荘」（同運営・定員8名）のものを誤って転記したもの**だった。
+     TRIPTO の雅・芦ノ湖のページの文章と一言一句一致する。
+
+       雅・芦ノ湖: 「住友林業より全新改築され、土地面積300㎡、プライバシー性が
+         高い沈んだ庭、まるまる貸切オシャレな一軒家。別荘地から芦ノ湖畔
+         （海賊船乗り場）まで徒歩約2分,天気の良い日は芦ノ湖を跨いで富士山を…」
+       DB id=160 desc: 「住友林業により全面改築された、300平米の敷地に建つ一棟
+         貸切のオシャレな一軒家。プライバシー性の高い沈んだ庭が特徴で、別荘地から
+         芦ノ湖畔（海賊船乗り場）まで徒歩約2分、天気の良い日は芦ノ湖越しに富士山も
+         望めます。定員8名で…」
+
+     **capacity=14 が正しい**（TRIPTO の見出し・本文・予約枠上限すべて14で一貫）。
+     **ただし紹介文は仙石原の施設に芦ノ湖畔の説明が付いている状態で、利用者に
+     見える誤りとして残っている。** 差し替え文が要るので次の波に回す。
+
+   ■ **id=150 3rd HOUSE INAMURAGASAKI — 定員 6 は東棟だけの数字だった**
+
+     東棟 Junior Suite「定員　6名様」／西棟 Executive Suite「定員　8名
+     (エキストラベッド利用で9名　※追加料金)」。1日2組限定で別々に貸し出す方式で
+     「両棟合わせて最大N名」の記載は無い。施設全体の最大を採る先例に従い 8 に訂正した。
+     エキストラベッドの9は追加料金の条件付きなので採らない。
+
+   ■ **採用を見送ったもの**
+
+     - id=147 / id=148 / id=157 の capacity … 根拠が OTA の定員欄しか無い
+       （Booking の部屋タイプ定員、一休の「定員 1名～N名」）。**「OTAの定員欄」
+       全般を疑うという規約に従い出典として採らなかった。** 値はそのまま。
+       とくに id=148 は9棟あるのに一休で見えたのは3プランだけで、
+       id=6 CAP MARTIN と同じ「部屋種別の定員欄を施設の定員として読む」危険がある。
+     - id=159 の kitchen_type … TRIPTO の設備欄は「卓上コンロ」だけを挙げるが、
+       公式は「システムキッチン」と書いており矛盾する。cassette と断定できない。
+     - id=159 の capacity … 楽天「最大13名」「人数 1人〜13人」に対し TRIPTO は
+       見出し・本文・予約枠すべて「定員10名」。**どちらも施設専用の予約チャネル**で
+       決め手を欠く。既存値13のまま保留。
+     - id=120 の capacity … 公式FAQ「最大定員は4名です」はブランド共通ページの
+       記述。SANU は建築タイプ別に仕様が違うので、施設固有の根拠として採らない。
+     - id=130 の sauna_type … **男性大浴場はドライサウナ（最大110℃）、女性大浴場は
+       ミストサウナ**で、性別により形式が異なる。DB構造の限界（1エントリ＝1施設）で
+       表現できない例がまた1件。
+     - id=147 の stove … 「フィンランドのHarvia社製ストーブ」だけで型番が無い。
+       ブランド名のみでは確定しない規約どおり見送り。
+     - id=157 の stove … リビングの「大きな薪ストーブ」は「大空間を暖めます」と
+       明記された**居室暖房**。テントサウナ側の設備欄は「ストーブ／ロウリュセット／
+       ベンチ」で燃料の記載が無い。**居室ストーブとの取り違えを回避した12件目。**
+
+   ■ **id=158 GIFTHOUSE 三浦 諸磯 — sauna_exists に疑いが残る**
+
+     公式サイトを全ページ確認したが「サウナ」の語が一度も出てこない。とくに
+     ナビゲーションで「Spa & Activity」と名付けられたページを開くと、実際の見出しは
+     「焚き火・オーシャンビューBBQ」で中身も焚き火とBBQのみだった。
+     一方、楽天トラベルの現行ページは**「館内設備」に「サウナ」**を挙げている。
+
+     **不記載は否定の根拠にならないので no には落とせない。** ただし楽天の記載は
+     「館内設備」であって客室設備ではなく、**判定基準（客室内にサウナがあるか）に
+     照らすと yes ではなく shared の可能性がある。** 既存値 yes は据え置き、
+     出典も付けずに未確定として残す。
+
+   ========================================================================== */
+
+  "120": { /* SANU 2nd Home 那須3rd */
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052290/' }
+  },
+  "125": { /* 森deワーケなすっぽ */
+    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://www.nasuppo.com/plan/family/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.nasuppo.com' }
+  },
+  "130": { /* 那須温泉グランピング Nenn */
+    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' }
+  },
+  "143": { /* mysa hakone */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hotel-mysa.com/concept/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hotel-mysa.com/concept/' }
+  },
+  "147": { /* 箱根芦ノ湖ゴルフヴィラ */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tocovel.com/accommodation/hakone-golf/' }
+  },
+  "148": { /* エスパシオ箱根迎賓館 麟鳳亀龍 */
+    sauna_exists: { v: 'room', src: 'desk', at: '2026-09', url: 'https://houoh.jp/room/' }
+  },
+  "150": { /* 3rd HOUSE INAMURAGASAKI */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://3rd-house.jp/guest-room/east/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://3rd-house.jp/guest-room/east/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://3rd-house.jp/guest-room/east/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-09', url: 'https://3rd-house.jp/guest-room/east/' },
+    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://3rd-house.jp/guest-room/west/' }
+  },
+  "152": { /* NIWA KAMAKURA */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://niwa-kamakura.jp/products/stay' },
+    kitchen_type: { v: 'gas', src: 'desk', at: '2026-09', url: 'https://niwa-kamakura.jp/products/stay' },
+    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://niwa-kamakura.jp/products/stay' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://niwa-kamakura.jp/products/stay' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://niwa-kamakura.jp/pages/terms-and-conditions' }
+  },
+  "153": { /* UMITO VILLA KAMAKURA ZAIMOKUZA */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' }
+  },
+  "157": { /* TANZAWA seven lanes by DAICHI */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tanzawa-7lanes-by-daihi.snack.chillnn.com/ja/snack/d9f5d50e-12ce-4839-b400-7b470c3b8525' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tanzawa-7lanes-by-daihi.snack.chillnn.com/ja/snack/d9f5d50e-12ce-4839-b400-7b470c3b8525' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tanzawa-7lanes-by-daihi.snack.chillnn.com/ja/snack/d9f5d50e-12ce-4839-b400-7b470c3b8525' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-09', url: 'https://tanzawa-7lanes-by-daihi.snack.chillnn.com/ja/snack/d9f5d50e-12ce-4839-b400-7b470c3b8525' }
+  },
+  "158": { /* GIFTHOUSE 三浦 諸磯 */
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194872/194872.html' }
+  },
+  "159": { /* 葉山THE・TERRACE HOUSE */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hayamathe-tr-house.com' }
+  },
+  "160": { /* 雅・仙石原 */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tripto.jp/facilities/575' },
+    capacity:     { v: 14, src: 'desk', at: '2026-09', url: 'https://tripto.jp/facilities/575' }
+  },
