@@ -2298,7 +2298,6 @@ window.VILLAFARAS_SPEC = {
   "113": {  /* ASH Villa 富士河口湖 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     sauna_type:   { v: 'barrel', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-07' },
     capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     elevation:    { v: 1007, src: 'auto', at: '2026-07' },
