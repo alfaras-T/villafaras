@@ -32,71 +32,114 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "95": {"name": "天空の温泉ヴィラ紬 河口湖",
-            "reason": "**kitchen_type を gas から cassette に訂正する。** 2026-09 に選択肢 cassette を追加したため。公式は「テラススペースにBBQグリル、**室内にガスボンベ式のカセットガスコンロを用意**」と書いており、備え付けのコンロは無い。gas のままだと「ガスコンロあり」で絞り込んだ利用者が卓上の携帯コンロだけの施設に当たってしまう（2026-09確認）",
+    "59": {"name": "Under the Sea UBARA",
+            "reason": "一休のプラン本文「＜一棟貸し切り＞ご宿泊プラン※最大6名様まで」→capacity=6（部屋種別欄の「定員1名～6名」ではなくプラン本文の施設固有の記述を採った）。pet_ok=yes は公式FAQ「基本的には2匹まで同伴可能です。わんちゃん同伴オプションをご選択ください。※3匹以上の頭数、大型犬要相談」＋一休「ペット 可 小型から中型２匹まで６６００円（税込）」の2ソース。住所「千葉県勝浦市鵜原759-23」は公式・一休とも完全一致（2026-09確認）",
             "set_spec": {
-                         "kitchen_type": {"v": "cassette", "src": "desk", "at": "2026-09",
-                                        "url": "https://global-stays.jp/tsumugi/"}}},
+                         "capacity": {"v": 6, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052044/"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052044/"}}},
 
-    "211": {"name": "オーシャンテラスAtami",
-            "reason": "**kitchen_type=cassette を記録する。** 調理器具リストに「カセットコンロ」があるだけで備え付けのコンロの記載が無い。2026-08 の調査ではこれを根拠に使えず未調査としていたが、2026-09 に選択肢 cassette を追加して記録できるようになった（2026-09確認）",
+    "67": {"name": "EKVOLI MARINA VILLA, Isumi Garden",
+            "reason": "**公式サイト本体にはサウナ形式の記載が無く、運営会社のクラウドファンディングページで確定した。** 「ウッドデッキから広がる5＊10mの大型プール × 檜の露天風呂 × **薪ストーブのバレルサウナ**。檜の露天風呂に浸かり、薪で焚いた熱々のバレルサウナで汗をかき」→sauna_type=barrel（**サウナ自体を修飾しており熱源も同時に確定できる書き方**。既存の stove=wood とも整合）。サウナイキタイの「ドライサウナ 対流式（ストーン） 薪」とも一致。pet_ok=yes は一休「ペット可」「1匹につき11,000円の追加料金」（2026-09確認）",
             "set_spec": {
-                         "kitchen_type": {"v": "cassette", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.resolstay.jp/details/oceanterrace/"}}},
-
-    "24": {"name": "BEST SPA 99",
-            "reason": "**kitchen_type=cassette を記録する。** 設備リストに「カセットコンロ」があるだけで備え付けのコンロの記載が無い。2026-08 の調査では確度中として見送っていたもの（2026-09確認）",
-            "set_spec": {
-                         "kitchen_type": {"v": "cassette", "src": "desk", "at": "2026-09",
-                                        "url": "https://bestspa99.com/"}}},
-
-    "176": {"name": "SANU 2nd Home 北軽井沢2nd",
-            "reason": "**coldbath_season=winter を記録する。** 公式マガジン「SANU CABIN MOSS with Sauna」に、テラスの水風呂が冬季（11〜4月）は凍結防止のため利用制限になる旨の記載がある。同記事は対象拠点として北軽井沢2nd／八ヶ岳3rd／白馬1st／河口湖2nd／南アルプス1stを名指ししており、本施設はそこに含まれる（2026-09確認）",
-            "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
-
-    "75": {"name": "SANU 2nd Home 八ヶ岳3rd",
-            "reason": "同上（MOSS型記事の名指し拠点）。テラスの水風呂が冬季11〜4月は凍結防止のため利用制限（2026-09確認）",
-            "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
-
-    "179": {"name": "SANU 2nd Home 白馬1st",
-            "reason": "同上（MOSS型記事の名指し拠点）。テラスの水風呂が冬季11〜4月は凍結防止のため利用制限（2026-09確認）",
-            "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
-
-    "76": {"name": "SANU 2nd Home 河口湖2nd",
-            "reason": "同上（MOSS型記事の名指し拠点）。テラスの水風呂が冬季11〜4月は凍結防止のため利用制限（2026-09確認）",
-            "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.makuake.com/project/ekvoli/"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.makuake.com/project/ekvoli/"}}},
 
     "73": {"name": "SANU 2nd Home 南アルプス1st",
-            "reason": "同上（MOSS型記事の名指し拠点）。テラスの水風呂が冬季11〜4月は凍結防止のため利用制限（2026-09確認）",
+            "reason": "SANU公式の拠点別ページ「定員 4名 セミダブル2台 追加寝具1セット」＋拠点一覧カード「南アルプス1st／MOSS／4名／サウナ・ドッグフレンドリー」→capacity=4（一休の「1名～4名」はOTA範囲表記なので不採用）。pet_ok=yes は同ページ「ドッグフレンドリー」＋一休。**MOSS型サウナ記事の対象拠点に「南アルプス1st」が名指しされていることも再確認**した（誤流用ではない）（2026-09確認）",
             "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.2ndhome-articles.sa-nu.com/sauna-moss"}}},
+                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/minami-alps/sites/minami-alps1st"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/minami-alps/sites/minami-alps1st"}}},
 
-    "190": {"name": "Hygge chalet hakuba（ヒュッゲ シャレー）",
-            "reason": "**coldbath_season=winter を記録する。** 公式の /system/ ページに「（※冬季は凍結のため利用不可）」が本文とオプション欄の2箇所にある（2026-09確認）",
+    "76": {"name": "SANU 2nd Home 河口湖2nd",
+            "reason": "SANU公式の拠点別ページ「定員 4名 セミダブル2台 追加寝具1セット」→capacity=4、「ドッグフレンドリー」複数表記→pet_ok=yes。**MOSS型サウナ記事の対象拠点に「河口湖2nd」が名指しされていることも再確認**した（2026-09確認）",
             "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://chalet-hakuba-hygge.com/system/"}}},
+                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/kawaguchiko/sites/kawaguchiko2nd"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/kawaguchiko/sites/kawaguchiko2nd"}}},
 
-    "198": {"name": "T&A Resort&Sauna KARUIZAWA",
-            "reason": "**coldbath_season=winter を記録する。** 公式サイトが存在しない施設で、Booking.com のホスト説明文に「※軽井沢エリアは都内に比べて10℃以上気温が低く、冬季（11月～3月末）は水道凍結の恐れがあるため、水風呂のご利用は停止しております。」とある。**この一文は既存の coldbath=bath の根拠でもあった**（利用停止の告知が水風呂の存在を前提としている）（2026-09確認）",
+    "91": {"name": "ビジョングランピングリゾート山中湖",
+            "reason": "**capacity を 6 から 8 に訂正する。** 公式の客室タイプ別ページに「デラックススタイル（6mドームテント）定員：1〜6名」「ウィズドッグスタイル（6mドームテント）定員：1〜6名」「**スイートスタイル（8mドームテント）定員：2〜8名**」と3種の定員が明記されている。既存の6はデラックス／ウィズドッグの数字で、スイート型（最大8名）を代表していない。全15棟で「全棟利用時は最大N名」の記載は無いが、**id=113 ASH Villa（10名/6名→10）、id=38 Asile＆OLILI（10名/14名→14）、id=117 THE SECOND（14名/6名→14）、id=238 月と太陽（5/6/10/10→10）と同じく施設全体の最大を採る。** pet_ok=yes は公式のペット専用ページ「ご宿泊いただけるワンちゃんは体重が40キロまでのワンちゃんです」「大型犬：1頭まで 小型～中型犬：2頭まで」。**outdoor_rest=yes を新規記録**（公式「外気浴用の椅子にはインフィニティチェアをご用意」）（2026-09確認）",
+            "set_villa": {"capacity": "8"},
             "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html"}}},
+                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
+                                        "url": "https://vision-glamping.com/yamanakako/stay"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://vision-glamping.com/yamanakako/stay"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://vision-glamping.com/yamanakako/stay"}}},
 
-    "103": {"name": "Private villa FujiNagi",
-            "reason": "**coldbath_season=winter を記録する。** 公式に「※冬季は凍結防止のため屋外の水風呂、シャワー、水栓の使用を休止させて頂きます。サウナから内風呂にすぐアクセスできますので、内風呂を水風呂代わりにご利用ください。」とある（2026-09確認）",
+    "95": {"name": "天空の温泉ヴィラ紬 河口湖",
+            "reason": "**capacity を 4 から 6 に訂正する。** 公式の客室ページに棟タイプ別の最大人数が明記されている。「スイートヴィラタイプ：最大**6**名様」「スタンダードヴィラタイプ：最大4名様」「グランピングタイプ：最大4名様」。既存の4はスイートヴィラを代表していない。id=91 と同じく施設全体の最大を採る。**coldbath=bath と outdoor_rest=yes を新規記録**（公式 /spa/「水風呂と外気浴コーナーで心身ともにリフレッシュできる至福のひとときをお過ごしください。」。プール・浴槽兼用の記載は無く単独の水風呂）。**kitchen_type は本波の直前に gas から cassette に訂正済み**（「室内にガスボンベ式のカセットガスコンロを用意」）（2026-09確認）",
+            "set_villa": {"capacity": "6"},
             "set_spec": {
-                         "coldbath_season": {"v": "winter", "src": "desk", "at": "2026-09",
-                                        "url": "https://www.fujinagi.com/overview-facility.html"}}},
+                         "capacity": {"v": 6, "src": "desk", "at": "2026-09",
+                                        "url": "https://global-stays.jp/tsumugi/room/"},
+                         "coldbath": {"v": "bath", "src": "desk", "at": "2026-09",
+                                        "url": "https://global-stays.jp/tsumugi/room/"},
+                         "outdoor_rest": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://global-stays.jp/tsumugi/room/"}}},
+
+    "101": {"name": "KURA YARD",
+            "reason": "公式サウナページ「…セルフロウリュが可能。」→loyly=yes。**stove=electric は別途交差検証に回した**: 「サウナストーブは、本場フィンランドのサウナメーカーHarviaの『LEGEND15』を採用しており」と型番が明記されているが、**Harvia の Legend シリーズは一般に薪式として知られている**ため、型番から電気式と断定してよいか確認が要る（2026-09確認）",
+            "set_spec": {
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://kurayard.com/sauna"}}},
+
+    "107": {"name": "ReTune | SPA & SAUNA / VILLA",
+            "reason": "公式FAQの質問文自体に「**テントサウナ**のデッキに椅子はいくつありますか？」とあり回答が「デッキには４脚ご用意がございます」→sauna_type=tent。pet_ok=yes は同FAQ「小型中型犬は2匹まで。大型犬は1匹までご一緒にお過ごしいただけます。」。既存の capacity=10 も同FAQ「10名までご宿泊が可能ですが、ゆったりご利用されたい場合は7名を推奨」と整合（**推奨7名は comfort_cap に相当する情報**）（2026-09確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "tent", "src": "desk", "at": "2026-09",
+                                        "url": "https://retune.jp/retune_faq"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://retune.jp/retune_faq"}}},
+
+    "108": {"name": "THE THIRD PLACE Mt.Fuji",
+            "reason": "一休「1日1組限定でご利用いただけるバレルサウナ」→sauna_type=barrel。**pet_ok=no を新規記録**（一休「ペット 不可」）。**capacity=6 は変更しない**: 予約サイト（chillnn）に棟別で「煌–Köu–（1st棟）最大4名」「燈–Töu–（2nd棟）最大6名」「燿–Yöu–（3rd棟）最大6名」とあり、6が1st棟を代表していないと指摘されたが、**施設全体の最大は6なので既存値のままでよい**（最大を採る方針）（2026-09確認）",
+            "set_spec": {
+                         "sauna_type": {"v": "barrel", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052393/"},
+                         "pet_ok": {"v": "no", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052393/"}}},
+
+    "110": {"name": "THE BLISS FUJI",
+            "reason": "一休「最大8名が泊まれる完全プライベート」→capacity=8（部屋種別欄の「定員1名～8名」だけでなく紹介文にも施設固有の数字がある）。pet_ok=yes は一休「小型犬、中型犬を合計2匹までお連れいただけます。愛犬同伴料は…1滞在につき一律8,500円です。」。**stove / loyly / kitchen_type は未確認のまま**: 公式 hotel.alterna3.jp がJS描画で本文を取得できず、一休にも記載が無い（2026-09確認）",
+            "set_spec": {
+                         "capacity": {"v": 8, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052516/"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ikyu.com/00052516/"}}},
+
+    "113": {"name": "ASH Villa 富士河口湖",
+            "reason": "**stove=electric と loyly=yes を新規記録する。公式FAQが一問一答で両方を確定させている。** 「Q. ストーブを付ける方法など利用方法はどんな感じですか？ A. **電気ストーブ**になりますのでスイッチにて簡単にご使用いただけます。」「Q. ロウリュはできますか？ A. はい。電気ストーブ上部のサウナストーンにアロマオイルと一緒にお楽しみください。」。**coldbath は別途交差検証に回した**: 公式ステイページの「お風呂は大きなヒノキ風呂…サウナのあとの水風呂にもご利用いただけます。」を根拠に bath から tub への訂正が提案されたが、これは Deluxe Villa 1010 の記述で、もう一方の 2-Bedroom Villa 2020 の水風呂が確認できていない。**sauna_type=barrel は不明のまま**: 公式は「HARVIA製ストーブを備えたプライベートサウナ」までで形状の記載が無い（2026-09確認）",
+            "set_spec": {
+                         "stove": {"v": "electric", "src": "desk", "at": "2026-09",
+                                        "url": "https://ash-villa.com/faq/"},
+                         "loyly": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://ash-villa.com/faq/"}}},
+
+    "114": {"name": "エンゼルフォレスト那須",
+            "reason": "**capacity を 6 から 10 に訂正する。** 公式の客室ページに8タイプすべての定員が明記されている。「カミーナ4名タイプ：定員4名」「貸別荘1541：定員5名」「ノッカ：定員6名」「貸別荘フィーカ：定員6名」「カミーナ6名タイプ：定員6名」「ルンド：定員8名」「ルオント：定員8名」「**グランノッカ：定員10名**」。既存の6は8タイプ中3タイプの数字にすぎない。施設全体の最大を採る方針に従う。sauna_exists=room は、共用温泉（「和風呂・洋風呂共に内湯、サウナ、露天風呂がございます」）とは別に**客室内サウナがあるのは「ルンド」「フィーカ」の2タイプのみ**と確認できたので妥当。**stove は入れない**: ルンドの説明にある「薪ストーブ・温泉・サウナ・インナーテラス・半露天風呂つき」は設備の並列列挙で、サウナ自体を修飾していない（2026-09確認）",
+            "set_villa": {"capacity": "10"},
+            "set_spec": {
+                         "capacity": {"v": 10, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ang-ns.com/stay/"},
+                         "sauna_exists": {"v": "room", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.ang-ns.com/stay/"}}},
+
+    "119": {"name": "SANU 2nd Home 那須2nd",
+            "reason": "SANU公式の拠点別ページ「定員 4名 セミダブル2台 ※大人2名まで推奨」→capacity=4（建築タイプは「独立型キャビン『BEE』5棟」と確認）。pet_ok=yes は同ページの「サウナ／ドッグフレンドリー」室内タイプ。**BEE型サウナ記事の対象拠点に「那須2nd」が名指しされていることも再確認**し、既存の sauna_type=barrel の出典が妥当と裏付けられた。**stove は不明のまま**: 記事にも ONE SAUNA の製品ページにも熱源の明記が無い（2026-09確認）",
+            "set_spec": {
+                         "capacity": {"v": 4, "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/nasu/sites/nasu2nd"},
+                         "pet_ok": {"v": "yes", "src": "desk", "at": "2026-09",
+                                        "url": "https://www.sa-nu.com/areas/nasu/sites/nasu2nd"}}},
 }
 
 DRY = "--dry-run" in sys.argv
