@@ -15,6 +15,7 @@
   python3 tools/blanks.py            上位20施設を一覧
   python3 tools/blanks.py -n 14      件数を指定
   python3 tools/blanks.py --prompt   エージェントに渡す調査指示を出力
+  python3 tools/blanks.py --ids 1,2,3   対象を明示（並行する波と重複させない）
 """
 import io, json, re, sys
 
@@ -66,6 +67,12 @@ def main():
     villas, desk, opts, masters, have, nosrc = load()
     done = {m for line in io.open("data/desk-research.js", encoding="utf-8")
             for m in re.findall(r"id=(\d+)", line)}
+    want = None
+    if "--ids" in sys.argv:
+        # 対象を明示する。並行して走っている波と重複させないため。
+        # 指定した施設は done / 出典なし0 でも落とさない。
+        want = set(sys.argv[sys.argv.index("--ids") + 1].split(","))
+        done = done - want
     unsourced = "--unsourced" in sys.argv
     if unsourced:
         # 出典URLの無い desk 値の多い順。空欄ではなく検証対象を選ぶモード。
@@ -75,7 +82,11 @@ def main():
         rows = sorted(((len([k for k in desk if k not in have.get(str(v["id"]), set())]),
                         str(v["id"]), v) for v in villas if str(v["id"]) not in done),
                       key=lambda r: -r[0])
-    rows = [r for r in rows if r[0] > 0][:n]
+    if want is not None:
+        rows = [r for r in rows if r[1] in want]
+    else:
+        rows = [r for r in rows if r[0] > 0]
+    rows = rows[:n]
     if "--prompt" not in sys.argv:
         print("desk項目 %d: %s" % (len(desk), " ".join(desk)))
         lbl = "出典なし" if unsourced else "空欄"

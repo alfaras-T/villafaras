@@ -105,6 +105,8 @@ python3 tools/validate.py data/desk-research.js
 python3 tools/blanks.py            上位20施設を一覧
 python3 tools/blanks.py -n 14      件数を指定
 python3 tools/blanks.py --prompt   調査指示（選択肢マスタ＋対象）を出力
+python3 tools/blanks.py --unsourced   出典URLの無い値が多い順（検証の波用）
+python3 tools/blanks.py --ids 1,2,3   対象を明示。並行する波と重複させないため
 ```
 
 - **セルの正規表現は空白数を決め打ちしないこと。** spec-data.js は
