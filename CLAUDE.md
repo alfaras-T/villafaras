@@ -777,15 +777,27 @@ SANU の MOSS型5拠点は公式マガジンが名指しで対象拠点を列挙
 
 ---
 
-## 現在の進捗（2026-08時点）
+## 現在の進捗（2026-09時点）
 
 | | 着手時 | 前々回 | 前回 | 現在 |
 |---|---|---|---|---|
-| 総フィールド | 2745 | 3588 | 3975 | 4506 |
-| desk10項目 | 34.2% | 42.8% | 52.7% | 62.7% |
-| desk値の出典なし率 | – | – | 35% | 22% |
+| 総フィールド | 2745 | 3588 | 3975 | **4598** |
+| desk10項目 | 34.2% | 42.8% | 52.7% | **65.4%** |
+| desk値の出典なし率 | – | 35% | 22% | **5.2%** |
 | winter_access | – | – | 3 | 233 |
-| サウナ yes/room/shared/no/未設定 | 273/4/1/0/8 | 235/24/16/1/10 | 226/27/18/7/8 | 225/29/18/3/11 |
+| サウナ yes/room/shared/no/未設定 | 273/4/1/0/8 | 235/24/16/1/10 | 226/27/18/7/8 | **226/29/18/3/10** |
+
+チャネル別の充足は次のとおり（`spec.js` の `ch:` で集計）。
+
+| チャネル | 項目数 | 充足 |
+|---|---|---|
+| A（auto・座標からの導出） | 7 | **97.4%** |
+| B（desk・机上調査） | 11 | **59.8%** |
+| C（owner・オーナー調査） | 34 | 7.9% |
+| D（review・宿泊者レビュー） | 5 | 0% |
+
+**チャネルBの11項目は `coldbath_season` を含む。** 2026-09 に新設したばかりで充足4%
+（11/286）なので全体を押し下げている。従来の10項目だけなら 65.4%。
 
 `no` が7件から3件に減ったのは後退ではなく、**根拠のない否定を消した結果**。
 2026-08 に7件すべての出典を確認し、3件（resolstay の肯定列挙ページの
@@ -796,21 +808,27 @@ SANU の MOSS型5拠点は公式マガジンが名指しで対象拠点を列挙
   いたしました。」（id=2）／ 一休の○✕欄「× サウナ」（id=202, id=203）
 
 「机上調査N施設」という指標は `tools/backfill_src.py` で出典を埋め戻した結果
-定義が変わってしまったため、上表では「desk項目に出典URLがある施設」に置き換えた。
+定義が変わってしまったため、上表では「desk値のうち出典URLがある割合」に置き換えた。
 
 **オーナー調査で聞く想定だった項目の到達状況**
 
-`bbq_roof` 25 / `sauna_hours` 22 / `sauna_cap` 21 / `rest_chair` 18 /
-`steps` 16 / `checkin_method` 13 / `firewood_fee` 13 / `water_src` 12 /
-`sauna_temp` 12 / `comfort_cap` 10 / `early_late` 9 / `kids_free` 8 /
-`chiller` 5 / `water_temp` 3 / `winter_access` 3 / `fee_cleaning` 1 /
-`water_depth` 0
+`bring_amenity` 80 / `villa_type` 77 / `bring_towel` 77 / `bring_seasoning` 49 /
+`sauna_cap` 46 / `sauna_hours` 40 / `firepit` 39 / `rest_chair` 37 / `fee_bbq` 37 /
+`bbq_roof` 27 / `steps` 26 / `sauna_temp` 26 / `kitchen_burners` 26 /
+`bring_wrap` 24 / `late_arrival` 22 / `water_src` 21 / `checkin_method` 19 /
+`firewood_fee` 16 / `late_checkout` 15 / `early_checkin` 14 / `water_temp` 11 /
+`chiller` 11 / `comfort_cap` 10 / `kids_free` 9 / `bring_trash` 5 /
+`water_depth` 1 / `sound_rule` 1 / `fee_pet` 1 / `fee_cleaning` 1
+
+**まだ1件も取れていない項目が5つある。** `neighbor_dist` / `heat_time` /
+`fee_person` / `fee_heating` / `bbq_cleanup`。いずれも公式サイトに書かれる
+慣習が無く、オーナー調査を待つしかない。
 
 当初「公式サイトに一切載っておらず、オーナーに聞くしか手段がない」とした
 チラー・水温・BBQの屋根は、いずれも少数ながら机上で取れている。
-一方 `water_depth` は124施設調べて0件で、これは本当に聞くしかない。
-
----
+**`water_depth` も 2026-08 に1件だけ埋まった**（id=143 mysa hakone。
+サウナイキタイの構造化データから `shoulder`）。ただし124施設調べて1件なので、
+実質はオーナー調査待ちのまま。
 
 ## 次にやること
 
