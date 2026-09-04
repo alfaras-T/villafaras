@@ -395,7 +395,10 @@ def check_fields(path, villas, masters, rows, rep, merged):
             rep.add("WARN", "単位", path, vid, "kids_free", fields["kids_free"]["line"],
                     "定員と同値の %s。単位は「歳まで」で人数ではありません" % kids)
         scap = val("sauna_cap")
-        if cap and scap and scap > cap * 2:
+        # 共用サウナは施設全体で使うものなので、1棟の定員と比べても意味がない。
+        # id=283 林音は sauna_exists=shared で「収容人数30人の大型のサウナ室」を持つ。
+        shared_sauna = (fields.get("sauna_exists") or {}).get("v") == "shared"
+        if cap and scap and scap > cap * 2 and not shared_sauna:
             rep.add("WARN", "単位", path, vid, "sauna_cap", fields["sauna_cap"]["line"],
                     "サウナ定員 %s名 が施設定員 %s名 の2倍超" % (scap, cap))
 

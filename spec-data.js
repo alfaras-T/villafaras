@@ -4607,7 +4607,7 @@ window.VILLAFARAS_SPEC = {
     rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
     capacity:      { v: 9, src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
-    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.amaovilla.com/faq/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.amaovilla.com/amao-villa-futo/' },
     elevation:     { v: 199, src: 'auto', at: '2026-07' },
     supermarket:   { v: 6, src: 'auto', at: '2026-07' },
@@ -4754,7 +4754,7 @@ window.VILLAFARAS_SPEC = {
 
   "248": {  /* エンゼルフォレスト中伊豆 */
     sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
-    capacity:     { v: 4, src: 'desk', at: '2026-07' },
+    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/stay/type4/' },
     elevation:    { v: 445, src: 'auto', at: '2026-07' },
@@ -5409,7 +5409,7 @@ window.VILLAFARAS_SPEC = {
     sauna_cap:     { v: 30, src: 'desk', at: '2026-09', url: 'https://rinne-resort.jp/rinnenoyu/gardensauna' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://rinne-resort.jp/rinnenoyu/ofuro' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://rinne-resort.jp/rinnenoyu/ofuro' },
-    capacity:      { v: 4, src: 'desk', at: '2026-07' },
+    capacity:      { v: 7, src: 'desk', at: '2026-09', url: 'https://rinne-resort.jp/stay/maisonette' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://rinne-resort.jp/cottage' },
     elevation:     { v: 52, src: 'auto', at: '2026-07' },
     supermarket:   { v: 5, src: 'auto', at: '2026-07' },
