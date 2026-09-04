@@ -687,6 +687,39 @@ def units_table(villas, rows):
               % (key, row["u"], len(vals), vals[0], vals[len(vals) // 2], vals[-1]))
 
 
+def check_ota_dupes(villa_list, rep):
+    """複数施設が同じ OTA ページを指していないか。**クエリ文字列を除いて比べる。**
+
+    ota のエントリは施設ごとに固有のはずで、2施設が同じページを指していれば
+    どちらかが誤り（2026-09 の全件修復では6組見つかり、すべて「片方が正しく
+    もう片方が誤り」だった）。
+
+    **完全一致で比べると取りこぼす。** id=87 hotel norm. ao の booking は
+    id=88 と同じ `norm-fuji` スラッグを指していたが、末尾に `?label=...` が
+    付いていたため文字列比較をすり抜け、全件修復で見落とした。
+    クエリ・フラグメント・www・スキームを落として比べる。
+    """
+    def norm(u):
+        u = u.split("?")[0].split("#")[0].rstrip("/")
+        return re.sub(r"^https?://(www\.)?", "", u).lower()
+
+    seen = {}
+    for v in villa_list:
+        for k, u in (v.get("ota") or {}).items():
+            seen.setdefault(norm(u), []).append((str(v["id"]), k))
+    print("\n=== 複数施設が同じ OTA ページを指していないか ===")
+    n = 0
+    for u, lst in sorted(seen.items()):
+        ids = sorted(set(i for i, _ in lst), key=int)
+        if len(ids) < 2:
+            continue
+        n += 1
+        rep.add("WARN", "整合性", INDEX, ids[0], None, None,
+                "%s を %s が共有しています。どちらかが誤りの可能性"
+                % (u[:60], ", ".join("id=%s の %s" % (i, k) for i, k in lst)))
+    print("  %s" % ("○ 重複なし" if not n else "△ 重複 %d 組" % n))
+
+
 def check_capacity_sync(villa_list, villas, rep):
     """capacity が index.html と spec-data.js で一致しているか。
 
@@ -798,6 +831,7 @@ def main():
     for _p, _t, _v in loaded:
         if os.path.basename(_p) == DATA:
             check_capacity_sync(villa_list, _v, rep)
+    check_ota_dupes(villa_list, rep)
     check_ota_buttons(villa_list, rep)
 
     print("\n=== その他の整合性 ===")
