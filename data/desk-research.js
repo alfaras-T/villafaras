@@ -321,7 +321,7 @@
 
   "276": { /* COCO VILLA 大洗 */
     stove:         { v: 'electric', src: 'desk', at: '2026-07' },
-    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-07' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/oarai/' },
     rest_chair:    { v: 'chair', src: 'desk', at: '2026-07' }
   },
 
@@ -6872,3 +6872,161 @@
      定型質問候補があること自体が、本文に答えが無いことを示している。
      値は残すが出典なしのまま。
    ========================================================================== */
+
+/* ==========================================================================
+   2026-09 検証の波 V14-4 … 出典なし値12施設の検証と SANU 備品リストの調査
+   --------------------------------------------------------------------------
+   ■ **SANU の kitchen_type がブランド共通URLから振られていた件の決着**
+
+     tools/shared_src.py が「12施設が1枚の備品リストページから kitchen_type を
+     もらっている」と挙げた件を調べさせた。
+
+     **URL `2ndhome.sa-nu.com/supplies_list_new/sanucabin` は建築タイプ別に内容が
+     変わるページだった。** 開くと「他の建築を選択」のドロップダウンが出て、
+     BEE / SKY / MOSS Medium / MOSS Large / RAY Medium / RAY Large /
+     ARC Small・Medium・Large と、拠点固有デザインキャビン17件を選べる。
+     **URL末尾の `sanucabin` はどのタイプ名とも一致せず、無選択だと BEE が
+     既定表示になる。** つまりこの出典URLは、どのタイプを見て記録したのかを
+     特定できない。
+
+     **値そのものは誤りではなかった。** BEE / MOSS Medium / RAY Medium / ARC Large の
+     4タイプを実際に切り替えて比べたところ、調理家電はいずれも
+     「三口IHクッキングヒーター」で共通だった（ワインセラーの有無などは違う）。
+
+     **手続き上の教訓: 選択状態がURLに載らないページを出典にするときは、
+     「MOSS Medium を選択」のように選択状態も書き添える。**
+
+     なお SANU 自身がサウナ解説ページで
+
+       「サウナ付きの施設は…**建築タイプごとに異なる仕様のサウナが設置されて
+         いますので、各建築タイプのページでご確認ください。**」
+
+     と明記している。**タイプが分かれば型どおりの仕様、というのが公式の立場。**
+     調査対象3施設のタイプは 177=MOSS Medium / 178=MOSS Medium / 246=RAY Medium。
+
+     **id=177 と id=178 の MOSS 由来の値は、二段の名指しで裏付けた。**
+     サウナ解説記事 `2ndhome-articles.sa-nu.com/sauna-moss` の「提供エリア」欄は
+     北軽井沢2nd／八ヶ岳3rd／白馬1st／河口湖2nd／南アルプス1st の5拠点で、
+     **蓼科1stと軽井沢2ndを含んでいない**（記事が更新されていない疑い）。
+     ただし `2ndhome.sa-nu.com/facility/sanu-cabin-with-sauna` が
+     「MOSS Medium: …蓼科1st 4室」「MOSS Medium: …軽井沢2nd 1室」と
+     **施設名とタイプを名指し**しており、記事は MOSS というタイプの仕様を
+     説明したものなので、この2段で結べる。
+
+   ■ **id=246 は RAY の記事を使わなかった。これが正しい判断。**
+
+     RAY Medium には「露天温泉＆サウナ／露天温泉／インナーバス＆サウナ」の3種類が
+     あり、RAY用のサウナ解説記事（sauna-ray）は**提供エリアが「館山1st」のみ**。
+     伊豆1stは全室露天温泉付きでインナーバスを持たない別バリエーションなので、
+     記事の「インナーバスを水風呂に」は当てはまらない。
+     **同じタイプでも拠点でバリエーションが違う。** 伊豆1st自身のページに
+     書かれている sauna_type（バレルサウナ）と outdoor_rest だけを採った。
+
+   ■ **id=215 マイグレテラス — sauna_type=tent は別施設のバナー広告からの誤読**
+
+     公式ページ全体で「テント」の語が出てくるのは1箇所だけで、それは姉妹施設の宣伝バナー
+
+       「『マイグレ天』は、本格的なフィンランド式テントサウナでロウリュを楽しめます」
+
+     **マイグレテラスではなくマイグレ天の説明だった。** テラス自身の記述は
+     「緑に囲まれた庭のデッキにはオーナーのこだわりが詰まったサウナと露天風呂」で、
+     構造の明記が無い。しかも部屋一覧は「1F：シアタールーム、テラス、**サウナ**、
+     寝室①、寝室②、トイレ」と屋内の1室として数えており、「庭のデッキに」という
+     記述と両立しない。削除して未調査に戻した。
+
+     **「同じページに載っている別施設の宣伝文」という新しい混入経路。**
+     紹介文が姉妹施設のものだった id=160 とは別の型で、こちらは広告枠から入っている。
+
+   ■ **マイグレの stove は今回も確定できなかった（id=215 / id=225）**
+
+       「超高熱度の本格的フィンランド製harviaのサウナストーブ。」（id=215）
+       「デッキに設けたサウナ小屋には、フィンランド製の超高熱度サウナストーブHarviaを
+         採用。」（id=225）
+
+     **どちらも型番が無い。** 15施設すべてがこの書き方で、オーナー調査で一度に
+     解決すべき対象という位置づけは変わらない。
+
+   ■ **一休の○✕欄が同じページの基本情報と矛盾する例が3件出た**
+
+     id=177 / id=246（SANU）と id=120 で、「設備・特徴」欄が「× ペット可」なのに、
+     同じページの基本情報は「ペット 可」で、しかも**犬同伴プランが実際に予約できる**。
+     **○✕欄は否定の根拠に使えるが、同じページの基本情報やプランと突き合わせること。**
+     部屋限定のサービスをアイコン化できていないためと見られる。
+
+   ■ **id=269 THE LOOKOUT KUSATSU — 公式に記載が無いのにサウナが実在する例の確認**
+
+     公式（kitakaru.localinfo.jp）には「サウナ」の語が一度も出てこないが、
+     tabilmo に「【サウナ】Max70度ほどの1人用サウナを完備！」とある。
+     公式の個別ページの内容（源泉「わたの湯」、浅間山ビュー）と tabilmo の住所
+     「群馬県吾妻郡草津町大字草津464-962」が一致し、同一施設と確認できた。
+     公式に「リビングにはペレットストーブを設置」とあるが、これは居室の暖房。
+
+   ■ **採用を見送ったもの**
+
+     - id=278 LUCY RESORT の選択肢型すべて … 公式が明示的に
+       「※プライベートサウナ、ジャグジー風呂・薪風呂は、**ご利用サイトにより設備が
+       異なります。**」と書いている。7種のサイトで設備が違うので単一値を置けない。
+     - id=248 のサウナ関連 … サウナがあるのは6名タイプのみで、写真カテゴリ名
+       「サウナ」以上の説明が無い。
+     - id=276 の sauna_type … 「屋上には…ガラス張りのサウナ」だけで、
+       indoor / hut / barrel / tent のどれにも当たらない。施設独自のスペック表でも
+       「サウナルーム」欄が「---」だった。
+     - id=283 の loyly … 「ロウリュサウナ」と称し「定期的にアウフグースイベントも
+       行います」とあるが、**宿泊者がいつでも自分でロウリュできるのか、
+       イベント時に熱波師が行うのかが書かれていない。**
+     - id=272 / id=278 の kitchen_type … 備品一覧にコンロ類の記載が無い。
+       BBQ・ケータリング中心で備え付けキッチンが無い可能性が高いが、
+       明示的な否定文が無いので none にはしない。
+
+   ■ **交差検証に回したもの**
+
+     - id=239 AMAO VILLA … 一休 00052181 のアクセス情報が「富戸911-122」で
+       DBの「富戸1007-32」と番地が違う。**同名の別施設の疑い。**
+       この一休ページを根拠にした pet_ok の yes→no 訂正は保留した。
+     - id=248 の capacity … 4名タイプと6名タイプがあり、規約どおりなら最大の6。
+     - id=283 の capacity … 「2〜4名」中心だが「2〜6名」「2〜7名」のタイプもある。
+   ========================================================================== */
+
+  "177": { /* SANU 2nd Home 蓼科1st */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://www.sa-nu.com/list/mossm_tateshina1st' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052266/' }
+  },
+  "178": { /* SANU 2nd Home 軽井沢2nd */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://www.sa-nu.com/list/mossm_karuizawa2nd' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' }
+  },
+  "225": { /* マイグレHOODSTAR */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' }
+  },
+  "239": { /* AMAO VILLA */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.amaovilla.com/amao-villa-futo/' }
+  },
+  "248": { /* エンゼルフォレスト中伊豆 */
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/' }
+  },
+  "269": { /* THE LOOKOUT KUSATSU */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tabilmo.com/villas/kanto/gumma/area-47/villa/2272' },
+    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://kitakaru.localinfo.jp/pages/5342789/static' }
+  },
+  "272": { /* ノーラ名栗 */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' }
+  },
+  "276": { /* COCO VILLA 大洗 */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/oarai/' }
+  },
+  "278": { /* LUCY RESORT */
+    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://www.lucyresort.com/glamping/room/' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.lucyresort.com/glamping/room/' }
+  },
+  "283": { /* THE BOTANICAL RESORT 林音 */
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://rinne-resort.jp/cottage' }
+  },
+
+  /* V14-4 で新たに記録した値（上の解説を参照） */
+  "246": { /* SANU 2nd Home 伊豆1st */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://www.sa-nu.com/list/raym_izu1st' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052264/' },
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://www.sa-nu.com/list/raym_izu1st' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.sa-nu.com/list/raym_izu1st' }
+  },
