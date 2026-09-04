@@ -3791,7 +3791,7 @@ window.VILLAFARAS_SPEC = {
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
     sauna_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://saunaforestcabin.com' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://airhost2048.airhost.co/ja/houses/291312' },
-    coldbath:      { v: 'bath', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'tub', src: 'desk', at: '2026-09', url: 'https://saunaforestcabin.com/qa/' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://saunaforestcabin.com' },
     capacity:      { v: 10, src: 'desk', at: '2026-09', url: 'https://airhost2048.airhost.co/ja/houses/291312' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://airhost2048.airhost.co/ja/houses/291312' },
@@ -4001,7 +4001,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "204": {  /* オーシャンビュー南熱海 */
-    capacity:      { v: 12, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/minamiatami/' },
+    capacity:      { v: 8, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/minamiatami/' },
     comfort_cap:   { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/minamiatami/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/minamiatami/' },
