@@ -687,6 +687,34 @@ def units_table(villas, rows):
               % (key, row["u"], len(vals), vals[0], vals[len(vals) // 2], vals[-1]))
 
 
+def check_capacity_sync(villa_list, villas, rep):
+    """capacity が index.html と spec-data.js で一致しているか。
+
+    定員は index.html の VILLAS・villas/*.html の fact 行・spec-data.js の3箇所に
+    出る。set_villa が無かった時期に spec-data.js だけ訂正され、残る2箇所が
+    取り残された施設があった（2026-09 に最後の1件 id=226 を解消）。
+    fix_villa.py の set_villa は3箇所を同時に書き換えるので、以後はずれない。
+    """
+    spec = {}
+    for vid, fields, _o in villas:
+        f = fields.get("capacity")
+        if f is not None and isinstance(f.get("v"), int):
+            spec[vid] = f["v"]
+    print("\n=== index.html と spec-data.js の capacity ===")
+    n = 0
+    for v in villa_list:
+        vid = str(v["id"])
+        iv = v.get("capacity")
+        if vid not in spec or not str(iv).isdigit():
+            continue
+        if int(iv) != spec[vid]:
+            rep.add("ERROR", "整合性", INDEX, vid, "capacity", None,
+                    "index.html は %s、spec-data.js は %s。"
+                    "fix_villa.py の set_villa で3箇所そろえること" % (iv, spec[vid]))
+            n += 1
+    print("  %s" % ("○ 一致" if not n else "× 不一致 %d 件" % n))
+
+
 def check_ota_buttons(villa_list, rep):
     """index.html の ota キーと villas/*.html のボタンが一致するか。
 
@@ -767,6 +795,9 @@ def main():
         check_bias(villas, rows, rep, p)
         units_table(villas, rows)
 
+    for _p, _t, _v in loaded:
+        if os.path.basename(_p) == DATA:
+            check_capacity_sync(villa_list, _v, rep)
     check_ota_buttons(villa_list, rep)
 
     print("\n=== その他の整合性 ===")
