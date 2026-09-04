@@ -191,14 +191,14 @@
   "204": { /* オーシャンビュー南熱海 */
     capacity:      { v: 12, src: 'desk', at: '2026-07' },
     comfort_cap:   { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:        { v: 'no', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/minamiatami/' },
     winter_access: { v: 'tire', src: 'desk', at: '2026-07' },
-    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/minamiatami/' }
   },
 
   "205": { /* オーシャンビュー熱海自然郷 */
     comfort_cap:   { v: 8, src: 'desk', at: '2026-07' },
-    pet_ok:        { v: 'no', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanveiwatamishizenkyo/' },
     bbq_roof:      { v: 'none', src: 'desk', at: '2026-07' }
   },
 
@@ -247,7 +247,7 @@
   },
 
   "213": { /* 熱海別邸 双梅庵 */
-    wifi:          { v: 'yes', src: 'desk', at: '2026-07' }
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamisoubaian/' }
   },
 
   "121": { /* COCO VILLA 那須高原 */
@@ -6700,4 +6700,128 @@
   "160": { /* 雅・仙石原 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tripto.jp/facilities/575' },
     capacity:     { v: 14, src: 'desk', at: '2026-09', url: 'https://tripto.jp/facilities/575' }
+  },
+
+/* ==========================================================================
+   2026-09 検証の波 V14-3 … 出典なし値12施設の検証
+   --------------------------------------------------------------------------
+   ■ **id=191 軽井沢 HOUSE VILLA — 2件とも誤りだった**
+
+     capacity=9 はどの棟の数字とも一致しない。公式の客室ページは6棟の定員を
+     個別に出している。
+
+       「Villa A 定員12名」「Villa B (サウナ付) 定員11名」「平屋棟 定員11名」
+       「サウナ棟 サウナと水風呂付き 定員13名」「足湯棟 定員13名」「檜風呂棟 定員13名」
+
+     9 はどれにも当たらず、OTAの定員欄（1名〜9名）の遺物とみられる。
+     施設全体の最大を採る先例に従い **13** に訂正した。
+
+     stove=wood も削除した。**居室の薪ストーブとの取り違え。** 公式トップは
+     「全棟に薪ストーブ」と書き、客室ページでも**サウナが無い Villa A・足湯棟・
+     檜風呂棟を含む6棟すべての設備一覧に「薪ストーブ」が並んでいる。**
+     サウナ自体の熱源を明記した記述は見つからない。**通算13件目。**
+
+   ■ **居室ストーブの回避がもう1件（id=213 熱海別邸 双梅庵）**
+
+     ハウスルールに「薪ストーブの使用について 不可」とあるが、これは id=210
+     熱海オーシャンハウスと同型の**居室の薪ストーブ（使用不可）**で、ページ内に
+     サウナの記載自体が無い。**通算14件目。**
+
+   ■ **id=257 THE GLAMPING 箱根十国峠 — 「薪2束付き」は焚火台の薪**
+
+     「薪の追加無料」「薪2束付き」があるが、BBQグリル・焚火台・焚火チェアは
+     サウナの有無に関わらず全客室タイプ共通の設備で、この薪は焚火台向け。
+     サウナ自体の熱源記載は無い。**通算15件目。**
+
+     この施設は `sauna_type` と `coldbath` も**棟で割れていて入れられない。**
+     サウナ付きスイート／スカイデッキは「室内 約4.1ｍ×11.2ｍ／サウナ 約2.4ｍ×1.8ｍ」と
+     居室と並ぶ区画表示だが、サウナジャグジー付きスカイデッキは設備欄でサウナが
+     【屋外】区分。冷却も前2者が「水風呂」、後者が「ジャグジー（水風呂）」で
+     名詞が異なる（bath 相当と tub 相当）。**カテゴリ値は棟で違えば入れない。**
+
+   ■ **id=196 Karuizawa Luxe Villa の capacity=4 は料金区分を読んだ疑い**
+
+       「・4名様まで同一料金でご利用いただけます。
+         ・5名様以上は、1名様につき7,700円（税込）の追加料金を頂戴いたします。」
+
+     **5名以上も受け入れているので 4 は上限ではない。** ただし明確な上限記載が
+     見当たらず正しい値が決まらない。capacity は index.html にも出る項目で
+     空欄にできないため 4 のまま残し、疑いとして記録する。
+     **「料金が変わる人数」を定員として読み取る誤りは新しい類型。**
+
+   ■ **一休の記述から2項目を追加できた（id=164 HAKONE DOMA）**
+
+       「■プライベートサウナ 100℃まで熱せられる檜香るストーン式ドライサウナ。
+         セルフロウリュ可、外気浴スペース、ととのい椅子あり。」
+
+     同じ文から loyly と outdoor_rest は既に取れていたが、**sauna_temp=100 と
+     rest_chair=chair が取り残されていた。** 1文から4項目取れる記述だった。
+     なお `sauna_type` は「ストーン式ドライサウナ」が熱源の説明であって構造では
+     ないため入れない。
+
+   ■ **採用を見送ったもの**
+
+     - id=164 / id=182 / id=189 の capacity … 根拠が一休の定員欄しか無い。
+       id=182 は部屋タイプが3種で「1名～8名」「1名～9名」「1名～9名」と割れており、
+       **capacity=9 の未解決10件のうちの1件として残る。**
+     - id=182 / id=191 の outdoor_rest … 前者は設備一覧の「サウナチェアー・
+       アウトドアチェアー」、後者は埋め込みInstagram投稿の途中で切れた
+       キャプション。どちらも外気浴スペースの存在を示す記述ではない。
+     - id=191 の kitchen_type … 6棟中5棟が「IHコンロ」、Villa A のみ「コンロ」で割れる。
+     - id=189 の stove … 公式に「セルフロウリュできるHarvia製のヒーターを
+       フィンランドから直輸入しました」とあるがメーカー名のみ。
+     - id=189 の coldbath_season … 「北軽井沢は、夏でも平均水温は12度ほど…
+       真冬は、雪景色です。冬は、シングルになります。」の「シングルになります」が
+       解釈できない。
+     - id=204 / id=205 / id=213 のサウナ関連 … resolstay.jp のページに「サウナ」の語が
+       一度も無い。**「ある物だけを並べる」形式なので不記載は否定の根拠にならない。**
+       過去にこの3施設で sauna_exists=no を記録して撤回しており、同じ誤りを繰り返さない。
+
+   ■ **検索スニペットの誤りを1件検出した（id=163）**
+
+     スニペットに「水風呂温度20℃」と出たが、site: 検索で施設ページを直接開くと
+     「水風呂温度 無し」だった。**別施設の数値の混入。** 実ページを開いて確認する
+     手順が働いた例。
+
+   ========================================================================== */
+
+  "163": { /* 箱根温泉別邸白鷺 */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.booking.com/hotel/jp/xiang-gen-wen-quan-bie-di-bai-lu-ge-shi-sauna-zui-da-8ming.ja.html' },
+    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://www.booking.com/hotel/jp/xiang-gen-wen-quan-bie-di-bai-lu-ge-shi-sauna-zui-da-8ming.ja.html' }
+  },
+  "164": { /* HAKONE DOMA */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051866/' },
+    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051866/' },
+    rest_chair:   { v: 'chair', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051866/' }
+  },
+  "182": { /* The Aurora Chalet */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051575/' }
+  },
+  "189": { /* Tatehata House 北軽井沢 */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051084/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051084/' }
+  },
+  "191": { /* 軽井沢 HOUSE VILLA */
+    capacity:     { v: 13, src: 'desk', at: '2026-09', url: 'https://karuizawa-house-villa.com/room' }
+  },
+  "196": { /* Karuizawa Luxe Villa */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000002923' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://d-reserve.jp/GSEA001F01300/GSEA001A01?hotelCode=0000002923' }
+  },
+  "205": { /* オーシャンビュー熱海自然郷 */
+    capacity:     { v: 10, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanveiwatamishizenkyo/' }
+  },
+  "213": { /* 熱海別邸 双梅庵 */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamisoubaian/' }
+  },
+  "241": { /* Poolen ITO */
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
+    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
+    coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
+    pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052045/' }
+  },
+  "257": { /* THE GLAMPING 箱根十国峠 */
+    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' },
+    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' }
   },
