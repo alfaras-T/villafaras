@@ -59,6 +59,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-09', url: 'https://loof-inn.com/hotels/naminoie/' },
     capacity:      { v: 8, src: 'desk', at: '2026-09', url: 'https://loof-inn.com/hotels/naminoie/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://loof-inn.com/hotels/naminoie/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051613/' },
     elevation:     { v: 26, src: 'auto', at: '2026-07' },
     supermarket:   { v: 4, src: 'auto', at: '2026-07' },
     conveni:       { v: 2, src: 'auto', at: '2026-07' },
@@ -325,7 +326,9 @@ window.VILLAFARAS_SPEC = {
 
   "17": {  /* the MELLOW HOUSE 館山 */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.mellowhouse.jp/room/bathroom/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.mellowhouse.jp/room/pool/' },
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     capacity:      { v: 20, src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
@@ -473,7 +476,10 @@ window.VILLAFARAS_SPEC = {
   "23": {  /* The TRAVELERS Chateau Tateyama */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051783/' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/en-us/00051783/11509093/10260125/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051783/' },
+    kitchen_type:  { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://travel.yahoo.co.jp/00051783/room/' },
     capacity:      { v: 10, src: 'desk', at: '2026-08', url: 'https://yamato-stay.com/the-travelers-chateau-tateyama' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051783/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/en-us/00051783/11509093/10260125/' },
     elevation:     { v: 62, src: 'auto', at: '2026-07' },
     supermarket:   { v: 3, src: 'auto', at: '2026-07' },
@@ -932,7 +938,7 @@ window.VILLAFARAS_SPEC = {
   "44": {  /* 久留里山荘（QULRI SANSO） */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051772/' },
     capacity:      { v: 10, src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051772/' },
-    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.yahoo.co.jp/00051772/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://travel.yahoo.co.jp/00051772/' },
     elevation:     { v: 55, src: 'auto', at: '2026-07' },
     supermarket:   { v: 10, src: 'auto', at: '2026-07' },
@@ -992,12 +998,15 @@ window.VILLAFARAS_SPEC = {
 
   "47": {  /* Hackberry Holiday Home */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-09', url: 'https://japanese-holiday-home.com/' },
     loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/facilities/' },
     sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/facilities/' },
     water_src:       { v: 'well', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
     villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-09', url: 'https://japanese-holiday-home.com/facilities/' },
     firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
     capacity:        { v: 7, src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051633/' },
     wifi:            { v: 'yes', src: 'desk', at: '2026-08', url: 'https://japanese-holiday-home.com/' },
     elevation:       { v: 38, src: 'auto', at: '2026-07' },
     supermarket:     { v: 7, src: 'auto', at: '2026-07' },
@@ -1353,6 +1362,7 @@ window.VILLAFARAS_SPEC = {
 
   "63": {  /* Dear Wan Spa Garden */
     sauna_exists:  { v: 'shared', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052128/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/4557' },
     capacity:      { v: 3, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052128/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resol-no-mori.com/dearwan/' },
@@ -2160,9 +2170,13 @@ window.VILLAFARAS_SPEC = {
 
   "105": {  /* BLANC FUJI */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/rooms/' },
     sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/faq/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/rooms/' },
     rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/faq/' },
-    capacity:      { v: 4, src: 'desk', at: '2026-07' },
+    kitchen_type:  { v: 'none', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/faq/' },
+    capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/rooms/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052120/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/faq/' },
     elevation:     { v: 858, src: 'auto', at: '2026-07' },
     supermarket:   { v: 3, src: 'auto', at: '2026-07' },
@@ -2852,6 +2866,8 @@ window.VILLAFARAS_SPEC = {
   "142": {  /* プライベートリゾート仙居 */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://beds24.com/booking.php?propid=283750' },
     capacity:      { v: 16, src: 'desk', at: '2026-08', url: 'https://beds24.com/booking.php?propid=283750' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052309/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://beds24.com/booking.php?propid=283750' },
     elevation:     { v: 620, src: 'auto', at: '2026-07' },
     supermarket:   { v: 5, src: 'auto', at: '2026-07' },
     conveni:       { v: 2, src: 'auto', at: '2026-07' },
@@ -3299,6 +3315,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "169": {  /* 湯と灯りに包まれる別世界 */
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.booking.com/hotel/jp/tang-todeng-rinibao-marerubie-shi-jie-jiang-nodao-shen-she-made30miao-yi-zu-xian.ja.html' },
     capacity:      { v: 8, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.fvrentals.com/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.fvrentals.com/' },

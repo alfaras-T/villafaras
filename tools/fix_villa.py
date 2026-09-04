@@ -48,9 +48,9 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "226": {"name": "マイグレアトリエ",
-            "reason": "**index.html と spec-data.js の capacity 不一致の最後の1件。** spec-data.js 側は 2026-09 に公式 maigre.jp/atelier で裏取りして 6 になっているが、index.html と villas/*.html が 5 のまま取り残されていた。`set_villa` が無かった時期の訂正とみられる。出典のある spec 側に揃える。**これで index と spec の capacity 不一致は 0 件になった。**（2026-09）",
-            "set_villa": {"capacity": "6"},
+    "169": {"name": "湯と灯りに包まれる別世界",
+            "reason": "sauna_exists を yes として記録したのでサウナタグを足す。公式サイトも一休の掲載も無い施設で、Booking.com の施設紹介文「**この宿泊施設にはサウナがあります。**」が根拠。住所「〒251-0036 神奈川県, 藤沢市, 江の島１−４−１１」がDBと完全一致することを確認済み。クチコミにも「設備はテラス、カウンター、サウナなどが」の言及がある。**1組貸切の一棟貸しなので、敷地内のサウナは占有利用となり yes。**（2026-09）",
+            "add_tags": ["sauna"],
             },
 }
 
