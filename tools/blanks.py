@@ -16,6 +16,7 @@
   python3 tools/blanks.py -n 14      件数を指定
   python3 tools/blanks.py --prompt   エージェントに渡す調査指示を出力
   python3 tools/blanks.py --ids 1,2,3   対象を明示（並行する波と重複させない）
+  python3 tools/blanks.py --include-done  記録済みでも空欄が残る施設を出す
 """
 import io, json, re, sys
 
@@ -73,6 +74,11 @@ def main():
         # 指定した施設は done / 出典なし0 でも落とさない。
         want = set(sys.argv[sys.argv.index("--ids") + 1].split(","))
         done = done - want
+    if "--include-done" in sys.argv:
+        # 記録済みでも空欄が残っている施設を出す。波を重ねると、既に一度調べた
+        # 施設に「その時は取れなかった項目」が残る。既定の done 除外はそれを
+        # 隠してしまうので、後半の波ではこちらを使う。
+        done = set()
     unsourced = "--unsourced" in sys.argv
     if unsourced:
         # 出典URLの無い desk 値の多い順。空欄ではなく検証対象を選ぶモード。
