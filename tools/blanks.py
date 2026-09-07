@@ -17,6 +17,7 @@
   python3 tools/blanks.py --prompt   エージェントに渡す調査指示を出力
   python3 tools/blanks.py --ids 1,2,3   対象を明示（並行する波と重複させない）
   python3 tools/blanks.py --include-done  記録済みでも空欄が残る施設を出す
+  python3 tools/blanks.py --yield        空欄数ではなく期待収量で並べる
 """
 import io, json, re, sys
 
@@ -68,6 +69,12 @@ def main():
     villas, desk, opts, masters, have, nosrc = load()
     done = {m for line in io.open("data/desk-research.js", encoding="utf-8")
             for m in re.findall(r"id=(\d+)", line)}
+    # 期待収量順。空欄の数ではなく「埋まる見込み」で並べる。
+    # 項目ごとの現在の充足率を、その項目の机上での取りやすさの代理指標として使う。
+    # 直近の波で分かったこと: 丁寧に調べても埋まるのは対象の空欄の2割で、
+    # 残りは coldbath_season(4%) / stove(35%) / kitchen_type(42%) のような
+    # 「公式が書かない項目」に集中している。空欄数で並べるとそこばかり当たる。
+    yield_mode = "--yield" in sys.argv
     want = None
     if "--ids" in sys.argv:
         # 対象を明示する。並行して走っている波と重複させないため。
@@ -85,9 +92,18 @@ def main():
         rows = sorted(((len([k for k in nosrc.get(str(v["id"]), []) if k in desk]),
                         str(v["id"]), v) for v in villas), key=lambda r: -r[0])
     else:
-        rows = sorted(((len([k for k in desk if k not in have.get(str(v["id"]), set())]),
-                        str(v["id"]), v) for v in villas if str(v["id"]) not in done),
-                      key=lambda r: -r[0])
+        n_all = float(len(villas))
+        fill = dict((k, sum(1 for v in villas
+                            if k in have.get(str(v["id"]), set())) / n_all)
+                    for k in desk)
+        def score(v):
+            miss = [k for k in desk if k not in have.get(str(v["id"]), set())]
+            if yield_mode:
+                # 充足率の合計 = その施設で埋まると期待できる項目数のめやす
+                return sum(fill[k] for k in miss)
+            return len(miss)
+        rows = sorted(((score(v), str(v["id"]), v) for v in villas
+                       if str(v["id"]) not in done), key=lambda r: -r[0])
     if want is not None:
         rows = [r for r in rows if r[1] in want]
     else:
@@ -98,7 +114,12 @@ def main():
         lbl = "出典なし" if unsourced else "空欄"
         print("上位%d件（%s合計 %d）" % (len(rows), lbl, sum(r[0] for r in rows)))
         for b, vid, v in rows:
-            print("  id=%-4s %s%-3d %s" % (vid, lbl, b, v["name"][:40]))
+            if isinstance(b, float):
+                miss = [k for k in desk if k not in have.get(vid, set())]
+                print("  id=%-4s 期待%.1f 空欄%-3d %s"
+                      % (vid, b, len(miss), v["name"][:36]))
+            else:
+                print("  id=%-4s %s%-3d %s" % (vid, lbl, b, v["name"][:40]))
         return
     print("## 埋める項目と選択肢（spec.js の var O から生成。この値以外は使わない）\n")
     print(option_text(desk, opts, masters))
