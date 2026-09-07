@@ -48,13 +48,17 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "132": {"name": "GEOSPOT MOTOHAKONE A",
-            "reason": "**GEOSPOT MOTOHAKONE の A棟と B棟で addr が入れ替わっていた。** 独立した2つの情報源が完全に一致した。\n\n  一休 00052338（見出し「**GEOSPOT MOTOHAKONE A**」）→「住所：〒 250-0522　神奈川県足柄下郡箱根町元箱根**103-243**」\n  一休 00052339（見出し「**GEOSPOT MOTOHAKONE B**」）→「住所：〒 250-0522　神奈川県足柄下郡箱根町元箱根**103-128**」\n  サウナイキタイ 97213「施設名 GEOSPOT MOTOHAKONE A」→「元箱根**103-243**」\n  サウナイキタイ 97214「施設名 GEOSPOT MOTOHAKONE B」→「元箱根**103-128**」\n\n**DBが参照している一休URLとも対応している**（id=132→00052338、id=133→00052339）ので、「一休のURLがそもそも別棟を指している」型ではなく、**DB側で addr を A/B 間で取り違えた**。公式 geo-spot.com/motohakone/ の ACCESS 欄は棟別の記載を持たず「神奈川県足柄下郡箱根町元箱根字大芝**103-243**」の1つだけで、これも A の住所と一致する。\n\nC棟（id=134）は一休・DBとも 103-350 で一致しており入れ替わりは無い。\n\n**3棟の保存座標は数メートル以内なのでチャネルAへの影響は無い。**（2026-09確認）",
-            "set_villa": {"addr": "神奈川県足柄下郡箱根町元箱根103-243"},
+    "182": {"name": "The Aurora Chalet",
+            "reason": "**capacity=9 を 20 に訂正する。一休に最大構成の部屋タイプが載っていなかったのが原因。**\n\n公式 jadehotelgroup.com はリンク先がすべて `/blank-*` の Wix 未編集プレースホルダーで機能していないが、「BOOK YOUR STAY」から遷移する**運営自身の予約エンジン**に対象施設が実在した。住所「836-141 Hokujō, Hakuba, Kitaazumi District, Nagano」がDBの「北城836-141」と完全一致する。\n\n  「Aurora 3BR　Up to **8** guests per room　3 Bedrooms　165 m²」\n  「Aurora II 3BR　Up to **8** guests per room　3 Bedrooms　190 m²」\n  「Aurora II 4BR　Up to **10** guests per room　4 Bedrooms　200 m²」\n  「Aurora II 7BR　Up to **20** guests per room　7 Bedrooms　5 Bathrooms　390 m²」\n\nAPI でも `maxOccupancy: 20` を確認。**一休の3部屋タイプが「1〜8名」「1〜9名」「1〜9名」と割れていたのは、最大構成の 7BR が一休に載っていなかったため。** 棟別の最大を採る規約に従い 20 とする。\n\nあわせて公式URLを予約エンジンの物件ページに差し替える。**jadehotelgroup.com は未編集のプレースホルダーばかりで施設に到達できない。**（2026-09確認）",
+            "set_villa": {"capacity": "20",
+                          "official": "https://jadehotelgroup.gutingjun.com/property/72"},
+            "set_spec": {"capacity": {"v": 20, "src": "desk", "at": "2026-09",
+                                      "url": "https://jadehotelgroup.gutingjun.com/property/72"}},
             },
-    "133": {"name": "GEOSPOT MOTOHAKONE B",
-            "reason": "**GEOSPOT MOTOHAKONE の A棟と B棟で addr が入れ替わっていた。** 独立した2つの情報源が完全に一致した。\n\n  一休 00052338（見出し「**GEOSPOT MOTOHAKONE A**」）→「住所：〒 250-0522　神奈川県足柄下郡箱根町元箱根**103-243**」\n  一休 00052339（見出し「**GEOSPOT MOTOHAKONE B**」）→「住所：〒 250-0522　神奈川県足柄下郡箱根町元箱根**103-128**」\n  サウナイキタイ 97213「施設名 GEOSPOT MOTOHAKONE A」→「元箱根**103-243**」\n  サウナイキタイ 97214「施設名 GEOSPOT MOTOHAKONE B」→「元箱根**103-128**」\n\n**DBが参照している一休URLとも対応している**（id=132→00052338、id=133→00052339）ので、「一休のURLがそもそも別棟を指している」型ではなく、**DB側で addr を A/B 間で取り違えた**。公式 geo-spot.com/motohakone/ の ACCESS 欄は棟別の記載を持たず「神奈川県足柄下郡箱根町元箱根字大芝**103-243**」の1つだけで、これも A の住所と一致する。\n\nC棟（id=134）は一休・DBとも 103-350 で一致しており入れ替わりは無い。\n\n**3棟の保存座標は数メートル以内なのでチャネルAへの影響は無い。**（2026-09確認）",
-            "set_villa": {"addr": "神奈川県足柄下郡箱根町元箱根103-128"},
+    "129": {"name": "和モダングランピング｜NAGOMI CAMP",
+            "reason": "sauna_exists=shared の出典を、第三者のグランピング紹介サイト（glamping-tochigi.com）から**公式のサウナ専用ページ**に差し替える。値は shared のままで正しい。\n\n  「バレルサウナ…2名専用のプライベートサウナ…【ご利用方法】- 公式予約サイト：オプション項目から事前予約制…**日帰り利用は：事前にお問い合わせください**…ご利用時間-ご宿泊- ： 16:00-17:00　**ご利用時間-日帰り- ： 10:30-12:30**」\n\n**日帰り利用の時間枠が明記されており、「shared＝日帰り客も使う場合を含む」に直接該当する。** 施設ページでも「フロント／トイレ／予約制シャワールーム／…／**貸切サウナ**／ピザ作り体験」と共用設備として並記され、各ドーム（籠・麻・波・紗綾）の個別紹介にはサウナの記載が無い。（2026-09確認）",
+            "set_spec": {"sauna_exists": {"v": "shared", "src": "desk", "at": "2026-09",
+                                          "url": "https://www.nagomi-camp.jp/%E3%82%B5%E3%82%A6%E3%83%8A"}},
             },
 }
 
