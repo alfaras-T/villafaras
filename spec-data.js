@@ -184,7 +184,10 @@ window.VILLAFARAS_SPEC = {
     loyly:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=1st' },
     sauna_hours:   { v: 'h24', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=1st' },
     coldbath:      { v: 'pool', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=1st' },
-    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/goods/?facility=1st' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://sendouq.jp/faq/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/faq/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/faq/' },
     elevation:     { v: 1, src: 'auto', at: '2026-07' },
     supermarket:   { v: 7, src: 'auto', at: '2026-07' },
     conveni:       { v: 1, src: 'auto', at: '2026-07' },
@@ -378,6 +381,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051731/' },
     elevation:       { v: 2, src: 'auto', at: '2026-07' },
     supermarket:     { v: 2, src: 'auto', at: '2026-07' },
     conveni:         { v: 1, src: 'auto', at: '2026-07' },
@@ -386,6 +390,7 @@ window.VILLAFARAS_SPEC = {
     onsen:           { v: 5, src: 'auto', at: '2026-07' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
+    coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/activity.php' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/' },
     winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
@@ -3647,7 +3652,8 @@ window.VILLAFARAS_SPEC = {
   },
 
   "184": {  /* Hakuba Jolie Maison */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://jadehotelgroup.gutingjun.com/property/69' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://jadehotelgroup.gutingjun.com/property/69' },
     capacity:      { v: 9, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051589/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051589/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/vacation/00051589/' },
@@ -3709,10 +3715,13 @@ window.VILLAFARAS_SPEC = {
 
   "187": {  /* GREENSEED軽井沢 */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://greenseed-villa.com/rooms/' },
     stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://greenseed-villa.com/rooms/' },
     capacity:      { v: 6, src: 'desk', at: '2026-08', url: 'https://greenseed-villa.com/rooms/' },
-    pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://greenseed-villa.com/rooms/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://greenseed-villa.com/rooms/' },
     elevation:     { v: 970, src: 'auto', at: '2026-07' },
     supermarket:   { v: 3, src: 'auto', at: '2026-07' },
     conveni:       { v: 1, src: 'auto', at: '2026-07' },
@@ -4622,6 +4631,7 @@ window.VILLAFARAS_SPEC = {
 
   "238": {  /* 月と太陽 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051474/' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tuki-taiyou.com/' },
     capacity:     { v: 10, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051474/' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051474/' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051474/' },
@@ -4807,7 +4817,9 @@ window.VILLAFARAS_SPEC = {
   },
 
   "249": {  /* グラン熱川 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
     capacity:     { v: 16, src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
     pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
@@ -4820,7 +4832,9 @@ window.VILLAFARAS_SPEC = {
   },
 
   "250": {  /* プライベートリゾート南風 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://izu-nao.com/facility' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://izu-nao.com/facility' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-09', url: 'https://izu-nao.com/facility' },
     capacity:     { v: 11, src: 'desk', at: '2026-08', url: 'https://izu-nao.com/' },
     pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052435/' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052435/' },
@@ -5150,6 +5164,7 @@ window.VILLAFARAS_SPEC = {
   "268": {  /* ポーラーハウス南軽井沢1 */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/ハウス南軽井沢_1' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.polar-resort.com/' },
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     bbq_roof:      { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     capacity:      { v: 19, src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/ハウス南軽井沢_1' },
