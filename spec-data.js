@@ -2699,7 +2699,6 @@ window.VILLAFARAS_SPEC = {
     bring_trash:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     early_checkin:   { v: 'no', src: 'desk', at: '2026-09', url: 'https://levata.jp/' },
-    kids_free:       { v: 6, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     late_checkout:   { v: 'no', src: 'desk', at: '2026-09', url: 'https://levata.jp/' },
     winter_access:   { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -3151,8 +3150,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "158": {  /* GIFTHOUSE 三浦 諸磯 */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:    { v: 'tent', src: 'desk', at: '2026-07' },
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052279/' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://miura.gifthouse.jp/miura/room.php' },
     capacity:      { v: 6, src: 'desk', at: '2026-08', url: 'https://miura.gifthouse.jp/miura/room.php' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://miura.gifthouse.jp/miura/room.php' },
@@ -4007,7 +4005,7 @@ window.VILLAFARAS_SPEC = {
   "201": {  /* キュレーション熱海桃乃八庵 */
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
     capacity:      { v: 6, src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
-    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/tounoyaan/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/tonoyaan/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.curationhotels.com/tounoyaan/' },
     elevation:     { v: 83, src: 'auto', at: '2026-07' },
     supermarket:   { v: 4, src: 'auto', at: '2026-07' },
@@ -5419,7 +5417,6 @@ window.VILLAFARAS_SPEC = {
 
   "281": {  /* SPA＆ごはんゆるうむ */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/' },
-    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
     villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/stay/' },
     capacity:      { v: 4, src: 'desk', at: '2026-08', url: 'https://yuluumu.co.jp/stay/' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://yuluumu.co.jp/information/' },
@@ -5434,7 +5431,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "282": {  /* GLAMPING KASHIMA 753 #00 */
-    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/%E3%83%90%E3%83%AC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%8A/' },
+    sauna_exists:  { v: 'room', src: 'desk', at: '2026-09', url: 'https://gp753.jp/kashima/%E3%83%84%E3%82%A4%E3%83%B3%E3%83%89%E3%83%BC%E3%83%A0/' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
     sauna_temp:    { v: 90, src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://gp753.jp/kashima/' },
