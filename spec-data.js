@@ -1384,24 +1384,27 @@ window.VILLAFARAS_SPEC = {
   },
 
   "64": {  /* VILLA Seamu */
-    sauna_exists:   { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    sauna_type:     { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
-    stove:          { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
-    sauna_cap:      { v: 4, src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
-    loyly:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
-    villa_type:     { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    firepit:        { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    capacity:       { v: 11, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    pet_ok:         { v: 'yes', src: 'desk', at: '2026-07' },
-    elevation:      { v: 3, src: 'auto', at: '2026-07' },
-    supermarket:    { v: 4, src: 'auto', at: '2026-07' },
-    conveni:        { v: 3, src: 'auto', at: '2026-07' },
-    ic:             { v: '真亀JCT 5分', src: 'auto', at: '2026-07' },
-    station:        { v: '東金 11分', src: 'auto', at: '2026-07' },
-    onsen:          { v: 14, src: 'auto', at: '2026-07' },
-    checkin_method: { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    late_arrival:   { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
-    winter_access:  { v: 'ok', src: 'auto', at: '2026-09' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/1-theme-sauna/region-chiba.html' },
+    coldbath:        { v: 'pool', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/67620.html' },
+    villa_type:      { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    firepit:         { v: 'stand', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    capacity:        { v: 11, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052182/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052182/' },
+    elevation:       { v: 3, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 4, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '真亀JCT 5分', src: 'auto', at: '2026-07' },
+    station:         { v: '東金 11分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 14, src: 'auto', at: '2026-07' },
+    checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/67620.html' },
+    late_arrival:    { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052182/11614497/10286630/' },
+    winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "65": {  /* THE NALU */
@@ -1663,6 +1666,7 @@ window.VILLAFARAS_SPEC = {
   "77": {  /* enico.Mt.Fuji smile */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-07' },
+    sauna_temp:    { v: 70, src: 'desk', at: '2026-09', url: 'http://enicohome.com/facility-list/smile/' },
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
     capacity:      { v: 10, src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi.h42394041.Hotel-Information' },
@@ -2027,7 +2031,7 @@ window.VILLAFARAS_SPEC = {
   "96": {  /* yl&Co.Hotel in Mt.Fuji */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/faq' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/stay.html' },
-    capacity:      { v: 5, src: 'desk', at: '2026-07' },
+    capacity:      { v: 10, src: 'desk', at: '2026-09', url: 'https://www.ylandco-hotel.com/stay.html' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/faq.html' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ylandco-hotel.com/stay.html' },
     elevation:     { v: 978, src: 'auto', at: '2026-07' },
@@ -2084,6 +2088,8 @@ window.VILLAFARAS_SPEC = {
   "99": {  /* ハンズアウトドアリゾート */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://glampicks.jp/glamping/g46375/' },
     sauna_type:    { v: 'tent', src: 'desk', at: '2026-08', url: 'https://hanz-odr.com/hanz-faqs/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hanz-odr.com/activities-tour/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hanz-odr.com/activities-tour/' },
     capacity:      { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hanz-odr.com/hanz-faqs/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hanz-odr.com/hanz-faqs/' },
@@ -2246,6 +2252,8 @@ window.VILLAFARAS_SPEC = {
   "108": {  /* THE THIRD PLACE Mt.Fuji */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19ad918d44dad/' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052393/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.chillnn.com/ja/19ad918d44dad/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.chillnn.com/ja/19ad918d44dad/' },
     capacity:      { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052393/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.chillnn.com/ja/19ad918d44dad/' },
@@ -3058,6 +3066,9 @@ window.VILLAFARAS_SPEC = {
 
   "151": {  /* 琥珀-AMBER- */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://kamakura-nouhaku.com/blog/6688/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://kamakura-nouhaku.com/blog/6688/' },
+    coldbath:      { v: 'tub', src: 'desk', at: '2026-09', url: 'https://kamakura-nouhaku.com/blog/6688/' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
     capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.treef-vacation-house.com/kohaku-amber' },
@@ -4175,7 +4186,10 @@ window.VILLAFARAS_SPEC = {
 
   "211": {  /* オーシャンテラスAtami */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
     sauna_cap:    { v: 1, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
     kitchen_type: { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanterrace/' },
     capacity:     { v: 8, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
     pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
@@ -5437,12 +5451,13 @@ window.VILLAFARAS_SPEC = {
   "280": {  /* 一棟貸切宿　藤右衛門 */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     sauna_type:    { v: 'hut', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://touemon.net/sauna/jp' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
-    capacity:      { v: 5, src: 'desk', at: '2026-07' },
+    capacity:      { v: 20, src: 'desk', at: '2026-09', url: 'https://touemon.net/reservation/jp' },
     elevation:     { v: 5, src: 'auto', at: '2026-07' },
     supermarket:   { v: 10, src: 'auto', at: '2026-07' },
     conveni:       { v: 9, src: 'auto', at: '2026-07' },
