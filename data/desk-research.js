@@ -7711,6 +7711,165 @@
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://izu-nao.com/facility' }
   },
 
+  /* V15-1（2026-09）空欄埋めの波 */
+  "13": { /* Ocean's Terrace TORAMII */
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00050140/' },
+    coldbath:     { v: 'tub', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00050140/' },
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-09', url: 'https://toramii.jp/oceans-terrace-toramii/' }
+  },
+  /* id=40 THE BLUE POINT seaside villa は空欄0件（見送りのみ）。詳細は報告参照。 */
+  "118": { /* SANU 2nd Home 那須1st */
+    /* 那須1st は建築タイプ BEE（sa-nu.com/areas/nasu/sites/nasu1st に明記）。
+       sauna-bee 記事が提供エリアに「那須1st」を名指ししているので適用できる。 */
+    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-bee' },
+    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-bee' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-bee' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-bee' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-bee' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' }
+  },
+  /* id=124 北欧伝説 ドワーフの村: 新規0件（見送りのみ）。ペットはナナカマド1棟のみ可、
+     他4棟不可という棟別の違いが見つかったが、選択肢型は棟で異なるため pet_ok は入れず。
+     詳細は報告参照。 */
+  "172": { /* Oyado S */
+    /* 住所「神奈川県足柄下郡箱根町元箱根93-143」を公式chillnnとサウナイキタイ両方で確認。
+       鎌倉市大町の同名別施設ではないことを確認済み。 */
+    wifi:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://oyados-ashinoko.booking.chillnn.com/ja/' },
+    stove: { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/103352' }
+  },
+  "181": { /* GLAMDAY STYLE HOTEL SUITE 川ノ音 */
+    /* 「憧れの薪ストーブ」はサウナと別の設備カードで、姉妹施設 山ノ麓（id=180）の
+       既知の文言と一字一句同一（「リビングルームにしつらえた薪ストーブ…お部屋全体を
+       温めるストーブ」）。stove には採用しない。 */
+    pet_ok: { v: 'no', src: 'desk', at: '2026-09', url: 'https://gs-hotelsuite.jp/faq/' }
+    /* FAQ「ペットと一緒に泊まれますか。」→「山ノ麓のCEDAR（1号）のみ、愛犬とご宿泊
+       いただけます」。川ノ音・山ノ麓共通FAQで、山ノ麓の1室に限定と明記＝川ノ音は不可。 */
+  },
+  "254": { /* 伊豆グランヴィレッジ　グランピング */
+    coldbath: { v: 'tub', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
+    /* 「サウナの後は、星空を見ながらドラム缶風呂（水風呂）に入り、ゆったりと整う
+       ことができます。」ドラム缶“風呂”が主語で水風呂は括弧内の用途のため tub。 */
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
+    pet_ok: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' },
+    /* 「Dog tent style ドッグテントスタイル　愛犬と一緒にご宿泊いただけるドームタイプの
+       お部屋です。専用ドッグラン付きで…」2026-07-18新設のわんちゃん専用ルーム。 */
+    capacity: { v: 5, src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' }
+    /* 「定員：２～５名様」（3タイプの客室すべて共通）。既存値5に出典を付与。 */
+  },
+  "277": { /* No.12 Kashima Fan Zone */
+    /* 【要注意】既存 sauna_exists=shared の再検討が必要。/areamap/ と /stay/ に
+       「ご宿泊のお客様のお部屋にはそれぞれ個室サウナもございます」「全部屋個室サウナは
+       付いております」と明記があり、共用の大型サウナ3種（騒/黙/動）とは別に、
+       全8棟の客室すべてに専用サウナが付属する。sauna_type/loyly は客室付帯の
+       個室サウナについての値（詳細は報告参照）。 */
+    sauna_type: { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/kashima-fan/0/detail/1016810' },
+    loyly: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/kashima-fan/0/detail/1016810' }
+  },
+  "86": { /* hotel norm. air */
+    /* 住所「山梨県南都留郡富士河口湖町長浜2021」を公式予約エンジンで確認（姉妹施設
+       id=87/88 の長浜2108・2109-1ではない）。 */
+    wifi:   { v: 'yes', src: 'desk', at: '2026-09', url: 'https://go-hotelnorm.reservation.jp/ja/hotels/normair' },
+    pet_ok: { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051546/' },
+    /* 一休 基本情報「ペット 不可　系列ホテル『hotel norm. fuji』がドッグフレンドリーの
+       施設となっておりますので併せてご検討ください。」設備・特徴も「× ペット可」で一致。 */
+    capacity: { v: 8, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051546/' }
+    /* プラン名「【norm. air】1日1組限定貸切ホテル　最大8名様」。既存値8に出典を付与。 */
+  },
+  "98": { /* SILVER SPRAY 山中湖 */
+    coldbath: { v: 'bath', src: 'desk', at: '2026-09', url: 'https://silver-spray.jp/visiter.php' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://silver-spray.jp/visiter.php' },
+    /* 「冬季は凍結の為水風呂はございませんが、外気温が氷点下のため十分トトノイますので
+       ご安心ください。」cottage.php にも同文あり。 */
+    kitchen_type: { v: 'ih', src: 'desk', at: '2026-09', url: 'https://silver-spray.jp/cottage.php' },
+    wifi: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://silver-spray.jp/cottage.php' },
+    /* 「全室Wi-Fi利用可　IHキッチン（調理器具・食器類）完備」 */
+    pet_ok: { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051047/' }
+    /* 基本情報「ペット　不可」、設備・特徴「× ペット可」で一致。 */
+  },
+
+/* ==========================================================================
+   2026-09 V15-1 空欄埋めの波（10施設）と、id=183 / id=229 の疑い検証
+   --------------------------------------------------------------------------
+   ■ **id=183 Hakuba Amber Resort の sauna_exists=yes は誤り。正しくは no。**
+
+     住所「830-90 Hokujō, Hakuba」には少なくとも3物件が登録されている
+     （jadehotelgroup.gutingjun.com）。
+
+       property/67 "Hakuba Amber Resort by Jade Villa"
+         2LDK 最大6名 115㎡ ／ 3LDK 最大12名 160㎡
+         設備・サービス一覧にサウナの記載なし
+       property/62 "JADE Amber Resort Premium"
+         最大13名 5寝室 3浴室 265㎡ ／ 設備に「サウナ」あり
+       property/64 "JADE Amber Resort Luxury"
+         最大12名 5寝室 5浴室 330㎡ ／ 設備にサウナの記載なし
+
+     DB の id=183 は一休 00051318（capacity=12、部屋タイプ「最大6名 2LDK
+     シャワールーム付シャレー」115平米＋「最大12名 3LDKでゆったり家族風呂付き
+     シャレー」160平米）を出典に持つ。この2つの平米数（115㎡・160㎡）が
+     property/67 の2室と完全一致し、property/62（265㎡）・property/64（330㎡）
+     とは一致しない。**id=183 は property/67 であり、サウナは無い。**
+
+     一休 00051318 自体も「宿の施設・設備」欄で明記している。
+
+       「サウナ　なし」（一休 00051318）
+       property/67 の設備・サービス一覧「フロントサービス／専用駐車場／
+         手荷物お預かり／Wi-Fi／無料ランドリー／朝食付き（有料）／
+         煙探知器／消火器」＝サウナの語が一度も無い
+
+     サウナがある property/62・64 は最大人数（13名／12名）や面積（265㎡／330㎡）
+     が一休の2部屋（6名・115㎡／12名・160㎡）のどちらとも一致せず、DB の
+     id=183 とは別物件。**結論: (b) 別の値が正しい。sauna_exists は no。**
+
+   ■ **id=229 WEAZER西伊豆（Villa）の sauna_exists=room も誤り。正しくは no。**
+
+     公式 chillnn の FAQ「サウナはありますか？」に対する回答が客室ごとに
+     明記されている。
+
+       「WEAZER Villaのお部屋にはサウナはございません。
+         WEAZER 廻のお部屋には客室内にサウナ(定員2名・95℃)がございます。」
+
+     一休 00003033 も2部屋を分けて掲載しており、Villa=75平米・定員1～3名、
+     廻=142平米・定員1～4名。**DB の id=229（capacity=3）は Villa、
+     id=230（sauna_temp=95・sauna_cap=2）は廻に対応**しており、id=230 の
+     既存値（95℃・定員2名）は廻の FAQ 回答と完全に一致する。
+
+     つまり id=230=廻 は sauna_exists=yes のままでよいが、**id=229=Villa は
+     公式が明示的に「サウナはございません」と否定しているため no が正しい。**
+     現在の room は2室構成全体を指した値の名残とみられ、id=229/230 に分割
+     された後も更新されていなかった可能性が高い。**結論: (b) 別の値が正しい。
+     id=229 の sauna_exists は no。**
+
+   ■ **id=277 No.12 Kashima Fan Zone も既存 sauna_exists=shared に疑義。**
+
+     空欄埋めの対象ではなかったが、調査中に見つかった。公式 /areamap/ と
+     /stay/ に「ご宿泊のお客様のお部屋にはそれぞれ個室サウナもございます」
+     「全部屋個室サウナは付いております」と明記があり、共用の大型サウナ3種
+     （騒・黙・動）とは別に、全8棟の客室すべてに専用サウナが付属する。
+     spec.js の yes の定義（客室・棟にサウナがある）に該当する可能性が高い。
+     **修正は見送り、報告のみ。**
+
+   ■ **V15-1 の収穫と見送り**
+
+     - id=118 SANU 那須1st は建築タイプ BEE（sa-nu.com/areas/nasu/sites/nasu1st
+       に明記）で、sauna-bee 記事が提供エリアに「那須1st」を名指ししている
+       ため適用できた。coldbath_season=winter は「※冬季（11~4月頃）は、
+       凍結防止のため水風呂のご利用を制限しています。」から。
+     - id=181 GLAMDAY 川ノ音の「憧れの薪ストーブ」は姉妹施設 山ノ麓（id=180）
+       と一字一句同一の説明文（リビングの暖房）。stove には採用せず。
+       pet_ok は共通FAQ「山ノ麓のCEDAR（1号）のみ、愛犬とご宿泊いただけます」
+       から川ノ音は不可と判断。
+     - id=254 伊豆グランヴィレッジの coldbath は「ドラム缶風呂（水風呂）」。
+       名詞がドラム缶“風呂”のため tub（浴槽兼用）とした。
+     - id=98 SILVER SPRAYは「冬季は凍結の為水風呂はございません」が
+       visiter.php と cottage.php の2ページに同文で載っており、
+       coldbath=bath と coldbath_season=winter を同時に確認できた。
+     - id=40 THE BLUE POINT は空欄6件すべて見送り。サウナ・プール・ジャグジー
+       が並記されるのみで用途の記述が無く、コピー主体のサイトだった。
+     - id=124 ドワーフの村はペットが「ナナカマド」1棟のみ可（他4棟不可）と
+       判明したが、棟で異なるため pet_ok は入れず見送り。居室の「ストーブ」
+       写真キャプションもリビングの暖炉で、サウナの熱源には使えなかった。
+   ========================================================================== */
+
 /* ==========================================================================
    2026-09 空欄埋めの波 V14-8 と、姉妹施設の紹介文2件の差し替え
    --------------------------------------------------------------------------
@@ -7783,4 +7942,59 @@
        他3棟には無いので coldbath は入れなかった。loyly は「**各棟に完備**」なので入れた。
      - id=268 の「薪ストーブ（使用期間 12月～3月）」は同じ設備一覧に
        「床暖房（使用期間 12月～3月）」と並記されており、既記録どおり居室の暖房。
+   ========================================================================== */
+
+/* ==========================================================================
+   2026-09 波 V14-9 の判定 … サウナ有無の訂正3件
+   --------------------------------------------------------------------------
+   ■ **id=183 Hakuba Amber Resort … yes → no。別の建物の記述を読んでいた。**
+
+     運営の予約エンジンで住所「830-90 Hokujō, Hakuba」を引くと**3つの別物件**が出る。
+
+       property/67「Hakuba Amber Resort by Jade Villa」
+         … 2LDK 最大6名 **115㎡** / 3LDK 最大12名 **160㎡** … **サウナの記載なし**
+       property/62「JADE Amber Resort Premium」… 最大13名 5寝室3浴室 **265㎡** … サウナあり
+       property/64「JADE Amber Resort Luxury」… 最大12名 5寝室5浴室 **330㎡** … 記載なし
+
+     **DBの出典である一休 00051318 の部屋タイプは 115平米 と 160平米 で、
+     property/67 と完全一致する。** そしてその一休ページ自身が「宿の施設・設備」欄で
+     **「サウナ　なし」**と明記している。サウナがあるのは面積の合わない別物件だった。
+
+     **同一住所に複数物件が並ぶブランドでの取り違え。** 住所が一致していても
+     建物が違うことがある。
+
+   ■ **id=229 WEAZER西伊豆 … room → no。2026-08 の訂正が誤りだった。**
+
+       公式chillnn のFAQ「サウナはありますか？」
+       →「**WEAZER Villaのお部屋にはサウナはございません。**
+          WEAZER 廻のお部屋には客室内にサウナ(定員2名・95℃)がございます。」
+
+     **DBはこの施設を2エントリに分けている。** id=229 が「Villa」（75㎡・定員1〜3名）、
+     id=230 が「廻」（142㎡・定員1〜4名）。**id=230 の既存値 sauna_temp=95 / sauna_cap=2 が
+     この FAQ の回答と完全一致**しており、対応関係が裏付けられる。
+
+     2026-08 に no から room へ訂正した経緯があるが、**当時は一休の記載を根拠にしており、
+     一休は Villa と廻を1施設として扱っていた。** エントリが分かれている以上 id=229 が
+     指すのは Villa 単体なので、公式の明示的な否定に従って no に戻した。
+
+     **「1施設が複数エントリに分かれている」場合、OTA の施設単位の記載を
+     そのまま当てはめると誤る。**
+
+   ■ **id=277 No.12 Kashima Fan Zone … shared → yes。全客室に個室サウナがある。**
+
+       「ご宿泊のお客様の**お部屋にはそれぞれ個室サウナ**もございます」（/areamap/）
+       「**全部屋個室サウナは付いております**」（/stay/）
+       「**客室内サウナ**に設置された制御ユニットがデータを解析し…」（予約エンジン）
+
+     共用の大型サウナ3種（騒・黙・動）とは**別に**、全8棟の客室すべてに専用サウナが付く。
+     **共用施設が併存していても、客室にサウナがあれば yes。**
+     CLAUDE.md はこの施設を「共用温浴施設と客室サウナが併存する」DB構造の限界の例として
+     挙げていたが、**`sauna_exists` に関しては限界ではなく判定基準どおりに決められる。**
+
+   ■ **これで `no` が3件から5件になった。いずれも明示的な否定に裏打ちされている。**
+
+       id=2   公式「テントサウナにつきまして、2026年1月16日をもってご利用を終了いたしました。」
+       id=202 / id=203  一休の○✕欄「× サウナ」
+       id=183 一休の「宿の施設・設備」欄「サウナ　なし」
+       id=229 公式FAQ「WEAZER Villaのお部屋にはサウナはございません。」
    ========================================================================== */
