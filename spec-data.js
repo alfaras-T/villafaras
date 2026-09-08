@@ -198,21 +198,24 @@ window.VILLAFARAS_SPEC = {
   },
 
   "10": {  /* sendouQ second／sendouQ third dog */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    sauna_cap:     { v: 3, src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    loyly:         { v: 'no', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    sauna_hours:   { v: 'h24', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    coldbath:      { v: 'pool', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
-    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://sendouq.jp/price/' },
-    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/price/' },
-    elevation:     { v: 1, src: 'auto', at: '2026-07' },
-    supermarket:   { v: 7, src: 'auto', at: '2026-07' },
-    conveni:       { v: 1, src: 'auto', at: '2026-07' },
-    ic:            { v: '長生IC 5分', src: 'auto', at: '2026-07' },
-    station:       { v: '上総一ノ宮 3分', src: 'auto', at: '2026-07' },
-    onsen:         { v: 5, src: 'auto', at: '2026-07' },
-    winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    sauna_cap:       { v: 3, src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    loyly:           { v: 'no', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    sauna_hours:     { v: 'h24', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    coldbath:        { v: 'pool', src: 'desk', at: '2026-08', url: 'https://sendouq.jp/about/?facility=2nd' },
+    kitchen_type:    { v: 'ih', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/goods/?facility=2nd' },
+    capacity:        { v: 6, src: 'desk', at: '2026-09', url: 'https://sendouq.jp/price/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/price/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/faq/' },
+    elevation:       { v: 1, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 7, src: 'auto', at: '2026-07' },
+    conveni:         { v: 1, src: 'auto', at: '2026-07' },
+    ic:              { v: '長生IC 5分', src: 'auto', at: '2026-07' },
+    station:         { v: '上総一ノ宮 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://sendouq.jp/faq/' },
+    winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "11": {  /* Avalon Cove */
@@ -1163,14 +1166,18 @@ window.VILLAFARAS_SPEC = {
 
   "54": {  /* Zekkei stay ISUMI cabin */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja/' },
     stove:         { v: 'wood', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051913/' },
     sauna_cap:     { v: 3, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051913/' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051913/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051913/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja/' },
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
-    capacity:      { v: 6, src: 'desk', at: '2026-07' },
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-09', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
     steps:         { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://zekkeistay-isumicabin.snack.chillnn.com/ja/' },
     elevation:     { v: 4, src: 'auto', at: '2026-07' },
     supermarket:   { v: 8, src: 'auto', at: '2026-07' },
     conveni:       { v: 5, src: 'auto', at: '2026-07' },
@@ -1275,6 +1282,7 @@ window.VILLAFARAS_SPEC = {
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
     sauna_cap:     { v: 8, src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja/' },
     coldbath:      { v: 'tub', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://undertheseaubara.snack.chillnn.com/ja/' },
     capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052044/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052044/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja/' },
@@ -3335,7 +3343,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "167": {  /* 箱根リゾートyamaki */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hakone-resort-yamaki.com/facilities.php' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hakone-resort-yamaki.com/facilities.php' },
     capacity:      { v: 8, src: 'desk', at: '2026-08', url: 'https://hakone-resort-yamaki.com/facilities.php' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://hakone-resort-yamaki.com/facilities.php' },
@@ -3351,8 +3359,9 @@ window.VILLAFARAS_SPEC = {
 
   "168": {  /* 湯屋　やまざくら */
     sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://hakoneyamazakura.com/onsen.html' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' },
-    capacity:      { v: 3, src: 'desk', at: '2026-07' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://hakoneyamazakura.com/hanare.html' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00031190/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakoneyamazakura.com/onsen.html' },
     elevation:     { v: 642, src: 'auto', at: '2026-07' },
@@ -4822,17 +4831,20 @@ window.VILLAFARAS_SPEC = {
   },
 
   "247": {  /* SANA 伊豆大室山-Pool Villa- */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052349/' },
-    coldbath:     { v: 'pool', src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' },
-    capacity:     { v: 10, src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052349/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052349/' },
-    elevation:    { v: 285, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052349/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-09', url: 'https://beds24.com/booking.php?propid=291544' },
+    coldbath:        { v: 'pool', src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-09', url: 'https://beds24.com/booking.php?propid=291544' },
+    capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' },
+    pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00052349/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052349/' },
+    elevation:       { v: 285, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 5, src: 'auto', at: '2026-07' },
+    conveni:         { v: 2, src: 'auto', at: '2026-07' },
+    ic:              { v: '大平IC 41分', src: 'auto', at: '2026-07' },
+    station:         { v: '富戸 5分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' }
   },
 
   "248": {  /* エンゼルフォレスト中伊豆 */

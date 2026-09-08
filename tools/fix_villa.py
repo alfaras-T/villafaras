@@ -48,21 +48,11 @@ def json_obj_end(s, i):
     return -1
 
 FIXES = {
-    "280": {"name": "一棟貸切宿　藤右衛門",
-            "reason": "**capacity=5 を 20 に訂正する。「4名様まで同料金」を定員として読んだ疑いが濃い。**\n\n紹介文自身が「**4名様まで同料金。最大20名宿泊可能**な一棟貸し宿。」と書いており、公式にも直接の記載がある。\n\n  「藤右衛門は、1日1組限定・一棟貸切の貸別荘です。**最大定員：20名**（それ以上はご相談ください）」\n  母屋（4室）「1F 寝室①：ダブルベッド1台（2名）／1F 寝室②：ダブルベッド1台（2名）／2F 寝室①：シングルベッド2台（2名）／2F 寝室②：布団8組（8名）」＝**14名**\n  蔵（1室）「2F 寝室：布団6組（10名以上でご宿泊の場合に使用）」＝**6名**\n  施設案内ページも母屋「寝室 4部屋（定員最大14名）」／蔵「定員最大6名」で一致\n\n**14＋6＝20 で内訳が完全に合う。** id=196 Karuizawa Luxe Villa と同じ「料金が変わる人数を定員として読む」類型で、**2件目。**（2026-09確認）",
-            "set_villa": {"capacity": "20"},
-            "set_spec": {"capacity": {"v": 20, "src": "desk", "at": "2026-09",
-                                      "url": "https://touemon.net/reservation/jp"}},
-            },
-    "96": {"name": "yl&Co.Hotel in Mt.Fuji",
-            "reason": "**capacity=5 を 10 に訂正する。**\n\n  公式「Shared space : 70m2　**Number of guests : 1 ~ 10 persons**」\n  一休の部屋名「**DELUXE GARDEN VILLA　一棟貸切最大10名様**」\n\n**なお一休の「定員」欄自体は「2名～7名」で、10 とも 5 とも違う数字を出している。**施設が書いた文（公式の諸元と一休の部屋名）はどちらも 10 で一致する。OTAの定員欄は根拠にしないという規約どおり、公式を採る。（2026-09確認）",
-            "set_villa": {"capacity": "10"},
-            "set_spec": {"capacity": {"v": 10, "src": "desk", "at": "2026-09",
-                                      "url": "https://www.ylandco-hotel.com/stay.html"}},
-            },
-    "77": {"name": "enico.Mt.Fuji smile",
-            "reason": "**公式URLを Expedia から本来の公式サイトに差し替える。**\n\nDBの `official` は `expedia.co.jp/Kofu-Hotels-Tocoro-Mt-Fuji-Kisaragi...` という**OTAのURL**だった。本来の公式は `enicohome.com` で、施設ごとのページを持つ。\n\n  「enico. Mt.Fuji smile(旧:TOCORO.Kisaragi)は１軒屋丸々貸切タイプの宿泊施設です。デッキには**バレルサウナ(70℃前後)**とジャグジーが新設され、滞在中は何度でもご自由にご利用いただけます。（ジャグジーの利用は4月〜11月まで）」\n\n**姉妹施設 id=78 と共通のブランドサイト `enico-mount-fuji.com` とは別のドメイン**である点に注意。この差し替えで `sauna_type=barrel` と `sauna_temp=70` の出典も取れた。（2026-09確認）",
-            "set_villa": {"official": "http://enicohome.com/facility-list/smile/"},
+    "168": {"name": "湯屋　やまざくら",
+            "reason": "**capacity を 3 から 6 に訂正する。** この施設は6部屋を個別に販売する旅館で、部屋ごとの受入人数は次のとおり。\n\n  なの花「受入人数｜2～3名」／都わすれ「2～4名」／こでまり「2名」／花水木「2～3名」／あやめ「2～3名」\n  はなれ「洋室にベッドが2台、本間にお布団を4組敷いて、**最大6名様**でお休みいただけます。」\n\n既存値3は「なの花」等の上限と一致するが**施設全体の最大ではない**。棟・客室別の数字しか無ければ最大値を採るという規約に従い 6 とする（id=283 林音も11タイプから最大の7を採っている）。\n\n**なお1組貸切の一棟貸しではなく、複数の客を同時に受け入れる旅館である点は他の施設と性質が違う。** それでも「この施設に最大何名で泊まれるか」という問いへの答えは 6 で、`capacity` の意味とは合う。（2026-09確認）",
+            "set_villa": {"capacity": "6"},
+            "set_spec": {"capacity": {"v": 6, "src": "desk", "at": "2026-09",
+                                      "url": "https://hakoneyamazakura.com/hanare.html"}},
             },
 }
 
