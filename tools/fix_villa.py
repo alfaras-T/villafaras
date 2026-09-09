@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """掲載情報の訂正ツール。設定は FIXES に書く。まず --dry-run で確認すること。"""
 import glob, io, json, os, re, sys
+import urllib.parse
 
 # ota のキーと、villas/*.html のボタンに出るラベルの対応。
 # 個別ページの ota リンクは URL の文字列置換では特定できない。
@@ -1009,6 +1010,17 @@ for vid, fx in FIXES.items():
                     if n:
                         s = re.sub(pat, esc(val).replace("\\", "\\\\"), s)
                         print("    %s を %d 箇所差し替え -> %s" % (k, n, val))
+                    # 「大きな地図で見る」の href と modal-map の iframe は、施設名と
+                    # 住所を percent-encode して query に載せている。平文の置換では
+                    # 当たらないので符号化した形でも置き換える。**これが無いと本文と
+                    # JSON-LD だけ新住所になり、地図リンクだけ旧住所を指したまま残る。**
+                    # 2026-09 に16施設32URLが実際にその状態だった。id=239 は姉妹施設の
+                    # 住所を、id=132/133 は入れ替わった住所を地図が指し続けていた。
+                    enc = urllib.parse.quote(old)
+                    if enc != old and enc in s:
+                        n2 = s.count(enc)
+                        s = s.replace(enc, urllib.parse.quote(val))
+                        print("    %s の地図リンクを %d 箇所差し替え" % (k, n2))
                 continue
             label, fmt = VILLA_FACTS[k]
             new = fmt % val

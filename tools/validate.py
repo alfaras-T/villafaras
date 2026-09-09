@@ -854,6 +854,59 @@ def check_ota_buttons(villa_list, rep):
     print("  %s" % ("○ 一致" if not n else "× 不一致 %d 件" % n))
 
 
+def check_map_urls(villa_list, rep):
+    """個別ページの住所表示・JSON-LD・地図URLが index.html の addr と一致するか。
+
+    **住所は villas/*.html に4通りの形で出る。**
+
+      本文     `<div class="modal-addr">住所<a href=...`
+      JSON-LD  `"streetAddress": "住所"`
+      地図リンク `maps/search/?api=1&query=施設名%20住所`（percent-encode）
+      地図埋込  `maps?q=施設名%20住所&output=embed`（同上）
+
+    **後ろ2つは符号化されているので平文の文字列置換が当たらない。** 2026-09 に
+    16施設32URLが旧住所を指したままだった。しかも**住所を訂正した施設ほど誤って
+    いた**という最悪の形で、id=239 AMAO VILLA の地図は姉妹施設の住所を、
+    id=132/133 GEOSPOT の地図は入れ替わった住所を指し続けていた。住所監査で直した
+    id=115/118/124/125/189/199 も全滅。**本文と JSON-LD だけ新しくなり、
+    利用者が「大きな地図で見る」を押すと誤った場所に飛ぶ状態だった。**
+
+    fix_villa.py に符号化形の置換を入れて再発を止めたが、**既に訂正済みの施設は
+    旧住所がDBに残っていないのでツールでは直せない。** DBの値から作り直した。
+    """
+    from urllib.parse import quote
+    byid = dict((str(v["id"]), v) for v in villa_list)
+    print("\n=== 個別ページの住所・地図URL ===")
+    n = 0
+    for path in sorted(glob.glob("villas/*.html")):
+        m = re.match(r"villas/(\d+)-", path)
+        if not m:
+            continue
+        v = byid.get(m.group(1))
+        if v is None:
+            continue
+        vid, addr = m.group(1), v.get("addr") or ""
+        text = io.open(path, encoding="utf-8").read()
+        want = quote("%s %s" % (v.get("name") or "", addr))
+        for got in re.findall(r'(?:maps/search/\?api=1&query=|maps\?q=)([^"&]+)', text):
+            if got != want:
+                n += 1
+                rep.add("ERROR", "整合性", path, vid, "addr", None,
+                        "地図URLが addr と違う住所を指している（符号化形なので"
+                        "平文の置換では直らない）")
+        for got in re.findall(r'"streetAddress":\s*"([^"]*)"', text):
+            if got != addr:
+                n += 1
+                rep.add("ERROR", "整合性", path, vid, "addr", None,
+                        "JSON-LD の streetAddress が addr と違う: %s" % got)
+        for got in re.findall(r'<div class="modal-addr">([^<]*)<a ', text):
+            if got != addr:
+                n += 1
+                rep.add("ERROR", "整合性", path, vid, "addr", None,
+                        "本文の住所表示が addr と違う: %s" % got)
+    print("  %s" % ("○ 一致" if not n else "× 不一致 %d 件" % n))
+
+
 def main():
     global ALLOW_REMOVE
     ALLOW_REMOVE = "--allow-remove" in sys.argv
@@ -902,6 +955,7 @@ def main():
     check_url_hygiene(villa_list, rep)
     check_ota_dupes(villa_list, rep)
     check_ota_buttons(villa_list, rep)
+    check_map_urls(villa_list, rep)
 
     print("\n=== その他の整合性 ===")
     rep.dump("整合性", names)
