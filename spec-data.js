@@ -1492,14 +1492,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "69": {  /* primera villa */
-    capacity:      { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' },
-    elevation:     { v: 23, src: 'auto', at: '2026-07' },
-    supermarket:   { v: 8, src: 'auto', at: '2026-07' },
-    conveni:       { v: 3, src: 'auto', at: '2026-07' },
-    ic:            { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
-    station:       { v: '竹岡 3分', src: 'auto', at: '2026-07' },
-    onsen:         { v: 2, src: 'auto', at: '2026-07' },
-    winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
+    sauna_exists:    { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    loyly:           { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    coldbath:        { v: 'pool', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    capacity:        { v: 12, src: 'desk', at: '2026-08', url: 'https://www.primera-gr.co.jp/' },
+    pet_ok:          { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    elevation:       { v: 23, src: 'auto', at: '2026-07' },
+    supermarket:     { v: 8, src: 'auto', at: '2026-07' },
+    conveni:         { v: 3, src: 'auto', at: '2026-07' },
+    ic:              { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
+    station:         { v: '竹岡 3分', src: 'auto', at: '2026-07' },
+    onsen:           { v: 2, src: 'auto', at: '2026-07' },
+    coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052313/' },
+    winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "70": {  /* The Pacific Retreat TATEYAMA */
@@ -3123,6 +3130,7 @@ window.VILLAFARAS_SPEC = {
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
     capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hotel.umito.jp/kamakura-zaimokuza/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hotel.umito.jp/qa' },
     elevation:     { v: 7, src: 'auto', at: '2026-07' },
     supermarket:   { v: 2, src: 'auto', at: '2026-07' },
     conveni:       { v: 1, src: 'auto', at: '2026-07' },
@@ -4915,8 +4923,13 @@ window.VILLAFARAS_SPEC = {
   },
 
   "252": {  /* 伊豆高原テントリゾート */
+    sauna_exists: { v: 'shared', src: 'desk', at: '2026-09', url: 'https://tentresort-izu.com/news/2025/04/26/' },
+    sauna_type:   { v: 'tent', src: 'desk', at: '2026-09', url: 'https://tentresort-izu.com/news/2025/04/26/' },
+    stove:        { v: 'wood', src: 'desk', at: '2026-09', url: 'https://tentresort-izu.com/news/2025/04/26/' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tentresort-izu.com/news/2025/04/26/' },
     kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://tentresort-izu.com/stay.php' },
     capacity:     { v: 6, src: 'desk', at: '2026-07' },
+    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/tentresort-izu/0/plan' },
     elevation:    { v: 275, src: 'auto', at: '2026-07' },
     supermarket:  { v: 7, src: 'auto', at: '2026-07' },
     conveni:      { v: 8, src: 'auto', at: '2026-07' },
@@ -5343,9 +5356,11 @@ window.VILLAFARAS_SPEC = {
 
   "274": {  /* サンライズヴィラ大洗 */
     sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
-    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79257' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79257' },
     sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/facility/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051702/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79257' },
     villa_type:    { v: 'multi', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/private-use/' },
     bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
     capacity:      { v: 6, src: 'desk', at: '2026-08', url: 'https://sunrise-villa.jp/guest-room/' },
@@ -5562,7 +5577,12 @@ window.VILLAFARAS_SPEC = {
   },
 
   "285": {  /* 上小川レジャーペンション */
-    sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.cottagelife.jp/ibaraki/la100200/id5473.html' },
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-09', url: 'https://www.kamiogawa.net/facility/%E3%82%B5%E3%82%A6%E3%83%8A/' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.kamiogawa.net/facility/%E3%82%B5%E3%82%A6%E3%83%8A/' },
+    stove:         { v: 'wood', src: 'desk', at: '2026-09', url: 'https://www.kamiogawa.net/facility/%E3%82%B5%E3%82%A6%E3%83%8A/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/96686' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/96686' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/96686' },
     capacity:      { v: 6, src: 'desk', at: '2026-07' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
     elevation:     { v: 73, src: 'auto', at: '2026-07' },
