@@ -687,6 +687,47 @@ def units_table(villas, rows):
               % (key, row["u"], len(vals), vals[0], vals[len(vals) // 2], vals[-1]))
 
 
+def check_url_hygiene(villa_list, rep):
+    """official / ota のURLに、壊れた値や検索結果ページが混じっていないか。
+
+    2026-09 に全走査して見つかったもの:
+      - id=93 の official が `...utm_campaign=GBP√` と**末尾に「√」が混入**していた
+      - id=96 の expedia が `expedia.co.jp/Hotel-Search?regionId=...` の**検索結果ページ**で、
+        しかも計測パラメータに**エンコードされていない空白**（検索語 "expedia fuji"）が
+        入っていた
+      - 楽天の ota 36件が `HOTEL/NNNNN/?s_kwcid=paidsearch&...` の広告計測URLだった
+        （正規形 `HOTEL/NNNNN/NNNNN.html` に直した）
+
+    空白は href を壊し、検索結果ページは施設に到達しない。広告計測パラメータは
+    利用者のクリックを計測に流すうえ、**クエリを含んだままだとURLの比較ができない**。
+    """
+    SEARCH = r"/Hotel-Search\?|/ds/yado/list|/s/homes|google\.com/aclk"
+    TRACK = r"^https://travel\.rakuten\.co\.jp/HOTEL/\d+/\?"
+    print("\n=== official / ota のURL ===")
+    n = 0
+    for v in villa_list:
+        vid = str(v["id"])
+        items = [("official", v.get("official") or "")]
+        items += [("ota." + k, u) for k, u in (v.get("ota") or {}).items()]
+        for label, u in items:
+            if not u:
+                continue
+            why = []
+            if re.search(r"\s", u):
+                why.append("空白を含む（href が壊れる）")
+            if re.search(SEARCH, u):
+                why.append("検索結果ページで施設に到達しない")
+            if re.search(TRACK, u):
+                why.append("広告計測URL。HOTEL/N/N.html の正規形に直す")
+            if re.search(r"[√<>\"']", u):
+                why.append("URLに使えない文字が混入")
+            if why:
+                n += 1
+                rep.add("WARN", "整合性", INDEX, vid, label, None,
+                        "%s … %s" % (" / ".join(why), u[:60]))
+    print("  %s" % ("○ 問題なし" if not n else "△ %d 件" % n))
+
+
 def check_ota_dupes(villa_list, rep):
     """複数施設が同じ OTA ページを指していないか。**クエリ文字列を除いて比べる。**
 
@@ -831,6 +872,7 @@ def main():
     for _p, _t, _v in loaded:
         if os.path.basename(_p) == DATA:
             check_capacity_sync(villa_list, _v, rep)
+    check_url_hygiene(villa_list, rep)
     check_ota_dupes(villa_list, rep)
     check_ota_buttons(villa_list, rep)
 
