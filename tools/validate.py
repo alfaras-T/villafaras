@@ -725,6 +725,14 @@ def check_url_hygiene(villa_list, rep):
             "searchrequestid", "arphpl", "sb_price_type", "ds=", "scid=", "x_pwa")
     # クエリが施設の特定に必要なもの（外すと到達できない）。
     NEEDED = ("facility=", "propid=", "hotelCode=")
+    # 日本語サイトなのに外国語・外国通貨のページに送っていないか（2026-09 に99件訂正）。
+    # Agoda はURLのロケールが**通貨の既定も決める**。Booking は193件すべて `.ja.html`
+    # で問題が無く、Agoda 65件と Expedia 34件だけが混ざっていた。
+    BAD_LOCALE = re.compile(
+        r"^https://www\.agoda\.com/(?!ja-jp/)[a-z]{2}-[a-z]{2}/"      # agoda の外国ロケール
+        r"|^https://www\.expedia\.(?!co\.jp)"                        # expedia の外国ドメイン
+        r"|^https://www\.expedia\.co\.jp/en/"                        # expedia の英語ページ
+        r"|^https://www\.booking\.com/hotel/[a-z]{2}/[^?]*\.(?!ja\.html)[a-z-]+\.html")
     print("\n=== official / ota のURL ===")
     n = 0
     for v in villa_list:
@@ -748,6 +756,8 @@ def check_url_hygiene(villa_list, rep):
                                % (", ".join(hit[:3]), " ほか" if len(hit) > 3 else ""))
             if re.search(r"[√<>\"']", u):
                 why.append("URLに使えない文字が混入")
+            if label != "official" and BAD_LOCALE.search(u):
+                why.append("外国語・外国通貨のページを指している。日本語のURLに直す")
             if why:
                 n += 1
                 rep.add("WARN", "整合性", INDEX, vid, label, None,
