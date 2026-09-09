@@ -700,9 +700,31 @@ def check_url_hygiene(villa_list, rep):
 
     空白は href を壊し、検索結果ページは施設に到達しない。広告計測パラメータは
     利用者のクリックを計測に流すうえ、**クエリを含んだままだとURLの比較ができない**。
+
+    **2026-09 に、この検査が `s_kwcid` しか見ていなかったために取りこぼしていた
+    356件を直した。** 全1203URLのうち359件（30%）にクエリが付いており、実害は3つ。
+
+      1. **過去の日付が埋め込まれている** … `checkin=2026-07-17` を持つURLが53件
+      2. **他人の検索セッションIDが公開ページに載る** … Booking の `sid=` が162件
+      3. **クエリ付きだとURLの比較ができない** … id=87 の重複を見落とした原因
+
+    以後は**追跡・セッション由来のキーを名指しで弾く**。施設の特定にクエリが要る
+    3件（`?facility=` / `?propid=` / `?hotelCode=`）だけを許可する。
     """
     SEARCH = r"/Hotel-Search\?|/ds/yado/list|/s/homes|google\.com/aclk"
     TRACK = r"^https://travel\.rakuten\.co\.jp/HOTEL/\d+/\?"
+    # 広告の着地・検索セッションの断片。パスだけで施設に到達するので落としてよい。
+    JUNK = ("utm_", "gclid", "gclsrc", "gad_source", "gad_campaignid", "gbraid", "wbraid",
+            "msclkid", "yclid", "fbclid", "s_kwcid", "semcid", "semdtl",
+            "adcid", "adgid", "adfid", "ikCo", "label=", "aid=", "sid=", "srpvid",
+            "srepoch", "sr_order", "hpos", "hapos", "dest_id", "dest_type", "ucfs",
+            "group_adults", "group_children", "req_adults", "req_children", "no_rooms",
+            "checkin=", "checkout=", "chkin=", "chkout=", "check_in=", "check_out=",
+            "checkIn=", "f_nen1", "source_impression_id", "viralityEntryPoint",
+            "_set_bev_on_new_domain", "set_everest_cookie_on_new_domain",
+            "searchrequestid", "arphpl", "sb_price_type", "ds=", "scid=", "x_pwa")
+    # クエリが施設の特定に必要なもの（外すと到達できない）。
+    NEEDED = ("facility=", "propid=", "hotelCode=")
     print("\n=== official / ota のURL ===")
     n = 0
     for v in villa_list:
@@ -719,6 +741,11 @@ def check_url_hygiene(villa_list, rep):
                 why.append("検索結果ページで施設に到達しない")
             if re.search(TRACK, u):
                 why.append("広告計測URL。HOTEL/N/N.html の正規形に直す")
+            if "?" in u and not any(k in u for k in NEEDED):
+                hit = [k for k in JUNK if k in u]
+                if hit:
+                    why.append("追跡・検索セッションのクエリ（%s%s）。パスだけに直す"
+                               % (", ".join(hit[:3]), " ほか" if len(hit) > 3 else ""))
             if re.search(r"[√<>\"']", u):
                 why.append("URLに使えない文字が混入")
             if why:
