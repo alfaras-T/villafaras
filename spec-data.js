@@ -3150,7 +3150,7 @@ window.VILLAFARAS_SPEC = {
   },
 
   "155": {  /* SAJIMA Funny house */
-    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051411/' },
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051411/' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051411/' },
     capacity:      { v: 4, src: 'desk', at: '2026-08', url: 'https://www.ikyu.com/00051411/' },
@@ -4783,6 +4783,7 @@ window.VILLAFARAS_SPEC = {
   "244": {  /* HAKU-AKAZAWA- 【波空】 */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://haku-resort.com' },
     sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
+    sauna_temp:    { v: 116, src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051755/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://haku-resort.com' },
     water_temp:    { v: 't1015', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.haku-resort.com/' },
