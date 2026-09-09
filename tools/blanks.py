@@ -18,10 +18,42 @@
   python3 tools/blanks.py --ids 1,2,3   対象を明示（並行する波と重複させない）
   python3 tools/blanks.py --include-done  記録済みでも空欄が残る施設を出す
   python3 tools/blanks.py --yield        空欄数ではなく期待収量で並べる
+  python3 tools/blanks.py --ikitai       サウナイキタイ未確認の施設に絞る
 """
 import io, json, re, sys
 
 CELL = r"(\w+):\s*\{\s*v:"          # 空白数を決め打ちしない
+
+
+def ikitai_checked():
+    """出典に sauna-ikitai.com を持つ施設の id。
+
+    サウナイキタイは温度・サウナ定員・水温・水深・休憩イス・ロウリュを
+    **構造化して**持っており、公式がまず書かない項目がまとめて取れる。
+    2026-09 の波V14-14 では id=285 で loyly / coldbath / outdoor_rest の3項目、
+    id=274 で loyly / outdoor_rest / stove の出典が一度に埋まった。
+
+    **にもかかわらず、出典に持っている施設は286中25件しかない。**
+    詰まっている項目（stove 38% / loyly 51% / sauna_type 58% /
+    outdoor_rest 62%）はまさにサウナイキタイが構造化している項目なので、
+    「サウナがあるのに未確認」の施設が残っているうちはそこを優先する。
+    """
+    spec = io.open("spec-data.js", encoding="utf-8").read()
+    out = set()
+    for m in re.finditer(r'^\s*"(\d+)":\s*\{', spec, re.M):
+        i = spec.index("{", m.start())
+        d, j = 0, i
+        while j < len(spec):
+            if spec[j] == "{":
+                d += 1
+            elif spec[j] == "}":
+                d -= 1
+                if d == 0:
+                    break
+            j += 1
+        if "sauna-ikitai" in spec[i:j + 1]:
+            out.add(m.group(1))
+    return out
 
 
 def load():
@@ -86,6 +118,19 @@ def main():
         # 施設に「その時は取れなかった項目」が残る。既定の done 除外はそれを
         # 隠してしまうので、後半の波ではこちらを使う。
         done = set()
+    if "--ikitai" in sys.argv:
+        # サウナイキタイで確認していない「サウナのある施設」に絞る。
+        # sauna_exists が no / 未設定の施設は掲載がそもそも期待できない。
+        checked = ikitai_checked()
+        keep = set()
+        for v in villas:
+            vid = str(v["id"])
+            if vid in checked:
+                continue
+            if "sauna" not in (v.get("tags") or []):
+                continue          # yes / room のときだけタグが付く
+            keep.add(vid)
+        done = done | ({str(v["id"]) for v in villas} - keep)
     unsourced = "--unsourced" in sys.argv
     if unsourced:
         # 出典URLの無い desk 値の多い順。空欄ではなく検証対象を選ぶモード。
