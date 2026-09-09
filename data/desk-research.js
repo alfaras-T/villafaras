@@ -8433,3 +8433,63 @@
      6℃なら `u10` で現在値と食い違う。**ただし引用とURLが添えられていないので
      今回は入れない。**
    ========================================================================== */
+
+/* ==========================================================================
+   2026-09 `official` がブランドのルートで施設に到達しない件 … 15施設を差し替え
+   --------------------------------------------------------------------------
+   id=208 パノーラ熱海桜沢の `official` が `https://www.resolstay.jp/` という
+   ドメインルートで施設ページを指していないことに気づき、全走査した。
+
+   ■ **8ブランドで同じ状態だった（計28施設）**
+
+     SANU 12 / 軽井沢365 3 / kashikiribesso 3 / hi-ire 3 / sendouQ 2 /
+     terracecollections 2 / Jade Group 2 / polar-resort 2
+
+     **利用者が「公式サイト」を押してもブランドのトップに着き、そこから施設を
+     探し直すことになる。** SANU は12施設が同じURLを指していた。
+
+   ■ **差し替え先は新たに調べていない。すでに出典URLとして持っていた。**
+
+     `spec-data.js` の `url:` を見ると、**同じドメインの施設個別ページを既に
+     出典に持っている施設が15ある**。調査で開いていたのに `official` に
+     反映されていなかった。
+
+       id=9   sendouq.jp/about/?facility=1st
+       id=73  sa-nu.com/areas/minami-alps/sites/minami-alps1st
+       id=76  sa-nu.com/areas/kawaguchiko/sites/kawaguchiko2nd
+       id=119 sa-nu.com/areas/nasu/sites/nasu2nd
+       id=173 karuizawa365.jp/stay/happudai
+       id=174 karuizawa365.jp/stay/ohinata
+       id=175 karuizawa365.jp/stay/riversidevilla
+       id=177 sa-nu.com/list/mossm_tateshina1st
+       id=178 sa-nu.com/list/mossm_karuizawa2nd
+       id=192 polar-resort.com/stay/コテージ紹介-軽井沢/カナディアン南軽井沢1
+       id=246 sa-nu.com/list/raym_izu1st
+       id=263 kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/
+       id=264 kashikiribesso.com/outdoor-cottage-kitakaruizawa-2/
+       id=265 kashikiribesso.com/outdoor-attraction-kitakaruizawa/
+       id=268 polar-resort.com/stay/コテージ紹介-軽井沢/ハウス南軽井沢_1
+
+     HTTP 200 を返すことを5件で確認してから適用した。
+
+   ■ **差し替えなかったもの（13施設）**
+
+     - **Hiire 3施設**（id=231/232/233）… 出典が `hi-ire.com/stay` という
+       **共通の一覧ページ**で、施設を特定できない
+     - **terracecollections 2施設**（id=11/12）… 3施設を1ページに束ねる作りで
+       個別ページが存在しない
+     - **Jade Group 2施設**（id=183/184）… サイト自体がリンク先すべて `/blank-*` の
+       未編集プレースホルダー。実体は予約エンジン側にある
+     - **SANU 6施設**（id=74/75/118/120/176/179）… 出典が
+       `sa-nu.com/areas/yatsugatake` `areas/nasu` のような**エリアページ**止まりで
+       施設個別ではない
+     - **id=10 sendouQ second／third dog** … 出典が `?facility=2nd` で
+       **2棟のうち片方しか指さない。** ルートのほうが両方を含む
+
+   ■ **この型は「壊れていない」ので今まで検出されなかった。**
+
+     ブランドルートは 200 を返すし、ブランドは正しい。**「施設に到達しない」という
+     一段深い基準で見て初めて出てくる。** 楽天の広告計測URL36件と同じで、
+     `official` の品質監査が「別施設／失効／トラッキング／集約サイト／リンク集」の
+     5類型で見ていたところに**6つ目の類型**が加わった。
+   ========================================================================== */
