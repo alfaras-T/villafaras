@@ -6,8 +6,41 @@ SRCS = sys.argv[1:] or ["out/spec-data-desk.js"]
 DATA = "spec-data.js"
 
 def parse(text):
+    """施設ブロックを**波括弧の対応**で切り出す。
+
+    **終端を `\\n\\s*\\}` で探してはいけない。** 2026-09 に候補ファイルを
+
+        "0":  { stove:{...},
+                rest_chair:{...} },
+
+    と**閉じ括弧を最終セルと同じ行**に書いたところ、この終端が見つからず
+    id=0 のブロックが**ファイル全体を飲み込んだ**。結果、23施設ぶんのセルが
+    すべて id=0 に集まり、同名フィールドは後勝ちで潰れて、
+    **id=53 の sauna_temp と id=56 の stove が id=0 に書き込まれた。**
+    エラーも警告も出ず「追加 6 フィールド」とだけ表示された
+    （23施設70セルのはずだった）。
+
+    件数を見ていなければ気づけなかった。**入力の書式に依存しない読み方にする。**
+    """
     out = {}
-    for vid, blk in re.findall(r'"(\d+)":\s*\{(.*?)\n\s*\}', text, re.DOTALL):
+    for m in re.finditer(r'"(\d+)":\s*\{', text):
+        vid = m.group(1)
+        i = text.index("{", m.start())
+        depth, j = 0, i
+        while j < len(text):
+            if text[j] == "{":
+                depth += 1
+            elif text[j] == "}":
+                depth -= 1
+                if depth == 0:
+                    break
+            j += 1
+        blk = text[i + 1:j]
+        # ブロックの中に別の施設idが現れたら、切り出しが破綻している。
+        if re.search(r'"\d+":\s*\{', blk):
+            raise SystemExit(
+                "!! id=%s のブロックに別の施設idが入っています。"
+                "候補ファイルの波括弧の対応を確認してください。" % vid)
         f = {}
         for k, v in re.findall(r"(\w+):\s*(\{[^}]*\})", blk):
             f[k] = " ".join(v.split())
