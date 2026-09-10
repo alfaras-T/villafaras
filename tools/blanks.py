@@ -53,6 +53,16 @@ def ikitai_checked():
             j += 1
         if "sauna-ikitai" in spec[i:j + 1]:
             out.add(m.group(1))
+    # **出典URLだけでは「調べたが載っていなかった」施設に印が付かない。**
+    # 2026-09 に千葉61件・山梨39件を走査したあと --ikitai を実行したら、
+    # 掲載の無かった施設と中身が空だった施設が**そのまま再掲された**
+    # （千葉36件・山梨23件）。同じ施設を何度も調べさせてしまう。
+    # 確認済みの id は data/ikitai-checked.json に別途持つ。
+    try:
+        doc = json.load(io.open("data/ikitai-checked.json", encoding="utf-8"))
+        out |= {str(v) for v in doc.get("checked", [])}
+    except IOError:
+        pass
     return out
 
 
