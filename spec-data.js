@@ -2177,6 +2177,7 @@ window.VILLAFARAS_SPEC = {
   "94": {  /* abrAsus hotel Fuji */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
     stove:         { v: 'wood', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/11902' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
     water_temp:    { v: 't1822', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
@@ -2269,7 +2270,7 @@ window.VILLAFARAS_SPEC = {
 
   "99": {  /* ハンズアウトドアリゾート */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://glampicks.jp/glamping/g46375/' },
-    sauna_type:    { v: 'tent', src: 'desk', at: '2026-08', url: 'https://hanz-odr.com/hanz-faqs/' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78811' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hanz-odr.com/activities-tour/' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hanz-odr.com/activities-tour/' },
     capacity:      { v: 4, src: 'desk', at: '2026-07' },
@@ -2317,11 +2318,15 @@ window.VILLAFARAS_SPEC = {
   "102": {  /* SAUNEA白州 */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hakushu.saunea.jp' },
     sauna_type:      { v: 'hut', src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81542' },
+    sauna_temp:      { v: 96, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81542' },
     sauna_cap:       { v: 6, src: 'desk', at: '2026-07' },
     loyly:           { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
     coldbath:        { v: 'pool', src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
+    water_temp:      { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81542' },
+    water_depth:     { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81542' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
-    rest_chair:      { v: 'chair', src: 'desk', at: '2026-07' },
+    rest_chair:      { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81542' },
     kitchen_type:    { v: 'ih', src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
     kitchen_burners: { v: 2, src: 'desk', at: '2026-07' },
     capacity:        { v: 6, src: 'desk', at: '2026-09', url: 'https://hakushu.saunea.jp' },
@@ -2376,8 +2381,14 @@ window.VILLAFARAS_SPEC = {
 
   "105": {  /* BLANC FUJI */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
+    sauna_temp:    { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
+    sauna_cap:     { v: 5, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/rooms/' },
     sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/faq/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
+    water_temp:    { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
+    water_depth:   { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/79900' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/rooms/' },
     rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://blan-c.com/fuji/faq/' },
     kitchen_type:  { v: 'none', src: 'desk', at: '2026-09', url: 'https://blan-c.com/fuji/faq/' },
@@ -2396,8 +2407,10 @@ window.VILLAFARAS_SPEC = {
   "106": {  /* 郷音 -G.O.A.T.- The Summit Club */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://goat-glamping.com/rooms' },
     stove:         { v: 'wood', src: 'desk', at: '2026-09', url: 'https://goat-glamping.com/rooms' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78732' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://goat-glamping.com/rooms' },
     coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://prtimes.jp/main/html/rd/p/000000003.000164884.html' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78732' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://goat-glamping.com/rooms' },
     kitchen_type:  { v: 'ih', src: 'desk', at: '2026-09', url: 'https://goat-glamping.com/rooms' },
     capacity:      { v: 16, src: 'desk', at: '2026-09', url: 'https://prtimes.jp/main/html/rd/p/000000003.000164884.html' },
