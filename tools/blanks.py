@@ -26,44 +26,29 @@ CELL = r"(\w+):\s*\{\s*v:"          # 空白数を決め打ちしない
 
 
 def ikitai_checked():
-    """出典に sauna-ikitai.com を持つ施設の id。
+    """サウナイキタイを**体系的に走査し終えた**施設の id。
 
     サウナイキタイは温度・サウナ定員・水温・水深・休憩イス・ロウリュを
     **構造化して**持っており、公式がまず書かない項目がまとめて取れる。
-    2026-09 の波V14-14 では id=285 で loyly / coldbath / outdoor_rest の3項目、
-    id=274 で loyly / outdoor_rest / stove の出典が一度に埋まった。
+    2026-09 に千葉61・山梨39・静岡43を走査して、掲載率6割前後で
+    オーナー調査待ちだった項目が大きく動いた（`water_depth` 1→42 など）。
 
-    **にもかかわらず、出典に持っている施設は286中25件しかない。**
-    詰まっている項目（stove 38% / loyly 51% / sauna_type 58% /
-    outdoor_rest 62%）はまさにサウナイキタイが構造化している項目なので、
-    「サウナがあるのに未確認」の施設が残っているうちはそこを優先する。
+    **判定は data/ikitai-checked.json だけで行う。spec-data.js の出典URLで
+    代用してはいけない。** 理由が2つある。
+
+      1. **掲載が無かった施設に印が付かない。** 出典URLが残らないので
+         「調べたが載っていなかった」と「まだ調べていない」を区別できず、
+         同じ施設を何度も調べさせる（2026-09 に千葉36件・山梨23件が再掲された）。
+      2. **単発で1項目だけ参照した施設が『走査済み』に見える。** 走査を始める前から
+         出典URLを持つ施設が25あったが、うち7件は ikitai 出典が**1セルだけ**で
+         5〜10項目が空いていた。出典URLで除外すると**この154項目が対象から消える。**
     """
-    spec = io.open("spec-data.js", encoding="utf-8").read()
-    out = set()
-    for m in re.finditer(r'^\s*"(\d+)":\s*\{', spec, re.M):
-        i = spec.index("{", m.start())
-        d, j = 0, i
-        while j < len(spec):
-            if spec[j] == "{":
-                d += 1
-            elif spec[j] == "}":
-                d -= 1
-                if d == 0:
-                    break
-            j += 1
-        if "sauna-ikitai" in spec[i:j + 1]:
-            out.add(m.group(1))
-    # **出典URLだけでは「調べたが載っていなかった」施設に印が付かない。**
-    # 2026-09 に千葉61件・山梨39件を走査したあと --ikitai を実行したら、
-    # 掲載の無かった施設と中身が空だった施設が**そのまま再掲された**
-    # （千葉36件・山梨23件）。同じ施設を何度も調べさせてしまう。
-    # 確認済みの id は data/ikitai-checked.json に別途持つ。
+    import json
     try:
         doc = json.load(io.open("data/ikitai-checked.json", encoding="utf-8"))
-        out |= {str(v) for v in doc.get("checked", [])}
+        return {str(v) for v in doc.get("checked", [])}
     except IOError:
-        pass
-    return out
+        return set()
 
 
 def load():
