@@ -4878,6 +4878,7 @@ window.VILLAFARAS_SPEC = {
   "235": {  /* COCO VILLA 大室山 */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
     stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    sauna_temp:   { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/87104' },
     sauna_cap:    { v: 6, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
     loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
     coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
@@ -4899,9 +4900,13 @@ window.VILLAFARAS_SPEC = {
   "236": {  /* Tiny Base The MOUNTAiN */
     sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tinybase.co.jp/stay/' },
     stove:         { v: 'wood', src: 'desk', at: '2026-09', url: 'https://tinybase.co.jp/stay/' },
+    sauna_temp:    { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/13811' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/13811' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' },
     coldbath:      { v: 'tub', src: 'desk', at: '2026-09', url: 'https://tinybase.co.jp/stay/' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/13811' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://tinybase.co.jp/stay/' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/13811' },
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' },
     capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://tinybase.co.jp/stay/' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://tinybase.co.jp/stay/' },
@@ -4987,8 +4992,13 @@ window.VILLAFARAS_SPEC = {
   "241": {  /* Poolen ITO */
     sauna_exists:    { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
     sauna_type:      { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    stove:           { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82324' },
+    sauna_temp:      { v: 80, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82324' },
+    sauna_cap:       { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82324' },
     loyly:           { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
     coldbath:        { v: 'pool', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
+    water_temp:      { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82324' },
+    water_depth:     { v: 'd110140', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82324' },
     outdoor_rest:    { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hi-nichijo.com/poolen/ito/' },
     capacity:        { v: 8, src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052045/' },
@@ -5113,6 +5123,14 @@ window.VILLAFARAS_SPEC = {
 
   "248": {  /* エンゼルフォレスト中伊豆 */
     sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    sauna_temp:   { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    sauna_cap:    { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    water_depth:  { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
     capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
     pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/' },
     wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/stay/type4/' },
@@ -5156,6 +5174,7 @@ window.VILLAFARAS_SPEC = {
 
   "251": {  /* LAMERVON */
     sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
+    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/113784' },
     coldbath:     { v: 'shower', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
     kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
     capacity:     { v: 10, src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
@@ -5244,10 +5263,13 @@ window.VILLAFARAS_SPEC = {
     sauna_type:    { v: 'barrel', src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
     stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
     sauna_temp:    { v: 80, src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/89149' },
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
     coldbath:      { v: 'pool', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
     water_temp:    { v: 't1015', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
+    water_depth:   { v: 'd110140', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/89149' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/89149' },
     capacity:      { v: 12, src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.purposeresort.com/img/house_manual_atagawa.pdf' },
     wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.purposeresort.com/atagawa' },
@@ -5262,6 +5284,10 @@ window.VILLAFARAS_SPEC = {
 
   "257": {  /* THE GLAMPING 箱根十国峠 */
     sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://www.jukkoku-cable.jp/glamping/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78482' },
+    sauna_temp:    { v: 80, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78482' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78482' },
+    water_depth:   { v: 'd110140', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78482' },
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' },
     capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.jukkoku-cable.jp/glamping/stay/index.html' },
