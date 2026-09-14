@@ -78,6 +78,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '市原鶴舞IC 32分', src: 'auto', at: '2026-07' },
     station:       { v: '浪花 4分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -128,6 +130,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '鋸南富山IC 21分', src: 'auto', at: '2026-07' },
     station:       { v: '安房鴨川 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192058/192058_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192058/192058_std.html' },
     fee_bbq:       { v: 'incl', src: 'desk', at: '2026-07' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
@@ -161,6 +165,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '鋸南富山IC 6分', src: 'auto', at: '2026-07' },
     station:       { v: '岩井 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188884/188884_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188884/188884_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -357,6 +363,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '鋸南保田IC 3分', src: 'auto', at: '2026-07' },
     station:       { v: '保田 1分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183504/183504_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183504/183504_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -392,12 +400,15 @@ window.VILLAFARAS_SPEC = {
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     capacity:      { v: 20, src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' },
     elevation:     { v: 6, src: 'auto', at: '2026-07' },
     supermarket:   { v: 8, src: 'auto', at: '2026-07' },
     conveni:       { v: 10, src: 'auto', at: '2026-07' },
     ic:            { v: '富浦IC 21分', src: 'auto', at: '2026-07' },
     station:       { v: '館山 17分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' },
     early_checkin: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.mellowhouse.jp/question/' },
     fee_bbq:       { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.mellowhouse.jp/question/' },
     late_checkout: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.mellowhouse.jp/question/' },
@@ -419,6 +430,7 @@ window.VILLAFARAS_SPEC = {
     capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196443/196443_std.html' },
     elevation:       { v: 4, src: 'auto', at: '2026-07' },
     supermarket:     { v: 8, src: 'auto', at: '2026-07' },
     conveni:         { v: 10, src: 'auto', at: '2026-07' },
@@ -427,6 +439,7 @@ window.VILLAFARAS_SPEC = {
     onsen:           { v: 7, src: 'auto', at: '2026-07' },
     bring_amenity:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/?gallery=bath' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196443/196443_std.html' },
     checkin_method:  { v: 'keybox', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
     early_checkin:   { v: 'yes', src: 'desk', at: '2026-09', url: 'https://otw-tateyama.com/qa/' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://otw-tateyama.com/qa/' },
@@ -444,6 +457,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     capacity:        { v: 10, src: 'desk', at: '2026-08', url: 'https://nagokaigan.gifthouse.jp/nagokaigan/room.php' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00051731/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189728/189728_std.html' },
     elevation:       { v: 2, src: 'auto', at: '2026-07' },
     supermarket:     { v: 2, src: 'auto', at: '2026-07' },
     conveni:         { v: 1, src: 'auto', at: '2026-07' },
@@ -470,6 +484,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_burners: { v: 1, src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
     capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://gifthouse.jp/sunomiya/room.php' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194746/194746_std.html' },
     elevation:       { v: 13, src: 'auto', at: '2026-07' },
     supermarket:     { v: 6, src: 'auto', at: '2026-07' },
     conveni:         { v: 6, src: 'auto', at: '2026-07' },
@@ -842,6 +857,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '長生IC 17分', src: 'auto', at: '2026-07' },
     station:       { v: '太東 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 17, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188228/188228_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188228/188228_std.html' },
     fee_bbq:       { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
     fee_cleaning:  { v: 16500, src: 'desk', at: '2026-08', url: 'https://www.isumiriver.com/' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
@@ -994,6 +1011,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富津金谷IC 4分', src: 'auto', at: '2026-07' },
     station:       { v: '浜金谷 1分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192245/192245_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192245/192245_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -1061,6 +1080,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '木更津東IC 13分', src: 'auto', at: '2026-07' },
     station:       { v: '小櫃 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198383/198383_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198383/198383_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -1078,12 +1099,14 @@ window.VILLAFARAS_SPEC = {
     firepit:       { v: 'stand', src: 'desk', at: '2026-08', url: 'https://harukakanata2.heteml.net/' },
     capacity:      { v: 17, src: 'desk', at: '2026-09', url: 'https://harukakanata2.heteml.net/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78941' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100_std.html' },
     elevation:     { v: 70, src: 'auto', at: '2026-07' },
     supermarket:   { v: 12, src: 'auto', at: '2026-07' },
     conveni:       { v: 10, src: 'auto', at: '2026-07' },
     ic:            { v: '鋸南富山IC 13分', src: 'auto', at: '2026-07' },
     station:       { v: '岩井 10分', src: 'auto', at: '2026-07' },
     onsen:         { v: 14, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100_std.html' },
     late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
@@ -1321,6 +1344,7 @@ window.VILLAFARAS_SPEC = {
     villa_type:    { v: 'solo', src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/accommodation/' },
     capacity:      { v: 19, src: 'desk', at: '2026-08', url: 'https://sea-life.ne.jp/faq/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-07' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/190825/190825_std.html' },
     elevation:     { v: 5, src: 'auto', at: '2026-07' },
     supermarket:   { v: 12, src: 'auto', at: '2026-07' },
     conveni:       { v: 2, src: 'auto', at: '2026-07' },
@@ -1351,6 +1375,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '市原鶴舞IC 32分', src: 'auto', at: '2026-07' },
     station:       { v: '鵜原 1分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/190945/190945_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -1372,7 +1397,9 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '鋸南保田IC 2分', src: 'auto', at: '2026-07' },
     station:         { v: '保田 2分', src: 'auto', at: '2026-07' },
     onsen:           { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196620/196620_std.html' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://refwind.jp/' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196620/196620_std.html' },
     winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -1421,6 +1448,7 @@ window.VILLAFARAS_SPEC = {
     station:       { v: '鵜原 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196030/196030_std.html' },
     kids_free:     { v: 5, src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
     late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://undertheseaubara.snack.chillnn.com/ja' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
@@ -1525,6 +1553,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '桂IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '本納 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192049/192049_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192049/192049_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -1665,6 +1695,8 @@ window.VILLAFARAS_SPEC = {
     ic:             { v: '富浦IC 17分', src: 'auto', at: '2026-07' },
     station:        { v: '館山 14分', src: 'auto', at: '2026-07' },
     onsen:          { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:  { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198028/198028_std.html' },
+    bring_towel:    { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198028/198028_std.html' },
     checkin_method: { v: 'smart', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
     fee_bbq:        { v: 'incl', src: 'desk', at: '2026-08', url: 'https://pacific-retreat-tateyama.com/faq/' },
     winter_access:  { v: 'ok', src: 'auto', at: '2026-09' }
@@ -2045,6 +2077,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191557/191557_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191557/191557_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2060,6 +2094,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193358/193358_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193358/193358_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2085,6 +2121,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191756/191756_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191756/191756_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2102,6 +2140,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 18分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197840/197840_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197840/197840_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2120,6 +2160,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 17分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 10分', src: 'auto', at: '2026-07' },
     onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197839/197839_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197839/197839_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2144,6 +2186,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 6分', src: 'auto', at: '2026-07' },
     station:       { v: '富士山 13分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184648/184648_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184648/184648_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2212,12 +2256,15 @@ window.VILLAFARAS_SPEC = {
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://abrasushotel.jp/fuji/room1/' },
     capacity:      { v: 8, src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://abrasushotel.jp/fuji/faq/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' },
     elevation:     { v: 977, src: 'auto', at: '2026-07' },
     supermarket:   { v: 2, src: 'auto', at: '2026-07' },
     conveni:       { v: 2, src: 'auto', at: '2026-07' },
     ic:            { v: '富士吉田忍野スマートIC 13分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2235,6 +2282,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田西桂SIC 19分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 10分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192296/192296_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192296/192296_std.html' },
     sound_rule:    { v: 'night', src: 'desk', at: '2026-07' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -2292,6 +2341,8 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '山中湖 22分', src: 'auto', at: '2026-07' },
     station:         { v: '寿 26分', src: 'auto', at: '2026-07' },
     onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/147123/147123_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/147123/147123_std.html' },
     coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://silver-spray.jp/visiter.php' },
     winter_access:   { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -2310,6 +2361,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '富士吉田忍野スマートIC 10分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/180435/180435_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/180435/180435_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2366,6 +2419,8 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '八ヶ岳PA(下り) 17分', src: 'auto', at: '2026-07' },
     station:         { v: '日野春 11分', src: 'auto', at: '2026-07' },
     onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192742/192742_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192742/192742_std.html' },
     winter_access:   { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2404,6 +2459,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河口湖IC 19分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 10分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194181/194181_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2429,6 +2485,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '山中湖 7分', src: 'auto', at: '2026-07' },
     station:       { v: '富士山 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188976/188976_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188976/188976_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2450,6 +2508,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '都留IC 32分', src: 'auto', at: '2026-07' },
     station:       { v: '禾生 14分', src: 'auto', at: '2026-07' },
     onsen:         { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197601/197601_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197601/197601_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2570,12 +2630,15 @@ window.VILLAFARAS_SPEC = {
     loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://ash-villa.com/faq/' },
     capacity:      { v: 10, src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://ash-villa.com/faq/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' },
     elevation:     { v: 1007, src: 'auto', at: '2026-07' },
     supermarket:   { v: 3, src: 'auto', at: '2026-07' },
     conveni:       { v: 3, src: 'auto', at: '2026-07' },
     ic:            { v: '富士吉田忍野スマートIC 15分', src: 'auto', at: '2026-07' },
     station:       { v: '河口湖 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2595,6 +2658,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '那須高原スマートIC 22分', src: 'auto', at: '2026-07' },
     station:       { v: '黒田原 16分', src: 'auto', at: '2026-07' },
     onsen:         { v: 11, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187548/187548_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187548/187548_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2748,27 +2813,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "121": {  /* COCO VILLA 那須高原 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
-    sauna_cap:    { v: 10, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    water_temp:   { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
-    water_depth:  { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    firepit:      { v: 'stand', src: 'desk', at: '2026-07' },
-    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
-    elevation:    { v: 498, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 3, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '那須高原スマートIC 19分', src: 'auto', at: '2026-07' },
-    station:      { v: '高久 15分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
+    sauna_cap:     { v: 10, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
+    water_depth:   { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/95848' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    firepit:       { v: 'stand', src: 'desk', at: '2026-07' },
+    capacity:      { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nasu-kogen/' },
+    elevation:     { v: 498, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 3, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '那須高原スマートIC 19分', src: 'auto', at: '2026-07' },
+    station:       { v: '高久 15分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199675/199675_std.html' }
   },
 
   "122": {  /* Earthboat Nasu */
@@ -2789,6 +2855,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '那須高原スマートIC 21分', src: 'auto', at: '2026-07' },
     station:       { v: '高久 20分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198001/198001_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198001/198001_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2811,6 +2879,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '黒磯板室IC 22分', src: 'auto', at: '2026-07' },
     station:       { v: '上三依塩原温泉口 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199770/199770_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -2851,6 +2920,7 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '那須高原スマートIC 13分', src: 'auto', at: '2026-07' },
     station:         { v: '高久 12分', src: 'auto', at: '2026-07' },
     onsen:           { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189192/189192_std.html' },
     bring_seasoning: { v: 'bring', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
     bring_towel:     { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.jalan.net/kankou/spt_guide000000225940/activity/l00005A1EF/' },
     checkin_method:  { v: 'smart', src: 'desk', at: '2026-08', url: 'https://www.nasuppo.com/' },
@@ -2896,19 +2966,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "128": {  /* Haga Farm＆Glamping（芳賀ファーム&グランピング） */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
-    sauna_type:   { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
-    sauna_hours:  { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hagafarm.com/cabin/' },
-    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://hagafarm.com/cabin/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
-    elevation:    { v: 131, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '野高谷北ランプ 10分', src: 'auto', at: '2026-07' },
-    station:      { v: '大金 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 9, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
+    sauna_type:    { v: 'barrel', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
+    sauna_hours:   { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://hagafarm.com/cabin/' },
+    capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://hagafarm.com/cabin/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://hagafarm.com/experience/' },
+    elevation:     { v: 131, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 8, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '野高谷北ランプ 10分', src: 'auto', at: '2026-07' },
+    station:       { v: '大金 10分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/181648/181648_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/181648/181648_std.html' }
   },
 
   "129": {  /* 和モダングランピング｜NAGOMI CAMP */
@@ -2936,20 +3008,22 @@ window.VILLAFARAS_SPEC = {
   },
 
   "130": {  /* 那須温泉グランピング Nenn（ネン） */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489.html' },
-    sauna_temp:   { v: 110, src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
-    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
-    water_temp:   { v: 't1015', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/spa/' },
-    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
-    elevation:    { v: 434, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '那須高原スマートIC 11分', src: 'auto', at: '2026-07' },
-    station:      { v: '高久 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 4, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489.html' },
+    sauna_temp:    { v: 110, src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://nenn-nasu.com/spa/' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/spa/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nenn-nasu.com/tent-room/' },
+    elevation:     { v: 434, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 2, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '那須高原スマートIC 11分', src: 'auto', at: '2026-07' },
+    station:       { v: '高久 10分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489_std.html' }
   },
 
   "131": {  /* LEVATA */
@@ -2965,6 +3039,7 @@ window.VILLAFARAS_SPEC = {
     capacity:        { v: 6, src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     pet_ok:          { v: 'no', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://levata.jp/' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188241/188241_std.html' },
     elevation:       { v: 530, src: 'auto', at: '2026-07' },
     supermarket:     { v: 9, src: 'auto', at: '2026-07' },
     conveni:         { v: 8, src: 'auto', at: '2026-07' },
@@ -3002,6 +3077,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '小涌谷 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197199/197199_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197199/197199_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3025,6 +3102,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '小涌谷 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197200/197200_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197200/197200_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3048,6 +3127,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '小涌谷 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198649/198649_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198649/198649_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3106,6 +3187,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 19分', src: 'auto', at: '2026-07' },
     station:       { v: '早雲山 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196203/196203_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196203/196203_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3125,6 +3208,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 8分', src: 'auto', at: '2026-07' },
     station:       { v: '小涌谷 7分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198836/198836_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198836/198836_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3158,6 +3243,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '山崎IC 4分', src: 'auto', at: '2026-07' },
     station:       { v: '箱根湯本 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188109/188109_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188109/188109_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3191,6 +3278,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '須雲川IC 21分', src: 'auto', at: '2026-07' },
     station:       { v: '公園上 1分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/195327/195327_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3265,19 +3353,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "146": {  /* TIMeSCAPE -hakone- */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://timescape-hakone.jp/stay/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-07' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
-    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://timescape-hakone.jp/stay/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
-    elevation:    { v: 316, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 1, src: 'auto', at: '2026-07' },
-    ic:           { v: '須雲川IC 13分', src: 'auto', at: '2026-07' },
-    station:      { v: '大平台 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://timescape-hakone.jp/stay/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-07' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    capacity:      { v: 8, src: 'desk', at: '2026-09', url: 'https://timescape-hakone.jp/stay/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://timescape-hakone.jp/faq/' },
+    elevation:     { v: 316, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 1, src: 'auto', at: '2026-07' },
+    ic:            { v: '須雲川IC 13分', src: 'auto', at: '2026-07' },
+    station:       { v: '大平台 1分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197473/197473_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197473/197473_std.html' }
   },
 
   "147": {  /* 箱根芦ノ湖ゴルフヴィラ */
@@ -3293,6 +3383,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '芦ノ湖大観IC 1分', src: 'auto', at: '2026-07' },
     station:       { v: '小涌谷 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194866/194866_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3316,12 +3407,15 @@ window.VILLAFARAS_SPEC = {
     outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://moroisoso.jp/facility' },
     capacity:      { v: 18, src: 'desk', at: '2026-08', url: 'https://moroisoso.jp' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://moroisoso.jp/facility' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' },
     elevation:     { v: 21, src: 'auto', at: '2026-07' },
     supermarket:   { v: 3, src: 'auto', at: '2026-07' },
     conveni:       { v: 3, src: 'auto', at: '2026-07' },
     ic:            { v: '林IC 25分', src: 'auto', at: '2026-07' },
     station:       { v: '三崎口 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3339,6 +3433,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '釜利谷JCT 19分', src: 'auto', at: '2026-07' },
     station:       { v: '稲村ヶ崎 1分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186388/186388_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3357,6 +3452,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '釜利谷JCT 16分', src: 'auto', at: '2026-07' },
     station:       { v: '和田塚 5分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/167276/167276_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/167276/167276_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3397,6 +3494,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '釜利谷JCT 15分', src: 'auto', at: '2026-07' },
     station:       { v: '由比ヶ浜 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196394/196394_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196394/196394_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3476,6 +3575,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '林IC 26分', src: 'auto', at: '2026-07' },
     station:       { v: '三崎口 12分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194872/194872_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3494,6 +3594,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '逗子IC 15分', src: 'auto', at: '2026-07' },
     station:       { v: '逗子・葉山 7分', src: 'auto', at: '2026-07' },
     onsen:         { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199548/199548_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3509,6 +3610,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '足柄SA/スマートIC(上り) 22分', src: 'auto', at: '2026-07' },
     station:       { v: '早雲山 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194068/194068_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3531,6 +3633,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '衣笠IC 10分', src: 'auto', at: '2026-07' },
     station:       { v: '津久井浜 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186676/186676_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3550,6 +3653,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '相模原愛川IC 26分', src: 'auto', at: '2026-07' },
     station:       { v: 'ダム下 山麓 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 21, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196488/196488_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196488/196488_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -3656,6 +3761,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '足柄SA/スマートIC(上り) 18分', src: 'auto', at: '2026-07' },
     station:       { v: '上強羅 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/130554/130554_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/130554/130554_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3835,6 +3942,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     capacity:        { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196193/196193_std.html' },
     elevation:       { v: 1164, src: 'auto', at: '2026-07' },
     supermarket:     { v: 6, src: 'auto', at: '2026-07' },
     conveni:         { v: 5, src: 'auto', at: '2026-07' },
@@ -3908,6 +4016,7 @@ window.VILLAFARAS_SPEC = {
     kitchen_burners: { v: 3, src: 'desk', at: '2026-08', url: 'https://2ndhome.sa-nu.com/supplies_list_new/sanucabin' },
     capacity:        { v: 4, src: 'desk', at: '2026-07' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.2ndhome-articles.sa-nu.com/sauna-moss' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196308/196308_std.html' },
     elevation:       { v: 791, src: 'auto', at: '2026-07' },
     supermarket:     { v: 5, src: 'auto', at: '2026-07' },
     conveni:         { v: 3, src: 'auto', at: '2026-07' },
@@ -3953,6 +4062,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '横川SA(上り) 25分', src: 'auto', at: '2026-07' },
     station:       { v: '軽井沢 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192930/192930_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192930/192930_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -3989,6 +4100,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '更埴IC 48分', src: 'auto', at: '2026-07' },
     station:       { v: '飯森 4分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183132/183132_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183132/183132_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4075,6 +4188,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '佐久小諸JCT 11分', src: 'auto', at: '2026-07' },
     station:       { v: '信濃追分 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/179069/179069_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/179069/179069_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4100,6 +4215,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '佐久平スマートIC 31分', src: 'auto', at: '2026-07' },
     station:       { v: '中軽井沢 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199674/199674_std.html' },
     fee_bbq:       { v: 'incl', src: 'desk', at: '2026-07' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -4123,6 +4239,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '横川SA(上り) 41分', src: 'auto', at: '2026-07' },
     station:       { v: '万座・鹿沢口 13分', src: 'auto', at: '2026-07' },
     onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193428/193428_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193428/193428_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4197,6 +4315,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '佐久平スマートIC 25分', src: 'auto', at: '2026-07' },
     station:       { v: '軽井沢 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/171143/171143_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4219,6 +4338,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '佐久平スマートIC 12分', src: 'auto', at: '2026-07' },
     station:       { v: '御代田 5分', src: 'auto', at: '2026-07' },
     onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/185104/185104_std.html' },
     fee_bbq:       { v: 'extra', src: 'desk', at: '2026-07' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -4241,13 +4361,16 @@ window.VILLAFARAS_SPEC = {
     capacity:        { v: 8, src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
     pet_ok:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
     steps:           { v: 'stairs', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' },
     elevation:       { v: 490, src: 'auto', at: '2026-07' },
     supermarket:     { v: 2, src: 'auto', at: '2026-07' },
     conveni:         { v: 1, src: 'auto', at: '2026-07' },
     ic:              { v: '上田菅平IC 13分', src: 'auto', at: '2026-07' },
     station:         { v: '田中 4分', src: 'auto', at: '2026-07' },
     onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' },
     bring_seasoning: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/rooms' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' },
     fee_bbq:         { v: 'extra', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' },
     late_arrival:    { v: 'no', src: 'desk', at: '2026-08', url: 'https://joshuya-unnojuku.jp/stay' }
   },
@@ -4273,6 +4396,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '信濃町IC 9分', src: 'auto', at: '2026-07' },
     station:       { v: '黒姫 7分', src: 'auto', at: '2026-07' },
     onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191521/191521_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191521/191521_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4289,6 +4414,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '佐久小諸JCT 16分', src: 'auto', at: '2026-07' },
     station:       { v: '信濃追分 6分', src: 'auto', at: '2026-07' },
     onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197174/197174_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197174/197174_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -4330,6 +4457,7 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '佐久小諸JCT 12分', src: 'auto', at: '2026-07' },
     station:         { v: '御代田 5分', src: 'auto', at: '2026-07' },
     onsen:           { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199893/199893_std.html' },
     coldbath_season: { v: 'winter', src: 'desk', at: '2026-09', url: 'https://www.booking.com/hotel/jp/t-amp-a-resort-amp-sauna-karuizawa.ja.html' },
     winter_access:   { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -4377,6 +4505,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '中央道原PA(下り) 12分', src: 'auto', at: '2026-07' },
     station:       { v: '富士見 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187996/187996_std.html' },
     bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
     fee_bbq:       { v: 'incl', src: 'desk', at: '2026-08', url: 'https://enukoti.com/rooms/' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
@@ -4393,6 +4522,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:       { v: '熱海 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184739/184739_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184739/184739_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -4408,6 +4539,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:       { v: '熱海 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196585/196585_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196585/196585_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -4423,6 +4556,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '伊豆山港 4分', src: 'auto', at: '2026-07' },
     station:       { v: '熱海 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196583/196583_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196583/196583_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -4437,6 +4572,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '山伏峠IC 21分', src: 'auto', at: '2026-07' },
     station:       { v: '網代 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184106/184106_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184106/184106_std.html' },
     winter_access: { v: 'tire', src: 'desk', at: '2026-07' }
   },
 
@@ -4452,20 +4589,24 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '玄岳IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '伊豆多賀 12分', src: 'auto', at: '2026-07' },
     onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183128/183128_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183128/183128_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
   "206": {  /* オーシャンビュー熱海自然楼 */
-    bbq_roof:    { v: 'none', src: 'desk', at: '2026-07' },
-    capacity:    { v: 8, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
-    pet_ok:      { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
-    wifi:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
-    elevation:   { v: 322, src: 'auto', at: '2026-07' },
-    supermarket: { v: 9, src: 'auto', at: '2026-07' },
-    conveni:     { v: 10, src: 'auto', at: '2026-07' },
-    ic:          { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
-    station:     { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
-    onsen:       { v: 12, src: 'auto', at: '2026-07' }
+    bbq_roof:      { v: 'none', src: 'desk', at: '2026-07' },
+    capacity:      { v: 8, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/atamishizenrou/' },
+    elevation:     { v: 322, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 9, src: 'auto', at: '2026-07' },
+    conveni:       { v: 10, src: 'auto', at: '2026-07' },
+    ic:            { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182584/182584_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182584/182584_std.html' }
   },
 
   "207": {  /* パノーラ伊豆赤沢 */
@@ -4480,22 +4621,26 @@ window.VILLAFARAS_SPEC = {
     conveni:         { v: 7, src: 'auto', at: '2026-07' },
     ic:              { v: '河津七滝IC 48分', src: 'auto', at: '2026-07' },
     station:         { v: '伊豆高原 8分', src: 'auto', at: '2026-07' },
-    onsen:           { v: 6, src: 'auto', at: '2026-07' }
+    onsen:           { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168590/168590_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168590/168590_std.html' }
   },
 
   "208": {  /* パノーラ熱海桜沢 */
-    sauna_exists: { v: 'room', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
-    elevation:    { v: 231, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
-    station:      { v: '来宮 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'room', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/panoraatamisakurazawa/' },
+    elevation:     { v: 231, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 4, src: 'auto', at: '2026-07' },
+    ic:            { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
+    station:       { v: '来宮 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168587/168587_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168587/168587_std.html' }
   },
 
   "209": {  /* 伊豆高原プライム */
@@ -4509,7 +4654,9 @@ window.VILLAFARAS_SPEC = {
     conveni:         { v: 1, src: 'auto', at: '2026-07' },
     ic:              { v: '大平IC 43分', src: 'auto', at: '2026-07' },
     station:         { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
-    onsen:           { v: 4, src: 'auto', at: '2026-07' }
+    onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168588/168588_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168588/168588_std.html' }
   },
 
   "210": {  /* 熱海オーシャンハウス */
@@ -4523,28 +4670,32 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '玄岳IC 7分', src: 'auto', at: '2026-07' },
     station:       { v: '伊豆多賀 11分', src: 'auto', at: '2026-07' },
     onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196587/196587_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196587/196587_std.html' },
     winter_access: { v: 'tire', src: 'desk', at: '2026-07' }
   },
 
   "211": {  /* オーシャンテラスAtami */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
-    sauna_temp:   { v: 120, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
-    sauna_cap:    { v: 1, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
-    water_temp:   { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
-    kitchen_type: { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    capacity:     { v: 8, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
-    elevation:    { v: 462, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 13, src: 'auto', at: '2026-07' },
-    conveni:      { v: 11, src: 'auto', at: '2026-07' },
-    ic:           { v: '玄岳IC 8分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆多賀 13分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 13, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
+    sauna_temp:    { v: 120, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
+    sauna_cap:     { v: 1, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.fujinokuni-passport.com/news/202209224724/' },
+    water_temp:    { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/37970' },
+    kitchen_type:  { v: 'cassette', src: 'desk', at: '2026-09', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    capacity:      { v: 8, src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.resolstay.jp/details/oceanterrace/' },
+    elevation:     { v: 462, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 13, src: 'auto', at: '2026-07' },
+    conveni:       { v: 11, src: 'auto', at: '2026-07' },
+    ic:            { v: '玄岳IC 8分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆多賀 13分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184081/184081_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184081/184081_std.html' }
   },
 
   "212": {  /* 熱海リゾート */
@@ -4563,6 +4714,8 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '玄岳IC 9分', src: 'auto', at: '2026-07' },
     station:         { v: '伊豆多賀 8分', src: 'auto', at: '2026-07' },
     onsen:           { v: 11, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196586/196586_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196586/196586_std.html' },
     late_arrival:    { v: 'ok', src: 'desk', at: '2026-07' }
   },
 
@@ -4576,181 +4729,199 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '伊豆山港 7分', src: 'auto', at: '2026-07' },
     station:       { v: '来宮 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196591/196591_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196591/196591_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "214": {  /* マイグレICE */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
-    sauna_cap:    { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ice' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
-    elevation:    { v: 256, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
+    sauna_cap:     { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78435' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ice' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ice' },
+    elevation:     { v: 256, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187384/187384_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187384/187384_std.html' }
   },
 
   "215": {  /* マイグレテラス */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/terrace' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
-    capacity:     { v: 8, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/inquiry-qa' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
-    elevation:    { v: 250, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/terrace' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/42421' },
+    capacity:      { v: 8, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/inquiry-qa' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/terrace' },
+    elevation:     { v: 250, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182654/182654_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182654/182654_std.html' }
   },
 
   "216": {  /* マイグレ天 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
-    sauna_cap:    { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/tensyukau' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' },
-    water_temp:   { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
-    capacity:     { v: 7, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
-    elevation:    { v: 333, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 42分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
+    sauna_cap:     { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/tensyukau' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452.html' },
+    water_temp:    { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66974' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
+    capacity:      { v: 7, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/tensyukau' },
+    elevation:     { v: 333, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 8, src: 'auto', at: '2026-07' },
+    conveni:       { v: 4, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 42分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452_std.html' }
   },
 
   "217": {  /* マイグレフラット */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    sauna_temp:   { v: 85, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    water_temp:   { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-07' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
-    elevation:    { v: 250, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    sauna_temp:    { v: 85, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    water_temp:    { v: 't1822', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-07' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/66841' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/flat' },
+    elevation:     { v: 250, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184037/184037_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184037/184037_std.html' }
   },
 
   "218": {  /* マイグレ600 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
-    elevation:    { v: 254, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78967' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/600-sekitei' },
+    elevation:     { v: 254, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187516/187516_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187516/187516_std.html' }
   },
 
   "219": {  /* マイグレIKKI */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    sauna_temp:   { v: 110, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' },
-    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
-    capacity:     { v: 10, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
-    elevation:    { v: 252, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    sauna_temp:    { v: 110, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/ikki' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78964' },
+    capacity:      { v: 10, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/ikki' },
+    elevation:     { v: 252, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187517/187517_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187517/187517_std.html' }
   },
 
   "220": {  /* マイグレKENKEN */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
-    sauna_temp:   { v: 111, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
-    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
-    elevation:    { v: 253, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
+    sauna_temp:    { v: 111, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/78968' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/kenken' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kenken' },
+    elevation:     { v: 253, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187518/187518_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187518/187518_std.html' }
   },
 
   "221": {  /* マイグレYEBISU */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
-    sauna_cap:    { v: 9, src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
-    capacity:     { v: 9, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
-    elevation:    { v: 234, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
+    sauna_cap:     { v: 9, src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/yebisu' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/80286' },
+    capacity:      { v: 9, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/yebisu' },
+    elevation:     { v: 234, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189064/189064_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189064/189064_std.html' }
   },
 
   "222": {  /* マイグレ海の声 */
@@ -4773,74 +4944,82 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '山伏峠IC 47分', src: 'auto', at: '2026-07' },
     station:       { v: '城ヶ崎海岸 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189276/189276_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189276/189276_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "223": {  /* マイグレケニーズハウス */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    sauna_temp:   { v: 110, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    sauna_cap:    { v: 10, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
-    capacity:     { v: 16, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
-    elevation:    { v: 249, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    sauna_temp:    { v: 110, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    sauna_cap:     { v: 10, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81728' },
+    capacity:      { v: 16, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/kennys' },
+    elevation:     { v: 249, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192764/192764_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192764/192764_std.html' }
   },
 
   "224": {  /* マイグレchillax */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
-    sauna_temp:   { v: 112, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
-    sauna_cap:    { v: 5, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    water_temp:   { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' },
-    capacity:     { v: 7, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
-    elevation:    { v: 201, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 6, src: 'auto', at: '2026-07' },
-    ic:           { v: '河津逆川IC 44分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆大川 4分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 7, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
+    sauna_temp:    { v: 112, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
+    sauna_cap:     { v: 5, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/81433' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/chillax' },
+    capacity:      { v: 7, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/chillax' },
+    elevation:     { v: 201, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 10, src: 'auto', at: '2026-07' },
+    conveni:       { v: 6, src: 'auto', at: '2026-07' },
+    ic:            { v: '河津逆川IC 44分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆大川 4分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 7, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192033/192033_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192033/192033_std.html' }
   },
 
   "225": {  /* マイグレHOODSTAR */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    sauna_temp:   { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    water_depth:  { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
-    capacity:     { v: 9, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/inquiry-qa' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
-    elevation:    { v: 226, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 38分', src: 'auto', at: '2026-07' },
-    station:      { v: '川奈 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    sauna_temp:    { v: 100, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    water_depth:   { v: 'd4060', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/82790' },
+    capacity:      { v: 9, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/inquiry-qa' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/hoodstar' },
+    elevation:     { v: 226, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 38分', src: 'auto', at: '2026-07' },
+    station:       { v: '川奈 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193109/193109_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193109/193109_std.html' }
   },
 
   "226": {  /* マイグレアトリエ */
@@ -4867,26 +5046,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "227": {  /* マイグレA5 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    sauna_temp:   { v: 109, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' },
-    water_temp:   { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    water_src:    { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' },
-    water_depth:  { v: 'd2040', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
-    elevation:    { v: 254, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 5, src: 'auto', at: '2026-07' },
-    conveni:      { v: 3, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    sauna_temp:    { v: 109, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    water_src:     { v: 'well', src: 'desk', at: '2026-08', url: 'https://www.maigre.jp/a-five' },
+    water_depth:   { v: 'd2040', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/84075' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.maigre.jp/a-five' },
+    elevation:     { v: 254, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 5, src: 'auto', at: '2026-07' },
+    conveni:       { v: 3, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 39分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196050/196050_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196050/196050_std.html' }
   },
 
   "228": {  /* マイグレパノラマ */
@@ -4916,6 +5097,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '大平IC 24分', src: 'auto', at: '2026-07' },
     station:       { v: '修善寺 28分', src: 'auto', at: '2026-07' },
     onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187262/187262_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187262/187262_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5019,29 +5202,31 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河津七滝IC 46分', src: 'auto', at: '2026-07' },
     station:       { v: '伊豆高原 5分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199762/199762_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "235": {  /* COCO VILLA 大室山 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    sauna_temp:   { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/87104' },
-    sauna_cap:    { v: 6, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    chiller:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
-    elevation:    { v: 423, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 10, src: 'auto', at: '2026-07' },
-    conveni:      { v: 7, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 38分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 10分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    sauna_temp:    { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/87104' },
+    sauna_cap:     { v: 6, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    chiller:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    capacity:      { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/omuroyama/' },
+    elevation:     { v: 423, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 10, src: 'auto', at: '2026-07' },
+    conveni:       { v: 7, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 38分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 10分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199624/199624_std.html' }
   },
 
   "236": {  /* Tiny Base The MOUNTAiN */
@@ -5063,6 +5248,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河津逆川IC 14分', src: 'auto', at: '2026-07' },
     station:       { v: '河津 5分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197348/197348_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197348/197348_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5082,6 +5269,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河津逆川IC 13分', src: 'auto', at: '2026-07' },
     station:       { v: '伊豆急下田 4分', src: 'auto', at: '2026-07' },
     onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5133,6 +5322,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '足柄SA/スマートIC(上り) 8分', src: 'auto', at: '2026-07' },
     station:       { v: '御殿場 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 2, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192674/192674_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192674/192674_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -5156,6 +5347,8 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '大平IC 48分', src: 'auto', at: '2026-07' },
     station:         { v: '城ヶ崎海岸 4分', src: 'auto', at: '2026-07' },
     onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196277/196277_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196277/196277_std.html' },
     coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://hi-nichijo.com/poolen/ito/' },
     winter_access:   { v: 'ok', src: 'auto', at: '2026-09' }
   },
@@ -5174,22 +5367,26 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '大平IC 46分', src: 'auto', at: '2026-07' },
     station:       { v: '城ヶ崎海岸 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197078/197078_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197078/197078_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "243": {  /* Azure Palace 伊豆高原 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-07' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    capacity:     { v: 14, src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
-    elevation:    { v: 329, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 5, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 6, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-07' },
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    capacity:      { v: 14, src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://azurepalace.net' },
+    elevation:     { v: 329, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 8, src: 'auto', at: '2026-07' },
+    conveni:       { v: 5, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 41分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188404/188404_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188404/188404_std.html' }
   },
 
   "244": {  /* HAKU-AKAZAWA- 【波空】 */
@@ -5265,43 +5462,47 @@ window.VILLAFARAS_SPEC = {
     ic:              { v: '大平IC 41分', src: 'auto', at: '2026-07' },
     station:         { v: '富戸 5分', src: 'auto', at: '2026-07' },
     onsen:           { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/195341/195341_std.html' },
     coldbath_season: { v: 'year', src: 'desk', at: '2026-09', url: 'https://luxevillas-izu.com/stay/sana-izuomuroyama/' }
   },
 
   "248": {  /* エンゼルフォレスト中伊豆 */
-    sauna_exists: { v: 'room', src: 'desk', at: '2026-08', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    sauna_temp:   { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    sauna_cap:    { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    water_temp:   { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    water_depth:  { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
-    capacity:     { v: 6, src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/stay/type4/' },
-    elevation:    { v: 445, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 24, src: 'auto', at: '2026-07' },
-    conveni:      { v: 14, src: 'auto', at: '2026-07' },
-    ic:           { v: '山伏峠IC 19分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊東 24分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 15, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'room', src: 'desk', at: '2026-08', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    sauna_temp:    { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    sauna_cap:     { v: 2, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    water_temp:    { v: 't1518', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    water_depth:   { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/107840' },
+    capacity:      { v: 6, src: 'desk', at: '2026-09', url: 'https://reserve.489ban.net/client/ang-n/0/plan/room/37807' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.angel-hotels.com/angelforest-rental-villa/nakaizu/stay/type4/' },
+    elevation:     { v: 445, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 24, src: 'auto', at: '2026-07' },
+    conveni:       { v: 14, src: 'auto', at: '2026-07' },
+    ic:            { v: '山伏峠IC 19分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊東 24分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 15, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188078/188078_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188078/188078_std.html' }
   },
 
   "249": {  /* グラン熱川 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
-    sauna_type:   { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
-    capacity:     { v: 16, src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
-    elevation:    { v: 276, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 8, src: 'auto', at: '2026-07' },
-    conveni:      { v: 7, src: 'auto', at: '2026-07' },
-    ic:           { v: '河津逆川IC 40分', src: 'auto', at: '2026-07' },
-    station:      { v: '伊豆熱川 8分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
+    sauna_type:    { v: 'indoor', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://www.ikyu.com/00052432/' },
+    capacity:      { v: 16, src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://sumasute.jp/shizuoka/12056' },
+    elevation:     { v: 276, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 8, src: 'auto', at: '2026-07' },
+    conveni:       { v: 7, src: 'auto', at: '2026-07' },
+    ic:            { v: '河津逆川IC 40分', src: 'auto', at: '2026-07' },
+    station:       { v: '伊豆熱川 8分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194868/194868_std.html' }
   },
 
   "250": {  /* プライベートリゾート南風 */
@@ -5320,19 +5521,21 @@ window.VILLAFARAS_SPEC = {
   },
 
   "251": {  /* LAMERVON */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/113784' },
-    coldbath:     { v: 'shower', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
-    kitchen_type: { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
-    capacity:     { v: 10, src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
-    elevation:    { v: 223, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 6, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 42分', src: 'auto', at: '2026-07' },
-    station:      { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 5, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/113784' },
+    coldbath:      { v: 'shower', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
+    kitchen_type:  { v: 'ih', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
+    capacity:      { v: 10, src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/65979.html' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/65979.html' },
+    elevation:     { v: 223, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 6, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 42分', src: 'auto', at: '2026-07' },
+    station:       { v: '城ヶ崎海岸 5分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 5, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183475/183475_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183475/183475_std.html' }
   },
 
   "252": {  /* 伊豆高原テントリゾート */
@@ -5364,26 +5567,30 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河津逆川IC 28分', src: 'auto', at: '2026-07' },
     station:       { v: '稲梓 25分', src: 'auto', at: '2026-07' },
     onsen:         { v: 4, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187074/187074_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187074/187074_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "254": {  /* 伊豆グランヴィレッジ　グランピング */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404.html' },
-    sauna_type:   { v: 'hut', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    sauna_hours:  { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    coldbath:     { v: 'tub', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
-    water_temp:   { v: 't1822', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
-    capacity:     { v: 5, src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
-    elevation:    { v: 228, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 7, src: 'auto', at: '2026-07' },
-    conveni:      { v: 4, src: 'auto', at: '2026-07' },
-    ic:           { v: '大平IC 41分', src: 'auto', at: '2026-07' },
-    station:      { v: '富戸 7分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 8, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404.html' },
+    sauna_type:    { v: 'hut', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    sauna_hours:   { v: 'reserve', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    coldbath:      { v: 'tub', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
+    water_temp:    { v: 't1822', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/sauna/' },
+    capacity:      { v: 5, src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://id-village.jp/granvillage/rooms/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://id-village.jp/granvillage/' },
+    elevation:     { v: 228, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 7, src: 'auto', at: '2026-07' },
+    conveni:       { v: 4, src: 'auto', at: '2026-07' },
+    ic:            { v: '大平IC 41分', src: 'auto', at: '2026-07' },
+    station:       { v: '富戸 7分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404_std.html' }
   },
 
   "255": {  /* 貸別荘「碧 ai」 */
@@ -5426,6 +5633,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '河津逆川IC 33分', src: 'auto', at: '2026-07' },
     station:       { v: '伊豆熱川 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196164/196164_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196164/196164_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5444,6 +5653,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '熱海峠IC 2分', src: 'auto', at: '2026-07' },
     station:       { v: '十国峠 4分', src: 'auto', at: '2026-07' },
     onsen:         { v: 27, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187583/187583_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187583/187583_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -5455,12 +5666,14 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://alivio-stay.jp/luxe-ogi/' },
     capacity:      { v: 8, src: 'desk', at: '2026-08', url: 'https://ankr-resort.team/alivio/luxe/' },
     pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://alivio-stay.jp/luxe-ogi/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199606/199606_std.html' },
     elevation:     { v: 187, src: 'auto', at: '2026-07' },
     supermarket:   { v: 6, src: 'auto', at: '2026-07' },
     conveni:       { v: 2, src: 'auto', at: '2026-07' },
     ic:            { v: '山伏峠IC 36分', src: 'auto', at: '2026-07' },
     station:       { v: '川奈 8分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199606/199606_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5536,6 +5749,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '谷川岳PA(下り) 27分', src: 'auto', at: '2026-07' },
     station:       { v: '湯檜曽 17分', src: 'auto', at: '2026-07' },
     onsen:         { v: 6, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193176/193176_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193176/193176_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -5585,6 +5800,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '厚田IC 37分', src: 'auto', at: '2026-07' },
     station:       { v: '万座・鹿沢口 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 8, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194456/194456_std.html' },
     firewood_fee:  { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-cottage-kitakaruizawa-1/' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -5623,6 +5839,7 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '厚田IC 38分', src: 'auto', at: '2026-07' },
     station:       { v: '万座・鹿沢口 9分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194460/194460_std.html' },
     firewood_fee:  { v: 'extra', src: 'desk', at: '2026-08', url: 'https://www.kashikiribesso.com/outdoor-attraction-kitakaruizawa/' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
@@ -5641,6 +5858,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '厚田IC 29分', src: 'auto', at: '2026-07' },
     station:       { v: '中之条 25分', src: 'auto', at: '2026-07' },
     onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/162764/162764_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/162764/162764_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -5685,12 +5904,14 @@ window.VILLAFARAS_SPEC = {
     bbq_roof:      { v: 'open', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
     capacity:      { v: 19, src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/stay/コテージ紹介-軽井沢/ハウス南軽井沢_1' },
     pet_ok:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://www.polar-resort.com/建物別詳細予約' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/170965/170965_std.html' },
     elevation:     { v: 939, src: 'auto', at: '2026-07' },
     supermarket:   { v: 10, src: 'auto', at: '2026-07' },
     conveni:       { v: 8, src: 'auto', at: '2026-07' },
     ic:            { v: '横川SA(上り) 13分', src: 'auto', at: '2026-07' },
     station:       { v: '軽井沢 10分', src: 'auto', at: '2026-07' },
     onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/170965/170965_std.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -5720,27 +5941,28 @@ window.VILLAFARAS_SPEC = {
   },
 
   "270": {  /* COCO VILLA 長瀞 */
-    sauna_exists: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    stove:        { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    sauna_temp:   { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    coldbath:     { v: 'bath', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    chiller:      { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    water_temp:   { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
-    water_depth:  { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    rest_chair:   { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    kitchen_type: { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    capacity:     { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    pet_ok:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    wifi:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
-    elevation:    { v: 241, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 2, src: 'auto', at: '2026-07' },
-    conveni:      { v: 2, src: 'auto', at: '2026-07' },
-    ic:           { v: '寄居折原 8分', src: 'auto', at: '2026-07' },
-    station:      { v: '樋口 1分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 10, src: 'auto', at: '2026-07' }
+    sauna_exists:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    stove:         { v: 'electric', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    sauna_temp:    { v: 90, src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    coldbath:      { v: 'bath', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    chiller:       { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    water_temp:    { v: 't1015', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
+    water_depth:   { v: 'd6080', src: 'desk', at: '2026-09', url: 'https://sauna-ikitai.com/saunas/91034' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-09', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    rest_chair:    { v: 'infinity', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    capacity:      { v: 12, src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    pet_ok:        { v: 'no', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-08', url: 'https://coco-villa.jp/villa/nagatoro/' },
+    elevation:     { v: 241, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 2, src: 'auto', at: '2026-07' },
+    conveni:       { v: 2, src: 'auto', at: '2026-07' },
+    ic:            { v: '寄居折原 8分', src: 'auto', at: '2026-07' },
+    station:       { v: '樋口 1分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 10, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199808/199808_std.html' }
   },
 
   "271": {  /* Earthboat Saitama Kawajima */
@@ -5765,28 +5987,32 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '桶川北本IC 11分', src: 'auto', at: '2026-07' },
     station:       { v: '鴻巣 13分', src: 'auto', at: '2026-07' },
     onsen:         { v: 12, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198833/198833_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198833/198833_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
   "272": {  /* ノーラ名栗 */
-    sauna_exists: { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834.html' },
-    sauna_type:   { v: 'tent', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    stove:        { v: 'wood', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    sauna_cap:    { v: 4, src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    loyly:        { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    sauna_hours:  { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    coldbath:     { v: 'pool', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    outdoor_rest: { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    rest_chair:   { v: 'chair', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
-    capacity:     { v: 4, src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' },
-    pet_ok:       { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' },
-    elevation:    { v: 250, src: 'auto', at: '2026-07' },
-    supermarket:  { v: 18, src: 'auto', at: '2026-07' },
-    conveni:      { v: 19, src: 'auto', at: '2026-07' },
-    ic:           { v: '狭山PA(外廻り) 46分', src: 'auto', at: '2026-07' },
-    station:      { v: '西吾野 18分', src: 'auto', at: '2026-07' },
-    onsen:        { v: 1, src: 'auto', at: '2026-07' },
-    bring_towel:  { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
+    sauna_exists:  { v: 'shared', src: 'desk', at: '2026-08', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834.html' },
+    sauna_type:    { v: 'tent', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    stove:         { v: 'wood', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_cap:     { v: 4, src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    loyly:         { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    sauna_hours:   { v: 'limited', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    coldbath:      { v: 'pool', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    outdoor_rest:  { v: 'yes', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    rest_chair:    { v: 'chair', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' },
+    capacity:      { v: 4, src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' },
+    pet_ok:        { v: 'yes', src: 'desk', at: '2026-09', url: 'https://nolla-naguri.jp/glamping/' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834_std.html' },
+    elevation:     { v: 250, src: 'auto', at: '2026-07' },
+    supermarket:   { v: 18, src: 'auto', at: '2026-07' },
+    conveni:       { v: 19, src: 'auto', at: '2026-07' },
+    ic:            { v: '狭山PA(外廻り) 46分', src: 'auto', at: '2026-07' },
+    station:       { v: '西吾野 18分', src: 'auto', at: '2026-07' },
+    onsen:         { v: 1, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://nolla-naguri.jp/sauna/' }
   },
 
   "273": {  /* HOLE37 */
@@ -5809,6 +6035,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '千代田PA(下り) 23分', src: 'auto', at: '2026-07' },
     station:       { v: '宮脇 16分', src: 'auto', at: '2026-07' },
     onsen:         { v: 13, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188221/188221_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188221/188221_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5896,6 +6124,7 @@ window.VILLAFARAS_SPEC = {
     station:       { v: '鹿島サッカースタジアム 2分', src: 'auto', at: '2026-07' },
     onsen:         { v: 9, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://no-12.jp/faq/' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197636/197636_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
@@ -5964,12 +6193,14 @@ window.VILLAFARAS_SPEC = {
     kitchen_type:  { v: 'gas', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     bbq_roof:      { v: 'roof', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     capacity:      { v: 20, src: 'desk', at: '2026-09', url: 'https://touemon.net/reservation/jp' },
+    wifi:          { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198607/198607_std.html' },
     elevation:     { v: 5, src: 'auto', at: '2026-07' },
     supermarket:   { v: 10, src: 'auto', at: '2026-07' },
     conveni:       { v: 9, src: 'auto', at: '2026-07' },
     ic:            { v: '千代田石岡IC 23分', src: 'auto', at: '2026-07' },
     station:       { v: '高浜 12分', src: 'auto', at: '2026-07' },
     onsen:         { v: 18, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198607/198607_std.html' },
     late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
@@ -6005,6 +6236,8 @@ window.VILLAFARAS_SPEC = {
     ic:            { v: '潮来行方IC 16分', src: 'auto', at: '2026-07' },
     station:       { v: '鹿島大野 3分', src: 'auto', at: '2026-07' },
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
+    bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192627/192627_std.html' },
+    bring_towel:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192627/192627_std.html' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 

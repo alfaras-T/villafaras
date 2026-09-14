@@ -826,6 +826,46 @@ def check_capacity_sync(villa_list, villas, rep):
     print("  %s" % ("○ 一致" if not n else "× 不一致 %d 件" % n))
 
 
+def check_checkin_sync(villa_list, villas, rep):
+    """late_arrival が index.html の checkin と矛盾していないか。
+
+    `late_arrival` は「21時以降の到着」の可否。index.html の `checkin` は
+    「15:00〜24:00」のような受付時間帯なので、**終了時刻が24時なのに「不可」**、
+    **20時なのに「可」**は、どちらかが誤っている。
+
+    2026-09 に楽天トラベルの「最終チェックイン」と突き合わせて4件見つかった。
+    **倒れる向きが施設ごとに違うので一律の推論では解けない。**
+
+      id=19 / id=280 … 楽天も checkin も 24:00。公式由来の `late_arrival: no` が外れ値
+      id=43          … 楽天は最終20:00 で公式の `no` に付く。checkin の 24:00 が外れ値
+      id=269         … `ok` なのに checkin は 20:00 まで
+
+    どちらを直すかは個別に決めるため、エラーではなく警告にする。
+    """
+    spec = {}
+    for vid, fields, _o in villas:
+        f = fields.get("late_arrival")
+        if f is not None:
+            spec[vid] = (f["v"], f.get("line"))
+    print("\n=== late_arrival と checkin の整合 ===")
+    n = 0
+    for v in villa_list:
+        vid = str(v["id"])
+        if vid not in spec:
+            continue
+        m = re.search(r"[〜~-](\d{1,2}):(\d{2})", str(v.get("checkin", "")))
+        if not m:
+            continue
+        end, (val, ln) = int(m.group(1)), spec[vid]
+        bad = (val == "no" and end >= 22) or (val == "ok" and end < 21)
+        if bad:
+            rep.add("WARN", "整合性", DATA, vid, "late_arrival", ln,
+                    "late_arrival=%s なのに index.html の checkin は %s"
+                    % (val, v.get("checkin")))
+            n += 1
+    print("  %s" % ("○ 一致" if not n else "△ 矛盾 %d 件" % n))
+
+
 def check_ota_buttons(villa_list, rep):
     """index.html の ota キーと villas/*.html のボタンが一致するか。
 
@@ -962,6 +1002,7 @@ def main():
     for _p, _t, _v in loaded:
         if os.path.basename(_p) == DATA:
             check_capacity_sync(villa_list, _v, rep)
+            check_checkin_sync(villa_list, _v, rep)
     check_url_hygiene(villa_list, rep)
     check_ota_dupes(villa_list, rep)
     check_ota_buttons(villa_list, rep)

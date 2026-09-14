@@ -10007,3 +10007,651 @@
      （一休の「1名～9名」を根拠に9としたが、予約サイトの「7名様まで」が正しかった）
      だけに、サウナ側の値が揃って一致したのは信頼度の材料になる。
    ========================================================================== */
+
+/* ==========================================================================
+   2026-09 楽天トラベルの設備・アメニティページを全件走査（192施設）
+   ==========================================================================
+
+   サウナイキタイを使い切ったので次の情報源を探した。条件は3つに整理してあった。
+   (1) 多数の施設を同じ構造で載せている、(2) 公式が書かない項目を持っている、
+   (3) 掲載の有無を1施設1検索で判定できる。
+
+   **楽天トラベルは (3) がそもそも要らなかった。** DB の `ota.rakuten` が施設番号を
+   持っているので、
+
+       https://travel.rakuten.co.jp/HOTEL/{no}/{no}_std.html
+
+   が機械的に決まる。**検索も同定も要らず、1施設1リクエスト。**
+   ページのタイトルは「設備・アメニティ・基本情報」で、中身は
+
+       基本情報   総部屋数
+       館内設備   <ul class="eqHght"> … 楽天の項目マスタ（チェックボックス）
+                  <ul class="lnBrk">  … 宿が入力した自由文
+       部屋設備・備品  <ul class="eqHght"> … 同じくマスタ
+
+   **マークアップが「マスタ」と「自由文」を別の ul で持っている。**
+   これがそのまま出典の強さの差になった（後述）。
+
+   ■ **記録 130施設 233セル。既存値との食い違いは 0件**
+
+     `bring_towel` +95 ／ `bring_amenity` +121 ／ `wifi` +17
+
+     | 項目 | 取得 | 新規 | 既存と一致 | 食い違い |
+     |---|---|---|---|---|
+     | bring_towel   | 128 | 95  | 33  | **0** |
+     | bring_amenity | 163 | 121 | 42  | **0** |
+     | wifi          | 151 | 17  | 134 | **0** |
+     | pet_ok        |  40 | 0   | 40  | **0** |
+
+     **249セルを既存値と突き合わせて食い違いが1件も出なかった。**
+     サウナイキタイ（温度・定員で何度も食い違った）とは性質が違う。
+     投稿者ではなく**運営自身が登録した項目マスタ**だからとみられる。
+     `pet_ok` は新規0だが、40件の既存値をそのまま裏付けた。
+
+   ■ **一覧に無いことは「なし」ではない。肯定側しか作っていない**
+
+     チェックが入っていないだけで、サウナイキタイの「無し」と同じ未設定の既定表示。
+     `bring` / `no` は1件も入れていない。
+
+   ■ **自由文（lnBrk）には別施設の内容が混ざる。決定的な例が出た**
+
+     id=236 Tiny Base The MOUNTAiN の自由文は
+
+       「**IHコンロ**、食洗機、炊飯器、トースター」
+       「サウナはフィンランド式サウナストーブ（HARVIA社・**薪式**）」
+
+     **同じ枠の2行のうち、サウナは正しくキッチンは誤っていた。**
+     公式 tinybase.co.jp/stay/ の「Information」は3つのタブに分かれており、
+
+       MOUNTAiN タブ … 「フィンランド式サウナ(**薪**)」「冷凍冷蔵庫 / **ガスコンロ** / 浄水器」
+       Reception / City Area タブ（SEA/ROCK/TRee/HOUSE/TRAILER/Valley）
+                      … 「**IHコンロ**…◇**Valleyのみ**： ガスコンロ/ **食洗機**」
+
+     楽天の「IHコンロ、食洗機」は**City Area 側の内容**である。既存値 `gas` が正しく、
+     **書き換えなかった。** サウナの「HARVIA社・薪式」のほうは公式と一致しており、
+     CLAUDE.md が「メーカー名だけでは熱源が確定しない」としていた HARVIA の例が
+     id=236（薪）／id=237（電気）の2件とも裏付けられた。
+
+     **だから今回の233セルはすべてマスタ側（eqHght）から採っている。**
+
+   ■ **`kitchen_type` は自由文にしか無く、1件も入れられなかった**
+
+     コンロの種類に触れた自由文は22施設。うち定型文を除くと、熱源が明記された
+     新規は id=215 マイグレテラスの「**コンロ：IH 一口＋カセットコンロ**」だけだった。
+     `ih` ＋ `kitchen_burners: 1` になるが、**id=236 の件の直後なので入れていない。**
+     公式 maigre.jp/terrace は JS 描画で本文が取れず裏が取れなかった。**要確認。**
+
+     楽天が用意した定型文（`kitchen_type` の根拠にしてはいけない）:
+       「キッチン/調理器具/食器/洗濯機/乾燥機/電子レンジ/エアコン」… 19施設
+       「調理道具/食器/洗濯機/乾燥機/電子レンジ/エアコン/キッチン」… 8施設
+       「※部屋によって設備が変わる場合がございます。」… 36施設
+
+   ■ **`late_arrival` は入れなかった。取れるが根拠の性質が違う**
+
+     「最終チェックイン：HH:MM」が182施設にあり、22時以降の74施設を
+     `late_arrival: ok` にできた（新規69）。**入れていない。**
+
+     既存値と照合できる5件のうち2件が公式と食い違った。
+
+       id=19  GIFTHOUSE 館山 那古海岸 … 公式 `no` ／ 楽天 最終24:00
+       id=280 藤右衛門              … 公式 `no` ／ 楽天 最終24:00
+
+     **しかも DB 自身の `checkin` は両方とも「15:00〜24:00」で楽天と一致する。**
+     つまり食い違っているのは楽天ではなく `late_arrival` のほうだった。
+
+   ■ **`checkin` と `late_arrival` が矛盾する既存値が4件ある（新しい検査項目）**
+
+     | 施設 | late_arrival | DB の checkin |
+     |---|---|---|
+     | id=19  GIFTHOUSE 館山 那古海岸 | no | 15:00〜**24:00** |
+     | id=43  Montevan RESORT VILLA | no | 15:00〜**24:00** |
+     | id=269 THE LOOKOUT KUSATSU   | **ok** | 15:00〜**20:00** |
+     | id=280 藤右衛門                | no | 15:00〜**24:00** |
+
+     id=43 は楽天も「最終20:00」で公式の `no` 側に付き、**DB の checkin が外れ値**。
+     id=19 / id=280 は逆に楽天と checkin が揃い、`late_arrival` が外れ値。
+     **どちらに倒れるかが施設ごとに違うので、一律の推論では解けない。**
+     `validate.py` に不変条件として入れ、個別に決着させる。
+
+     なお DB の `checkin` と楽天の最終チェックインは 150一致 / 32相違で、
+     **同じ出典ではない**（同一なら一致率が100%になるはず）。
+
+   ■ **住所が一致しない9件。うち2件は明らかに別施設の ota リンク**
+
+     照合は「番地の一致」または「楽天の住所がDBの住所で始まること」。
+     大字・字・郡の有無や施設名の付加は表記ゆれとして吸収した
+     （これを入れる前は33件が不一致に見えた）。
+
+       id=239 AMAO VILLA       … 楽天名「**AMAO VILLA 熱海**」熱海市伊豆山1165-201
+                                 DB は富戸911-122。**姉妹施設**
+       id=155 SAJIMA Funny house … 楽天名「**ZUSHI** Funny house」逗子市新宿2-13-20
+                                 DB は横須賀市佐島3-12-41。**姉妹施設**
+
+     **id=239 は混線した5つ目のフィールド。** addr / feature / desc を直したあとも
+     `ota.rakuten` が姉妹施設を指したままだった。
+
+     残る7件は番地が1〜2違う型で、どちらが正しいか決められない。
+
+       id=50  THE CLUB 919   不動堂452-**4**  ／ 楽天452-**22**（楽天名も別ブランド表記）
+       id=167 箱根リゾートyamaki 仙石原**474-30** ／ 楽天**480-1**
+       id=185 SAUNA VILLA 然  長野市**北石堂町1191-20** ／ 楽天**県町466**
+       id=191 軽井沢HOUSE VILLA 長倉**5575-8** ／ 楽天**4588-38**
+       id=228 マイグレパノラマ    吉田888-**45** ／ 楽天888-**44**
+       id=250 プライベートリゾート南風 大川1075-**46** ／ 楽天1075-**47**
+       id=252 伊豆高原テントリゾート 池614-**171** ／ 楽天614-**168**
+
+     **id=252 は2対2が2対2のまま動かなかった。** 楽天は公式と同じ 614-168 で、
+     booking・なっぷが 614-171（DB もこちら）。**出典を1つ足しても割れ方が変わらない。**
+
+   ■ **DB の住所に番地が無い施設（id=198 T&A Resort&Sauna KARUIZAWA）**
+
+     DB は「長野県北佐久郡御代田町塩野」で番地が無い。楽天は「塩野**482-90**」。
+     住所照合の対象から外れていたので今まで気づかなかった。**要訂正。**
+
+   ■ **掲載終了・404 の楽天リンク3件**
+
+       id=83  THE TIME FUJI        … 「指定されたページは掲載終了しました」
+       id=278 LUCY RESORT          … 同上
+       id=285 上小川レジャーペンション … HTTP 404
+
+     `ota` の方針どおり差し替えを試し、見つからなければ消す。**未処理。**
+
+   ■ **設備リストが空の17施設**
+
+     id=0, 1, 3, 16, 23, 24, 53, 58, 62, 107, 186, 226, 259, 260, 279, 283, 284。
+     宿が登録していないだけで、**「無い」ではない。**
+   ========================================================================== */
+
+  "2": {   /* 古民家宿るうふ 波之家 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183522/183522_std.html' }
+  },
+  "4": {   /* るうふ別邸 鴨川919 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192058/192058_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192058/192058_std.html' }
+  },
+  "6": {   /* CAP MARTIN Funny house */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188884/188884_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188884/188884_std.html' }
+  },
+  "15": {   /* amane */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183504/183504_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183504/183504_std.html' }
+  },
+  "17": {   /* the MELLOW HOUSE 館山 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199155/199155_std.html' }
+  },
+  "18": {   /* On the wave 館山 */
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196443/196443_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196443/196443_std.html' }
+  },
+  "19": {   /* GIFTHOUSE 館山 那古海岸 */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189728/189728_std.html' }
+  },
+  "20": {   /* GIFTHOUSE 2nd 館山 洲宮 */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194746/194746_std.html' }
+  },
+  "35": {   /* by the river Isumi */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188228/188228_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188228/188228_std.html' }
+  },
+  "41": {   /* ビーチテラス房総 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192245/192245_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192245/192245_std.html' }
+  },
+  "44": {   /* 久留里山荘（QULRI SANSO） */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198383/198383_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198383/198383_std.html' }
+  },
+  "45": {   /* HARUKA KANATA 森のヴィラ */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186100/186100_std.html' }
+  },
+  "55": {   /* SEA-LIFE TSURIGASAKI */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/190825/190825_std.html' }
+  },
+  "56": {   /* THE VIBES VILLA */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/190945/190945_std.html' }
+  },
+  "57": {   /* Refwind */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196620/196620_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196620/196620_std.html' }
+  },
+  "59": {   /* Under the Sea UBARA */
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196030/196030_std.html' }
+  },
+  "63": {   /* Dear Wan Spa Garden */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192049/192049_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192049/192049_std.html' }
+  },
+  "70": {   /* The Pacific Retreat TATEYAMA */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198028/198028_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198028/198028_std.html' }
+  },
+  "86": {   /* hotel norm. air */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191557/191557_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191557/191557_std.html' }
+  },
+  "87": {   /* hotel norm. ao */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193358/193358_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193358/193358_std.html' }
+  },
+  "88": {   /* hotel norm. fuji */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191756/191756_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191756/191756_std.html' }
+  },
+  "89": {   /* 景雅 奥河口湖 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197840/197840_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197840/197840_std.html' }
+  },
+  "90": {   /* totonoco 湖畔の隠れ家 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197839/197839_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197839/197839_std.html' }
+  },
+  "91": {   /* ビジョングランピングリゾート山中湖 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184648/184648_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184648/184648_std.html' }
+  },
+  "94": {   /* abrAsus hotel Fuji */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188121/188121_std.html' }
+  },
+  "95": {   /* 天空の温泉ヴィラ紬 河口湖 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192296/192296_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192296/192296_std.html' }
+  },
+  "98": {   /* SILVER SPRAY 山中湖 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/147123/147123_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/147123/147123_std.html' }
+  },
+  "99": {   /* ハンズアウトドアリゾート */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/180435/180435_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/180435/180435_std.html' }
+  },
+  "102": {   /* SAUNEA白州 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192742/192742_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192742/192742_std.html' }
+  },
+  "104": {   /* 憩~ikoi_Fuji */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194181/194181_std.html' }
+  },
+  "105": {   /* BLANC FUJI */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188976/188976_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188976/188976_std.html' }
+  },
+  "106": {   /* 郷音 -G.O.A.T.- The Summit Club */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197601/197601_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197601/197601_std.html' }
+  },
+  "113": {   /* ASH Villa 富士河口湖 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191462/191462_std.html' }
+  },
+  "114": {   /* エンゼルフォレスト那須 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187548/187548_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187548/187548_std.html' }
+  },
+  "121": {   /* COCO VILLA 那須高原 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199675/199675_std.html' }
+  },
+  "122": {   /* Earthboat Nasu */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198001/198001_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198001/198001_std.html' }
+  },
+  "123": {   /* RIVER VIEW HOUSE */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199770/199770_std.html' }
+  },
+  "125": {   /* 森deワーケなすっぽ */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189192/189192_std.html' }
+  },
+  "128": {   /* Haga Farm＆Glamping（芳賀ファーム&グランピング） */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/181648/181648_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/181648/181648_std.html' }
+  },
+  "130": {   /* 那須温泉グランピング Nenn（ネン） */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184489/184489_std.html' }
+  },
+  "131": {   /* LEVATA */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188241/188241_std.html' }
+  },
+  "132": {   /* GEOSPOT MOTOHAKONE A */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197199/197199_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197199/197199_std.html' }
+  },
+  "133": {   /* GEOSPOT MOTOHAKONE B */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197200/197200_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197200/197200_std.html' }
+  },
+  "134": {   /* GEOSPOT MOTOHAKONE C */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198649/198649_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198649/198649_std.html' }
+  },
+  "137": {   /* P's Wood 箱根仙石原 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196203/196203_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196203/196203_std.html' }
+  },
+  "138": {   /* Casablanca Villa Hakone */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198836/198836_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198836/198836_std.html' }
+  },
+  "140": {   /* ルクス箱根湯本 LUX HAKONE YUMOTO */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188109/188109_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188109/188109_std.html' }
+  },
+  "142": {   /* プライベートリゾート仙居 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/195327/195327_std.html' }
+  },
+  "146": {   /* TIMeSCAPE -hakone- */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197473/197473_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197473/197473_std.html' }
+  },
+  "147": {   /* 箱根芦ノ湖ゴルフヴィラ */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194866/194866_std.html' }
+  },
+  "149": {   /* MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182429/182429_std.html' }
+  },
+  "150": {   /* 3rd HOUSE INAMURAGASAKI */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186388/186388_std.html' }
+  },
+  "151": {   /* 琥珀-AMBER- */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/167276/167276_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/167276/167276_std.html' }
+  },
+  "153": {   /* UMITO VILLA KAMAKURA ZAIMOKUZA */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196394/196394_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196394/196394_std.html' }
+  },
+  "158": {   /* GIFTHOUSE 三浦 諸磯 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194872/194872_std.html' }
+  },
+  "159": {   /* 葉山THE・TERRACE　HOUSE */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199548/199548_std.html' }
+  },
+  "160": {   /* 雅・仙石原 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194068/194068_std.html' }
+  },
+  "161": {   /* Oceanfront Villa Hale Kahakai */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/186676/186676_std.html' }
+  },
+  "162": {   /* プライベートヴィラ愛川 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196488/196488_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196488/196488_std.html' }
+  },
+  "168": {   /* 湯屋　やまざくら */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/130554/130554_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/130554/130554_std.html' }
+  },
+  "176": {   /* SANU 2nd Home 北軽井沢2nd */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196193/196193_std.html' }
+  },
+  "179": {   /* SANU 2nd Home 白馬1st */
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196308/196308_std.html' }
+  },
+  "181": {   /* GLAMDAY STYLE HOTEL SUITE 川ノ音 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192930/192930_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192930/192930_std.html' }
+  },
+  "183": {   /* Hakuba Amber Resort */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183132/183132_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183132/183132_std.html' }
+  },
+  "187": {   /* GREENSEED軽井沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/179069/179069_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/179069/179069_std.html' }
+  },
+  "188": {   /* COCO VILLA 軽井沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199674/199674_std.html' }
+  },
+  "189": {   /* Tatehata House 北軽井沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193428/193428_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193428/193428_std.html' }
+  },
+  "192": {   /* ポーラーハウスカナディアン南軽井沢1 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/171143/171143_std.html' }
+  },
+  "193": {   /* SAUNA FOREST CABIN 軽井沢御代田 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/185104/185104_std.html' }
+  },
+  "194": {   /* 海野宿一棟貸し宿　上州屋 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192209/192209_std.html' }
+  },
+  "195": {   /* Earthboat Kurohime */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191521/191521_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/191521/191521_std.html' }
+  },
+  "196": {   /* Karuizawa Luxe Villa */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197174/197174_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197174/197174_std.html' }
+  },
+  "198": {   /* T&A Resort&Sauna KARUIZAWA */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199893/199893_std.html' }
+  },
+  "200": {   /* enukoti（エヌコティ） */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187996/187996_std.html' }
+  },
+  "201": {   /* キュレーション熱海桃乃八庵 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184739/184739_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184739/184739_std.html' }
+  },
+  "202": {   /* キュレーション熱海須藤水園 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196585/196585_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196585/196585_std.html' }
+  },
+  "203": {   /* キュレーション熱海桃山雅苑 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196583/196583_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196583/196583_std.html' }
+  },
+  "204": {   /* オーシャンビュー南熱海 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184106/184106_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184106/184106_std.html' }
+  },
+  "205": {   /* オーシャンビュー熱海自然郷 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183128/183128_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183128/183128_std.html' }
+  },
+  "206": {   /* オーシャンビュー熱海自然楼 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182584/182584_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182584/182584_std.html' }
+  },
+  "207": {   /* パノーラ伊豆赤沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168590/168590_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168590/168590_std.html' }
+  },
+  "208": {   /* パノーラ熱海桜沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168587/168587_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168587/168587_std.html' }
+  },
+  "209": {   /* 伊豆高原プライム */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168588/168588_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/168588/168588_std.html' }
+  },
+  "210": {   /* 熱海オーシャンハウス */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196587/196587_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196587/196587_std.html' }
+  },
+  "211": {   /* オーシャンテラスAtami */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184081/184081_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184081/184081_std.html' }
+  },
+  "212": {   /* 熱海リゾート */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196586/196586_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196586/196586_std.html' }
+  },
+  "213": {   /* 熱海別邸　双梅庵 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196591/196591_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196591/196591_std.html' }
+  },
+  "214": {   /* マイグレICE */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187384/187384_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187384/187384_std.html' }
+  },
+  "215": {   /* マイグレテラス */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182654/182654_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/182654/182654_std.html' }
+  },
+  "216": {   /* マイグレ天 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183452/183452_std.html' }
+  },
+  "217": {   /* マイグレフラット */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184037/184037_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184037/184037_std.html' }
+  },
+  "218": {   /* マイグレ600 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187516/187516_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187516/187516_std.html' }
+  },
+  "219": {   /* マイグレIKKI */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187517/187517_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187517/187517_std.html' }
+  },
+  "220": {   /* マイグレKENKEN */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187518/187518_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187518/187518_std.html' }
+  },
+  "221": {   /* マイグレYEBISU */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189064/189064_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189064/189064_std.html' }
+  },
+  "222": {   /* マイグレ海の声 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189276/189276_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/189276/189276_std.html' }
+  },
+  "223": {   /* マイグレケニーズハウス */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192764/192764_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192764/192764_std.html' }
+  },
+  "224": {   /* マイグレchillax */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192033/192033_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192033/192033_std.html' }
+  },
+  "225": {   /* マイグレHOODSTAR */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193109/193109_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193109/193109_std.html' }
+  },
+  "227": {   /* マイグレA5 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196050/196050_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196050/196050_std.html' }
+  },
+  "229": {   /* WEAZER西伊豆 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187262/187262_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187262/187262_std.html' }
+  },
+  "234": {   /* COCO VILLA 伊豆赤沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199762/199762_std.html' }
+  },
+  "235": {   /* COCO VILLA 大室山 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199624/199624_std.html' }
+  },
+  "236": {   /* Tiny Base The MOUNTAiN */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197348/197348_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197348/197348_std.html' }
+  },
+  "237": {   /* Tiny Base The Irita-hama */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197338/197338_std.html' }
+  },
+  "240": {   /* Wellリゾート富士 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192674/192674_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192674/192674_std.html' }
+  },
+  "241": {   /* Poolen ITO */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196277/196277_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196277/196277_std.html' }
+  },
+  "242": {   /* the villa Oka 伊豆高原温泉 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197078/197078_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197078/197078_std.html' }
+  },
+  "243": {   /* Azure Palace 伊豆高原 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188404/188404_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188404/188404_std.html' }
+  },
+  "247": {   /* SANA 伊豆大室山-Pool Villa- */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/195341/195341_std.html' }
+  },
+  "248": {   /* エンゼルフォレスト中伊豆 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188078/188078_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188078/188078_std.html' }
+  },
+  "249": {   /* グラン熱川 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194868/194868_std.html' }
+  },
+  "251": {   /* LAMERVON */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183475/183475_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/183475/183475_std.html' }
+  },
+  "253": {   /* 伊豆グランピングリゾートIshiki385 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187074/187074_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187074/187074_std.html' }
+  },
+  "254": {   /* 伊豆グランヴィレッジ　グランピング */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/184404/184404_std.html' }
+  },
+  "256": {   /* パーパスリゾート EG Sky Terrace 熱川 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196164/196164_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/196164/196164_std.html' }
+  },
+  "257": {   /* THE GLAMPING 箱根十国峠 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187583/187583_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/187583/187583_std.html' }
+  },
+  "258": {   /* ALIVIO LUXE */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199606/199606_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199606/199606_std.html' }
+  },
+  "261": {   /* Earthboat Minakami Fujiwara */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193176/193176_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/193176/193176_std.html' }
+  },
+  "263": {   /* アウトドア貸切別荘北軽井沢1 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194456/194456_std.html' }
+  },
+  "265": {   /* アウトドアアトラクション北軽井沢 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/194460/194460_std.html' }
+  },
+  "266": {   /* 温泉グランピングシマブルー */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/162764/162764_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/162764/162764_std.html' }
+  },
+  "268": {   /* ポーラーハウス南軽井沢1 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/170965/170965_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/170965/170965_std.html' }
+  },
+  "270": {   /* COCO VILLA 長瀞 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/199808/199808_std.html' }
+  },
+  "271": {   /* Earthboat Saitama Kawajima */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198833/198833_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198833/198833_std.html' }
+  },
+  "272": {   /* ノーラ名栗 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188834/188834_std.html' }
+  },
+  "273": {   /* HOLE37 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188221/188221_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/188221/188221_std.html' }
+  },
+  "277": {   /* No.12 Kashima Fan Zone */
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/197636/197636_std.html' }
+  },
+  "280": {   /* 一棟貸切宿　藤右衛門 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198607/198607_std.html' },
+    wifi:            { v: 'yes', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198607/198607_std.html' }
+  },
+  "282": {   /* GLAMPING KASHIMA 753 #00 */
+    bring_amenity:   { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192627/192627_std.html' },
+    bring_towel:     { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/192627/192627_std.html' }
+  },
