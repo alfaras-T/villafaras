@@ -5936,7 +5936,7 @@ window.VILLAFARAS_SPEC = {
     onsen:         { v: 3, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
     bring_towel:   { v: 'ready', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
-    late_arrival:  { v: 'ok', src: 'desk', at: '2026-08', url: 'https://www.aco.co.jp/id/67359.html' },
+    late_arrival:  { v: 'no', src: 'desk', at: '2026-09', url: 'https://www.aco.co.jp/id/67359.html' },
     winter_access: { v: 'tire', src: 'auto', at: '2026-09' }
   },
 
@@ -6201,7 +6201,6 @@ window.VILLAFARAS_SPEC = {
     station:       { v: '高浜 12分', src: 'auto', at: '2026-07' },
     onsen:         { v: 18, src: 'auto', at: '2026-07' },
     bring_amenity: { v: 'ready', src: 'desk', at: '2026-09', url: 'https://travel.rakuten.co.jp/HOTEL/198607/198607_std.html' },
-    late_arrival:  { v: 'no', src: 'desk', at: '2026-08', url: 'https://touemon.net/' },
     winter_access: { v: 'ok', src: 'auto', at: '2026-09' }
   },
 
