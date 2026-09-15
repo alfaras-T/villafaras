@@ -1,10 +1,19 @@
 .env
 out/
-.env
-out/
 
 # エージェントが調査中にダウンロードした一時ファイルを取り込まないため
 *.pdf
 
 # エージェントの作業用ワークツリー
 .claude/worktrees/
+
+# macOS / Google ドライブが勝手に作るもの。
+# 2026-09 にリポジトリを共有ドライブへ移した。Finder が触るたびに
+# .DS_Store が書き変わり、差分に出続けるので追跡から外した。
+.DS_Store
+.AppleDouble
+Icon?
+*.download
+# ドライブが競合を検出したときに作る複製
+*のコピー.*
+*conflicted copy*
