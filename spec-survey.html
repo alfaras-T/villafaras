@@ -4,103 +4,416 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>掲載情報の確認フォーム｜villafaras（ヴィラファラス）</title>
+<title>掲載内容の確認｜villafaras</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 <style>
+/* ==========================================================================
+   spec-survey — オーナー確認票
+   --------------------------------------------------------------------------
+   意匠の方針: **フォームではなく「校正刷り」。**
+   施設ごとの記録票が刷り上がっていて、空欄だけが残っている、という体裁。
+
+   ・カードを積まない。**罫線で囲った面の中に行を組む。**
+     設問ごとに箱を作ると29個の同じ箱が並び、強弱が死ぬ。
+   ・角丸は装飾に使わない。面2px / 入力3px / 選択0 と**役割で変える。**
+   ・余白は等間隔にしない。見出し直後は詰め、群と群の間は大きく開ける。
+   ・**設問の型ごとに操作面の形を変える。** 二択＝セグメント、
+     順序のある選択肢＝横に伸びる目盛り、多択＝折返し、数値＝実寸の枠。
+   ・進捗はバーではなく**12個の目盛り**。どれが済んだか分かる。
+   ========================================================================== */
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF;--ok:#2E7D5B}
-body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
-header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px}
-header a{color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-.wrap{max-width:640px;margin:0 auto;padding:32px 20px 80px}
-.page-title{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(19px,4vw,25px);font-weight:800;text-align:center;margin-bottom:8px}
-.lede{font-size:13.5px;color:var(--ink2);text-align:center;margin-bottom:22px}
 
-.facility{background:var(--o-pale);border:1.5px solid var(--o-soft);border-radius:14px;padding:14px 16px;margin-bottom:20px}
-.facility .fname{font-weight:800;font-size:16px}
-.facility .faddr{font-size:12.5px;color:var(--ink2);margin-top:2px}
-.facility .fwrong{font-size:12px;margin-top:8px}
-.facility .fwrong a{color:var(--o1);font-weight:700}
-.picker{margin-bottom:20px}
-.picker select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--white)}
+:root{
+  /* 既存サイト（index.html）から継承 */
+  --o1:#FF6B2B; --o-pale:#FFF4ED; --o-soft:#FFE8D6;
+  --ink:#2A1A10; --ink2:#5C4434; --muted:#A88C78;
+  --cream:#FFFBF7; --border:#F0E2D5; --white:#FFF;
+  --gold:#C9A84C;
 
-.bar{position:sticky;top:0;z-index:5;background:var(--cream);padding:10px 0 12px;border-bottom:1px solid var(--border);margin-bottom:18px}
-.bar-track{height:7px;background:var(--o-soft);border-radius:4px;overflow:hidden}
-.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--o1),var(--o3));transition:width .25s}
-.bar-txt{font-size:12px;color:var(--ink2);margin-top:6px;font-weight:700}
+  /* 確認票のために足した段階。紙の陰影を薄く刻む */
+  --rule:#E8D9CB;          /* 実線の罫 */
+  --rule-2:#F3E8DD;        /* 内側の細罫 */
+  --sink:#FDF8F3;          /* 沈めた面（任意欄） */
 
-.grp{margin-bottom:26px}
-.grp-h{font-size:13px;font-weight:800;color:var(--o1);letter-spacing:.04em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--o-soft)}
-.q{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 15px;margin-bottom:10px}
-.q.answered{border-color:var(--o3);background:#FFFDFA}
-.q-l{font-size:14px;font-weight:700;margin-bottom:2px}
-.q-n{font-size:12px;color:var(--muted);margin-bottom:9px;line-height:1.6}
-.opts{display:flex;flex-wrap:wrap;gap:7px}
-.opt{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1.5px solid var(--border);border-radius:999px;font-size:13px;cursor:pointer;background:var(--cream);user-select:none}
-.opt input{margin:0;accent-color:var(--o1)}
-.opt.sel{border-color:var(--o1);background:var(--o-pale);font-weight:700}
-.numrow{display:flex;align-items:center;gap:9px}
-.numrow input{width:120px;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;background:var(--cream)}
-.numrow .unit{font-size:13px;color:var(--ink2);font-weight:700}
-.q .skip{font-size:11.5px;color:var(--muted);margin-top:8px;cursor:pointer;display:inline-block}
-.q .skip:hover{color:var(--o1)}
+  --serif:'Cormorant Garamond',"Times New Roman",serif;
+  --sans:'Noto Sans JP','Poppins',sans-serif;
+  --disp:'Poppins','Noto Sans JP',sans-serif;
 
-.more-btn{width:100%;padding:13px;border:1.5px dashed var(--o3);border-radius:12px;background:var(--o-pale);color:var(--o1);font-size:14px;font-weight:800;cursor:pointer;font-family:inherit}
-.more-btn:hover{background:var(--o-soft)}
+  /* 等間隔にしない。4 / 7 / 12 / 20 / 34 / 56 / 92 */
+  --s1:4px; --s2:7px; --s3:12px; --s4:20px; --s5:34px; --s6:56px; --s7:92px;
+}
+
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans); background:var(--cream); color:var(--ink);
+  line-height:1.75; font-size:15px;
+  -webkit-font-smoothing:antialiased; font-feature-settings:"palt" 1;
+}
+a{color:inherit}
+
+/* ---------- 版面 ---------- */
+.sheet{max-width:680px;margin:0 auto;padding:0 var(--s4) var(--s7)}
+
+/* ---------- 送り状（ヘッダ） ----------
+   帯ではなく、紙の天の余白。ロゴは小さく、施設名を主役にする。 */
+.masthead{padding:var(--s5) 0 0}
+.brand{
+  font-family:var(--disp); font-size:11px; font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+  display:flex; align-items:baseline; gap:var(--s2);
+}
+.brand::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+.subject{margin-top:var(--s5)}
+.subject .eyebrow{
+  font-size:11px; font-weight:700; letter-spacing:.16em;
+  color:var(--o1); text-transform:uppercase; font-family:var(--disp);
+}
+/* 施設名。ページで最大の要素。セリフで格を出す */
+.subject h1{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(30px,7.4vw,44px); line-height:1.18; letter-spacing:.005em;
+  margin:var(--s2) 0 var(--s1); text-wrap:balance;
+}
+.subject .addr{
+  font-size:12.5px; color:var(--muted); letter-spacing:.02em;
+}
+.subject .wrong{font-size:11.5px;color:var(--muted);margin-top:var(--s3)}
+.subject .wrong a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- 前書き ---------- */
+.lede{
+  margin:var(--s5) 0 0; font-size:15.5px; line-height:1.95; color:var(--ink2);
+  max-width:31em;
+}
+/* 文の切れ目で折る。Safari は text-wrap:pretty を解さないので、
+   折ってよい位置を文書側に持たせる。 */
+.lede .br{display:block}
+.lede b{color:var(--ink);font-weight:700}
+
+/* ---------- 進捗＝目盛り。バーにしない ---------- */
+.gauge{
+  position:sticky; top:0; z-index:9; background:var(--cream);
+  padding:var(--s3) 0 var(--s2); margin-top:var(--s5);
+  border-bottom:1px solid var(--rule);
+  display:flex; align-items:center; gap:var(--s3);
+}
+.ticks{display:flex;gap:4px;flex:1;align-items:flex-end;height:14px}
+.tick{
+  flex:1; height:5px; background:var(--o-soft); border-radius:1px;
+  transition:height .2s ease,background .2s ease;
+}
+.tick.on{height:14px;background:var(--o1)}
+.gauge-n{
+  font-family:var(--disp); font-size:11.5px; font-weight:600;
+  color:var(--muted); letter-spacing:.06em; white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.gauge-n b{color:var(--ink);font-size:17px}
+.gauge .who{
+  font-family:var(--serif); font-size:15px; color:var(--ink2);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  max-width:0; opacity:0; transition:max-width .25s ease,opacity .25s ease;
+}
+.gauge.pinned .who{max-width:11em;opacity:1}
+
+/* ---------- 設問の群。**これが唯一の面** ---------- */
+.grp{margin-top:var(--s6)}
+.grp-h{
+  display:flex; align-items:center; gap:var(--s2);
+  font-family:var(--disp); font-size:10.5px; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--ink2);
+  margin-bottom:var(--s3);
+}
+.grp-h::before{
+  content:""; width:14px; height:2px; background:var(--o1); flex:0 0 auto;
+}
+.grp-h::after{content:"";flex:1;height:1px;background:var(--rule-2);margin-left:var(--s1)}
+#optional .grp-h::before{background:var(--rule);width:8px}
+.grp-body{
+  background:var(--white); border:1px solid var(--rule);
+  border-radius:2px;              /* 紙。丸めない */
+}
+/* **設問が1つだけの群は詰める。** 3問の群と同じ厚みの面を立てると、
+   1行だけが広い紙の上に浮いて見え、群の見出しと二重になる。 */
+.grp.solo .q{padding-top:var(--s4);padding-bottom:var(--s3)}
+.grp.solo{margin-top:var(--s5)}
+
+/* ---------- 設問＝行。カードにしない ---------- */
+.q{
+  display:grid; grid-template-columns:2.1rem 1fr; gap:0 var(--s2);
+  padding:var(--s5) var(--s4) var(--s4) var(--s3);  /* 上を厚く、下を薄く */
+  border-top:1px solid var(--rule-2);
+  position:relative;
+}
+.q:first-child{border-top:0}
+/* 回答済みは背景を塗らず、左端に細い罫を立てる */
+.q::before{
+  content:""; position:absolute; left:0; top:-1px; bottom:-1px; width:2px;
+  background:transparent; transition:background .18s ease;
+}
+.q.done::before{background:var(--o1)}
+
+.q-no{
+  font-family:var(--disp); font-size:12px; font-weight:600;
+  color:var(--muted); font-variant-numeric:tabular-nums;
+  padding-top:2px; letter-spacing:.04em; transition:color .18s ease;
+}
+.q.done .q-no{color:var(--o1)}
+.q-head{min-width:0}
+.q-l{font-size:15.5px;font-weight:700;line-height:1.5;letter-spacing:.01em}
+.q-n{font-size:12px;color:var(--muted);line-height:1.6;margin-top:1px}
+.q-in{grid-column:2;margin-top:var(--s3)}
+
+/* ---------- 操作面は設問の型で変える ----------
+   (a) 二択 = セグメント（隣接。境界を共有する） */
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.seg label{
+  padding:8px 22px; font-size:13.5px; cursor:pointer; background:var(--white);
+  border-left:1px solid var(--rule); transition:background .14s,color .14s;
+  -webkit-tap-highlight-color:transparent; font-weight:500;
+}
+.seg label:first-child{border-left:0}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg label:hover{background:var(--o-pale)}
+.seg label.sel{background:var(--ink);color:var(--white);font-weight:700}
+
+/* (b) 順序のある選択肢 = 横に伸びる目盛り。並びが意味を持つ */
+.scale{display:flex;align-items:stretch;position:relative;padding:7px 0 0;margin-top:-5px}
+.scale::before{
+  content:"";position:absolute;top:0;height:1px;background:var(--rule);
+  left:6%;right:6%;      /* 端の目盛りの中心で止める。線が宙に浮かない */
+}
+.scale label{
+  flex:1; text-align:center; padding:9px 4px 0; cursor:pointer; position:relative;
+  font-size:11.5px; line-height:1.45; color:var(--ink2);
+  -webkit-tap-highlight-color:transparent;
+}
+.scale label::before{
+  content:"";position:absolute;top:-1px;left:50%;width:1px;height:7px;
+  background:var(--rule);transform:translateX(-50%);
+}
+.scale input{position:absolute;opacity:0;width:0;height:0}
+.scale label:hover{color:var(--ink)}
+/* **太さを変えない。** 選択で font-weight を上げると幅が動き、
+   目盛りが左右にずれて「目盛り」として読めなくなる。色と背丈で示す。 */
+.scale label.sel{color:var(--o1)}
+.scale label.sel::before{background:var(--o1);height:13px;width:2px;top:-3px}
+
+/* (c) それ以外の多択 = 折返し。幅は中身に従わせる（均一にしない） */
+.wrap{display:flex;flex-wrap:wrap;gap:2px var(--s4);margin-top:-2px}
+.wrap label{
+  padding:4px 1px 5px; font-size:14px; cursor:pointer; color:var(--ink2);
+  border-bottom:1px dashed var(--rule); transition:color .14s,border-color .14s;
+  -webkit-tap-highlight-color:transparent; line-height:1.5;
+}
+.wrap input{position:absolute;opacity:0;width:0;height:0}
+.wrap label:hover{color:var(--ink);border-bottom-color:var(--o1)}
+.wrap label.sel{
+  color:var(--ink); font-weight:700;
+  border-bottom:2px solid var(--o1); padding-bottom:4px;
+}
+
+/* (d) 数値 = 桁数ぶんの実寸。汎用の全幅入力にしない */
+.num{display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap}
+/* **下線は入力と単位までに留める。** ヒストまで含めると、空のとき
+   長い罫だけが宙に浮いて「壊れている」ように見えた。 */
+.num-f{
+  display:inline-flex; align-items:baseline; gap:5px;
+  border-bottom:1.5px solid var(--rule); padding:0 2px 3px;
+  transition:border-color .16s ease;
+}
+.num-f:focus-within{border-bottom-color:var(--o1)}
+.num input{
+  width:2.6em; padding:0; font-family:var(--disp); font-size:22px;
+  font-weight:600; text-align:center; font-variant-numeric:tabular-nums;
+  border:0; background:none; color:var(--ink); -webkit-appearance:none;
+}
+.num input::-webkit-input-placeholder{color:var(--rule);font-weight:500}
+.num input::placeholder{color:var(--rule);font-weight:500}
+.num input:focus{outline:none}
+.num .unit{font-size:13px;color:var(--ink2);font-weight:700}
+.num .hint{font-size:11px;color:var(--muted);white-space:nowrap;align-self:center}
+.num .hint.bad{color:#B03A1A;font-weight:700}
+.num.wide input{width:5em}
+
+.undo{
+  position:absolute; top:var(--s4); right:var(--s4);
+  font-size:11px; color:var(--muted); cursor:pointer;
+  opacity:0; transition:opacity .16s ease;
+  border-bottom:1px solid var(--rule);
+}
+.q:hover .undo,.q:focus-within .undo{opacity:1}
+.undo:hover{color:var(--ink2);border-bottom-color:var(--ink2)}
+/* 触る端末はホバーが無いので常に出すしかないが、
+   回答するたびに増えて騒がしくなる。極力沈めて、大きさも落とす。 */
+@media (hover:none){ .undo{opacity:.42;font-size:10.5px;border-bottom-color:transparent} }
+
+/* ---------- 任意欄。地色に沈めて、脚注の位置に置く ---------- */
+.more{
+  margin-top:var(--s5); display:flex; align-items:center; gap:var(--s3);
+  font-family:var(--disp); font-size:12px; font-weight:600; letter-spacing:.08em;
+  color:var(--ink2); cursor:pointer; background:none; border:0; padding:0;
+  width:100%; font-family:var(--disp);
+}
+.more::after{content:"";flex:1;height:1px;background:var(--rule)}
+.more .mk{
+  font-size:15px; color:var(--o1); line-height:1;
+  transition:transform .2s ease; display:inline-block;
+}
+.more:hover{color:var(--ink)}
 #optional{display:none}
 #optional.open{display:block}
+/* **任意欄はパネルにしない。** 同じ白い箱が並ぶと重要12問と等価に見える。
+   枠を外し、罫線だけで組んで、地の上の脚注として沈める。 */
+#optional .grp{margin-top:var(--s5)}
+#optional .grp-body{background:none;border:0;border-top:1px solid var(--rule-2)}
+#optional .q{
+  grid-template-columns:1fr; padding:var(--s3) 0;
+  border-top:1px solid var(--rule-2);
+}
+#optional .q:first-child{border-top:0}
+#optional .q-no{display:none}
+#optional .q-in{grid-column:1;margin-top:var(--s2)}
+#optional .q-l{font-size:14px;font-weight:500;color:var(--ink2)}
+#optional .q-n{font-size:11.5px}
+#optional .q.done .q-l{color:var(--ink);font-weight:700}
+#optional .grp-h{font-size:10px;opacity:.85}
 
-.known{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 15px;margin-bottom:12px}
-.known h3{font-size:13px;font-weight:800;margin-bottom:4px}
-.known p.note{font-size:12px;color:var(--muted);margin-bottom:10px}
-.known dl{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:12.5px}
-.known dt{color:var(--ink2);white-space:nowrap}
-.known dd{font-weight:700}
-textarea{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);resize:vertical;min-height:80px}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:6px}
-.field input[type=text],.field input[type=email]{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream)}
+/* ---------- 台帳（現在の掲載内容）。行組みを変えて別の手触りにする ---------- */
+.ledger{margin-top:var(--s7)}
+.ledger .grp-h{color:var(--ink2)}
+.ledger-body{
+  border-top:1px solid var(--ink); border-bottom:1px solid var(--rule);
+  padding:var(--s3) 0;
+}
+.ledger p.cap{font-size:12px;color:var(--muted);margin-bottom:var(--s3)}
+.led{
+  display:flex; align-items:baseline; gap:var(--s2);
+  font-size:13px; line-height:2.15;
+}
+.led dt{color:var(--ink2);white-space:nowrap}
+.led .dots{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-4px)}
+.led dd{
+  font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums;
+}
 
-.submit-btn{width:100%;padding:16px;border:none;border-radius:12px;background:linear-gradient(90deg,var(--o1),var(--o2));color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
-.submit-btn:hover{opacity:.92}
-.submit-btn[disabled]{opacity:.5;cursor:default}
-.note{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.65}
-.msg{padding:13px 15px;border-radius:12px;font-size:13.5px;font-weight:700;margin-top:12px;display:none}
-.msg.err{background:#FFEFEA;color:#B03A1A;display:block}
-.msg.ok{background:#EAF7F0;color:var(--ok);display:block}
-.done{text-align:center;padding:40px 20px}
-.done h2{font-size:20px;font-weight:800;margin-bottom:10px}
-.done p{font-size:14px;color:var(--ink2)}
-footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;line-height:1.7}
+/* ---------- 記名欄 ---------- */
+.tail{margin-top:var(--s6)}
+.fld{margin-top:var(--s4)}
+.fld label{
+  display:block; font-size:11px; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; font-family:var(--disp); color:var(--muted);
+  margin-bottom:var(--s2);
+}
+.fld textarea,.fld input{
+  width:100%; padding:11px 13px; font-family:inherit; font-size:14.5px;
+  border:1px solid var(--rule); border-radius:3px; background:var(--white);
+  color:var(--ink); line-height:1.8;
+}
+.fld textarea{resize:vertical;min-height:84px}
+.fld textarea:focus,.fld input:focus{outline:none;border-color:var(--o1)}
+.fld .sub{font-size:11.5px;color:var(--muted);margin-top:var(--s1)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+
+/* ---------- 送信。ピルにしない。紙に押す判のような矩形 ---------- */
+.send-wrap{margin-top:var(--s6)}
+.send{
+  width:100%; padding:17px; border:0; border-radius:2px;
+  background:var(--ink); color:var(--cream);
+  font-family:var(--disp); font-size:14.5px; font-weight:600; letter-spacing:.1em;
+  cursor:pointer; transition:background .16s ease;
+}
+.send:hover{background:#3d2717}
+.send[disabled]{background:var(--muted);cursor:default}
+.send-note{font-size:11.5px;color:var(--muted);margin-top:var(--s3);line-height:1.85}
+.msg{margin-top:var(--s3);padding:12px 14px;border-radius:2px;font-size:13px;font-weight:700;display:none}
+.msg.err{display:block;background:#FDEDE7;color:#B03A1A;border-left:2px solid #B03A1A}
+
+/* ---------- 施設の選択（v が無いとき） ---------- */
+/* 286件から選ぶので select が妥当だが、既定のまま置くと未完成に見える。
+   枠に収めて、件数と手引きを添える。 */
+.pick{margin-top:var(--s5);max-width:26em}
+.pick .lab{
+  font-family:var(--disp); font-size:10.5px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink2);
+  display:flex; align-items:center; gap:var(--s2); margin-bottom:var(--s2);
+}
+.pick .lab::before{content:"";width:14px;height:2px;background:var(--o1)}
+.pick .lab::after{content:"";flex:1;height:1px;background:var(--rule-2)}
+.pick .box{
+  position:relative; border-bottom:1.5px solid var(--rule);
+  transition:border-color .16s ease;
+}
+.pick .box:focus-within{border-bottom-color:var(--o1)}
+.pick .box::after{      /* 既定の矢印を隠し、細い山形を置く */
+  content:""; position:absolute; right:6px; top:50%; width:7px; height:7px;
+  border-right:1.5px solid var(--ink2); border-bottom:1.5px solid var(--ink2);
+  transform:translateY(-70%) rotate(45deg); pointer-events:none;
+}
+.pick select{
+  width:100%; padding:10px 28px 10px 2px; font-family:inherit; font-size:16px;
+  border:0; background:none; color:var(--ink); cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+}
+.pick select:focus{outline:none}
+.pick .cnt{font-size:11.5px;color:var(--muted);margin-top:var(--s2)}
+
+/* ---------- 送信後 ---------- */
+.done-view{padding:var(--s7) 0;text-align:center}
+.done-view .mk{font-family:var(--serif);font-size:56px;color:var(--o1);line-height:1}
+.done-view h2{font-family:var(--serif);font-size:30px;font-weight:600;margin:var(--s3) 0 var(--s2)}
+.done-view p{font-size:14px;color:var(--ink2)}
+
+/* ---------- 版面の切り替え ---------- */
+@media (max-width:640px){
+  .sheet{padding:0 var(--s3) var(--s6)}
+  .q{grid-template-columns:2.1rem 1fr;padding:var(--s3) var(--s3) var(--s3) 10px}
+  .q-in{margin-top:10px}
+  .scale label{font-size:10.5px}
+  .two{grid-template-columns:1fr}
+  .gauge .who{display:none}
+}
+@media (max-width:400px){
+  .scale{flex-wrap:wrap;padding-top:0}
+  .scale::before{display:none}
+  .scale label{flex:0 0 auto;text-align:left;padding:5px 12px;border:1px solid var(--rule);border-radius:3px;margin:3px 3px 0 0}
+  .scale label::before{display:none}
+  .scale label.sel{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .seg label{padding:7px 14px}
+}
+@media (min-width:900px){
+  .sheet{max-width:720px}
+  .q{grid-template-columns:2.4rem 1fr;padding:var(--s5) var(--s5) var(--s4) var(--s4)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+}
 </style>
 </head>
 <body>
-<header><a href="index.html">← villafaras（ヴィラファラス）トップに戻る</a></header>
 
-<div class="wrap">
-  <h1 class="page-title">掲載情報の確認フォーム</h1>
-  <p class="lede">villafaras に掲載中の施設情報について、<br>公開情報からは分からなかった項目をうかがいます。</p>
-
+<div class="sheet">
+  <header class="masthead">
+    <div class="brand">villafaras</div>
+  </header>
   <div id="app"></div>
 </div>
-
-<footer>villafaras（ヴィラファラス）<br>いただいた回答は掲載情報の更新にのみ使用します。</footer>
 
 <script src="data/survey-villas.js"></script>
 <script src="spec-data.js"></script>
 <script src="spec.js"></script>
 <script>
 /* ==========================================================================
-   spec-survey.html — オーナー調査票（設計書ステップ5）
+   spec-survey.html — オーナー確認票（設計書ステップ5）
    --------------------------------------------------------------------------
    ・ES5構文のみ / XHR + onreadystatechange / 外部ライブラリ不使用
-   ・**選択肢マスタと項目定義は spec.js から受け取る。写さない。**
+   ・**選択肢マスタ・項目定義・数値範囲は spec.js から受け取る。写さない。**
      手で写して loyly の auto を落とした事故があるため（2026-08）。
-   ・施設ごとに **空欄の項目だけ** を出す。
-     設計書は「一発勝負。2回目の依頼は回答率が激減する」としているので、
-     重要12問を先に出し、残りは折りたたみの任意欄に置く。
-     **途中送信を受け付ける**ので、12問だけ答えて送っても成立する。
+   ・施設ごとに**空欄の項目だけ**を出す。重要12問を先に、残りは任意欄へ。
+     **途中送信を受け付ける**ので12問だけ答えて送っても成立する。
    ========================================================================== */
 (function () {
   'use strict';
@@ -111,16 +424,18 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     FIREBASE_PROJECT_ID + '/databases/(default)/documents';
   var COLLECTION = 'specSubmissions';
 
-  /* 重要12問。オーナーにしか答えられず、利用者が選ぶときに効くもの。
-     並び順がそのまま画面の順になる。 */
+  /* 重要12問。オーナーにしか答えられず、利用者が選ぶときに効くもの。 */
   var CORE = ['stove', 'sauna_type', 'loyly', 'heat_time', 'sauna_hours',
               'chiller', 'water_temp', 'kitchen_type', 'villa_type',
               'neighbor_dist', 'firepit', 'late_arrival'];
 
+  /* **並び自体が意味を持つ選択肢マスタ。** 横に伸びる目盛りで描く。
+     時間・温度・深さ・距離・許容度は順序尺度なので、
+     バラバラのチップで出すと「並びに意味がない」という誤った合図になる。 */
+  var ORDINAL = { heattime: 1, wtemp: 1, depth: 1, ndist: 1, late: 1 };
+
   var SCHEMA = window.VILLAFARAS_SPEC_SCHEMA || [];
   var OPTS   = window.VILLAFARAS_SPEC_OPTIONS || {};
-  /* 数値の妥当範囲も spec.js から受け取る。**validate.py と同じ表を見る。**
-     ここで弾いておかないと、オーナーの回答が反映の直前で検証に落ちる。 */
   var RANGE  = window.VILLAFARAS_SPEC_RANGE || {};
   var DATA   = window.VILLAFARAS_SPEC || {};
   var VILLAS = window.VILLAFARAS_SURVEY_VILLAS || {};
@@ -128,6 +443,7 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
   var app = document.getElementById('app');
   var villaId = null;
   var answers = {};
+  var coreList = [];
 
   /* ---------- 小道具 ---------- */
 
@@ -142,12 +458,21 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : null;
   }
 
+  function indexOf(arr, v) {
+    for (var i = 0; i < arr.length; i++) if (arr[i] === v) return i;
+    return -1;
+  }
+
+  function keysOf(o) {
+    var out = [];
+    for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) out.push(k);
+    return out;
+  }
+
   function rowOf(key) {
     for (var i = 0; i < SCHEMA.length; i++) {
       var rows = SCHEMA[i].rows;
-      for (var j = 0; j < rows.length; j++) {
-        if (rows[j].k === key) return { row: rows[j], g: SCHEMA[i].g };
-      }
+      for (var j = 0; j < rows.length; j++) if (rows[j].k === key) return rows[j];
     }
     return null;
   }
@@ -181,189 +506,244 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     return String(v) + (row.u ? row.u : '');
   }
 
-  /* ---------- 下書きの保存（端末内のみ） ---------- */
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+  /* ---------- 下書き（端末内のみ） ---------- */
 
   function draftKey() { return 'vf_survey_' + villaId; }
-
   function saveDraft() {
-    try { window.localStorage.setItem(draftKey(), JSON.stringify(answers)); }
-    catch (e) {}
+    try { window.localStorage.setItem(draftKey(), JSON.stringify(answers)); } catch (e) {}
   }
-
   function loadDraft() {
     try {
       var raw = window.localStorage.getItem(draftKey());
       if (raw) answers = JSON.parse(raw) || {};
     } catch (e) { answers = {}; }
   }
-
   function clearDraft() {
     try { window.localStorage.removeItem(draftKey()); } catch (e) {}
   }
 
-  /* ---------- 描画 ---------- */
+  /* ---------- 操作面。**設問の型で形を変える** ---------- */
 
-  function questionHTML(key) {
-    var r = rowOf(key);
-    if (!r) return '';
-    var row = r.row;
-    var cur = answers[key];
-    var html = '<div class="q' + (cur !== undefined && cur !== '' ? ' answered' : '') +
-               '" data-k="' + esc(key) + '">' +
-               '<div class="q-l">' + esc(row.l) + '</div>';
-    if (row.n) html += '<div class="q-n">' + esc(row.n) + '</div>';
+  function controlHTML(row, cur) {
+    var key = row.k, html, v, i, vs, sel;
 
     if (row.o && OPTS[row.o]) {
-      html += '<div class="opts">';
-      var master = OPTS[row.o];
-      for (var v in master) {
-        if (!Object.prototype.hasOwnProperty.call(master, v)) continue;
-        var sel = (cur === v);
-        html += '<label class="opt' + (sel ? ' sel' : '') + '">' +
+      vs = keysOf(OPTS[row.o]);
+      /* 二択はセグメント（境界を共有する隣接した面） */
+      if (vs.length === 2) {
+        html = '<div class="seg">';
+      /* 順序尺度は横に伸びる目盛り */
+      } else if (ORDINAL[row.o]) {
+        html = '<div class="scale">';
+      /* それ以外は折返し。幅は中身に従わせる */
+      } else {
+        html = '<div class="wrap">';
+      }
+      for (i = 0; i < vs.length; i++) {
+        v = vs[i];
+        sel = (cur === v);
+        html += '<label class="' + (sel ? 'sel' : '') + '">' +
                 '<input type="radio" name="q_' + esc(key) + '" value="' + esc(v) + '"' +
-                (sel ? ' checked' : '') + '>' + esc(master[v]) + '</label>';
+                (sel ? ' checked' : '') + '>' + esc(OPTS[row.o][v]) + '</label>';
       }
-      html += '</div>';
-    } else {
-      var rg = RANGE[key];
-      html += '<div class="numrow"><input type="text" inputmode="numeric" ' +
-              'data-num="' + esc(key) + '" value="' + esc(cur == null ? '' : cur) + '">' +
-              '<span class="unit">' + esc(row.u || '') + '</span></div>';
-      if (rg) {
-        html += '<div class="q-n" style="margin:7px 0 0" data-hint="' + esc(key) + '">' +
-                rg[0] + '〜' + rg[1] + esc(row.u || '') + ' の範囲でご記入ください</div>';
-      }
+      return html + '</div>';
     }
-    if (cur !== undefined && cur !== '') {
-      html += '<span class="skip" data-clear="' + esc(key) + '">回答を取り消す</span>';
+
+    /* 数値。桁数ぶんの実寸にして、全幅の汎用入力にしない */
+    var rg = RANGE[key];
+    html = '<div class="num' + (row.u === '\u5186' ? ' wide' : '') + '">' +
+           '<span class="num-f">' +
+           '<input type="text" inputmode="numeric" placeholder="–" ' +
+           'data-num="' + esc(key) + '" value="' + esc(cur == null ? '' : cur) + '">' +
+           '<span class="unit">' + esc(row.u || '') + '</span></span>';
+    if (rg) {
+      html += '<span class="hint" data-hint="' + esc(key) + '">' +
+              rg[0] + '–' + rg[1] + 'の範囲</span>';
     }
     return html + '</div>';
   }
 
-  function groupedHTML(keys) {
-    /* SCHEMA のグループ順で並べる。項目の並びも SCHEMA に従う。 */
-    var out = '';
+  function questionHTML(key, no) {
+    var row = rowOf(key);
+    if (!row) return '';
+    var cur = answers[key];
+    var done = (cur !== undefined && cur !== '');
+    var h = '<div class="q' + (done ? ' done' : '') + '" data-k="' + esc(key) + '">' +
+            '<div class="q-no">' + (no ? pad2(no) : '') + '</div>' +
+            '<div class="q-head"><div class="q-l">' + esc(row.l) + '</div>';
+    if (row.n) h += '<div class="q-n">' + esc(row.n) + '</div>';
+    h += '</div><div class="q-in">' + controlHTML(row, cur) + '</div>';
+    if (done) h += '<span class="undo" data-clear="' + esc(key) + '">取り消す</span>';
+    return h + '</div>';
+  }
+
+  /* SCHEMA の群の順で並べる。番号は通しで振る（有限であることを見せる） */
+  function groupedHTML(keys, numbered) {
+    var out = '', n = 0;
     for (var i = 0; i < SCHEMA.length; i++) {
       var g = SCHEMA[i], part = '';
       for (var j = 0; j < g.rows.length; j++) {
         var k = g.rows[j].k;
-        if (indexOf(keys, k) > -1) part += questionHTML(k);
+        if (indexOf(keys, k) > -1) { n++; part += questionHTML(k, numbered ? n : 0); }
       }
-      if (part) out += '<div class="grp"><div class="grp-h">' + esc(g.g) + '</div>' + part + '</div>';
+      if (part) {
+        var cnt = part.split('data-k="').length - 1;   /* 1設問に1つだけ出る印 */
+        out += '<section class="grp' + (cnt === 1 ? ' solo' : '') + '">' +
+               '<h2 class="grp-h">' + esc(g.g) + '</h2>' +
+               '<div class="grp-body">' + part + '</div></section>';
+      }
     }
     return out;
   }
 
-  function indexOf(arr, v) {
-    for (var i = 0; i < arr.length; i++) if (arr[i] === v) return i;
-    return -1;
-  }
-
-  function knownHTML() {
+  /* 台帳。点線のリーダーで label と値をつなぐ */
+  function ledgerHTML() {
     var keys = askableKeys(), items = '';
     for (var i = 0; i < keys.length; i++) {
       if (isBlank(keys[i])) continue;
-      var r = rowOf(keys[i]);
-      if (!r) continue;
-      items += '<dt>' + esc(r.row.l) + '</dt><dd>' + esc(labelFor(r.row, valueOf(keys[i]))) + '</dd>';
+      var row = rowOf(keys[i]);
+      if (!row) continue;
+      items += '<div class="led"><dt>' + esc(row.l) + '</dt>' +
+               '<span class="dots"></span><dd>' +
+               esc(labelFor(row, valueOf(keys[i]))) + '</dd></div>';
     }
     if (!items) return '';
-    return '<div class="known"><h3>現在の掲載内容</h3>' +
-           '<p class="note">公開情報から調べた値です。誤りがあれば下の欄でお知らせください。</p>' +
-           '<dl>' + items + '</dl></div>';
+    return '<section class="ledger"><h2 class="grp-h">すでに把握している内容</h2>' +
+      '<div class="ledger-body"><p class="cap">公開されている情報から調べたものです。' +
+      '誤りがあれば下の欄でお知らせください。</p><dl>' + items + '</dl></div></section>';
   }
+
+  /* ---------- 組版 ---------- */
 
   function render() {
     var v = VILLAS[villaId];
-    var core = [], rest = [], keys = askableKeys(), i;
+    var keys = askableKeys(), rest = [], i;
+    coreList = [];
 
     for (i = 0; i < CORE.length; i++) {
-      if (indexOf(keys, CORE[i]) > -1 && isBlank(CORE[i])) core.push(CORE[i]);
+      if (indexOf(keys, CORE[i]) > -1 && isBlank(CORE[i])) coreList.push(CORE[i]);
     }
     for (i = 0; i < keys.length; i++) {
       if (isBlank(keys[i]) && indexOf(CORE, keys[i]) === -1) rest.push(keys[i]);
     }
 
-    var html = '<div class="facility">' +
-      '<div class="fname">' + esc(v ? v.n : '（施設が特定できません）') + '</div>' +
-      '<div class="faddr">' + esc(v ? v.a : '') + '</div>' +
-      '<div class="fwrong">施設が違う場合は <a href="spec-survey.html">こちら</a> から選び直せます。</div>' +
+    var h = '<div class="subject">' +
+      '<div class="eyebrow">掲載内容の確認</div>' +
+      '<h1>' + esc(v ? v.n : '施設が特定できません') + '</h1>' +
+      '<div class="addr">' + esc(v ? v.a : '') + '</div>' +
+      '<p class="wrong">別の施設の場合は <a href="spec-survey.html">こちらから選び直せます</a>。</p>' +
       '</div>';
 
-    html += '<div class="bar"><div class="bar-track"><div class="bar-fill" id="barfill"></div></div>' +
-            '<div class="bar-txt" id="bartxt"></div></div>';
-
-    if (core.length) {
-      html += '<p class="lede" style="text-align:left;margin-bottom:14px">' +
-              '<b>まずは' + core.length + '問だけ</b>お答えください。' +
-              '分からない項目は空欄のままで結構です。</p>' + groupedHTML(core);
+    if (coreList.length) {
+      h += '<p class="lede">公開情報からは分からなかった項目を、' +
+           '<b>' + coreList.length + '問だけ</b>うかがいます。' +
+           '<span class="br">分からない項目は空欄のままで結構です。</span>' +
+           '<span class="br">途中まででも送信できます。</span></p>';
+      h += '<div class="gauge" id="gauge"><span class="who">' + esc(v ? v.n : '') + '</span>' +
+           '<span class="ticks" id="ticks"></span>' +
+           '<span class="gauge-n" id="gaugen"></span></div>';
+      h += groupedHTML(coreList, true);
     } else {
-      html += '<p class="lede" style="text-align:left">主要な項目はすべて把握できています。' +
-              'ありがとうございます。</p>';
+      h += '<p class="lede">主要な項目はすでに把握できています。' +
+           'ご協力ありがとうございます。</p>';
     }
 
     if (rest.length) {
-      html += '<button type="button" class="more-btn" id="morebtn">' +
-              'さらに答える（任意・あと' + rest.length + '問）</button>' +
-              '<div id="optional" style="margin-top:16px">' + groupedHTML(rest) + '</div>';
+      h += '<button type="button" class="more" id="morebtn">' +
+           '<span class="mk">＋</span>さらに答える（任意・あと' + rest.length + '問）</button>' +
+           '<div id="optional">' + groupedHTML(rest, false) + '</div>';
     }
 
-    html += '<div style="margin-top:26px">' + knownHTML() +
-      '<div class="field"><label>掲載内容の誤り・補足（任意）</label>' +
-      '<textarea id="corrections" placeholder="上の「現在の掲載内容」に誤りがあれば、この欄にご記入ください。"></textarea></div>' +
-      '<div class="field"><label>ご担当者名（任意）</label><input type="text" id="who"></div>' +
-      '<div class="field"><label>返信先メールアドレス（任意）</label><input type="email" id="mail" placeholder="確認のご連絡が必要な場合のみ"></div>' +
-      '<button type="button" class="submit-btn" id="send">回答を送信する</button>' +
-      '<div class="msg" id="msg"></div>' +
-      '<p class="note">途中まででも送信できます。いただいた内容は掲載情報の更新にのみ使用し、' +
-      '公開前に内容を確認します。<br>入力内容はこの端末にも一時保存され、' +
-      '再度開いたときに復元されます。</p></div>';
+    h += ledgerHTML();
 
-    app.innerHTML = html;
-    updateBar(core.length);
-    app.setAttribute('data-core', String(core.length));
+    h += '<div class="tail">' +
+      '<div class="fld"><label>掲載内容の誤り・補足</label>' +
+      '<textarea id="corrections" placeholder="上の内容に誤りがあれば、この欄にご記入ください。"></textarea></div>' +
+      '<div class="two">' +
+      '<div class="fld"><label>ご担当者名</label><input type="text" id="who" autocomplete="name"></div>' +
+      '<div class="fld"><label>返信先</label><input type="email" id="mail" autocomplete="email" placeholder="確認が必要な場合のみ"></div>' +
+      '</div></div>';
+
+    h += '<div class="send-wrap"><button type="button" class="send" id="send">回答を送信する</button>' +
+      '<div class="msg" id="msg"></div>' +
+      '<p class="send-note">いただいた内容は掲載情報の更新にのみ使用し、公開前に確認します。' +
+      '入力内容はこの端末にも一時保存され、開き直したときに復元されます。</p></div>';
+
+    app.innerHTML = h;
+    buildTicks();
+    updateGauge();
   }
 
   function renderPicker() {
-    var opts = '<option value="">施設を選択してください</option>', ids = [];
-    for (var id in VILLAS) {
-      if (Object.prototype.hasOwnProperty.call(VILLAS, id)) ids.push(id);
-    }
+    var ids = keysOf(VILLAS), i;
     ids.sort(function (a, b) {
       return VILLAS[a].n < VILLAS[b].n ? -1 : (VILLAS[a].n > VILLAS[b].n ? 1 : 0);
     });
-    for (var i = 0; i < ids.length; i++) {
+    var opts = '<option value="">施設を選んでください</option>';
+    for (i = 0; i < ids.length; i++) {
       opts += '<option value="' + esc(ids[i]) + '">' + esc(VILLAS[ids[i]].n) + '</option>';
     }
-    app.innerHTML = '<div class="picker"><select id="pick">' + opts + '</select></div>' +
-      '<p class="note">メールでお送りしたリンクを開くと、この選択は不要です。</p>';
+    app.innerHTML = '<div class="subject"><div class="eyebrow">掲載内容の確認</div>' +
+      '<h1>施設をお選びください</h1>' +
+      '<div class="addr">メールでお送りしたリンクからは、この操作は不要です。</div></div>' +
+      '<div class="pick"><div class="lab">施設</div>' +
+      '<div class="box"><select id="pick">' + opts + '</select></div>' +
+      '<p class="cnt">掲載中の ' + ids.length + ' 件から選べます。</p></div>';
     document.getElementById('pick').onchange = function () {
       if (this.value) window.location.search = '?v=' + encodeURIComponent(this.value);
     };
   }
 
-  function updateBar(coreCount) {
-    var n = 0;
-    for (var i = 0; i < CORE.length; i++) {
-      var a = answers[CORE[i]];
-      if (a !== undefined && a !== '') n++;
-    }
-    var total = coreCount || parseInt(app.getAttribute('data-core'), 10) || 0;
-    var fill = document.getElementById('barfill');
-    var txt = document.getElementById('bartxt');
-    if (!fill || !txt) return;
-    fill.style.width = total ? Math.round(n / total * 100) + '%' : '100%';
-    txt.innerHTML = total ? ('主要な質問 ' + total + '問中 <b>' + n + '問</b>にお答えいただきました')
-                          : '主要な質問はありません';
+  /* ---------- 進捗＝目盛り ---------- */
+
+  function buildTicks() {
+    var el = document.getElementById('ticks');
+    if (!el) return;
+    var h = '';
+    for (var i = 0; i < coreList.length; i++) h += '<i class="tick" data-t="' + i + '"></i>';
+    el.innerHTML = h;
   }
 
-  /* ---------- 入力の受け取り（文書レベルの委譲） ---------- */
+  function updateGauge() {
+    var el = document.getElementById('ticks');
+    var nEl = document.getElementById('gaugen');
+    if (!el || !nEl) return;
+    var ticks = el.getElementsByTagName('i'), n = 0, i;
+    for (i = 0; i < coreList.length; i++) {
+      var a = answers[coreList[i]];
+      var on = (a !== undefined && a !== '');
+      if (on) n++;
+      if (ticks[i]) ticks[i].className = 'tick' + (on ? ' on' : '');
+    }
+    nEl.innerHTML = '<b>' + n + '</b> / ' + coreList.length;
+  }
+
+  function onScroll() {
+    var g = document.getElementById('gauge');
+    if (!g) return;
+    var on = g.getBoundingClientRect().top <= 0.5;
+    g.className = 'gauge' + (on ? ' pinned' : '');
+  }
+
+  /* ---------- 入力（文書レベルの委譲） ---------- */
 
   function onChange(e) {
     var t = e.target;
     if (t && t.type === 'radio' && t.name.indexOf('q_') === 0) {
-      answers[t.name.slice(2)] = t.value;
-      saveDraft(); refreshQ(t.name.slice(2));
+      var k = t.name.slice(2);
+      answers[k] = t.value;
+      saveDraft();
+      refreshQ(k);
+    }
+  }
+
+  function setHint(key, err) {
+    var hints = document.querySelectorAll('[data-hint="' + key + '"]');
+    for (var i = 0; i < hints.length; i++) {
+      hints[i].className = 'hint' + (err ? ' bad' : '');
+      if (err) hints[i].innerHTML = esc(err);
     }
   }
 
@@ -372,60 +752,84 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     if (!k) return;
     var val = t.value.replace(/[^0-9]/g, '');
     if (val !== t.value) t.value = val;
+    var rg = RANGE[k];
     if (val === '') {
       delete answers[k];
-      setHint(k, null);
+      if (rg) setHint(k, null), resetHint(k, rg);
     } else {
-      var n = parseInt(val, 10), rg = RANGE[k];
+      var n = parseInt(val, 10);
       if (rg && (n < rg[0] || n > rg[1])) {
         /* **範囲外は保存しない。** validate.py が同じ表で弾くので、
            ここで受け取っても反映の直前で落ちるだけになる。 */
         delete answers[k];
-        setHint(k, rg[0] + '〜' + rg[1] + ' の範囲でご記入ください');
+        setHint(k, rg[0] + '–' + rg[1] + ' の範囲で');
       } else {
         answers[k] = n;
-        setHint(k, null);
+        if (rg) resetHint(k, rg);
       }
     }
-    saveDraft(); updateBar();
+    saveDraft();
+    markDone(k);
+    updateGauge();
   }
 
-  function setHint(key, err) {
+  function resetHint(key, rg) {
     var hints = document.querySelectorAll('[data-hint="' + key + '"]');
     for (var i = 0; i < hints.length; i++) {
-      hints[i].style.color = err ? '#B03A1A' : '';
-      hints[i].style.fontWeight = err ? '700' : '';
-      if (err) hints[i].innerHTML = err;
+      hints[i].className = 'hint';
+      hints[i].innerHTML = rg[0] + '–' + rg[1] + 'の範囲';
+    }
+  }
+
+  function markDone(key) {
+    var nodes = document.getElementsByClassName('q');
+    var done = (answers[key] !== undefined && answers[key] !== '');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].getAttribute('data-k') === key) {
+        nodes[i].className = 'q' + (done ? ' done' : '');
+        break;
+      }
     }
   }
 
   function onClick(e) {
     var t = e.target;
-    if (t && t.id === 'morebtn') {
-      var box = document.getElementById('optional');
-      if (box) { box.className = 'open'; t.style.display = 'none'; }
-      return;
+    while (t && t !== document.body) {
+      if (t.id === 'morebtn') {
+        var box = document.getElementById('optional');
+        if (box) {
+          box.className = 'open';
+          t.style.display = 'none';
+        }
+        return;
+      }
+      if (t.getAttribute && t.getAttribute('data-clear')) {
+        var k = t.getAttribute('data-clear');
+        delete answers[k];
+        saveDraft();
+        refreshQ(k);
+        return;
+      }
+      if (t.id === 'send') { submit(); return; }
+      t = t.parentNode;
     }
-    if (t && t.getAttribute && t.getAttribute('data-clear')) {
-      var k = t.getAttribute('data-clear');
-      delete answers[k]; saveDraft(); refreshQ(k);
-      return;
-    }
-    if (t && t.id === 'send') { submit(); }
   }
 
   function refreshQ(key) {
-    var nodes = document.getElementsByClassName('q');
-    for (var i = 0; i < nodes.length; i++) {
+    var nodes = document.getElementsByClassName('q'), i;
+    for (i = 0; i < nodes.length; i++) {
       if (nodes[i].getAttribute('data-k') === key) {
-        var wrap = nodes[i].parentNode;
+        var no = nodes[i].getElementsByClassName('q-no')[0];
+        var label = no ? no.innerHTML : '—';
         var tmp = document.createElement('div');
-        tmp.innerHTML = questionHTML(key);
-        wrap.replaceChild(tmp.firstChild, nodes[i]);
+        tmp.innerHTML = questionHTML(key, 0);
+        var fresh = tmp.firstChild;
+        fresh.getElementsByClassName('q-no')[0].innerHTML = label;
+        nodes[i].parentNode.replaceChild(fresh, nodes[i]);
         break;
       }
     }
-    updateBar();
+    updateGauge();
   }
 
   /* ---------- 送信 ---------- */
@@ -448,9 +852,8 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     var corr = (document.getElementById('corrections') || {}).value || '';
     var who = (document.getElementById('who') || {}).value || '';
     var mail = (document.getElementById('mail') || {}).value || '';
+    var n = keysOf(fields).length;
 
-    var n = 0, k;
-    for (k in fields) { if (Object.prototype.hasOwnProperty.call(fields, k)) n++; }
     if (n === 0 && !corr) {
       msg.className = 'msg err';
       msg.innerHTML = '回答が1件もありません。1問でもお答えいただくか、補足欄にご記入ください。';
@@ -483,8 +886,9 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
       if (xhr.readyState !== 4) return;
       if (xhr.status >= 200 && xhr.status < 300) {
         clearDraft();
-        app.innerHTML = '<div class="done"><h2>ありがとうございました</h2>' +
-          '<p>' + n + '件の回答をお送りいただきました。<br>' +
+        app.innerHTML = '<div class="done-view"><div class="mk">✓</div>' +
+          '<h2>ありがとうございました</h2>' +
+          '<p>' + n + '件の回答をお預かりしました。<br>' +
           '内容を確認のうえ、掲載情報に反映いたします。</p></div>';
         window.scrollTo(0, 0);
       } else {
@@ -509,6 +913,7 @@ footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;lin
     document.addEventListener('change', onChange, false);
     document.addEventListener('input', onInput, false);
     document.addEventListener('click', onClick, false);
+    window.addEventListener('scroll', onScroll, false);
   }
 
   if (document.readyState === 'loading') {
