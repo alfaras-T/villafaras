@@ -1453,6 +1453,76 @@ SANU の MOSS型5拠点は公式マガジンが名指しで対象拠点を列挙
 
 ---
 
+## spec-survey.html（オーナー調査票・2026-09 作成）
+
+設計書ステップ5。**オーナーにメールでURLを送り、その施設で空欄の項目だけを聞く。**
+
+```
+spec-survey.html?v=123      施設idを付けて送る
+spec-survey.html            v が無い／不明なら施設の選択欄を出す
+```
+
+**読み込むもの**（順序が大事。`spec.js` が `window.VILLAFARAS_SPEC` を見るため）
+
+```html
+<script src="data/survey-villas.js"></script>   施設名と住所だけ（25KB・自動生成）
+<script src="spec-data.js"></script>            現在の値
+<script src="spec.js"></script>                 SCHEMA / O / RANGE
+```
+
+### 分量は「重要12問＋残りは任意」にした
+
+**空欄だけに絞っても中央値33問**（最小20・最大42）になる。設計書は
+「一発勝負。2回目の依頼は回答率が激減する」としているので、**12問を先に出し、
+残りは折りたたみの任意欄**に置いた。**途中送信を受け付ける**ので、
+12問だけ答えて送っても成立し、2回目の依頼が要らない。
+
+重要12問（`CORE` 配列。並び順がそのまま画面の順）
+
+  `stove` `sauna_type` `loyly` `kitchen_type` … **アグリゲーターが持たない4項目**
+  `heat_time` `neighbor_dist` … **1件も取れていない項目**
+  `sauna_hours` `chiller` `water_temp` `villa_type` `firepit` `late_arrival`
+
+### マスタは3つとも spec.js から受け取る。写さない
+
+`window.VILLAFARAS_SPEC_SCHEMA` / `VILLAFARAS_SPEC_OPTIONS`（`var O`）/
+`VILLAFARAS_SPEC_RANGE`（`var RANGE`）。**2026-08 に調査指示へ選択肢を手で写して
+`loyly` の `auto` を落とした**ので、マスタは1箇所から配る。
+
+**`var RANGE` は 2026-09 に spec.js へ移した。** それまで `tools/validate.py` に
+直接書いてあったが、**調査票も同じ範囲で入力を弾く必要がある**（弾かないと
+オーナーの回答が反映の直前で検証に落ちる）。validate.py は `load_range()` で
+spec.js から読む。**3箇所に同じ数字を置くと必ずずれる。**
+
+### 受け口は Firestore。**ルールの設定が未了で、送信は未検証**
+
+`specSubmissions` コレクションに POST する（`reviews` と同じ REST + XHR の形）。
+**設計書ステップ2が未実装のため、このコレクションのルールがまだ無い。**
+Firebase コンソールに次を足すまで送信は 403 になる。
+
+```
+match /specSubmissions/{doc} {
+  allow create: if request.resource.data.approved == false
+                && request.resource.data.villaId is string
+                && request.resource.data.answered is int;
+  allow read, update, delete: if false;
+}
+```
+
+`reviews` と同じく **`approved: false` を強制**し、公開読み取りは許さない
+（回答には返信先メールアドレスが入りうるため、`reviews` より厳しく読み取り不可にする）。
+**本番のFirestoreへテスト書き込みはしていない。**
+
+### そのほかの作り
+
+- **下書きは端末の localStorage に保存**（`vf_survey_<id>`）。送信成功で消す。
+  `try/catch` で囲ってあるのでプライベートブラウズでも壊れない
+- **「現在の掲載内容」を読み取り専用で併記**し、誤りは自由記述欄で受ける。
+  全項目を確認させると分量が倍になるため、訂正は1つの欄にまとめた
+- 必須項目は無い。**1問も答えず補足欄も空のときだけ**送信を止める
+
+---
+
 ## DB 構造の限界
 
 **1エントリ＝1施設**という構造で表現できないケースが繰り返し出ている。
@@ -1706,6 +1776,10 @@ DBが指しているのはサウナの無い物件で、サウナがあるのは
 - **口コミ機能**: Firebase Firestore（project: villafaras-reviews、Spark プラン）。
   security rules で `approved: false` を強制、公開読み取りは承認済みのみ。
   新着通知は Google Apps Script から `tomoro-sato@alfaras.jp` へ。
+  **オーナー調査票（`specSubmissions`）は同じプロジェクトを使うが、ルールが未設定**（前述）。
+- **ローカル確認**: `.claude/serve.py` が `http://127.0.0.1:8765` で配信する。
+  `python3 -m http.server` は**サンドボックスで `os.getcwd()` が拒否されて起動しない**ので、
+  パスを決め打ちしたこのスクリプトを使う。
 - **Google Places API**: `places:searchText` で施設名＋住所からジオコーディング。
 - **OSRM**: 所要時間の算出。**GSI（国土地理院）標高API**: 標高。
 - Chrome 拡張機能は `claude --chrome` または `/chrome` で接続。

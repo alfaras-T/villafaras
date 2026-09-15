@@ -86,6 +86,22 @@
   };
 
   /* ------------------------------------------------------------------
+     2b. 数値項目の妥当範囲
+         単位の取り違えを機械的に弾くためのもので、「ありえない値」を落とす幅。
+         疑わしいだけの値は validate.py の交差チェック側で見る。
+         **tools/validate.py と spec-survey.html がここから読む。**
+         3箇所に同じ数字を書くと必ずずれるので、マスタはここだけに置く。
+     ------------------------------------------------------------------ */
+  var RANGE = {
+    sauna_temp: [40, 130], sauna_cap: [1, 40], kitchen_burners: [1, 6],
+    capacity: [1, 120], comfort_cap: [1, 120], kids_free: [0, 12],
+    fee_cleaning: [0, 200000], fee_heating: [0, 200000],
+    fee_pet: [0, 200000], fee_person: [0, 200000],
+    elevation: [0, 3000], supermarket: [0, 180], conveni: [0, 180],
+    onsen: [0, 180], arrival_real: [0, 600]
+  };
+
+  /* ------------------------------------------------------------------
      3. 項目スキーマ
         k    = フィールドキー（Firestore と共通）
         l    = 表示ラベル
@@ -360,6 +376,11 @@
   window.villafarasSpecHTML = buildHTML;
   window.villafarasSpecRender = render;
   window.VILLAFARAS_SPEC_SCHEMA = SCHEMA;
+  /* 選択肢マスタも公開する。**spec-survey.html が手で写さないため。**
+     2026-08 に調査指示へ手で写したとき、loyly を yes/no の2択と書いて auto を
+     落とし、sauna_type に存在しない cabin を混ぜた。マスタは1箇所から配る。 */
+  window.VILLAFARAS_SPEC_OPTIONS = O;
+  window.VILLAFARAS_SPEC_RANGE = RANGE;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init, false);

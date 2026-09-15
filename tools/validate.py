@@ -14,16 +14,26 @@ SPEC = "spec.js"
 INDEX = "index.html"
 DATA = "spec-data.js"
 
-# 数値項目の妥当範囲。単位の取り違えを機械的に弾くためのもので、
-# 「ありえない値」を落とす幅にしてある（疑わしいだけの値は交差チェック側で見る）。
-RANGE = {
-    "sauna_temp": (40, 130), "sauna_cap": (1, 40), "kitchen_burners": (1, 6),
-    "capacity": (1, 120), "comfort_cap": (1, 120), "kids_free": (0, 12),
-    "fee_cleaning": (0, 200000), "fee_heating": (0, 200000),
-    "fee_pet": (0, 200000), "fee_person": (0, 200000),
-    "elevation": (0, 3000), "supermarket": (0, 180), "conveni": (0, 180),
-    "onsen": (0, 180), "arrival_real": (0, 600),
-}
+def load_range():
+    """数値項目の妥当範囲を spec.js の `var RANGE` から読む。
+
+    **ここに直接書かないこと。** spec-survey.html（オーナー調査票）も同じ範囲で
+    入力を弾く必要があり、3箇所に同じ数字を置くと必ずずれる。
+    選択肢マスタを `var O` から読んでいるのと同じ理由。
+    """
+    s = io.open(SPEC, encoding="utf-8").read()
+    m = re.search(r"var RANGE\s*=\s*\{(.*?)\n\s*\};", s, re.DOTALL)
+    if not m:
+        sys.exit("!! %s に var RANGE が見つかりません" % SPEC)
+    out = {}
+    for k, lo, hi in re.findall(r"(\w+):\s*\[\s*(-?\d+)\s*,\s*(-?\d+)\s*\]", m.group(1)):
+        out[k] = (int(lo), int(hi))
+    if not out:
+        sys.exit("!! %s の var RANGE を解析できません" % SPEC)
+    return out
+
+
+RANGE = load_range()
 # sauna_exists が no / 未設定なら成立しないはずの項目。
 # 水風呂まわりを入れていなかったため、id=2（2026-01 にサウナ提供終了）に
 # coldbath が残っているのを 2026-09 まで検出できなかった。

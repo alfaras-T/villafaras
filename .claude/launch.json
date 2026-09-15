@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "villafaras",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/Users/T/Desktop/villafaras/.claude/serve.py"
+      ],
+      "port": 8765
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>掲載情報の確認フォーム｜villafaras（ヴィラファラス）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF;--ok:#2E7D5B}
+body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
+header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px}
+header a{color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.wrap{max-width:640px;margin:0 auto;padding:32px 20px 80px}
+.page-title{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(19px,4vw,25px);font-weight:800;text-align:center;margin-bottom:8px}
+.lede{font-size:13.5px;color:var(--ink2);text-align:center;margin-bottom:22px}
+
+.facility{background:var(--o-pale);border:1.5px solid var(--o-soft);border-radius:14px;padding:14px 16px;margin-bottom:20px}
+.facility .fname{font-weight:800;font-size:16px}
+.facility .faddr{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.facility .fwrong{font-size:12px;margin-top:8px}
+.facility .fwrong a{color:var(--o1);font-weight:700}
+.picker{margin-bottom:20px}
+.picker select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--white)}
+
+.bar{position:sticky;top:0;z-index:5;background:var(--cream);padding:10px 0 12px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.bar-track{height:7px;background:var(--o-soft);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--o1),var(--o3));transition:width .25s}
+.bar-txt{font-size:12px;color:var(--ink2);margin-top:6px;font-weight:700}
+
+.grp{margin-bottom:26px}
+.grp-h{font-size:13px;font-weight:800;color:var(--o1);letter-spacing:.04em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--o-soft)}
+.q{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 15px;margin-bottom:10px}
+.q.answered{border-color:var(--o3);background:#FFFDFA}
+.q-l{font-size:14px;font-weight:700;margin-bottom:2px}
+.q-n{font-size:12px;color:var(--muted);margin-bottom:9px;line-height:1.6}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1.5px solid var(--border);border-radius:999px;font-size:13px;cursor:pointer;background:var(--cream);user-select:none}
+.opt input{margin:0;accent-color:var(--o1)}
+.opt.sel{border-color:var(--o1);background:var(--o-pale);font-weight:700}
+.numrow{display:flex;align-items:center;gap:9px}
+.numrow input{width:120px;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;background:var(--cream)}
+.numrow .unit{font-size:13px;color:var(--ink2);font-weight:700}
+.q .skip{font-size:11.5px;color:var(--muted);margin-top:8px;cursor:pointer;display:inline-block}
+.q .skip:hover{color:var(--o1)}
+
+.more-btn{width:100%;padding:13px;border:1.5px dashed var(--o3);border-radius:12px;background:var(--o-pale);color:var(--o1);font-size:14px;font-weight:800;cursor:pointer;font-family:inherit}
+.more-btn:hover{background:var(--o-soft)}
+#optional{display:none}
+#optional.open{display:block}
+
+.known{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 15px;margin-bottom:12px}
+.known h3{font-size:13px;font-weight:800;margin-bottom:4px}
+.known p.note{font-size:12px;color:var(--muted);margin-bottom:10px}
+.known dl{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:12.5px}
+.known dt{color:var(--ink2);white-space:nowrap}
+.known dd{font-weight:700}
+textarea{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);resize:vertical;min-height:80px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin-bottom:6px}
+.field input[type=text],.field input[type=email]{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream)}
+
+.submit-btn{width:100%;padding:16px;border:none;border-radius:12px;background:linear-gradient(90deg,var(--o1),var(--o2));color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.submit-btn:hover{opacity:.92}
+.submit-btn[disabled]{opacity:.5;cursor:default}
+.note{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.65}
+.msg{padding:13px 15px;border-radius:12px;font-size:13.5px;font-weight:700;margin-top:12px;display:none}
+.msg.err{background:#FFEFEA;color:#B03A1A;display:block}
+.msg.ok{background:#EAF7F0;color:var(--ok);display:block}
+.done{text-align:center;padding:40px 20px}
+.done h2{font-size:20px;font-weight:800;margin-bottom:10px}
+.done p{font-size:14px;color:var(--ink2)}
+footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;line-height:1.7}
+</style>
+</head>
+<body>
+<header><a href="index.html">← villafaras（ヴィラファラス）トップに戻る</a></header>
+
+<div class="wrap">
+  <h1 class="page-title">掲載情報の確認フォーム</h1>
+  <p class="lede">villafaras に掲載中の施設情報について、<br>公開情報からは分からなかった項目をうかがいます。</p>
+
+  <div id="app"></div>
+</div>
+
+<footer>villafaras（ヴィラファラス）<br>いただいた回答は掲載情報の更新にのみ使用します。</footer>
+
+<script src="data/survey-villas.js"></script>
+<script src="spec-data.js"></script>
+<script src="spec.js"></script>
+<script>
+/* ==========================================================================
+   spec-survey.html — オーナー調査票（設計書ステップ5）
+   --------------------------------------------------------------------------
+   ・ES5構文のみ / XHR + onreadystatechange / 外部ライブラリ不使用
+   ・**選択肢マスタと項目定義は spec.js から受け取る。写さない。**
+     手で写して loyly の auto を落とした事故があるため（2026-08）。
+   ・施設ごとに **空欄の項目だけ** を出す。
+     設計書は「一発勝負。2回目の依頼は回答率が激減する」としているので、
+     重要12問を先に出し、残りは折りたたみの任意欄に置く。
+     **途中送信を受け付ける**ので、12問だけ答えて送っても成立する。
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var FIREBASE_PROJECT_ID = 'villafaras-reviews';
+  var FIREBASE_API_KEY = 'AIzaSyAZGDB6MpEMBIF8-vMdX5wl8GcMoxODMAQ';
+  var FIRESTORE_BASE = 'https://firestore.googleapis.com/v1/projects/' +
+    FIREBASE_PROJECT_ID + '/databases/(default)/documents';
+  var COLLECTION = 'specSubmissions';
+
+  /* 重要12問。オーナーにしか答えられず、利用者が選ぶときに効くもの。
+     並び順がそのまま画面の順になる。 */
+  var CORE = ['stove', 'sauna_type', 'loyly', 'heat_time', 'sauna_hours',
+              'chiller', 'water_temp', 'kitchen_type', 'villa_type',
+              'neighbor_dist', 'firepit', 'late_arrival'];
+
+  var SCHEMA = window.VILLAFARAS_SPEC_SCHEMA || [];
+  var OPTS   = window.VILLAFARAS_SPEC_OPTIONS || {};
+  /* 数値の妥当範囲も spec.js から受け取る。**validate.py と同じ表を見る。**
+     ここで弾いておかないと、オーナーの回答が反映の直前で検証に落ちる。 */
+  var RANGE  = window.VILLAFARAS_SPEC_RANGE || {};
+  var DATA   = window.VILLAFARAS_SPEC || {};
+  var VILLAS = window.VILLAFARAS_SURVEY_VILLAS || {};
+
+  var app = document.getElementById('app');
+  var villaId = null;
+  var answers = {};
+
+  /* ---------- 小道具 ---------- */
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(s == null ? '' : String(s)));
+    return d.innerHTML;
+  }
+
+  function qs(name) {
+    var m = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : null;
+  }
+
+  function rowOf(key) {
+    for (var i = 0; i < SCHEMA.length; i++) {
+      var rows = SCHEMA[i].rows;
+      for (var j = 0; j < rows.length; j++) {
+        if (rows[j].k === key) return { row: rows[j], g: SCHEMA[i].g };
+      }
+    }
+    return null;
+  }
+
+  /* オーナーに聞ける項目 = ch が owner または desk。auto と review は聞かない。 */
+  function askableKeys() {
+    var out = [];
+    for (var i = 0; i < SCHEMA.length; i++) {
+      var rows = SCHEMA[i].rows;
+      for (var j = 0; j < rows.length; j++) {
+        if (rows[j].ch === 'owner' || rows[j].ch === 'desk') out.push(rows[j].k);
+      }
+    }
+    return out;
+  }
+
+  function isBlank(key) {
+    var d = DATA[villaId];
+    return !d || d[key] === undefined || d[key] === null;
+  }
+
+  function valueOf(key) {
+    var d = DATA[villaId];
+    if (!d || d[key] == null) return null;
+    var c = d[key];
+    return (typeof c === 'object' && c !== null && 'v' in c) ? c.v : c;
+  }
+
+  function labelFor(row, v) {
+    if (row.o && OPTS[row.o] && OPTS[row.o][v] !== undefined) return OPTS[row.o][v];
+    return String(v) + (row.u ? row.u : '');
+  }
+
+  /* ---------- 下書きの保存（端末内のみ） ---------- */
+
+  function draftKey() { return 'vf_survey_' + villaId; }
+
+  function saveDraft() {
+    try { window.localStorage.setItem(draftKey(), JSON.stringify(answers)); }
+    catch (e) {}
+  }
+
+  function loadDraft() {
+    try {
+      var raw = window.localStorage.getItem(draftKey());
+      if (raw) answers = JSON.parse(raw) || {};
+    } catch (e) { answers = {}; }
+  }
+
+  function clearDraft() {
+    try { window.localStorage.removeItem(draftKey()); } catch (e) {}
+  }
+
+  /* ---------- 描画 ---------- */
+
+  function questionHTML(key) {
+    var r = rowOf(key);
+    if (!r) return '';
+    var row = r.row;
+    var cur = answers[key];
+    var html = '<div class="q' + (cur !== undefined && cur !== '' ? ' answered' : '') +
+               '" data-k="' + esc(key) + '">' +
+               '<div class="q-l">' + esc(row.l) + '</div>';
+    if (row.n) html += '<div class="q-n">' + esc(row.n) + '</div>';
+
+    if (row.o && OPTS[row.o]) {
+      html += '<div class="opts">';
+      var master = OPTS[row.o];
+      for (var v in master) {
+        if (!Object.prototype.hasOwnProperty.call(master, v)) continue;
+        var sel = (cur === v);
+        html += '<label class="opt' + (sel ? ' sel' : '') + '">' +
+                '<input type="radio" name="q_' + esc(key) + '" value="' + esc(v) + '"' +
+                (sel ? ' checked' : '') + '>' + esc(master[v]) + '</label>';
+      }
+      html += '</div>';
+    } else {
+      var rg = RANGE[key];
+      html += '<div class="numrow"><input type="text" inputmode="numeric" ' +
+              'data-num="' + esc(key) + '" value="' + esc(cur == null ? '' : cur) + '">' +
+              '<span class="unit">' + esc(row.u || '') + '</span></div>';
+      if (rg) {
+        html += '<div class="q-n" style="margin:7px 0 0" data-hint="' + esc(key) + '">' +
+                rg[0] + '〜' + rg[1] + esc(row.u || '') + ' の範囲でご記入ください</div>';
+      }
+    }
+    if (cur !== undefined && cur !== '') {
+      html += '<span class="skip" data-clear="' + esc(key) + '">回答を取り消す</span>';
+    }
+    return html + '</div>';
+  }
+
+  function groupedHTML(keys) {
+    /* SCHEMA のグループ順で並べる。項目の並びも SCHEMA に従う。 */
+    var out = '';
+    for (var i = 0; i < SCHEMA.length; i++) {
+      var g = SCHEMA[i], part = '';
+      for (var j = 0; j < g.rows.length; j++) {
+        var k = g.rows[j].k;
+        if (indexOf(keys, k) > -1) part += questionHTML(k);
+      }
+      if (part) out += '<div class="grp"><div class="grp-h">' + esc(g.g) + '</div>' + part + '</div>';
+    }
+    return out;
+  }
+
+  function indexOf(arr, v) {
+    for (var i = 0; i < arr.length; i++) if (arr[i] === v) return i;
+    return -1;
+  }
+
+  function knownHTML() {
+    var keys = askableKeys(), items = '';
+    for (var i = 0; i < keys.length; i++) {
+      if (isBlank(keys[i])) continue;
+      var r = rowOf(keys[i]);
+      if (!r) continue;
+      items += '<dt>' + esc(r.row.l) + '</dt><dd>' + esc(labelFor(r.row, valueOf(keys[i]))) + '</dd>';
+    }
+    if (!items) return '';
+    return '<div class="known"><h3>現在の掲載内容</h3>' +
+           '<p class="note">公開情報から調べた値です。誤りがあれば下の欄でお知らせください。</p>' +
+           '<dl>' + items + '</dl></div>';
+  }
+
+  function render() {
+    var v = VILLAS[villaId];
+    var core = [], rest = [], keys = askableKeys(), i;
+
+    for (i = 0; i < CORE.length; i++) {
+      if (indexOf(keys, CORE[i]) > -1 && isBlank(CORE[i])) core.push(CORE[i]);
+    }
+    for (i = 0; i < keys.length; i++) {
+      if (isBlank(keys[i]) && indexOf(CORE, keys[i]) === -1) rest.push(keys[i]);
+    }
+
+    var html = '<div class="facility">' +
+      '<div class="fname">' + esc(v ? v.n : '（施設が特定できません）') + '</div>' +
+      '<div class="faddr">' + esc(v ? v.a : '') + '</div>' +
+      '<div class="fwrong">施設が違う場合は <a href="spec-survey.html">こちら</a> から選び直せます。</div>' +
+      '</div>';
+
+    html += '<div class="bar"><div class="bar-track"><div class="bar-fill" id="barfill"></div></div>' +
+            '<div class="bar-txt" id="bartxt"></div></div>';
+
+    if (core.length) {
+      html += '<p class="lede" style="text-align:left;margin-bottom:14px">' +
+              '<b>まずは' + core.length + '問だけ</b>お答えください。' +
+              '分からない項目は空欄のままで結構です。</p>' + groupedHTML(core);
+    } else {
+      html += '<p class="lede" style="text-align:left">主要な項目はすべて把握できています。' +
+              'ありがとうございます。</p>';
+    }
+
+    if (rest.length) {
+      html += '<button type="button" class="more-btn" id="morebtn">' +
+              'さらに答える（任意・あと' + rest.length + '問）</button>' +
+              '<div id="optional" style="margin-top:16px">' + groupedHTML(rest) + '</div>';
+    }
+
+    html += '<div style="margin-top:26px">' + knownHTML() +
+      '<div class="field"><label>掲載内容の誤り・補足（任意）</label>' +
+      '<textarea id="corrections" placeholder="上の「現在の掲載内容」に誤りがあれば、この欄にご記入ください。"></textarea></div>' +
+      '<div class="field"><label>ご担当者名（任意）</label><input type="text" id="who"></div>' +
+      '<div class="field"><label>返信先メールアドレス（任意）</label><input type="email" id="mail" placeholder="確認のご連絡が必要な場合のみ"></div>' +
+      '<button type="button" class="submit-btn" id="send">回答を送信する</button>' +
+      '<div class="msg" id="msg"></div>' +
+      '<p class="note">途中まででも送信できます。いただいた内容は掲載情報の更新にのみ使用し、' +
+      '公開前に内容を確認します。<br>入力内容はこの端末にも一時保存され、' +
+      '再度開いたときに復元されます。</p></div>';
+
+    app.innerHTML = html;
+    updateBar(core.length);
+    app.setAttribute('data-core', String(core.length));
+  }
+
+  function renderPicker() {
+    var opts = '<option value="">施設を選択してください</option>', ids = [];
+    for (var id in VILLAS) {
+      if (Object.prototype.hasOwnProperty.call(VILLAS, id)) ids.push(id);
+    }
+    ids.sort(function (a, b) {
+      return VILLAS[a].n < VILLAS[b].n ? -1 : (VILLAS[a].n > VILLAS[b].n ? 1 : 0);
+    });
+    for (var i = 0; i < ids.length; i++) {
+      opts += '<option value="' + esc(ids[i]) + '">' + esc(VILLAS[ids[i]].n) + '</option>';
+    }
+    app.innerHTML = '<div class="picker"><select id="pick">' + opts + '</select></div>' +
+      '<p class="note">メールでお送りしたリンクを開くと、この選択は不要です。</p>';
+    document.getElementById('pick').onchange = function () {
+      if (this.value) window.location.search = '?v=' + encodeURIComponent(this.value);
+    };
+  }
+
+  function updateBar(coreCount) {
+    var n = 0;
+    for (var i = 0; i < CORE.length; i++) {
+      var a = answers[CORE[i]];
+      if (a !== undefined && a !== '') n++;
+    }
+    var total = coreCount || parseInt(app.getAttribute('data-core'), 10) || 0;
+    var fill = document.getElementById('barfill');
+    var txt = document.getElementById('bartxt');
+    if (!fill || !txt) return;
+    fill.style.width = total ? Math.round(n / total * 100) + '%' : '100%';
+    txt.innerHTML = total ? ('主要な質問 ' + total + '問中 <b>' + n + '問</b>にお答えいただきました')
+                          : '主要な質問はありません';
+  }
+
+  /* ---------- 入力の受け取り（文書レベルの委譲） ---------- */
+
+  function onChange(e) {
+    var t = e.target;
+    if (t && t.type === 'radio' && t.name.indexOf('q_') === 0) {
+      answers[t.name.slice(2)] = t.value;
+      saveDraft(); refreshQ(t.name.slice(2));
+    }
+  }
+
+  function onInput(e) {
+    var t = e.target, k = t && t.getAttribute && t.getAttribute('data-num');
+    if (!k) return;
+    var val = t.value.replace(/[^0-9]/g, '');
+    if (val !== t.value) t.value = val;
+    if (val === '') {
+      delete answers[k];
+      setHint(k, null);
+    } else {
+      var n = parseInt(val, 10), rg = RANGE[k];
+      if (rg && (n < rg[0] || n > rg[1])) {
+        /* **範囲外は保存しない。** validate.py が同じ表で弾くので、
+           ここで受け取っても反映の直前で落ちるだけになる。 */
+        delete answers[k];
+        setHint(k, rg[0] + '〜' + rg[1] + ' の範囲でご記入ください');
+      } else {
+        answers[k] = n;
+        setHint(k, null);
+      }
+    }
+    saveDraft(); updateBar();
+  }
+
+  function setHint(key, err) {
+    var hints = document.querySelectorAll('[data-hint="' + key + '"]');
+    for (var i = 0; i < hints.length; i++) {
+      hints[i].style.color = err ? '#B03A1A' : '';
+      hints[i].style.fontWeight = err ? '700' : '';
+      if (err) hints[i].innerHTML = err;
+    }
+  }
+
+  function onClick(e) {
+    var t = e.target;
+    if (t && t.id === 'morebtn') {
+      var box = document.getElementById('optional');
+      if (box) { box.className = 'open'; t.style.display = 'none'; }
+      return;
+    }
+    if (t && t.getAttribute && t.getAttribute('data-clear')) {
+      var k = t.getAttribute('data-clear');
+      delete answers[k]; saveDraft(); refreshQ(k);
+      return;
+    }
+    if (t && t.id === 'send') { submit(); }
+  }
+
+  function refreshQ(key) {
+    var nodes = document.getElementsByClassName('q');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].getAttribute('data-k') === key) {
+        var wrap = nodes[i].parentNode;
+        var tmp = document.createElement('div');
+        tmp.innerHTML = questionHTML(key);
+        wrap.replaceChild(tmp.firstChild, nodes[i]);
+        break;
+      }
+    }
+    updateBar();
+  }
+
+  /* ---------- 送信 ---------- */
+
+  function toFields() {
+    var f = {}, k;
+    for (k in answers) {
+      if (!Object.prototype.hasOwnProperty.call(answers, k)) continue;
+      var v = answers[k];
+      if (v === undefined || v === '') continue;
+      f[k] = (typeof v === 'number') ? { integerValue: String(v) } : { stringValue: String(v) };
+    }
+    return f;
+  }
+
+  function submit() {
+    var btn = document.getElementById('send');
+    var msg = document.getElementById('msg');
+    var fields = toFields();
+    var corr = (document.getElementById('corrections') || {}).value || '';
+    var who = (document.getElementById('who') || {}).value || '';
+    var mail = (document.getElementById('mail') || {}).value || '';
+
+    var n = 0, k;
+    for (k in fields) { if (Object.prototype.hasOwnProperty.call(fields, k)) n++; }
+    if (n === 0 && !corr) {
+      msg.className = 'msg err';
+      msg.innerHTML = '回答が1件もありません。1問でもお答えいただくか、補足欄にご記入ください。';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '送信しています…';
+    msg.className = 'msg';
+    msg.innerHTML = '';
+
+    var body = {
+      fields: {
+        villaId:     { stringValue: String(villaId) },
+        villaName:   { stringValue: (VILLAS[villaId] ? VILLAS[villaId].n : '') },
+        answers:     { mapValue: { fields: fields } },
+        corrections: { stringValue: corr },
+        submitter:   { stringValue: who },
+        email:       { stringValue: mail },
+        answered:    { integerValue: String(n) },
+        approved:    { booleanValue: false },
+        createdAt:   { timestampValue: new Date().toISOString() }
+      }
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', FIRESTORE_BASE + '/' + COLLECTION + '?key=' + FIREBASE_API_KEY, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) return;
+      if (xhr.status >= 200 && xhr.status < 300) {
+        clearDraft();
+        app.innerHTML = '<div class="done"><h2>ありがとうございました</h2>' +
+          '<p>' + n + '件の回答をお送りいただきました。<br>' +
+          '内容を確認のうえ、掲載情報に反映いたします。</p></div>';
+        window.scrollTo(0, 0);
+      } else {
+        btn.disabled = false;
+        btn.innerHTML = '回答を送信する';
+        msg.className = 'msg err';
+        msg.innerHTML = '送信できませんでした（' + xhr.status + '）。' +
+          'お手数ですが時間をおいてもう一度お試しください。' +
+          '入力内容はこの端末に保存されています。';
+      }
+    };
+    xhr.send(JSON.stringify(body));
+  }
+
+  /* ---------- 起動 ---------- */
+
+  function init() {
+    villaId = qs('v');
+    if (!villaId || !VILLAS[villaId]) { renderPicker(); return; }
+    loadDraft();
+    render();
+    document.addEventListener('change', onChange, false);
+    document.addEventListener('input', onInput, false);
+    document.addEventListener('click', onClick, false);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, false);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
