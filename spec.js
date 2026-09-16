@@ -285,8 +285,16 @@
                 '</span>' +
               '</div>';
     }
+    /* **「なし」と「未確認」が訪問者に区別できないのを解く。**
+       未確認は行にせず、群の末尾に項目名だけを1行で列挙する。
+       行にすると34行並んでページが未完成に見えるため。 */
+    var blanks = '';
+    if (grp.blanks && grp.blanks.length) {
+      blanks = '<div class="spec-blanks"><i>未確認</i>' +
+               esc(grp.blanks.join('・')) + '</div>';
+    }
     return '<div class="spec-grp">' + head +
-             '<div class="spec-items">' + body + '</div>' +
+             '<div class="spec-items">' + body + '</div>' + blanks +
            '</div>';
   }
 
@@ -307,25 +315,28 @@
 
     for (i = 0; i < SCHEMA.length; i++) {
       var grp = SCHEMA[i];
-      var items = [], srcs = {};
+      var items = [], srcs = {}, blanks = [];
 
       for (j = 0; j < grp.rows.length; j++) {
         var row = grp.rows[j];
         var cell = normalize(data[row.k]);
         total++;
-        if (!cell) continue;
-        /* **確認できた項目だけ出す。** 「未調査」を並べると、施設ではなく
-           このサイトが未完成に見える。調査率は data 属性に残して開発で使う。 */
+        if (!cell) { blanks.push(row.l); continue; }
         filled++;
         items.push({ l: row.l, v: renderValue(row, cell), src: cell.src || '' });
         srcs[cell.src || ''] = 1;
       }
-      if (items.length) {
-        /* **サウナが無い施設に SAUNA の節を立てない。** 「サウナ なし」という
-           事実は消さず、宿の詳細の側に寄せる。 */
-        var toSauna = (grp.sec === 'sauna') && normalize(data.sauna_exists) &&
-                      normalize(data.sauna_exists).v !== 'no';
-        (toSauna ? sauna : stay).push({ g: grp.g, items: items, srcs: srcs });
+      /* **サウナが無い施設に SAUNA の節を立てない。** 「サウナ なし」という
+         事実は消さず、宿の詳細の側に寄せる。 */
+      var hasSauna = normalize(data.sauna_exists) &&
+                     normalize(data.sauna_exists).v !== 'no';
+      var toSauna = (grp.sec === 'sauna') && hasSauna;
+      /* サウナの群は確認済みが0でも見出しを出す。出さないと「水風呂の情報が
+         無い」のか「水風呂が無い」のかが訪問者に区別できない。
+         宿の詳細側は項目が多いので、0なら畳む。 */
+      if (items.length || toSauna) {
+        (toSauna ? sauna : stay).push(
+          { g: grp.g, items: items, srcs: srcs, blanks: blanks });
       }
     }
 
@@ -336,6 +347,11 @@
 
     var out = sectionHTML('サウナ', 'SAUNA', sauna) +
               sectionHTML('宿の詳細', 'STAY DETAILS', stay);
+
+    out += '<div class="spec-legend">' +
+      '<span><b>あり</b> / <b class="spec-no">なし</b> — 公開情報で確認できた内容</span>' +
+      '<span><i>未確認</i> — 確認できなかった項目。設備が無いという意味ではありません</span>' +
+      '</div>';
 
     out += '<div class="spec-foot">' +
       '<button type="button" class="spec-how">情報の確認方法</button>' +

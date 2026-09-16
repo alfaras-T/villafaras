@@ -23,9 +23,26 @@
 .spec-card{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;gap:12px;background:none;border:0;border-bottom:1px solid var(--line-2,#F1E5D8);border-radius:0;padding:9px 2px;min-width:0}
 .spec-card-k{-webkit-box-flex:0;-webkit-flex:0 0 10.6em;flex:0 0 10.6em;font-size:10.5px;font-weight:500;letter-spacing:.03em;color:var(--muted,#A88C78);line-height:1.45;margin:0}
 .spec-card-v{-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;font-size:13.5px;font-weight:700;color:var(--ink,#2A1A10);line-height:1.5;word-break:break-word;font-variant-numeric:tabular-nums}
-.spec-card-v .spec-no{color:var(--ink2,#5C4434);opacity:.55}
+.spec-card-v .spec-no{color:var(--ink2,#5C4434);opacity:1;font-weight:600}
+/* 「なし」が確認できた内容だと分かるよう、斜めの取り消し線ではなく
+   前に小さな横棒を置く。未確認（点線の囲み）と見分けがつく */
+.spec-card-v .spec-no::before{content:'';display:inline-block;width:7px;height:1px;background:var(--muted,#A88C78);vertical-align:.35em;margin-right:6px}
 
 /* --- 情報がまだ無い施設 --- */
+/* **未確認は行にしない。** 項目名だけを1行で並べる。
+   行にすると34行並んでページ全体が未完成に見える。 */
+.spec-blanks{
+  font-size:10.5px;color:var(--muted,#A88C78);line-height:1.8;
+  padding:9px 2px 0;letter-spacing:.02em;
+}
+.spec-blanks i{
+  font-style:normal;font-size:9px;font-weight:600;letter-spacing:.08em;
+  color:var(--ink2,#5C4434);border:1px dotted var(--line,#E8D9CB);
+  padding:1px 5px;border-radius:1px;margin-right:8px;white-space:nowrap;
+}
+/* 確認済みが0の群（サウナ側のみ出す）は、見出しと未確認の行だけになる */
+.spec-grp .spec-items:empty + .spec-blanks{padding-top:11px}
+
 .spec-blank{font-size:12.5px;color:var(--muted,#A88C78);background:none;border:0;border-left:2px solid var(--o-soft,#FFE8D6);border-radius:0;padding:2px 0 2px 13px;line-height:1.8}
 
 /* --- 出典の印。塗りの4色バッジをやめ、点線の下線と文字色だけにする。
@@ -36,8 +53,18 @@
 .src-auto{color:var(--muted,#A88C78);border-bottom-color:var(--line,#E8D9CB)}
 .src-review{color:#8A7333;border-bottom-color:#E8DCC0}
 
+/* --- 値の三択の凡例。「なし」と「未確認」の違いをここで示す --- */
+.spec-legend{
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;
+  gap:4px 26px;margin-top:30px;padding-top:14px;border-top:1px solid var(--line,#E8D9CB);
+  font-size:10.5px;color:var(--muted,#A88C78);line-height:1.8;
+}
+.spec-legend b{font-weight:700;color:var(--ink,#2A1A10)}
+.spec-legend b.spec-no{color:var(--ink2,#5C4434);font-weight:600}
+.spec-legend i{font-style:normal;font-size:9px;font-weight:600;letter-spacing:.08em;color:var(--ink2,#5C4434);border:1px dotted var(--line,#E8D9CB);padding:1px 5px;border-radius:1px}
+
 /* --- 情報の確認方法（既定は畳む。一般ユーザーには小さく1行だけ見せる） --- */
-.spec-foot{margin-top:24px;padding-top:15px;border-top:1px solid var(--line-2,#F1E5D8)}
+.spec-foot{margin-top:15px}
 .spec-how{
   background:none;border:0;border-radius:0;padding:0;margin:0;cursor:pointer;
   font-family:inherit;font-size:11px;font-weight:600;color:var(--muted,#A88C78);
