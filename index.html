@@ -29,58 +29,347 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o4:#FFD166;--o-pale:#FFF4ED;--o-soft:#FFE8D6;
---ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF;
+--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--line:#E8D9CB;--line-2:#F1E5D8;--white:#FFF;
 --gold:#C9A84C;--gold2:#E5C76B;--lux-black:#0E0E0E;--lux-d:#161616}
 body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
-.topbar{background:linear-gradient(90deg,var(--o1),var(--o2));color:white;padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:14px;position:sticky;top:0;z-index:300;font-size:13px;font-weight:500}
-.promo-notice{background:#F4EDE4;color:var(--muted);text-align:center;padding:5px 16px;font-size:11px;letter-spacing:.2px;word-break:keep-all;overflow-wrap:break-word}
-.topbar a{background:white;color:var(--o1);padding:5px 16px;border-radius:30px;text-decoration:none;font-weight:700;font-size:12px;transition:transform .15s}
-.topbar a:hover{transform:scale(1.05)}
-.hero{position:relative;overflow:hidden;padding:70px 24px 90px;text-align:center;background:linear-gradient(135deg,#FF6B2B 0%,#FF8A3D 45%,#FFB347 80%,#FFD166 100%)}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.18),transparent 40%),radial-gradient(circle at 80% 70%,rgba(255,255,255,.12),transparent 40%)}
-.blob{position:absolute;border-radius:50%;opacity:.5;animation:float 8s ease-in-out infinite}
-.blob1{width:120px;height:120px;background:rgba(255,255,255,.25);top:12%;left:8%}.blob2{width:80px;height:80px;background:rgba(255,255,255,.2);top:60%;left:85%;animation-delay:2s}.blob3{width:60px;height:60px;background:rgba(255,255,255,.3);top:75%;left:15%;animation-delay:4s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
-.hero-content{position:relative;z-index:2;max-width:740px;margin:0 auto}
-.hero-badge{display:inline-block;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);color:white;font-size:12px;font-weight:700;letter-spacing:2px;padding:7px 22px;border-radius:30px;margin-bottom:22px;border:1px solid rgba(255,255,255,.3)}
-.hero h1{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(34px,5.5vw,60px);color:white;line-height:1.12;margin-bottom:18px;font-weight:800;text-shadow:0 4px 20px rgba(180,60,0,.25);word-break:keep-all;overflow-wrap:break-word}
-.hero p{color:rgba(255,255,255,.95);font-size:16px;margin-bottom:34px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
-.hero-search{display:flex;background:white;border-radius:50px;padding:7px;max-width:520px;margin:0 auto 18px;box-shadow:0 12px 40px rgba(180,60,0,.25)}
-.hero-search input{flex:1;min-width:0;border:none;outline:none;padding:12px 22px;font-size:15px;font-family:inherit;border-radius:50px;color:var(--ink);background:transparent}
-.hero-search button{flex-shrink:0;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:12px 32px;border-radius:50px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:transform .15s}
-.hero-search button:hover{transform:scale(1.04)}
-@media(max-width:480px){.hero-search{padding:6px}.hero-search input{padding:11px 14px;font-size:13.5px}.hero-search button{padding:11px 18px;font-size:13px}}
-.hero-quiz-btn{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);color:white;font-size:13px;font-weight:600;padding:10px 24px;border-radius:30px;cursor:pointer;font-family:inherit;margin-bottom:30px;transition:all .15s}
-.hero-quiz-btn:hover{background:white;color:var(--o1)}
-.hero-stats{display:flex;justify-content:center;align-items:center;gap:0;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:18px 6px;max-width:620px;margin:0 auto;box-shadow:0 10px 34px rgba(120,40,0,.14)}
-.hstat{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:white;padding:0 8px;min-width:0}
-.hstat-ic{font-size:17px;line-height:1;opacity:.95}
-.hstat strong{display:block;font-family:'Poppins',sans-serif;font-size:27px;font-weight:800;line-height:1.15}
-.hstat-label{font-size:10.5px;opacity:.88;letter-spacing:.3px;white-space:nowrap}
-.hstat-div{width:1px;height:38px;background:rgba(255,255,255,.28);flex-shrink:0}
-@media(max-width:480px){.hero-stats{padding:14px 2px;border-radius:16px}.hstat{padding:0 3px}.hstat strong{font-size:19px}.hstat-ic{font-size:14px}.hstat-label{font-size:8.5px}.hstat-div{height:30px}}
-.wave{display:block;width:100%;height:48px;margin-top:-1px}
+.topbar{background:var(--cream);color:var(--muted);padding:11px 28px 10px;display:flex;align-items:baseline;justify-content:center;gap:9px;position:relative;z-index:300;font-size:11px;letter-spacing:.055em;line-height:1.5}
+.topbar i{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.14em;color:var(--ink2);border:1px solid var(--line);padding:2px 5px 1px;border-radius:1px;flex:0 0 auto;position:relative;top:-1px}
+.topbar a{color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--o1);padding-bottom:1px;margin-left:10px}
+.promo-notice{display:none}
+@media(max-width:700px){.topbar{padding:9px 16px 8px;font-size:10px;letter-spacing:.01em;gap:7px}}
+
+/* ===== グローバルヘッダー（2026-09 追加） =====
+   ロゴと4つの導線だけ。影も角丸も使わず、下の罫1本で締める。
+   地色はクリームのまま。上に貼り付いても本文の上に「板」が乗って見えない。 */
+.gnav{
+  position:sticky; top:0; z-index:290; background:var(--cream);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  height:52px; padding:0 28px;
+}
+.gnav-logo{
+  font-family:'Cormorant Garamond','Times New Roman',serif;
+  font-size:25px; font-weight:600; letter-spacing:.055em; color:var(--ink);
+  text-decoration:none; line-height:1; flex:0 0 auto; transition:color .14s;
+}
+.gnav-logo:hover{color:var(--o1)}
+.gnav-menu{display:flex; align-items:center; gap:clamp(15px,2.4vw,34px)}
+.gnav-menu a,.gnav-fav{
+  font-family:inherit; font-size:12.5px; font-weight:600; color:var(--ink2);
+  text-decoration:none; background:none; border:0; cursor:pointer; white-space:nowrap;
+  padding:3px 0 2px; border-bottom:1px solid transparent;
+  transition:color .14s, border-color .14s;
+}
+.gnav-menu a:hover,.gnav-fav:hover{color:var(--o1); border-bottom-color:var(--o1)}
+.gnav-fav{display:inline-flex; align-items:baseline; gap:6px}
+.gnav-fav-n{
+  font-family:'Poppins',sans-serif; font-size:11px; font-weight:600;
+  color:var(--muted); font-variant-numeric:tabular-nums;
+}
+.gnav-fav.has .gnav-fav-n{color:var(--o1)}
+.gnav-m{display:none}
+@media(max-width:820px){.gnav{padding:0 20px;height:48px}.gnav-logo{font-size:22px}}
+/* スマートフォンはロゴ＋アイコン2つだけ。ハンバーガーは置かない */
+@media(max-width:700px){
+  .gnav-menu{display:none}
+  .gnav-m{display:flex; align-items:center; gap:2px; margin-right:-8px}
+  .gnav-ic{
+    width:38px; height:38px; border:0; background:none; cursor:pointer;
+    color:var(--ink2); position:relative;
+    display:inline-flex; align-items:center; justify-content:center;
+  }
+  .gnav-ic svg{width:19px;height:19px}
+  .gnav-ic:hover,.gnav-ic:active{color:var(--o1)}
+  .gnav-ic .n{
+    position:absolute; top:4px; right:2px; font-family:'Poppins',sans-serif;
+    font-size:9.5px; font-weight:700; color:var(--o1);
+    font-variant-numeric:tabular-nums; line-height:1;
+  }
+  .gnav-ic .n:empty{display:none}
+}
+.hero{
+  position:relative; background:var(--cream);
+  border-bottom:1px solid var(--line);
+  padding:clamp(44px,6vw,86px) 0 0;
+}
+/* **中央揃えの全面グラデーションをやめた。** 左に見出し、右に検索を置いて
+   左右非対称に組む。手持ちの写真は最大800pxで、ヒーローに引き伸ばすと
+   ぼやけるため使わない。写真は施設一覧で主役にする。 */
+.hero-wrap{
+  max-width:1180px; margin:0 auto; padding:0 28px;
+  display:grid; grid-template-columns:minmax(0,1.75fr) minmax(300px,1fr);
+  gap:clamp(22px,3.4vw,52px); align-items:end;
+}
+.hero-badge{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'Poppins',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:.24em; text-transform:uppercase; color:var(--o1);
+  margin-bottom:clamp(16px,2vw,26px);
+}
+.hero-badge::after{content:'';width:40px;height:1px;background:var(--o3)}
+.hero h1{
+  /* Cormorant には和文のグリフが無い。**フォールバック任せにせず**、
+     macOS/iOS は Hiragino、Windows は Yu Mincho を明示して指定する。
+     和文セリフを1書体ぶん読み込むのは、見出し1行のためには重すぎる。 */
+  font-family:'Cormorant Garamond','Hiragino Mincho ProN','Yu Mincho',
+              'Noto Serif JP','Times New Roman',serif;
+  /* 2行目「とっておきのヴィラへ。」は 11.78em ある。左の列は 1440px で 684px
+     なので、上限は 56px まで。これを超えると右の検索欄に重なる。 */
+  font-size:clamp(29px,4.65vw,56px); font-weight:600; line-height:1.14;
+  letter-spacing:.005em; color:var(--ink); margin:0; word-break:keep-all;
+}
+.hero h1 .l2{display:block;text-indent:.9em}   /* 2行目を送って、塊にしない */
+.hero .sub{
+  font-family:'Noto Sans JP',sans-serif; font-weight:700;
+  font-size:clamp(15px,1.5vw,19px); letter-spacing:.02em; color:var(--ink2);
+  margin:clamp(14px,1.8vw,20px) 0 0; display:flex; align-items:center; gap:12px;
+}
+.hero .sub::before{content:'';width:26px;height:2px;background:var(--ink);flex:0 0 auto}
+.hero p{
+  color:var(--muted); font-size:14px; line-height:1.9; margin:14px 0 0;
+  max-width:26em; word-break:keep-all;
+}
+/* 検索。**下線だけでは検索欄と気づかれない**ので、枠と虫眼鏡と塗りの
+   ボタンで「入力するところ」だと分かるようにした。ただしカード化はしない
+   （影を落とさず、角丸2px、地はクリームのまま）。 */
+.hero-ask{padding-bottom:4px}
+.hero-ask .cap{
+  font-family:'Noto Sans JP',sans-serif; font-size:clamp(14px,1.4vw,17px);
+  font-weight:700; letter-spacing:.01em; text-transform:none; color:var(--ink);
+  margin-bottom:11px;
+}
+.hero-search{
+  display:flex; align-items:stretch; gap:0;
+  border:1px solid var(--line); border-bottom:2px solid var(--ink);
+  border-radius:2px; background:var(--white); padding-left:13px;
+  transition:border-color .18s ease;
+}
+.hero-search:focus-within{border-color:var(--o1);border-bottom-color:var(--o1)}
+.hero-search .ic{display:flex;align-items:center;color:var(--muted);flex:0 0 auto}
+.hero-search .ic svg{width:16px;height:16px;display:block}
+.hero-search input{
+  flex:1; min-width:0; border:0; outline:0; background:transparent;
+  font-family:inherit; font-size:15px; color:var(--ink); padding:13px 10px;
+}
+.hero-search input::placeholder{color:#C6B1A0}
+.hero-search button{
+  flex:0 0 auto; border:0; background:var(--ink); cursor:pointer;
+  font-family:inherit; font-size:13px; font-weight:700; letter-spacing:.11em;
+  color:#fff; padding:0 22px; border-radius:0; transition:background .14s;
+}
+.hero-search button:hover{background:var(--o1)}
+
+/* クイック検索。**丸いピルを並べない。** 文字＋小さな図と、細い区切り線。 */
+.hero-quick{display:flex;flex-wrap:wrap;align-items:center;margin-top:14px}
+.hero-quick .lb{
+  flex:0 0 100%; font-size:11px; color:var(--muted); letter-spacing:.08em;
+  margin:0 0 7px;
+}
+.hero-quick button{
+  position:relative; display:inline-flex; align-items:center; gap:5px;
+  background:none; border:0; cursor:pointer; font-family:inherit;
+  font-size:12.5px; font-weight:600; color:var(--ink2);
+  padding:3px 0; margin:0 13px; line-height:1.4;
+  border-bottom:1px solid transparent; transition:color .14s,border-color .14s;
+}
+.hero-quick button:first-of-type{margin-left:0}
+.hero-quick button svg{width:14px;height:14px;flex:0 0 auto;opacity:.75}
+.hero-quick button:hover{color:var(--o1);border-bottom-color:var(--o1)}
+.hero-quick button:hover svg{opacity:1}
+.hero-quick button + button::before{
+  content:''; position:absolute; left:-13px; top:50%;
+  width:1px; height:12px; background:var(--line); transform:translateY(-50%);
+}
+.hero-quiz-btn{
+  display:inline-flex; align-items:center; gap:9px; margin-top:18px;
+  background:none; border:0; padding:0 0 2px; cursor:pointer; font-family:inherit;
+  font-size:13px; font-weight:700; color:var(--ink2);
+  border-bottom:1px solid var(--o3);
+}
+.hero-quiz-btn::before{
+  /* 塗りつぶしの札は「30秒でできます！」という煽りに見える。所要時間の
+     目安として読ませたいので、線だけの標にする */
+  content:'約30秒'; font-family:'Poppins','Noto Sans JP',sans-serif; font-size:10px;
+  font-weight:600; letter-spacing:.06em; color:var(--o1); background:none;
+  border:1px solid var(--o-soft); padding:3px 6px; border-radius:1px; line-height:1;
+}
+.hero-quiz-btn:hover{color:var(--o1);border-bottom-color:var(--o1)}
+
+/* 数字。半透明カードをやめ、罫で仕切った組版にする。 */
+.hero-stats{
+  max-width:1180px; margin:clamp(32px,4.4vw,58px) auto 0; padding:0 28px;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+}
+.hstat{
+  padding:18px 6px 22px; border-left:1px solid var(--line-2);
+  display:flex; flex-direction:column; gap:3px;
+}
+.hstat:first-child{border-left:0}
+.hstat strong{
+  font-family:'Poppins',sans-serif; font-size:clamp(24px,3vw,36px);
+  font-weight:600; line-height:1; color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.015em;
+}
+.hstat:first-child strong{color:var(--o1)}
+.hstat-label{font-size:11px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
+.hstat-ic,.hstat-div,.blob,.wave{display:none}
+
+@media(max-width:1000px){
+  .hero-wrap{grid-template-columns:1fr;gap:30px;align-items:start}
+  .hero h1 .l2{text-indent:0}
+  .hero-stats{grid-template-columns:repeat(2,1fr);padding:0 22px}
+  .hstat:nth-child(3){border-left:0}
+  .hstat:nth-child(n+3){border-top:1px solid var(--line-2)}
+}
+@media(max-width:480px){
+  .hero{padding-top:30px}
+  .hero-wrap{padding:0 20px;gap:22px}
+  .hero h1{font-size:clamp(27px,7.4vw,34px);line-height:1.2}
+  .hero .sub{font-size:14px}
+  .hero-stats{padding:0 14px}
+  .hstat{padding:14px 4px 16px}
+}
 .container{max-width:1140px;margin:0 auto;padding:0 20px}
-.section{padding:54px 0 0}
-.sec-head{text-align:center;margin-bottom:28px}
-.sec-eyebrow{display:inline-block;color:var(--o1);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px}
-.sec-title{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:28px;font-weight:800;color:var(--ink);line-height:1.2}
-.sec-sub{font-size:14px;color:var(--muted);margin-top:6px}
-.mood-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.mood-card{position:relative;height:106px;border-radius:15px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
-.mood-card:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 14px 36px rgba(180,60,0,.2)}
-.mood-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .3s}
-.mood-card:hover .mood-bg{transform:scale(1.08)}
-.mood-tint{position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,color-mix(in srgb,var(--mc) 85%,black) 100%);opacity:.82}
-.mood-text{position:absolute;bottom:9px;left:14px;color:white;z-index:2}.mood-text strong{display:block;font-size:14px;font-weight:700;line-height:1.25}.mood-text span{font-size:10.5px;opacity:.92}
-.pref-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:700px){.mood-grid{grid-template-columns:repeat(2,1fr);gap:10px}.pref-grid{grid-template-columns:repeat(2,1fr);gap:10px}.mood-card{height:72px;border-radius:11px}.pref-card{height:72px;border-radius:11px}}
-.pref-card{border-radius:15px;overflow:hidden;position:relative;height:106px;cursor:pointer;transition:transform .2s,box-shadow .2s}
-.pref-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(180,60,0,.18)}
-.pref-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .3s}
-.pref-card:hover .pref-bg{transform:scale(1.06)}
-.pref-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(42,26,16,.8) 100%)}
-.pref-info{position:absolute;bottom:9px;left:14px;color:white}.pref-info strong{font-size:14px;font-weight:700;display:block;line-height:1.25}.pref-info span{font-size:10px;opacity:.85}
+.section{padding:54px 0 0; scroll-margin-top:66px}
+@media(max-width:700px){.section{scroll-margin-top:58px}}
+.sec-head{
+  display:flex; align-items:baseline; gap:16px; margin-bottom:24px;
+  border-bottom:1px solid var(--line); padding-bottom:12px;
+}
+/* **中央揃えをやめ、左揃えの見出しに番号を振る。** 3つとも同じ組だと
+   どれが本題か分からない。連番にして索引の体裁にする。 */
+.sec-head .no{
+  font-family:'Poppins',sans-serif; font-size:11px; font-weight:600;
+  color:var(--o1); letter-spacing:.1em; flex:0 0 auto; align-self:flex-start;
+  padding-top:5px; font-variant-numeric:tabular-nums;
+}
+.sec-title{
+  font-family:'Noto Sans JP',sans-serif; font-size:clamp(19px,2.2vw,25px);
+  font-weight:700; color:var(--ink); line-height:1.3; letter-spacing:.01em;
+}
+.sec-sub{font-size:12.5px;color:var(--muted);flex:0 1 auto;margin-left:5px;padding-left:19px;position:relative;letter-spacing:.02em}
+.sec-sub::before{content:'';position:absolute;left:0;top:.62em;width:11px;height:1px;background:var(--line)}
+.sec-eyebrow{display:none}
+/* 本題（ヴィラ一覧）だけ強くする */
+#villaSection .sec-head{border-bottom-width:2px;border-bottom-color:var(--ink);padding-bottom:14px}
+#villaSection .sec-title{font-size:clamp(23px,2.8vw,32px)}
+
+/* 気分で選ぶ。**等分の4列をやめ、大小のある帯に組む。** */
+.mood-grid{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:10px;
+  grid-auto-rows:minmax(0,1fr);
+}
+.mood-card{
+  position:relative; overflow:hidden; cursor:pointer; border-radius:3px;
+  min-height:128px;
+}
+.mood-card:nth-child(1){grid-column:span 3;grid-row:span 2;min-height:266px}
+.mood-card:nth-child(2){grid-column:span 3}
+.mood-card:nth-child(3){grid-column:span 2}
+.mood-card:nth-child(4){grid-column:span 1}
+.mood-card:nth-child(5){grid-column:span 3}
+.mood-card:nth-child(6){grid-column:span 3}
+.mood-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease}
+.mood-card:hover .mood-bg{transform:scale(1.045)}
+.mood-tint{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,10,4,0) 38%,rgba(20,10,4,.72) 100%);
+}
+.mood-card:hover .mood-tint{background:linear-gradient(180deg,rgba(20,10,4,.06) 26%,rgba(20,10,4,.82) 100%)}
+.mood-tint{transition:background .28s ease}
+.mood-text{position:absolute;bottom:13px;left:15px;right:15px;color:#fff;z-index:2;transition:transform .24s ease}
+.mood-card:hover .mood-text{transform:translateX(4px)}
+.mood-text strong{
+  display:block;font-size:15px;font-weight:700;line-height:1.3;letter-spacing:.01em;
+  text-shadow:0 1px 8px rgba(0,0,0,.4);
+}
+.mood-card:nth-child(1) .mood-text strong{font-size:22px}
+.mood-text span{font-size:11px;opacity:.9;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+
+/* **「気分・体験」と「設備・条件」を分ける。** 上段は写真の主役4枚、
+   下段は写真を持たない文字の導線にして、同じ重さに見えないようにする。 */
+.mood-more{
+  display:flex; flex-wrap:wrap; align-items:baseline;
+  margin-top:17px; padding-top:14px; border-top:1px solid var(--line-2);
+}
+.mood-more .lb{
+  font-size:11px; color:var(--muted); letter-spacing:.08em;
+  margin-right:16px; flex:0 0 auto;
+}
+.mood-more button{
+  background:none; border:0; border-bottom:1px dashed var(--line); border-radius:0;
+  padding:4px 2px; margin:0 18px 4px 0; cursor:pointer; font-family:inherit;
+  font-size:12.5px; font-weight:600; color:var(--ink2);
+  transition:color .14s,border-color .14s;
+}
+.mood-more button:hover{color:var(--o1);border-bottom-color:var(--o1)}
+
+/* エリア。**写真カードをやめて索引にする。** 直前の「気分で選ぶ」と
+   同じ形の写真グリッドが2つ続くと、どちらも印象に残らない。
+   ここは件数という実データがあるので、数字で読ませる。 */
+.pref-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  column-gap:clamp(20px,3vw,48px); row-gap:0;
+  border-top:1px solid var(--line-2);
+}
+.pref-card{
+  display:flex; align-items:baseline; gap:12px; cursor:pointer;
+  padding:15px 2px 14px; border-bottom:1px solid var(--line-2);
+  position:relative; transition:padding-left .18s ease;
+}
+.pref-card::before{
+  content:''; position:absolute; left:0; top:0; bottom:-1px; width:2px;
+  background:var(--o1); transform:scaleY(0); transform-origin:top;
+  transition:transform .18s ease;
+}
+.pref-card:hover{padding-left:12px}
+.pref-card:hover::before{transform:scaleY(1)}
+.pref-bg,.pref-overlay{display:none}
+.pref-info{display:flex;align-items:baseline;gap:12px;width:100%;min-width:0}
+.pref-info strong{
+  font-size:16px;font-weight:700;color:var(--ink);line-height:1.3;flex:0 0 auto;
+}
+.pref-info .n{
+  font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--o1);
+  font-variant-numeric:tabular-nums;flex:0 0 auto;
+}
+/* 「41」ではなく「41軒」。数のフィルタではなく行き先として読ませる */
+.pref-info .n em{
+  font-style:normal;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;
+  font-weight:500;color:var(--muted);margin-left:1px;
+}
+.pref-go{
+  flex:0 0 auto;margin-left:13px;color:var(--line);font-size:13px;line-height:1;
+  transition:color .18s ease,transform .18s ease;
+}
+.pref-card:hover .pref-go{color:var(--o1);transform:translateX(3px)}
+.pref-info .area{
+  font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
+}
+
+/* 主役は4枚。狭い幅では [大] / [2][3] / [4横長] に組み替えて、
+   最終行に穴が空かないようにする */
+@media(max-width:820px){
+  .mood-grid{grid-template-columns:repeat(2,1fr)}
+  .mood-card{min-height:150px}
+  .mood-card:nth-child(1){grid-column:span 2;grid-row:span 1;min-height:212px}
+  .mood-card:nth-child(2),.mood-card:nth-child(3){grid-column:span 1}
+  .mood-card:nth-child(4){grid-column:span 2;min-height:132px}
+  .pref-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .mood-grid{gap:8px}
+  .mood-card{min-height:120px}
+  .mood-card:nth-child(1){min-height:164px}
+  .mood-card:nth-child(4){min-height:112px}
+  .pref-grid{grid-template-columns:1fr}
+  .sec-head{flex-wrap:wrap;gap:4px 10px}
+  .sec-sub{flex-basis:100%;margin-left:0;padding-left:26px;text-align:left}
+  .sec-sub::before{display:none}
+}
+
 
 /* ===== PROMO / BENEFIT BLOCKS ===== */
 /* 将来の広告枠（mini-intro）用スタイル。コメントの設置例で使用できます */
@@ -101,82 +390,308 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 
 
 /* CONTROLS / GRID */
-.controls{background:white;border:1px solid var(--border);border-radius:18px;padding:20px 22px;margin-bottom:24px;box-shadow:0 4px 20px rgba(180,60,0,.04)}
-.ctrl-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.ctrl-row + .ctrl-row{margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
-.ctrl-label{font-size:12px;font-weight:700;color:var(--ink2);min-width:64px}
-.chips{display:flex;gap:7px;flex-wrap:wrap}
-.chip{padding:7px 16px;border-radius:30px;border:1.5px solid var(--border);background:var(--cream);font-size:12px;font-weight:600;cursor:pointer;color:var(--ink2);transition:all .15s;font-family:inherit}
-.chip:hover{border-color:var(--o2)}
-.chip.on{background:linear-gradient(135deg,var(--o1),var(--o2));border-color:transparent;color:white;box-shadow:0 4px 12px rgba(255,107,43,.3)}
-.ctrl-select{padding:8px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-family:inherit;color:var(--ink);background:white;cursor:pointer;outline:none}
-.ctrl-spacer{flex:1}
-.price-slider{display:flex;align-items:center;gap:10px}
-.price-slider input[type=range]{accent-color:var(--o1);width:160px}
-.price-val{font-size:12px;font-weight:700;color:var(--o1);min-width:80px}
-.lucky-btn{background:linear-gradient(135deg,var(--o3),var(--o4));color:var(--ink);border:none;padding:9px 20px;border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:transform .15s;white-space:nowrap}
-.lucky-btn:hover{transform:scale(1.04)}
-.reset-btn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit}
-.count-bar{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:16px}
-.view-toggle{display:none;gap:6px}
-.view-btn{width:30px;height:30px;border-radius:8px;border:1.5px solid var(--border);background:white;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.view-btn.on{background:var(--o1);border-color:var(--o1);color:white}
-@media(max-width:700px){
-  .view-toggle{display:flex}
-  .grid.compact{grid-template-columns:repeat(3,1fr);gap:8px}
-  .grid.compact .card{border-radius:10px}
-  .grid.compact .card-img{aspect-ratio:1/1;height:auto}
-  .grid.compact .card-badge{font-size:7.5px;padding:2px 6px;top:5px;left:5px}
-  .grid.compact .fav{width:22px;height:22px;font-size:11px;top:5px;right:5px}
-  .grid.compact .card-body{padding:6px 6px 8px;gap:3px}
-  .grid.compact .card-name{font-size:10.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .grid.compact .card-addr,.grid.compact .card-feature,.grid.compact .pill-row,.grid.compact .card-btn,.grid.compact .card-notice{display:none}
-  .grid.compact .card-footer{padding-top:4px;border-top:none;flex-direction:column;align-items:flex-start;gap:0}
-  .grid.compact .card-price{font-size:10px}
-  .grid.compact .card-price span{font-size:7.5px}
+.controls{
+  background:none; border:0; border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line); border-radius:0;
+  padding:0; margin-bottom:22px; box-shadow:none;
 }
-.count-bar strong{color:var(--o1);font-size:18px;font-weight:800;font-family:'Poppins',sans-serif}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px;margin-bottom:30px}
-.card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;position:relative;cursor:pointer;text-decoration:none;color:inherit}
-.card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(180,60,0,.12)}
-.card-img{height:160px;position:relative;background-color:#EADBCB;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;display:block}
-.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F0E4D5,#EADBCB);color:#B89A78}
-.img-placeholder svg{width:34%;height:34%;opacity:.55}
-.card-badge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;padding:4px 11px;border-radius:30px;backdrop-filter:blur(4px);color:white}
-.badge-yamanashi{background:rgba(5,150,105,.9)}.badge-kanagawa{background:rgba(29,78,216,.9)}.badge-saitama{background:rgba(180,83,9,.9)}.badge-chiba{background:rgba(217,119,6,.9)}.badge-gunma{background:rgba(109,40,217,.9)}.badge-tochigi{background:rgba(4,120,87,.9)}.badge-ibaraki{background:rgba(14,116,144,.9)}.badge-shizuoka{background:rgba(225,29,72,.9)}.badge-nagano{background:rgba(7,89,133,.9)}
-.fav{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);backdrop-filter:blur(4px);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:transform .15s;z-index:3;color:var(--o1)}
-.fav:hover{transform:scale(1.15)}
-.card-body{padding:15px 16px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
-.card-name{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}
-.card-addr{font-size:11px;color:var(--muted)}
-.card-feature{font-size:12px;color:var(--ink2);background:var(--o-pale);border-radius:8px;padding:8px 11px;line-height:1.5;margin-top:auto}
-.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
-.card-price{font-size:15px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif}.card-price span{font-size:10px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}.card-price .tilde{color:var(--o1);font-weight:800;font-size:15px}
-.card-btn{font-size:11px;font-weight:700;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;border-radius:8px;padding:8px 15px;cursor:pointer;text-decoration:none;transition:transform .15s}
-.card-btn:hover{transform:scale(1.05)}
-.pill-row{display:flex;flex-wrap:wrap;gap:4px}
-.pill{font-size:10px;padding:2px 9px;border-radius:30px;font-weight:600}
-.pill-sauna{background:#FEF3C7;color:#92400E}.pill-pet{background:#D1FAE5;color:#065F46}.pill-view{background:#DBEAFE;color:#1E40AF}.pill-pool{background:#EDE9FE;color:#4C1D95}.pill-bbq{background:#FCE7F3;color:#9D174D}.pill-onsen{background:#FFE4E6;color:#BE123C}.pill-nature{background:#DCFCE7;color:#166534}.pill-luxury{background:#FEF9C3;color:#854D0E}.pill-rotenburo{background:#FFE4E6;color:#9F1239}.pill-group{background:#E0E7FF;color:#3730A3}.pill-sea{background:#CFFAFE;color:#155E75}.pill-lake{background:#DBEAFE;color:#1E40AF}.pill-river{background:#D1FAE5;color:#065F46}.pill-mountain{background:#DCFCE7;color:#166534}
-.load-more{display:block;margin:0 auto 70px;background:white;border:2px solid var(--o2);color:var(--o1);font-weight:700;font-size:14px;padding:13px 44px;border-radius:30px;cursor:pointer;font-family:inherit;transition:all .15s}
-.load-more:hover{background:var(--o1);color:white;border-color:var(--o1)}
-.empty{grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)}
-.fab{position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;border-radius:50px;padding:14px 24px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 8px 28px rgba(255,107,43,.4);z-index:150;font-family:inherit;display:flex;align-items:center;gap:8px;transition:transform .15s}
-.fab:hover{transform:scale(1.05)}
-.fab-count{background:white;color:var(--o1);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
-.privacy-modal-bg{position:fixed;inset:0;background:rgba(42,26,16,.6);backdrop-filter:blur(4px);z-index:450;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
+/* **白い角丸カードに5行を縦積みするのをやめた。** 罫で仕切った面に、
+   重要度の違う3つの帯として組む。 */
+.ctrl-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 2px}
+.ctrl-row + .ctrl-row{margin-top:0;padding-top:14px;border-top:1px solid var(--line-2)}
+.ctrl-label{
+  font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+  min-width:78px; flex:0 0 auto; align-self:flex-start; padding-top:7px;
+}
+.chips{display:flex;gap:6px;flex-wrap:wrap;flex:1;min-width:0}
+
+/* 3種のチップを**別の形**にする。エリアは選ぶ対象、こだわりは絞り、
+   サ・スペックはこのサイト固有の軸なので、見た目を分ける。 */
+.chip{
+  padding:6px 13px; border-radius:2px; border:1px solid var(--line);
+  background:var(--white); font-size:12.5px; font-weight:500; cursor:pointer;
+  color:var(--ink2); transition:border-color .14s,background .14s,color .14s;
+  font-family:inherit; line-height:1.5;
+}
+.chip:hover{border-color:var(--ink2);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700;box-shadow:none}
+
+/* こだわり = 枠なし。下線で示す */
+#tagChips .chip{
+  border:0; border-bottom:1px dashed var(--line); border-radius:0;
+  padding:5px 2px; margin-right:12px; background:none;
+}
+#tagChips .chip:hover{border-bottom-color:var(--o1);color:var(--ink)}
+#tagChips .chip.on{
+  background:none; color:var(--ink); font-weight:700;
+  border-bottom:2px solid var(--o1); padding-bottom:4px;
+}
+/* サ・スペック = 差別化の軸。薄い地色を敷いて他と分ける */
+#saunaSpecChips .chip{
+  background:var(--o-pale); border-color:var(--o-soft); color:var(--ink2);
+  border-radius:2px;
+}
+#saunaSpecChips .chip:hover{border-color:var(--o1)}
+#saunaSpecChips .chip.on{background:var(--o1);border-color:var(--o1);color:#fff}
+
+/* 既定の select をやめ、罫と自作の山形で組む */
+.ctrl-sel{position:relative;display:inline-flex;align-items:center}
+.ctrl-sel::after{
+  content:''; position:absolute; right:7px; width:6px; height:6px;
+  border-right:1.5px solid var(--ink2); border-bottom:1.5px solid var(--ink2);
+  transform:translateY(-2px) rotate(45deg); pointer-events:none;
+}
+.ctrl-select{
+  padding:6px 26px 6px 2px; border:0; border-bottom:1.5px solid var(--line);
+  border-radius:0; font-size:13.5px; font-family:inherit; font-weight:700;
+  color:var(--ink); background:none; cursor:pointer; outline:none;
+  -webkit-appearance:none; appearance:none;
+}
+.ctrl-select:focus{border-bottom-color:var(--o1)}
+.ctrl-spacer{flex:1}
+
+/* 既定の range をやめ、細い軌道と角のつまみにする */
+.price-slider{display:flex;align-items:center;gap:12px;flex:1;min-width:210px;max-width:420px}
+.price-slider input[type=range]{
+  -webkit-appearance:none;appearance:none;flex:1;min-width:0;height:18px;
+  background:none;cursor:pointer;
+}
+.price-slider input[type=range]::-webkit-slider-runnable-track{
+  height:2px;background:var(--line);border-radius:0;
+}
+.price-slider input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:3px;height:16px;background:var(--o1);
+  border:0;border-radius:0;margin-top:-7px;
+}
+.price-slider input[type=range]::-moz-range-track{height:2px;background:var(--line)}
+.price-slider input[type=range]::-moz-range-thumb{width:3px;height:16px;background:var(--o1);border:0;border-radius:0}
+.price-val{
+  font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);
+  min-width:74px;font-variant-numeric:tabular-nums;
+}
+/* ランダムは「操作」ではなく「遊び」。塗りつぶしのピルをやめる */
+.lucky-btn{
+  background:none;border:1px solid var(--ink);color:var(--ink);
+  padding:7px 16px;border-radius:2px;font-size:12.5px;font-weight:700;
+  cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .14s,color .14s;
+}
+.lucky-btn:hover{background:var(--ink);color:var(--cream);transform:none}
+.reset-btn{
+  background:none;border:0;color:var(--muted);font-size:11.5px;cursor:pointer;
+  font-family:inherit;text-decoration:none;border-bottom:1px solid var(--line);
+  padding-bottom:1px;
+}
+.reset-btn:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* **初見で5行すべてを同じ重さで見せない。** エリア・こだわり・予算・並び順
+   までを常時表示にして、サウナの仕様はここに畳む。ただの「その他」ではなく
+   このサイトの差別化要素なので、名前を与えて別の面として開く。 */
+.ctrl-more{border-top:1px solid var(--line-2)}
+.ctrl-more-btn{
+  display:flex; align-items:baseline; gap:12px; width:100%;
+  background:none; border:0; cursor:pointer; font-family:inherit;
+  padding:13px 2px; text-align:left; color:var(--ink);
+}
+.ctrl-more-t{font-size:13px;font-weight:700;letter-spacing:.01em;flex:0 0 auto;transition:color .14s}
+.ctrl-more-t::before{
+  content:''; display:inline-block; width:5px; height:5px; border-radius:50%;
+  background:var(--o1); margin-right:8px; vertical-align:2px;
+}
+.ctrl-more-n{
+  font-family:'Poppins','Noto Sans JP',sans-serif; font-size:10.5px; font-weight:600;
+  color:var(--o1); border:1px solid var(--o-soft); background:var(--o-pale);
+  padding:2px 7px; border-radius:1px; flex:0 0 auto; letter-spacing:.02em;
+}
+.ctrl-more-n:empty{display:none}
+.ctrl-more-s{
+  font-size:11px; color:var(--muted); flex:1; min-width:0;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.ctrl-more-x{flex:0 0 auto;width:11px;height:11px;position:relative;align-self:center}
+.ctrl-more-x::before,.ctrl-more-x::after{content:'';position:absolute;background:var(--o1)}
+.ctrl-more-x::before{left:0;top:5px;width:11px;height:1.5px}
+.ctrl-more-x::after{left:4.75px;top:0;width:1.5px;height:11px;transition:transform .2s ease}
+.ctrl-more.open .ctrl-more-x::after{transform:scaleY(0)}
+.ctrl-more-btn:hover .ctrl-more-t{color:var(--o1)}
+.ctrl-more-body{
+  max-height:0; overflow:hidden; opacity:0; padding:0 2px;
+  transition:max-height .2s ease, opacity .2s ease, padding .2s ease;
+}
+.ctrl-more.open .ctrl-more-body{max-height:240px;opacity:1;padding:0 2px 16px}
+.ctrl-more-note{font-size:11px;color:var(--muted);line-height:1.7;margin:0 0 10px}
+
+@media(max-width:700px){
+  .ctrl-label{min-width:100%;padding-top:0;margin-bottom:-4px}
+  .price-slider{max-width:none}
+  .ctrl-more-s{display:none}
+  .ctrl-more.open .ctrl-more-body{max-height:320px}
+}
+/* 件数と表示切替。border を共有する一続きの帯にして、押せる範囲を1つに見せる */
+.count-bar{display:flex;align-items:baseline;justify-content:space-between;gap:16px;font-size:12px;color:var(--muted);margin:0 0 18px;padding-bottom:11px;border-bottom:1px solid var(--line-2);letter-spacing:.02em}
+.view-toggle{display:none;gap:0;border:1px solid var(--line);align-self:center;flex:0 0 auto}
+.view-btn{width:33px;height:27px;border-radius:0;border:0;border-left:1px solid var(--line);background:none;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.view-btn:first-child{border-left:0}
+.view-btn.on{background:var(--ink);color:#fff}
+/* **スマートフォンの3列（compact）表示は廃止した。** 写真を眺めるギャラリー
+   ではなく、施設名・価格・サウナの仕様を見比べて泊まる先を決める一覧なので、
+   3列では文字が小さくなりすぎる。モバイルは2列に統一し、切替UIも出さない。
+   （setGridView() は残してあるが、呼ばれても .compact の指定がないので効かない） */
+.count-bar strong{color:var(--o1);font-size:19px;font-weight:600;font-family:'Poppins',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;margin-right:2px}
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(266px,1fr));
+  gap:clamp(14px,1.6vw,22px) clamp(14px,1.6vw,20px); margin-bottom:34px;
+}
+/* **先頭2件は横組みにする。** 286枚が同じ重さで並ぶとどれも印象に残らないが、
+   単に大きくすると1枚で画面を占めてしまう。**形そのものを変えて**
+   縦に伸ばさずに格を上げる。 */
+.grid{align-items:start}   /* 行の高さに引きずられて画像が伸びるのを防ぐ */
+/* 幅2列だと3列グリッドの右端に穴が空くので、先頭札は**行を占有**する */
+.grid .card.lead{grid-column:1/-1;flex-direction:row;gap:clamp(14px,1.8vw,26px);align-items:stretch}
+.grid .card.lead .card-img{flex:0 0 40%;aspect-ratio:16/10;min-height:0}
+.grid .card.lead .card-body{padding:2px 0 0;justify-content:center}
+.grid .card.lead .card-name{font-size:clamp(20px,1.85vw,26px);line-height:1.34;letter-spacing:-.005em}
+.grid .card.lead .card-addr{font-size:12px}
+.grid .card.lead .card-feature{-webkit-line-clamp:3;font-size:12.5px;line-height:1.8;margin-top:10px}
+.grid .card.lead .card-footer{margin-top:15px;padding-top:12px}
+.grid .card.lead .card-price{font-size:20px}
+/* 本文が広いと auto-fit が諸元を端まで散らす。先頭札だけ列幅を内容に合わせる */
+.grid .card.lead .card-spec{
+  grid-template-columns:repeat(4,minmax(0,max-content));
+  column-gap:clamp(22px,3.2vw,46px);row-gap:4px;justify-content:start;
+  font-size:11.5px;margin-top:9px;
+}
+
+.card{
+  background:none; border:0; border-radius:0; overflow:visible;
+  display:flex; flex-direction:column; position:relative; cursor:pointer;
+  text-decoration:none; color:inherit; transition:none;
+}
+.card:hover{transform:none;box-shadow:none}
+.card-img{
+  height:auto; aspect-ratio:4/3; position:relative; overflow:hidden;
+  background:#EFE4D8; border-radius:2px;
+}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.card:hover .card-img img{transform:scale(1.035)}
+/* 写真が入るまでの仮置き。**灰色の家アイコンをやめ、施設名の頭文字を組む。**
+   286枚の同じアイコンが並ぶより、施設ごとに違うほうが一覧として読める。 */
+.img-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  background:#F0E5D8;color:#C4A98B;
+}
+/* 写真が入るまでの地色。同じ色が並ぶと1枚の画像に見えるので id で振り分ける */
+.img-placeholder[data-t="1"]{background:#EDE6DB}
+.img-placeholder[data-t="2"]{background:#F2E7DB}
+.img-placeholder[data-t="3"]{background:#EAE3D9}
+.img-placeholder[data-t="4"]{background:#F1E9E0}
+.img-placeholder svg{display:none}
+.img-placeholder::after{
+  content:attr(data-ini); font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,5vw,54px); font-weight:600; line-height:1; opacity:.5;
+}
+/* 県名。9色のバッジをやめ、写真の上に小さく置く */
+.card-badge{
+  position:absolute;top:8px;left:8px;font-size:10px;font-weight:700;
+  padding:3px 8px;border-radius:2px;color:#fff;letter-spacing:.04em;
+  background:rgba(28,16,8,.62);backdrop-filter:blur(3px);
+}
+.badge-yamanashi,.badge-kanagawa,.badge-saitama,.badge-chiba,.badge-gunma,
+.badge-tochigi,.badge-ibaraki,.badge-shizuoka,.badge-nagano{background:rgba(28,16,8,.62)}
+/* お気に入り。白い丸のボタンをやめ、印だけ置く */
+.fav{
+  position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:2px;
+  background:none;border:0;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;font-size:15px;z-index:3;color:#fff;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,.45));transition:transform .15s;
+}
+.fav:hover{transform:scale(1.12)}
+.fav.on{color:var(--o1)}
+
+.card-body{padding:11px 1px 0;flex:1;display:flex;flex-direction:column;gap:3px}
+.card-name{
+  font-size:15px;font-weight:700;line-height:1.45;color:var(--ink);letter-spacing:.005em;
+}
+.card:hover .card-name{color:var(--o1)}
+.card-addr{font-size:11px;color:var(--muted);letter-spacing:.01em}
+/* サウナの仕様。**このサイトにしかない情報**なので、行として独立させる */
+.card-spec{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(76px,1fr));
+  gap:3px 8px;font-size:11px;color:var(--ink2);
+  margin-top:6px;font-variant-numeric:tabular-nums;
+}
+.card-spec span{display:flex;align-items:baseline;gap:5px;min-width:0}
+.card-spec i{font-style:normal;color:var(--muted);font-size:9.5px;letter-spacing:.05em;flex:0 0 auto}
+.card-spec b{font-weight:600;color:var(--ink);font-family:'Poppins','Noto Sans JP',sans-serif;white-space:nowrap}
+/* 標識。14色のパステルピルをやめ、文字だけにする */
+.pill-row{display:flex;flex-wrap:wrap;gap:0 9px;margin-top:4px}
+.pill{
+  font-size:10.5px;padding:0;border-radius:0;font-weight:500;
+  background:none!important;color:var(--muted)!important;
+}
+.pill::before{content:'·';margin-right:9px;color:var(--line)}
+.pill:first-child::before{content:'';margin:0}
+.card-feature{
+  font-size:11.5px;color:var(--muted);background:none;border-radius:0;padding:0;
+  line-height:1.65;margin-top:7px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.card-footer{
+  display:flex;align-items:baseline;justify-content:flex-start;gap:8px;
+  padding-top:9px;margin-top:9px;border-top:1px solid var(--line-2);
+}
+.card-price{
+  font-size:15px;font-weight:600;color:var(--ink);font-family:'Poppins',sans-serif;
+  font-variant-numeric:tabular-nums;
+}
+.card-price span{font-size:10px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}
+.card-price .tilde{color:var(--muted);font-weight:400;font-size:12px}
+/* 「詳細・予約」のボタンは286個の反復になるので廃止。カード全体がリンク。 */
+.card-btn{display:none}
+
+@media(max-width:760px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .grid .card.lead .card-name{font-size:16px}
+  .grid .card.lead .card-img{flex-basis:44%}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr 1fr;gap:14px 10px}
+  /* 縦2列では横組みが窮屈になるので、先頭も普通の縦組みに戻す */
+  .grid .card.lead{flex-direction:column;gap:0}
+  .grid .card.lead .card-img{flex:none;aspect-ratio:16/9;min-height:0}
+  .grid .card.lead .card-body{padding:11px 1px 0}
+  .card-name{font-size:13.5px}
+  .card-feature{display:none}
+  .card-spec{font-size:10px;gap:2px 7px;grid-template-columns:repeat(auto-fit,minmax(66px,1fr))}
+}
+.load-more{display:block;width:100%;margin:26px 0 78px;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.1em;padding:17px 0;cursor:pointer;font-family:inherit;transition:background .16s,color .16s}
+.load-more::after{content:'↓';margin-left:11px;color:var(--o1);font-size:12px}
+.load-more:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.load-more:hover::after{color:var(--o3)}
+.empty{grid-column:1/-1;padding:52px 0 60px;color:var(--muted);font-size:13px;line-height:2}
+.empty strong{display:block;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em}
+.empty button{background:none;border:0;border-bottom:1px solid var(--o1);color:var(--o1);font:inherit;font-size:13px;padding:0 0 1px;margin-top:13px;cursor:pointer}
+.fab{position:fixed;bottom:0;right:0;background:var(--ink);color:#fff;border:none;border-radius:0;padding:13px 19px 13px 17px;font-weight:600;font-size:12.5px;letter-spacing:.05em;cursor:pointer;box-shadow:-8px -8px 28px rgba(42,26,16,.10);z-index:150;font-family:inherit;display:none;align-items:center;gap:11px;transition:background .15s}
+.fab.on{display:flex}
+.fab:hover{background:#3D2818}
+.fab.viewing{background:var(--o1)}
+.fab.viewing .fab-count{color:#fff}
+.fab-count{color:var(--o3);font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0}
+.fab-count::before{content:'';display:inline-block;width:1px;height:11px;background:rgba(255,255,255,.26);margin-right:11px;vertical-align:-1px}
+.privacy-modal-bg{position:fixed;inset:0;background:rgba(42,26,16,.55);z-index:450;display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
 .privacy-modal-bg.show{display:flex}
-.privacy-modal{background:white;border-radius:20px;max-width:720px;width:100%;max-height:none;margin:30px auto;position:relative;animation:pop .25s ease}
-.privacy-modal-close{position:sticky;top:0;float:right;margin:14px 14px 0 0;width:34px;height:34px;border-radius:50%;background:var(--o-pale);border:none;font-size:18px;color:var(--ink);cursor:pointer;z-index:2}
+.privacy-modal{background:var(--white);border-radius:2px;max-width:700px;width:100%;max-height:none;margin:30px auto;position:relative;animation:pop .25s ease;box-shadow:0 30px 80px rgba(42,26,16,.30)}
+.privacy-modal-close{position:sticky;top:0;float:right;margin:15px 17px 0 0;width:26px;height:26px;border-radius:0;background:none;border:none;font-size:17px;line-height:1;color:var(--muted);cursor:pointer;z-index:2}
+.privacy-modal-close:hover{color:var(--ink)}
 .policy-box{max-width:100%;margin:0 auto;padding:16px 28px 40px;color:var(--ink2);font-size:13.5px;line-height:1.9;clear:both}
-.policy-box h2{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.policy-box h2{font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:7px}
 .policy-box .policy-updated{font-size:12px;color:var(--muted);margin-bottom:24px}
-.policy-box h3{font-size:15px;font-weight:700;color:var(--ink);margin:22px 0 8px;padding-left:10px;border-left:4px solid var(--o2)}
+.policy-box h3{font-size:15px;font-weight:700;color:var(--ink);margin:26px 0 9px;padding-bottom:7px;border-bottom:1px solid var(--line-2)}
 .policy-box p{margin-bottom:10px}
 .policy-box ul{margin:0 0 10px 20px}
 .policy-box li{margin-bottom:6px}
 .policy-box a{color:var(--o1);text-decoration:underline}
-@keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pop{from{transform:translateY(9px);opacity:0}to{transform:translateY(0);opacity:1}}
 .newtab-link{font-size:10px;font-weight:500;color:var(--muted);text-decoration:none;margin-left:8px;vertical-align:middle;white-space:nowrap}
 .newtab-link:hover{color:var(--o1)}
 .map-link{margin-left:8px;font-size:11px;color:var(--o1);font-weight:700;text-decoration:none;white-space:nowrap}
@@ -187,104 +702,129 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .official-link:hover{background:var(--o1);color:white}
 .sns-link{height:28px;padding:0 10px;border-radius:30px;background:var(--o-pale);display:inline-flex;align-items:center;gap:4px;text-decoration:none;color:var(--ink2);font-size:10px;font-weight:700;transition:all .15s;white-space:nowrap;flex-shrink:0}
 .sns-link:hover{background:var(--o1);color:white;transform:translateY(-2px)}
-.contact-form{margin-top:10px}
-.contact-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin:14px 0 6px}
-.contact-label .req{color:#fff;background:var(--o1);font-size:9px;padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:700}
-.contact-input,.contact-textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);box-sizing:border-box}
-.contact-textarea{resize:vertical}
-.contact-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
-.contact-submit{width:100%;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:transform .15s;margin-top:16px}
-.contact-submit:hover{transform:scale(1.02)}
+.contact-form{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:0 22px;border-top:1px solid var(--line)}
+.contact-label{display:block;font-size:10.5px;font-weight:600;color:var(--muted);letter-spacing:.08em;margin:18px 0 3px;align-self:end}
+.contact-label .req{color:var(--o1);background:none;font-size:10px;padding:0;border-radius:0;margin-left:6px;font-weight:600;letter-spacing:0}
+.contact-input,.contact-textarea{width:100%;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding:7px 1px;font-size:14px;font-family:inherit;color:var(--ink);box-sizing:border-box}
+.contact-input:focus,.contact-textarea:focus{outline:none;border-bottom-color:var(--ink)}
+.contact-input::placeholder,.contact-textarea::placeholder{color:#D4C3B4}
+/* 内容欄と注記・送信は全幅に伸ばす。氏名とメールだけ2列に並ぶ */
+.contact-form>label:nth-of-type(3),.contact-textarea,.contact-note,.contact-submit{grid-column:1/-1}
+.contact-textarea{resize:vertical;border:1px solid var(--line);padding:11px 12px;min-height:118px}
+.contact-note{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.7}
+.contact-submit{justify-self:start;background:var(--ink);color:#fff;border:none;padding:14px 46px;border-radius:0;font-weight:600;font-size:13.5px;letter-spacing:.1em;cursor:pointer;font-family:inherit;transition:background .15s;margin-top:18px}
+.contact-submit:hover{background:var(--o1)}
+@media(max-width:560px){.contact-form{grid-template-columns:1fr}}
 .price-per-person{display:inline-block;font-size:12px;font-weight:700;color:var(--ink2);background:var(--o-pale);border-radius:8px;padding:4px 10px;margin:-2px 0 8px}
 .ota-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .ota-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;text-align:center;text-decoration:none;border-radius:12px;padding:13px 10px;font-weight:800;font-size:14px;color:var(--ota-text,#fff);background:var(--ota);box-shadow:0 4px 14px color-mix(in srgb,var(--ota) 35%,transparent);transition:transform .15s,box-shadow .15s;line-height:1.3}
 .ota-btn span{font-size:10.5px;font-weight:600;opacity:.92}
 .ota-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px color-mix(in srgb,var(--ota) 45%,transparent)}
 /* QUIZ */
-.quiz-bg{position:fixed;inset:0;background:rgba(42,26,16,.6);backdrop-filter:blur(4px);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.quiz-bg{position:fixed;inset:0;background:rgba(42,26,16,.55);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
 .quiz-bg.show{display:flex}
-.quiz{background:white;border-radius:20px;max-width:480px;width:100%;padding:32px 30px;text-align:center;position:relative;animation:pop .25s ease}
-.quiz-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:var(--o-pale);border:none;font-size:18px;cursor:pointer}
-.quiz-step-num{font-size:12px;color:var(--o1);font-weight:700;letter-spacing:1px;margin-bottom:6px}
-.quiz-q{font-size:20px;font-weight:800;margin-bottom:22px;color:var(--ink)}
-.quiz-opts{display:grid;gap:10px}
-.quiz-opt{background:var(--cream);border:1.5px solid var(--border);border-radius:14px;padding:16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;color:var(--ink);transition:all .15s}
-.quiz-opt:hover{border-color:var(--o1);background:var(--o-pale);transform:translateY(-2px)}
-.quiz-prog{display:flex;gap:6px;justify-content:center;margin-top:20px}
-.quiz-dot{width:8px;height:8px;border-radius:50%;background:var(--border)}.quiz-dot.on{background:var(--o1)}
-footer{background:linear-gradient(135deg,var(--ink),#3D2818);color:rgba(255,255,255,.7);text-align:center;padding:48px 20px;font-size:11.5px;line-height:1.9;margin-top:40px;word-break:keep-all;overflow-wrap:break-word}
-.foot-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--o4);letter-spacing:3px;margin-bottom:6px}
-footer a{color:var(--o4);text-decoration:none}
+.quiz{background:var(--white);border-radius:2px;max-width:468px;width:100%;padding:38px 34px 28px;text-align:left;position:relative;animation:pop .25s ease;box-shadow:0 30px 80px rgba(42,26,16,.30)}
+.quiz-close{position:absolute;top:15px;right:17px;width:26px;height:26px;border-radius:0;background:none;border:none;font-size:17px;line-height:1;color:var(--muted);cursor:pointer}
+.quiz-close:hover{color:var(--ink)}
+.quiz-step-num{font-family:'Poppins',sans-serif;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.18em;margin-bottom:9px}
+.quiz-q{font-size:21px;font-weight:700;margin-bottom:22px;color:var(--ink);line-height:1.45;letter-spacing:-.01em}
+.quiz-opts{display:grid;gap:0;border-top:1px solid var(--line-2)}
+.quiz-opt{background:none;border:0;border-bottom:1px solid var(--line-2);border-radius:0;padding:15px 28px 15px 2px;font-size:14.5px;font-weight:500;cursor:pointer;font-family:inherit;color:var(--ink);text-align:left;position:relative;transition:padding-left .16s,color .16s}
+.quiz-opt::after{content:'';position:absolute;right:9px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-top:1.5px solid var(--muted);transform:translateY(-50%) rotate(45deg);transition:right .16s,border-color .16s}
+.quiz-opt:hover{padding-left:12px;color:var(--o1)}
+.quiz-opt:hover::after{right:2px;border-color:var(--o1)}
+.quiz-prog{display:flex;gap:4px;margin-top:22px}
+.quiz-dot{width:26px;height:2px;border-radius:0;background:var(--line)}.quiz-dot.on{background:var(--o1)}
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:58px 28px 42px;font-size:11.5px;line-height:1.95;margin-top:78px;word-break:keep-all;overflow-wrap:break-word}
+.foot-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px 60px;align-items:start}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:#fff;letter-spacing:.07em;line-height:1;margin-bottom:11px}
+.foot-sub{color:rgba(255,255,255,.42);font-size:11px;letter-spacing:.13em}
+.foot-nav{display:flex;flex-direction:column;align-items:flex-end;gap:11px;font-size:12.5px}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.26);padding-bottom:2px}
+footer a:hover{color:var(--o3);border-color:var(--o3)}
+.foot-fine{grid-column:1/-1;margin-top:8px;padding-top:19px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.36);font-size:10.5px;line-height:1.85;display:flex;justify-content:space-between;align-items:flex-end;gap:20px 40px;flex-wrap:wrap}
+.foot-fine a{color:rgba(255,255,255,.62);border-color:rgba(255,255,255,.2)}
+.foot-fine p{max-width:640px}
+@media(max-width:700px){footer{padding:40px 18px 32px;margin-top:54px}.foot-in{grid-template-columns:1fr;gap:24px}.foot-logo{font-size:30px}.foot-nav{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:9px 20px}.foot-fine{flex-direction:column;align-items:flex-start;gap:12px}}
 @media(max-width:700px){.mini-intro{flex-direction:column;text-align:center}.mini-intro a{margin:0 auto}.price-slider input[type=range]{width:120px}}
 
-/* ===== PICK-UP FEATURE RAIL (おすすめ10選 / compact, eye-catching, non-intrusive) ===== */
-.feat-rail-wrap{max-width:1140px;margin:22px auto 0;padding:0 20px}
-.feat-rail-head{display:flex;align-items:center;gap:11px;margin-bottom:11px}
-.feat-rail-eyebrow{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--o1),var(--o2));color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:5px 13px;border-radius:30px;box-shadow:0 4px 12px rgba(255,107,43,.3);white-space:nowrap}
-.feat-rail-title{font-size:15px;font-weight:800;color:var(--ink)}
-.feat-rail-title span{color:var(--o1)}
-.feat-rail-hint{display:none}
-.feat-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:4px 2px 12px}
-.feat-rail::-webkit-scrollbar{height:6px}
-.feat-rail::-webkit-scrollbar-track{background:transparent}
-.feat-rail::-webkit-scrollbar-thumb{background:var(--o-soft);border-radius:10px}
-.feat-card{position:relative;width:100%;height:106px;border-radius:15px;overflow:hidden;cursor:pointer;box-shadow:0 6px 18px rgba(180,60,0,.10);transition:transform .18s,box-shadow .18s}
-.feat-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(180,60,0,.22)}
-.feat-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .35s}
-.feat-card:hover .feat-card-bg{transform:scale(1.08)}
-.feat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,color-mix(in srgb,var(--fc) 92%,black) 0%,color-mix(in srgb,var(--fc) 55%,transparent) 58%,rgba(0,0,0,.12) 100%)}
-.feat-card-body{position:absolute;inset:0;z-index:2;padding:13px 14px;display:flex;flex-direction:column;justify-content:space-between}
-.feat-card-tag{align-self:flex-start;background:rgba(255,255,255,.22);backdrop-filter:blur(4px);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.4px;border:1px solid rgba(255,255,255,.3)}
-.feat-card-body strong{color:#fff;font-size:13.5px;font-weight:800;line-height:1.35;text-shadow:0 2px 8px rgba(0,0,0,.3)}
-.feat-card-10{position:absolute;top:0;right:0;z-index:3;background:var(--o4);color:var(--ink);font-family:'Poppins',sans-serif;font-size:11px;font-weight:800;padding:3px 11px 4px;border-bottom-left-radius:13px;box-shadow:-2px 2px 6px rgba(0,0,0,.12)}
-@media(max-width:700px){.feat-rail-wrap{margin-top:16px}.feat-rail{grid-template-columns:repeat(2,1fr);gap:8px}.feat-card{height:72px;border-radius:11px}.feat-card-body{padding:8px 10px}.feat-card-tag{font-size:8.5px;padding:2px 7px}.feat-card-body strong{font-size:11px;line-height:1.25}.feat-card-10{font-size:9px;padding:2px 8px 3px}.feat-rail-title{font-size:14px}}
-</style><link rel="stylesheet" href="reviews.css"></head><body>
+</style><link rel="stylesheet" href="reviews.css?v=5517f1e6"></head><body>
 
 <!-- ▼▼▼【将来の広告枠】9月以降、ここにALFARASなどへの誘導バナー（リンク付き）を設置できます ▼▼▼ -->
-<div class="topbar"><span>関東甲信越静｜サウナ・温泉・絶景で選ぶ厳選ヴィラガイド</span></div>
-<div class="promo-notice">※本ページにはプロモーション（アフィリエイトリンク）が含まれます</div>
+<div class="topbar"><i>PR</i><span>本ページはアフィリエイトリンクを含む広告を掲載しています</span></div>
 <!-- ▲▲▲ 広告を入れる場合の例：<a href="広告リンク" target="_blank">詳しく見る →</a> を span の後ろに追加 ▲▲▲ -->
 
-<section class="hero">
-  <div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div>
-  <div class="hero-content">
-    <div class="hero-badge">villafaras — 関東甲信越静</div>
-    <h1>週末は、<br><span style="white-space:nowrap">とっておきのヴィラへ。</span></h1>
-    <p>サウナ・温泉・絶景・ペット可…気分で選べる<span style="white-space:nowrap">厳選286施設。</span><br>あなたの「行きたい」がきっと見つかる。</p>
-    <div class="hero-search"><input type="text" id="heroSearch" placeholder="エリア・施設名・「サウナ」などで検索" onkeydown="if(event.key==='Enter')heroGo()"><button onclick="heroGo()">探す</button></div>
-    <button class="hero-quiz-btn" onclick="openQuiz()">30秒診断であなたにぴったりのヴィラを探す</button>
-    <div class="hero-stats">
-      <div class="hstat"><strong data-count="286">0</strong><span class="hstat-label">掲載施設</span></div>
-      <div class="hstat-div"></div>
-      <div class="hstat"><strong data-count="278">0</strong><span class="hstat-label">サウナ付き</span></div>
-      <div class="hstat-div"></div>
-      <div class="hstat"><strong data-count="81">0</strong><span class="hstat-label">温泉付き</span></div>
-      <div class="hstat-div"></div>
-      <div class="hstat"><strong data-count="119">0</strong><span class="hstat-label">ペット可</span></div>
+<!-- グローバルヘッダー。PCは文字リンク4つ、スマートフォンはアイコン2つ -->
+<header class="gnav">
+  <a class="gnav-logo" href="#top" onclick="return navTo(event,null)">villafaras</a>
+  <nav class="gnav-menu">
+    <a href="#villaSection" onclick="return navTo(event,'villaSection')">ヴィラを探す</a>
+    <a href="#areaSection" onclick="return navTo(event,'areaSection')">エリアから探す</a>
+    <a href="#moodSection" onclick="return navTo(event,'moodSection')">気分から探す</a>
+    <button class="gnav-fav" id="gnavFav" onclick="showFavs()">お気に入り<span class="gnav-fav-n" id="gnavFavCount">0</span></button>
+  </nav>
+  <div class="gnav-m">
+    <button class="gnav-ic" onclick="focusSearch()" aria-label="検索"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.6 4.6"/></svg></button>
+    <button class="gnav-ic" onclick="showFavs()" aria-label="お気に入り"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20.5s-7-4.1-9.8-8.9C.3 8 2.6 4.2 6.3 4.2c2.3 0 4.2 1.4 5.7 3.3 1.5-1.9 3.4-3.3 5.7-3.3 3.7 0 6 3.8 4.1 7.4-2.8 4.8-9.8 8.9-9.8 8.9z"/></svg><span class="n" id="gnavFavCountM"></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-wrap">
+    <div class="hero-copy">
+      <div class="hero-badge">villafaras</div>
+      <h1>週末は、<span class="l2">とっておきのヴィラへ。</span></h1>
+      <p class="sub">関東甲信越静の厳選286施設</p>
+      <p>サウナ・温泉・絶景・ペット可。気分と条件から、泊まりたい一棟を探せます。</p>
+    </div>
+    <div class="hero-ask">
+      <div class="cap">どんなヴィラを探していますか？</div>
+      <div class="hero-search"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.6 4.6"/></svg></span><input type="text" id="heroSearch" placeholder="箱根 / サウナ / ペット可 / 富士山…" onkeydown="if(event.key==='Enter')heroGo()"><button onclick="heroGo()">探す</button></div>
+      <div class="hero-quick">
+        <span class="lb">よく選ばれる条件</span>
+        <button onclick="filterByTag('sauna')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8.5 13.5c0-2 2-2 2-4s-2-2-2-4"/><path d="M13.5 13.5c0-2 2-2 2-4s-2-2-2-4"/><path d="M4 18.5h16"/></svg>サウナ</button>
+        <button onclick="filterByTag('onsen')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 12.5h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 9c0-1.4 1.6-1.4 1.6-2.8M14 9c0-1.4 1.6-1.4 1.6-2.8"/></svg>温泉</button>
+        <button onclick="filterByTag('pet')"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7.2" cy="9.4" r="1.7"/><circle cx="11.6" cy="7" r="1.7"/><circle cx="16.4" cy="8.8" r="1.7"/><path d="M12 12.4c2.5 0 4.8 2.1 4.8 4.2 0 1.5-1.2 2.5-2.9 2.5-.9 0-1.3-.3-1.9-.3s-1 .3-1.9.3c-1.7 0-2.9-1-2.9-2.5 0-2.1 2.3-4.2 4.8-4.2z"/></svg>ペット</button>
+        <button onclick="filterByTag('sea')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9.5c2 0 2.5 1.6 4.5 1.6S10 9.5 12 9.5s2.5 1.6 4.5 1.6S19 9.5 21 9.5"/><path d="M3 15.2c2 0 2.5 1.6 4.5 1.6s2.5-1.6 4.5-1.6 2.5 1.6 4.5 1.6 2.5-1.6 4.5-1.6"/></svg>海</button>
+      </div>
+      <button class="hero-quiz-btn" onclick="openQuiz()">診断であなたに合う一棟を絞り込む</button>
     </div>
   </div>
+  <div class="hero-stats">
+    <div class="hstat"><strong>286</strong><span class="hstat-label">掲載施設</span></div>
+    <div class="hstat"><strong>278</strong><span class="hstat-label">サウナ付き</span></div>
+    <div class="hstat"><strong>81</strong><span class="hstat-label">温泉付き</span></div>
+    <div class="hstat"><strong>119</strong><span class="hstat-label">ペット可</span></div>
+  </div>
 </section>
-<svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#FFD166" d="M0,32 C360,0 1080,64 1440,16 L1440,48 L0,48 Z"></path></svg>
-
 <div class="container">
 
-<div class="section">
-  <div class="sec-head"><div class="sec-eyebrow">Choose by mood</div><div class="sec-title">気分で選ぶ</div><div class="sec-sub">今日の気分にぴったりのヴィラを</div></div>
-  <div class="mood-grid"><div class="mood-card" onclick="filterByTag('sauna')" style="--mc:#FF6B2B"><div class="mood-bg" style="background-image:url('images/mood-sauna.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>ととのいたい</strong><span>サウナで整う休日</span></div></div><div class="mood-card" onclick="filterByTag('mountain')" style="--mc:#0EA5E9"><div class="mood-bg" style="background-image:url('images/mood-mountain.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>絶景に癒されたい</strong><span>山・自然のロケーション</span></div></div><div class="mood-card" onclick="filterByTag('onsen')" style="--mc:#E11D48"><div class="mood-bg" style="background-image:url('images/mood-onsen.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>温泉でゆったり</strong><span>源泉・露天風呂</span></div></div><div class="mood-card" onclick="filterByTag('pet')" style="--mc:#16A34A"><div class="mood-bg" style="background-image:url('images/mood-pet.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>愛犬と一緒に</strong><span>ドッグラン・ペットOK</span></div></div><div class="mood-card" onclick="filterByTag('group')" style="--mc:#B45309"><div class="mood-bg" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=75')"></div><div class="mood-tint"></div><div class="mood-text"><strong>大人数で集まる</strong><span>グループ・大人数OK</span></div></div><div class="mood-card" onclick="filterByTag('bbq')" style="--mc:#65A30D"><div class="mood-bg" style="background-image:url('images/mood-bbq.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>BBQ・焚き火</strong><span>みんなでアウトドア</span></div></div></div>
+<div class="section" id="moodSection">
+  <div class="sec-head"><span class="no">01</span><div class="sec-title">気分で選ぶ</div><div class="sec-sub">今日の気分にぴったりのヴィラを</div></div>
+  <div class="mood-grid"><div class="mood-card" onclick="filterByTag('sauna')" style="--mc:#FF6B2B"><div class="mood-bg" style="background-image:url('images/mood-sauna.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>ととのいたい</strong><span>サウナで整う休日</span></div></div><div class="mood-card" onclick="filterByTag('mountain')" style="--mc:#0EA5E9"><div class="mood-bg" style="background-image:url('images/mood-mountain.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>絶景に癒されたい</strong><span>山・自然のロケーション</span></div></div><div class="mood-card" onclick="filterByTag('onsen')" style="--mc:#E11D48"><div class="mood-bg" style="background-image:url('images/mood-onsen.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>温泉でゆったり</strong><span>源泉・露天風呂</span></div></div><div class="mood-card" onclick="filterByTag('pet')" style="--mc:#16A34A"><div class="mood-bg" style="background-image:url('images/mood-pet.jpg')"></div><div class="mood-tint"></div><div class="mood-text"><strong>愛犬と一緒に</strong><span>ドッグラン・ペットOK</span></div></div></div>
+  <!-- 気分（体験）と設備・条件を分ける。ここは写真を持たない軽い導線 -->
+  <div class="mood-more">
+    <span class="lb">ほかの条件から探す</span>
+    <button onclick="filterByTag('bbq')">BBQ・焚き火</button>
+    <button onclick="filterByTag('group')">大人数</button>
+    <button onclick="filterByTag('rotenburo')">露天風呂</button>
+    <button onclick="filterByTag('sea')">海</button>
+    <button onclick="filterByTag('lake')">湖</button>
+  </div>
 </div>
 
 <!-- ▼▼▼【将来の広告枠】9月以降、ここにALFARASの紹介・誘導ブロックを設置できます ▼▼▼ -->
 <!-- 例：<div class="mini-intro"><div class="mini-logo">ブランド名</div><p>紹介文…</p><a href="リンク" target="_blank">詳しく見る</a></div> -->
 <!-- ▲▲▲ ここまで ▲▲▲ -->
 
-<div class="section">
-  <div class="sec-head"><div class="sec-eyebrow">By area</div><div class="sec-title">エリアから探す</div><div class="sec-sub">9エリア・286施設を掲載中</div></div>
-  <div class="pref-grid"><div class="pref-card" onclick="filterByPref('yamanashi')"><div class="pref-bg" style="background-image:url('images/area-yamanashi.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>山梨</strong><span>41施設 · 富士山・山中湖</span></div></div><div class="pref-card" onclick="filterByPref('kanagawa')"><div class="pref-bg" style="background-image:url('images/area-kanagawa.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>神奈川</strong><span>41施設 · 箱根・鎌倉・三浦</span></div></div><div class="pref-card" onclick="filterByPref('shizuoka')"><div class="pref-bg" style="background-image:url('images/area-shizuoka.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>静岡</strong><span>58施設 · 熱海・伊豆</span></div></div><div class="pref-card" onclick="filterByPref('chiba')"><div class="pref-bg" style="background-image:url('images/area-chiba.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>千葉</strong><span>73施設 · 九十九里・館山</span></div></div><div class="pref-card" onclick="filterByPref('nagano')"><div class="pref-bg" style="background-image:url('images/area-nagano.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>長野</strong><span>28施設 · 軽井沢・白馬</span></div></div><div class="pref-card" onclick="filterByPref('tochigi')"><div class="pref-bg" style="background-image:url('images/area-tochigi.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>栃木</strong><span>18施設 · 那須・日光</span></div></div><div class="pref-card" onclick="filterByPref('saitama')"><div class="pref-bg" style="background-image:url('images/area-saitama.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>埼玉</strong><span>3施設 · 長瀞・秩父</span></div></div><div class="pref-card" onclick="filterByPref('gunma')"><div class="pref-bg" style="background-image:url('images/area-gunma.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>群馬</strong><span>11施設 · 草津・みなかみ</span></div></div><div class="pref-card" onclick="filterByPref('ibaraki')"><div class="pref-bg" style="background-image:url('images/area-ibaraki.jpg')"></div><div class="pref-overlay"></div><div class="pref-info"><strong>茨城</strong><span>13施設 · 筑波・大洗</span></div></div></div>
+<div class="section" id="areaSection">
+  <div class="sec-head"><span class="no">02</span><div class="sec-title">エリアから探す</div><div class="sec-sub">行き先から、泊まる一棟へ</div></div>
+  <div class="pref-grid"><div class="pref-card" onclick="filterByPref('yamanashi')"><div class="pref-info"><strong>山梨</strong><span class="n">41<em>軒</em></span><span class="area">富士山・山中湖</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('kanagawa')"><div class="pref-info"><strong>神奈川</strong><span class="n">41<em>軒</em></span><span class="area">箱根・鎌倉・三浦</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('shizuoka')"><div class="pref-info"><strong>静岡</strong><span class="n">58<em>軒</em></span><span class="area">熱海・伊豆</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('chiba')"><div class="pref-info"><strong>千葉</strong><span class="n">73<em>軒</em></span><span class="area">九十九里・館山</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('nagano')"><div class="pref-info"><strong>長野</strong><span class="n">28<em>軒</em></span><span class="area">軽井沢・白馬</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('tochigi')"><div class="pref-info"><strong>栃木</strong><span class="n">18<em>軒</em></span><span class="area">那須・日光</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('saitama')"><div class="pref-info"><strong>埼玉</strong><span class="n">3<em>軒</em></span><span class="area">長瀞・秩父</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('gunma')"><div class="pref-info"><strong>群馬</strong><span class="n">11<em>軒</em></span><span class="area">草津・みなかみ</span><span class="pref-go">→</span></div></div><div class="pref-card" onclick="filterByPref('ibaraki')"><div class="pref-info"><strong>茨城</strong><span class="n">13<em>軒</em></span><span class="area">筑波・大洗</span><span class="pref-go">→</span></div></div></div>
 </div>
 
 <!-- ALL VILLAS -->
 <div class="section" id="villaSection">
-  <div class="sec-head"><div class="sec-eyebrow">All villas</div><div class="sec-title">ヴィラを探す</div></div>
+  <div class="sec-head"><span class="no">03</span><div class="sec-title">ヴィラを探す</div><div class="sec-sub">条件で絞り込む</div></div>
   <div class="controls">
     <div class="ctrl-row">
       <span class="ctrl-label">エリア</span>
@@ -299,12 +839,6 @@ footer a{color:var(--o4);text-decoration:none}
         <button class="chip" data-pref="gunma" onclick="togglePrefChip(this)">群馬（11）</button>
         <button class="chip" data-pref="saitama" onclick="togglePrefChip(this)">埼玉（3）</button>
       </div>
-    </div>
-    <div class="ctrl-row">
-      <span class="ctrl-label">並び順</span>
-      <select class="ctrl-select" id="sortSelect" onchange="onSortChange()"><option value="rec">おすすめ順</option><option value="low">価格が安い順</option><option value="high">価格が高い順</option><option value="rating">評価が高い順</option><option value="reviewCount">口コミ件数が多い順</option></select>
-      <div class="ctrl-spacer"></div>
-      <button class="lucky-btn" onclick="lucky()">ランダムで1軒</button>
     </div>
     <div class="ctrl-row">
       <span class="ctrl-label">こだわり</span>
@@ -323,16 +857,6 @@ footer a{color:var(--o4);text-decoration:none}
       </div>
     </div>
     <div class="ctrl-row">
-      <span class="ctrl-label">サ・スペック</span>
-      <div class="chips" id="saunaSpecChips">
-        <button class="chip" data-stove="wood" onclick="toggleStoveChip(this)">薪ストーブ</button>
-        <button class="chip" data-stove="electric" onclick="toggleStoveChip(this)">電気ストーブ</button>
-        <button class="chip" data-stove="tent" onclick="toggleStoveChip(this)">テントサウナ</button>
-        <button class="chip" data-spec="loyly" onclick="toggleSpecChip(this)">ロウリュ可</button>
-        <button class="chip" data-spec="chiller" onclick="toggleSpecChip(this)">水風呂チラー</button>
-      </div>
-    </div>
-    <div class="ctrl-row">
       <span class="ctrl-label">予算上限</span>
       <div class="price-slider">
         <input type="range" id="priceRange" min="15000" max="650000" value="650000" step="5000" oninput="updatePrice()">
@@ -341,8 +865,33 @@ footer a{color:var(--o4);text-decoration:none}
       <div class="ctrl-spacer"></div>
       <button class="reset-btn" onclick="resetFilters()">条件をリセット</button>
     </div>
+    <div class="ctrl-row">
+      <span class="ctrl-label">並び順</span>
+      <span class="ctrl-sel"><select class="ctrl-select" id="sortSelect" onchange="onSortChange()"><option value="rec">おすすめ順</option><option value="low">価格が安い順</option><option value="high">価格が高い順</option><option value="rating">評価が高い順</option><option value="reviewCount">口コミ件数が多い順</option></select></span>
+      <div class="ctrl-spacer"></div>
+      <button class="lucky-btn" onclick="lucky()">ランダムで1軒</button>
+    </div>
+    <!-- 5. サウナの仕様は既定で畳む。ただの「その他」ではなくこのサイトの
+         差別化要素なので、名前を与えて別の面として開く -->
+    <div class="ctrl-more" id="saunaMore">
+      <button class="ctrl-more-btn" id="saunaMoreBtn" aria-expanded="false" aria-controls="saunaMoreBody" onclick="toggleSaunaFilters()">
+        <span class="ctrl-more-t">サウナ好き向け詳細検索</span>
+        <span class="ctrl-more-n" id="saunaMoreCount"></span>
+        <span class="ctrl-more-s">熱源・形式・ロウリュ・水風呂チラーで絞り込む</span>
+        <span class="ctrl-more-x" aria-hidden="true"></span>
+      </button>
+      <div class="ctrl-more-body" id="saunaMoreBody">
+        <p class="ctrl-more-note">公式サイト・サウナイキタイ・楽天の調査で裏を取った仕様から絞り込みます。記載が確認できた施設だけが残ります。</p>
+        <div class="chips" id="saunaSpecChips">
+          <button class="chip" data-stove="wood" onclick="toggleStoveChip(this)">薪ストーブ</button>
+          <button class="chip" data-stove="electric" onclick="toggleStoveChip(this)">電気ストーブ</button>
+          <button class="chip" data-stove="tent" onclick="toggleStoveChip(this)">テントサウナ</button>
+          <button class="chip" data-spec="loyly" onclick="toggleSpecChip(this)">ロウリュ可</button>
+          <button class="chip" data-spec="chiller" onclick="toggleSpecChip(this)">水風呂チラー</button>
+        </div>
+    </div>
   </div>
-  <div class="count-bar"><span><strong id="countNum">0</strong> 件のヴィラが見つかりました</span><div class="view-toggle" id="viewToggle"><button class="view-btn on" data-mode="normal" onclick="setGridView('normal')" aria-label="詳細表示"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/></svg></button><button class="view-btn" data-mode="compact" onclick="setGridView('compact')" aria-label="3列表示"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="9.5" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="9.5" width="5" height="5" rx="1"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="16" y="9.5" width="5" height="5" rx="1"/></svg></button></div></div>
+<div class="count-bar"><span><strong id="countNum">0</strong> 件のヴィラが見つかりました</span></div>
   <div class="grid" id="grid"></div>
   <button class="load-more" id="loadMore" onclick="loadMore()">もっと見る</button>
 </div>
@@ -426,13 +975,21 @@ footer a{color:var(--o4);text-decoration:none}
 </div>
 
 <footer>
-  <div class="foot-logo">villafaras</div>
-  <div style="color:rgba(255,255,255,.4);font-size:11px;letter-spacing:2px;margin-bottom:12px">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
-  ※本ページにはプロモーション（アフィリエイトリンク）が含まれます<br>
-  ※掲載情報は2026年7月調査時点のものです。最新の空室状況・料金・ご予約は各予約サイトでご確認ください。<br>
-  <a href="contact.html">サイトへのお問い合わせ</a>　
-  <a href="owner.html">掲載をご希望の方はこちら</a><br>
-  © 2026 villafaras（ヴィラファラス） <a href="privacy.html" style="color:rgba(255,255,255,.7)">プライバシーポリシー</a>
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo">villafaras</div>
+      <div class="foot-sub">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
+    </div>
+    <nav class="foot-nav">
+      <a href="contact.html">サイトへのお問い合わせ</a>
+      <a href="owner.html">掲載をご希望の方はこちら</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+    <div class="foot-fine">
+      <p>本ページはアフィリエイトリンクを含む広告を掲載しています。掲載情報は2026年7月調査時点のものです。最新の空室状況・料金・ご予約は各予約サイトでご確認ください。</p>
+      <p>© 2026 villafaras</p>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -541,11 +1098,30 @@ function linksRowHTML(v){
 }
 const VILLA_SLUGS={0:"0-古民家宿るうふ-揺之家",1:"1-古民家宿るうふ-清之家",2:"2-古民家宿るうふ-波之家",3:"3-古民家宿るうふ-遊之家",4:"4-るうふ別邸-鴨川919",5:"5-＆SUN-Hung-five",6:"6-CAP-MARTIN-Funny-house",7:"7-PREMIUM-Funny-house",8:"8-&SUN-Laie-back",9:"9-sendouQ",10:"10-sendouQ-second／sendouQ-third-dog",11:"11-Avalon-Cove",12:"12-Villa-Torami",13:"13-Ocean's-Terrace-TORAMII",14:"14-Sea-by-TORAMII",15:"15-amane",16:"16-みささ",17:"17-the-MELLOW-HOUSE-館山",18:"18-On-the-wave-館山",19:"19-GIFTHOUSE-館山-那古海岸",20:"20-GIFTHOUSE-2nd-館山-洲宮",21:"21-UMInoTERRACE",22:"22-海都-kaito-TOKYOBAY",23:"23-The-TRAVELERS-Chateau-Tateyama",24:"24-BEST-SPA-99",25:"25-THE-POOL-HOUSE-TOKYO-BAY",26:"26-THE-POOL-HOUSE-木更津",27:"27-Sumera-Resort-Minato",28:"28-VACATIONHOUSE-TORAMI-7521",29:"29-PRIVE",30:"30-STRADDIE-HOUSE",31:"31-moe-luana",32:"32-moe-akala,moe-aina",33:"33-and-RIVER勝浦",34:"34-Retreat-Villa-Aym",35:"35-by-the-river-Isumi",36:"36-STAR-VILLAGE-TATEYAMA",37:"37-VILLA-SENSE-kujukuri",38:"38-Asile＆OLILI",39:"39-VILLA-UMICHIKA-九十九里一宮",40:"40-THE-BLUE-POINT-seaside-villa",41:"41-ビーチテラス房総",42:"42-雫花",43:"43-Montevan-RESORT-VILLA",44:"44-久留里山荘（QULRI-SANSO）",45:"45-HARUKA-KANATA-森のヴィラ",46:"46-閑閑舎",47:"47-Hackberry-Holiday-Home",48:"48-庄屋の里-古民家たなか",49:"49-古民家一棟貸切旅館-成田さくら邸",50:"50-THE-CLUB-919-DOG-FRIENDLY",51:"51-九十九里-point59",52:"52-緑邸～OHTAKI～",53:"53-tokoro-hotel-Isumi",54:"54-Zekkei-stay-ISUMI-cabin",55:"55-SEA-LIFE-TSURIGASAKI",56:"56-THE-VIBES-VILLA",57:"57-Refwind",58:"58-UMIYAMA-CHIKURA",59:"59-Under-the-Sea-UBARA",60:"60-and-FOREST勝浦-竹の離れ",61:"61-天神郷-昊-Sora",62:"62-RICKA-KATSUURA",63:"63-Dear-Wan-Spa-Garden",64:"64-VILLA-Seamu",65:"65-THE-NALU",66:"66-Villa-Yno",67:"67-EKVOLI-MARINA-VILLA,-Isumi-Garden",68:"68-SURF-UP",69:"69-primera-villa",70:"70-The-Pacific-Retreat-TATEYAMA",71:"71-Casita-Laguna",72:"72-VILLA-LAGI",73:"73-SANU-2nd-Home-南アルプス1st",74:"74-SANU-2nd-Home-八ヶ岳2nd",75:"75-SANU-2nd-Home-八ヶ岳3rd",76:"76-SANU-2nd-Home-河口湖2nd",77:"77-enico.Mt.Fuji-smile",78:"78-enico.Mt.Fuji-Resort-&-Glamping",79:"79-est-ed.1",80:"80-2gether-foret",81:"81-古民家宿るうふ-織之家",82:"82-古民家宿るうふ-祝之家",83:"83-THE-TIME-FUJI",84:"84-mysa-fuji",85:"85-mysa-yamanakako",86:"86-hotel-norm.-air",87:"87-hotel-norm.-ao",88:"88-hotel-norm.-fuji",89:"89-景雅-奥河口湖",90:"90-totonoco-湖畔の隠れ家",91:"91-ビジョングランピングリゾート山中湖",92:"92-VILLA-SAISON-FUJI",93:"93-ヴィラグリファーム七里岩",94:"94-abrAsus-hotel-Fuji",95:"95-天空の温泉ヴィラ紬-河口湖",96:"96-yl&Co.Hotel-in-Mt.Fuji",97:"97-VILLA-SUOMI",98:"98-SILVER-SPRAY-山中湖",99:"99-ハンズアウトドアリゾート",100:"100-MT.FUJI-SKY-CABIN",101:"101-KURA-YARD",102:"102-SAUNEA白州",103:"103-Private-villa-FujiNagi",104:"104-憩~ikoi_Fuji",105:"105-BLANC-FUJI",106:"106-郷音-G.O.A.T.-The-Summit-Club",107:"107-ReTune-SPA-&-SAUNA-VILLA",108:"108-THE-THIRD-PLACE-Mt.Fuji",109:"109-Kakoi-雪嶺",110:"110-THE-BLISS-FUJI",111:"111-HOTEL-SEION-FUJI",112:"112-private-villa-ietona",113:"113-ASH-Villa-富士河口湖",114:"114-エンゼルフォレスト那須",115:"115-有形文化財ホテル-飯塚邸",116:"116-Kito-NASU",117:"117-THE-SECOND-Nasukogen-Forest-House",118:"118-SANU-2nd-Home-那須1st",119:"119-SANU-2nd-Home-那須2nd",120:"120-SANU-2nd-Home-那須3rd",121:"121-COCO-VILLA-那須高原",122:"122-Earthboat-Nasu",123:"123-RIVER-VIEW-HOUSE",124:"124-北欧伝説-ドワーフの村",125:"125-森deワーケなすっぽ",126:"126-御宿-憩（OYADO-IKOI）",127:"127-VillaEL5",128:"128-Haga-Farm＆Glamping（芳賀ファーム&グランピング）",129:"129-和モダングランピング｜NAGOMI-CAMP",130:"130-那須温泉グランピング-Nenn（ネン）",131:"131-LEVATA",132:"132-GEOSPOT-MOTOHAKONE-A",133:"133-GEOSPOT-MOTOHAKONE-B",134:"134-GEOSPOT-MOTOHAKONE-C",135:"135-ASNOVA-RESORT-FOLQ-HAKONE-GORA",136:"136-ASNOVA-RESORT-NOIE-HAKONE-SENGOKUHARA",137:"137-P's-Wood-箱根仙石原",138:"138-Casablanca-Villa-Hakone",139:"139-moon-hakone",140:"140-ルクス箱根湯本-LUX-HAKONE-YUMOTO",141:"141-koti-hakone",142:"142-プライベートリゾート仙居",143:"143-mysa-hakone",144:"144-シエロ箱根仙石原",145:"145-ICHI-VILLA-CROSSROAD-HAKONE",146:"146-TIMeSCAPE-hakone",147:"147-箱根芦ノ湖ゴルフヴィラ",148:"148-エスパシオ箱根迎賓館-麟鳳亀龍",149:"149-MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ",150:"150-3rd-HOUSE-INAMURAGASAKI",151:"151-琥珀-AMBER",152:"152-NIWA-KAMAKURA",153:"153-UMITO-VILLA-KAMAKURA-ZAIMOKUZA",154:"154-LULLA",155:"155-SAJIMA-Funny-house",156:"156-MONS-GORA",157:"157-TANZAWA-seven-lanes-by-DAICHI",158:"158-GIFTHOUSE-三浦-諸磯",159:"159-葉山THE・TERRACE-HOUSE",160:"160-雅・仙石原",161:"161-Oceanfront-Villa-Hale-Kahakai",162:"162-プライベートヴィラ愛川",163:"163-箱根温泉別邸白鷺",164:"164-HAKONE-DOMA",165:"165-箱根懐來",166:"166-in-the-meantime",167:"167-箱根リゾートyamaki",168:"168-湯屋-やまざくら",169:"169-湯と灯りに包まれる別世界",170:"170-Six-on-the-Beach-TORAMII-Enoshima",171:"171-Noёl-HAKONE-GENSEN",172:"172-Oyado-S",173:"173-軽井沢365-フォレストガーデン八風台",174:"174-軽井沢365-プレイガーデン大日向",175:"175-軽井沢365-リバーサイドヴィラ八風台",176:"176-SANU-2nd-Home-北軽井沢2nd",177:"177-SANU-2nd-Home-蓼科1st",178:"178-SANU-2nd-Home-軽井沢2nd",179:"179-SANU-2nd-Home-白馬1st",180:"180-GLAMDAY-STYLE-HOTEL-SUITE-山ノ麓",181:"181-GLAMDAY-STYLE-HOTEL-SUITE-川ノ音",182:"182-The-Aurora-Chalet",183:"183-Hakuba-Amber-Resort",184:"184-Hakuba-Jolie-Maison",185:"185-SAUNA-VILLA-然",186:"186-Lakeside-villa-SUI-HAKUBA",187:"187-GREENSEED軽井沢",188:"188-COCO-VILLA-軽井沢",189:"189-Tatehata-House-北軽井沢",190:"190-Hygge-chalet-hakuba（ヒュッゲ-シャレー）",191:"191-軽井沢-HOUSE-VILLA",192:"192-ポーラーハウスカナディアン南軽井沢1",193:"193-SAUNA-FOREST-CABIN-軽井沢御代田",194:"194-海野宿一棟貸し宿-上州屋",195:"195-Earthboat-Kurohime",196:"196-Karuizawa-Luxe-Villa",197:"197-トライハク軽井沢-神楽-かぐら",198:"198-T&A-Resort&Sauna-KARUIZAWA",199:"199-北軽井沢-貸別荘-FARMSIDE",200:"200-enukoti（エヌコティ）",201:"201-キュレーション熱海桃乃八庵",202:"202-キュレーション熱海須藤水園",203:"203-キュレーション熱海桃山雅苑",204:"204-オーシャンビュー南熱海",205:"205-オーシャンビュー熱海自然郷",206:"206-オーシャンビュー熱海自然楼",207:"207-パノーラ伊豆赤沢",208:"208-パノーラ熱海桜沢",209:"209-伊豆高原プライム",210:"210-熱海オーシャンハウス",211:"211-オーシャンテラスAtami",212:"212-熱海リゾート",213:"213-熱海別邸-双梅庵",214:"214-マイグレICE",215:"215-マイグレテラス",216:"216-マイグレ天",217:"217-マイグレフラット",218:"218-マイグレ600",219:"219-マイグレIKKI",220:"220-マイグレKENKEN",221:"221-マイグレYEBISU",222:"222-マイグレ海の声",223:"223-マイグレケニーズハウス",224:"224-マイグレchillax",225:"225-マイグレHOODSTAR",226:"226-マイグレアトリエ",227:"227-マイグレA5",228:"228-マイグレパノラマ",229:"229-WEAZER西伊豆",230:"230-WEAZER西伊豆-廻",231:"231-Hiire-IZU-FUTO",232:"232-Hiire-IZU-OLIVE",233:"233-Hiire-IZU-OMURO",234:"234-COCO-VILLA-伊豆赤沢",235:"235-COCO-VILLA-大室山",236:"236-Tiny-Base-The-MOUNTAiN",237:"237-Tiny-Base-The-Irita-hama",238:"238-月と太陽",239:"239-AMAO-VILLA",240:"240-Wellリゾート富士",241:"241-Poolen-ITO",242:"242-the-villa-Oka-伊豆高原温泉",243:"243-Azure-Palace-伊豆高原",244:"244-HAKU-AKAZAWA-【波空】",245:"245-villa-緑と物語",246:"246-SANU-2nd-Home-伊豆1st",247:"247-SANA-伊豆大室山-Pool-Villa",248:"248-エンゼルフォレスト中伊豆",249:"249-グラン熱川",250:"250-プライベートリゾート南風",251:"251-LAMERVON",252:"252-伊豆高原テントリゾート",253:"253-伊豆グランピングリゾートIshiki385",254:"254-伊豆グランヴィレッジ-グランピング",255:"255-貸別荘「碧-ai」",256:"256-パーパスリゾート-EG-Sky-Terrace-熱川",257:"257-THE-GLAMPING-箱根十国峠",258:"258-ALIVIO-LUXE",259:"259-赤城宿-清芳山荘-seiho",260:"260-赤城宿-珠蕾山荘-shurai",261:"261-Earthboat-Minakami-Fujiwara",262:"262-Earthboat-Minakami-Hodaigi",263:"263-アウトドア貸切別荘北軽井沢1",264:"264-アウトドア貸切別荘北軽井沢2",265:"265-アウトドアアトラクション北軽井沢",266:"266-温泉グランピングシマブルー",267:"267-MOOSKA-DE-STUBEN",268:"268-ポーラーハウス南軽井沢1",269:"269-THE-LOOKOUT-KUSATSU",270:"270-COCO-VILLA-長瀞",271:"271-Earthboat-Saitama-Kawajima",272:"272-ノーラ名栗",273:"273-HOLE37",274:"274-サンライズヴィラ大洗",275:"275-ときわ邸-M-GARDEN",276:"276-COCO-VILLA-大洗",277:"277-No.12-Kashima-Fan-Zone",278:"278-LUCY-RESORT（ルーシー-リゾート）",279:"279-大谷石の蔵サウナと古民家宿-DAIGO-SAUNA",280:"280-一棟貸切宿-藤右衛門",281:"281-SPA＆ごはんゆるうむ",282:"282-GLAMPING-KASHIMA-753-#00",283:"283-THE-BOTANICAL-RESORT-林音（リンネ）",284:"284-ALOHA-GLAMPING-RESORT-SAKAI",285:"285-上小川レジャーペンション"};
 function cardHTML(v){
-  const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
-  let feat=v.desc||v.feature||'';if(feat.length>65)feat=feat.slice(0,65)+'…';
+  const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).slice(0,4).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
+  let feat=v.desc||v.feature||'';if(feat.length>70)feat=feat.slice(0,70)+'…';
   const isFav=favs.has(v.id);
   const slug=VILLA_SLUGS[v.id]||'';
-  return `<a class="card" href="villas/${slug}.html"><div class="card-img">${v.img?`<img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async">`:`<div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>`}<span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.preventDefault();event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="card-rating" data-rating-for="${v.id}"></div><div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div><span class="card-btn">詳細・予約</span></div></div></a>`;
+  /* サウナの仕様を行に出す。**公開情報からは分からず、このサイトだけが持つ値。**
+     空の項目は出さない（「—」を並べても情報にならない）。 */
+  const STOVE={wood:'薪',electric:'電気',gas:'ガス'};
+  const TYPE={indoor:'室内',hut:'小屋',barrel:'バレル',tent:'テント'};
+  const spec=[];
+  const st=specVal(v.id,'stove'),ty=specVal(v.id,'sauna_type'),
+        tp=specVal(v.id,'sauna_temp'),cp=specVal(v.id,'capacity');
+  if(ty&&TYPE[ty])spec.push(`<span><i>形式</i> <b>${TYPE[ty]}</b></span>`);
+  if(st&&STOVE[st])spec.push(`<span><i>熱源</i> <b>${STOVE[st]}</b></span>`);
+  if(tp)spec.push(`<span><i>室温</i> <b>${tp}℃</b></span>`);
+  if(cp)spec.push(`<span><i>定員</i> <b>${cp}名</b></span>`);
+  const specRow=spec.length?`<div class="card-spec">${spec.join('')}</div>`:'';
+  /* 写真が入るまでの仮置きは施設名の頭文字。286枚の同じアイコンを並べない。 */
+  const nm=(v.name||'').replace(/^[\s"'「『（(&＆・]+/,'');
+  const seg=nm.split(/[\s　]+/).filter(Boolean);
+  /* 末尾の語を採るのは「ブランド名＋棟名」の和名だけ。欧文が頭に来る名前で
+     末尾を採ると「Haga Farm＆Glamping（…）」が F になる */
+  const last=seg.length>1?seg[seg.length-1]:'';
+  const ini=((/^[ぁ-んァ-ヶ一-龯]/.test(last)?last:nm).charAt(0)||'・').toUpperCase();
+  return `<a class="card${v.__lead?' lead':''}" href="villas/${slug}.html"><div class="card-img">${v.img?`<img src="${v.img}" alt="${v.name}" loading="lazy" decoding="async">`:`<div class="img-placeholder" data-t="${v.id%5}" data-ini="${ini}"></div>`}<span class="card-badge badge-${v.pref}">${PREF_JP[v.pref]}</span><button class="fav ${isFav?'on':''}" onclick="event.preventDefault();event.stopPropagation();toggleFav(${v.id},this)">${heartIcon(isFav)}</button></div><div class="card-body"><div class="card-name">${v.name}</div><div class="card-addr">${v.addr}</div><div class="card-rating" data-rating-for="${v.id}"></div>${specRow}<div class="pill-row">${pills}</div><div class="card-feature">${feat}</div><div class="card-footer"><div class="card-price">${v.pricePerPerson==='−'?'−':(v.pricePerPerson?v.pricePerPerson:v.price)}${v.pricePerPerson==='−'?'':`<span class="tilde"> ~</span><span>/${v.pricePerPerson?'人':'棟泊'}</span>`}</div></div></div></a>`;
 }
 function onSortChange(){
   const s=document.getElementById('sortSelect').value;
@@ -582,6 +1158,7 @@ function applyFilters(){
   else if(sort==='reviewCount')filtered.sort((a,b)=>((ratingsMap[b.id]&&ratingsMap[b.id].count)||0)-((ratingsMap[a.id]&&ratingsMap[a.id].count)||0));
   else filtered.sort((a,b)=>a.id-b.id);
   document.getElementById('countNum').textContent=filtered.length;
+  syncSaunaMore();
   shownCount=0;document.getElementById('grid').innerHTML='';loadMore();
 }
 function setGridView(mode){
@@ -590,10 +1167,17 @@ function setGridView(mode){
   document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('on',b.dataset.mode===mode));
 }
 function loadMore(){
-  const grid=document.getElementById('grid');const slice=filtered.slice(shownCount,shownCount+PAGE);let html='';
+  const grid=document.getElementById('grid');
+  /* 先頭2件は行を占有するので、そのぶん多く取る。残りが 24 なら 2/3/4 列の
+     どれでも最終行が埋まり、1枚だけ取り残された行が出ない。 */
+  const take=(shownCount===0&&window.innerWidth>520)?PAGE+2:PAGE;
+  const slice=filtered.slice(shownCount,shownCount+take);let html='';
   slice.forEach((v,idx)=>{
+    /* 先頭2件だけ横組みの大きい札にする。nth-child だと「もっと見る」で
+       増えた分の先頭にも当たってしまうので、通し番号で判定する。 */
+    v.__lead=(shownCount+idx)<2;
     html+=cardHTML(v);});
-  if(filtered.length===0)html='<div class="empty">条件に合うヴィラが見つかりませんでした。条件を変えてお試しください。</div>';
+  if(filtered.length===0)html='<div class="empty"><strong>条件に合うヴィラがありません</strong>選んだ条件をすべて満たす施設が、286件のなかにありませんでした。<br><button onclick="resetFilters()">条件をリセットする</button></div>';
   grid.insertAdjacentHTML('beforeend',html);shownCount+=slice.length;
   document.getElementById('loadMore').style.display=shownCount<filtered.length?'block':'none';
   if(window.villafarasApplyCardRatings)window.villafarasApplyCardRatings();
@@ -623,8 +1207,48 @@ function filterByPref(p){resetFilters(true);activePrefs.add(p);document.querySel
 function resetFilters(silent){activeTags.clear();activePrefs.clear();activeStoves.clear();activeSpecFlags.clear();showFavsOnly=false;maxPrice=650000;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));document.getElementById('sortSelect').value='rec';document.getElementById('heroSearch').value='';document.getElementById('priceRange').value=650000;document.getElementById('priceVal').textContent='上限なし';if(!silent)applyFilters();}
 function updatePrice(){const v=+document.getElementById('priceRange').value;maxPrice=v;document.getElementById('priceVal').textContent=(v>=650000)?'上限なし':'～'+v.toLocaleString()+'円';applyFilters();}
 function heroGo(){applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
-function toggleFav(id,el){if(favs.has(id)){favs.delete(id);el.classList.remove('on');el.innerHTML=heartIcon(false);}else{favs.add(id);el.classList.add('on');el.innerHTML=heartIcon(true);}document.getElementById('favCount').textContent=favs.size;saveFavs();}
-function showFavs(){if(favs.size===0){alert('気になるヴィラのハートを押すと、ここにまとまります！');return;}showFavsOnly=!showFavsOnly;document.querySelector('.fab').style.opacity=showFavsOnly?1:.85;applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
+/* --- グローバルヘッダー（2026-09 追加）。既存の関数はそのまま使う --- */
+function navTo(e,id){
+  e.preventDefault();
+  if(!id){window.scrollTo({top:0,behavior:'smooth'});return false;}
+  var el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});  /* ずれは .section の scroll-margin-top で吸収 */
+  return false;
+}
+/* スマートフォンの検索アイコン。ヒーローまで戻して入力欄に focus する。
+   スクロール中に focus すると Safari が飛ばしてしまうので、着いてから当てる */
+function focusSearch(){
+  var el=document.getElementById('heroSearch');if(!el)return;
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(function(){try{el.focus({preventScroll:true});}catch(err){el.focus();}},420);
+}
+/* --- サウナ好き向け詳細検索の開閉。絞り込みのロジックは触らない --- */
+function setSaunaMore(open){
+  var w=document.getElementById('saunaMore'),b=document.getElementById('saunaMoreBtn');
+  if(!w)return;
+  w.classList.toggle('open',open);
+  if(b)b.setAttribute('aria-expanded',open?'true':'false');
+}
+function toggleSaunaFilters(){
+  var w=document.getElementById('saunaMore');
+  setSaunaMore(!(w&&w.classList.contains('open')));
+}
+/* 畳んだままでも選択中だと分かるようにする。applyFilters から毎回呼ぶ */
+function syncSaunaMore(){
+  var el=document.getElementById('saunaMoreCount');if(!el)return;
+  var k=activeStoves.size+activeSpecFlags.size;
+  el.textContent=k?k+'件選択中':'';
+}
+function toggleFav(id,el){if(favs.has(id)){favs.delete(id);el.classList.remove('on');el.innerHTML=heartIcon(false);}else{favs.add(id);el.classList.add('on');el.innerHTML=heartIcon(true);}syncFab();saveFavs();}
+function syncFab(){
+  var f=document.querySelector('.fab');
+  if(f){document.getElementById('favCount').textContent=favs.size;f.classList.toggle('on',favs.size>0);}
+  /* ヘッダーにも同じ件数を出す。0件のときスマートフォン側は空にして消す */
+  var g=document.getElementById('gnavFavCount');if(g)g.textContent=favs.size;
+  var gw=document.getElementById('gnavFav');if(gw)gw.classList.toggle('has',favs.size>0);
+  var gm=document.getElementById('gnavFavCountM');if(gm)gm.textContent=favs.size>0?favs.size:'';
+}
+function showFavs(){if(favs.size===0){alert('気になるヴィラのハートを押すと、ここにまとまります！');return;}showFavsOnly=!showFavsOnly;document.querySelector('.fab').classList.toggle('viewing',showFavsOnly);applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function lucky(){
   const pool=filtered.length?filtered:VILLAS;if(!pool.length)return;
   const v=pool[Math.floor(Math.random()*pool.length)];
@@ -688,21 +1312,13 @@ function finishQuiz(){
   if(filtered.length<3&&quizAns.pref){activePrefs.clear();document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.pref)c.classList.remove('on');});applyFilters();}
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
-function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=+el.dataset.count;let cur=0;const step=Math.ceil(target/40);const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},25);});}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuiz();closePrivacy();closeContact();}});
-applyFilters();
-try{
-  const heroStats=document.querySelector('.hero-stats');
-  if(heroStats&&typeof IntersectionObserver!=='undefined'){
-    const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();io.disconnect();}});});
-    io.observe(heroStats);
-  }else if(heroStats){
-    animateCounters();
-  }
-}catch(e){}
+syncFab();applyFilters();
 </script>
-<script src="spec-data.js"></script>
-<script src="reviews.js"></script>
+<script src="spec-data.js?v=5986e4aa"></script>
+<script>/* spec-data.js はインラインスクリプトより後に読まれるため、初回描画の時点ではサウナの仕様が未ロードになる。読み込み後に一度だけ描き直す。 */
+if(typeof applyFilters==="function"&&window.VILLAFARAS_SPEC)applyFilters();</script>
+<script src="reviews.js?v=3b814063"></script>
 </body>
 <!-- redeploy -->
 </html>
