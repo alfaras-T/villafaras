@@ -215,19 +215,25 @@ header.gnav{position:sticky;top:0;z-index:10;background:var(--cream);border-bott
    本文を隠さないよう高さは抑える。予約欄が見えている間は引っ込める。 */
 .sticky-cta{display:none}
 @media (max-width:860px){
+  /* iPhone のホームバーに潜らないよう safe-area を足す。
+     body 側の余白も同じ分だけ増やして、最下部の本文が隠れないようにする。 */
   .sticky-cta{
     display:flex;align-items:center;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:40;
-    background:var(--cream);border-top:1px solid var(--line);padding:9px 16px 10px;
+    background:var(--cream);border-top:1px solid var(--line);
+    padding:9px 16px 10px;
+    padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+    padding-left:calc(16px + env(safe-area-inset-left, 0px));
+    padding-right:calc(16px + env(safe-area-inset-right, 0px));
     box-shadow:0 -6px 20px rgba(42,26,16,.07);
     transform:translateY(0);transition:transform .22s ease;
   }
-  .sticky-cta.is-off{transform:translateY(105%)}
+  .sticky-cta.is-off{transform:translateY(130%)}
   .sticky-price{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .sticky-btn{
     margin-left:auto;flex:0 0 auto;background:var(--ink);color:#fff;border:0;border-radius:0;
     padding:12px 20px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.06em;cursor:pointer;
   }
-  body{padding-bottom:62px}
+  body{padding-bottom:calc(66px + env(safe-area-inset-bottom, 0px))}
 }
 
 /* ===== 所在地と地図。住所を左、地図を右に置いて、同じ大きさの箱を重ねない ===== */
