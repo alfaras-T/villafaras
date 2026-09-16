@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://alfaras-t.github.io/villafaras/villas/91-ビジョングランピングリゾート山中湖.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LodgingBusiness", "name": "ビジョングランピングリゾート山中湖", "description": "富士山と山中湖に囲まれた、全15棟展開の山梨最大級サウナ付きグランピング施設。152平米超の各客室に専用の露天風呂とプライベートサウナ、富士山麓の地下水を使った水風呂を完備し、いつでも好きなだけ利用できます。山梨県産食材を使ったイタリアンBBQも楽しめ、愛犬同伴可能な客室もあります。", "address": {"@type": "PostalAddress", "streetAddress": "山梨県南都留郡山中湖村山中字栗木林1385-43", "addressRegion": "山梨県", "addressCountry": "JP"}, "url": "https://alfaras-t.github.io/villafaras/villas/91-ビジョングランピングリゾート山中湖.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://alfaras-t.github.io/villafaras/"}, {"@type": "ListItem", "position": 2, "name": "山梨のヴィラ", "item": "https://alfaras-t.github.io/villafaras/?pref=yamanashi"}, {"@type": "ListItem", "position": 3, "name": "ビジョングランピングリゾート山中湖", "item": "https://alfaras-t.github.io/villafaras/villas/91-ビジョングランピングリゾート山中湖.html"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
@@ -38,27 +39,36 @@ header.gnav{position:sticky;top:0;z-index:10;background:var(--cream);border-bott
   .layout{
     display:grid;
     grid-template-columns:minmax(0,1.42fr) minmax(296px,1fr);
-    grid-template-areas:"head head" "hero buy" "lead buy" "spec spec" "map map" "rev rev" "back back";
+    grid-template-areas:"crumb crumb" "head head" "hero buy" "glance buy" "lead buy" "flow flow" "spec spec" "map map" "rev rev" "sim sim" "back back";
     column-gap:clamp(30px,3.6vw,58px); row-gap:0; align-items:start;
   }
   .villa-head{grid-area:head}
   .hero-block{grid-area:hero}
+  .crumb{grid-area:crumb}
+  .sauna-glance{grid-area:glance}
   .lead-block{grid-area:lead}
+  .sauna-flow{grid-area:flow}
+  .similar-villas{grid-area:sim}
   .buy-block{grid-area:buy}
   .spec-block{grid-area:spec}
   .map-block{grid-area:map}
   .review-widget{grid-area:rev}
   .back-link{grid-area:back}
   /* 決める側（料金と予約）を、読む側から罫1本で分ける。囲みは作らない */
+  /* 料金と予約は、サウナの詳細を読み進めても戻れるよう追従させる。
+     ヘッダー（52px）と干渉しないよう top を下げる。 */
+  /* 料金と予約は、サウナの詳細を読み進めても戻れるよう追従させる。
+     **sticky を .buy-block に付けるとグリッドの行を抜けて下の節に重なる**ので、
+     内側を包んでそこに付ける（親の高さが上限になる）。 */
   .buy-block{padding-left:clamp(22px,2.3vw,36px);border-left:1px solid var(--line)}
+  .buy-inner{position:sticky;top:74px}
 }
 
 /* ===== 見出し。施設名をページで最大の文字にする ===== */
 .villa-head{padding-bottom:20px;margin-bottom:26px;border-bottom:1px solid var(--line)}
 .vh-meta{display:flex;align-items:baseline;gap:11px;margin-bottom:13px;font-size:11px;letter-spacing:.15em}
-.vh-pref{color:var(--o1);font-weight:700}
-.vh-city{color:var(--muted);position:relative;padding-left:20px}
-.vh-city::before{content:'';position:absolute;left:0;top:.52em;width:12px;height:1px;background:var(--line)}
+.vh-pref{display:none}   /* パンくずが県を出すので重複させない */
+.vh-city{color:var(--o1);font-weight:700;position:relative}
 .villa-head h1{font-size:clamp(25px,3.7vw,45px);font-weight:700;line-height:1.26;letter-spacing:-.018em;margin:0 0 12px;color:var(--ink);max-width:20em}
 /* 10色のパステルピルをやめ、中黒で区切った文字にする */
 .pill-row{display:flex;flex-wrap:wrap;gap:0 9px;margin:0}
@@ -137,6 +147,87 @@ header.gnav{position:sticky;top:0;z-index:10;background:var(--cream);border-bott
 .sns-link svg{width:12px;height:12px;color:var(--muted);flex:0 0 auto}
 .sns-link:hover svg{color:var(--o1)}
 
+/* ===== パンくず ===== */
+.crumb{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 9px;font-size:11px;color:var(--muted);margin:0 0 20px;letter-spacing:.04em}
+.crumb a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;transition:color .14s,border-color .14s}
+.crumb a:hover{color:var(--o1);border-bottom-color:var(--o1)}
+.crumb a + a::before,.crumb em::before{content:'\203A';margin-right:9px;color:var(--line);font-style:normal}
+.crumb em{font-style:normal;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+
+/* ===== SAUNA AT A GLANCE =====
+   一覧カードより詳しく、下のサウナ詳細より簡潔な要約。**値がある項目だけ**。
+   丸いピルを並べず、細い縦線で仕切る。 */
+.sauna-glance{margin-top:26px}
+.glance-h{display:flex;align-items:baseline;gap:11px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.glance-h b{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.glance-h span{font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.16em;color:var(--o1)}
+.glance-row{display:flex;flex-wrap:wrap;align-items:center;padding:13px 0 0}
+.glance-i{
+  font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.5;
+  padding:2px 15px 2px 0;margin-right:15px;position:relative;
+  font-variant-numeric:tabular-nums;
+}
+.glance-i::after{content:'';position:absolute;right:0;top:.35em;bottom:.35em;width:1px;background:var(--line)}
+.glance-i:last-child{margin-right:0;padding-right:0}
+.glance-i:last-child::after{display:none}
+
+/* ===== サウナ → 水風呂 → 外気浴 =====
+   大きなカード3枚にしない。罫と番号と矢印で読ませる。 */
+.sauna-flow{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)}
+.flow-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.flow-step{padding:0 clamp(16px,2.2vw,30px);border-left:1px solid var(--line-2);position:relative}
+.flow-step:first-child{border-left:0;padding-left:0}
+.flow-step + .flow-step::before{
+  content:'';position:absolute;left:-4px;top:7px;width:7px;height:7px;
+  border-right:1.5px solid var(--o3);border-top:1.5px solid var(--o3);
+  transform:rotate(45deg);background:var(--cream);
+}
+.flow-h{display:flex;align-items:baseline;gap:9px;margin-bottom:11px}
+.flow-h b{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.flow-h span{font-family:'Poppins',sans-serif;font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--muted)}
+.flow-v{font-size:12.5px;color:var(--ink2);line-height:1.85}
+.flow-v1{font-size:17px;font-weight:700;color:var(--ink);line-height:1.45;margin-bottom:3px;letter-spacing:-.01em}
+
+/* ===== 似たサウナのヴィラ ===== */
+.similar-villas{margin-top:56px;padding-top:24px;border-top:1px solid var(--line)}
+.sim-h{display:flex;align-items:baseline;gap:11px;margin-bottom:4px}
+.sim-h b{font-size:13px;font-weight:700;color:var(--ink)}
+.sim-h span{font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.16em;color:var(--muted)}
+.sim-list{border-top:1px solid var(--line-2)}
+.sim-i{
+  display:grid;grid-template-columns:auto minmax(0,1.5fr) minmax(0,1.5fr) auto;
+  align-items:baseline;gap:0 16px;padding:15px 2px 14px;
+  border-bottom:1px solid var(--line-2);text-decoration:none;position:relative;
+  transition:padding-left .18s ease;
+}
+.sim-i::before{content:'';position:absolute;left:0;top:0;bottom:-1px;width:2px;background:var(--o1);transform:scaleY(0);transform-origin:top;transition:transform .18s ease}
+.sim-i:hover{padding-left:12px}
+.sim-i:hover::before{transform:scaleY(1)}
+.sim-pref{font-size:11px;color:var(--muted);letter-spacing:.06em;flex:0 0 auto}
+.sim-n{font-size:14px;font-weight:700;color:var(--ink);line-height:1.45}
+.sim-i:hover .sim-n{color:var(--o1)}
+.sim-r{font-size:11.5px;color:var(--muted);line-height:1.5}
+.sim-p{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ===== スマートフォンの固定CTA =====
+   本文を隠さないよう高さは抑える。予約欄が見えている間は引っ込める。 */
+.sticky-cta{display:none}
+@media (max-width:860px){
+  .sticky-cta{
+    display:flex;align-items:center;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    background:var(--cream);border-top:1px solid var(--line);padding:9px 16px 10px;
+    box-shadow:0 -6px 20px rgba(42,26,16,.07);
+    transform:translateY(0);transition:transform .22s ease;
+  }
+  .sticky-cta.is-off{transform:translateY(105%)}
+  .sticky-price{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sticky-btn{
+    margin-left:auto;flex:0 0 auto;background:var(--ink);color:#fff;border:0;border-radius:0;
+    padding:12px 20px;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.06em;cursor:pointer;
+  }
+  body{padding-bottom:62px}
+}
+
 /* ===== 所在地と地図。住所を左、地図を右に置いて、同じ大きさの箱を重ねない ===== */
 .map-block{
   margin-top:58px;padding-top:26px;border-top:1px solid var(--line);
@@ -163,6 +254,20 @@ footer{background:var(--ink);color:rgba(255,255,255,.55);text-align:left;padding
 .foot-fine{padding-top:15px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.36);font-size:10.5px;line-height:1.85;max-width:660px}
 
 @media (max-width:860px){
+  /* 体験動線は縦に読ませる。矢印は下向きにする */
+  .flow-wrap{grid-template-columns:1fr}
+  .flow-step{padding:18px 0 0;border-left:0;border-top:1px solid var(--line-2)}
+  .flow-step:first-child{padding-top:0;border-top:0}
+  .flow-step + .flow-step::before{left:0;top:-4px;transform:rotate(135deg)}
+  .sauna-flow{margin-top:46px}
+  .similar-villas{margin-top:44px}
+  .sim-i{grid-template-columns:1fr auto;gap:2px 12px;padding:14px 2px 13px}
+  .sim-pref{grid-row:1;grid-column:1;order:-1}
+  .sim-n{grid-row:2;grid-column:1}
+  .sim-r{grid-row:3;grid-column:1}
+  .sim-p{grid-row:2;grid-column:2;align-self:baseline}
+  .glance-i{font-size:13.5px;padding-right:12px;margin-right:12px}
+  .sauna-glance{margin-top:22px}
   .wrap{padding:24px 20px 0}
   header.gnav{height:48px;padding:0 20px}
   .gnav-logo{font-size:22px}
@@ -183,7 +288,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.55);text-align:left;padding
 }
 </style>
 <link rel="stylesheet" href="../reviews.css?v=5517f1e6">
-<link rel="stylesheet" href="../spec.css?v=6ffd8729">
+<link rel="stylesheet" href="../spec.css?v=a3dcbb1f">
 </head>
 <body>
 <div class="topbar"><i>PR</i><span>本ページはアフィリエイトリンクを含む広告を掲載しています</span></div>
@@ -193,25 +298,31 @@ footer{background:var(--ink);color:rgba(255,255,255,.55);text-align:left;padding
 </header>
 <div class="wrap">
   <div class="layout">
+    <nav class="crumb" aria-label="現在地"><a href="../index.html">トップ</a><a href="../index.html?pref=yamanashi">山梨</a><em>ビジョングランピングリゾート山中湖</em></nav>
     <div class="villa-head"><div class="vh-meta"><span class="vh-pref">山梨</span><span class="vh-city">南都留郡山中湖村</span></div><h1>ビジョングランピングリゾート山中湖</h1><div class="pill-row"><span class="pill">サウナ</span><span class="pill">温泉</span><span class="pill">露天風呂</span><span class="pill">ペットOK</span><span class="pill">BBQ</span><span class="pill">大人数</span></div></div>
     <div class="hero-block"><div class="modal-img"><div class="img-placeholder" data-t="1" data-ini="ビ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div></div></div>
+    <div class="sauna-glance" data-villa-id="91"></div>
     <div class="lead-block"><div class="modal-feat">富士山と山中湖に囲まれた、全15棟展開の山梨最大級サウナ付きグランピング施設。152平米超の各客室に専用の露天風呂とプライベートサウナ、富士山麓の地下水を使った水風呂を完備し、いつでも好きなだけ利用できます。山梨県産食材を使ったイタリアンBBQも楽しめ、愛犬同伴可能な客室もあります。</div></div>
-    <div class="buy-block"><div class="modal-facts">
+    <div class="buy-block"><div class="buy-inner"><div class="modal-facts">
           <div class="fact"><span class="fact-label">定員</span><span class="fact-val">8名</span></div>
           <div class="fact"><span class="fact-label">チェックイン</span><span class="fact-val">17:00〜22:00</span></div>
           <div class="fact"><span class="fact-label">チェックアウト</span><span class="fact-val">10:00</span></div>
-        </div><div class="modal-price">3万5千円<span class="tilde"> ~ </span><span>/ 人</span></div><div class="modal-ota-label">空室・料金を探す</div><div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/184648/184648.html" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00051605/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/vision-glamping-resort-amp-spa-shan-zhong-hu.ja.html" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/ja-jp/vision-glamping-resort-spa-lake-yamanaka/hotel/yamanashi-jp.html" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#00355F;--ota-text:#fff" href="https://www.expedia.co.jp/Yamanakako-Hotels-VISION-GLAMPING-ResortSpa-Yamanakako.h84967799.Hotel-Information" target="_blank" rel="noopener nofollow">Expedia<span>で見る ↗</span></a></div><div class="modal-links"><a class="official-link" href="https://vision-glamping.com/yamanakako" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://x.com/visionglampingY" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X(旧Twitter) ↗</span></a><a class="sns-link" href="https://www.instagram.com/visionglamping/?hl=ja" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div><div class="modal-notice">※掲載情報は2026年7月調査時点のものです。最新情報は各予約サイト・施設公式サイトにてご確認ください。</div></div>
+        </div><div class="modal-price">3万5千円<span class="tilde"> ~ </span><span>/ 人</span></div><div class="modal-ota-label">空室・料金を探す</div><div class="ota-grid"><a class="ota-btn" style="--ota:#9CCC3C;--ota-text:#fff" href="https://travel.rakuten.co.jp/HOTEL/184648/184648.html" target="_blank" rel="noopener nofollow">楽天トラベル<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00051605/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#003580;--ota-text:#fff" href="https://www.booking.com/hotel/jp/vision-glamping-resort-amp-spa-shan-zhong-hu.ja.html" target="_blank" rel="noopener nofollow">Booking.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/ja-jp/vision-glamping-resort-spa-lake-yamanaka/hotel/yamanashi-jp.html" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#00355F;--ota-text:#fff" href="https://www.expedia.co.jp/Yamanakako-Hotels-VISION-GLAMPING-ResortSpa-Yamanakako.h84967799.Hotel-Information" target="_blank" rel="noopener nofollow">Expedia<span>で見る ↗</span></a></div><div class="modal-links"><a class="official-link" href="https://vision-glamping.com/yamanakako" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://x.com/visionglampingY" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X(旧Twitter) ↗</span></a><a class="sns-link" href="https://www.instagram.com/visionglamping/?hl=ja" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div><div class="modal-notice">※掲載情報は2026年7月調査時点のものです。最新情報は各予約サイト・施設公式サイトにてご確認ください。</div></div></div>
+    <div class="sauna-flow" data-villa-id="91"></div>
     <div class="spec-block" data-villa-id="91"></div>
     <div class="map-block"><div class="modal-addr-label">所在地</div>
       <div class="modal-addr">山梨県南都留郡山中湖村山中字栗木林1385-43<a href="https://www.google.com/maps/search/?api=1&query=%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E5%B1%B1%E4%B8%AD%E6%B9%96%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B1%B1%E4%B8%AD%E5%AD%97%E6%A0%97%E6%9C%A8%E6%9E%971385-43" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
       <div class="modal-map"><iframe src="https://www.google.com/maps?q=%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E5%B1%B1%E4%B8%AD%E6%B9%96%20%E5%B1%B1%E6%A2%A8%E7%9C%8C%E5%8D%97%E9%83%BD%E7%95%99%E9%83%A1%E5%B1%B1%E4%B8%AD%E6%B9%96%E6%9D%91%E5%B1%B1%E4%B8%AD%E5%AD%97%E6%A0%97%E6%9C%A8%E6%9E%971385-43&output=embed" loading="lazy"></iframe></div></div>
     <div class="review-widget" data-villa-id="91"></div>
+    <div class="similar-villas" data-villa-id="91"></div>
     <a class="back-link" href="../index.html">← 他の山梨の宿泊施設も見る</a>
   </div>
 </div>
 
 <script src="../spec-data.js?v=5986e4aa"></script>
-<script src="../spec.js?v=25883bc4"></script>
+<script src="../spec.js?v=00842003"></script>
+<script src="../data/villas-lite.js?v=adc20825"></script>
+<script src="../villa.js?v=8348331e"></script>
 <script src="../reviews.js?v=3b814063"></script>
 <footer>
   <div class="foot-in">

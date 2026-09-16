@@ -116,7 +116,7 @@
                  記載が慣習化していない項目は充足率が1割を切るため owner とする。
      ------------------------------------------------------------------ */
   var SCHEMA = [
-    { g: 'サウナ', rows: [
+    { g: 'サウナ室', sec: 'sauna', rows: [
       { k: 'sauna_exists', l: 'サウナ',        o: 'saunaex',   ch: 'desk' },
       { k: 'sauna_type',   l: '形式',          o: 'saunatype', ch: 'desk' },
       { k: 'stove',        l: '熱源',          o: 'stove',     ch: 'desk' },
@@ -127,25 +127,30 @@
       { k: 'sauna_hours',  l: '利用可能時間',  o: 'hours',     ch: 'owner' }
     ]},
 
-    { g: '水風呂・外気浴', rows: [
+    /* 水風呂と外気浴は 2026-09 に分けた。「サウナ → 水風呂 → 外気浴」という
+       体験の順に読ませたいので、1つの群に混ぜない。キーは変えていない。 */
+    { g: '水風呂', sec: 'sauna', rows: [
       { k: 'coldbath',     l: '冷却設備',      o: 'coldbath',  ch: 'desk' },
-      { k: 'coldbath_season', l: '水風呂の季節制限', o: 'cbseason', ch: 'desk',
-        n: '冬季に凍結・休止するか' },
-      { k: 'chiller',      l: '水風呂チラー',  o: 'yesno',     ch: 'owner', n: '夏場も水温を保てる冷却装置' },
       { k: 'water_temp',   l: '夏場の水温',    o: 'wtemp',     ch: 'owner' },
-      { k: 'water_src',    l: '水源',          o: 'wsrc',      ch: 'owner' },
       { k: 'water_depth',  l: '水深',          o: 'depth',     ch: 'owner' },
+      { k: 'water_src',    l: '水源',          o: 'wsrc',      ch: 'owner' },
+      { k: 'chiller',      l: '水風呂チラー',  o: 'yesno',     ch: 'owner', n: '夏場も水温を保てる冷却装置' },
+      { k: 'coldbath_season', l: '季節制限', o: 'cbseason', ch: 'desk',
+        n: '冬季に凍結・休止するか' }
+    ]},
+
+    { g: '外気浴', sec: 'sauna', rows: [
       { k: 'outdoor_rest', l: '外気浴スペース', o: 'yesno',     ch: 'desk' },
       { k: 'rest_chair',   l: '休憩イス',      o: 'chair',     ch: 'owner' }
     ]},
 
-    { g: '貸切・音', rows: [
+    { g: '貸切・音', sec: 'stay', rows: [
       { k: 'villa_type',    l: '貸切構成',     o: 'villatype', ch: 'owner' },
       { k: 'neighbor_dist', l: '隣棟との距離', o: 'ndist',     ch: 'owner' },
       { k: 'sound_rule',    l: '音のルール',   o: 'sound',     ch: 'owner' }
     ]},
 
-    { g: 'キッチン・火まわり', rows: [
+    { g: 'キッチン・火まわり', sec: 'stay', rows: [
       { k: 'kitchen_type',    l: '加熱方式',     o: 'ktype',   ch: 'desk' },
       { k: 'kitchen_burners', l: 'コンロ口数',   u: '口',      ch: 'owner' },
       { k: 'bbq_roof',        l: 'BBQの屋根',    o: 'bbqroof', ch: 'owner', n: '雨天でもBBQできるか' },
@@ -154,7 +159,7 @@
       { k: 'firewood_fee',    l: '薪代',         o: 'fee',     ch: 'owner' }
     ]},
 
-    { g: '到着・チェックイン', rows: [
+    { g: '到着・チェックイン', sec: 'stay', rows: [
       { k: 'checkin_method', l: 'チェックイン方式', o: 'checkin', ch: 'owner' },
       { k: 'late_arrival',   l: '21時以降の到着',   o: 'late',    ch: 'owner' },
       /* アーリーとレイトは 2026-09 に分割した。1項目にまとめていると
@@ -165,7 +170,7 @@
       { k: 'late_checkout',  l: 'レイトチェックアウト', o: 'kahi', ch: 'owner' }
     ]},
 
-    { g: '追加料金', rows: [
+    { g: '追加料金', sec: 'stay', rows: [
       { k: 'fee_cleaning', l: '清掃費',       u: '円', ch: 'owner' },
       { k: 'fee_heating',  l: '暖房・光熱費', u: '円', ch: 'owner' },
       { k: 'fee_pet',      l: 'ペット同伴料', u: '円', ch: 'owner' },
@@ -173,7 +178,7 @@
       { k: 'fee_bbq',      l: 'BBQ機材',      o: 'fee', ch: 'owner' }
     ]},
 
-    { g: '持ち物', rows: [
+    { g: '持ち物', sec: 'stay', rows: [
       { k: 'bring_towel',     l: 'タオル',       o: 'bring', ch: 'owner' },
       { k: 'bring_amenity',   l: 'アメニティ',   o: 'bring', ch: 'owner' },
       { k: 'bring_seasoning', l: '調味料',       o: 'bring', ch: 'owner' },
@@ -181,7 +186,7 @@
       { k: 'bring_trash',     l: 'ゴミ袋',       o: 'bring', ch: 'owner' }
     ]},
 
-    { g: '同行者・設備', rows: [
+    { g: '同行者・設備', sec: 'stay', rows: [
       { k: 'capacity',     l: '定員',          u: '名', ch: 'desk' },
       { k: 'comfort_cap',  l: '推奨人数',      u: '名', ch: 'owner', n: 'ゆったり過ごせる人数' },
       { k: 'pet_ok',       l: 'ペット',        o: 'kahi', ch: 'desk' },
@@ -190,7 +195,7 @@
       { k: 'wifi',         l: 'Wi-Fi',         o: 'yesno', ch: 'desk' }
     ]},
 
-    { g: 'アクセス・周辺', rows: [
+    { g: 'アクセス・周辺', sec: 'stay', rows: [
       /* 標高から導出する（tools/winter.py）。設計書どおりチャネルA。
          ただし標高200〜500mの帯は判定できないため空けてある。 */
       { k: 'winter_access', l: '冬季アクセス',   o: 'winter', ch: 'auto' },
@@ -202,7 +207,7 @@
       { k: 'onsen',         l: '最寄り日帰り温泉', u: '分', ch: 'auto' }
     ]},
 
-    { g: '宿泊者レポート', rows: [
+    { g: '宿泊者レポート', sec: 'stay', rows: [
       { k: 'bugs',         l: '虫の多さ',       o: 'bugs',    ch: 'review' },
       { k: 'arrival_real', l: '実際の所要時間', u: '分',      ch: 'review' },
       { k: 'signal',       l: '携帯の電波',     o: 'signal',  ch: 'review' },
@@ -261,7 +266,7 @@
 
   /* 1つの群を組み立てる。群の中で出典が1種類なら、印は見出しに1回だけ出す。
      同じ「公式」の札が23個並ぶと、情報ではなく模様になる。 */
-  function groupHTML(grp, lead) {
+  function groupHTML(grp) {
     var srcKeys = [], k, i;
     for (k in grp.srcs) { if (grp.srcs.hasOwnProperty(k)) srcKeys.push(k); }
     var one = (srcKeys.length === 1 && srcKeys[0] && SRC[srcKeys[0]]) ? srcKeys[0] : '';
@@ -280,109 +285,75 @@
                 '</span>' +
               '</div>';
     }
-    return '<div class="spec-grp' + (lead ? ' spec-grp-lead' : '') + '">' +
-             head + '<div class="spec-items">' + body + '</div>' +
+    return '<div class="spec-grp">' + head +
+             '<div class="spec-items">' + body + '</div>' +
            '</div>';
+  }
+
+  function sectionHTML(title, en, groups) {
+    if (!groups.length) return '';
+    var out = '<div class="spec-sec-block">' +
+      '<div class="spec-sec-head"><b>' + esc(title) + '</b>' +
+      '<span class="spec-sec-en">' + esc(en) + '</span></div>' +
+      '<div class="spec-grps">';
+    for (var i = 0; i < groups.length; i++) out += groupHTML(groups[i]);
+    return out + '</div></div>';
   }
 
   function buildHTML(villaId) {
     var data = DATA[String(villaId)] || {};
-    var groups = [], sections = '', total = 0, filled = 0;
+    var sauna = [], stay = [], total = 0, filled = 0;
     var i, j;
 
     for (i = 0; i < SCHEMA.length; i++) {
       var grp = SCHEMA[i];
-      var rowsHTML = '';
       var items = [], srcs = {};
 
       for (j = 0; j < grp.rows.length; j++) {
         var row = grp.rows[j];
         var cell = normalize(data[row.k]);
         total++;
-
-        if (cell) {
-          /* 調査済み → 群ごとにまとめる。SCHEMA の群を捨てて1つの格子に
-             並べると、どれがサウナの話でどれが料金の話か読み取れなくなる。 */
-          filled++;
-          items.push({ l: row.l, v: renderValue(row, cell), src: cell.src || '' });
-          srcs[cell.src || ''] = 1;
-        } else {
-          /* 未調査 → 開閉の中に格納。既定では描画しない */
-          rowsHTML +=
-            '<div class="spec-row">' +
-              '<span class="spec-k">' + esc(row.l) +
-                (row.n ? '<small>' + esc(row.n) + '</small>' : '') +
-              '</span>' +
-              '<span class="spec-v"><span class="spec-none">未調査</span></span>' +
-            '</div>';
-        }
+        if (!cell) continue;
+        /* **確認できた項目だけ出す。** 「未調査」を並べると、施設ではなく
+           このサイトが未完成に見える。調査率は data 属性に残して開発で使う。 */
+        filled++;
+        items.push({ l: row.l, v: renderValue(row, cell), src: cell.src || '' });
+        srcs[cell.src || ''] = 1;
       }
-
-      if (items.length) groups.push({ g: grp.g, items: items, srcs: srcs });
-      if (rowsHTML) {
-        sections += '<div class="spec-sec">' +
-          '<div class="spec-sec-h">' + esc(grp.g) + '</div>' + rowsHTML + '</div>';
+      if (items.length) {
+        /* **サウナが無い施設に SAUNA の節を立てない。** 「サウナ なし」という
+           事実は消さず、宿の詳細の側に寄せる。 */
+        var toSauna = (grp.sec === 'sauna') && normalize(data.sauna_exists) &&
+                      normalize(data.sauna_exists).v !== 'no';
+        (toSauna ? sauna : stay).push({ g: grp.g, items: items, srcs: srcs });
       }
     }
 
-    var rest = total - filled;
-    var out = '<div class="spec-head"><span class="spec-title">施設スペック</span>';
-    if (filled > 0) {
-      out += '<span class="spec-cov"><b>' + filled + '</b> / ' + total + ' 調査済み</span>';
-    }
-    out += '</div>';
-
-    if (filled > 0) {
-      /* 進捗バーではなく「どこまで引かれたか分かる罫」。見出しの下の線がそのまま
-         調査済みの割合になる。 */
-      out += '<div class="spec-bar"><i style="width:' +
-             Math.max(2, Math.round(filled / total * 100)) + '%"></i></div>';
-      /* 先頭の群（サウナ）は全幅の帯、残りは2段に流す。項目数が群ごとに違うので
-         高さが自然に不揃いになり、同じ札の反復にならない。 */
-      /* 先頭の群（サウナ）を帯にするのは3項目以上あるときだけ。1〜2項目だと
-         全幅に伸びた帯にセルが1つ残って間延びする。 */
-      var lead = groups[0].items.length >= 3;
-      var from = lead ? 1 : 0;
-      out += '<div class="spec-known">';
-      if (lead) out += groupHTML(groups[0], true);
-      if (groups.length > from) {
-        out += '<div class="spec-grps">';
-        for (i = from; i < groups.length; i++) out += groupHTML(groups[i], false);
-        out += '</div>';
-      }
-      out += '</div>';
-    } else {
-      /* 0件（286件中281件）で進捗バーや空の見出しを並べない */
-      out += '<div class="spec-blank">この施設はまだ調査中です。' +
-             '確認できた項目から順に掲載していきます。</div>';
+    if (!filled) {
+      return '<div class="spec-blank">この施設の詳細は確認中です。' +
+             '公開情報で確認できた項目から順に掲載しています。</div>';
     }
 
-    if (rest > 0) {
-      out += '<button type="button" class="spec-more">' +
-               '未調査の項目を見る<span class="spec-more-n">' + rest + '</span>' +
-               '<span class="spec-more-arw">▼</span>' +
-             '</button>' +
-             '<div class="spec-rest">' + sections + '</div>';
-    }
+    var out = sectionHTML('サウナ', 'SAUNA', sauna) +
+              sectionHTML('宿の詳細', 'STAY DETAILS', stay);
 
-    if (filled > 0) {
-      out += '<div class="spec-foot">' +
-        '出典は群ごとにまとめて示しています。群の中で出典が割れている項目にだけ、' +
-        '値の脇へ個別の印（' +
-        '<span class="spec-src src-owner">施設</span>' +
-        '<span class="spec-src src-desk">公式</span>' +
-        '<span class="spec-src src-auto">自動</span>' +
-        '<span class="spec-src src-review">宿泊者</span>' +
-        '）を付けています。<br>' +
-        '「未調査」は情報が未確認であることを示すもので、設備が存在しないことを意味しません。<br>' +
-        '周辺情報: © OpenStreetMap contributors ／ 標高: 国土地理院 ／ 所要時間は車での目安' +
-        '</div>';
-    }
+    out += '<div class="spec-foot">' +
+      '<button type="button" class="spec-how">情報の確認方法</button>' +
+      '<div class="spec-how-body">' +
+        '掲載情報は、施設の公式サイト・予約サイト・サウナ関連情報サイト・施設からのご回答など、' +
+        '公開されている情報をもとに確認しています。項目ごとの確認元は各見出しの右に示しています' +
+        '（<b>' + SRC.owner.g + '</b>／<b>' + SRC.desk.g + '</b>／<b>' + SRC.auto.g + '</b>／<b>' + SRC.review.g + '</b>）。' +
+        '<br>確認できなかった項目は掲載していません。掲載が無いことは、設備が存在しないことを意味しません。' +
+        '<br>最新の料金・空室・設備は各予約サイトおよび施設公式サイトでご確認ください。' +
+        '<br>周辺情報: © OpenStreetMap contributors ／ 標高: 国土地理院 ／ 所要時間は車での目安' +
+      '</div></div>';
 
     out += '<a class="spec-owner-cta" href="' +
       (window.VILLAFARAS_SPEC_OWNER_URL || '../owner.html') + '">' +
       '施設関係者の方へ — 掲載情報を更新する</a>';
 
+    /* 調査率は開発用に残す（一般UIには出さない） */
+    out = '<div class="spec-meta" data-filled="' + filled + '" data-total="' + total + '"></div>' + out;
     return out;
   }
 
@@ -394,7 +365,7 @@
   function onClick(e) {
     var el = e.target;
     while (el && el !== document.body) {
-      if (hasClass(el, 'spec-more') && !hasClass(el, 'spec-more-arw')) {
+      if (hasClass(el, 'spec-how')) {
         var block = el;
         while (block && !hasClass(block, 'spec-block')) block = block.parentNode;
         if (block) {
