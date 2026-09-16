@@ -9,49 +9,142 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF}
-body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
-header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px}
-header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
-.wrap{max-width:560px;margin:0 auto;padding:40px 24px 60px}
-.page-title{font-family:'Poppins','Noto Sans JP',sans-serif;font-size:clamp(20px,4vw,26px);font-weight:800;color:var(--ink);text-align:center;margin-bottom:28px}
-.contact-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:26px 22px}
-.contact-form{margin-top:0}
-.contact-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin:14px 0 6px}
-.contact-label:first-child{margin-top:0}
-.contact-label .req{color:#fff;background:var(--o1);font-size:9px;padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:700}
-.contact-input,.contact-textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;color:var(--ink);box-sizing:border-box;background:var(--cream)}
-.contact-input:focus,.contact-textarea:focus{outline:none;border-color:var(--o2)}
-.contact-textarea{resize:vertical}
-.contact-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
-.contact-submit{width:100%;background:linear-gradient(135deg,var(--o1),var(--o2));color:white;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;margin-top:16px}
-.contact-submit:hover{opacity:.92}
-.back-link{display:block;text-align:center;margin-top:28px;color:var(--o1);text-decoration:none;font-weight:700;font-size:14px}
-footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;line-height:1.7;word-break:break-word;overflow-wrap:break-word}
+:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--line:#E8D9CB;--line-2:#F1E5D8;--white:#FFF}
+/* 本文が短いページ（お問い合わせ等）で、フッターの下にクリーム地が
+   残らないようにする */
+body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+.wrap{flex:1 0 auto}
+footer{flex:0 0 auto}
+
+/* ===== グローバルヘッダー（index.html / villas/*.html と同じ組） ===== */
+header.gnav{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;height:52px;padding:0 24px}
+.gnav-logo{font-family:'Cormorant Garamond','Times New Roman',serif;font-size:25px;font-weight:600;letter-spacing:.055em;color:var(--ink);text-decoration:none;line-height:1;flex:0 0 auto;transition:color .14s}
+.gnav-logo:hover{color:var(--o1)}
+.gnav-back{font-size:12.5px;font-weight:600;color:var(--ink2);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;transition:color .14s,border-color .14s}
+.gnav-back:hover{color:var(--o1);border-bottom-color:var(--o1)}
+
+.wrap{max-width:820px;margin:0 auto;padding:44px 24px 0}
+
+/* ===== 見出し。個別ページと同じく、上付き→表題→前書きの順に落とす ===== */
+.page-head{padding-bottom:20px;margin-bottom:34px;border-bottom:1px solid var(--line)}
+.page-eyebrow{font-size:11px;letter-spacing:.15em;color:var(--o1);font-weight:700;margin-bottom:13px}
+.page-title{font-size:clamp(25px,3.7vw,40px);font-weight:700;line-height:1.26;letter-spacing:-.018em;color:var(--ink);margin:0}
+.page-lead{font-size:13.5px;color:var(--muted);line-height:1.9;margin:13px 0 0;max-width:34em}
+
+/* ===== 本文（プライバシーポリシー） ===== */
+.policy-box{color:var(--ink2);font-size:14.5px;line-height:2.05}
+.policy-updated{font-size:11px;color:var(--muted);letter-spacing:.06em;margin:15px 0 0}
+.policy-box h3{
+  font-size:14px;font-weight:700;color:var(--ink);letter-spacing:.01em;
+  margin:40px 0 11px;padding-bottom:8px;border-bottom:1px solid var(--line-2);
+  display:flex;align-items:baseline;gap:11px;
+}
+/* 見出しの番号を組版として立てる。h3 の本文から数字を分けて拾えないので、
+   連番は CSS 側で振る（本文の「1.」は HTML から外してある） */
+.policy-box{counter-reset:pol}
+.policy-box h3::before{
+  counter-increment:pol;content:counter(pol,decimal-leading-zero);
+  font-family:'Poppins',sans-serif;font-size:10.5px;font-weight:600;color:var(--o1);
+  letter-spacing:.1em;flex:0 0 auto;
+}
+.policy-box p{margin:0 0 14px}
+.policy-box ul{margin:0 0 14px;padding:0;list-style:none}
+.policy-box li{position:relative;padding-left:17px;margin-bottom:5px}
+.policy-box li::before{content:'';position:absolute;left:1px;top:.92em;width:7px;height:1px;background:var(--o3)}
+.policy-box a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--o-soft)}
+.policy-box a:hover{border-bottom-color:var(--o1);color:var(--o1)}
+.policy-box .note{font-size:11.5px;color:var(--muted)}
+
+/* ===== フォーム。囲みカードをやめ、罫と下線で受ける。
+   名前とメールなど短い項目は横に並べ、縦に積むだけの並びにしない。 ===== */
+.vform{margin:0}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.field{margin-bottom:4px}
+.field label{display:block;font-size:10.5px;font-weight:600;letter-spacing:.09em;color:var(--muted);margin:20px 0 3px}
+.field .req{color:var(--o1);font-size:10px;font-weight:600;margin-left:7px;letter-spacing:0}
+.field input,.field select,.field textarea{
+  width:100%;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;
+  padding:9px 2px;font-size:15px;font-family:inherit;color:var(--ink);
+  -webkit-appearance:none;appearance:none;box-sizing:border-box;
+}
+.field input::placeholder,.field textarea::placeholder{color:#C6B1A0}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ink)}
+.field select{cursor:pointer;font-weight:700;background-image:none}
+.field-sel{position:relative;display:block}
+.field-sel::after{
+  content:'';position:absolute;right:6px;bottom:17px;width:6px;height:6px;
+  border-right:1.5px solid var(--ink2);border-bottom:1.5px solid var(--ink2);
+  transform:rotate(45deg);pointer-events:none;
+}
+.field textarea{resize:vertical;min-height:132px;border:1px solid var(--line);padding:13px 14px;margin-top:3px}
+.submit-btn{
+  display:inline-block;margin-top:30px;padding:15px 48px;border:0;border-radius:0;
+  background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.11em;
+  cursor:pointer;font-family:inherit;-webkit-appearance:none;transition:background .14s;
+}
+.submit-btn:hover{background:var(--o1)}
+.privacy-note,.contact-note{font-size:11.5px;color:var(--muted);line-height:1.85;margin:22px 0 0;max-width:40em}
+.privacy-note a,.contact-note a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--o-soft)}
+
+/* ===== 一覧へ戻る ===== */
+.back-link{display:block;margin-top:52px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.06em;transition:background .16s,color .16s,padding .16s}
+.back-link:hover{background:var(--ink);color:#fff;padding-left:15px;padding-right:15px}
+
+/* ===== フッター ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.55);text-align:left;padding:46px 24px 38px;font-size:11px;line-height:1.9;margin-top:64px;word-break:keep-all;overflow-wrap:break-word}
+.foot-in{max-width:1180px;margin:0 auto}
+.foot-logo{font-family:'Cormorant Garamond','Times New Roman',serif;font-size:30px;font-weight:500;color:#fff;letter-spacing:.07em;line-height:1;text-decoration:none;display:inline-block;margin-bottom:9px}
+.foot-logo:hover{color:var(--o3)}
+.foot-sub{color:rgba(255,255,255,.42);font-size:10.5px;letter-spacing:.12em;margin-bottom:17px}
+.foot-fine{padding-top:15px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.36);font-size:10.5px;line-height:1.85;max-width:660px}
+.foot-fine a{color:rgba(255,255,255,.62);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
+
+@media (max-width:700px){
+  header.gnav{height:48px;padding:0 20px}
+  .gnav-logo{font-size:22px}
+  .wrap{padding:30px 20px 0}
+  .page-head{margin-bottom:28px}
+  .field-row{grid-template-columns:1fr;gap:0}
+  .policy-box{font-size:14px;line-height:1.95}
+  .policy-box h3{margin-top:32px}
+  .submit-btn{width:100%;padding:16px 0}
+  footer{padding:38px 20px 32px;margin-top:48px}
+}
 </style>
 </head>
 <body>
-<header><a href="index.html">← villafaras（ヴィラファラス）トップに戻る</a></header>
+<header class="gnav">
+  <a class="gnav-logo" href="index.html">villafaras</a>
+  <a class="gnav-back" href="index.html">← トップに戻る</a>
+</header>
 
 <div class="wrap">
-  <h1 class="page-title">サイトへのお問い合わせ</h1>
-  <div class="contact-card">
-    <div class="contact-form">
-      <label class="contact-label">お名前<span class="req">必須</span></label>
-      <input type="text" id="cfName" class="contact-input" placeholder="山田 太郎">
-      <label class="contact-label">メールアドレス<span class="req">必須</span></label>
-      <input type="email" id="cfEmail" class="contact-input" placeholder="example@mail.com">
-      <label class="contact-label">お問い合わせ内容<span class="req">必須</span></label>
-      <textarea id="cfMessage" class="contact-textarea" rows="6" placeholder="お問い合わせ内容をご記入ください"></textarea>
-      <button type="button" class="contact-submit" onclick="submitContact()">送信する</button>
-      <p class="contact-note">※送信ボタンを押すと、お使いのメールアプリが起動し、入力内容がメール本文にセットされます。内容をご確認のうえ送信してください。</p>
-    </div>
+  <div class="page-head">
+    <div class="page-eyebrow">お問い合わせ</div>
+    <h1 class="page-title">サイトへのお問い合わせ</h1>
+    <p class="page-lead">掲載内容の誤りのご指摘、取材・掲載のご相談、その他ご質問はこちらから。施設のご予約は各予約サイトへ直接お願いいたします。</p>
   </div>
 
-  <a class="back-link" href="index.html">← villafaras（ヴィラファラス）トップに戻る</a>
+  <form class="vform" onsubmit="return false">
+    <div class="field-row">
+      <div class="field"><label>お名前<span class="req">必須</span></label><input type="text" id="cfName" placeholder="山田 太郎"></div>
+      <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" id="cfEmail" placeholder="example@mail.com"></div>
+    </div>
+    <div class="field"><label>お問い合わせ内容<span class="req">必須</span></label><textarea id="cfMessage" rows="7" placeholder="お問い合わせ内容をご記入ください"></textarea></div>
+    <button type="button" class="submit-btn" onclick="submitContact()">送信する</button>
+    <p class="contact-note">※送信ボタンを押すと、お使いのメールアプリが起動し、入力内容がメール本文にセットされます。内容をご確認のうえ送信してください。<br>※いただいた情報はお問い合わせへの対応にのみ使用します（<a href="privacy.html">プライバシーポリシー</a>）。</p>
+  </form>
+
+  <a class="back-link" href="index.html">← villafaras トップに戻る</a>
 </div>
 
-<footer>villafaras（ヴィラファラス）<br>サウナ・温泉付き一棟貸しヴィラ検索</footer>
+<footer>
+  <div class="foot-in">
+    <a class="foot-logo" href="index.html">villafaras</a>
+    <div class="foot-sub">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
+    <div class="foot-fine">本サイトはアフィリエイトリンクを含む広告を掲載しています。掲載情報は2026年7月調査時点のものです。<a href="privacy.html">プライバシーポリシー</a></div>
+  </div>
+</footer>
 
 <script>
 function submitContact(){
