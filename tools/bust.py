@@ -14,7 +14,8 @@ GitHub Pages でも同じで、再訪者に古い CSS/JS が配られる。
 """
 import glob, hashlib, io, os, re, sys
 
-ASSETS = ["spec.js", "spec.css", "reviews.js", "reviews.css", "spec-data.js"]
+ASSETS = ["spec.js", "spec.css", "reviews.js", "reviews.css", "spec-data.js",
+          "villa.js", "data/villas-lite.js"]
 
 
 def short(path):
