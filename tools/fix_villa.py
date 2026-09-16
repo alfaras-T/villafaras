@@ -276,7 +276,9 @@ for vid, fx in FIXES.items():
                 continue
             tmpl = None
             for q in glob.glob("villas/*.html"):
-                m = re.search(r'<span class="pill" style="[^"]*">%s</span>' % label,
+                # 2026-09 に pill の inline style（パステル10色）を外したので、
+                # style の有無を問わない形にする。決め打ちすると雛形が0件になる。
+                m = re.search(r'<span class="pill"[^>]*>%s</span>' % label,
                               io.open(q, encoding="utf-8").read())
                 if m:
                     tmpl = m.group(0); break

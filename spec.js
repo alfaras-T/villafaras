@@ -16,11 +16,12 @@
         auto   = 座標から自動算出
         review = 宿泊者レビューの集計
      ------------------------------------------------------------------ */
+  /* t = 1項目に付ける印 / g = 群まるごと同じ出典のときに見出しへ出す言い回し */
   var SRC = {
-    owner:  { t: '施設', c: 'src-owner' },
-    desk:   { t: '公式', c: 'src-desk' },
-    auto:   { t: '自動', c: 'src-auto' },
-    review: { t: '宿泊者', c: 'src-review' }
+    owner:  { t: '施設', c: 'src-owner', g: '施設回答' },
+    desk:   { t: '公式', c: 'src-desk', g: '公式サイト調べ' },
+    auto:   { t: '自動', c: 'src-auto', g: '座標から算出' },
+    review: { t: '宿泊者', c: 'src-review', g: '宿泊者レビュー' }
   };
 
   /* ------------------------------------------------------------------
@@ -249,21 +250,50 @@
       text = String(raw) + (row.u ? row.u : '');
     }
     var cls = (raw === 'no' || raw === 'none' || raw === false) ? ' class="spec-no"' : '';
-    var badge = '';
-    if (cell.src && SRC[cell.src]) {
-      badge = '<span class="spec-src ' + SRC[cell.src].c + '">' + SRC[cell.src].t + '</span>';
+    return '<span' + cls + '>' + esc(text) + '</span>';
+  }
+
+  /* 1項目ぶんの出典の印。群の中で出典が割れているときだけ使う */
+  function srcBadge(code) {
+    if (!code || !SRC[code]) return '';
+    return '<span class="spec-src ' + SRC[code].c + '">' + SRC[code].t + '</span>';
+  }
+
+  /* 1つの群を組み立てる。群の中で出典が1種類なら、印は見出しに1回だけ出す。
+     同じ「公式」の札が23個並ぶと、情報ではなく模様になる。 */
+  function groupHTML(grp, lead) {
+    var srcKeys = [], k, i;
+    for (k in grp.srcs) { if (grp.srcs.hasOwnProperty(k)) srcKeys.push(k); }
+    var one = (srcKeys.length === 1 && srcKeys[0] && SRC[srcKeys[0]]) ? srcKeys[0] : '';
+
+    var head = '<div class="spec-grp-h"><b>' + esc(grp.g) + '</b>';
+    if (one) head += '<span class="spec-grp-src">' + SRC[one].g + '</span>';
+    head += '</div>';
+
+    var body = '';
+    for (i = 0; i < grp.items.length; i++) {
+      var it = grp.items[i];
+      body += '<div class="spec-card">' +
+                '<span class="spec-card-k">' + esc(it.l) + '</span>' +
+                '<span class="spec-card-v">' + it.v +
+                  (one ? '' : srcBadge(it.src)) +
+                '</span>' +
+              '</div>';
     }
-    return '<span' + cls + '>' + esc(text) + '</span>' + badge;
+    return '<div class="spec-grp' + (lead ? ' spec-grp-lead' : '') + '">' +
+             head + '<div class="spec-items">' + body + '</div>' +
+           '</div>';
   }
 
   function buildHTML(villaId) {
     var data = DATA[String(villaId)] || {};
-    var known = [], sections = '', total = 0, filled = 0;
+    var groups = [], sections = '', total = 0, filled = 0;
     var i, j;
 
     for (i = 0; i < SCHEMA.length; i++) {
       var grp = SCHEMA[i];
       var rowsHTML = '';
+      var items = [], srcs = {};
 
       for (j = 0; j < grp.rows.length; j++) {
         var row = grp.rows[j];
@@ -271,13 +301,11 @@
         total++;
 
         if (cell) {
-          /* 調査済み → ラベル上・値下のカード（主役として上部に並べる） */
+          /* 調査済み → 群ごとにまとめる。SCHEMA の群を捨てて1つの格子に
+             並べると、どれがサウナの話でどれが料金の話か読み取れなくなる。 */
           filled++;
-          known.push(
-            '<div class="spec-card">' +
-              '<span class="spec-card-k">' + esc(row.l) + '</span>' +
-              '<span class="spec-card-v">' + renderValue(row, cell) + '</span>' +
-            '</div>');
+          items.push({ l: row.l, v: renderValue(row, cell), src: cell.src || '' });
+          srcs[cell.src || ''] = 1;
         } else {
           /* 未調査 → 開閉の中に格納。既定では描画しない */
           rowsHTML +=
@@ -290,6 +318,7 @@
         }
       }
 
+      if (items.length) groups.push({ g: grp.g, items: items, srcs: srcs });
       if (rowsHTML) {
         sections += '<div class="spec-sec">' +
           '<div class="spec-sec-h">' + esc(grp.g) + '</div>' + rowsHTML + '</div>';
@@ -304,9 +333,24 @@
     out += '</div>';
 
     if (filled > 0) {
+      /* 進捗バーではなく「どこまで引かれたか分かる罫」。見出しの下の線がそのまま
+         調査済みの割合になる。 */
       out += '<div class="spec-bar"><i style="width:' +
              Math.max(2, Math.round(filled / total * 100)) + '%"></i></div>';
-      out += '<div class="spec-known">' + known.join('') + '</div>';
+      /* 先頭の群（サウナ）は全幅の帯、残りは2段に流す。項目数が群ごとに違うので
+         高さが自然に不揃いになり、同じ札の反復にならない。 */
+      /* 先頭の群（サウナ）を帯にするのは3項目以上あるときだけ。1〜2項目だと
+         全幅に伸びた帯にセルが1つ残って間延びする。 */
+      var lead = groups[0].items.length >= 3;
+      var from = lead ? 1 : 0;
+      out += '<div class="spec-known">';
+      if (lead) out += groupHTML(groups[0], true);
+      if (groups.length > from) {
+        out += '<div class="spec-grps">';
+        for (i = from; i < groups.length; i++) out += groupHTML(groups[i], false);
+        out += '</div>';
+      }
+      out += '</div>';
     } else {
       /* 0件（286件中281件）で進捗バーや空の見出しを並べない */
       out += '<div class="spec-blank">この施設はまだ調査中です。' +
@@ -315,18 +359,21 @@
 
     if (rest > 0) {
       out += '<button type="button" class="spec-more">' +
-               '未調査の項目を見る（' + rest + '）' +
+               '未調査の項目を見る<span class="spec-more-n">' + rest + '</span>' +
                '<span class="spec-more-arw">▼</span>' +
              '</button>' +
              '<div class="spec-rest">' + sections + '</div>';
     }
 
     if (filled > 0) {
-      out += '<div class="spec-foot">出典 — ' +
-        '<span class="spec-src src-owner">施設</span> 施設回答　' +
-        '<span class="spec-src src-desk">公式</span> 公式サイト調べ　' +
-        '<span class="spec-src src-auto">自動</span> 座標から算出　' +
-        '<span class="spec-src src-review">宿泊者</span> レビュー集計<br>' +
+      out += '<div class="spec-foot">' +
+        '出典は群ごとにまとめて示しています。群の中で出典が割れている項目にだけ、' +
+        '値の脇へ個別の印（' +
+        '<span class="spec-src src-owner">施設</span>' +
+        '<span class="spec-src src-desk">公式</span>' +
+        '<span class="spec-src src-auto">自動</span>' +
+        '<span class="spec-src src-review">宿泊者</span>' +
+        '）を付けています。<br>' +
         '「未調査」は情報が未確認であることを示すもので、設備が存在しないことを意味しません。<br>' +
         '周辺情報: © OpenStreetMap contributors ／ 標高: 国土地理院 ／ 所要時間は車での目安' +
         '</div>';

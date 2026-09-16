@@ -16,95 +16,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--white:#FFF}
-body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
-header{background:linear-gradient(90deg,var(--o1),var(--o2));padding:14px 24px;position:sticky;top:0;z-index:10}
-header a{color:white;text-decoration:none;font-weight:700;font-size:14px}
-.wrap{max-width:1180px;margin:0 auto;padding:28px 24px 48px}
+:root{--o1:#FF6B2B;--o2:#FF8A3D;--o3:#FFB347;--o-pale:#FFF4ED;--o-soft:#FFE8D6;--ink:#2A1A10;--ink2:#5C4434;--muted:#A88C78;--cream:#FFFBF7;--border:#F0E2D5;--line:#E8D9CB;--line-2:#F1E5D8;--white:#FFF}
+body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ===== 掲載表記とグローバルヘッダー（index.html と同じ組） ===== */
+.topbar{background:var(--cream);color:var(--muted);padding:11px 24px 10px;display:flex;align-items:baseline;justify-content:center;gap:9px;font-size:11px;letter-spacing:.055em;line-height:1.5}
+.topbar i{font-style:normal;font-size:9.5px;font-weight:700;letter-spacing:.14em;color:var(--ink2);border:1px solid var(--line);padding:2px 5px 1px;border-radius:1px;flex:0 0 auto;position:relative;top:-1px}
+header.gnav{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;height:52px;padding:0 24px}
+.gnav-logo{font-family:'Cormorant Garamond','Times New Roman',serif;font-size:25px;font-weight:600;letter-spacing:.055em;color:var(--ink);text-decoration:none;line-height:1;flex:0 0 auto;transition:color .14s}
+.gnav-logo:hover{color:var(--o1)}
+.gnav-back{font-size:12.5px;font-weight:600;color:var(--ink2);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;transition:color .14s,border-color .14s}
+.gnav-back:hover{color:var(--o1);border-bottom-color:var(--o1)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:34px 24px 0}
+
+/* ===== 組み。**行の間隔は grid の gap で等分にしない。**
+   見出し→写真は詰め、本文→仕様は大きく空ける、というように
+   区切りの重さを変えたいので、行間は各ブロックの margin で個別に取る。 ===== */
 .layout{display:block}
 @media (min-width:861px){
-  .layout{display:grid;grid-template-columns:1.3fr 1fr;grid-template-areas:"hero right" "map right" "back right";gap:36px;align-items:start}
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.42fr) minmax(296px,1fr);
+    grid-template-areas:"head head" "hero buy" "lead buy" "spec spec" "map map" "rev rev" "back back";
+    column-gap:clamp(30px,3.6vw,58px); row-gap:0; align-items:start;
+  }
+  .villa-head{grid-area:head}
   .hero-block{grid-area:hero}
-  .map-block{grid-area:map;position:sticky;top:70px}
-  .right-block{grid-area:right}
+  .lead-block{grid-area:lead}
+  .buy-block{grid-area:buy}
+  .spec-block{grid-area:spec}
+  .map-block{grid-area:map}
+  .review-widget{grid-area:rev}
   .back-link{grid-area:back}
+  /* 決める側（料金と予約）を、読む側から罫1本で分ける。囲みは作らない */
+  .buy-block{padding-left:clamp(22px,2.3vw,36px);border-left:1px solid var(--line)}
 }
-.back-link{display:block;margin-top:12px}
-.modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:18px}
+
+/* ===== 見出し。施設名をページで最大の文字にする ===== */
+.villa-head{padding-bottom:20px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.vh-meta{display:flex;align-items:baseline;gap:11px;margin-bottom:13px;font-size:11px;letter-spacing:.15em}
+.vh-pref{color:var(--o1);font-weight:700}
+.vh-city{color:var(--muted);position:relative;padding-left:20px}
+.vh-city::before{content:'';position:absolute;left:0;top:.52em;width:12px;height:1px;background:var(--line)}
+.villa-head h1{font-size:clamp(25px,3.7vw,45px);font-weight:700;line-height:1.26;letter-spacing:-.018em;margin:0 0 12px;color:var(--ink);max-width:20em}
+/* 10色のパステルピルをやめ、中黒で区切った文字にする */
+.pill-row{display:flex;flex-wrap:wrap;gap:0 9px;margin:0}
+.pill{font-size:11.5px;padding:0;border-radius:0;font-weight:500;background:none!important;color:var(--muted)!important}
+.pill::before{content:'\00B7';margin-right:9px;color:var(--line)}
+.pill:first-child::before{content:'';margin:0}
+
+/* ===== 写真 ===== */
+.modal-img{position:relative;overflow:hidden;aspect-ratio:16/9;width:100%;border-radius:2px;background:#EFE4D8}
 .modal-img img{width:100%;height:100%;object-fit:cover;display:block}
-.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F0E4D5,#EADBCB);color:#B89A78}
-.img-placeholder svg{width:20%;height:20%;opacity:.55}
-.modal-badge{position:absolute;bottom:14px;left:16px;font-size:12px;font-weight:700;padding:6px 15px;border-radius:30px;color:white;backdrop-filter:blur(4px)}
-.modal-body h1{font-size:26px;font-weight:800;margin-bottom:10px;color:var(--ink)}
-.modal-addr-label{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.02em;margin:16px 0 4px}
-.modal-addr{font-size:14px;color:var(--ink2);margin-bottom:10px;font-weight:600}
-.modal-addr a{margin-left:8px;font-size:12px;color:var(--o1);font-weight:700;text-decoration:none}
-.modal-map{width:100%;height:240px;border-radius:14px;overflow:hidden;margin-top:12px;border:1px solid var(--border)}
+/* 写真が入るまでの仮置き。家のアイコン286枚より施設名の頭文字のほうが読める */
+.img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#F0E5D8;color:#C4A98B}
+.img-placeholder[data-t="1"]{background:#EDE6DB}
+.img-placeholder[data-t="2"]{background:#F2E7DB}
+.img-placeholder[data-t="3"]{background:#EAE3D9}
+.img-placeholder[data-t="4"]{background:#F1E9E0}
+.img-placeholder svg{display:none}
+.img-placeholder::after{content:attr(data-ini);font-family:'Cormorant Garamond','Hiragino Mincho ProN','Yu Mincho',serif;font-size:clamp(52px,7.4vw,92px);font-weight:600;line-height:1;opacity:.48}
+.modal-badge{display:none}
+
+/* ===== 紹介文。囲みをやめ、読ませる段落にする ===== */
+.lead-block{margin-top:30px}
+.lead-block::before{content:'';display:block;width:34px;height:2px;background:var(--ink);margin-bottom:19px}
+.modal-feat{font-size:15.5px;color:var(--ink2);line-height:2.05;background:none;border:0;border-radius:0;padding:0;margin:0;max-width:34em}
+
+/* ===== 諸元。等分の3列をやめ、定員だけ数字として立てる ===== */
+.modal-facts{display:grid;grid-template-columns:auto 1fr;gap:0;margin:0 0 24px;padding-bottom:18px;border-bottom:1px solid var(--line-2)}
+.fact{flex:none;min-width:0;background:none;border:0;border-radius:0;padding:0;text-align:left}
+.fact:first-child{grid-row:span 2;padding-right:24px;margin-right:24px;border-right:1px solid var(--line-2);align-self:center}
+.fact:first-child .fact-val{font-size:27px;font-weight:600;font-family:'Poppins','Noto Sans JP',sans-serif;letter-spacing:-.025em;line-height:1.05}
+.fact:nth-child(2){padding-bottom:9px}
+.fact-label{display:block;font-size:9.5px;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:none;margin-bottom:3px}
+.fact-val{display:block;font-size:13.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.35}
+
+/* ===== 料金 ===== */
+.modal-price{font-size:clamp(28px,3.1vw,37px);font-weight:600;color:var(--ink);font-family:'Poppins','Noto Sans JP',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.025em;margin:0 0 22px;line-height:1.1}
+.modal-price span{font-size:12px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP';letter-spacing:0}
+.modal-price .tilde{color:var(--muted);font-weight:400;font-size:19px}
+.modal-notice{font-size:10.5px;color:var(--muted);margin:16px 0 0;line-height:1.75}
+
+/* ===== 予約サイト。**同じ色の四角を並べない。**
+   各社の色は左の細い罫だけに使い、行の一覧として組む。
+   押すと行が各社の色で塗りつぶれる。 ===== */
+/* いちばん大事な導線の見出しが panel でいちばん小さかったので直した */
+.modal-ota-label{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--ink);margin:0 0 9px;padding:0;border:0}
+.ota-grid{display:block;margin:0 0 22px;border-top:1px solid var(--line-2)}
+.ota-btn{
+  display:flex;align-items:baseline;gap:10px;position:relative;
+  padding:13px 10px 13px 16px;border-radius:0;border-bottom:1px solid var(--line-2);
+  background:none;color:var(--ink);text-decoration:none;box-shadow:none;
+  font-weight:700;font-size:13.5px;letter-spacing:.01em;
+  transition:background .14s,color .14s,padding-left .14s;
+}
+.ota-btn::before{content:'';position:absolute;left:0;top:0;bottom:-1px;width:3px;background:var(--ota)}
+.ota-btn span{font-size:10.5px;font-weight:500;color:var(--muted);margin-left:auto;opacity:1;white-space:nowrap}
+.ota-btn:hover{transform:none;background:var(--ota);color:var(--ota-text,#fff);padding-left:21px}
+.ota-btn:hover span{color:inherit;opacity:.8}
+
+/* ===== 公式・SNS。カプセルをやめ、色は使わず図と文字だけ ===== */
+.modal-links{display:flex;flex-wrap:wrap;gap:0 17px;margin:0}
+.modal-links:empty,.ota-grid:empty,.pill-row:empty{display:none}
+.modal-links{align-items:center;gap:0 14px}
+.official-link{
+  display:inline-flex;align-items:center;gap:7px;padding:5px 0;border:0;border-radius:0;
+  background:none!important;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;
+  border-bottom:1px solid var(--ink);margin-right:4px;transition:color .14s,border-color .14s;
+}
+.official-link:hover{background:none!important;color:var(--o1);border-bottom-color:var(--o1)}
+/* SNS は補助。同じ重さで4つ並べると公式サイトが埋もれる */
+.sns-link{
+  display:inline-flex;align-items:center;gap:5px;height:auto;padding:4px 0;border:0;border-radius:0;
+  background:none!important;font-size:10.5px;font-weight:500;color:var(--muted);text-decoration:none;
+  border-bottom:1px dashed transparent;transition:color .14s,border-color .14s;
+}
+.sns-link:hover{background:none!important;color:var(--o1);border-bottom-color:var(--o1);opacity:1}
+.sns-link svg{width:12px;height:12px;color:var(--muted);flex:0 0 auto}
+.sns-link:hover svg{color:var(--o1)}
+
+/* ===== 所在地と地図。住所を左、地図を右に置いて、同じ大きさの箱を重ねない ===== */
+.map-block{
+  margin-top:58px;padding-top:26px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:minmax(190px,.58fr) 1.42fr;
+  column-gap:clamp(22px,3vw,44px);align-items:start;
+}
+.modal-addr-label{grid-column:1;grid-row:1;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.14em;margin:0 0 7px}
+.modal-addr{grid-column:1;grid-row:2;align-self:start;font-size:14px;color:var(--ink);margin:0;font-weight:600;line-height:1.75}
+.modal-addr a{display:inline-block;margin:7px 0 0;font-size:11.5px;color:var(--o1);font-weight:600;text-decoration:none;border-bottom:1px solid var(--o-soft);white-space:nowrap}
+.modal-addr a:hover{border-bottom-color:var(--o1)}
+.modal-map{grid-column:2;grid-row:1/span 2;width:100%;height:268px;border-radius:2px;overflow:hidden;margin:0;border:1px solid var(--line)}
 .modal-map iframe{width:100%;height:100%;border:0}
-.pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.pill{font-size:12px;padding:4px 12px;border-radius:30px;font-weight:600}
-.modal-feat{font-size:15px;color:var(--ink2);line-height:1.85;background:var(--o-pale);border-radius:12px;padding:18px 20px;margin:16px 0}
-.modal-facts{display:flex;gap:10px;margin:16px 0;flex-wrap:wrap}
-.fact{flex:1;min-width:100px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:11px 12px;text-align:center}
-.fact-label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.5px;color:var(--muted);text-transform:uppercase;margin-bottom:3px}
-.fact-val{display:block;font-size:15px;font-weight:700;color:var(--ink)}
-.modal-price{font-size:28px;font-weight:800;color:var(--o1);font-family:'Poppins',sans-serif;margin:16px 0}
-.modal-price span{font-size:13px;color:var(--muted);font-weight:400;font-family:'Noto Sans JP'}
-.modal-price .tilde{color:var(--o1);font-weight:800;font-size:28px}
-.modal-notice{font-size:11.5px;color:var(--muted);margin:10px 0 18px;line-height:1.5}
-.modal-ota-label{font-size:14px;font-weight:700;color:var(--ink2);margin:18px 0 10px}
-.ota-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px}
-.ota-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;text-decoration:none;border-radius:12px;padding:14px 10px;font-weight:800;font-size:15px;color:var(--ota-text,#fff);background:var(--ota);box-shadow:0 4px 14px rgba(0,0,0,.15);transition:transform .15s}
-.ota-btn span{font-size:11px;font-weight:600;opacity:.92}
-.ota-btn:hover{transform:translateY(-2px)}
-.modal-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.official-link{font-size:12px;font-weight:700;color:var(--o1);text-decoration:none;border:1.5px solid var(--o2);border-radius:30px;padding:8px 14px}
-.official-link:hover{background:var(--o1);color:white}
-.sns-link{height:32px;padding:0 14px;border-radius:30px;background:var(--o-pale);display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:var(--ink2);font-size:12px;font-weight:700}
-.sns-link:hover{opacity:.85}
-.back-link{display:inline-block;margin-top:8px;color:var(--o1);text-decoration:none;font-weight:700;font-size:14px}
-footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;word-break:keep-all;overflow-wrap:break-word}
+
+/* ===== 一覧へ戻る ===== */
+.back-link{display:block;margin-top:44px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.06em;transition:background .16s,color .16s,padding .16s}
+.back-link:hover{background:var(--ink);color:#fff;padding-left:15px;padding-right:15px}
+
+/* ===== フッター ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.55);text-align:left;padding:46px 24px 38px;font-size:11px;line-height:1.9;margin-top:64px;word-break:keep-all;overflow-wrap:break-word}
+.foot-in{max-width:1180px;margin:0 auto}
+.foot-logo{font-family:'Cormorant Garamond','Times New Roman',serif;font-size:30px;font-weight:500;color:#fff;letter-spacing:.07em;line-height:1;text-decoration:none;display:inline-block;margin-bottom:9px}
+.foot-logo:hover{color:var(--o3)}
+.foot-sub{color:rgba(255,255,255,.42);font-size:10.5px;letter-spacing:.12em;margin-bottom:17px}
+.foot-fine{padding-top:15px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.36);font-size:10.5px;line-height:1.85;max-width:660px}
+
+@media (max-width:860px){
+  .wrap{padding:24px 20px 0}
+  header.gnav{height:48px;padding:0 20px}
+  .gnav-logo{font-size:22px}
+  .villa-head{margin-bottom:22px}
+  .lead-block{margin-top:26px}
+  .buy-block{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+  .map-block{margin-top:46px;grid-template-columns:1fr}
+  .modal-addr{grid-column:1;grid-row:2;margin-bottom:16px}
+  .modal-map{grid-column:1;grid-row:3;height:230px}
+  footer{padding:38px 20px 32px;margin-top:48px}
+}
+@media (max-width:420px){
+  .topbar{padding:9px 16px 8px;font-size:10px;letter-spacing:.01em}
+  .modal-img{aspect-ratio:3/2}
+  .modal-feat{font-size:14.5px;line-height:1.95}
+  .fact:first-child{padding-right:18px;margin-right:18px}
+  .fact:first-child .fact-val{font-size:24px}
+}
 </style>
-<link rel="stylesheet" href="../reviews.css">
-<link rel="stylesheet" href="../spec.css">
+<link rel="stylesheet" href="../reviews.css?v=5517f1e6">
+<link rel="stylesheet" href="../spec.css?v=6ffd8729">
 </head>
 <body>
-<header><a href="../index.html">← villafaras（ヴィラファラス）一覧に戻る</a></header>
+<div class="topbar"><i>PR</i><span>本ページはアフィリエイトリンクを含む広告を掲載しています</span></div>
+<header class="gnav">
+  <a class="gnav-logo" href="../index.html">villafaras</a>
+  <a class="gnav-back" href="../index.html">← ヴィラ一覧に戻る</a>
+</header>
 <div class="wrap">
   <div class="layout">
-    <div class="hero-block">
-      <div class="modal-img"><div class="img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div><span class="modal-badge" style="background:rgba(225,29,72,.9)">静岡</span></div>
-    </div>
-    <div class="right-block">
-      <div class="modal-body">
-        <h1>Hiire IZU FUTO</h1>
-        <div class="pill-row"><span class="pill" style="background:#FEF3C7;color:#92400E">サウナ</span><span class="pill" style="background:#FFE4E6;color:#BE123C">温泉</span><span class="pill" style="background:#FCE7F3;color:#9D174D">BBQ</span><span class="pill" style="background:#E0E7FF;color:#3730A3">大人数</span><span class="pill" style="background:#CFFAFE;color:#155E75">海</span></div>
-        <div class="modal-feat">「セルフオーベルジュ」をコンセプトにした一棟貸しのプライベートヴィラ。伊豆高原駅周辺で仕入れた食材を、リビング中央の溶岩囲炉裏で自ら焼き上げ、時間を決めずに味わう体験ができます。食後はエストニア製サウナと温泉で心身をリフレッシュ。海の抜けが気持ちよい開放的な造りで、最大8名まで宿泊可能です。</div>
-        <div class="modal-facts">
+    <div class="villa-head"><div class="vh-meta"><span class="vh-pref">静岡</span><span class="vh-city">伊東市</span></div><h1>Hiire IZU FUTO</h1><div class="pill-row"><span class="pill">サウナ</span><span class="pill">温泉</span><span class="pill">BBQ</span><span class="pill">大人数</span><span class="pill">海</span></div></div>
+    <div class="hero-block"><div class="modal-img"><div class="img-placeholder" data-t="1" data-ini="H"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div></div></div>
+    <div class="lead-block"><div class="modal-feat">「セルフオーベルジュ」をコンセプトにした一棟貸しのプライベートヴィラ。伊豆高原駅周辺で仕入れた食材を、リビング中央の溶岩囲炉裏で自ら焼き上げ、時間を決めずに味わう体験ができます。食後はエストニア製サウナと温泉で心身をリフレッシュ。海の抜けが気持ちよい開放的な造りで、最大8名まで宿泊可能です。</div></div>
+    <div class="buy-block"><div class="modal-facts">
           <div class="fact"><span class="fact-label">定員</span><span class="fact-val">8名</span></div>
           <div class="fact"><span class="fact-label">チェックイン</span><span class="fact-val">16:00〜24:00</span></div>
           <div class="fact"><span class="fact-label">チェックアウト</span><span class="fact-val">11:00</span></div>
-        </div>
-        <div class="modal-price">2万5千円<span class="tilde"> ~ </span><span>/ 人</span></div>
-        <div class="modal-notice">※掲載情報は2026年7月調査時点のものです。最新情報は各予約サイト・施設公式サイトにてご確認ください。</div>
-        <div class="modal-ota-label">空室・料金を探す</div>
-        <div class="ota-grid"><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00052532/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/hiire-izu-futo/hotel/ito-jp.html" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a></div>
-        <div class="modal-links"><a class="official-link" href="https://hi-ire.com/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/hiire_official" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div>
-      </div>
-    </div>
-    <div class="map-block">
-      <div class="modal-addr-label">所在地</div>
+        </div><div class="modal-price">2万5千円<span class="tilde"> ~ </span><span>/ 人</span></div><div class="modal-ota-label">空室・料金を探す</div><div class="ota-grid"><a class="ota-btn" style="--ota:#4FC3E0;--ota-text:#fff" href="https://www.ikyu.com/00052532/" target="_blank" rel="noopener nofollow">一休.com<span>で見る ↗</span></a><a class="ota-btn" style="--ota:#FFD54F;--ota-text:#3D2818" href="https://www.agoda.com/hiire-izu-futo/hotel/ito-jp.html" target="_blank" rel="noopener nofollow">Agoda<span>で見る ↗</span></a></div><div class="modal-links"><a class="official-link" href="https://hi-ire.com/" target="_blank" rel="noopener nofollow">公式サイト ↗</a><a class="sns-link" href="https://www.instagram.com/hiire_official" target="_blank" rel="noopener nofollow"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span>Instagram ↗</span></a></div><div class="modal-notice">※掲載情報は2026年7月調査時点のものです。最新情報は各予約サイト・施設公式サイトにてご確認ください。</div></div>
+    <div class="spec-block" data-villa-id="231"></div>
+    <div class="map-block"><div class="modal-addr-label">所在地</div>
       <div class="modal-addr">静岡県伊東市富戸字先原1317-1151<a href="https://www.google.com/maps/search/?api=1&query=Hiire%20IZU%20FUTO%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AF%8C%E6%88%B8%E5%AD%97%E5%85%88%E5%8E%9F1317-1151" target="_blank" rel="noopener">大きな地図で見る ↗</a></div>
-      <div class="modal-map"><iframe src="https://www.google.com/maps?q=Hiire%20IZU%20FUTO%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AF%8C%E6%88%B8%E5%AD%97%E5%85%88%E5%8E%9F1317-1151&output=embed" loading="lazy"></iframe></div>
-      <div class="spec-block" data-villa-id="231"></div>
-    </div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps?q=Hiire%20IZU%20FUTO%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AF%8C%E6%88%B8%E5%AD%97%E5%85%88%E5%8E%9F1317-1151&output=embed" loading="lazy"></iframe></div></div>
+    <div class="review-widget" data-villa-id="231"></div>
     <a class="back-link" href="../index.html">← 他の静岡の宿泊施設も見る</a>
   </div>
 </div>
-<div class="review-widget" data-villa-id="231"></div>
-<script src="../spec-data.js"></script>
-<script src="../spec.js"></script>
-<script src="../reviews.js"></script>
-<footer>villafaras（ヴィラファラス） - サウナ・温泉付き一棟貸しヴィラ検索</footer>
+
+<script src="../spec-data.js?v=5986e4aa"></script>
+<script src="../spec.js?v=25883bc4"></script>
+<script src="../reviews.js?v=3b814063"></script>
+<footer>
+  <div class="foot-in">
+    <a class="foot-logo" href="../index.html">villafaras</a>
+    <div class="foot-sub">ヴィラファラス｜関東甲信越静 厳選ヴィラ紹介</div>
+    <div class="foot-fine">本ページはアフィリエイトリンクを含む広告を掲載しています。掲載情報は2026年7月調査時点のものです。最新の空室状況・料金・ご予約は各予約サイトでご確認ください。</div>
+  </div>
+</footer>
 </body>
 </html>
