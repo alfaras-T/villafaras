@@ -541,7 +541,7 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 /* **スマートフォンの3列（compact）表示は廃止した。** 写真を眺めるギャラリー
    ではなく、施設名・価格・サウナの仕様を見比べて泊まる先を決める一覧なので、
    3列では文字が小さくなりすぎる。モバイルは2列に統一し、切替UIも出さない。
-   （setGridView() は残してあるが、呼ばれても .compact の指定がないので効かない） */
+   （切替UI・setGridView()・.compact の指定はすべて撤去した） */
 .count-bar strong{color:var(--o1);font-size:19px;font-weight:600;font-family:'Poppins',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;margin-right:2px}
 .grid{
   display:grid; grid-template-columns:repeat(auto-fill,minmax(266px,1fr));
@@ -911,74 +911,6 @@ footer a:hover{color:var(--o3);border-color:var(--o3)}
   <div class="quiz" id="quiz"></div>
 </div>
 
-<!-- PRIVACY POLICY (hidden until opened from footer) -->
-<div class="privacy-modal-bg" id="privacyModalBg" onclick="if(event.target===this)closePrivacy()">
-  <div class="privacy-modal">
-    <button class="privacy-modal-close" onclick="closePrivacy()">×</button>
-    <div class="policy-box">
-      <h2>プライバシーポリシー</h2>
-      <div class="policy-updated">制定日：2026年7月3日</div>
-      <p>Villafaras（以下「当サイト」）は、ご利用者の個人情報の重要性を認識し、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定め、個人情報の適切な保護に努めます。</p>
-
-      <h3>1. 運営者情報</h3>
-      <p>当サイトは「Villafaras」が運営しています。</p>
-
-      <h3>2. 収集する情報</h3>
-      <p>当サイトでは、お問い合わせフォームのご利用等の際に、お名前・メールアドレス等のご入力いただいた情報を取得する場合があります。また、サイトの閲覧に伴い、Cookie等を通じてIPアドレス・ブラウザの種類・アクセス日時・閲覧ページ等の情報が自動的に収集されることがあります。</p>
-
-      <h3>3. 利用目的</h3>
-      <ul>
-        <li>お問い合わせへの対応・ご連絡のため</li>
-        <li>サイトの利用状況の分析、コンテンツの改善のため</li>
-        <li>不正利用の防止、セキュリティ確保のため</li>
-      </ul>
-
-      <h3>4. アクセス解析ツールについて</h3>
-      <p>当サイトでは、サイトの利用状況を把握する目的で、Googleアナリティクス等のアクセス解析ツールを導入する場合があります。これらのツールはCookieを利用してデータを収集しますが、個人を特定する情報は含まれません。この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。取得されたデータは各ツール提供者のプライバシーポリシーに基づき管理されます。</p>
-
-      <h3>5. アフィリエイトプログラムについて</h3>
-      <p>当サイトは、掲載施設の「空室・料金を探す」ボタン等を通じて、Booking.com・Airbnb・一休.com・楽天トラベル・Expedia・Agoda等の各予約サイト（OTA）が提供するアフィリエイトプログラムに参加しています。これらのリンクを経由してご予約等が成立した場合、当サイトは各社より紹介料を受け取ることがあります。この仕組みによって発生する費用はご利用者様の負担に転嫁されるものではありません。なお、各予約サイトの利用に伴い提供される情報は、各社のプライバシーポリシーに基づき取り扱われます。</p>
-
-      <h3>6. 第三者提供について</h3>
-      <p>当サイトは、法令に基づく場合を除き、ご本人の同意なく取得した個人情報を第三者に提供することはありません。</p>
-
-      <h3>7. 掲載情報の正確性について</h3>
-      <p>当サイトに掲載している施設情報（料金・設備・写真・空室状況等）は2026年7月調査時点のものであり、最新の内容と異なる場合があります。正確な情報は、必ず各予約サイトまたは施設公式サイトにてご確認ください。当サイトは、掲載情報の正確性・完全性について保証するものではなく、これらの情報に基づいて生じた損害について責任を負いかねます。</p>
-
-      <h3>8. 個人情報の開示・訂正・削除等</h3>
-      <p>ご本人からの個人情報の開示・訂正・利用停止・削除等のご請求については、下記のお問い合わせ窓口までご連絡ください。確認の上、法令に従い適切に対応いたします。</p>
-
-      <h3>9. 本ポリシーの変更</h3>
-      <p>当サイトは、法令の変更やサービス内容の変更等に応じて、本ポリシーの内容を予告なく変更することがあります。変更後の内容は、本ページに掲載した時点で効力を生じるものとします。</p>
-
-      <h3>10. お問い合わせ窓口</h3>
-      <p>本ポリシーに関するお問い合わせは、以下の窓口までお願いいたします。<br>
-      運営者：Villafaras<br>
-      メールアドレス：<a href="mailto:info@villafaras.jp">info@villafaras.jp</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT FORM (hidden until opened from footer) -->
-<div class="privacy-modal-bg" id="contactModalBg" onclick="if(event.target===this)closeContact()">
-  <div class="privacy-modal">
-    <button class="privacy-modal-close" onclick="closeContact()">×</button>
-    <div class="policy-box">
-      <h2>お問い合わせ</h2>
-      <div class="policy-updated">ご質問・ご要望など、お気軽にご連絡ください。</div>
-      <div class="contact-form">
-        <label class="contact-label">お名前<span class="req">必須</span></label>
-        <input type="text" id="cfName" class="contact-input" placeholder="山田 太郎">
-        <label class="contact-label">メールアドレス<span class="req">必須</span></label>
-        <input type="email" id="cfEmail" class="contact-input" placeholder="example@mail.com">
-        <label class="contact-label">お問い合わせ内容<span class="req">必須</span></label>
-        <textarea id="cfMessage" class="contact-textarea" rows="5" placeholder="お問い合わせ内容をご記入ください"></textarea>
-        <button class="contact-submit" onclick="submitContact()">送信する</button>
-        <p class="contact-note">※送信ボタンを押すと、お使いのメールアプリが起動し、入力内容がメール本文にセットされます。内容をご確認のうえ送信してください。</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <footer>
   <div class="foot-in">
@@ -1023,85 +955,6 @@ function specVal(id,k){
   return (typeof c==='object')?c.v:c;
 }
 const PAGE=window.innerWidth<=700?8:24;
-/* ===================================================================
-   ▼▼▼ OTAアフィリエイト設定 ▼▼▼
-   各施設の「予約・空室を探す」ボタンから飛ぶ先です。
-   いまは施設名でのキーワード検索リンクになっています。
-   アフィリエイト収入を得る場合は、各 url の中身を
-   あなたのアフィリエイト用リンク（ValueCommerce / A8.net / 楽天アフィリエイト等）に
-   差し替えてください。color はボタンの色です。
-   =================================================================== */
-const OTA_META={
- booking:{label:'Booking.com', color:'#003580', text:'#fff'},
- airbnb:{label:'Airbnb', color:'#FF385C', text:'#fff'},
- ikyu:{label:'一休.com', color:'#4FC3E0', text:'#fff'},
- rakuten:{label:'楽天トラベル', color:'#9CCC3C', text:'#fff'},
- expedia:{label:'Expedia', color:'#00355F', text:'#fff'},
- agoda:{label:'Agoda', color:'#FFD54F', text:'#3D2818'},
-};
-const OTA_ORDER=['rakuten','ikyu','booking','airbnb','agoda','expedia'];
-const OTA_FALLBACK=[
- {label:'楽天トラベル', color:'#9CCC3C', text:'#fff', url:n=>'https://search.travel.rakuten.co.jp/ds/yado/list?f_query='+encodeURIComponent(n)},
- {label:'じゃらん',     color:'#EE7800', text:'#fff', url:n=>'https://www.jalan.net/uw/uwp2011/uww2011init.do?keyword='+encodeURIComponent(n)},
- {label:'Booking.com', color:'#003580', text:'#fff', url:n=>'https://www.booking.com/searchresults.ja.html?ss='+encodeURIComponent(n)},
-];
-function otaButtonsHTML(v){
-  const ota=v.ota||{};
-  const keys=OTA_ORDER.filter(k=>ota[k]);
-  if(keys.length===0){
-    return OTA_FALLBACK.map(p=>`<a class="ota-btn" style="--ota:${p.color};--ota-text:${p.text}" href="${p.url(v.name)}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">${p.label}<span>で探す ↗</span></a>`).join('');
-  }
-  return keys.map(k=>{const m=OTA_META[k];const strokeStyle=m.stroke?`;-webkit-text-stroke:${m.stroke};text-stroke:${m.stroke}`:'';return `<a class="ota-btn" style="--ota:${m.color};--ota-text:${m.text}${strokeStyle}" href="${ota[k]}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">${m.label}<span>で見る ↗</span></a>`;}).join('');
-}
-const SNS_ICONS={
- x:'<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
- instagram:'<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
- facebook:'<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34v7.03C18.34 21.21 22 17.06 22 12.06z"/></svg>',
- line:'<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 4.09 3.58 7.52 8.42 8.16.33.07.78.22.89.5.1.26.07.66.03.92l-.14.87c-.04.26-.2 1 .88.55 1.08-.46 5.82-3.43 7.94-5.87C21.46 13.65 22 12.02 22 10.25 22 5.69 17.52 2 12 2z"/></svg>',
- youtube:'<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M21.6 7.2s-.21-1.49-.86-2.14c-.82-.86-1.74-.86-2.16-.91C15.6 4 12 4 12 4h-.01s-3.6 0-6.58.15c-.42.05-1.34.05-2.16.91-.65.65-.86 2.14-.86 2.14S2.18 8.94 2.18 10.68v1.63C2.18 14.05 2.4 15.79 2.4 15.79s.21 1.49.85 2.14c.82.86 1.9.83 2.38.92C7.32 19 12 19.04 12 19.04s3.6-.01 6.58-.16c.42-.05 1.34-.05 2.16-.91.65-.65.86-2.14.86-2.14s.22-1.74.22-3.48v-1.63c0-1.74-.22-3.48-.22-3.48zM9.98 14.5v-5l4.8 2.51z"/></svg>',
- tiktok:'<svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.16-1.4v9.66a4.68 4.68 0 1 1-4.05-4.63v2.5a2.2 2.2 0 1 0 1.55 2.1V2h2.4a4.28 4.28 0 0 0 4.06 3.75z"/></svg>',
- sns:'',
-};
-function snsIconKey(url){
-  if(/instagram\.com/.test(url))return 'instagram';
-  if(/twitter\.com|x\.com/.test(url))return 'x';
-  if(/facebook\.com/.test(url))return 'facebook';
-  if(/line\.me/.test(url))return 'line';
-  if(/youtube\.com|youtu\.be/.test(url))return 'youtube';
-  if(/tiktok\.com/.test(url))return 'tiktok';
-  return 'sns';
-}
-function snsLabel(key){
-  return {x:'X(旧Twitter)',instagram:'Instagram',facebook:'Facebook',line:'LINE',youtube:'YouTube',tiktok:'TikTok',sns:'SNS'}[key]||'SNS';
-}
-const SNS_COLORS={
- x:'#1DA1F2',
- instagram:'linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)',
- facebook:'#1877F2',
- line:'#06C755',
- youtube:'#FF0000',
- tiktok:'#000000',
- sns:'',
-};
-const SNS_ORDER={x:0,instagram:1,facebook:2,line:3,youtube:4,tiktok:5,sns:6};
-function linksRowHTML(v){
-  const items=[];
-  if(v.official)items.push(`<a class="official-link" href="${v.official}" target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">公式サイト ↗</a>`);
-  const sortedSns=(v.sns||[]).slice().sort((a,b)=>{
-    const ka=snsIconKey(a),kb=snsIconKey(b);
-    return (SNS_ORDER[ka]??99)-(SNS_ORDER[kb]??99);
-  });
-  sortedSns.forEach(s=>{
-    const key=snsIconKey(s);
-    const icon=SNS_ICONS[key]||'';
-    const label=snsLabel(key);
-    const bg=SNS_COLORS[key];
-    const style=bg?` style="background:${bg};color:#fff"`:'';
-    items.push(`<a class="sns-link" href="${s}"${style} target="_blank" rel="noopener nofollow" onclick="event.stopPropagation()">${icon}<span>${label} ↗</span></a>`);
-  });
-  if(items.length===0)return '';
-  return `<div class="modal-links">${items.join('')}</div>`;
-}
 const VILLA_SLUGS={0:"0-古民家宿るうふ-揺之家",1:"1-古民家宿るうふ-清之家",2:"2-古民家宿るうふ-波之家",3:"3-古民家宿るうふ-遊之家",4:"4-るうふ別邸-鴨川919",5:"5-＆SUN-Hung-five",6:"6-CAP-MARTIN-Funny-house",7:"7-PREMIUM-Funny-house",8:"8-&SUN-Laie-back",9:"9-sendouQ",10:"10-sendouQ-second／sendouQ-third-dog",11:"11-Avalon-Cove",12:"12-Villa-Torami",13:"13-Ocean's-Terrace-TORAMII",14:"14-Sea-by-TORAMII",15:"15-amane",16:"16-みささ",17:"17-the-MELLOW-HOUSE-館山",18:"18-On-the-wave-館山",19:"19-GIFTHOUSE-館山-那古海岸",20:"20-GIFTHOUSE-2nd-館山-洲宮",21:"21-UMInoTERRACE",22:"22-海都-kaito-TOKYOBAY",23:"23-The-TRAVELERS-Chateau-Tateyama",24:"24-BEST-SPA-99",25:"25-THE-POOL-HOUSE-TOKYO-BAY",26:"26-THE-POOL-HOUSE-木更津",27:"27-Sumera-Resort-Minato",28:"28-VACATIONHOUSE-TORAMI-7521",29:"29-PRIVE",30:"30-STRADDIE-HOUSE",31:"31-moe-luana",32:"32-moe-akala,moe-aina",33:"33-and-RIVER勝浦",34:"34-Retreat-Villa-Aym",35:"35-by-the-river-Isumi",36:"36-STAR-VILLAGE-TATEYAMA",37:"37-VILLA-SENSE-kujukuri",38:"38-Asile＆OLILI",39:"39-VILLA-UMICHIKA-九十九里一宮",40:"40-THE-BLUE-POINT-seaside-villa",41:"41-ビーチテラス房総",42:"42-雫花",43:"43-Montevan-RESORT-VILLA",44:"44-久留里山荘（QULRI-SANSO）",45:"45-HARUKA-KANATA-森のヴィラ",46:"46-閑閑舎",47:"47-Hackberry-Holiday-Home",48:"48-庄屋の里-古民家たなか",49:"49-古民家一棟貸切旅館-成田さくら邸",50:"50-THE-CLUB-919-DOG-FRIENDLY",51:"51-九十九里-point59",52:"52-緑邸～OHTAKI～",53:"53-tokoro-hotel-Isumi",54:"54-Zekkei-stay-ISUMI-cabin",55:"55-SEA-LIFE-TSURIGASAKI",56:"56-THE-VIBES-VILLA",57:"57-Refwind",58:"58-UMIYAMA-CHIKURA",59:"59-Under-the-Sea-UBARA",60:"60-and-FOREST勝浦-竹の離れ",61:"61-天神郷-昊-Sora",62:"62-RICKA-KATSUURA",63:"63-Dear-Wan-Spa-Garden",64:"64-VILLA-Seamu",65:"65-THE-NALU",66:"66-Villa-Yno",67:"67-EKVOLI-MARINA-VILLA,-Isumi-Garden",68:"68-SURF-UP",69:"69-primera-villa",70:"70-The-Pacific-Retreat-TATEYAMA",71:"71-Casita-Laguna",72:"72-VILLA-LAGI",73:"73-SANU-2nd-Home-南アルプス1st",74:"74-SANU-2nd-Home-八ヶ岳2nd",75:"75-SANU-2nd-Home-八ヶ岳3rd",76:"76-SANU-2nd-Home-河口湖2nd",77:"77-enico.Mt.Fuji-smile",78:"78-enico.Mt.Fuji-Resort-&-Glamping",79:"79-est-ed.1",80:"80-2gether-foret",81:"81-古民家宿るうふ-織之家",82:"82-古民家宿るうふ-祝之家",83:"83-THE-TIME-FUJI",84:"84-mysa-fuji",85:"85-mysa-yamanakako",86:"86-hotel-norm.-air",87:"87-hotel-norm.-ao",88:"88-hotel-norm.-fuji",89:"89-景雅-奥河口湖",90:"90-totonoco-湖畔の隠れ家",91:"91-ビジョングランピングリゾート山中湖",92:"92-VILLA-SAISON-FUJI",93:"93-ヴィラグリファーム七里岩",94:"94-abrAsus-hotel-Fuji",95:"95-天空の温泉ヴィラ紬-河口湖",96:"96-yl&Co.Hotel-in-Mt.Fuji",97:"97-VILLA-SUOMI",98:"98-SILVER-SPRAY-山中湖",99:"99-ハンズアウトドアリゾート",100:"100-MT.FUJI-SKY-CABIN",101:"101-KURA-YARD",102:"102-SAUNEA白州",103:"103-Private-villa-FujiNagi",104:"104-憩~ikoi_Fuji",105:"105-BLANC-FUJI",106:"106-郷音-G.O.A.T.-The-Summit-Club",107:"107-ReTune-SPA-&-SAUNA-VILLA",108:"108-THE-THIRD-PLACE-Mt.Fuji",109:"109-Kakoi-雪嶺",110:"110-THE-BLISS-FUJI",111:"111-HOTEL-SEION-FUJI",112:"112-private-villa-ietona",113:"113-ASH-Villa-富士河口湖",114:"114-エンゼルフォレスト那須",115:"115-有形文化財ホテル-飯塚邸",116:"116-Kito-NASU",117:"117-THE-SECOND-Nasukogen-Forest-House",118:"118-SANU-2nd-Home-那須1st",119:"119-SANU-2nd-Home-那須2nd",120:"120-SANU-2nd-Home-那須3rd",121:"121-COCO-VILLA-那須高原",122:"122-Earthboat-Nasu",123:"123-RIVER-VIEW-HOUSE",124:"124-北欧伝説-ドワーフの村",125:"125-森deワーケなすっぽ",126:"126-御宿-憩（OYADO-IKOI）",127:"127-VillaEL5",128:"128-Haga-Farm＆Glamping（芳賀ファーム&グランピング）",129:"129-和モダングランピング｜NAGOMI-CAMP",130:"130-那須温泉グランピング-Nenn（ネン）",131:"131-LEVATA",132:"132-GEOSPOT-MOTOHAKONE-A",133:"133-GEOSPOT-MOTOHAKONE-B",134:"134-GEOSPOT-MOTOHAKONE-C",135:"135-ASNOVA-RESORT-FOLQ-HAKONE-GORA",136:"136-ASNOVA-RESORT-NOIE-HAKONE-SENGOKUHARA",137:"137-P's-Wood-箱根仙石原",138:"138-Casablanca-Villa-Hakone",139:"139-moon-hakone",140:"140-ルクス箱根湯本-LUX-HAKONE-YUMOTO",141:"141-koti-hakone",142:"142-プライベートリゾート仙居",143:"143-mysa-hakone",144:"144-シエロ箱根仙石原",145:"145-ICHI-VILLA-CROSSROAD-HAKONE",146:"146-TIMeSCAPE-hakone",147:"147-箱根芦ノ湖ゴルフヴィラ",148:"148-エスパシオ箱根迎賓館-麟鳳亀龍",149:"149-MOROISOSO-サウナ＆温水プール付きラグジュアリーヴィラ",150:"150-3rd-HOUSE-INAMURAGASAKI",151:"151-琥珀-AMBER",152:"152-NIWA-KAMAKURA",153:"153-UMITO-VILLA-KAMAKURA-ZAIMOKUZA",154:"154-LULLA",155:"155-SAJIMA-Funny-house",156:"156-MONS-GORA",157:"157-TANZAWA-seven-lanes-by-DAICHI",158:"158-GIFTHOUSE-三浦-諸磯",159:"159-葉山THE・TERRACE-HOUSE",160:"160-雅・仙石原",161:"161-Oceanfront-Villa-Hale-Kahakai",162:"162-プライベートヴィラ愛川",163:"163-箱根温泉別邸白鷺",164:"164-HAKONE-DOMA",165:"165-箱根懐來",166:"166-in-the-meantime",167:"167-箱根リゾートyamaki",168:"168-湯屋-やまざくら",169:"169-湯と灯りに包まれる別世界",170:"170-Six-on-the-Beach-TORAMII-Enoshima",171:"171-Noёl-HAKONE-GENSEN",172:"172-Oyado-S",173:"173-軽井沢365-フォレストガーデン八風台",174:"174-軽井沢365-プレイガーデン大日向",175:"175-軽井沢365-リバーサイドヴィラ八風台",176:"176-SANU-2nd-Home-北軽井沢2nd",177:"177-SANU-2nd-Home-蓼科1st",178:"178-SANU-2nd-Home-軽井沢2nd",179:"179-SANU-2nd-Home-白馬1st",180:"180-GLAMDAY-STYLE-HOTEL-SUITE-山ノ麓",181:"181-GLAMDAY-STYLE-HOTEL-SUITE-川ノ音",182:"182-The-Aurora-Chalet",183:"183-Hakuba-Amber-Resort",184:"184-Hakuba-Jolie-Maison",185:"185-SAUNA-VILLA-然",186:"186-Lakeside-villa-SUI-HAKUBA",187:"187-GREENSEED軽井沢",188:"188-COCO-VILLA-軽井沢",189:"189-Tatehata-House-北軽井沢",190:"190-Hygge-chalet-hakuba（ヒュッゲ-シャレー）",191:"191-軽井沢-HOUSE-VILLA",192:"192-ポーラーハウスカナディアン南軽井沢1",193:"193-SAUNA-FOREST-CABIN-軽井沢御代田",194:"194-海野宿一棟貸し宿-上州屋",195:"195-Earthboat-Kurohime",196:"196-Karuizawa-Luxe-Villa",197:"197-トライハク軽井沢-神楽-かぐら",198:"198-T&A-Resort&Sauna-KARUIZAWA",199:"199-北軽井沢-貸別荘-FARMSIDE",200:"200-enukoti（エヌコティ）",201:"201-キュレーション熱海桃乃八庵",202:"202-キュレーション熱海須藤水園",203:"203-キュレーション熱海桃山雅苑",204:"204-オーシャンビュー南熱海",205:"205-オーシャンビュー熱海自然郷",206:"206-オーシャンビュー熱海自然楼",207:"207-パノーラ伊豆赤沢",208:"208-パノーラ熱海桜沢",209:"209-伊豆高原プライム",210:"210-熱海オーシャンハウス",211:"211-オーシャンテラスAtami",212:"212-熱海リゾート",213:"213-熱海別邸-双梅庵",214:"214-マイグレICE",215:"215-マイグレテラス",216:"216-マイグレ天",217:"217-マイグレフラット",218:"218-マイグレ600",219:"219-マイグレIKKI",220:"220-マイグレKENKEN",221:"221-マイグレYEBISU",222:"222-マイグレ海の声",223:"223-マイグレケニーズハウス",224:"224-マイグレchillax",225:"225-マイグレHOODSTAR",226:"226-マイグレアトリエ",227:"227-マイグレA5",228:"228-マイグレパノラマ",229:"229-WEAZER西伊豆",230:"230-WEAZER西伊豆-廻",231:"231-Hiire-IZU-FUTO",232:"232-Hiire-IZU-OLIVE",233:"233-Hiire-IZU-OMURO",234:"234-COCO-VILLA-伊豆赤沢",235:"235-COCO-VILLA-大室山",236:"236-Tiny-Base-The-MOUNTAiN",237:"237-Tiny-Base-The-Irita-hama",238:"238-月と太陽",239:"239-AMAO-VILLA",240:"240-Wellリゾート富士",241:"241-Poolen-ITO",242:"242-the-villa-Oka-伊豆高原温泉",243:"243-Azure-Palace-伊豆高原",244:"244-HAKU-AKAZAWA-【波空】",245:"245-villa-緑と物語",246:"246-SANU-2nd-Home-伊豆1st",247:"247-SANA-伊豆大室山-Pool-Villa",248:"248-エンゼルフォレスト中伊豆",249:"249-グラン熱川",250:"250-プライベートリゾート南風",251:"251-LAMERVON",252:"252-伊豆高原テントリゾート",253:"253-伊豆グランピングリゾートIshiki385",254:"254-伊豆グランヴィレッジ-グランピング",255:"255-貸別荘「碧-ai」",256:"256-パーパスリゾート-EG-Sky-Terrace-熱川",257:"257-THE-GLAMPING-箱根十国峠",258:"258-ALIVIO-LUXE",259:"259-赤城宿-清芳山荘-seiho",260:"260-赤城宿-珠蕾山荘-shurai",261:"261-Earthboat-Minakami-Fujiwara",262:"262-Earthboat-Minakami-Hodaigi",263:"263-アウトドア貸切別荘北軽井沢1",264:"264-アウトドア貸切別荘北軽井沢2",265:"265-アウトドアアトラクション北軽井沢",266:"266-温泉グランピングシマブルー",267:"267-MOOSKA-DE-STUBEN",268:"268-ポーラーハウス南軽井沢1",269:"269-THE-LOOKOUT-KUSATSU",270:"270-COCO-VILLA-長瀞",271:"271-Earthboat-Saitama-Kawajima",272:"272-ノーラ名栗",273:"273-HOLE37",274:"274-サンライズヴィラ大洗",275:"275-ときわ邸-M-GARDEN",276:"276-COCO-VILLA-大洗",277:"277-No.12-Kashima-Fan-Zone",278:"278-LUCY-RESORT（ルーシー-リゾート）",279:"279-大谷石の蔵サウナと古民家宿-DAIGO-SAUNA",280:"280-一棟貸切宿-藤右衛門",281:"281-SPA＆ごはんゆるうむ",282:"282-GLAMPING-KASHIMA-753-#00",283:"283-THE-BOTANICAL-RESORT-林音（リンネ）",284:"284-ALOHA-GLAMPING-RESORT-SAKAI",285:"285-上小川レジャーペンション"};
 function cardHTML(v){
   const pills=(v.tags||[]).filter(t=>TAG_LABELS[t]).slice(0,4).map(t=>`<span class="pill pill-${t}">${TAG_LABELS[t]}</span>`).join('');
@@ -1166,11 +1019,6 @@ function applyFilters(){
   document.getElementById('countNum').textContent=filtered.length;
   syncSaunaMore();
   shownCount=0;document.getElementById('grid').innerHTML='';loadMore();
-}
-function setGridView(mode){
-  const grid=document.getElementById('grid');
-  if(mode==='compact')grid.classList.add('compact');else grid.classList.remove('compact');
-  document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('on',b.dataset.mode===mode));
 }
 function loadMore(){
   const grid=document.getElementById('grid');
@@ -1276,19 +1124,6 @@ const QUIZ=[
 let quizStep=0,quizAns={};
 function openQuiz(){quizStep=0;quizAns={tags:new Set()};renderQuiz();document.getElementById('quizBg').classList.add('show');}
 function closeQuiz(){document.getElementById('quizBg').classList.remove('show');}
-function openPrivacy(){document.getElementById('privacyModalBg').classList.add('show');}
-function closePrivacy(){document.getElementById('privacyModalBg').classList.remove('show');}
-function openContact(){document.getElementById('contactModalBg').classList.add('show');}
-function closeContact(){document.getElementById('contactModalBg').classList.remove('show');}
-function submitContact(){
-  const name=document.getElementById('cfName').value.trim();
-  const email=document.getElementById('cfEmail').value.trim();
-  const msg=document.getElementById('cfMessage').value.trim();
-  if(!name||!email||!msg){alert('お名前・メールアドレス・お問い合わせ内容をすべてご入力ください。');return;}
-  const subject=encodeURIComponent('【Villafaras】お問い合わせ');
-  const body=encodeURIComponent('お名前：'+name+'\nメールアドレス：'+email+'\n\nお問い合わせ内容：\n'+msg);
-  window.location.href='mailto:info@villafaras.jp?subject='+subject+'&body='+body;
-}
 function renderQuiz(){
   const s=QUIZ[quizStep];
   const dots=QUIZ.map((_,i)=>`<div class="quiz-dot ${i<=quizStep?'on':''}"></div>`).join('');
@@ -1320,7 +1155,7 @@ function finishQuiz(){
   if(filtered.length<3&&quizAns.pref){activePrefs.clear();document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.pref)c.classList.remove('on');});applyFilters();}
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuiz();closePrivacy();closeContact();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuiz();}});
 /* 個別ページのパンくず「トップ › 千葉」から戻ってきたときに、その県で絞る。
    将来エリア別の静的ページを足すときの受け口にもなる。 */
 (function(){
