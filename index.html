@@ -20,8 +20,8 @@
 <meta name="twitter:image" content="https://alfaras-t.github.io/villafaras/images/ogp.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebSite","name":"ヴィラファラス villafaras","alternateName":"villafaras","url":"https://villafaras.jp/","inLanguage":"ja","description":"関東甲信越静エリアの厳選ヴィラ・貸別荘紹介サイト","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://villafaras.jp/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
-{"@type":"Organization","name":"ヴィラファラス villafaras","url":"https://villafaras.jp/","areaServed":["山梨県","神奈川県","静岡県","千葉県","長野県","栃木県","茨城県","群馬県","埼玉県"]}
+{"@type":"WebSite","name":"ヴィラファラス villafaras","alternateName":"villafaras","url":"https://alfaras-t.github.io/villafaras/","inLanguage":"ja","description":"関東甲信越静エリアの厳選ヴィラ・貸別荘紹介サイト","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://alfaras-t.github.io/villafaras/?q={search_term_string}"},"query-input":"required name=search_term_string"}},
+{"@type":"Organization","name":"ヴィラファラス villafaras","url":"https://alfaras-t.github.io/villafaras/","areaServed":["山梨県","神奈川県","静岡県","千葉県","長野県","栃木県","茨城県","群馬県","埼玉県"]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +129,9 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
   color:var(--muted); font-size:14px; line-height:1.9; margin:14px 0 0;
   max-width:26em; word-break:keep-all;
 }
+/* このサイトの軸はサウナの仕様。文章を増やさず1行だけ添える */
+.hero-sauna{font-size:13px;margin-top:9px!important;letter-spacing:.01em}
+.hero-sauna b{color:var(--ink2);font-weight:700;border-bottom:1px solid var(--o-soft);padding-bottom:1px}
 /* 検索。**下線だけでは検索欄と気づかれない**ので、枠と虫眼鏡と塗りの
    ボタンで「入力するところ」だと分かるようにした。ただしカード化はしない
    （影を落とさず、角丸2px、地はクリームのまま）。 */
@@ -468,8 +471,10 @@ body{font-family:'Noto Sans JP','Poppins',sans-serif;background:var(--cream);col
 .price-slider input[type=range]::-moz-range-thumb{width:3px;height:16px;background:var(--o1);border:0;border-radius:0}
 .price-val{
   font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);
-  min-width:74px;font-variant-numeric:tabular-nums;
+  min-width:74px;font-variant-numeric:tabular-nums;white-space:nowrap;
 }
+.price-unit{font-size:10.5px;color:var(--muted);letter-spacing:.03em;white-space:nowrap}
+@media(max-width:700px){.price-unit{flex-basis:100%;margin-top:2px}}
 /* ランダムは「操作」ではなく「遊び」。塗りつぶしのピルをやめる */
 .lucky-btn{
   background:none;border:1px solid var(--ink);color:var(--ink);
@@ -776,6 +781,7 @@ footer a:hover{color:var(--o3);border-color:var(--o3)}
       <h1>週末は、<span class="l2">とっておきのヴィラへ。</span></h1>
       <p class="sub">関東甲信越静の厳選286施設</p>
       <p>サウナ・温泉・絶景・ペット可。気分と条件から、泊まりたい一棟を探せます。</p>
+      <p class="hero-sauna">薪・ロウリュ・水風呂など、<b>サウナの条件でも比較できます。</b></p>
     </div>
     <div class="hero-ask">
       <div class="cap">どんなヴィラを探していますか？</div>
@@ -857,10 +863,10 @@ footer a:hover{color:var(--o3);border-color:var(--o3)}
       </div>
     </div>
     <div class="ctrl-row">
-      <span class="ctrl-label">予算上限</span>
+      <span class="ctrl-label">予算 / 一棟</span>
       <div class="price-slider">
         <input type="range" id="priceRange" min="15000" max="650000" value="650000" step="5000" oninput="updatePrice()">
-        <span class="price-val" id="priceVal">上限なし</span>
+        <span class="price-val" id="priceVal">上限なし</span><span class="price-unit">一棟あたりの目安で絞り込みます</span>
       </div>
       <div class="ctrl-spacer"></div>
       <button class="reset-btn" onclick="resetFilters()">条件をリセット</button>
@@ -881,7 +887,7 @@ footer a:hover{color:var(--o3);border-color:var(--o3)}
         <span class="ctrl-more-x" aria-hidden="true"></span>
       </button>
       <div class="ctrl-more-body" id="saunaMoreBody">
-        <p class="ctrl-more-note">公式サイト・サウナイキタイ・楽天の調査で裏を取った仕様から絞り込みます。記載が確認できた施設だけが残ります。</p>
+        <p class="ctrl-more-note">公式サイト・予約サイト・公開情報等で確認できた仕様から絞り込みます。確認できた施設だけが残ります。</p>
         <div class="chips" id="saunaSpecChips">
           <button class="chip" data-stove="wood" onclick="toggleStoveChip(this)">薪ストーブ</button>
           <button class="chip" data-stove="electric" onclick="toggleStoveChip(this)">電気ストーブ</button>
@@ -948,7 +954,7 @@ footer a:hover{color:var(--o3);border-color:var(--o3)}
       <h3>10. お問い合わせ窓口</h3>
       <p>本ポリシーに関するお問い合わせは、以下の窓口までお願いいたします。<br>
       運営者：Villafaras<br>
-      メールアドレス：<a href="mailto:info@villafaras.jp">info@villafaras.jp</a>（※連絡先は仮設定です。実際のアドレスに差し替えてください）</p>
+      メールアドレス：<a href="mailto:info@villafaras.jp">info@villafaras.jp</a></p>
     </div>
   </div>
 </div>
@@ -1205,7 +1211,9 @@ function filterByFeature(tags){
 }
 function filterByPref(p){resetFilters(true);activePrefs.add(p);document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.pref===p)c.classList.add('on');});applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 function resetFilters(silent){activeTags.clear();activePrefs.clear();activeStoves.clear();activeSpecFlags.clear();showFavsOnly=false;maxPrice=650000;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));document.getElementById('sortSelect').value='rec';document.getElementById('heroSearch').value='';document.getElementById('priceRange').value=650000;document.getElementById('priceVal').textContent='上限なし';if(!silent)applyFilters();}
-function updatePrice(){const v=+document.getElementById('priceRange').value;maxPrice=v;document.getElementById('priceVal').textContent=(v>=650000)?'上限なし':'～'+v.toLocaleString()+'円';applyFilters();}
+/* pnum は「一棟あたり」の目安。カードの表示は1人あたりなので、
+   どちらの軸で絞っているかを必ず添える。値の意味は変えない。 */
+function updatePrice(){const v=+document.getElementById('priceRange').value;maxPrice=v;document.getElementById('priceVal').textContent=(v>=650000)?'上限なし':'～'+v.toLocaleString()+'円 / 一棟';applyFilters();}
 function heroGo(){applyFilters();document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});}
 /* --- グローバルヘッダー（2026-09 追加）。既存の関数はそのまま使う --- */
 function navTo(e,id){
@@ -1313,7 +1321,47 @@ function finishQuiz(){
   document.getElementById('villaSection').scrollIntoView({behavior:'smooth'});
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuiz();closePrivacy();closeContact();}});
+/* 個別ページのパンくず「トップ › 千葉」から戻ってきたときに、その県で絞る。
+   将来エリア別の静的ページを足すときの受け口にもなる。 */
+(function(){
+  var m=/[?&]pref=([a-z]+)/.exec(location.search||'');
+  if(!m||!PREF_JP[m[1]])return;
+  activePrefs.add(m[1]);
+  document.querySelectorAll('.chip').forEach(c=>{if(c.dataset.pref===m[1])c.classList.add('on');});
+})();
+/* **件数を手で書かない。** ヒーローの数値・エリアのチップ・エリア索引は
+   いずれも VILLAS から数え直す。手書きだと必ずずれる（実測で
+   長野28→27／群馬11→12／サウナ付き278→255 が食い違っていた）。 */
+(function(){
+  var byPref={},byTag={},i,j,v;
+  for(i=0;i<VILLAS.length;i++){
+    v=VILLAS[i];
+    byPref[v.pref]=(byPref[v.pref]||0)+1;
+    var tg=v.tags||[];
+    for(j=0;j<tg.length;j++)byTag[tg[j]]=(byTag[tg[j]]||0)+1;
+  }
+  var stats=document.querySelectorAll('.hstat strong');
+  var nums=[VILLAS.length,byTag.sauna||0,byTag.onsen||0,byTag.pet||0];
+  for(i=0;i<stats.length&&i<nums.length;i++)stats[i].textContent=nums[i];
+  document.querySelectorAll('#prefChips .chip').forEach(function(c){
+    var p=c.dataset.pref;if(!p)return;
+    c.textContent=(PREF_JP[p]||p)+'（'+(byPref[p]||0)+'）';
+  });
+  document.querySelectorAll('.pref-card').forEach(function(card){
+    var m=/filterByPref\('([a-z]+)'\)/.exec(card.getAttribute('onclick')||'');
+    var el=card.querySelector('.n');
+    if(m&&el)el.innerHTML=(byPref[m[1]]||0)+'<em>軒</em>';
+  });
+  var sub=document.querySelector('#areaSection .sec-sub');
+  if(sub)sub.textContent='行き先から、泊まる一棟へ';
+  var hs=document.querySelector('.hero .sub');
+  if(hs)hs.textContent='関東甲信越静の厳選'+VILLAS.length+'施設';
+})();
 syncFab();applyFilters();
+if(/[?&]pref=/.test(location.search||'')){
+  var sec=document.getElementById('villaSection');
+  if(sec)setTimeout(function(){sec.scrollIntoView({behavior:'smooth',block:'start'});},60);
+}
 </script>
 <script src="spec-data.js?v=5986e4aa"></script>
 <script>/* spec-data.js はインラインスクリプトより後に読まれるため、初回描画の時点ではサウナの仕様が未ロードになる。読み込み後に一度だけ描き直す。 */
